@@ -1,0 +1,156 @@
+import type { Metadata } from "next";
+import {
+  MIGRATION_DISCOVERY_CHECKLIST,
+  MIGRATION_FAQ,
+  MIGRATION_STAGES,
+} from "@/content/company";
+import InnerHero from "@/components/company/InnerHero";
+import { Section } from "@/components/ui/Container";
+import SectionIntro from "@/components/ui/SectionIntro";
+import Reveal from "@/components/ui/Reveal";
+import FaqAccordion from "@/components/ui/FaqAccordion";
+import CtaBand from "@/components/ui/CtaBand";
+import { ButtonLink } from "@/components/ui/Button";
+import MigrationFlow from "@/components/services/MigrationFlow";
+import Icon from "@/components/icons";
+
+export const metadata: Metadata = {
+  title: "Integration & Migration — Staged, Reconciled, Reversible",
+  description:
+    "BridgeX integration and migration: discovery checklist, source mapping, staged migration in a staging environment, dual-write and rollback where applicable, and reconciliation against the source.",
+};
+
+export default function IntegrationMigrationPage() {
+  return (
+    <>
+      <InnerHero
+        href="/services/integration-migration"
+        eyebrow="Services — Integration & Migration"
+        title={
+          <>
+            Your history moves with you.{" "}
+            <em className="font-display font-semibold italic text-bx-maroon-700">
+              Verified, not hoped for.
+            </em>
+          </>
+        }
+        copy="Migration is where most platform projects fail — quietly, in the data. We map every source, migrate in stages to a staging environment first, reconcile against the source, and agree a rollback plan before anything goes live."
+        image="/images/team-discussion.jpg"
+        imageAlt="Professionals reviewing documents together in a meeting room"
+        imageWidth={1400}
+        imageHeight={933}
+      >
+        <div className="mt-8 flex flex-wrap gap-4">
+          <ButtonLink href="#stages" size="lg">
+            See the five stages
+          </ButtonLink>
+          <ButtonLink href="/platform/integrations" variant="secondary" size="lg">
+            Integration architecture
+          </ButtonLink>
+        </div>
+      </InnerHero>
+
+      {/* Discovery checklist */}
+      <Section tone="white" ariaLabel="Discovery checklist">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+          <SectionIntro
+            label="Before anything moves"
+            heading="The discovery checklist."
+            copy="Every migration starts with these questions. If you can answer most of them, you are further along than most. If you cannot, that is what discovery is for — we work through them with you."
+          />
+          <Reveal>
+            <ul className="divide-y divide-bx-gold-500/25 border-y border-bx-gold-500/25">
+              {MIGRATION_DISCOVERY_CHECKLIST.map((item, i) => (
+                <li key={item} className="flex items-start gap-4 py-4">
+                  <span className="mt-0.5 font-display text-xl font-semibold text-bx-gold-600">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="pt-1 font-body text-base leading-relaxed text-bx-ink">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* Five stages */}
+      <Section tone="ivory" id="stages" ariaLabel="The five migration stages">
+        <SectionIntro
+          label="The migration path"
+          heading="Five stages, each one proven before the next."
+          copy="Staging first, production last. Reconciliation closes the loop — and sign-off only happens when the numbers agree or the gap is explained."
+        />
+        <div className="mt-14 max-w-4xl">
+          <MigrationFlow stages={MIGRATION_STAGES} />
+        </div>
+      </Section>
+
+      {/* Dual-write / rollback / reconciliation — three honest cards */}
+      <Section tone="cream" ariaLabel="Safety nets">
+        <SectionIntro
+          label="Safety nets"
+          heading="What protects the cutover."
+          copy="Three mechanisms, described honestly — including what each one can and cannot do."
+          align="center"
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "Dual-write, where applicable",
+              icon: "exchanges" as const,
+              text: "Where the systems support it, both old and new run in parallel for a defined window, so a problem in one does not strand you. Where dual-write is not technically feasible, we say so in the plan — we do not pretend otherwise.",
+            },
+            {
+              title: "Rollback, agreed in advance",
+              icon: "audit" as const,
+              text: "The rollback plan — including the trigger that activates it — is written before cutover, not improvised during it. What rollback can cover depends on the systems involved, and the runbook is explicit about that.",
+            },
+            {
+              title: "Reconciliation, not trust",
+              icon: "check" as const,
+              text: "After cutover, record counts, balances and samples are compared against the source. Every exception is listed and resolved — or explicitly explained — before the migration is accepted.",
+            },
+          ].map((card, i) => (
+            <Reveal key={card.title} delay={i * 0.07}>
+              <article className="h-full border border-bx-maroon-900/15 bg-bx-white p-7">
+                <span className="text-bx-gold-600">
+                  <Icon name={card.icon} size={30} />
+                </span>
+                <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
+                  {card.title}
+                </h3>
+                <p className="mt-3 font-body text-[15px] leading-relaxed text-bx-muted">
+                  {card.text}
+                </p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section tone="ivory" ariaLabel="Integration and migration frequently asked questions">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
+          <SectionIntro
+            label="Questions"
+            heading="About moving your data."
+          />
+          <Reveal>
+            <FaqAccordion items={MIGRATION_FAQ} />
+          </Reveal>
+        </div>
+      </Section>
+
+      <CtaBand
+        heading="Plan the move before you make it."
+        copy="Start with discovery: what you have, where it lives, and what a staged, reconciled migration would look like for your business."
+        primaryLabel="Book a Private Demo"
+        primaryHref="/book-demo"
+        secondaryLabel="Talk to an Expert"
+        secondaryHref="/company/contact"
+      />
+    </>
+  );
+}

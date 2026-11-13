@@ -1,5 +1,26 @@
 # BridgeX — Memory (progress log)
 
+## 2026-11-13 — Batch 2: all 44 routes (5 parallel workers)
+- 2A platform (8), 2B solutions (7), 2C industries (9), 2D
+  services/company/legal/demo (12), 2E resources (7). Zero modified
+  tracked files across all workers — scope discipline held.
+- Coordinator integration: DARK_HERO_ROUTES extended to 12 routes;
+  fixed 3 `react/no-unescaped-entities` errors (straight apostrophes in
+  JSX copy → typographic ’; now a RULES.md rule). tsc clean, ESLint
+  0 errors, `next build` generates 47 static pages, First Load JS
+  151–163 kB.
+- Sequencing change: forms built in Batch 2 (demo/contact/partner/
+  careers/events) with honest localStorage persistence, so Batch 2
+  deploys with zero dead forms. Batch 4 owns search/cookies/SEO/CMS +
+  form verification (not form construction).
+- Deploy: gh-pages branch (gh token has no `workflow` scope, so the
+  Actions workflow file cannot be pushed; held at
+  ~/workspace/bridgex-coordination/deploy-pages.yml.held). Publish
+  `out/` + `.nojekyll` to gh-pages, wait for Pages `built`.
+- Flags for Batch 3: exchanges hero photo has small blurred German UI
+  text under the scrim; contests trophy photo is saturated yellow;
+  `solutions.ts` is 1,048 lines (data-only, acceptable, could split).
+
 ## 2026-11-13 — Batch 1: foundation + homepage
 - Scaffold already existed (Next 15.5, Tailwind v4, globals.css tokens,
   placeholder layout/page). No re-init needed.

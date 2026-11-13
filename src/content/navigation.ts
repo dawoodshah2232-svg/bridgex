@@ -104,8 +104,22 @@ export const NAV_GROUPS: NavGroup[] = [
   },
 ];
 
-/** Routes with a dark hero (transparent header state). Batch 2 extends this. */
-export const DARK_HERO_ROUTES = new Set<string>(["/"]);
+/** Routes with a dark hero (transparent header state). Batch 2 dark heroes
+ *  added by the coordinator at integration (workers report, coordinator edits). */
+export const DARK_HERO_ROUTES = new Set<string>([
+  "/",
+  "/platform",
+  "/solutions/payment-orchestration",
+  "/solutions/ib-incentives",
+  "/industries/multi-asset-brokers",
+  "/industries/securities-derivatives",
+  "/industries/exchanges",
+  "/industries/digital-assets",
+  "/services/implementation",
+  "/resources",
+  "/resources/developers",
+  "/book-demo",
+]);
 
 export const ROUTES: NavRoute[] = [
   // Home

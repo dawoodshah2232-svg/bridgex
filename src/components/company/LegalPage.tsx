@@ -1,0 +1,121 @@
+/**
+ * LegalPage — shared layout for /privacy, /cookies and /security-policy.
+ *
+ * Light editorial hero with breadcrumbs, the DraftNotice flag, a sticky
+ * on-page contents list (anchor links), and the legal sections rendered
+ * from content with semantic headings. Server component; pages pass their
+ * section data in.
+ */
+import type { LegalSection } from "@/content/legal";
+import { Container } from "../ui/Container";
+import InnerHero from "./InnerHero";
+import DraftNotice from "./DraftNotice";
+import GoldLineDivider from "../ui/GoldLineDivider";
+import CtaBand from "../ui/CtaBand";
+import Icon from "../icons";
+
+export default function LegalPage({
+  href,
+  eyebrow,
+  title,
+  intro,
+  updated,
+  sections,
+}: {
+  href: string;
+  eyebrow: string;
+  title: string;
+  intro: string;
+  updated: string;
+  sections: LegalSection[];
+}) {
+  return (
+    <>
+      <InnerHero href={href} eyebrow={eyebrow} title={title} copy={intro} />
+      <div className="bg-bx-ivory pb-20 sm:pb-24 lg:pb-32">
+        <Container>
+          <div className="pt-2">
+            <DraftNotice updated={updated} />
+          </div>
+          <div className="mt-14 grid gap-12 lg:mt-16 lg:grid-cols-[280px_1fr] lg:gap-16">
+            {/* On-page contents */}
+            <nav
+              aria-label="On this page"
+              className="lg:sticky lg:top-24 lg:self-start"
+            >
+              <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+                On this page
+              </p>
+              <ul className="mt-4 space-y-1 border-l border-bx-gold-500/40">
+                {sections.map((s) => (
+                  <li key={s.id}>
+                    <a
+                      href={`#${s.id}`}
+                      className="-ml-px block border-l-2 border-transparent py-2 pl-4 font-sans text-[15px] font-bold text-bx-muted transition-colors hover:border-bx-gold-500 hover:text-bx-maroon-700"
+                    >
+                      {s.heading}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Sections */}
+            <div className="min-w-0">
+              {sections.map((s, i) => (
+                <section
+                  key={s.id}
+                  id={s.id}
+                  aria-labelledby={`${s.id}-heading`}
+                  className="scroll-mt-24"
+                >
+                  {i > 0 && <GoldLineDivider className="my-10" />}
+                  <h2
+                    id={`${s.id}-heading`}
+                    className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-ink sm:text-[28px]"
+                  >
+                    {s.heading}
+                  </h2>
+                  {s.paragraphs.map((p, j) => (
+                    <p
+                      key={j}
+                      className="mt-4 max-w-[70ch] font-body text-base leading-relaxed text-bx-muted"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                  {s.bullets && (
+                    <ul className="mt-5 space-y-3">
+                      {s.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="flex items-start gap-3 font-body text-base leading-relaxed text-bx-muted"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="mt-1.5 shrink-0 text-bx-gold-600"
+                          >
+                            <Icon name="check" size={18} />
+                          </span>
+                          <span className="max-w-[66ch]">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </div>
+      <CtaBand
+        heading="Questions about this policy?"
+        copy="If anything on this page is unclear, or you want to exercise a right described here, contact us and a person will answer."
+        primaryLabel="Contact Us"
+        primaryHref="/company/contact"
+        secondaryLabel="Book a Private Demo"
+        secondaryHref="/book-demo"
+      />
+    </>
+  );
+}

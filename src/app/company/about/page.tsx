@@ -1,0 +1,191 @@
+import type { Metadata } from "next";
+import {
+  ABOUT_FAQ,
+  ABOUT_PRINCIPLES,
+  EDITABLE_COMPANY_DETAILS,
+} from "@/content/company";
+import InnerHero from "@/components/company/InnerHero";
+import { Section } from "@/components/ui/Container";
+import SectionIntro from "@/components/ui/SectionIntro";
+import Reveal from "@/components/ui/Reveal";
+import FaqAccordion from "@/components/ui/FaqAccordion";
+import CtaBand from "@/components/ui/CtaBand";
+import { ButtonLink } from "@/components/ui/Button";
+import GoldLineDivider from "@/components/ui/GoldLineDivider";
+import Icon from "@/components/icons";
+
+export const metadata: Metadata = {
+  title: "About BridgeX — Mission, Philosophy & Principles",
+  description:
+    "BridgeX builds connected infrastructure for modern financial businesses. Our mission, our philosophy, and the product principles that shape every decision.",
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <InnerHero
+        href="/company/about"
+        eyebrow="Company — About BridgeX"
+        title={
+          <>
+            Connected infrastructure for{" "}
+            <em className="font-display font-semibold italic text-bx-maroon-700">
+              modern financial businesses.
+            </em>
+          </>
+        }
+        copy="BridgeX exists because financial businesses run on too many disconnected systems. Onboarding in one place, client records in another, payments somewhere else, partners tracked in spreadsheets. We build the connected layer that brings them together."
+        image="/images/company-collaboration.jpg"
+        imageAlt="Colleagues working together at laptops in a bright office"
+        imageWidth={1600}
+        imageHeight={1067}
+      >
+        <div className="mt-8 flex flex-wrap gap-4">
+          <ButtonLink href="/book-demo" size="lg">
+            See it in action
+          </ButtonLink>
+          <ButtonLink href="/platform" variant="secondary" size="lg">
+            Explore the Platform
+          </ButtonLink>
+        </div>
+      </InnerHero>
+
+      {/* Mission — editorial statement */}
+      <Section tone="maroon" ariaLabel="Our mission">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-gold-400">
+            Our mission
+          </p>
+          <p className="mt-6 font-display text-3xl font-semibold leading-[1.25] text-bx-ivory sm:text-4xl lg:text-[44px]">
+            &ldquo;Where markets connect&rdquo; is not a slogan. It is the
+            job: every client, every account, every payment and every partner,
+            connected — so the business can see itself clearly and act on what
+            it sees.
+          </p>
+          <GoldLineDivider className="mx-auto mt-10 max-w-md" />
+          <p className="mx-auto mt-8 max-w-[62ch] font-body text-base leading-relaxed text-bx-champagne/85">
+            We measure that by whether your teams stop reconciling systems by
+            hand — not by how many features we can list.
+          </p>
+        </Reveal>
+      </Section>
+
+      {/* Philosophy */}
+      <Section tone="ivory" ariaLabel="Our philosophy">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+          <SectionIntro
+            label="Philosophy"
+            heading="Technology should fit the business — not the other way round."
+            copy="Every financial business runs differently: different desks, different products, different rules. A platform that forces one shape on all of them creates workarounds, and workarounds become the real system. We build the other way."
+          />
+          <div className="space-y-6">
+            <Reveal>
+              <p className="max-w-[68ch] font-body text-base leading-relaxed text-bx-muted sm:text-lg">
+                BridgeX is configured around how your business actually
+                operates — your entities, your journeys, your approval habits.
+                Configuration, not custom code, so your setup stays
+                upgradeable and every change stays reversible.
+              </p>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="max-w-[68ch] font-body text-base leading-relaxed text-bx-muted sm:text-lg">
+                And we are honest about the boundary. We build technology for
+                financial businesses. We do not run your brokerage, hold your
+                clients&apos; funds, or make regulatory claims on your behalf.
+                Your obligations stay yours; our job is to make the evidence
+                for them easy to produce.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </Section>
+
+      {/* Principles */}
+      <Section tone="white" ariaLabel="Product principles">
+        <SectionIntro
+          label="Product principles"
+          heading="Four principles behind every decision."
+          copy="These are the tests a feature has to pass before we build it — and the standards we hold ourselves to when we describe what is ready and what is not."
+        />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          {ABOUT_PRINCIPLES.map((principle, i) => (
+            <Reveal key={principle.title} delay={(i % 2) * 0.07}>
+              <article className="flex h-full gap-5 border border-bx-maroon-900/15 bg-bx-ivory p-7">
+                <span className="shrink-0 text-bx-gold-600">
+                  <Icon name={principle.icon} size={30} />
+                </span>
+                <div>
+                  <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
+                    {principle.title}
+                  </h3>
+                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-muted">
+                    {principle.description}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* Company details — explicitly editable placeholders */}
+      <Section tone="cream" ariaLabel="Company details">
+        <div className="mx-auto max-w-3xl">
+          <SectionIntro
+            label="Company details"
+            heading="The factual record, as it stands."
+            align="center"
+          />
+          <Reveal className="mt-10">
+            <div className="border border-bx-gold-600/50 bg-bx-white">
+              <p className="border-b border-bx-gold-500/30 bg-bx-cream px-6 py-4 font-body text-[15px] leading-relaxed text-bx-ink">
+                <span className="font-sans font-extrabold uppercase tracking-[0.08em] text-bx-maroon-700">
+                  Editable placeholders —{" "}
+                </span>
+                these details are being confirmed and will be updated here.
+                We publish nothing invented in their place.
+              </p>
+              <dl className="divide-y divide-bx-gold-500/20">
+                {EDITABLE_COMPANY_DETAILS.map((detail) => (
+                  <div
+                    key={detail.label}
+                    className="grid gap-1 px-6 py-4 sm:grid-cols-[1fr_1fr] sm:gap-6"
+                  >
+                    <dt className="font-sans text-sm font-extrabold uppercase tracking-[0.08em] text-bx-maroon-700">
+                      {detail.label}
+                    </dt>
+                    <dd className="font-body text-base text-bx-muted">
+                      {detail.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section tone="ivory" ariaLabel="About BridgeX frequently asked questions">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
+          <SectionIntro
+            label="Questions"
+            heading="What people ask about us."
+          />
+          <Reveal>
+            <FaqAccordion items={ABOUT_FAQ} />
+          </Reveal>
+        </div>
+      </Section>
+
+      <CtaBand
+        heading="Meet the people behind the platform."
+        copy="Book a demo or get in touch — you will talk to the people who build and support BridgeX, not a call script."
+        primaryLabel="Book a Private Demo"
+        primaryHref="/book-demo"
+        secondaryLabel="Contact Us"
+        secondaryHref="/company/contact"
+      />
+    </>
+  );
+}

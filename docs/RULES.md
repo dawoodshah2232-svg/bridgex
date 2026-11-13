@@ -28,6 +28,9 @@
 - Images: explicit width/height, real alt text describing the actual
   image, `loading="lazy"` below the fold, hero eager with
   `fetchPriority="high"`. No stretching — use correct aspect crops.
+- JSX copy: use typographic apostrophes (’) and quotes (“ ”) in JSX text
+  — straight `'` fails `react/no-unescaped-entities` and breaks the
+  build (3 such errors blocked the Batch 2 build; fixed with ’).
 
 ## Content
 - Original BridgeX copy only. Never invent clients, testimonials,

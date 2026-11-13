@@ -1,0 +1,148 @@
+/**
+ * GuideReader — the guides index's expandable guide cards, same honest
+ * pattern as the blog: no detail routes, no dead download links. Each
+ * card expands inline to reveal the full original guide, and the
+ * "request the full guide" action links to the real contact page.
+ */
+"use client";
+
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
+import { useState } from "react";
+import Icon from "@/components/icons";
+import type { Guide } from "@/content/resources";
+
+export default function GuideReader({ guides }: { guides: Guide[] }) {
+  const [openSlug, setOpenSlug] = useState<string | null>(
+    guides[0]?.slug ?? null,
+  );
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <div className="space-y-8">
+      {guides.map((guide) => {
+        const isOpen = openSlug === guide.slug;
+        const panelId = `guide-panel-${guide.slug}`;
+        const buttonId = `guide-button-${guide.slug}`;
+        return (
+          <article
+            key={guide.slug}
+            className="border border-bx-gold-500/30 bg-bx-white"
+          >
+            <div className="p-6 sm:p-8 lg:p-10">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <span className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-maroon-700">
+                  {guide.category}
+                </span>
+                <span className="font-sans text-[13px] font-bold text-bx-muted">
+                  For {guide.audience} · {guide.readMinutes} min read
+                </span>
+              </div>
+              <h3 className="mt-3 max-w-3xl font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-[28px]">
+                {guide.title}
+              </h3>
+              <p className="mt-3 max-w-[68ch] text-base leading-relaxed text-bx-muted">
+                {guide.summary}
+              </p>
+
+              <div className="mt-6">
+                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
+                  In this guide
+                </p>
+                <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                  {guide.keyPoints.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-2.5 text-[15px] leading-relaxed text-bx-ink/90"
+                    >
+                      <Icon
+                        name="check"
+                        size={18}
+                        className="mt-0.5 shrink-0 text-bx-gold-600"
+                      />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-7">
+                <button
+                  id={buttonId}
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  onClick={() => setOpenSlug(isOpen ? null : guide.slug)}
+                  className="inline-flex min-h-[48px] items-center gap-2.5 border-2 border-bx-maroon-900 px-6 font-sans text-[15px] font-bold text-bx-maroon-900 transition-colors hover:bg-bx-maroon-900 hover:text-bx-ivory"
+                >
+                  {isOpen ? "Close guide" : "Read the guide"}
+                  <span
+                    className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                  >
+                    <Icon name="chevronDown" size={18} />
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{
+                    duration: reduceMotion ? 0 : 0.3,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="overflow-hidden"
+                >
+                  <div className="border-t border-bx-gold-500/25 bg-bx-ivory px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
+                    <div className="max-w-[68ch]">
+                      {guide.sections.map((section) => (
+                        <div key={section.heading} className="mb-8 last:mb-0">
+                          <h4 className="font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                            {section.heading}
+                          </h4>
+                          {section.body.map((paragraph, i) => (
+                            <p
+                              key={i}
+                              className="mt-3 text-base leading-relaxed text-bx-ink/90 sm:text-[17px]"
+                            >
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
+                      ))}
+                      <p className="mt-8 border-t border-bx-gold-500/25 pt-5 text-base leading-relaxed text-bx-muted">
+                        Want this guide as a document for your team?{" "}
+                        <Link
+                          href="/company/contact"
+                          className="font-bold text-bx-maroon-700 underline decoration-bx-gold-500 decoration-2 underline-offset-2 hover:text-bx-maroon-900"
+                        >
+                          Request the full guide
+                        </Link>{" "}
+                        and tell us which one — we will send it.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => setOpenSlug(null)}
+                        className="mt-6 inline-flex min-h-[44px] items-center gap-2 font-sans text-[15px] font-bold text-bx-maroon-700 hover:underline"
+                      >
+                        Close this guide
+                        <Icon name="chevronDown" size={18} className="rotate-180" />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
