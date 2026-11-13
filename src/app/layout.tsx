@@ -26,7 +26,9 @@ export const metadata: Metadata = {
       "From onboarding and client relationships to trading operations, payments and partner growth — one adaptable technology ecosystem.",
     images: [
       {
-        url: asset("/og-image.jpg"),
+        // Bare path on purpose: metadataBase already includes /bridgex,
+        // so asset() here would double the basePath in the OG URL.
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "BridgeX — illuminated cable-stayed bridge at night",

@@ -21,6 +21,11 @@
   resolve to registry routes — the href audit in the Batch 1 report
   describes the check.
 - Static assets always via `asset()` from `src/lib/paths.ts`.
+- EXCEPTION: never pass `asset()` results into Next.js metadata
+  (`openGraph.images`, `twitter.images`) — `metadataBase` already
+  includes the `/bridgex` basePath, so `asset()` would double it in the
+  resolved URL (caught live in Batch 5: `/bridgex/bridgex/og-image.jpg`).
+  Use the bare path (`"/og-image.jpg"`) in metadata.
 - Icons: drawn SVG from `src/components/icons.tsx` only. No emoji or
   unicode glyphs as icons. No icon-in-tinted-square tiles.
 - Buttons: `ButtonLink`/`Button` from `src/components/ui/Button.tsx`.
