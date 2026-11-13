@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* ============================================================
+   BridgeX design tokens — LOCKED palette (spec §1A).
+   Maroon / antique gold / champagne / ivory. The appendix's
+   old blue/mint palette is SUPERSEDED — never use it.
+   ============================================================ */
+@theme {
+  --color-bx-maroon-950: #230b16;
+  --color-bx-maroon-900: #360f20;
+  --color-bx-maroon-800: #52182e;
+  --color-bx-maroon-700: #6a203a;
+  --color-bx-gold-600: #a77a2f;
+  --color-bx-gold-500: #c29a55;
+  --color-bx-gold-400: #d9b875;
+  --color-bx-champagne: #f0dfb8;
+  --color-bx-ivory: #fbf7f0;
+  --color-bx-cream: #f5eee5;
+  --color-bx-ink: #1e1920;
+  --color-bx-muted: #766d73;
+  --color-bx-white: #ffffff;
+
+  /* Self-hosted fonts (Batch 1 adds woff2 files under public/fonts).
+     Fallbacks keep the site legible if a font file is missing. */
+  --font-display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --font-sans: "Manrope", "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-body: "Inter", "Manrope", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/bridgex/fonts/cormorant-garamond-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/bridgex/fonts/cormorant-garamond-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("/bridgex/fonts/manrope-variable.woff2") format("woff2");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/bridgex/fonts/inter-variable.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bx-ivory);
+  color: var(--color-bx-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-bx-gold-500);
+  color: var(--color-bx-maroon-950);
+}
+
+/* Visible keyboard focus everywhere (WCAG 2.2 AA). */
+:focus-visible {
+  outline: 2px solid var(--color-bx-gold-600);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Respect reduced motion globally; components honour it too. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
