@@ -63,7 +63,7 @@ export default function StudioBuilderTabs() {
       </div>
 
       <div className="lg:col-span-8">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={builder.id}
             id="studio-panel"

@@ -67,7 +67,7 @@ export default function OpsLifecycle() {
         </ol>
       </div>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={stage.id}
           id="ops-panel"

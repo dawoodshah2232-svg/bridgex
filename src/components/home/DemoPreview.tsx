@@ -278,7 +278,7 @@ export default function DemoPreview() {
 
         {/* Panels */}
         <div className="bg-bx-cream/60 px-5 py-8 sm:px-8">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={active}
               role="tabpanel"

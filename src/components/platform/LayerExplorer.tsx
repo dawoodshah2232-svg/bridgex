@@ -76,7 +76,7 @@ export default function LayerExplorer() {
       </div>
 
       <div className="lg:col-span-7">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={layer.id}
             id="layer-panel"

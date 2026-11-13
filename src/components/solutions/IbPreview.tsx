@@ -288,7 +288,7 @@ export default function IbPreview() {
     <div className="border border-bx-gold-500/30 bg-bx-ivory">
       <TabList tabs={TABS} activeId={active} onSelect={setActive} prefix="ib" ariaLabel="IB preview" />
       <div className="bg-bx-cream/60 px-5 py-8 sm:px-8">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={active}
             role="tabpanel"

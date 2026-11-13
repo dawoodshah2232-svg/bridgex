@@ -202,7 +202,10 @@ export default function DemoBookingForm() {
 
       <motion.div
         key={step}
-        initial={reduceMotion ? false : { opacity: 0, x: 16 }}
+        // Step 0 mounts at its animate state (initial={false}): the form
+        // must be visible in the SSR HTML, not baked in at opacity 0.
+        // Later steps still slide in (fix, 13 Nov).
+        initial={reduceMotion || step === 0 ? false : { opacity: 0, x: 16 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       >

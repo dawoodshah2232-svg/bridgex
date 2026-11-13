@@ -199,7 +199,7 @@ export default function IndustrySelector() {
 
         {/* Detail panel */}
         <div className="lg:col-span-7">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={industry.href}
               id="industry-panel"

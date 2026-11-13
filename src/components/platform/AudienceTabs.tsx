@@ -55,7 +55,7 @@ export default function AudienceTabs() {
         })}
       </div>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={audience.id}
           id="audience-panel"

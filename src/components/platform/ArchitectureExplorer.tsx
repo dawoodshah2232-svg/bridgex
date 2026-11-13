@@ -148,7 +148,7 @@ export default function ArchitectureExplorer() {
 
       {/* Detail panel */}
       <div className="lg:col-span-6">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={isLayer ? `layer-${selection.index}` : `foundation-${selection.index}`}
             id="arch-panel"

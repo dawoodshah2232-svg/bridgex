@@ -6,6 +6,12 @@
  * copy, two CTAs, scroll cue, and an animated gold bridge-line motif.
  * A compact operations preview (desktop only) shows the product in miniature
  * — clearly labelled as illustrative demo data.
+ *
+ * Entrance is transform-only (fix, 13 Nov): the headline is visible in the
+ * server-rendered HTML at first paint and settles into place within ~0.5s
+ * after hydration. Never hide hero text behind an opacity-0 initial state —
+ * framer-motion bakes it into the SSR HTML and the hero stayed blank for
+ * ~5s on a cold load.
  */
 "use client";
 
@@ -28,7 +34,7 @@ function BridgeMotif() {
     : {
         initial: { pathLength: 0 },
         animate: { pathLength: 1 },
-        transition: { duration: 2, delay: 0.6, ease: EASE },
+        transition: { duration: 1.4, delay: 0.2, ease: EASE },
       };
   return (
     <svg
@@ -109,13 +115,15 @@ export default function Hero() {
   // mid-flight when scrolled back (animationPlayState, not a restart).
   const inView = useInView(sectionRef);
 
+  // Transform-only entrance: text is visible at first paint (SSR HTML
+  // carries no opacity: 0) and settles in ≤0.55s after hydration.
   const rise = (delay: number) =>
     reduceMotion
       ? {}
       : {
-          initial: { opacity: 0, y: 28 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.9, delay, ease: EASE },
+          initial: { y: 16 },
+          animate: { y: 0 },
+          transition: { duration: 0.5, delay, ease: EASE },
         };
 
   return (
@@ -141,7 +149,7 @@ export default function Hero() {
       <Container className="relative flex flex-1 flex-col justify-center pb-16 pt-[136px] sm:pt-[152px]">
         <div className="max-w-3xl">
           <motion.p
-            {...rise(0.1)}
+            {...rise(0)}
             className="flex items-center gap-3 text-[13px] font-sans font-bold uppercase tracking-[0.28em] text-bx-gold-400"
           >
             <span aria-hidden="true" className="h-px w-10 bg-bx-gold-400" />
@@ -149,7 +157,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1
-            {...rise(0.22)}
+            {...rise(0.05)}
             className="mt-6 font-sans text-[42px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance sm:text-6xl lg:text-[76px]"
           >
             Connect{" "}
@@ -160,7 +168,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            {...rise(0.34)}
+            {...rise(0.1)}
             className="mt-6 max-w-[62ch] text-lg leading-relaxed text-bx-champagne/90 sm:text-xl"
           >
             From onboarding and client relationships to trading operations,
@@ -169,7 +177,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            {...rise(0.46)}
+            {...rise(0.15)}
             className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
           >
             <Magnetic>
@@ -185,7 +193,7 @@ export default function Hero() {
 
         {/* Operations preview — desktop only, illustrative data */}
         <motion.aside
-          {...rise(0.6)}
+          {...rise(0.2)}
           aria-label="Operations preview"
           className="absolute bottom-24 right-10 hidden w-[340px] border border-bx-gold-500/40 bg-bx-maroon-950/85 p-5 backdrop-blur-sm xl:block"
         >

@@ -56,7 +56,7 @@ export default function AnalyticsViews() {
         })}
       </div>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={view.id}
           id="analytics-panel"

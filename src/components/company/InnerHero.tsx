@@ -7,6 +7,11 @@
  * renders Breadcrumbs from the route registry, and takes the H1 as
  * ReactNode so callers can set a short Cormorant accent phrase.
  *
+ * No scroll-reveal on the hero block (fix, 13 Nov): heroes are above the
+ * fold, so a Reveal wrapper hid the H1 behind an opacity-0 initial state
+ * until JS loaded — the Book a Demo header looked washed out on first
+ * paint. Hero content renders visible, always.
+ *
  * DARK HEROES in this group (coordinator: add to DARK_HERO_ROUTES):
  *   /services/implementation, /book-demo
  */
@@ -14,7 +19,6 @@ import type { ReactNode } from "react";
 import { asset } from "@/lib/paths";
 import { Container } from "../ui/Container";
 import Breadcrumbs from "../chrome/Breadcrumbs";
-import Reveal from "../ui/Reveal";
 
 export default function InnerHero({
   href,
@@ -61,7 +65,7 @@ export default function InnerHero({
           <div className="pt-8 sm:pt-10">
             <Breadcrumbs href={href} dark />
           </div>
-          <Reveal className="mt-8 max-w-3xl sm:mt-10">
+          <div className="mt-8 max-w-3xl sm:mt-10">
             <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-gold-400">
               {eyebrow}
             </p>
@@ -72,7 +76,7 @@ export default function InnerHero({
               {copy}
             </p>
             {children}
-          </Reveal>
+          </div>
         </Container>
       </header>
     );
@@ -87,7 +91,7 @@ export default function InnerHero({
             image ? "lg:grid-cols-[1.15fr_1fr] lg:items-center" : ""
           }`}
         >
-          <Reveal className="max-w-3xl">
+          <div className="max-w-3xl">
             <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
               {eyebrow}
             </p>
@@ -98,9 +102,9 @@ export default function InnerHero({
               {copy}
             </p>
             {children}
-          </Reveal>
+          </div>
           {image && (
-            <Reveal delay={0.12} className="relative">
+            <div className="relative">
               <span
                 aria-hidden="true"
                 className="absolute -bottom-3 -left-3 h-full w-full border border-bx-gold-500/50"
@@ -113,7 +117,7 @@ export default function InnerHero({
                 fetchPriority="high"
                 className="relative h-auto w-full object-cover"
               />
-            </Reveal>
+            </div>
           )}
         </div>
       </Container>

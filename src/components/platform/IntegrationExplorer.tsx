@@ -65,7 +65,7 @@ export default function IntegrationExplorer() {
         })}
       </div>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={category.id}
           id="integration-panel"
