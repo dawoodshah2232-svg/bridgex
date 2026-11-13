@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="BridgeX logo exploration 1: two suspension bridge spans crossing to form an X">
+  <title>Exploration 1 — Two spans form X</title>
+  <desc>Two suspension-bridge decks cross at the centre to form an X. Each deck carries its own catenary cable and three suspenders; the cables sit on opposite sides so the spans read as two distinct structures.</desc>
+  <!-- Span B (lower-right cable) drawn first so Span A crosses over it -->
+  <path d="M10,18 Q32,50 54,46" fill="none" stroke="#360F20" stroke-width="2" stroke-linecap="round"/>
+  <line x1="21" y1="25" x2="21" y2="31.8" stroke="#360F20" stroke-width="1.6"/>
+  <line x1="32" y1="32" x2="32" y2="41" stroke="#360F20" stroke-width="1.6"/>
+  <line x1="43" y1="39" x2="43" y2="45.8" stroke="#360F20" stroke-width="1.6"/>
+  <line x1="10" y1="18" x2="54" y2="46" stroke="#C29A55" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Span A (upper-left cable) -->
+  <path d="M10,46 Q32,14 54,18" fill="none" stroke="#C29A55" stroke-width="2" stroke-linecap="round"/>
+  <line x1="21" y1="32.3" x2="21" y2="39" stroke="#C29A55" stroke-width="1.6"/>
+  <line x1="32" y1="23" x2="32" y2="32" stroke="#C29A55" stroke-width="1.6"/>
+  <line x1="43" y1="18.3" x2="43" y2="25" stroke="#C29A55" stroke-width="1.6"/>
+  <line x1="10" y1="46" x2="54" y2="18" stroke="#360F20" stroke-width="4.5" stroke-linecap="round"/>
+</svg>
