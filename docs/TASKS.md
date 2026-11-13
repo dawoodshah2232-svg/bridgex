@@ -79,22 +79,33 @@
   stale cookie-policy sentence fixed; last raw-hex class fixed
   (fields.tsx accent). tsc clean, ESLint 0 errors, build passes.
 
+## Done (Batch 5 — verification, 13 Nov 2026)
+- [x] tsc clean, ESLint 0 errors, `next build` 50 static pages.
+- [x] Live route health: all 44 routes + /search + /sitemap.xml +
+  /robots.txt + /og-image.jpg HTTP 200; bogus URL serves branded 404.
+- [x] Link audit: 71 distinct internal hrefs, all resolve to built files.
+  Asset audit: 98 src references resolve; live asset checks on 5 pages
+  (home, contests, exchanges, developers, book-demo) all 200.
+- [x] SEO: sitemap 44 URLs (search excluded), robots allow-all, OG image
+  URL fixed (double-basePath bug caught live), Organization +
+  Breadcrumb + FAQ JSON-LD present in live HTML. All 46 page titles
+  unique. No lorem/TODO/FYNXT in built HTML.
+- [x] Fixes at integration: sitemap/robots `force-static` (build failed
+  without it); OG double-basePath (RULES.md rule added); git pushes
+  need HTTP/1.1 on this VM (egress proxy resets HTTP/2 git traffic —
+  set in repo config).
+
 ## Later batches (from spec §14)
-- [ ] Batch 3: cinematic polish, art-directed hero, motion, responsive
-  optimisation, reduced-motion fallbacks.
-- [ ] Batch 4: CMS/data, contact/demo forms + persistence, resource
-  index/search, cookies, SEO (sitemap, robots, structured data),
-  analytics with consent.
-- [ ] Batch 5: verification — lint, typecheck, builds, click/navigation
-  tests, keyboard a11y checks, breakpoints, Lighthouse.
 - [ ] Batch 6: product foundation (portals, RBAC, tenant-safe data model)
-  — only after the website is stable. Never in this phase.
+  — only after the website is stable and Dawood approves. Never in this
+  phase.
 
 ## Known gaps / follow-ups
 - [ ] 375px mobile rendering not visually verified (no live browser in
-  this environment) — coordinator to check on a real device.
-- [ ] `next build` not run (forbidden for workers) — coordinator builds
-  at integration; watch for static-export issues (none expected: no
-  dynamic routes, no server actions, no `next/image` optimisation).
-- [ ] OG image uses the hero photo; a dedicated 1200×630 OG asset can be
-  produced in Batch 3/4.
+  this environment) — check on a real device + live-browser pass.
+- [ ] Lighthouse run + keyboard walkthrough still owed (parent's
+  live-browser job).
+- [ ] FaqAccordion renders only the default-open answer with JS disabled
+  (interactive by nature; CSS-only fallback would need a rework).
+- [ ] Contests hero photo is a soft-focus band crop (no sharp landscape
+  trophy found on Pexels).

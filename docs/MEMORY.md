@@ -1,5 +1,23 @@
 # BridgeX — Memory (progress log)
 
+## 2026-11-13 — Batch 5: verification (coordinator)
+- All 44 routes + search/sitemap/robots/OG live at HTTP 200; branded
+  404 on bogus URLs; link audit (71 hrefs) + asset audit (98 srcs)
+  clean; 46 unique page titles; JSON-LD verified in live HTML.
+- Two integration fixes: (1) sitemap.ts/robots.ts need
+  `export const dynamic = "force-static"` under `output: 'export'`
+  (build failed without it); (2) OG image URL doubled the basePath
+  because `asset()` was passed into metadata — bare paths in metadata
+  now (RULES.md rule).
+- Infra: git-over-https from this VM resets on HTTP/2 (egress proxy);
+  `git config http.version HTTP/1.1` set in both clones. gh-pages
+  deploy flow (build → copy out/ + .nojekyll → push → wait for built)
+  worked for all 5 deploys.
+- Still owed (needs a live browser / real device): visual check at
+  375px, scrim strengths, Magnetic feel, keyboard walkthrough,
+  Lighthouse run. Batch 6 (product portals) is a separate phase after
+  Dawood approves the website.
+
 ## 2026-11-13 — Batches 3+4: polish + functionality (2 parallel workers)
 - Batch 3 (polish) and Batch 4 (search/cookies/SEO/404/CMS/forms) ran in
   parallel with a strict file split; both respected it (verified via
