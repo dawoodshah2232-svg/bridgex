@@ -118,7 +118,7 @@ export default function IntegrationsPage() {
               {ADAPTER_STEPS.map((item, i) => (
                 <Reveal key={item.title} delay={i * 0.08}>
                   <div className="flex gap-5 border-t border-bx-gold-500/30 pt-6">
-                    <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-gold-600">
+                    <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-maroon-700">
                       0{i + 1}
                     </span>
                     <div>

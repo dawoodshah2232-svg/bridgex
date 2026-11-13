@@ -79,12 +79,15 @@ export default function ArchitectureDiagram() {
         </div>
 
         <div className="lg:col-span-8">
-          <ol className="relative">
-            {/* Gold trace line joining the layers */}
+          <div className="relative">
+            {/* Gold trace line joining the layers — centred on the node
+                diamonds (1px border + 24/28px padding + half the 14px
+                diamond = 32px mobile, 36px from sm). */}
             <span
               aria-hidden="true"
-              className="absolute bottom-6 left-[27px] top-6 w-px bg-bx-gold-500/50"
+              className="absolute bottom-6 left-[32px] top-6 w-px bg-bx-gold-500/50 sm:left-[36px]"
             />
+            <ol>
             {LAYERS.map((layer, i) => (
               <li key={layer.href} className="relative pb-4 last:pb-0">
                 <Reveal delay={0.08 * i}>
@@ -118,7 +121,8 @@ export default function ArchitectureDiagram() {
                 </Reveal>
               </li>
             ))}
-          </ol>
+            </ol>
+          </div>
 
           {/* Shared foundation */}
           <Reveal delay={0.35} className="mt-6">

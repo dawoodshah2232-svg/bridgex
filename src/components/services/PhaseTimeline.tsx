@@ -18,6 +18,13 @@ export default function PhaseTimeline({ phases }: { phases: ImplementationPhase[
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
 
   function onKeyDown(e: React.KeyboardEvent, index: number) {
+    if (e.key === "Home" || e.key === "End") {
+      e.preventDefault();
+      const next = e.key === "Home" ? 0 : phases.length - 1;
+      setActive(next);
+      buttons.current[next]?.focus();
+      return;
+    }
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft" && e.key !== "ArrowDown" && e.key !== "ArrowUp") {
       return;
     }
@@ -51,6 +58,7 @@ export default function PhaseTimeline({ phases }: { phases: ImplementationPhase[
               id={`phase-tab-${i}`}
               aria-selected={isActive}
               aria-controls="phase-panel"
+              tabIndex={isActive ? 0 : -1}
               onClick={() => setActive(i)}
               onKeyDown={(e) => onKeyDown(e, i)}
               className={`min-h-[76px] border px-4 py-4 text-left transition-colors duration-200 ${

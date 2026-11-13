@@ -68,6 +68,8 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Horizontal-overflow safety net: clip (not hidden) preserves sticky. */
+  overflow-x: clip;
 }
 
 ::selection {

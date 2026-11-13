@@ -11,6 +11,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { asset } from "@/lib/paths";
 import { Container } from "./Container";
 import { ButtonLink } from "./Button";
+import Magnetic from "./Magnetic";
 
 function BridgeLine() {
   const reduceMotion = useReducedMotion();
@@ -110,9 +111,11 @@ export default function CtaBand({
           {copy}
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <ButtonLink href={primaryHref} size="lg">
-            {primaryLabel}
-          </ButtonLink>
+          <Magnetic>
+            <ButtonLink href={primaryHref} size="lg">
+              {primaryLabel}
+            </ButtonLink>
+          </Magnetic>
           <ButtonLink href={secondaryHref} variant="secondaryLight" size="lg">
             {secondaryLabel}
           </ButtonLink>

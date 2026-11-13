@@ -44,9 +44,7 @@ export default function TabList({
     <div
       role="tablist"
       aria-label={ariaLabel}
-      className={`flex flex-col gap-2 border-b sm:flex-row sm:gap-0 ${
-        dark ? "border-bx-gold-500/30" : "border-bx-gold-500/30"
-      }`}
+      className="flex flex-col gap-2 border-b border-bx-gold-500/30 sm:flex-row sm:gap-0"
     >
       {tabs.map((tab) => {
         const selected = activeId === tab.id;

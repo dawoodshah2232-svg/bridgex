@@ -142,7 +142,7 @@ export function ChallengesSection({
             <Reveal delay={(i % 2) * 0.08}>
               <p
                 aria-hidden="true"
-                className="font-display text-5xl font-semibold leading-none text-bx-gold-600/70"
+                className="font-display text-5xl font-semibold leading-none text-bx-gold-600"
               >
                 {String(i + 1).padStart(2, "0")}
               </p>

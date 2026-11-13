@@ -28,6 +28,7 @@ import {
 } from "@/content/navigation";
 import Icon from "../icons";
 import Logo from "../Logo";
+import SearchIcon from "../search/SearchIcon";
 import MegaMenu from "./MegaMenu";
 import MobileNav from "./MobileNav";
 
@@ -160,6 +161,17 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <Link
+              href="/search"
+              aria-label="Search the site"
+              className={`flex min-h-[44px] min-w-[44px] items-center justify-center transition-colors ${
+                overDark
+                  ? "text-bx-ivory hover:text-bx-gold-400"
+                  : "text-bx-ink hover:text-bx-maroon-700"
+              }`}
+            >
+              <SearchIcon size={22} />
+            </Link>
             {demo && (
               <Link
                 href={demo.href}

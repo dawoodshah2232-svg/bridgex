@@ -280,7 +280,12 @@ export default function DevelopersPage() {
             </div>
           </div>
           <div>
-            <div className="overflow-x-auto border border-bx-gold-500/30 bg-bx-white">
+            <div
+              className="overflow-x-auto border border-bx-gold-500/30 bg-bx-white"
+              tabIndex={0}
+              role="region"
+              aria-label="Webhook events table — scroll sideways to see all columns"
+            >
               <table className="w-full min-w-[520px] text-left">
                 <thead>
                   <tr className="border-b border-bx-gold-500/30 bg-bx-cream">

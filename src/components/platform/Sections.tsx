@@ -49,17 +49,17 @@ export function WorkflowSteps({
   return (
     <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {steps.map((step, i) => (
-        <Reveal key={step.title} delay={i * 0.08}>
-          <li className="relative border-t-2 border-bx-gold-500 pt-5">
-            <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-gold-600">
+        <li key={step.title} className="relative border-t-2 border-bx-gold-500 pt-5">
+          <Reveal delay={i * 0.08}>
+            <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-maroon-700">
               0{i + 1}
             </span>
             <h3 className="mt-2 font-sans text-lg font-extrabold leading-tight text-bx-ink">
               {step.title}
             </h3>
             <p className="mt-2 text-[15px] leading-relaxed text-bx-muted">{step.text}</p>
-          </li>
-        </Reveal>
+          </Reveal>
+        </li>
       ))}
     </ol>
   );

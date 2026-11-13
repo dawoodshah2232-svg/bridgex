@@ -9,11 +9,13 @@
  */
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import Link from "next/link";
+import { useRef } from "react";
 import { asset } from "@/lib/paths";
 import { Container } from "../ui/Container";
 import { ButtonLink } from "../ui/Button";
+import Magnetic from "../ui/Magnetic";
 import DemoLabel from "../ui/DemoLabel";
 import Icon from "../icons";
 
@@ -102,6 +104,10 @@ const PREVIEW_ROWS = [
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  // Pause the drift while the hero is fully offscreen — it resumes
+  // mid-flight when scrolled back (animationPlayState, not a restart).
+  const inView = useInView(sectionRef);
 
   const rise = (delay: number) =>
     reduceMotion
@@ -113,7 +119,10 @@ export default function Hero() {
         };
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-bx-maroon-950 text-bx-ivory">
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-bx-maroon-950 text-bx-ivory"
+    >
       {/* Background photograph + maroon vignette scrim */}
       <div className="absolute inset-0" aria-hidden="true">
         <img
@@ -122,9 +131,10 @@ export default function Hero() {
           width={1920}
           height={1080}
           fetchPriority="high"
+          style={{ animationPlayState: inView ? "running" : "paused" }}
           className="h-full w-full object-cover object-[70%_center] animate-bx-drift"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/95 via-bx-maroon-950/72 to-bx-maroon-950/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/95 via-bx-maroon-950/80 to-bx-maroon-950/55" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bx-maroon-950 to-transparent" />
       </div>
 
@@ -162,9 +172,11 @@ export default function Hero() {
             {...rise(0.46)}
             className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
           >
-            <ButtonLink href="/book-demo" size="lg">
-              Book a Private Demo
-            </ButtonLink>
+            <Magnetic>
+              <ButtonLink href="/book-demo" size="lg">
+                Book a Private Demo
+              </ButtonLink>
+            </Magnetic>
             <ButtonLink href="/platform" variant="secondaryLight" size="lg">
               Explore Our Platform
             </ButtonLink>

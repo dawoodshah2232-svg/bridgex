@@ -231,7 +231,7 @@ export default function AiAssistancePage() {
                     }`}
                   />
                   <div>
-                    <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-gold-600">
+                    <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
                       {stage.stage}
                     </p>
                     <h3 className="mt-1 font-sans text-lg font-extrabold leading-tight text-bx-ink">

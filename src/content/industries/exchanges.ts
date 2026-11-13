@@ -17,7 +17,7 @@ export const exchanges: IndustryContent = {
   heroVariant: "photo-dark",
   image: {
     src: "/images/industries-exchanges.jpg",
-    alt: "A laptop screen showing a Bitcoin candlestick chart above the keyboard",
+    alt: "The neoclassical facade of the New York Stock Exchange, with tall stone columns and American flags",
     width: 1600,
     height: 1067,
   },

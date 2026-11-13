@@ -13,9 +13,10 @@
  */
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Icon from "@/components/icons";
 import { EVENT_TOPICS } from "@/content/resources";
+import { MIN_SUBMIT_MS } from "../forms/leadStorage";
 
 const STORAGE_KEY = "bridgex:event-interest";
 
@@ -53,6 +54,9 @@ export default function EventsForm() {
   const [saved, setSaved] = useState<SavedInterest | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [editing, setEditing] = useState(false);
+  const [spam, setSpam] = useState(false);
+  // Minimum-time spam check, matching the other four lead forms.
+  const mountedAt = useRef(Date.now());
 
   // Read any previously saved interest once, on mount.
   useEffect(() => {
@@ -106,6 +110,13 @@ export default function EventsForm() {
     const next = validate();
     setErrors(next);
     if (Object.keys(next).length > 0) return;
+    // Submitted impossibly fast — likely automated. Unlike the honeypot
+    // path, this is shown honestly: a real person just retries.
+    if (Date.now() - mountedAt.current < MIN_SUBMIT_MS) {
+      setSpam(true);
+      return;
+    }
+    setSpam(false);
 
     const entry: SavedInterest = {
       name: name.trim(),
@@ -135,8 +146,11 @@ export default function EventsForm() {
     setEmail("");
     setTopic("");
     setConsent(false);
+    setWebsite("");
     setErrors({});
+    setSpam(false);
     setEditing(false);
+    mountedAt.current = Date.now();
   }
 
   function startEdit() {
@@ -238,6 +252,18 @@ export default function EventsForm() {
         </div>
       )}
 
+      {spam && (
+        <div
+          role="alert"
+          className="mt-6 border border-bx-maroon-700/50 bg-bx-cream px-5 py-4"
+        >
+          <p className="font-sans font-bold text-bx-maroon-700">
+            That submission looked automated, so it was not saved. Please
+            take a moment, check the form, and try again.
+          </p>
+        </div>
+      )}
+
       {/* Honeypot — hidden from sighted users and screen readers. Bots
           that fill every field trip it; people never see it. */}
       <div aria-hidden="true" className="absolute h-0 w-0 overflow-hidden opacity-0">
@@ -271,7 +297,7 @@ export default function EventsForm() {
             className="mt-2 min-h-[52px] w-full border-2 border-bx-maroon-900/25 bg-bx-ivory px-4 font-body text-base text-bx-ink focus:border-bx-maroon-700 focus:outline-none"
           />
           {errors.name && (
-            <p id="events-name-error" className="mt-2 text-sm font-bold text-bx-maroon-700">
+            <p id="events-name-error" role="alert" className="mt-2 text-sm font-bold text-bx-maroon-700">
               {errors.name}
             </p>
           )}
@@ -294,7 +320,7 @@ export default function EventsForm() {
             className="mt-2 min-h-[52px] w-full border-2 border-bx-maroon-900/25 bg-bx-ivory px-4 font-body text-base text-bx-ink focus:border-bx-maroon-700 focus:outline-none"
           />
           {errors.email && (
-            <p id="events-email-error" className="mt-2 text-sm font-bold text-bx-maroon-700">
+            <p id="events-email-error" role="alert" className="mt-2 text-sm font-bold text-bx-maroon-700">
               {errors.email}
             </p>
           )}
@@ -325,7 +351,7 @@ export default function EventsForm() {
           <option value="any">Any topic — tell me about all of them</option>
         </select>
         {errors.topic && (
-          <p id="events-topic-error" className="mt-2 text-sm font-bold text-bx-maroon-700">
+          <p id="events-topic-error" role="alert" className="mt-2 text-sm font-bold text-bx-maroon-700">
             {errors.topic}
           </p>
         )}
@@ -340,7 +366,7 @@ export default function EventsForm() {
             onChange={(e) => setConsent(e.target.checked)}
             aria-invalid={!!errors.consent}
             aria-describedby={errors.consent ? "events-consent-error" : undefined}
-            className="mt-1 h-5 w-5 shrink-0 accent-[#6A203A]"
+            className="mt-1 h-5 w-5 shrink-0 accent-bx-maroon-700"
           />
           <label
             htmlFor="events-consent"
@@ -351,7 +377,7 @@ export default function EventsForm() {
           </label>
         </div>
         {errors.consent && (
-          <p id="events-consent-error" className="mt-2 text-sm font-bold text-bx-maroon-700">
+          <p id="events-consent-error" role="alert" className="mt-2 text-sm font-bold text-bx-maroon-700">
             {errors.consent}
           </p>
         )}

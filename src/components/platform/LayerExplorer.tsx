@@ -48,7 +48,7 @@ export default function LayerExplorer() {
                 }`}
               >
                 <span
-                  className={`font-sans text-sm font-bold ${isActive ? "text-bx-gold-400" : "text-bx-gold-600"}`}
+                  className={`font-sans text-sm font-bold ${isActive ? "text-bx-gold-400" : "text-bx-maroon-700"}`}
                 >
                   0{i + 1}
                 </span>

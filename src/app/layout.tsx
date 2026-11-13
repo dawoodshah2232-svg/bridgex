@@ -3,7 +3,9 @@ import "./globals.css";
 import Header from "@/components/chrome/Header";
 import Footer from "@/components/chrome/Footer";
 import SkipLink from "@/components/chrome/SkipLink";
+import CookieBanner from "@/components/CookieBanner";
 import { SITE_URL, asset } from "@/lib/paths";
+import { jsonLdString, organizationJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -24,10 +26,10 @@ export const metadata: Metadata = {
       "From onboarding and client relationships to trading operations, payments and partner growth — one adaptable technology ecosystem.",
     images: [
       {
-        url: asset("/images/hero-bridge.jpg"),
-        width: 1920,
-        height: 1080,
-        alt: "Illuminated cable-stayed bridge over a river at night, city lights on the far bank",
+        url: asset("/og-image.jpg"),
+        width: 1200,
+        height: 630,
+        alt: "BridgeX — illuminated cable-stayed bridge at night",
       },
     ],
   },
@@ -45,6 +47,13 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <CookieBanner />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: jsonLdString(organizationJsonLd()),
+          }}
+        />
       </body>
     </html>
   );

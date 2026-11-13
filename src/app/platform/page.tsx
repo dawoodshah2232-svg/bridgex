@@ -9,6 +9,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FOUNDATION_ITEMS, PLATFORM_FAQS, PLATFORM_LAYERS } from "@/content/platform";
+import { faqJsonLd, jsonLdString } from "@/lib/seo";
 import PageHero from "@/components/platform/PageHero";
 import LayerExplorer from "@/components/platform/LayerExplorer";
 import { FaqSection, WorkflowSteps } from "@/components/platform/Sections";
@@ -111,6 +112,12 @@ const SOLUTIONS: { href: string; label: string; text: string; icon: IconName }[]
 export default function PlatformOverview() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLdString(faqJsonLd(PLATFORM_FAQS)),
+        }}
+      />
       <PageHero
         href="/platform"
         dark
@@ -150,7 +157,7 @@ export default function PlatformOverview() {
           {PAINS.map((pain, i) => (
             <Reveal key={pain.title} delay={i * 0.08}>
               <div className="h-full border border-bx-gold-500/25 bg-bx-white p-6">
-                <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-gold-600">
+                <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-maroon-700">
                   0{i + 1}
                 </span>
                 <h3 className="mt-3 font-sans text-lg font-extrabold leading-tight text-bx-ink">

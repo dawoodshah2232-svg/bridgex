@@ -7,6 +7,7 @@
  */
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { asset } from "@/lib/paths";
 import Icon, { type IconName } from "@/components/icons";
 import type {
   CapabilityGroup,
@@ -75,7 +76,7 @@ export function ProblemSection({
           {image && (
             <Reveal delay={0.1} className="mt-10">
               <img
-                src={image.src}
+                src={asset(image.src)}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
@@ -188,13 +189,15 @@ export function WorkflowSteps({
   return (
     <Section tone={dark ? "maroon" : "ivory"} ariaLabel="Workflow">
       <SectionIntro label={label} heading={heading} copy={copy} dark={dark} />
-      <ol className="relative mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+      <div className="relative mt-12 lg:mt-16">
+        {/* Connecting line — centred on the 40px number squares (top 20px). */}
         <span
           aria-hidden="true"
-          className={`absolute left-0 right-0 top-[19px] hidden h-px lg:block ${
+          className={`absolute left-0 right-0 top-[20px] hidden h-px lg:block ${
             dark ? "bg-bx-gold-500/40" : "bg-bx-gold-500/50"
           }`}
         />
+        <ol className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
         {steps.map((step, i) => (
           <li key={step.title} className="relative">
             <span
@@ -223,7 +226,8 @@ export function WorkflowSteps({
             </p>
           </li>
         ))}
-      </ol>
+        </ol>
+      </div>
     </Section>
   );
 }
@@ -255,7 +259,7 @@ export function BenefitGrid({
             >
               <Icon name="check" size={22} />
             </span>
-            <span>
+            <div>
               <h3 className="font-sans text-lg font-bold text-bx-ink">
                 <span className="sr-only">Benefit {i + 1}: </span>
                 {benefit.title}
@@ -263,7 +267,7 @@ export function BenefitGrid({
               <p className="mt-1.5 max-w-[56ch] text-[15px] leading-relaxed text-bx-muted">
                 {benefit.copy}
               </p>
-            </span>
+            </div>
           </li>
         ))}
       </ul>
@@ -419,7 +423,12 @@ export function ComparisonTable({
   return (
     <Section tone={tone} ariaLabel="Comparison">
       <SectionIntro label="Comparison" heading={heading} copy={copy} />
-      <div className="mt-12 overflow-x-auto lg:mt-16">
+      <div
+        className="mt-12 overflow-x-auto lg:mt-16"
+        tabIndex={0}
+        role="region"
+        aria-label="Comparison table — scroll sideways to see all columns"
+      >
         <table className="w-full min-w-[720px] border-collapse bg-bx-white text-left">
           <thead>
             <tr className="bg-bx-maroon-900 text-bx-ivory">

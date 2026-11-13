@@ -1,5 +1,22 @@
 # BridgeX — Memory (progress log)
 
+## 2026-11-13 — Batches 3+4: polish + functionality (2 parallel workers)
+- Batch 3 (polish) and Batch 4 (search/cookies/SEO/404/CMS/forms) ran in
+  parallel with a strict file split; both respected it (verified via
+  git status). One shared file (EventsForm.tsx) received edits from both
+  — sequential file-tool edits composed cleanly; coordinator verified
+  both changes present.
+- Batch 4 form verification found 3 real bugs (localStorage crash on
+  corrupt JSON, duplicate honeypot IDs, missing EventsForm time-check) —
+  all fixed. Lesson: form code review belongs in the same batch as form
+  construction, not a later one.
+- OG image wired by coordinator at integration (Batch 3 created the
+  file, Batch 4 was told not to touch OG metadata).
+- Known limitations carried forward: no live-browser visual check yet
+  (375px, scrims, Magnetic feel); FaqAccordion renders only the
+  default-open answer with JS disabled; contests photo is a soft-focus
+  band crop (no sharp landscape trophy found on Pexels).
+
 ## 2026-11-13 — Batch 2: all 44 routes (5 parallel workers)
 - 2A platform (8), 2B solutions (7), 2C industries (9), 2D
   services/company/legal/demo (12), 2E resources (7). Zero modified

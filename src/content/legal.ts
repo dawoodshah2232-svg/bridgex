@@ -93,7 +93,7 @@ export const COOKIE_SECTIONS: LegalSection[] = [
     id: "consent",
     heading: "How consent works",
     paragraphs: [
-      "When you first visit, a banner asks you to accept or decline optional cookies. Your choice is stored so we do not ask again on every visit, and you can change it at any time — a preferences control will be available in the site footer once the consent system is fully implemented.",
+      "When you first visit, a banner asks you to accept or decline optional cookies. Your choice is stored so we do not ask again on every visit, and you can change it at any time using the “Cookie settings” control in the site footer.",
       "Declining optional cookies does not prevent you from using the site. If you decline analytics, no analytics code loads.",
     ],
   },

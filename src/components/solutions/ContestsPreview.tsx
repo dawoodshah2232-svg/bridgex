@@ -111,7 +111,7 @@ export default function ContestsPreview() {
               Final standings under fairness review.
             </p>
           ) : (
-            <p className="mt-2 font-sans text-3xl font-extrabold tabular-nums sm:text-4xl" aria-live="off">
+            <p className="mt-2 font-sans text-3xl font-extrabold tabular-nums sm:text-4xl" aria-live="off" suppressHydrationWarning>
               {days}d : {pad(hours)}h : {pad(mins)}m : {pad(secs)}s
             </p>
           )}
@@ -170,7 +170,12 @@ export default function ContestsPreview() {
         </div>
 
         {/* Leaderboard */}
-        <div className="mt-5 overflow-x-auto">
+        <div
+          className="mt-5 overflow-x-auto"
+          tabIndex={0}
+          role="region"
+          aria-label="Leaderboard table — scroll sideways to see all columns"
+        >
           <table className="w-full min-w-[620px] border-collapse text-left">
             <thead>
               <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">

@@ -226,7 +226,7 @@ export function FormCheckbox({
           disabled={disabled}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${id}-error` : undefined}
-          className="mt-1 h-5 w-5 shrink-0 accent-[#6A203A]"
+          className="mt-1 h-5 w-5 shrink-0 accent-bx-maroon-700"
         />
         <label
           htmlFor={id}
@@ -244,23 +244,29 @@ export function FormCheckbox({
  * Honeypot — invisible to humans, tempting to bots. A filled value means
  * the submission is spam. Never rendered in a way a screen reader or a
  * keyboard user can reach.
+ *
+ * Pass a per-form `id`: the previous fixed "website-url" id would
+ * duplicate if two forms ever shared a page (invalid HTML, broken
+ * label association).
  */
 export function Honeypot({
   value,
   onChange,
+  id = "website-url",
 }: {
   value: string;
   onChange: (value: string) => void;
+  id?: string;
 }) {
   return (
     <div
       aria-hidden="true"
       className="pointer-events-none absolute -left-[9999px] top-0 h-0 overflow-hidden opacity-0"
     >
-      <label htmlFor="website-url">Website URL (leave blank)</label>
+      <label htmlFor={id}>Website URL (leave blank)</label>
       <input
-        id="website-url"
-        name="website-url"
+        id={id}
+        name={id}
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}

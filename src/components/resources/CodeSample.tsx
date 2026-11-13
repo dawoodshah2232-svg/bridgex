@@ -69,7 +69,12 @@ export default function CodeSample({
           </button>
         </span>
       </figcaption>
-      <pre className="overflow-x-auto p-4 font-mono text-[13px] leading-relaxed text-bx-ivory/90 sm:text-sm">
+      <pre
+        tabIndex={0}
+        role="region"
+        aria-label={`Code sample — ${label}`}
+        className="overflow-x-auto p-4 font-mono text-[13px] leading-relaxed text-bx-ivory/90 sm:text-sm"
+      >
         <code>{code}</code>
       </pre>
     </figure>

@@ -118,7 +118,7 @@ export default function CareersForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="relative space-y-6">
-      <Honeypot value={honeypot} onChange={setHoneypot} />
+      <Honeypot value={honeypot} onChange={setHoneypot} id="careers-website-url" />
       <div className="grid gap-6 sm:grid-cols-2">
         <FormField
           id="careers-name"

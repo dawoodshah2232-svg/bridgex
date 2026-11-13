@@ -161,7 +161,7 @@ export default function DemoBookingForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="relative">
-      <Honeypot value={honeypot} onChange={setHoneypot} />
+      <Honeypot value={honeypot} onChange={setHoneypot} id="demo-website-url" />
 
       {/* Progress indicator */}
       <ol

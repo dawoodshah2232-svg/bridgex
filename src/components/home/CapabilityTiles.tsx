@@ -90,7 +90,7 @@ function Tile({ cap }: { cap: Capability }) {
       <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-bx-muted">
         {cap.benefit}
       </p>
-      <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700 group-hover:text-bx-gold-600">
+      <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700 group-hover:text-bx-maroon-900">
         Explore {cap.title}
         <Icon
           name="arrowRight"

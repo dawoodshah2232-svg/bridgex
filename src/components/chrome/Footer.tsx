@@ -11,6 +11,7 @@ import {
 } from "@/content/navigation";
 import { Container } from "../ui/Container";
 import Logo from "../Logo";
+import { CookieSettingsLink } from "../CookieBanner";
 import BackToTop from "./BackToTop";
 
 export default function Footer() {
@@ -99,6 +100,12 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <Link
+              href="/search"
+              className="flex min-h-[44px] items-center text-sm text-bx-champagne/80 transition-colors hover:text-bx-ivory"
+            >
+              Search
+            </Link>
             {legal.map((route) => (
               <Link
                 key={route.href}
@@ -108,6 +115,7 @@ export default function Footer() {
                 {route.label}
               </Link>
             ))}
+            <CookieSettingsLink />
             <BackToTop />
           </div>
         </div>

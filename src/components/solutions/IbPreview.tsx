@@ -75,7 +75,6 @@ function TreeNode({
             ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
             : "border-bx-gold-500/30 bg-bx-white text-bx-ink hover:border-bx-maroon-700"
         }`}
-        style={{ marginLeft: depth === 0 ? 0 : undefined }}
       >
         <span>
           <span className="block font-sans text-[15px] font-bold">{node.name}</span>
@@ -217,7 +216,12 @@ function LedgerPanel() {
           </button>
         ))}
       </div>
-      <div className="mt-5 overflow-x-auto">
+      <div
+        className="mt-5 overflow-x-auto"
+        tabIndex={0}
+        role="region"
+        aria-label="Ledger table — scroll sideways to see all columns"
+      >
         <table className="w-full min-w-[760px] border-collapse text-left">
           <thead>
             <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">

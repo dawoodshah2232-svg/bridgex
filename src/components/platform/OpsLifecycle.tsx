@@ -42,7 +42,7 @@ export default function OpsLifecycle() {
                 >
                   <span
                     className={`font-sans text-[13px] font-bold tracking-[0.18em] ${
-                      isActive ? "text-bx-gold-400" : "text-bx-gold-600"
+                      isActive ? "text-bx-gold-400" : "text-bx-maroon-700"
                     }`}
                   >
                     {item.step}
@@ -56,7 +56,7 @@ export default function OpsLifecycle() {
                       size={18}
                       aria-hidden="true"
                       className={`absolute right-3 top-4 hidden lg:block ${
-                        isActive ? "text-bx-gold-400" : "text-bx-gold-600/60"
+                        isActive ? "text-bx-gold-400" : "text-bx-gold-600"
                       }`}
                     />
                   )}

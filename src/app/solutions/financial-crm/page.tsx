@@ -6,7 +6,6 @@
  */
 import type { Metadata } from "next";
 import { SOLUTIONS } from "@/content/solutions";
-import { asset } from "@/lib/paths";
 import SolutionHero from "@/components/solutions/SolutionHero";
 import CrmPreview from "@/components/solutions/CrmPreview";
 import {
@@ -43,7 +42,7 @@ export default function FinancialCrmPage() {
         pains={s.pains}
         tone="cream"
         image={{
-          src: asset("/images/team-discussion.jpg"),
+          src: "/images/team-discussion.jpg",
           alt: "Professionals discussing documents together in a meeting room",
           width: 1400,
           height: 933,

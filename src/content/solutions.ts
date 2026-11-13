@@ -923,7 +923,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "and keeps it fair.",
     heroIntro:
       "BridgeX Trading Contest Management runs the whole contest — creation, registration, live rankings, fairness review and prize payouts — so a campaign that excites traders does not become a dispute that embarrasses the brand.",
-    heroImage: { src: "/images/solutions-contests.jpg", alt: "A gold trophy and silver stars arranged on a bright yellow background", width: 1600, height: 1067 },
+    heroImage: { src: "/images/solutions-contests.jpg", alt: "A gold trophy bowl and its soft shadow on a pale background", width: 1600, height: 686 },
     darkHero: false,
     heroLayout: "stacked",
     problemLabel: "The problem",

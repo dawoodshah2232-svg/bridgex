@@ -60,7 +60,12 @@ function OperationsPanel() {
         </h3>
         <DemoLabel />
       </div>
-      <div className="mt-5 overflow-x-auto">
+      <div
+        className="mt-5 overflow-x-auto"
+        tabIndex={0}
+        role="region"
+        aria-label="Today's queues table — scroll sideways to see all columns"
+      >
         <table className="w-full min-w-[560px] border-collapse text-left">
           <thead>
             <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">
@@ -103,7 +108,12 @@ function PartnersPanel() {
         </h3>
         <DemoLabel text="Illustrative data — fictional partners" />
       </div>
-      <div className="mt-5 overflow-x-auto">
+      <div
+        className="mt-5 overflow-x-auto"
+        tabIndex={0}
+        role="region"
+        aria-label="Commission ledger table — scroll sideways to see all columns"
+      >
         <table className="w-full min-w-[620px] border-collapse text-left">
           <thead>
             <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">

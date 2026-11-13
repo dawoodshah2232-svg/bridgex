@@ -101,7 +101,7 @@ function PhotoDarkHero({ content }: { content: IndustryContent }) {
           fetchPriority="high"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/95 via-bx-maroon-950/80 to-bx-maroon-950/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/95 via-bx-maroon-950/85 to-bx-maroon-950/60" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-bx-maroon-950 to-transparent" />
       </div>
       <Container className="relative pb-20 pt-[136px] sm:pt-[152px] lg:pb-28">

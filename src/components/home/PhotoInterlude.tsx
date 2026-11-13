@@ -44,7 +44,7 @@ export default function PhotoInterlude() {
       </motion.div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-bx-maroon-950/62"
+        className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/85 via-bx-maroon-950/70 to-bx-maroon-950/45"
       />
       <Container className="relative py-24 lg:py-32">
         <div className="max-w-2xl">

@@ -105,7 +105,12 @@ function LeadListPanel() {
           ))}
         </div>
       </div>
-      <div className="mt-5 overflow-x-auto">
+      <div
+        className="mt-5 overflow-x-auto"
+        tabIndex={0}
+        role="region"
+        aria-label="Leads table — scroll sideways to see all columns"
+      >
         <table className="w-full min-w-[640px] border-collapse text-left">
           <thead>
             <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">

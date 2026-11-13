@@ -120,7 +120,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="relative space-y-6">
-      <Honeypot value={honeypot} onChange={setHoneypot} />
+      <Honeypot value={honeypot} onChange={setHoneypot} id="contact-website-url" />
       <div className="grid gap-6 sm:grid-cols-2">
         <FormField
           id="contact-name"

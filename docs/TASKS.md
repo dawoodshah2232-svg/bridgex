@@ -58,6 +58,27 @@
   the Batch 1 "designed shells" plan was superseded by the coordinator
   so no dead forms ship.
 
+## Done (Batch 3 + Batch 4 — polish + functionality, 13 Nov 2026)
+- [x] Batch 3: OG image 1200×630 (hero crop + maroon band); photo swaps
+  (exchanges → NYSE facade Pexels 36050277; contests → restrained trophy
+  band crop Pexels 6532363); motion audit (reduced-motion everywhere,
+  hero drift pauses offscreen, Magnetic CTA wrapper desktop-only);
+  responsive audit (keyboard-scrollable tables, body overflow-x clip);
+  visual QA (gold-600 small text → maroon-700, trace-line alignment,
+  invalid HTML fixed, PAMM numbers reconciled, 1 asset() bug fixed);
+  IndustrySelector keyboard support; scrims strengthened.
+- [x] Batch 4: /search (client index over 44 routes + insights + guides,
+  ?q= deep-links, keyboard nav, header button + footer link); cookie
+  banner + versioned consent (footer re-open, honest no-tracking copy);
+  sitemap.xml + robots.txt (Next metadata routes); Organization +
+  Breadcrumb JSON-LD; FAQ JSON-LD helper (wired on /platform); custom
+  404; site.ts config; form verification fixed 3 real bugs (corrupt
+  localStorage crash, duplicate honeypot IDs, EventsForm missing
+  time-check).
+- [x] Coordinator integration: OG image wired into layout metadata;
+  stale cookie-policy sentence fixed; last raw-hex class fixed
+  (fields.tsx accent). tsc clean, ESLint 0 errors, build passes.
+
 ## Later batches (from spec §14)
 - [ ] Batch 3: cinematic polish, art-directed hero, motion, responsive
   optimisation, reduced-motion fallbacks.

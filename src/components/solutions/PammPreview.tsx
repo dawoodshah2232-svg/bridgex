@@ -29,12 +29,12 @@ interface Strategy {
 }
 
 const STRATEGIES: Strategy[] = [
-  { name: "Aurora FX Core", manager: "H. Lindqvist", risk: "Conservative", returnPct: 8.4, drawdownPct: 3.1, investors: 214, minInvestment: 1000, perfFee: 20, mgmtFee: 1, curve: [100, 101, 101.5, 102, 101.2, 102.4, 103, 103.8, 104.1, 105, 105.9, 106.8] },
-  { name: "Meridian Momentum", manager: "D. Osei", risk: "Balanced", returnPct: 14.2, drawdownPct: 7.8, investors: 486, minInvestment: 500, perfFee: 25, mgmtFee: 1.5, curve: [100, 102, 101, 104, 103, 106, 104.5, 108, 107, 110, 109, 112.4] },
-  { name: "Northgate Gold Trend", manager: "S. Ferreira", risk: "Balanced", returnPct: 11.7, drawdownPct: 6.4, investors: 329, minInvestment: 1000, perfFee: 20, mgmtFee: 1, curve: [100, 99, 101.5, 103, 102, 105, 106.5, 105, 108, 107.5, 109.2, 110.1] },
-  { name: "Vantage Breakout", manager: "K. Tanaka", risk: "Aggressive", returnPct: 23.9, drawdownPct: 16.2, investors: 158, minInvestment: 2500, perfFee: 30, mgmtFee: 2, curve: [100, 104, 101, 107, 103, 112, 106, 116, 110, 119, 114, 121.6] },
-  { name: "Atlas Income", manager: "M. Haddad", risk: "Conservative", returnPct: 6.1, drawdownPct: 2.2, investors: 402, minInvestment: 500, perfFee: 15, mgmtFee: 1, curve: [100, 100.6, 101, 101.4, 101.8, 102.1, 102.6, 103, 103.4, 103.9, 104.3, 104.8] },
-  { name: "Coral Volatility", manager: "A. Novak", risk: "Aggressive", returnPct: 19.4, drawdownPct: 14.9, investors: 97, minInvestment: 5000, perfFee: 30, mgmtFee: 2, curve: [100, 97, 103, 100, 108, 104, 112, 107, 115, 110, 118, 116.9] },
+  { name: "Aurora FX Core", manager: "H. Lindqvist", risk: "Conservative", returnPct: 6.8, drawdownPct: 3.1, investors: 214, minInvestment: 1000, perfFee: 20, mgmtFee: 1, curve: [100, 101, 101.5, 102, 101.2, 102.4, 103, 103.8, 104.1, 105, 105.9, 106.8] },
+  { name: "Meridian Momentum", manager: "D. Osei", risk: "Balanced", returnPct: 12.4, drawdownPct: 7.8, investors: 486, minInvestment: 500, perfFee: 25, mgmtFee: 1.5, curve: [100, 102, 101, 104, 103, 106, 104.5, 108, 107, 110, 109, 112.4] },
+  { name: "Northgate Gold Trend", manager: "S. Ferreira", risk: "Balanced", returnPct: 10.1, drawdownPct: 6.4, investors: 329, minInvestment: 1000, perfFee: 20, mgmtFee: 1, curve: [100, 99, 101.5, 103, 102, 105, 106.5, 105, 108, 107.5, 109.2, 110.1] },
+  { name: "Vantage Breakout", manager: "K. Tanaka", risk: "Aggressive", returnPct: 21.6, drawdownPct: 16.2, investors: 158, minInvestment: 2500, perfFee: 30, mgmtFee: 2, curve: [100, 104, 101, 107, 103, 112, 106, 116, 110, 119, 114, 121.6] },
+  { name: "Atlas Income", manager: "M. Haddad", risk: "Conservative", returnPct: 4.8, drawdownPct: 2.2, investors: 402, minInvestment: 500, perfFee: 15, mgmtFee: 1, curve: [100, 100.6, 101, 101.4, 101.8, 102.1, 102.6, 103, 103.4, 103.9, 104.3, 104.8] },
+  { name: "Coral Volatility", manager: "A. Novak", risk: "Aggressive", returnPct: 16.9, drawdownPct: 14.9, investors: 97, minInvestment: 5000, perfFee: 30, mgmtFee: 2, curve: [100, 97, 103, 100, 108, 104, 112, 107, 115, 110, 118, 116.9] },
 ];
 
 const RISKS: ("All" | Risk)[] = ["All", "Conservative", "Balanced", "Aggressive"];
@@ -121,7 +121,12 @@ function StrategiesPanel() {
         </label>
       </div>
 
-      <div className="mt-5 overflow-x-auto">
+      <div
+        className="mt-5 overflow-x-auto"
+        tabIndex={0}
+        role="region"
+        aria-label="Strategies table — scroll sideways to see all columns"
+      >
         <table className="w-full min-w-[680px] border-collapse text-left">
           <thead>
             <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">

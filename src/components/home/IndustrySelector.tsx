@@ -13,6 +13,7 @@ import { useState } from "react";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import Icon, { type IconName } from "../icons";
+import { onTabListKeyDown } from "../platform/tabs";
 
 interface Industry {
   href: string;
@@ -165,9 +166,15 @@ export default function IndustrySelector() {
             return (
               <button
                 key={ind.href}
+                id={`industry-tab-${i}`}
                 role="tab"
                 aria-selected={isSelected}
+                aria-controls="industry-panel"
+                tabIndex={isSelected ? 0 : -1}
                 onClick={() => setSelected(i)}
+                onKeyDown={(e) =>
+                  onTabListKeyDown(e, i, INDUSTRIES.length, "industry-tab", setSelected)
+                }
                 className={`flex min-h-[56px] items-center gap-4 border px-5 py-3 text-left transition-all duration-200 ${
                   isSelected
                     ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
@@ -195,6 +202,9 @@ export default function IndustrySelector() {
           <AnimatePresence mode="wait">
             <motion.div
               key={industry.href}
+              id="industry-panel"
+              role="tabpanel"
+              aria-labelledby={`industry-tab-${selected}`}
               initial={reduceMotion ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, y: -10 }}
