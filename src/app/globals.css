@@ -82,6 +82,42 @@ body {
   border-radius: 2px;
 }
 
+/* Themed scrollbar — the browser surfaces carry the design too. */
+:root {
+  scrollbar-color: var(--color-bx-maroon-800) var(--color-bx-cream);
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bx-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bx-maroon-800);
+  border: 2px solid var(--color-bx-cream);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bx-maroon-700);
+}
+
+/* Slow cinematic drift for the hero photograph (transform-only).
+   The prefers-reduced-motion block below neutralises it. */
+@keyframes bx-drift {
+  from {
+    transform: scale(1) translateX(0);
+  }
+  to {
+    transform: scale(1.07) translateX(-1.2%);
+  }
+}
+.animate-bx-drift {
+  animation: bx-drift 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
 /* Respect reduced motion globally; components honour it too. */
 @media (prefers-reduced-motion: reduce) {
   html {

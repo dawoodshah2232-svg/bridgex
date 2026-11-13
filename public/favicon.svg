@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="BridgeX">
+  <title>BridgeX favicon</title>
+  <rect width="64" height="64" rx="14" fill="#360F20"/>
+  <g transform="translate(8,8)">
+    <polygon points="35.2,7.2 40.8,12.8 30.3,23.3 24.7,17.7" fill="#D9B875"/>
+    <polygon points="17.7,24.7 23.3,30.3 12.8,40.8 7.2,35.2" fill="#D9B875"/>
+    <polygon points="7.2,12.8 12.8,7.2 40.8,35.2 35.2,40.8" fill="#F0DFB8"/>
+  </g>
+</svg>
