@@ -151,3 +151,48 @@
   (N6). `PageHero` and `IndustryHero` now accept an optional
   `objectPosition` (via `HeroImage` / `IndustryImage`). Full
   record in IMAGE-MANIFEST.md ("Systematic photo-crop sweep").
+- Re-theme to bridgexapps.com (14 Nov, OWNER DECISION — supersedes
+  the Master Prompt's locked maroon/gold/champagne palette):
+  light teal/navy theme captured live from bridgexapps.com
+  (pixel-sampled hexes). Tokens: navy #0F172A, teal #14B8A6 /
+  #0D9488 / #2DD4BF, cyan #06B6D4, mint #F3FDFB–#D9F7F3, slate
+  #64748B, amber #FAA556 (sparing), blue #2563EB/#1E3A5F.
+  DM Sans throughout (self-hosted variable woff2; Cormorant
+  Garamond + Manrope deleted, Inter kept as fallback). Pill
+  buttons, rounded-2xl cards, frosted-white header, light footer
+  with a dark-navy disclaimer box (NEW copy — needs Dawood's
+  review alongside the legal pages), solid teal CTA band (CtaBand
+  photo layer removed), navy/teal logo. No "Sign in" / "Get
+  started" header links added (no destinations exist — Batch 6
+  not built). FeatureIcon circles kept (not bridgexapps' rounded
+  squares). Zero old-palette tokens/hex in src/ or built CSS.
+  Main cc9d7e5; deployed with the photo swap (gh-pages c035056).
+- Forex photo swap (14 Nov, same owner order): 48 generic
+  corporate/lifestyle photos replaced with realistic Pexels
+  forex-business photography (same filenames); 24 keeps;
+  `portrait-executive.jpg` deleted (orphan, zero usages). Alt
+  text + width/height updated at all 141 usage sites by script
+  (`update-alts.py` + `fixup-alts.py`, in
+  ~/workspace/bridgex-coordination/) and verified by
+  `verify-alts.py` (0 old alt strings in src/, every explicit
+  dim matches the new file). Parent verification of the staged
+  files found 6 text/brand defects the photo pass missed plus 1
+  incomplete fix: t.me/AlphaTradeZone fills (banking-hall,
+  boardroom-meeting), BINANCE blurs (team-discussion,
+  wealth-meeting, band-skyline-kl, team-laptop), yellow-diamond
+  blur (hero-bridge-rotterdam), hp-logo trim
+  (abstract-glass-ceiling → 1920×1080), chin trim
+  (band-glass-tower → 1600×1040); rejected pick 5831255
+  (workshop-presentation, head cut at the left edge) replaced
+  by spare 7567444. First blur round failed 6/6 (boxes
+  mispositioned, radius too small, feather left text legible) —
+  fixed with sampled-colour fills (t.me) and heavy blurs with
+  wide/tight boxes + objective yellow-pixel verification.
+  og-image.jpg regenerated (1200×630 crop of the new home hero).
+  Main 4b3930b; gh-pages c035056; Pages `built`; live verified
+  14/14 pages 200, 8/8 assets at exact byte sizes, deleted files
+  404, new alts present / old alts 0 in live HTML, opacity:0 = 0,
+  DM Sans + teal tokens in live CSS, zero old-palette hex.
+  Full record in IMAGE-MANIFEST.md ("Forex re-theme photo swap").
+  Still owed: hero contrast re-verification vs the new photo,
+  375px visual check (Dawood's phone), Lighthouse run.

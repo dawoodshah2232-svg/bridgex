@@ -208,3 +208,31 @@ Dawood's verdict: too much text, no images, no relatable icons.
   PageHero + IndustryHero `objectPosition` support. Verified:
   tsc clean, build passes, 0 `opacity:0` in built HTML, live
   curl-verified after deploy (see MEMORY.md).
+- [x] Re-theme to bridgexapps.com (14 Nov, OWNER DECISION — supersedes
+  the Master Prompt's locked maroon/gold palette): light teal/navy
+  theme, DM Sans (self-hosted variable woff2; Cormorant Garamond +
+  Manrope deleted), pill buttons, rounded cards, frosted-white
+  header, light footer with dark-navy disclaimer box, solid teal
+  CTA band, navy/teal logo. Zero old-palette tokens/hex in src/ or
+  built CSS. Main cc9d7e5. See MEMORY.md + DESIGN.md.
+- [x] Forex photo swap (14 Nov, same owner order): 48 generic
+  corporate/lifestyle photos replaced with realistic Pexels
+  forex-business photography (trading desks, chart monitors,
+  analysts at screens, market-data walls); 24 keeps;
+  `portrait-executive.jpg` deleted (orphan). Alt text + dims
+  updated at all 141 usage sites (verified: 0 old alt strings in
+  src/). Parent verification fixed 7 text/brand defects the photo
+  pass missed (t.me fills ×2, BINANCE blurs ×4, diamond blur ×1),
+  2 trims (hp logo, chin), 1 rejected pick replaced (5831255 →
+  7567444). og-image.jpg regenerated from the new forex home hero.
+  Main 4b3930b; gh-pages c035056; live curl-verified (14/14 pages
+  200, 8/8 assets exact bytes). Full record in IMAGE-MANIFEST.md.
+- [ ] Hero headline contrast re-verification against the NEW forex
+  home hero photo (the 12.5:1/5.4:1 figures were computed against
+  the old bridge photo) — needs a live-browser check.
+- [ ] CRM + IB solution heroes are near-identical photos (same
+  monitor/screen, Pexels 5831252/5831251) — known nit, accepted
+  for now; a future pass could re-shoot one of them.
+- [ ] Same bearded trader (Shoot D, 75674xx) now appears on home,
+  asset-fund, CRM, contests/exchanges pages — accepted (different
+  framings), note for a future diversity pass.
