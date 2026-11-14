@@ -205,12 +205,16 @@ Props: `image`, `alt`, `eyebrow?`, `heading` (ReactNode, required),
 `copy?`, `bullets?` (check-marked list), `ctaLabel?` + `ctaHref?`
 (both required to render the secondary `ButtonLink`), `flip?`
 (mirrors the desktop columns), `tone?`, `imageWidth?` /
-`imageHeight?` (default 1200×900, 4:3 crop), `className?`,
-`children?` (extra content between bullets and CTA). The photo
-carries a gold hairline frame offset down-right; the frame lives
-inside the wrapper's own margin, so it never overflows — safe at
-375px. On mobile the image always stacks first (it is first in
-the DOM).
+`imageHeight?` (default 1200×900, 4:3 crop), `eager?` (loads the
+image eagerly with high priority — use for blocks directly below
+the hero; React 19 then also preloads it — see HeroMedia),
+`className?`, `children?` (extra content between bullets and
+CTA). The photo carries a gold hairline frame offset down-right;
+the frame lives inside the wrapper's own margin, so it never
+overflows — safe at 375px. A warm champagne background sits
+behind the photo so the frame never reads as an empty outlined
+rectangle while the image loads. On mobile the image always
+stacks first (it is first in the DOM).
 
 ### HeroMedia — full-bleed hero media layer
 
@@ -230,17 +234,28 @@ import HeroMedia from "@/components/ui/HeroMedia";
 ```
 
 Props: `image`, `alt`, `scrim?`, `kenBurns?` (default true),
-`bridgeLine?` (default false), `imageWidth?` / `imageHeight?`
-(default 1920×1080), `className?`. Place as the first child of a
-`relative` hero section; content goes in a `relative` sibling
-above it. The image is eager with `fetchPriority="high"` — heroes
-are above the fold. `scrim="strong"` (flat 70% maroon-950 plus a
+`bridgeLine?` (default false), `objectPosition?` (CSS
+object-position, default `"50% 50%"` — set it when the subject is
+not centred in the frame, e.g. the contests trophy uses
+`"50% 30%"` so the cup is fully visible), `imageWidth?` /
+`imageHeight?` (default 1920×1080), `className?`. Place as the
+first child of a `relative` hero section; content goes in a
+`relative` sibling above it. The image is eager with
+`fetchPriority="high"` — heroes are above the fold — and React 19
+automatically emits a `<link rel="preload" as="image">` for
+`fetchPriority="high"` images during SSR, so the photograph
+starts loading before the body is parsed (verified in the built
+HTML, 14 Nov fix pass). Do NOT add a manual preload link — it
+duplicates React's. `scrim="strong"` (flat 50% maroon-950 plus a
 vertical gradient, darkest at the bottom where the H1 sits) is
 the safe choice for white H1 text over any photograph; use
-`"medium"` only over an already-dark image. The bridge-line motif
-uses the same geometry language as `CtaBand`'s animated line
-(static here — the hero's one authored motion is the Ken Burns
-drift).
+`"medium"` (flat 35%) only over an already-dark image. Scrims
+are deliberately light enough for the photography to show (14 Nov
+fix — the old 70% flat left heroes nearly black) while the
+gradient stays darkest at the bottom, where the H1 sits. The
+bridge-line motif uses the same geometry language as `CtaBand`'s
+animated line (static here — the hero's one authored motion is
+the Ken Burns drift).
 
 ### FeatureIcon — icon tile + label
 
@@ -283,9 +298,13 @@ swap one for the other without a reason.
   stayed blank for ~5s on a cold load. Entrances are
   **transform-only** (rise ≤24px, 0.5s, house ease
   `cubic-bezier(.22,1,.36,1)`, stagger capped at 0.15s).
-- **Use the existing `Reveal` component** for scroll reveals — its
-  hidden state is gated on client mount, so SSR/no-JS/reduced-motion
-  always render visible. Never build a second reveal.
+- **Use the existing `Reveal` component** for scroll reveals — it
+  animates `y` only, never opacity, so content is at full opacity
+  at every moment and a missed trigger can never strand a section
+  pale (14 Nov fix: the old opacity fade was caught mid-flight).
+  Its hidden state is gated on client mount, so
+  SSR/no-JS/reduced-motion always render visible. Never build a
+  second reveal.
 - **Above-fold hero blocks get no reveal at all** — they render
   visible, with a transform-only entrance if one is authored.
 - **Animate transform and opacity only** — never layout properties

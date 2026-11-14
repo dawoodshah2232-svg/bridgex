@@ -45,13 +45,15 @@ const LIGHT_TONE_BG: Record<LightTone, string> = {
  * Gold-ring icon tile in row layout — the FeatureIcon tile (circle,
  * thin gold ring, champagne wash on light / deep maroon wash on dark),
  * for rows where FeatureIcon's vertical tile-plus-label layout does
- * not fit. Classes match FeatureIcon exactly.
+ * not fit. Classes match FeatureIcon exactly. The default tile is
+ * 56px with a 26px glyph (fix, 14 Nov): the old 44px tile read as
+ * decoration and the capability icons were missed entirely.
  */
 function RingTile({
   icon,
   dark = false,
-  size = 22,
-  tileClass = "h-11 w-11",
+  size = 26,
+  tileClass = "h-14 w-14",
 }: {
   icon: IconName;
   dark?: boolean;
@@ -138,12 +140,13 @@ export function ProblemSection({
         tone={tone}
         imageWidth={image.width}
         imageHeight={image.height}
+        eager
       />
       {/* Same tone as the ImageText above, pulled up over its bottom
           padding — one section visually, with a comfortable gap. */}
       <section
         aria-label="Pain points"
-        className={`${LIGHT_TONE_BG[tone]} -mt-8 pb-20 sm:-mt-10 sm:pb-24 lg:-mt-16 lg:pb-32`}
+        className={`${LIGHT_TONE_BG[tone]} -mt-6 pb-16 sm:-mt-8 sm:pb-20 lg:-mt-12 lg:pb-24`}
       >
         <Container>
           <ol className="grid gap-x-12 sm:grid-cols-2">
@@ -374,7 +377,7 @@ export function BenefitGrid({
           padding — one section visually, with a comfortable gap. */}
       <section
         aria-label="Benefits"
-        className={`${LIGHT_TONE_BG[tone]} -mt-8 pb-20 sm:-mt-10 sm:pb-24 lg:-mt-16 lg:pb-32`}
+        className={`${LIGHT_TONE_BG[tone]} -mt-6 pb-16 sm:-mt-8 sm:pb-20 lg:-mt-12 lg:pb-24`}
       >
         <Container>{list}</Container>
       </section>
@@ -634,7 +637,7 @@ export function FaqSection({ faqs, tone = "ivory" }: { faqs: FaqItem[]; tone?: "
 
 export function RelatedSolutions({ related }: { related: RelatedLink[] }) {
   return (
-    <section aria-label="Related solutions" className="bg-bx-ivory pb-20 sm:pb-24 lg:pb-28">
+    <section aria-label="Related solutions" className="bg-bx-ivory pb-16 sm:pb-20 lg:pb-24">
       <Container>
         <div className="border-t border-bx-gold-500/30 pt-10">
           <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">

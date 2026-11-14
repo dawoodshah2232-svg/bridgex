@@ -1,12 +1,15 @@
 /**
  * Scroll reveal — framer-motion, honours prefers-reduced-motion.
  *
- * Fast by design (fix, 13 Nov): content must never sit invisible for
- * seconds. The hidden initial state is gated on client mount — the
- * server-rendered HTML is fully visible, so the page is readable with
- * no JavaScript and at first paint before hydration. Elements already
- * in view at hydration render visible with no hide-then-reveal flash;
- * below-fold elements reveal in 0.5s once scrolled into view, with
+ * Transform-only by design (fix, 14 Nov): the reveal moves content
+ * up into place but never touches opacity, so content is at full
+ * opacity at every moment — a scroll reveal can no longer leave a
+ * section looking pale or washed out mid-animation, and there is no
+ * hidden state for a missed trigger to strand. The mount gate stays:
+ * the server-rendered HTML is fully visible, so the page is readable
+ * with no JavaScript and at first paint before hydration. Elements
+ * already in view at hydration render visible with no flash;
+ * below-fold elements rise in 0.5s once scrolled into view, with
  * stagger delays capped at 0.15s. With reduced motion, no transform
  * is applied at all.
  *
@@ -58,12 +61,14 @@ export default function Reveal({
     );
   }
 
+  // Transform-only: opacity is never animated, so content can never
+  // be caught pale mid-reveal or stranded below full opacity.
   return (
     <motion.div
       ref={ref}
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ y }}
+      whileInView={{ y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{
         duration: DURATION,

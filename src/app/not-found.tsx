@@ -32,8 +32,8 @@ export default function NotFound() {
           alt="San Francisco financial district skyline at twilight across the bay"
           scrim="strong"
           bridgeLine
-          imageWidth={1920}
-          imageHeight={1280}
+          imageWidth={1600}
+          imageHeight={1067}
         />
         <Container className="relative pt-14 sm:pt-20">
           <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-gold-400">

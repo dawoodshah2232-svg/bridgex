@@ -9,31 +9,36 @@ import { asset } from "@/lib/paths";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import Reveal from "../ui/Reveal";
-import Icon from "../icons";
+import Icon, { type IconName } from "../icons";
 
-const STEPS = [
+const STEPS: { name: string; icon: IconName; text: string; deliverable: string }[] = [
   {
     name: "Discover",
+    icon: "search",
     text: "We map how your business actually operates — desks, journeys, providers, edge cases.",
     deliverable: "A scoped plan with honest timelines.",
   },
   {
     name: "Configure",
+    icon: "sliders",
     text: "Objects, forms, workflows and journeys are configured in No-Code Studio — no forked code.",
     deliverable: "A working system on your data model.",
   },
   {
     name: "Integrate",
+    icon: "link",
     text: "Trading platforms, payments and KYC connect through adapters, tested against your real flows.",
     deliverable: "Tested integrations, signed off.",
   },
   {
     name: "Launch",
+    icon: "send",
     text: "Staged rollout with your team trained and your queues staffed — not a big-bang switch.",
     deliverable: "A live system your team can run.",
   },
   {
     name: "Improve",
+    icon: "refresh",
     text: "We review what the data says and tune the workflows — onboarding, routing, incentives.",
     deliverable: "A system that keeps getting better.",
   },
@@ -83,7 +88,12 @@ export default function ImplementationMethod() {
                 aria-hidden="true"
                 className="relative z-10 block h-[15px] w-[15px] rotate-45 border-2 border-bx-gold-500 bg-bx-ivory"
               />
-              <h3 className="mt-5 font-sans text-xl font-bold text-bx-ink">
+              <h3 className="mt-5 flex items-center gap-2.5 font-sans text-xl font-bold text-bx-ink">
+                <Icon
+                  name={step.icon}
+                  size={22}
+                  className="shrink-0 text-bx-gold-600"
+                />
                 {step.name}
               </h3>
               <p className="mt-2.5 text-[15px] leading-relaxed text-bx-muted">

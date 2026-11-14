@@ -10,9 +10,22 @@
  * gold bridge-line motif along the bottom edge.
  *
  * The image is eager with fetchPriority="high" — heroes are
- * above the fold. `scrim="strong"` is the default and the safe
- * choice for white H1 text over any photograph; use "medium"
- * only over an already-dark image.
+ * above the fold. React 19 automatically emits a
+ * <link rel="preload" as="image"> for fetchPriority="high"
+ * images during SSR (verified in the built HTML, 14 Nov), so the
+ * photograph starts loading before the body is parsed — do NOT
+ * add a manual preload link, it would duplicate React's. This is
+ * the fix for inner-page heroes arriving as plain burgundy with
+ * the photo still pending.
+ * `scrim="strong"` is the default and the safe choice for white
+ * H1 text over any photograph; use "medium" only over an
+ * already-dark image. Scrims are deliberately light enough for
+ * the photography to show (fix, 14 Nov) while the gradient stays
+ * darkest at the bottom, where the H1 sits.
+ *
+ * `objectPosition` repositions the crop for images whose subject
+ * is not centred (e.g. a portrait trophy whose cup sits high in
+ * the frame) — pass a CSS object-position value such as "50% 30%".
  *
  * `image` is a root-relative public path ("/images/hero-bridge.jpg");
  * it is routed through `asset()` for the /bridgex basePath.
@@ -21,9 +34,20 @@ import { asset } from "@/lib/paths";
 
 type HeroScrim = "strong" | "medium";
 
-const SCRIMS: Record<HeroScrim, string> = {
-  strong: "bg-bx-maroon-950/70",
-  medium: "bg-bx-maroon-950/45",
+/** Flat tint + vertical gradient per scrim strength. The gradient is
+ * darkest at the bottom, where the headline sits; the middle stays
+ * open so the photograph reads. */
+const SCRIMS: Record<HeroScrim, { flat: string; gradient: string }> = {
+  strong: {
+    flat: "bg-bx-maroon-950/50",
+    gradient:
+      "bg-gradient-to-b from-bx-maroon-950/60 via-bx-maroon-950/20 to-bx-maroon-950/75",
+  },
+  medium: {
+    flat: "bg-bx-maroon-950/35",
+    gradient:
+      "bg-gradient-to-b from-bx-maroon-950/45 via-transparent to-bx-maroon-950/60",
+  },
 };
 
 /** Thin gold bridge-line motif — same geometry language as CtaBand. */
@@ -61,6 +85,7 @@ export default function HeroMedia({
   scrim = "strong",
   kenBurns = true,
   bridgeLine = false,
+  objectPosition = "50% 50%",
   imageWidth = 1920,
   imageHeight = 1080,
   className = "",
@@ -75,26 +100,30 @@ export default function HeroMedia({
   kenBurns?: boolean;
   /** Gold bridge-line motif along the bottom edge. */
   bridgeLine?: boolean;
+  /** CSS object-position for the crop (default centred). */
+  objectPosition?: string;
   /** Intrinsic image dimensions (aspect-ratio hint, no layout shift). */
   imageWidth?: number;
   imageHeight?: number;
   className?: string;
 }) {
+  const href = asset(image);
+  const layers = SCRIMS[scrim];
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
+      {/* fetchPriority="high" makes React 19 emit a preload link for
+          this image during SSR — no manual <link> needed. */}
       <img
-        src={asset(image)}
+        src={href}
         alt={alt}
         width={imageWidth}
         height={imageHeight}
         fetchPriority="high"
+        style={{ objectPosition }}
         className={`h-full w-full object-cover ${kenBurns ? "bx-kenburns" : ""}`}
       />
-      <div className={`absolute inset-0 ${SCRIMS[scrim]}`} aria-hidden="true" />
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-bx-maroon-950/70 via-transparent to-bx-maroon-950/80"
-        aria-hidden="true"
-      />
+      <div className={`absolute inset-0 ${layers.flat}`} aria-hidden="true" />
+      <div className={`absolute inset-0 ${layers.gradient}`} aria-hidden="true" />
       {bridgeLine && <BridgeLine />}
     </div>
   );

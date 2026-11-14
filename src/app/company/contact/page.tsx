@@ -50,7 +50,7 @@ export default function ContactPage() {
         imageWidth={1600}
         imageHeight={1067}
       />
-      <div className="bg-bx-ivory pb-20 sm:pb-24 lg:pb-32">
+      <div className="bg-bx-ivory pb-16 sm:pb-20 lg:pb-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
             {/* Form */}

@@ -28,9 +28,10 @@ const TONES: Record<SectionTone, string> = {
 };
 
 /**
- * Page section with consistent vertical rhythm (120–240px desktop gaps
- * come from the section padding + neighbour spacing, never from margins
- * on inner blocks).
+ * Page section with consistent vertical rhythm. Padding is deliberately
+ * moderate (fix, 14 Nov): the previous lg:py-32 left ~300px dead voids
+ * between sections on desktop. Gaps come from the section padding +
+ * neighbour spacing, never from margins on inner blocks.
  */
 export function Section({
   children,
@@ -49,7 +50,7 @@ export function Section({
     <section
       id={id}
       aria-label={ariaLabel}
-      className={`py-20 sm:py-24 lg:py-32 ${TONES[tone]} ${className}`}
+      className={`py-16 sm:py-20 lg:py-24 ${TONES[tone]} ${className}`}
     >
       <Container>{children}</Container>
     </section>

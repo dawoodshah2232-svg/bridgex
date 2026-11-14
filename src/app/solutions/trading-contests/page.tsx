@@ -53,7 +53,7 @@ export default function TradingContestsPage() {
           src: "/images/solutions-contests-award.jpg",
           alt: "Man in a tuxedo holding a gold award statuette",
           width: 1600,
-          height: 1067,
+          height: 857,
         }}
       />
 

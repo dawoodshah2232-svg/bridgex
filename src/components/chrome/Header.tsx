@@ -98,7 +98,12 @@ export default function Header() {
         onMouseLeave={() => setOpenGroup(null)}
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
           overDark
-            ? "bg-transparent"
+            ? /* Own gradient scrim (fix, 14 Nov): the nav must stay readable
+               from the first moment, even before the hero photograph has
+               loaded or where it is bright at the top — never rely on the
+               hero image alone for header contrast. Fades to transparent
+               at the header's bottom edge, so no visible band remains. */
+              "bg-gradient-to-b from-bx-maroon-950/70 via-bx-maroon-950/45 to-transparent"
             : "border-b border-bx-gold-500/30 bg-bx-ivory/90 shadow-[0_8px_30px_-12px_rgba(35,11,22,0.25)] backdrop-blur-md"
         }`}
       >

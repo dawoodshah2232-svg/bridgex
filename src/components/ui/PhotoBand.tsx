@@ -62,9 +62,12 @@ export default function PhotoBand({
           loading="lazy"
           className="h-full w-full object-cover"
         />
-        {/* Maroon scrim: darker at the edges, readable white text. */}
+        {/* Maroon scrim: darker at the edges, readable white text.
+            Light enough for the photograph to show (fix, 14 Nov) — the
+            band photos are night/dusk shots, so white text keeps strong
+            contrast even at these levels. */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-bx-maroon-950/80 via-bx-maroon-950/55 to-bx-maroon-950/75"
+          className="absolute inset-0 bg-gradient-to-b from-bx-maroon-950/65 via-bx-maroon-950/40 to-bx-maroon-950/65"
           aria-hidden="true"
         />
       </div>

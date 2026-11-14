@@ -131,8 +131,14 @@ export default function Hero() {
       ref={sectionRef}
       className="relative flex min-h-[100svh] flex-col overflow-hidden bg-bx-maroon-950 text-bx-ivory"
     >
-      {/* Background photograph + maroon vignette scrim */}
+      {/* Background photograph + maroon vignette scrim. The scrim is
+          light enough for the bridge photograph to show (fix, 14 Nov:
+          the old 95/85/65 gradient left the left two-thirds almost
+          black) — the night photo is dark, so the white headline keeps
+          strong contrast even at these levels. */}
       <div className="absolute inset-0" aria-hidden="true">
+        {/* fetchPriority="high" makes React 19 emit a preload link for
+            this image during SSR — no manual <link> needed. */}
         <img
           src={asset("/images/hero-bridge.jpg")}
           alt=""
@@ -142,8 +148,8 @@ export default function Hero() {
           style={{ animationPlayState: inView ? "running" : "paused" }}
           className="h-full w-full object-cover object-[70%_center] animate-bx-drift"
         />
-        <div className="absolute inset-0 bg-bx-maroon-950/25" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/95 via-bx-maroon-950/85 to-bx-maroon-950/65" />
+        <div className="absolute inset-0 bg-bx-maroon-950/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/80 via-bx-maroon-950/60 to-bx-maroon-950/35" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bx-maroon-950 to-transparent" />
       </div>
 

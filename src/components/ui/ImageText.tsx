@@ -10,6 +10,11 @@
  *
  * `image` is a root-relative public path ("/images/team-discussion.jpg");
  * it is routed through `asset()` for the /bridgex basePath.
+ *
+ * The photograph carries a warm champagne background behind it, so the
+ * gold frame never reads as an empty outlined rectangle while the image
+ * is still loading (fix, 14 Nov). Pass `eager` for blocks directly
+ * below the hero — their images are in or near the first viewport.
  */
 import type { ReactNode } from "react";
 import { asset } from "@/lib/paths";
@@ -39,6 +44,7 @@ export default function ImageText({
   tone = "ivory",
   imageWidth = 1200,
   imageHeight = 900,
+  eager = false,
   className = "",
   children,
 }: {
@@ -62,12 +68,14 @@ export default function ImageText({
   /** Intrinsic image dimensions (aspect-ratio hint, no layout shift). */
   imageWidth?: number;
   imageHeight?: number;
+  /** Load the image eagerly with high priority (near-fold blocks). */
+  eager?: boolean;
   className?: string;
   /** Optional extra content between the bullets and the CTA. */
   children?: ReactNode;
 }) {
   return (
-    <section className={`${TONES[tone]} py-20 sm:py-24 lg:py-32 ${className}`}>
+    <section className={`${TONES[tone]} py-16 sm:py-20 lg:py-24 ${className}`}>
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Image first in the DOM: stacks image-first on mobile. */}
@@ -84,8 +92,9 @@ export default function ImageText({
                 alt={alt}
                 width={imageWidth}
                 height={imageHeight}
-                loading="lazy"
-                className="relative aspect-[4/3] w-full object-cover"
+                loading={eager ? "eager" : "lazy"}
+                fetchPriority={eager ? "high" : undefined}
+                className="relative aspect-[4/3] w-full bg-bx-champagne/60 object-cover"
               />
             </div>
           </Reveal>

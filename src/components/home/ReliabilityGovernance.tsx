@@ -7,7 +7,8 @@ import { asset } from "@/lib/paths";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import Reveal from "../ui/Reveal";
-import Icon, { type IconName } from "../icons";
+import FeatureIcon from "../ui/FeatureIcon";
+import type { IconName } from "../icons";
 
 const PRINCIPLES: { icon: IconName; title: string; text: string }[] = [
   {
@@ -70,9 +71,10 @@ export default function ReliabilityGovernance() {
         {PRINCIPLES.map((p, i) => (
           <Reveal key={p.title} delay={0.07 * i} className="h-full">
             <div className="flex h-full flex-col bg-bx-maroon-900 p-7 sm:p-8">
-              <span className="text-bx-gold-400">
-                <Icon name={p.icon} size={30} strokeWidth={1.5} />
-              </span>
+              {/* Gold-ring tile (fix, 14 Nov): the bare 30px glyphs read
+                  as small marks; the FeatureIcon tile gives each
+                  principle a visible anchor. */}
+              <FeatureIcon icon={p.icon} tone="dark" size="md" className="[&>*]:self-start" />
               <h3 className="mt-5 font-sans text-xl font-bold text-bx-ivory">
                 {p.title}
               </h3>
@@ -86,9 +88,7 @@ export default function ReliabilityGovernance() {
 
       <Reveal delay={0.15} className="mt-px">
         <div className="flex flex-col gap-4 border border-t-0 border-bx-gold-500/25 bg-bx-maroon-950/70 p-7 sm:flex-row sm:items-center sm:gap-8 sm:p-8">
-          <span className="shrink-0 text-bx-gold-400">
-            <Icon name="sliders" size={30} strokeWidth={1.5} />
-          </span>
+          <FeatureIcon icon="sliders" tone="dark" size="md" className="shrink-0" />
           <div>
             <h3 className="font-sans text-xl font-bold text-bx-ivory">
               Safe configuration

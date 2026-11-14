@@ -78,7 +78,9 @@ function layerIconName(name: string): IconName {
  * Photograph in the house gold hairline frame (offset up-left).
  * Lazy-loaded — every use sits below the fold. The frame offset
  * stays inside the page's side padding, so it never overflows
- * at 375px.
+ * at 375px. The warm champagne background behind the photo keeps
+ * the frame from reading as an empty outlined rectangle while
+ * the image is still loading (fix, 14 Nov).
  */
 function FramedImage({
   image,
@@ -101,7 +103,7 @@ function FramedImage({
         width={image.width}
         height={image.height}
         loading="lazy"
-        className={`relative w-full object-cover ${aspect}`}
+        className={`relative w-full bg-bx-champagne/60 object-cover ${aspect}`}
       />
     </div>
   );
@@ -117,7 +119,7 @@ export function JourneySection({
   return (
     <section
       aria-label={diagram.title}
-      className="bg-bx-ivory pb-2 pt-20 sm:pt-24 lg:pt-28"
+      className="bg-bx-ivory pb-2 pt-16 sm:pt-20 lg:pt-24"
     >
       <Container>
         <div className="mx-auto max-w-[1100px] border border-bx-gold-500/30 bg-bx-white p-5 sm:p-8 lg:p-10">

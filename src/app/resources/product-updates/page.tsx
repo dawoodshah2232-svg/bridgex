@@ -46,8 +46,8 @@ export default function ProductUpdatesPage() {
         copy="The changelog for the BridgeX website and the platform roadmap. Every entry carries an honest status label — Live, Sandbox, Demo or Planned — so you can always tell a preview from a product."
         image="/images/hero-skyline-sf.jpg"
         imageAlt="San Francisco financial district skyline at twilight across the bay"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1067}
       />
 
       <Section tone="cream" ariaLabel="What the status labels mean">

@@ -99,8 +99,8 @@ export default function IntegrationsPage() {
         image={{
           src: "/images/hero-skyline-sf.jpg",
           alt: "San Francisco financial district skyline at twilight across the bay",
-          width: 1920,
-          height: 1280,
+          width: 1600,
+          height: 1067,
         }}
       />
 

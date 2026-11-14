@@ -30,10 +30,10 @@ export const multiAssetBrokers: IndustryContent = {
   },
   useCaseFlip: true,
   challengeImage: {
-    src: "/images/traders-discussion.jpg",
-    alt: "Two traders discussing market charts on a laptop and tablet",
-    width: 1600,
-    height: 1067,
+    src: "/images/boardroom-executives.jpg",
+    alt: "Senior executives in discussion around a boardroom table",
+    width: 1920,
+    height: 1280,
   },
   bandImage: {
     src: "/images/hero-skyline-nyc.jpg",

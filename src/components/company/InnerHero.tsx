@@ -19,7 +19,9 @@
  * Dark variant: the photograph drifts with the shared Ken Burns motion
  * (`.bx-kenburns`, transform-only, disabled by prefers-reduced-motion)
  * under a HeroMedia-style scrim — flat maroon tint plus a vertical
- * gradient, darkest at the bottom where the H1 sits.
+ * gradient, darkest at the bottom where the H1 sits. The photograph is
+ * preloaded (fix, 14 Nov) so it is present on first paint, and the
+ * scrim is light enough for it to show.
  */
 import type { ReactNode } from "react";
 import { asset } from "@/lib/paths";
@@ -56,6 +58,8 @@ export default function InnerHero({
       <header className="relative overflow-hidden bg-bx-maroon-900 text-bx-ivory">
         {image && (
           <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+            {/* fetchPriority="high" makes React 19 emit a preload link
+                for this image during SSR — no manual <link> needed. */}
             <img
               src={asset(image)}
               alt=""
@@ -64,8 +68,8 @@ export default function InnerHero({
               fetchPriority="high"
               className="bx-kenburns h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-bx-maroon-950/70" />
-            <div className="absolute inset-0 bg-gradient-to-b from-bx-maroon-950/70 via-transparent to-bx-maroon-950/80" />
+            <div className="absolute inset-0 bg-bx-maroon-950/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-bx-maroon-950/60 via-bx-maroon-950/20 to-bx-maroon-950/75" />
           </div>
         )}
         <Container className="relative pb-16 pt-[72px] sm:pb-20 sm:pt-[72px] lg:pb-24">

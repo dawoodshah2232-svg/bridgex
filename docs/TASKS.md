@@ -111,6 +111,41 @@ Dawood's verdict: too much text, no images, no relatable icons.
   (24 conversions + `/search`); tsc + ESLint clean; 0 `opacity:0`
   in built HTML; all 44 routes + new assets verified live
 
+## Visual-defects fix (14 Nov, after the live browser check of the enriched site)
+- [x] (a) First paint: React 19 auto-preloads `fetchPriority="high"`
+  hero images (verified in built HTML — do NOT add manual preload
+  links, they duplicate); header gets its own gradient scrim when
+  over a dark hero; `ImageText` gains an `eager` prop (used by
+  `ProblemSection` on all 7 solution pages); warm champagne
+  backgrounds behind framed photos; two largest heroes recompressed
+  (`industries-exchanges-v2` 610→429 KB, `hero-skyline-sf` 451→296 KB)
+- [x] (b) Contests trophy crop: `HeroMedia` gains an `objectPosition`
+  prop; contests hero set to `"50% 30%"` so the cup is fully visible
+- [x] (c) Empty bands: `Section`/`ImageText` padding `lg:py-32` →
+  `lg:py-24` (boundary voids 256px → 192px); follow-on sections +
+  RelatedSolutions + JourneySection + page-bottom paddings tightened
+  to match; homepage Architecture panel restructured to a full-width
+  intro row + full-width layers + foundation bar (no more empty left 40%)
+- [x] (d) Face crops: `traders-discussion.jpg` removed (half-face in
+  the source — unfixable by re-crop); DemoPreview → `trading-floor-desk`,
+  PAMM hero → `team-collaboration` (objectPosition "50% 12%"),
+  multi-asset-brokers challenge image → `boardroom-executives`;
+  contests award photo cropped below the chin (1600×857)
+- [x] (e) Text-led stretches: FeatureIcon tiles on the 5 disconnect
+  rows; Integration categories → card grid + maroon CTA card;
+  Reliability principles + safe-config strip → FeatureIcon dark md
+  tiles; icons beside the 5 implementation step names; RingTile
+  enlarged (44→56px) so capability icons read; layer icons 28→32px
+- [x] (f) Heroes lightened: HeroMedia strong/medium scrims, home hero,
+  InnerHero dark variant, PhotoBand, PhotoInterlude — photography
+  shows while H1 contrast stays strong (computed, not guessed)
+- [x] (g) Reveal is now transform-only (no opacity animation), so
+  content can never be caught pale mid-reveal or stranded below
+  full opacity
+- [x] Verification: tsc clean; build passes (50/50 pages); 0
+  `opacity:0` in built HTML; preload links present on hero pages;
+  all 44 routes + changed assets verified live after deploy
+
 ## Later batches (from spec §14)
 - [ ] Batch 6: product foundation (portals, RBAC, tenant-safe data model)
   — only after the website is stable and Dawood approves. Never in this

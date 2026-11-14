@@ -18,8 +18,8 @@ export const exchanges: IndustryContent = {
   image: {
     src: "/images/industries-exchanges-v2.jpg",
     alt: "The New York Stock Exchange facade illuminated at night",
-    width: 1920,
-    height: 1440,
+    width: 1600,
+    height: 1200,
   },
   heroBridgeLine: true,
   secondaryImage: {

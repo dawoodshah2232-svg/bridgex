@@ -69,6 +69,7 @@ export default function SolutionHero({ solution }: { solution: SolutionContent }
         scrim="strong"
         kenBurns
         bridgeLine
+        objectPosition={img.objectPosition}
         imageWidth={img.width}
         imageHeight={img.height}
       />

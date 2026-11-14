@@ -1,26 +1,28 @@
 # BridgeX Image Manifest
 
 **Location:** `public/images/` · **Reference in code:** via the `asset()` helper (basePath `/bridgex`), e.g. `asset('/images/hero-bridge.jpg')`.
-**Last updated:** 2026-11-14 (worker F2, visual-enrichment pass).
+**Last updated:** 2026-11-14 (visual-defects fix pass — see "Removed (14 Nov fix pass)" and the updated rows below).
 
 ## Totals
 
 | | Count | Size |
 |---|---|---|
 | Existing images (Batch 1–2) | 25 | ~4.3 MB |
-| **New images (this pass, F2)** | **43** | **~9.4 MB** |
-| **Total** | **68** | **~13.8 MB** |
+| **New images (enrichment pass, F2)** | **43** | **~9.4 MB** |
+| Removed in the 14 Nov fix pass | −1 | −0.2 MB |
+| Recompressed in the 14 Nov fix pass | — | −0.3 MB |
+| **Total** | **67** | **~13.3 MB** |
 
 All 43 new photos are real photography from **Pexels** (Pexels licence — free to use, no attribution required, no watermark). No AI-generated images. No `cwebp` on the VM, so all files are optimized JPEGs from Pexels CDN params (`?auto=compress&cs=tinysrgb&w=…`); heroes/bands at 1920w, cards at 1200–1600w. Every file was verified with `file` + Pillow (real JPEG, correct dimensions) and **visually inspected** — see the rejected log at the bottom for what was caught and removed.
 
-Budgets: heroes/bands ≤ 600 KB, all other images ≤ 400 KB. Largest file is `industries-exchanges-v2.jpg` at 596 KB (recompressed q80 to fit).
+Budgets: heroes/bands ≤ 600 KB, all other images ≤ 400 KB. Largest file is `industries-exchanges-v2.jpg` at 429 KB (recompressed 1920×1440 → 1600×1200 q78 in the 14 Nov fix pass, down from 596 KB).
 
 ## 🔄 Replacements (page workers: switch references to these)
 
 | Old file (keep on disk for now, do NOT delete) | Problem | New file | Action |
 |---|---|---|---|
-| `industries-exchanges.jpg` (1600×1067, 390 KB) | Small blurred German UI text visible in the image | **`industries-exchanges-v2.jpg`** (1920×1440, 596 KB) — NYSE facade at night, warm gold light, no UI text | Swap the hero on `/industries/exchanges` to the v2 file. Companion detail shot: `industries-exchanges-detail.jpg` (pediment sculptures, lettering cropped out). |
-| `solutions-contests.jpg` (1600×686, 111 KB) | Trophy photo is saturated yellow | **`solutions-contests-v2.jpg`** (1600×2400, 250 KB) — gold trophy held against a deep red background (portrait, on-palette) | Swap the hero on `/solutions/trading-contests` to the v2 file. Landscape alternative for image/text blocks: `solutions-contests-award.jpg` (man in tuxedo holding a gold statuette, maroon-red background). |
+| `industries-exchanges.jpg` (1600×1067, 390 KB) | Small blurred German UI text visible in the image | **`industries-exchanges-v2.jpg`** (1600×1200, 429 KB) — NYSE facade at night, warm gold light, no UI text | Swap the hero on `/industries/exchanges` to the v2 file. Companion detail shot: `industries-exchanges-detail.jpg` (pediment sculptures, lettering cropped out). |
+| `solutions-contests.jpg` (1600×686, 111 KB) | Trophy photo is saturated yellow | **`solutions-contests-v2.jpg`** (1600×2400, 250 KB) — gold trophy held against a deep red background (portrait, on-palette) | Swap the hero on `/solutions/trading-contests` to the v2 file. Landscape alternative for image/text blocks: `solutions-contests-award.jpg` (man in tuxedo holding a gold statuette, maroon-red background). Hero uses `objectPosition: "50% 30%"` so the cup is fully visible (14 Nov fix — the centred crop cut the cup off). |
 
 Note: the v2 exchanges hero still shows the NYSE name engraved on the building frieze, small and at an angle — architectural lettering on a real landmark, not UI text. The detail shot was cropped to remove its lettering band entirely.
 
@@ -29,8 +31,8 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | Site area | New photos assigned |
 |---|---|
 | Home + shared heroes/bands | `hero-skyline-sf`, `hero-skyline-frankfurt`, `hero-skyline-nyc`, `hero-bridge-night`, `hero-bridge-rotterdam`, `band-skyline-singapore`, `band-skyline-hongkong`, `band-skyline-kl`, `band-bridge-istanbul`, `band-bridge-london`, `band-glass-tower` |
-| Platform (8 pages) | `trading-floor-desk`, `trader-workstation`, `traders-discussion`, `abstract-glass-ceiling`, `abstract-glass-lines`, `abstract-mirrored-tower`, `team-laptop`, `compliance-desk` |
-| Solutions (7 pages) | `solutions-contests-v2`, `solutions-contests-award`, `payments-pos`, `payments-contactless`, `signing-contract`, `handshake-partners`, `compliance-review` |
+| Platform (8 pages) | `trading-floor-desk`, `trader-workstation`, `abstract-glass-ceiling`, `abstract-glass-lines`, `abstract-mirrored-tower`, `team-laptop`, `compliance-desk` |
+| Solutions (7 pages) | `solutions-contests-v2`, `solutions-contests-award`, `payments-pos`, `payments-contactless`, `signing-contract`, `handshake-partners`, `compliance-review`, `team-collaboration` (PAMM hero, 14 Nov fix) |
 | Industries (9 pages) | `industries-exchanges-v2`, `industries-exchanges-detail`, `wealth-advisor`, `wealth-meeting`, `banking-columns`, `banking-hall`, `boardroom-executives`, `trading-floor-desk` |
 | Services (4 pages) | `workshop-presentation`, `support-headset`, `team-collaboration`, `lobby-office` |
 | Resources (7 pages) | `workshop-presentation`, `boardroom-conference`, `team-strategy`, `portrait-executive` |
@@ -41,7 +43,7 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 
 | File | Dimensions | Size | Suggested slot(s) | Alt text |
 |---|---|---|---|---|
-| `hero-skyline-sf.jpg` | 1920×1280 | 440 KB | Home hero alt / `/platform` hero / full-bleed band | San Francisco financial district skyline at twilight across the bay |
+| `hero-skyline-sf.jpg` | 1600×1067 | 289 KB | Home hero alt / `/platform` hero / full-bleed band — recompressed 1920×1280 → 1600×1067 q78 in the 14 Nov fix pass (was 440 KB) | San Francisco financial district skyline at twilight across the bay |
 | `hero-skyline-frankfurt.jpg` | 1920×1280 | 244 KB | Home hero alt / `/industries/banks` hero / band — warm champagne sunset, ECB tower + bridge | Frankfurt financial district and river bridge at sunset |
 | `hero-skyline-nyc.jpg` | 1920×1080 | 307 KB | `/platform` or `/industries/multi-asset-brokers` hero / band — moody, works under maroon scrim | New York City skyline with One World Trade Center at dusk |
 | `hero-bridge-night.jpg` | 1920×1280 | 359 KB | Home hero alt / `/company/about` hero / band — Chain Bridge, Budapest, gold lights + light trails | Illuminated suspension bridge over a river at night |
@@ -73,7 +75,7 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | `boardroom-conference.jpg` | 1600×1067 | 136 KB | `/resources/events` / `/company/partners` image block — panel-style conference table | Business panel seated at a long conference table |
 | `team-laptop.jpg` | 1200×1800 | 238 KB | Portrait card / `/company/careers` / `/platform/client-experience` — diverse team around a laptop (screen not visible) | Diverse team collaborating around a laptop |
 | `team-strategy.jpg` | 1600×1067 | 234 KB | `/company/careers` / `/resources/blog` — casual startup-style team huddle; culture/careers use, not premium hero | Colleagues discussing strategy in a relaxed office lounge |
-| `team-collaboration.jpg` | 1600×1068 | 186 KB | `/company/about` / `/services` image block — team brainstorming at a wooden table | Team collaborating over a laptop in a bright office |
+| `team-collaboration.jpg` | 1600×1068 | 186 KB | `/company/about` / `/services` image block — team brainstorming at a wooden table; also the `/solutions/pamm-copy-trading` hero since the 14 Nov fix (objectPosition "50% 12%" keeps all four faces in frame) | Team collaborating over a laptop in a bright office |
 | `workshop-presentation.jpg` | 1600×968 | 189 KB | `/resources/events` / `/services/implementation` / `/resources/guides` — seminar audience (top wall text cropped out) | Professionals attending a business seminar |
 | `support-headset.jpg` | 1200×1800 | 224 KB | Portrait card / `/services/managed-services` / `/company/contact` — support agent portrait, clean studio background | Customer support agent wearing a headset and smiling |
 | `portrait-executive.jpg` | 1200×1800 | 169 KB | Portrait card / `/company/about` / `/company/partners` — businessman in blue suit by office window (4:5-friendly) | Businessman in a suit holding documents by an office window |
@@ -85,9 +87,10 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 
 | File | Dimensions | Size | Suggested slot(s) | Alt text |
 |---|---|---|---|---|
-| `trading-floor-desk.jpg` | 1920×1282 | 165 KB | `/platform` hero alt / `/industries/prop-firms` hero / `/solutions/tradeops` — trader at three monitors + tablet, real candlestick charts (plausible screens, no readable numbers) | Trader analysing charts across multiple monitors |
+| `trading-floor-desk.jpg` | 1920×1282 | 165 KB | `/platform` hero alt / `/industries/prop-firms` hero / `/solutions/tradeops` — trader at three monitors + tablet, real candlestick charts (plausible screens, no readable numbers); also the home DemoPreview figure since the 14 Nov fix (over-the-shoulder, no face — safe at any wide crop) | Trader analysing charts across multiple monitors |
 | `trader-workstation.jpg` | 1600×1067 | 173 KB | `/industries/prop-firms` image block / `/platform/analytics` — focused trader, four screens | Trader working at a multi-monitor trading workstation |
-| `traders-discussion.jpg` | 1600×1067 | 192 KB | `/solutions/pamm-copy-trading` / `/industries/multi-asset-brokers` — two traders discussing charts on laptop + tablet | Two traders discussing market charts on a laptop and tablet |
+
+`traders-discussion.jpg` was **removed** in the 14 Nov fix pass — see "Removed (14 Nov fix pass)" below. Do NOT re-add it.
 
 ## E. New images — documents, compliance & signing
 
@@ -116,8 +119,8 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 
 | File | Dimensions | Size | Suggested slot(s) | Alt text |
 |---|---|---|---|---|
-| `solutions-contests-v2.jpg` | 1600×2400 | 250 KB | **REPLACES `solutions-contests.jpg`** — `/solutions/trading-contests` hero (portrait) | Hand holding a gold trophy against a deep red background |
-| `solutions-contests-award.jpg` | 1600×1067 | 88 KB | `/solutions/trading-contests` image block (landscape companion) | Man in a tuxedo holding a gold award statuette |
+| `solutions-contests-v2.jpg` | 1600×2400 | 250 KB | **REPLACES `solutions-contests.jpg`** — `/solutions/trading-contests` hero (portrait), with `objectPosition: "50% 30%"` so the cup is fully visible | Hand holding a gold trophy against a deep red background |
+| `solutions-contests-award.jpg` | 1600×857 | 101 KB | `/solutions/trading-contests` image block (landscape companion) — cropped from y=210 in the 14 Nov fix: the source cut the man's face mid-face, so the crop is now clearly below the chin (bow tie, statuette, hands only) | Man in a tuxedo holding a gold award statuette |
 
 ## I. Existing images (Batch 1–2, kept as-is)
 
@@ -191,11 +194,16 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | `team-laptop.jpg` | 3182750 | |
 | `team-strategy.jpg` | 6457575 | Casual styling — careers/culture use |
 | `trader-workstation.jpg` | 5833758 | |
-| `traders-discussion.jpg` | 5833270 | |
 | `trading-floor-desk.jpg` | 5831522 | |
 | `wealth-advisor.jpg` | 8441820 | |
 | `wealth-meeting.jpg` | 7821714 | |
 | `workshop-presentation.jpg` | 8761535 | Cropped top 100px to remove partial wall signage |
+
+## Removed (14 Nov fix pass — deleted from the repo, do NOT re-add)
+
+| File | Reason removed | Replaced by |
+|---|---|---|
+| `traders-discussion.jpg` (Pexels 5833270, 1600×1067) | Face-crop defect found in the live browser check: the right man's face is half-cut at the right edge of the SOURCE, and both men's heads are cropped at the top. No re-crop can fix a half-face — the photo had to go. | Home DemoPreview figure → `trading-floor-desk.jpg` (over-the-shoulder, no face); `/solutions/pamm-copy-trading` hero → `team-collaboration.jpg` (all four faces whole, objectPosition "50% 12%"); `/industries/multi-asset-brokers` challenge image → `boardroom-executives.jpg`. |
 
 ## Rejected during visual QA (downloaded, then deleted — do NOT re-add)
 

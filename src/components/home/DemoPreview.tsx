@@ -302,10 +302,10 @@ export default function DemoPreview() {
       <Reveal delay={0.1} className="mt-12 lg:mt-16">
         <figure>
           <img
-            src={asset("/images/traders-discussion.jpg")}
-            alt="Two traders discussing market charts on a laptop and tablet"
-            width={1600}
-            height={1067}
+            src={asset("/images/trading-floor-desk.jpg")}
+            alt="Trader analysing charts across multiple monitors"
+            width={1920}
+            height={1282}
             loading="lazy"
             className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
           />

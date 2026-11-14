@@ -15,6 +15,10 @@ export interface SolutionImage {
   alt: string;
   width: number;
   height: number;
+  /** CSS object-position for the hero crop — set when the subject is
+   * not centred in the frame (e.g. a portrait trophy whose cup sits
+   * high). Defaults to "50% 50%" in HeroMedia. */
+  objectPosition?: string;
 }
 
 export interface CopyBlock {
@@ -383,7 +387,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "with the maths visible.",
     heroIntro:
       "BridgeX PAMM & Copy Trading connects strategy managers with investors — subscriptions, allocation, risk settings and fee logic in one place, with every figure traceable to its source.",
-    heroImage: { src: "/images/traders-discussion.jpg", alt: "Two traders discussing market charts on a laptop and tablet", width: 1600, height: 1067 },
+    heroImage: { src: "/images/team-collaboration.jpg", alt: "Team collaborating over a laptop in a bright office", width: 1600, height: 1068, objectPosition: "50% 12%" },
     darkHero: true,
     notice:
       "PAMM and copy-trading engines are in active development. The preview below demonstrates the intended experience with illustrative data — it is not a live trading system, and no performance figures here are real.",
@@ -921,7 +925,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "and keeps it fair.",
     heroIntro:
       "BridgeX Trading Contest Management runs the whole contest — creation, registration, live rankings, fairness review and prize payouts — so a campaign that excites traders does not become a dispute that embarrasses the brand.",
-    heroImage: { src: "/images/solutions-contests-v2.jpg", alt: "Hand holding a gold trophy against a deep red background", width: 1600, height: 2400 },
+    heroImage: { src: "/images/solutions-contests-v2.jpg", alt: "Hand holding a gold trophy against a deep red background", width: 1600, height: 2400, objectPosition: "50% 30%" },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Contests are easy to announce and hard to run honestly",

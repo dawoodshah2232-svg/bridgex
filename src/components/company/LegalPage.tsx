@@ -54,7 +54,7 @@ export default function LegalPage({
         imageWidth={imageWidth}
         imageHeight={imageHeight}
       />
-      <div className="bg-bx-ivory pb-20 sm:pb-24 lg:pb-32">
+      <div className="bg-bx-ivory pb-16 sm:pb-20 lg:pb-24">
         <Container>
           <div className="pt-2">
             <DraftNotice updated={updated} />

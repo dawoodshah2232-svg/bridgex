@@ -106,3 +106,16 @@
   transparent over it (37 entries after the 14 Nov visual pass).
   The 404 page cannot be keyed (bogus pathnames) — frosted header
   there is expected and fine.
+- Visual-defects fix (14 Nov, after the live browser check):
+  React 19 auto-preloads `fetchPriority="high"` images during SSR —
+  verified in built HTML for heroes AND eager ImageText blocks; a
+  manual `<link rel="preload">` duplicates it, so never add one.
+  `HeroMedia` takes an `objectPosition` prop for off-centre
+  subjects (contests trophy "50% 30%", PAMM team "50% 12%").
+  `Reveal` is transform-only (no opacity) — content can never sit
+  pale. Section rhythm is `py-16 sm:py-20 lg:py-24` (the old
+  `lg:py-32` left ~300px dead voids). The fixed header carries its
+  own gradient scrim over dark heroes — never rely on the hero
+  photo for header contrast. `traders-discussion.jpg` is deleted
+  (half-face in the source) — do NOT re-add; see IMAGE-MANIFEST.md
+  "Removed (14 Nov fix pass)".

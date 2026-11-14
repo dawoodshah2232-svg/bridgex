@@ -114,8 +114,8 @@ const INDUSTRIES: Industry[] = [
     slug: "exchanges",
     image: "/images/industries-exchanges-v2.jpg",
     imageAlt: "New York Stock Exchange facade at night, warm gold light",
-    imageWidth: 1920,
-    imageHeight: 1440,
+    imageWidth: 1600,
+    imageHeight: 1200,
     label: "Exchanges & Trading Venues",
     description:
       "Membership onboarding, participant service, fee schedules, registration and conformance workflows — for venues and their members.",

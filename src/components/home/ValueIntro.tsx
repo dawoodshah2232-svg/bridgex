@@ -10,27 +10,33 @@ import { asset } from "@/lib/paths";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import Reveal from "../ui/Reveal";
-import Icon from "../icons";
+import FeatureIcon from "../ui/FeatureIcon";
+import Icon, { type IconName } from "../icons";
 
-const DISCONNECTS = [
+const DISCONNECTS: { title: string; icon: IconName; text: string }[] = [
   {
     title: "Leads",
+    icon: "funnel",
     text: "Captured in one tool, worked in another, lost somewhere between the two.",
   },
   {
     title: "Accounts",
+    icon: "users",
     text: "Client accounts that no single screen can describe end to end.",
   },
   {
     title: "Payments",
+    icon: "wallet",
     text: "Deposits and withdrawals reconciled by hand, after the fact.",
   },
   {
     title: "Partners",
+    icon: "ib",
     text: "Partner networks tracked in spreadsheets, commissions disputed monthly.",
   },
   {
     title: "Trading tools",
+    icon: "chart",
     text: "Trading operations run on a separate island from the business around them.",
   },
 ];
@@ -79,10 +85,7 @@ export default function ValueIntro() {
             <ul className="divide-y divide-bx-gold-500/25 border-y border-bx-gold-500/25">
               {DISCONNECTS.map((d) => (
                 <li key={d.title} className="flex gap-5 py-5">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2.5 block h-2 w-2 shrink-0 rotate-45 bg-bx-gold-500"
-                  />
+                  <FeatureIcon icon={d.icon} size="sm" className="shrink-0" />
                   <div>
                     <h3 className="font-sans text-lg font-bold text-bx-ink">
                       {d.title}
