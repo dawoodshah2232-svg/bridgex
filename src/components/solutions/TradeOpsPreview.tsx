@@ -33,14 +33,14 @@ const GROUP_SIZE: Record<string, number> = {
 function LogLine({ time, text, tone }: { time: string; text: string; tone?: "ok" | "warn" | "plain" }) {
   return (
     <p className="flex gap-3 font-mono text-[13px] leading-relaxed">
-      <span className="shrink-0 tabular-nums text-bx-gold-400/70">{time}</span>
+      <span className="shrink-0 tabular-nums text-bx-teal-400/70">{time}</span>
       <span
         className={
           tone === "ok"
-            ? "text-bx-champagne"
+            ? "text-bx-slate-300"
             : tone === "warn"
-              ? "text-bx-gold-400"
-              : "text-bx-champagne/80"
+              ? "text-bx-teal-400"
+              : "text-bx-slate-300/80"
         }
       >
         {text}
@@ -135,14 +135,14 @@ export default function TradeOpsPreview() {
   ];
 
   return (
-    <div className="overflow-hidden border border-bx-maroon-900 bg-bx-maroon-950 text-bx-ivory">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-gold-500/30 px-5 py-4 sm:px-8">
+    <div className="overflow-hidden border border-bx-navy-900 bg-bx-navy-950 text-bx-white">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-teal-500/30 px-5 py-4 sm:px-8">
         <h3 className="font-sans text-xl font-bold">Batch change — simulated dry-run</h3>
         <DemoLabel dark text="Illustrative data — no live server" />
       </div>
 
       {/* Stepper */}
-      <ol className="flex flex-wrap gap-x-6 gap-y-2 border-b border-bx-gold-500/30 px-5 py-4 sm:px-8" aria-label="Job progress">
+      <ol className="flex flex-wrap gap-x-6 gap-y-2 border-b border-bx-teal-500/30 px-5 py-4 sm:px-8" aria-label="Job progress">
         {steps.map((step, i) => {
           const state = stepState(step.id);
           return (
@@ -151,17 +151,17 @@ export default function TradeOpsPreview() {
                 aria-hidden="true"
                 className={`flex h-7 w-7 items-center justify-center font-sans text-[13px] font-extrabold ${
                   state === "done"
-                    ? "bg-bx-gold-500 text-bx-maroon-950"
+                    ? "bg-bx-teal-500 text-bx-white"
                     : state === "active"
-                      ? "border-2 border-bx-gold-400 text-bx-gold-400"
-                      : "border border-bx-gold-500/40 text-bx-champagne/50"
+                      ? "border-2 border-bx-teal-400 text-bx-teal-400"
+                      : "border border-bx-teal-500/40 text-bx-slate-300/50"
                 }`}
               >
                 {state === "done" ? <Icon name="check" size={14} /> : i + 1}
               </span>
               <span
                 className={`font-sans text-sm font-bold ${
-                  state === "upcoming" ? "text-bx-champagne/50" : "text-bx-ivory"
+                  state === "upcoming" ? "text-bx-slate-300/50" : "text-bx-white"
                 }`}
               >
                 {step.label}
@@ -173,19 +173,19 @@ export default function TradeOpsPreview() {
 
       <div className="grid gap-0 lg:grid-cols-2">
         {/* Left: job definition + actions */}
-        <div className="border-b border-bx-gold-500/30 px-5 py-6 sm:px-8 lg:border-b-0 lg:border-r">
+        <div className="border-b border-bx-teal-500/30 px-5 py-6 sm:px-8 lg:border-b-0 lg:border-r">
           <fieldset disabled={phase !== "draft"}>
             <legend className="sr-only">Define the batch change</legend>
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="ops-server" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-gold-400">
+                <label htmlFor="ops-server" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-teal-400">
                   Server
                 </label>
                 <select
                   id="ops-server"
                   value={server}
                   onChange={(e) => setServer(e.target.value)}
-                  className="mt-2 min-h-[48px] w-full border border-bx-gold-500/40 bg-bx-maroon-900 px-3 text-[15px] text-bx-ivory"
+                  className="mt-2 min-h-[48px] w-full border border-bx-teal-500/40 bg-bx-navy-900 px-3 text-[15px] text-bx-white"
                 >
                   {SERVERS.map((s) => (
                     <option key={s}>{s}</option>
@@ -193,14 +193,14 @@ export default function TradeOpsPreview() {
                 </select>
               </div>
               <div>
-                <label htmlFor="ops-group" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-gold-400">
+                <label htmlFor="ops-group" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-teal-400">
                   Account group
                 </label>
                 <select
                   id="ops-group"
                   value={group}
                   onChange={(e) => setGroup(e.target.value)}
-                  className="mt-2 min-h-[48px] w-full border border-bx-gold-500/40 bg-bx-maroon-900 px-3 text-[15px] text-bx-ivory"
+                  className="mt-2 min-h-[48px] w-full border border-bx-teal-500/40 bg-bx-navy-900 px-3 text-[15px] text-bx-white"
                 >
                   {GROUPS.map((g) => (
                     <option key={g}>{g}</option>
@@ -208,25 +208,25 @@ export default function TradeOpsPreview() {
                 </select>
               </div>
               <div>
-                <label htmlFor="ops-change" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-gold-400">
+                <label htmlFor="ops-change" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-teal-400">
                   Change type
                 </label>
                 <input
                   id="ops-change"
                   value="Leverage update"
                   readOnly
-                  className="mt-2 min-h-[48px] w-full border border-bx-gold-500/40 bg-bx-maroon-900/60 px-3 text-[15px] text-bx-champagne/80"
+                  className="mt-2 min-h-[48px] w-full border border-bx-teal-500/40 bg-bx-navy-900/60 px-3 text-[15px] text-bx-slate-300/80"
                 />
               </div>
               <div>
-                <label htmlFor="ops-leverage" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-gold-400">
+                <label htmlFor="ops-leverage" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-teal-400">
                   New leverage (1:x)
                 </label>
                 <select
                   id="ops-leverage"
                   value={leverage}
                   onChange={(e) => setLeverage(e.target.value)}
-                  className="mt-2 min-h-[48px] w-full border border-bx-gold-500/40 bg-bx-maroon-900 px-3 text-[15px] text-bx-ivory"
+                  className="mt-2 min-h-[48px] w-full border border-bx-teal-500/40 bg-bx-navy-900 px-3 text-[15px] text-bx-white"
                 >
                   <option value="30">30</option>
                   <option value="50">50</option>
@@ -270,9 +270,9 @@ export default function TradeOpsPreview() {
           </div>
 
           {phase === "approved" && (
-            <p className="mt-5 border border-bx-gold-500/40 bg-bx-maroon-900 px-4 py-3 text-sm leading-relaxed text-bx-champagne/90" role="status">
-              <strong className="font-sans text-bx-ivory">Approved by R. Alvarez, Operations Lead</strong>
-              <span className="block text-[13px] text-bx-champagne/70">
+            <p className="mt-5 border border-bx-teal-500/40 bg-bx-navy-900 px-4 py-3 text-sm leading-relaxed text-bx-slate-300/90" role="status">
+              <strong className="font-sans text-bx-white">Approved by R. Alvarez, Operations Lead</strong>
+              <span className="block text-[13px] text-bx-slate-300/70">
                 Four-eyes review complete — the approver is not the operator who drafted the job.
               </span>
             </p>
@@ -281,12 +281,12 @@ export default function TradeOpsPreview() {
             <div className="mt-5" aria-live="polite">
               <p className="flex justify-between font-sans text-sm font-bold">
                 <span>Job progress</span>
-                <span className="tabular-nums text-bx-gold-400">{progress}%</span>
+                <span className="tabular-nums text-bx-teal-400">{progress}%</span>
               </p>
-              <div className="mt-2 h-2 w-full bg-bx-maroon-800" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label="Job execution progress">
-                <div className="h-2 bg-bx-gold-500 transition-[width] duration-200" style={{ width: `${progress}%` }} />
+              <div className="mt-2 h-2 w-full bg-bx-navy-800" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label="Job execution progress">
+                <div className="h-2 bg-bx-teal-500 transition-[width] duration-200" style={{ width: `${progress}%` }} />
               </div>
-              <p className="mt-2 text-[13px] tabular-nums text-bx-champagne/70">
+              <p className="mt-2 text-[13px] tabular-nums text-bx-slate-300/70">
                 {phase === "done"
                   ? `${(affected - excluded).toLocaleString("en-US")} accounts updated · ${excluded} excluded · 0 errors`
                   : `${Math.floor(((affected - excluded) * progress) / 100).toLocaleString("en-US")} of ${(affected - excluded).toLocaleString("en-US")} accounts updated…`}
@@ -296,39 +296,39 @@ export default function TradeOpsPreview() {
         </div>
 
         {/* Right: dry-run results + audit log */}
-        <div className="bg-bx-maroon-900/60 px-5 py-6 sm:px-8" aria-live="polite">
+        <div className="bg-bx-navy-900/60 px-5 py-6 sm:px-8" aria-live="polite">
           {phase === "draft" ? (
             <div>
-              <h4 className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-gold-400">
+              <h4 className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-teal-400">
                 Dry-run results
               </h4>
-              <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/80">
+              <p className="mt-3 text-[15px] leading-relaxed text-bx-slate-300/80">
                 Run the dry-run to see exactly what this job would change —
                 which accounts, which values, and what is excluded — before
                 anything is applied.
               </p>
-              <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-bx-champagne/70">
-                <Icon name="shield" size={18} className="mt-0.5 shrink-0 text-bx-gold-400" />
+              <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-bx-slate-300/70">
+                <Icon name="shield" size={18} className="mt-0.5 shrink-0 text-bx-teal-400" />
                 Role scoping applies: this operator can draft jobs for these
                 groups, but cannot approve their own work.
               </p>
             </div>
           ) : (
             <div>
-              <h4 className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-gold-400">
+              <h4 className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-teal-400">
                 Dry-run — {server} · {group}
               </h4>
               <dl className="mt-4 space-y-2.5">
                 {dryRunRows.map((row) => (
-                  <div key={row.label} className="flex flex-wrap justify-between gap-x-4 gap-y-0.5 border-b border-bx-gold-500/15 pb-2.5">
-                    <dt className="text-sm text-bx-champagne/80">{row.label}</dt>
-                    <dd className={`font-sans text-sm font-bold tabular-nums ${row.warn ? "text-bx-gold-400" : "text-bx-ivory"}`}>
+                  <div key={row.label} className="flex flex-wrap justify-between gap-x-4 gap-y-0.5 border-b border-bx-teal-500/15 pb-2.5">
+                    <dt className="text-sm text-bx-slate-300/80">{row.label}</dt>
+                    <dd className={`font-sans text-sm font-bold tabular-nums ${row.warn ? "text-bx-teal-400" : "text-bx-white"}`}>
                       {row.value}
                     </dd>
                   </div>
                 ))}
               </dl>
-              <h4 className="mt-6 font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-gold-400">
+              <h4 className="mt-6 font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-teal-400">
                 Audit log
               </h4>
               <div className="mt-3 space-y-1.5">

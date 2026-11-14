@@ -87,7 +87,7 @@ export default function CaseStudiesPage() {
         title={
           <>
             Case studies,{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               coming soon.
             </span>
           </>
@@ -99,16 +99,16 @@ export default function CaseStudiesPage() {
         imageHeight={1098}
       />
 
-      <Section tone="cream" ariaLabel="Why this page is empty">
+      <Section tone="mint" ariaLabel="Why this page is empty">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
               An honest page
             </p>
-            <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-balance text-bx-ink sm:text-4xl">
+            <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-balance text-bx-navy-900 sm:text-4xl">
               A case study is a promise. We only make promises we can keep.
             </h2>
-            <p className="mx-auto mt-5 max-w-[62ch] text-base leading-relaxed text-bx-muted sm:text-lg">
+            <p className="mx-auto mt-5 max-w-[62ch] text-base leading-relaxed text-bx-slate-500 sm:text-lg">
               A real case study needs three things: a real customer, their
               agreement to be named, and facts checked together. Until all
               three exist, this page stays exactly as it is — an
@@ -118,7 +118,7 @@ export default function CaseStudiesPage() {
         </div>
       </Section>
 
-      <Section tone="ivory" ariaLabel="What future case studies will cover">
+      <Section tone="white" ariaLabel="What future case studies will cover">
         <SectionIntro
           label="What we will document"
           heading="When the stories arrive, this is what they will cover"
@@ -127,12 +127,12 @@ export default function CaseStudiesPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {COVERAGE_AREAS.map((area, i) => (
             <Reveal key={area.title} delay={(i % 3) * 0.08} className="h-full">
-              <div className="flex h-full flex-col items-center border border-bx-gold-500/30 bg-bx-white p-7 text-center">
+              <div className="flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
                 <FeatureIcon icon={area.icon} size="md" />
-                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                   {area.title}
                 </h3>
-                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                   {area.text}
                 </p>
               </div>
@@ -141,7 +141,7 @@ export default function CaseStudiesPage() {
         </div>
       </Section>
 
-      <Section tone="maroon" ariaLabel="How we publish case studies">
+      <Section tone="navy" ariaLabel="How we publish case studies">
         <SectionIntro
           dark
           label="How we publish"
@@ -151,14 +151,14 @@ export default function CaseStudiesPage() {
         <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PUBLISHING_STEPS.map((s, i) => (
             <Reveal key={s.step} delay={i * 0.08} className="h-full">
-              <li className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-maroon-800/60 p-6">
-                <span className="font-display text-5xl font-semibold italic text-bx-gold-400">
+              <li className="flex h-full flex-col border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
+                <span className="font-sans text-5xl font-semibold italic text-bx-teal-400">
                   {s.step}
                 </span>
-                <h3 className="mt-4 font-sans text-lg font-extrabold leading-snug text-bx-ivory">
+                <h3 className="mt-4 font-sans text-lg font-extrabold leading-snug text-bx-white">
                   {s.title}
                 </h3>
-                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-champagne/85">
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-slate-300/85">
                   {s.text}
                 </p>
               </li>
@@ -167,10 +167,10 @@ export default function CaseStudiesPage() {
         </ol>
       </Section>
 
-      <Section tone="ivory" ariaLabel="Are you a BridgeX customer">
+      <Section tone="white" ariaLabel="Are you a BridgeX customer">
         {/* Abstract architecture imagery only — no client photos, no
             logos, nothing that implies client work exists yet. */}
-        <div className="grid items-stretch gap-10 overflow-hidden border border-bx-gold-500/30 bg-bx-white lg:grid-cols-[0.8fr_1.4fr_1fr] lg:gap-0">
+        <div className="grid items-stretch gap-10 overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl lg:grid-cols-[0.8fr_1.4fr_1fr] lg:gap-0">
           <div className="overflow-hidden">
             <img
               src={asset("/images/abstract-glass-lines.jpg")}
@@ -182,10 +182,10 @@ export default function CaseStudiesPage() {
             />
           </div>
           <div className="p-8 sm:p-10 lg:py-12">
-            <h2 className="font-sans text-[28px] font-extrabold leading-tight tracking-[-0.02em] text-bx-ink sm:text-4xl">
+            <h2 className="font-sans text-[28px] font-extrabold leading-tight tracking-[-0.02em] text-bx-navy-900 sm:text-4xl">
               Are you a BridgeX customer with a story to tell?
             </h2>
-            <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-bx-muted sm:text-lg">
+            <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-bx-slate-500 sm:text-lg">
               Tell us what changed for your team. We will draft the story
               with you, check every fact together, and publish nothing
               until you have approved the final wording.
@@ -202,7 +202,7 @@ export default function CaseStudiesPage() {
         </div>
       </Section>
 
-      <Section tone="cream" ariaLabel="Frequently asked questions">
+      <Section tone="mint" ariaLabel="Frequently asked questions">
         <div className="mx-auto max-w-3xl">
           <SectionIntro
             label="Questions"

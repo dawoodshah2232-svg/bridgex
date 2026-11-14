@@ -2,14 +2,14 @@
  * BridgeX logo — inline SVG symbol + HTML wordmark.
  *
  * The symbol geometry here is identical to public/brand/bridgex-logo-icon.svg
- * (angular B/X bridge glyph: a maroon bar crossed by a gold bar that passes
+ * (angular B/X bridge glyph: a navy bar crossed by a teal bar that passes
  * behind it at the centre). The wordmark is real HTML text so it renders in
- * the self-hosted Manrope font; the standalone SVG files in public/brand/
+ * the self-hosted DM Sans font; the standalone SVG files in public/brand/
  * carry the wordmark as vector outlines for use outside the site.
  *
  * Variants:
- * - "dark":  maroon/gold symbol, ink wordmark — for light backgrounds
- * - "light": champagne/gold symbol, ivory wordmark — for dark backgrounds
+ * - "dark":  navy/teal symbol, navy wordmark — for light backgrounds
+ * - "light": white/teal symbol, white wordmark — for dark backgrounds
  * - "icon":  symbol only, dark colours
  * - "icon-light": symbol only, light colours
  */
@@ -23,11 +23,11 @@ interface LogoProps {
 
 function Symbol({
   bar,
-  gold,
+  teal,
   height,
 }: {
   bar: string;
-  gold: string;
+  teal: string;
   height: number;
 }) {
   return (
@@ -41,11 +41,11 @@ function Symbol({
     >
       <polygon
         points="35.2,7.2 40.8,12.8 30.3,23.3 24.7,17.7"
-        fill={gold}
+        fill={teal}
       />
       <polygon
         points="17.7,24.7 23.3,30.3 12.8,40.8 7.2,35.2"
-        fill={gold}
+        fill={teal}
       />
       <polygon
         points="7.2,12.8 12.8,7.2 40.8,35.2 35.2,40.8"
@@ -62,15 +62,15 @@ export default function Logo({
 }: LogoProps) {
   const isLight = variant === "light" || variant === "icon-light";
   const iconOnly = variant === "icon" || variant === "icon-light";
-  const bar = isLight ? "#F0DFB8" : "#360F20";
-  const gold = isLight ? "#D9B875" : "#C29A55";
-  const wordColor = isLight ? "text-bx-ivory" : "text-bx-ink";
-  const xColor = isLight ? "text-bx-gold-400" : "text-bx-gold-600";
+  const bar = isLight ? "#FFFFFF" : "#0F172A";
+  const teal = isLight ? "#2DD4BF" : "#14B8A6";
+  const wordColor = isLight ? "text-bx-white" : "text-bx-blue-900";
+  const xColor = isLight ? "text-bx-teal-400" : "text-bx-teal-500";
 
   if (iconOnly) {
     return (
       <span className={`inline-flex shrink-0 ${className}`}>
-        <Symbol bar={bar} gold={gold} height={height} />
+        <Symbol bar={bar} teal={teal} height={height} />
       </span>
     );
   }
@@ -81,7 +81,7 @@ export default function Logo({
       role="img"
       aria-label="BridgeX"
     >
-      <Symbol bar={bar} gold={gold} height={height} />
+      <Symbol bar={bar} teal={teal} height={height} />
       <span
         aria-hidden="true"
         className={`font-sans font-extrabold tracking-[0.08em] ${wordColor}`}

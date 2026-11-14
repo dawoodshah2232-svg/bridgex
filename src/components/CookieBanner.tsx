@@ -40,17 +40,17 @@ function Toggle({
   onChange?: (checked: boolean) => void;
 }) {
   return (
-    <div className="flex items-start justify-between gap-6 border-t border-bx-gold-500/20 py-4 first:border-t-0 first:pt-0 last:pb-0">
+    <div className="flex items-start justify-between gap-6 border-t border-bx-teal-500/20 py-4 first:border-t-0 first:pt-0 last:pb-0">
       <div>
-        <p className="font-sans text-[15px] font-bold text-bx-ivory">
+        <p className="font-sans text-[15px] font-bold text-bx-white">
           {label}
           {disabled && (
-            <span className="ml-2 text-[12px] font-bold uppercase tracking-wide text-bx-gold-400">
+            <span className="ml-2 text-[12px] font-bold uppercase tracking-wide text-bx-teal-400">
               Always on
             </span>
           )}
         </p>
-        <p className="mt-1 text-sm leading-relaxed text-bx-champagne/75">
+        <p className="mt-1 text-sm leading-relaxed text-bx-slate-300/75">
           {description}
         </p>
       </div>
@@ -63,7 +63,7 @@ function Toggle({
         disabled={disabled}
         onClick={() => onChange?.(!checked)}
         className={`relative mt-1 h-7 w-12 shrink-0 transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-70 ${
-          checked ? "bg-bx-gold-500" : "bg-bx-champagne/30"
+          checked ? "bg-bx-teal-500" : "bg-bx-mint-100/30"
         }`}
       >
         <span className="sr-only" id={`${id}-label`}>
@@ -137,14 +137,14 @@ export default function CookieBanner() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-0 z-[60] border-t border-bx-gold-500/50 bg-bx-maroon-950 text-bx-ivory shadow-[0_-12px_40px_-12px_rgba(0,0,0,0.5)]"
+      className="fixed inset-x-0 bottom-0 z-[60] border-t border-bx-teal-500/50 bg-bx-navy-950 text-bx-white shadow-[0_-12px_40px_-12px_rgba(0,0,0,0.5)]"
     >
       <div className="mx-auto max-w-[1280px] px-5 py-6 sm:px-8 sm:py-7 lg:px-10">
         <div className="flex items-start justify-between gap-6">
           <h2
             ref={headingRef}
             tabIndex={-1}
-            className="font-sans text-xl font-extrabold tracking-[-0.02em] text-bx-ivory focus:outline-none"
+            className="font-sans text-xl font-extrabold tracking-[-0.02em] text-bx-white focus:outline-none"
           >
             Cookies, your way
           </h2>
@@ -156,21 +156,21 @@ export default function CookieBanner() {
                 setVisible(false);
               }}
               aria-label="Close cookie settings"
-              className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center text-bx-champagne/80 transition-colors hover:text-bx-ivory"
+              className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center text-bx-slate-300/80 transition-colors hover:text-bx-white"
             >
               <Icon name="close" size={20} />
             </button>
           )}
         </div>
 
-        <p className="mt-2 max-w-[72ch] text-[15px] leading-relaxed text-bx-champagne/85">
+        <p className="mt-2 max-w-[72ch] text-[15px] leading-relaxed text-bx-slate-300/85">
           BridgeX stores your cookie choice — and any form entries you save —
           in this browser. We do not currently load analytics or marketing
           scripts; the choices you make here will apply automatically if we
           connect them later. See the{" "}
           <Link
             href="/cookies"
-            className="font-bold text-bx-champagne underline underline-offset-4 hover:text-bx-ivory"
+            className="font-bold text-bx-slate-300 underline underline-offset-4 hover:text-bx-white"
           >
             Cookie Policy
           </Link>{" "}
@@ -204,14 +204,14 @@ export default function CookieBanner() {
               <button
                 type="button"
                 onClick={() => choose(analytics, marketing)}
-                className="inline-flex min-h-[48px] items-center justify-center bg-bx-gold-500 px-6 font-sans text-[15px] font-bold text-bx-maroon-950 transition-colors duration-200 hover:bg-bx-gold-400 active:scale-[0.97]"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-bx-teal-500 px-6 font-sans text-[15px] font-bold text-bx-white transition-colors duration-200 hover:bg-bx-teal-600 active:scale-[0.97]"
               >
                 Save preferences
               </button>
               <button
                 type="button"
                 onClick={() => setCustomising(false)}
-                className="inline-flex min-h-[48px] items-center justify-center border-2 border-bx-champagne/70 px-6 font-sans text-[15px] font-bold text-bx-champagne transition-colors duration-200 hover:bg-bx-champagne hover:text-bx-maroon-950 active:scale-[0.97]"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-bx-white/70 px-6 font-sans text-[15px] font-bold text-bx-white transition-colors duration-200 hover:bg-bx-white hover:text-bx-navy-900 active:scale-[0.97]"
               >
                 Back
               </button>
@@ -222,21 +222,21 @@ export default function CookieBanner() {
             <button
               type="button"
               onClick={() => choose(true, true)}
-              className="inline-flex min-h-[48px] items-center justify-center bg-bx-gold-500 px-6 font-sans text-[15px] font-bold text-bx-maroon-950 transition-colors duration-200 hover:bg-bx-gold-400 active:scale-[0.97]"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-bx-teal-500 px-6 font-sans text-[15px] font-bold text-bx-white transition-colors duration-200 hover:bg-bx-teal-600 active:scale-[0.97]"
             >
               Accept all
             </button>
             <button
               type="button"
               onClick={() => choose(false, false)}
-              className="inline-flex min-h-[48px] items-center justify-center border-2 border-bx-champagne/70 px-6 font-sans text-[15px] font-bold text-bx-champagne transition-colors duration-200 hover:bg-bx-champagne hover:text-bx-maroon-950 active:scale-[0.97]"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-bx-white/70 px-6 font-sans text-[15px] font-bold text-bx-white transition-colors duration-200 hover:bg-bx-white hover:text-bx-navy-900 active:scale-[0.97]"
             >
               Reject non-essential
             </button>
             <button
               type="button"
               onClick={() => setCustomising(true)}
-              className="inline-flex min-h-[48px] items-center justify-center px-4 font-sans text-[15px] font-bold text-bx-champagne underline underline-offset-4 transition-colors hover:text-bx-ivory"
+              className="inline-flex min-h-[48px] items-center justify-center px-4 font-sans text-[15px] font-bold text-bx-slate-300 underline underline-offset-4 transition-colors hover:text-bx-white"
             >
               Customise
             </button>
@@ -256,7 +256,7 @@ export function CookieSettingsLink() {
     <button
       type="button"
       onClick={() => openCookieSettings()}
-      className="flex min-h-[44px] items-center text-sm text-bx-champagne/80 transition-colors hover:text-bx-ivory"
+      className="flex min-h-[44px] items-center text-sm text-bx-slate-300/80 transition-colors hover:text-bx-white"
     >
       Cookie settings
     </button>

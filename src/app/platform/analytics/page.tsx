@@ -76,7 +76,7 @@ export default function AnalyticsPage() {
         title={
           <>
             The number in the board pack{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               and the number in the queue agree.
             </span>
           </>
@@ -91,7 +91,7 @@ export default function AnalyticsPage() {
       />
 
       {/* Role views — interactive tabs */}
-      <Section tone="cream" id="dashboards" ariaLabel="Dashboards by role">
+      <Section tone="mint" id="dashboards" ariaLabel="Dashboards by role">
         <SectionIntro
           label="Role-specific views"
           heading="The same records, seen through four different jobs."
@@ -110,7 +110,7 @@ export default function AnalyticsPage() {
         heading={
           <>
             The same truth,{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               arranged for their decisions.
             </span>
           </>
@@ -122,7 +122,7 @@ export default function AnalyticsPage() {
       />
 
       {/* Funnels — editorial + photo */}
-      <Section tone="ivory" id="funnels" ariaLabel="Funnels">
+      <Section tone="white" id="funnels" ariaLabel="Funnels">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <SectionIntro
@@ -146,12 +146,12 @@ export default function AnalyticsPage() {
                 },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4">
-                  <Icon name="pamm" size={24} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                  <Icon name="pamm" size={24} className="mt-0.5 shrink-0 text-bx-teal-600" />
                   <div>
-                    <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-ink">
+                    <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                       {item.title}
                     </h3>
-                    <p className="mt-1.5 max-w-[58ch] text-[15px] leading-relaxed text-bx-muted">
+                    <p className="mt-1.5 max-w-[58ch] text-[15px] leading-relaxed text-bx-slate-500">
                       {item.text}
                     </p>
                   </div>
@@ -163,7 +163,7 @@ export default function AnalyticsPage() {
             <div className="relative">
               <div
                 aria-hidden="true"
-                className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
+                className="absolute -left-3 -top-3 h-full w-full border border-bx-teal-500/50"
               />
               <img
                 src={asset("/images/boardroom-executives.jpg")}
@@ -174,7 +174,7 @@ export default function AnalyticsPage() {
                 className="relative aspect-[3/2] w-full object-cover"
               />
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+            <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
               Decisions are made with a view of the whole business — not one
               desk&apos;s spreadsheet.
             </p>
@@ -183,37 +183,37 @@ export default function AnalyticsPage() {
       </Section>
 
       {/* Exceptions — dark */}
-      <Section tone="maroon" id="exceptions" ariaLabel="Exception queues">
+      <Section tone="navy" id="exceptions" ariaLabel="Exception queues">
         <SectionIntro
           dark
           label="Exceptions"
           heading={
             <>
               The platform tells you{" "}
-              <span className="font-display font-semibold italic text-bx-champagne">
+              <span className="font-sans font-semibold italic text-bx-teal-400">
                 what needs a human.
               </span>
             </>
           }
           copy="Most of the business runs without attention. Exceptions are the small part that should not — items that did not match, complete or reconcile, each carrying the records and the reason it was raised."
         />
-        <div className="mt-12 grid gap-px border border-bx-gold-500/25 bg-bx-gold-500/25 sm:grid-cols-2">
+        <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2">
           {EXCEPTIONS.map((item) => (
-            <div key={item.title} className="bg-bx-maroon-900 p-6 sm:p-8">
-              <p className="font-sans text-[12px] font-bold uppercase tracking-[0.18em] text-bx-gold-400">
+            <div key={item.title} className="bg-bx-navy-900 rounded-2xl p-6 sm:p-8">
+              <p className="font-sans text-[12px] font-bold uppercase tracking-[0.18em] text-bx-teal-400">
                 {item.tag}
               </p>
-              <h3 className="mt-3 font-sans text-lg font-extrabold leading-tight text-bx-ivory">
+              <h3 className="mt-3 font-sans text-lg font-extrabold leading-tight text-bx-white">
                 {item.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-300/85">
                 {item.text}
               </p>
             </div>
           ))}
         </div>
         <Reveal delay={0.1} className="mt-10">
-          <p className="max-w-[68ch] text-base leading-relaxed text-bx-champagne/85">
+          <p className="max-w-[68ch] text-base leading-relaxed text-bx-slate-300/85">
             Exceptions are ordered by risk and age, assigned to a role, and
             tracked until resolved. An exception that nobody owns is not an
             exception queue — it is a pile. BridgeX keeps the queue owned.
@@ -233,28 +233,28 @@ export default function AnalyticsPage() {
             <div className="mt-8 space-y-6">
               {MONITORING.map((item) => (
                 <div key={item.title}>
-                  <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-ink">
+                  <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                     {item.title}
                   </h3>
-                  <p className="mt-1.5 text-[15px] leading-relaxed text-bx-muted">{item.text}</p>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-bx-slate-500">{item.text}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-8 text-[15px] leading-relaxed text-bx-muted">
+            <p className="mt-8 text-[15px] leading-relaxed text-bx-slate-500">
               Routing and retry detail lives on the{" "}
-              <Link href="/solutions/payment-orchestration" className="font-bold text-bx-maroon-700 hover:underline">
+              <Link href="/solutions/payment-orchestration" className="font-bold text-bx-teal-700 hover:underline">
                 payment orchestration
               </Link>{" "}
               page.
             </p>
           </div>
           <div className="lg:col-span-6">
-            <div className="border border-bx-gold-500/25 bg-bx-ivory p-6 sm:p-8">
-              <Icon name="audit" size={28} className="text-bx-gold-600" />
-              <h3 className="mt-4 font-sans text-2xl font-extrabold leading-tight text-bx-ink">
+            <div className="border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8">
+              <Icon name="audit" size={28} className="text-bx-teal-600" />
+              <h3 className="mt-4 font-sans text-2xl font-extrabold leading-tight text-bx-navy-900">
                 Exports and audit trails
               </h3>
-              <p className="mt-3 text-base leading-relaxed text-bx-muted">
+              <p className="mt-3 text-base leading-relaxed text-bx-slate-500">
                 Reports and dashboards export in standard formats for your own
                 analysis — and exports are themselves logged, so data leaving
                 the platform is accounted for. The audit trail behind them
@@ -268,8 +268,8 @@ export default function AnalyticsPage() {
                   "Audit events searchable by record, actor and date",
                   "Before-and-after values on significant changes",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-ink">
-                    <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                  <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-navy-900">
+                    <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-600" />
                     {item}
                   </li>
                 ))}
@@ -286,7 +286,7 @@ export default function AnalyticsPage() {
         heading="Analytics questions, answered plainly."
         copy="Where the numbers come from, who sees what, what an exception is, and whether the figures on this page are real."
         items={ANALYTICS_FAQS}
-        tone="cream"
+        tone="mint"
       />
 
       <CtaBand

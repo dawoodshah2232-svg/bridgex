@@ -62,12 +62,12 @@ export default function MobileNav({
           animate={{ opacity: 1, x: 0 }}
           exit={reduceMotion ? undefined : { opacity: 0, x: 48 }}
           transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[70] flex flex-col bg-bx-ivory lg:hidden"
+          className="fixed inset-0 z-[70] flex flex-col bg-bx-white lg:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
         >
-          <div className="flex h-[72px] shrink-0 items-center justify-between border-b border-bx-gold-500/30 px-5 sm:px-8">
+          <div className="flex h-[72px] shrink-0 items-center justify-between border-b border-bx-teal-500/30 px-5 sm:px-8">
             <Link href="/" onClick={onClose} aria-label="BridgeX — home">
               <Logo variant="dark" height={30} />
             </Link>
@@ -76,7 +76,7 @@ export default function MobileNav({
               type="button"
               onClick={onClose}
               aria-label="Close menu"
-              className="flex min-h-[44px] min-w-[44px] items-center justify-center text-bx-ink transition-colors hover:text-bx-maroon-700"
+              className="flex min-h-[44px] min-w-[44px] items-center justify-center text-bx-navy-900 transition-colors hover:text-bx-teal-700"
             >
               <Icon name="close" size={26} />
             </button>
@@ -92,7 +92,7 @@ export default function MobileNav({
               return (
                 <div
                   key={group.id}
-                  className="border-b border-bx-gold-500/25"
+                  className="border-b border-bx-teal-500/25"
                 >
                   <button
                     type="button"
@@ -101,11 +101,11 @@ export default function MobileNav({
                     onClick={() =>
                       setExpanded(isOpen ? null : group.id)
                     }
-                    className="flex min-h-[56px] w-full items-center justify-between py-3 text-left font-sans text-lg font-bold text-bx-ink"
+                    className="flex min-h-[56px] w-full items-center justify-between py-3 text-left font-sans text-lg font-bold text-bx-navy-900"
                   >
                     {group.label}
                     <span
-                      className={`text-bx-gold-600 transition-transform duration-200 ${
+                      className={`text-bx-teal-600 transition-transform duration-200 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     >
@@ -131,7 +131,7 @@ export default function MobileNav({
                               <Link
                                 href={group.overviewHref}
                                 onClick={onClose}
-                                className="flex min-h-[44px] items-center gap-2 py-2 pl-1 font-sans text-[15px] font-bold text-bx-maroon-700"
+                                className="flex min-h-[44px] items-center gap-2 py-2 pl-1 font-sans text-[15px] font-bold text-bx-teal-700"
                               >
                                 {group.label} overview
                                 <Icon name="arrowRight" size={16} />
@@ -145,11 +145,11 @@ export default function MobileNav({
                                 <Link
                                   href={route.href}
                                   onClick={onClose}
-                                  className="flex min-h-[44px] items-center gap-2 py-2 pl-1 text-[15px] text-bx-ink"
+                                  className="flex min-h-[44px] items-center gap-2 py-2 pl-1 text-[15px] text-bx-navy-900"
                                 >
                                   {route.label}
                                   {route.status === "roadmap" && (
-                                    <span className="border border-bx-gold-600/60 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-bx-maroon-700">
+                                    <span className="border border-bx-teal-600/60 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-bx-teal-700">
                                       In development
                                     </span>
                                   )}
@@ -169,7 +169,7 @@ export default function MobileNav({
                 <Link
                   href={demo.href}
                   onClick={onClose}
-                  className="flex min-h-[56px] items-center justify-center gap-2 bg-bx-gold-500 px-6 font-sans text-base font-bold text-bx-maroon-950 transition-colors hover:bg-bx-gold-400 active:scale-[0.98]"
+                  className="flex min-h-[56px] items-center justify-center gap-2 rounded-full bg-bx-teal-500 px-6 font-sans text-base font-bold text-bx-white transition-colors hover:bg-bx-teal-600 active:scale-[0.98]"
                 >
                   {demo.label}
                   <Icon name="arrowRight" size={18} />
@@ -181,7 +181,7 @@ export default function MobileNav({
                     key={route.href}
                     href={route.href}
                     onClick={onClose}
-                    className="flex min-h-[44px] items-center text-sm text-bx-muted hover:text-bx-maroon-700"
+                    className="flex min-h-[44px] items-center text-sm text-bx-slate-500 hover:text-bx-teal-700"
                   >
                     {route.label}
                   </Link>

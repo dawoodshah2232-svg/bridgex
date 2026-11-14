@@ -1,11 +1,11 @@
 /**
- * Header — fixed, transparent over dark heroes, frosted ivory on scroll.
+ * Header — fixed, transparent over dark heroes, frosted white on scroll.
  *
  * Behaviour:
  * - On routes in DARK_HERO_ROUTES (homepage today; Batch 2 extends the set)
  *   the header is transparent with a light logo until the user scrolls.
  * - Everywhere else — and once scrolled or a menu is open — it is frosted
- *   ivory with a dark logo and a gold hairline.
+ *   white with a dark logo and a light hairline.
  * - Desktop mega-menu: hover or focus opens, click toggles, ESC closes and
  *   returns focus to the trigger. Mouse leaving the header closes it.
  * - Mobile (<lg): hamburger opens the full-screen drill-down menu.
@@ -103,8 +103,8 @@ export default function Header() {
                loaded or where it is bright at the top — never rely on the
                hero image alone for header contrast. Fades to transparent
                at the header's bottom edge, so no visible band remains. */
-              "bg-gradient-to-b from-bx-maroon-950/70 via-bx-maroon-950/45 to-transparent"
-            : "border-b border-bx-gold-500/30 bg-bx-ivory/90 shadow-[0_8px_30px_-12px_rgba(35,11,22,0.25)] backdrop-blur-md"
+              "bg-gradient-to-b from-bx-navy-950/70 via-bx-navy-950/45 to-transparent"
+            : "border-b border-[#E2E8F0] bg-bx-white/90 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.10)] backdrop-blur-md"
         }`}
       >
         <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-10">
@@ -139,22 +139,22 @@ export default function Header() {
                       }
                       className={`relative flex min-h-[44px] items-center gap-1.5 px-3 font-sans text-[15px] font-bold transition-colors duration-200 xl:px-4 ${
                         overDark
-                          ? "text-bx-ivory hover:text-bx-gold-400"
-                          : "text-bx-ink hover:text-bx-maroon-700"
+                          ? "text-bx-white hover:text-bx-teal-400"
+                          : "text-bx-navy-900 hover:text-bx-teal-700"
                       }`}
                     >
                       {group.label}
                       <span
                         className={`transition-transform duration-200 ${
                           isOpen ? "rotate-180" : ""
-                        } ${overDark ? "text-bx-gold-400" : "text-bx-gold-600"}`}
+                        } ${overDark ? "text-bx-teal-400" : "text-bx-teal-600"}`}
                       >
                         <Icon name="chevronDown" size={15} />
                       </span>
                       {/* Active-route underline */}
                       <span
                         aria-hidden="true"
-                        className={`absolute inset-x-3 bottom-1 h-[2px] bg-bx-gold-500 transition-opacity duration-200 ${
+                        className={`absolute inset-x-3 bottom-1 h-[2px] bg-bx-teal-500 transition-opacity duration-200 ${
                           isActive ? "opacity-100" : "opacity-0"
                         }`}
                       />
@@ -171,8 +171,8 @@ export default function Header() {
               aria-label="Search the site"
               className={`flex min-h-[44px] min-w-[44px] items-center justify-center transition-colors ${
                 overDark
-                  ? "text-bx-ivory hover:text-bx-gold-400"
-                  : "text-bx-ink hover:text-bx-maroon-700"
+                  ? "text-bx-white hover:text-bx-teal-400"
+                  : "text-bx-navy-900 hover:text-bx-teal-700"
               }`}
             >
               <SearchIcon size={22} />
@@ -180,11 +180,7 @@ export default function Header() {
             {demo && (
               <Link
                 href={demo.href}
-                className={`hidden min-h-[44px] items-center gap-2 px-5 font-sans text-[14px] font-bold transition-colors duration-200 active:scale-[0.97] md:inline-flex ${
-                  overDark
-                    ? "bg-bx-gold-500 text-bx-maroon-950 hover:bg-bx-gold-400"
-                    : "bg-bx-maroon-900 text-bx-ivory hover:bg-bx-maroon-800"
-                }`}
+                className="hidden min-h-[44px] items-center gap-2 rounded-full bg-bx-teal-500 px-5 font-sans text-[14px] font-bold text-bx-white shadow-[0_8px_20px_-10px_rgba(20,184,166,0.7)] transition-colors duration-200 hover:bg-bx-teal-600 active:scale-[0.97] md:inline-flex"
               >
                 {demo.label}
               </Link>
@@ -197,8 +193,8 @@ export default function Header() {
               aria-expanded={mobileOpen}
               className={`flex min-h-[44px] min-w-[44px] items-center justify-center transition-colors lg:hidden ${
                 overDark
-                  ? "text-bx-ivory hover:text-bx-gold-400"
-                  : "text-bx-ink hover:text-bx-maroon-700"
+                  ? "text-bx-white hover:text-bx-teal-400"
+                  : "text-bx-navy-900 hover:text-bx-teal-700"
               }`}
             >
               <Icon name="menu" size={26} />

@@ -1,11 +1,11 @@
 /**
  * InnerHero — shared hero for Batch 2 group-2D pages (services, company,
- * book-demo). Two variants: light editorial (ivory) and dark (maroon with
+ * book-demo). Two variants: light editorial (white) and dark (navy with
  * an optional photograph under a heavy scrim).
  *
  * Carries the 72px fixed-header clearance itself (pt-[72px] + padding),
  * renders Breadcrumbs from the route registry, and takes the H1 as
- * ReactNode so callers can set a short Cormorant accent phrase.
+ * ReactNode so callers can set a short teal-gradient accent phrase.
  *
  * No scroll-reveal on the hero block (fix, 13 Nov): heroes are above the
  * fold, so a Reveal wrapper hid the H1 behind an opacity-0 initial state
@@ -18,7 +18,7 @@
  *
  * Dark variant: the photograph drifts with the shared Ken Burns motion
  * (`.bx-kenburns`, transform-only, disabled by prefers-reduced-motion)
- * under a HeroMedia-style scrim — flat maroon tint plus a vertical
+ * under a HeroMedia-style scrim — flat navy tint plus a vertical
  * gradient, darkest at the bottom where the H1 sits. The photograph is
  * preloaded (fix, 14 Nov) so it is present on first paint, and the
  * scrim is light enough for it to show.
@@ -55,7 +55,7 @@ export default function InnerHero({
 }) {
   if (dark) {
     return (
-      <header className="relative overflow-hidden bg-bx-maroon-900 text-bx-ivory">
+      <header className="relative overflow-hidden bg-bx-navy-900 text-bx-white">
         {image && (
           <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
             {/* fetchPriority="high" makes React 19 emit a preload link
@@ -68,8 +68,8 @@ export default function InnerHero({
               fetchPriority="high"
               className="bx-kenburns h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-bx-maroon-950/50" />
-            <div className="absolute inset-0 bg-gradient-to-b from-bx-maroon-950/60 via-bx-maroon-950/20 to-bx-maroon-950/75" />
+            <div className="absolute inset-0 bg-bx-navy-950/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-bx-navy-950/60 via-bx-navy-950/20 to-bx-navy-950/75" />
           </div>
         )}
         <Container className="relative pb-16 pt-[72px] sm:pb-20 sm:pt-[72px] lg:pb-24">
@@ -77,13 +77,13 @@ export default function InnerHero({
             <Breadcrumbs href={href} dark />
           </div>
           <div className="mt-8 max-w-3xl sm:mt-10">
-            <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-gold-400">
+            <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-teal-400">
               {eyebrow}
             </p>
             <h1 className="mt-4 font-sans text-[42px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance sm:text-6xl lg:text-[76px]">
               {title}
             </h1>
-            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
+            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-slate-300/90 sm:text-lg">
               {copy}
             </p>
             {children}
@@ -94,7 +94,7 @@ export default function InnerHero({
   }
 
   return (
-    <header className="bg-bx-ivory pt-[72px]">
+    <header className="bg-bx-white pt-[72px]">
       <Container className="pb-14 pt-8 sm:pb-16 sm:pt-10 lg:pb-20">
         <Breadcrumbs href={href} />
         <div
@@ -103,13 +103,13 @@ export default function InnerHero({
           }`}
         >
           <div className="max-w-3xl">
-            <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+            <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-teal-700">
               {eyebrow}
             </p>
-            <h1 className="mt-4 font-sans text-[42px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance text-bx-ink sm:text-6xl lg:text-[68px]">
+            <h1 className="mt-4 font-sans text-[42px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance text-bx-navy-900 sm:text-6xl lg:text-[68px]">
               {title}
             </h1>
-            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-muted sm:text-lg">
+            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-slate-500 sm:text-lg">
               {copy}
             </p>
             {children}
@@ -118,7 +118,7 @@ export default function InnerHero({
             <div className="relative">
               <span
                 aria-hidden="true"
-                className="absolute -bottom-3 -left-3 h-full w-full border border-bx-gold-500/50"
+                className="absolute -bottom-3 -left-3 h-full w-full border border-bx-teal-500/50"
               />
               <img
                 src={asset(image)}

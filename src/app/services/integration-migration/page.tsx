@@ -32,7 +32,7 @@ export default function IntegrationMigrationPage() {
         title={
           <>
             Your history moves with you.{" "}
-            <em className="font-display font-semibold italic text-bx-gold-400">
+            <em className="font-sans font-semibold italic text-bx-teal-400">
               Verified, not hoped for.
             </em>
           </>
@@ -65,13 +65,13 @@ export default function IntegrationMigrationPage() {
         imageWidth={1600}
         imageHeight={1200}
       >
-        <ul className="mt-8 divide-y divide-bx-gold-500/25 border-y border-bx-gold-500/25">
+        <ul className="mt-8 divide-y divide-bx-teal-500/25 border-y border-bx-teal-500/25">
           {MIGRATION_DISCOVERY_CHECKLIST.map((item, i) => (
             <li key={item} className="flex items-start gap-4 py-4">
-              <span className="mt-0.5 font-display text-xl font-semibold text-bx-gold-600">
+              <span className="mt-0.5 font-sans text-xl font-semibold text-bx-teal-600">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="pt-1 font-body text-base leading-relaxed text-bx-ink">
+              <span className="pt-1 font-body text-base leading-relaxed text-bx-navy-900">
                 {item}
               </span>
             </li>
@@ -80,7 +80,7 @@ export default function IntegrationMigrationPage() {
       </ImageText>
 
       {/* Five stages */}
-      <Section tone="ivory" id="stages" ariaLabel="The five migration stages">
+      <Section tone="white" id="stages" ariaLabel="The five migration stages">
         <SectionIntro
           label="The migration path"
           heading="Five stages, each one proven before the next."
@@ -99,7 +99,7 @@ export default function IntegrationMigrationPage() {
         heading={
           <>
             Staging first,{" "}
-            <em className="font-display font-semibold italic text-bx-gold-400">
+            <em className="font-sans font-semibold italic text-bx-teal-400">
               production last.
             </em>
           </>
@@ -113,7 +113,7 @@ export default function IntegrationMigrationPage() {
       </PhotoBand>
 
       {/* Dual-write / rollback / reconciliation — three honest cards */}
-      <Section tone="cream" ariaLabel="Safety nets">
+      <Section tone="mint" ariaLabel="Safety nets">
         <SectionIntro
           label="Safety nets"
           heading="What protects the cutover."
@@ -139,12 +139,12 @@ export default function IntegrationMigrationPage() {
             },
           ].map((card, i) => (
             <Reveal key={card.title} delay={i * 0.07}>
-              <article className="h-full border border-bx-maroon-900/15 bg-bx-white p-7">
+              <article className="h-full border border-bx-navy-900/15 bg-bx-white p-7">
                 <FeatureIcon icon={card.icon} size="sm" className="items-start" />
-                <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
+                <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                   {card.title}
                 </h3>
-                <p className="mt-3 font-body text-[15px] leading-relaxed text-bx-muted">
+                <p className="mt-3 font-body text-[15px] leading-relaxed text-bx-slate-500">
                   {card.text}
                 </p>
               </article>
@@ -154,7 +154,7 @@ export default function IntegrationMigrationPage() {
       </Section>
 
       {/* FAQ */}
-      <Section tone="ivory" ariaLabel="Integration and migration frequently asked questions">
+      <Section tone="white" ariaLabel="Integration and migration frequently asked questions">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
           <SectionIntro
             label="Questions"

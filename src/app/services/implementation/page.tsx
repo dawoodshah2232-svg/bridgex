@@ -33,7 +33,7 @@ export default function ImplementationPage() {
         title={
           <>
             Five phases.{" "}
-            <em className="font-display font-semibold italic text-bx-gold-400">
+            <em className="font-sans font-semibold italic text-bx-teal-400">
               No surprises.
             </em>
           </>
@@ -55,7 +55,7 @@ export default function ImplementationPage() {
       </InnerHero>
 
       {/* Phases */}
-      <Section tone="ivory" id="phases" ariaLabel="The five implementation phases">
+      <Section tone="white" id="phases" ariaLabel="The five implementation phases">
         <SectionIntro
           label="The method"
           heading="Discover, design, build, validate, deploy."
@@ -74,7 +74,7 @@ export default function ImplementationPage() {
         heading={
           <>
             A gate at the end of{" "}
-            <em className="font-display font-semibold italic text-bx-gold-400">
+            <em className="font-sans font-semibold italic text-bx-teal-400">
               every phase.
             </em>
           </>
@@ -88,7 +88,7 @@ export default function ImplementationPage() {
       </PhotoBand>
 
       {/* Responsibility matrix */}
-      <Section tone="cream" id="responsibility" ariaLabel="Who owns what">
+      <Section tone="mint" id="responsibility" ariaLabel="Who owns what">
         <SectionIntro
           label="Joint delivery"
           heading="Who owns what — agreed up front."
@@ -98,7 +98,7 @@ export default function ImplementationPage() {
           <ResponsibilityMatrix rows={RESPONSIBILITY_MATRIX} />
         </Reveal>
         <Reveal className="mt-8">
-          <p className="max-w-[70ch] font-body text-base leading-relaxed text-bx-muted">
+          <p className="max-w-[70ch] font-body text-base leading-relaxed text-bx-slate-500">
             The pattern is deliberate: BridgeX does the building, your team
             does the deciding. We will never ask you to configure the system
             yourself, and we will never make a business decision on your
@@ -120,7 +120,7 @@ export default function ImplementationPage() {
               <div className="relative mb-3 mr-3 sm:mb-4 sm:mr-4">
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-teal-500/60 sm:translate-x-4 sm:translate-y-4"
                 />
                 <img
                   src={asset("/images/services-workshop.jpg")}
@@ -167,14 +167,14 @@ export default function ImplementationPage() {
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={(i % 2) * 0.07}>
-                <li className="h-full border border-bx-maroon-900/15 bg-bx-ivory p-6">
-                  <span className="text-bx-gold-600">
+                <li className="h-full border border-bx-navy-900/15 bg-bx-white p-6">
+                  <span className="text-bx-teal-600">
                     <Icon name={item.icon} size={28} />
                   </span>
-                  <h3 className="mt-4 font-sans text-lg font-extrabold text-bx-ink">
+                  <h3 className="mt-4 font-sans text-lg font-extrabold text-bx-navy-900">
                     {item.title}
                   </h3>
-                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-muted">
+                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-slate-500">
                     {item.text}
                   </p>
                 </li>
@@ -185,7 +185,7 @@ export default function ImplementationPage() {
       </Section>
 
       {/* FAQ */}
-      <Section tone="ivory" ariaLabel="Implementation frequently asked questions">
+      <Section tone="white" ariaLabel="Implementation frequently asked questions">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
           <SectionIntro
             label="Questions"

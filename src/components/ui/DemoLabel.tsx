@@ -16,13 +16,13 @@ export default function DemoLabel({
     <span
       className={`inline-flex items-center gap-2 border px-3 py-1.5 font-sans text-[12px] font-bold uppercase tracking-[0.14em] ${
         dark
-          ? "border-bx-gold-500/50 text-bx-gold-400"
-          : "border-bx-gold-600/50 text-bx-maroon-700"
+          ? "border-bx-teal-500/50 text-bx-teal-400"
+          : "border-bx-teal-600/50 text-bx-teal-700"
       } ${className}`}
     >
       <span
         aria-hidden="true"
-        className={`h-1.5 w-1.5 rotate-45 ${dark ? "bg-bx-gold-400" : "bg-bx-gold-600"}`}
+        className={`h-1.5 w-1.5 rotate-45 ${dark ? "bg-bx-teal-400" : "bg-bx-teal-600"}`}
       />
       {text}
     </span>

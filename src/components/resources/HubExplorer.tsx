@@ -56,7 +56,7 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
         <div className="w-full max-w-xl">
           <label
             htmlFor="hub-search"
-            className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700"
+            className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700"
           >
             Search resources
           </label>
@@ -67,12 +67,12 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Try “onboarding”, “payments”, “rebates”…"
             autoComplete="off"
-            className="mt-2 min-h-[52px] w-full border-2 border-bx-maroon-900/25 bg-bx-white px-4 font-body text-base text-bx-ink placeholder:text-bx-muted/80 focus:border-bx-maroon-700 focus:outline-none"
+            className="mt-2 min-h-[52px] w-full border-2 border-bx-navy-900/25 bg-bx-white px-4 font-body text-base text-bx-navy-900 placeholder:text-bx-slate-500/80 focus:border-bx-navy-700 focus:outline-none"
           />
         </div>
         <p
           aria-live="polite"
-          className="font-sans text-sm font-bold text-bx-muted"
+          className="font-sans text-sm font-bold text-bx-slate-500"
         >
           {results.length} {results.length === 1 ? "result" : "results"}
           {isFiltered ? " — filters active" : ` of ${items.length}`}
@@ -94,14 +94,14 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
               onClick={() => setCategory(c)}
               className={`inline-flex min-h-[44px] items-center gap-2 border-2 px-4 font-sans text-sm font-bold transition-colors duration-200 ${
                 active
-                  ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                  : "border-bx-maroon-900/25 bg-transparent text-bx-maroon-900 hover:border-bx-maroon-900"
+                  ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                  : "border-bx-navy-900/25 bg-transparent text-bx-navy-900 hover:border-bx-navy-900"
               }`}
             >
               <Icon
                 name={CATEGORY_ICONS[c]}
                 size={16}
-                className={active ? "text-bx-gold-400" : "text-bx-gold-600"}
+                className={active ? "text-bx-teal-400" : "text-bx-teal-600"}
               />
               {c}
             </button>
@@ -110,11 +110,11 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
       </div>
 
       {results.length === 0 ? (
-        <div className="mt-10 border border-bx-gold-500/30 bg-bx-white px-6 py-12 text-center sm:px-10">
-          <h3 className="font-sans text-xl font-extrabold text-bx-ink">
+        <div className="mt-10 border border-bx-teal-500/30 bg-bx-white rounded-2xl px-6 py-12 text-center sm:px-10">
+          <h3 className="font-sans text-xl font-extrabold text-bx-navy-900">
             Nothing matches that search
           </h3>
-          <p className="mx-auto mt-3 max-w-[52ch] text-base leading-relaxed text-bx-muted">
+          <p className="mx-auto mt-3 max-w-[52ch] text-base leading-relaxed text-bx-slate-500">
             The hub is still small — three articles, five guides and a
             handful of updates so far. Try a broader word, or clear the
             filters to see everything.
@@ -125,7 +125,7 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
               setQuery("");
               setCategory("All");
             }}
-            className="mt-6 min-h-[48px] border-2 border-bx-maroon-900 px-6 font-sans text-[15px] font-bold text-bx-maroon-900 transition-colors hover:bg-bx-maroon-900 hover:text-bx-ivory"
+            className="mt-6 min-h-[48px] border-2 border-bx-navy-900 px-6 font-sans text-[15px] font-bold text-bx-navy-900 transition-colors hover:bg-bx-navy-900 hover:text-bx-white"
           >
             Clear search and filters
           </button>
@@ -136,7 +136,7 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
             <li key={item.id} className="h-full">
               <Link
                 href={item.href}
-                className="group flex h-full flex-col overflow-hidden border border-bx-gold-500/30 bg-bx-white transition-colors duration-200 hover:border-bx-gold-500/70 hover:bg-bx-cream/60"
+                className="group flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl transition-colors duration-200 hover:border-bx-teal-500/70 hover:bg-bx-mint-50/60"
               >
                 <div className="overflow-hidden">
                   <img
@@ -149,28 +149,28 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="flex items-center gap-2 font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-maroon-700">
+                  <span className="flex items-center gap-2 font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-teal-700">
                     <Icon
                       name={CATEGORY_ICONS[item.category]}
                       size={16}
-                      className="text-bx-gold-600"
+                      className="text-bx-teal-600"
                     />
                     {item.category}
                   </span>
-                  <span className="mt-3 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                  <span className="mt-3 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                     {item.title}
                   </span>
-                  <span className="mt-3 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                  <span className="mt-3 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                     {item.summary}
                   </span>
-                  <span className="mt-5 flex items-center justify-between gap-3 border-t border-bx-gold-500/25 pt-4">
-                    <span className="font-sans text-[13px] font-bold text-bx-muted">
+                  <span className="mt-5 flex items-center justify-between gap-3 border-t border-bx-teal-500/25 pt-4">
+                    <span className="font-sans text-[13px] font-bold text-bx-slate-500">
                       {item.meta}
                     </span>
                     <Icon
                       name="arrowRight"
                       size={18}
-                      className="shrink-0 text-bx-gold-600 transition-transform duration-200 group-hover:translate-x-1"
+                      className="shrink-0 text-bx-teal-600 transition-transform duration-200 group-hover:translate-x-1"
                     />
                   </span>
                 </div>

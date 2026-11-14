@@ -3,7 +3,7 @@
  *
  * Editorial asymmetric grid: Financial CRM leads as a wide tile; the rest
  * follow in a three-column rhythm, closed by a platform tile. Drawn line
- * icons (no tinted icon squares), tone-step surfaces, gold hairline on
+ * icons (no tinted icon squares), tone-step surfaces, teal hairline on
  * hover. Every tile is one link — no dead CTAs.
  */
 import Link from "next/link";
@@ -75,22 +75,22 @@ function Tile({ cap }: { cap: Capability }) {
   return (
     <Link
       href={cap.href}
-      className="group relative flex h-full flex-col bg-bx-white p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-20px_rgba(35,11,22,0.35)] sm:p-8"
+      className="group relative flex h-full flex-col rounded-2xl border border-[#E5E7EB] bg-bx-white p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-20px_rgba(15,23,42,0.15)] sm:p-8"
     >
       <span
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-bx-gold-500 transition-transform duration-300 group-hover:scale-x-100"
+        className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-bx-teal-500 transition-transform duration-300 group-hover:scale-x-100"
       />
-      <span className="text-bx-maroon-700 transition-colors duration-200 group-hover:text-bx-gold-600">
+      <span className="text-bx-teal-700 transition-colors duration-200 group-hover:text-bx-teal-600">
         <Icon name={solutionIcon(cap.slug)} size={34} strokeWidth={1.5} />
       </span>
-      <h3 className="mt-5 font-sans text-xl font-bold leading-snug text-bx-ink sm:text-2xl">
+      <h3 className="mt-5 font-sans text-xl font-bold leading-snug text-bx-navy-900 sm:text-2xl">
         {cap.title}
       </h3>
-      <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-bx-muted">
+      <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
         {cap.benefit}
       </p>
-      <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700 group-hover:text-bx-maroon-900">
+      <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-teal-700 group-hover:text-bx-navy-900">
         Explore {cap.title}
         <Icon
           name="arrowRight"
@@ -104,13 +104,13 @@ function Tile({ cap }: { cap: Capability }) {
 
 export default function CapabilityTiles() {
   return (
-    <Section tone="cream" ariaLabel="Capabilities">
+    <Section tone="mint" ariaLabel="Capabilities">
       <SectionIntro
         label="What BridgeX does"
         heading={
           <>
             Seven capabilities.{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-sans font-semibold italic text-bx-teal-700">
               One connected core.
             </span>
           </>
@@ -130,16 +130,16 @@ export default function CapabilityTiles() {
         <Reveal className="h-full" delay={0.16}>
           <Link
             href="/platform"
-            className="group flex h-full flex-col bg-bx-maroon-900 p-7 text-bx-ivory transition-all duration-200 hover:-translate-y-0.5 hover:bg-bx-maroon-800 sm:p-8"
+            className="group flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 text-bx-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-bx-navy-800 sm:p-8"
           >
-            <span className="font-display text-[28px] font-semibold leading-snug">
+            <span className="font-sans text-[28px] font-semibold leading-snug">
               See how they connect.
             </span>
-            <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-bx-champagne/85">
+            <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-bx-slate-300/85">
               Four layers, one shared foundation. The architecture that makes
               seven capabilities behave as one system.
             </p>
-            <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-gold-400 group-hover:text-bx-champagne">
+            <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-teal-400 group-hover:text-bx-slate-300">
               Explore the platform
               <Icon
                 name="arrowRight"

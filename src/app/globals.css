@@ -1,52 +1,58 @@
 @import "tailwindcss";
 
 /* ============================================================
-   BridgeX design tokens — LOCKED palette (spec §1A).
-   Maroon / antique gold / champagne / ivory. The appendix's
-   old blue/mint palette is SUPERSEDED — never use it.
+   BridgeX design tokens — bridgexapps.com theme.
+   OWNER OVERRIDE (Dawood, 14 Nov 2026): the Master Prompt's
+   maroon/antique-gold/champagne palette is SUPERSEDED. The site
+   now follows bridgexapps.com — a light fintech SaaS theme:
+   teal on white, dark navy headings, pale-mint surfaces.
+   Hexes are pixel-sampled from bridgexapps.com (14 Nov 2026).
    ============================================================ */
 @theme {
-  --color-bx-maroon-950: #230b16;
-  --color-bx-maroon-900: #360f20;
-  --color-bx-maroon-800: #52182e;
-  --color-bx-maroon-700: #6a203a;
-  --color-bx-gold-600: #a77a2f;
-  --color-bx-gold-500: #c29a55;
-  --color-bx-gold-400: #d9b875;
-  --color-bx-champagne: #f0dfb8;
-  --color-bx-ivory: #fbf7f0;
-  --color-bx-cream: #f5eee5;
-  --color-bx-ink: #1e1920;
-  --color-bx-muted: #766d73;
+  /* Dark navy / slate — headings, dark bands, footer disclaimer. */
+  --color-bx-navy-950: #0b1120;
+  --color-bx-navy-900: #0f172a;
+  --color-bx-navy-800: #1e293b;
+  --color-bx-navy-700: #334155;
+  /* Primary teal — buttons, pills, accents, gradient start. */
+  --color-bx-teal-700: #0f766e;
+  --color-bx-teal-600: #0d9488;
+  --color-bx-teal-500: #14b8a6;
+  --color-bx-teal-400: #2dd4bf;
+  --color-bx-teal-300: #5eead4;
+  /* Cyan — teal→cyan gradient end (hero accent phrase). */
+  --color-bx-cyan-500: #06b6d4;
+  /* Pale mint — hero wash, badge fills, card borders, alt sections. */
+  --color-bx-mint-50: #f3fdfb;
+  --color-bx-mint-100: #e7f8f5;
+  --color-bx-mint-200: #e6f7f4;
+  --color-bx-mint-300: #d9f7f3;
+  /* Slate text — body grey-blue, muted text on dark. */
+  --color-bx-slate-500: #64748b;
+  --color-bx-slate-400: #94a3b8;
+  --color-bx-slate-300: #cbd5e1;
+  /* Amber — highlight pills/badges ONLY, used sparingly. */
+  --color-bx-amber-400: #faa556;
+  /* Blue — icon blue + logo wordmark blue. */
+  --color-bx-blue-600: #2563eb;
+  --color-bx-blue-900: #1e3a5f;
+  /* Mist — footer background. */
+  --color-bx-mist: #fafbfb;
   --color-bx-white: #ffffff;
 
-  /* Self-hosted fonts (Batch 1 adds woff2 files under public/fonts).
-     Fallbacks keep the site legible if a font file is missing. */
-  --font-display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
-  --font-sans: "Manrope", "Inter", -apple-system, BlinkMacSystemFont,
+  /* ONE clean sans family throughout (bridgexapps.com) — DM Sans,
+     self-hosted variable woff2. No serif/display face. Inter is the
+     fallback if the DM Sans file is missing. */
+  --font-sans: "DM Sans", "Inter", -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  --font-body: "Inter", "Manrope", -apple-system, BlinkMacSystemFont,
+  --font-body: "DM Sans", "Inter", -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 }
 
 @font-face {
-  font-family: "Cormorant Garamond";
-  src: url("/bridgex/fonts/cormorant-garamond-600.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Cormorant Garamond";
-  src: url("/bridgex/fonts/cormorant-garamond-700.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Manrope";
-  src: url("/bridgex/fonts/manrope-variable.woff2") format("woff2");
-  font-weight: 400 800;
+  font-family: "DM Sans";
+  src: url("/bridgex/fonts/dm-sans-variable.woff2") format("woff2");
+  font-weight: 100 1000;
   font-style: normal;
   font-display: swap;
 }
@@ -63,8 +69,8 @@ html {
 }
 
 body {
-  background-color: var(--color-bx-ivory);
-  color: var(--color-bx-ink);
+  background-color: var(--color-bx-white);
+  color: var(--color-bx-navy-900);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -73,20 +79,20 @@ body {
 }
 
 ::selection {
-  background: var(--color-bx-gold-500);
-  color: var(--color-bx-maroon-950);
+  background: var(--color-bx-teal-500);
+  color: var(--color-bx-white);
 }
 
 /* Visible keyboard focus everywhere (WCAG 2.2 AA). */
 :focus-visible {
-  outline: 2px solid var(--color-bx-gold-600);
+  outline: 2px solid var(--color-bx-teal-600);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 /* Themed scrollbar — the browser surfaces carry the design too. */
 :root {
-  scrollbar-color: var(--color-bx-maroon-800) var(--color-bx-cream);
+  scrollbar-color: var(--color-bx-navy-800) var(--color-bx-mint-50);
   scrollbar-width: thin;
 }
 ::-webkit-scrollbar {
@@ -94,15 +100,15 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bx-cream);
+  background: var(--color-bx-mint-50);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-bx-maroon-800);
-  border: 2px solid var(--color-bx-cream);
+  background: var(--color-bx-navy-800);
+  border: 2px solid var(--color-bx-mint-50);
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-bx-maroon-700);
+  background: var(--color-bx-navy-700);
 }
 
 /* Slow cinematic drift for the hero photograph (transform-only).

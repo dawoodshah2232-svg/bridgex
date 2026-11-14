@@ -90,7 +90,7 @@ export default function IntegrationsPage() {
         title={
           <>
             Connected to your stack —{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               honestly connected.
             </span>
           </>
@@ -105,7 +105,7 @@ export default function IntegrationsPage() {
       />
 
       {/* Category explorer */}
-      <Section tone="cream" id="categories" ariaLabel="Integration categories">
+      <Section tone="mint" id="categories" ariaLabel="Integration categories">
         <SectionIntro
           label="Provider categories"
           heading="Five categories. One adapter model."
@@ -117,7 +117,7 @@ export default function IntegrationsPage() {
       </Section>
 
       {/* Adapter architecture — diagram in code */}
-      <Section tone="ivory" id="adapters" ariaLabel="Adapter architecture">
+      <Section tone="white" id="adapters" ariaLabel="Adapter architecture">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
             <SectionIntro
@@ -128,15 +128,15 @@ export default function IntegrationsPage() {
             <div className="mt-10 space-y-8">
               {ADAPTER_STEPS.map((item, i) => (
                 <Reveal key={item.title} delay={i * 0.08}>
-                  <div className="flex gap-5 border-t border-bx-gold-500/30 pt-6">
-                    <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-maroon-700">
+                  <div className="flex gap-5 border-t border-bx-teal-500/30 pt-6">
+                    <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-teal-700">
                       0{i + 1}
                     </span>
                     <div>
-                      <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-ink">
+                      <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                         {item.title}
                       </h3>
-                      <p className="mt-2 max-w-[58ch] text-[15px] leading-relaxed text-bx-muted">
+                      <p className="mt-2 max-w-[58ch] text-[15px] leading-relaxed text-bx-slate-500">
                         {item.text}
                       </p>
                     </div>
@@ -148,29 +148,29 @@ export default function IntegrationsPage() {
 
           {/* Diagram: BridgeX core ↔ adapters ↔ provider categories */}
           <Reveal delay={0.12} className="lg:col-span-6">
-            <div className="border border-bx-gold-500/25 bg-bx-white p-6 sm:p-8">
-              <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
+            <div className="border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8">
+              <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700">
                 How a connection is shaped
               </p>
               <div className="mt-6 flex flex-col items-stretch gap-0 text-center">
-                <div className="border border-bx-maroon-900 bg-bx-maroon-900 px-4 py-4">
-                  <p className="font-sans text-base font-extrabold text-bx-ivory">
+                <div className="border border-bx-navy-900 bg-bx-navy-900 px-4 py-4">
+                  <p className="font-sans text-base font-extrabold text-bx-white">
                     BridgeX core
                   </p>
-                  <p className="mt-1 text-sm text-bx-champagne/85">
+                  <p className="mt-1 text-sm text-bx-slate-300/85">
                     Shared data model · Workflows · Events · Audit
                   </p>
                 </div>
-                <div aria-hidden="true" className="mx-auto h-8 w-px bg-bx-gold-500" />
-                <div className="border border-bx-gold-600 bg-bx-cream px-4 py-4">
-                  <p className="font-sans text-base font-extrabold text-bx-ink">
+                <div aria-hidden="true" className="mx-auto h-8 w-px bg-bx-teal-500" />
+                <div className="border border-bx-teal-600 bg-bx-mint-50 px-4 py-4">
+                  <p className="font-sans text-base font-extrabold text-bx-navy-900">
                     Adapter layer
                   </p>
-                  <p className="mt-1 text-sm text-bx-muted">
+                  <p className="mt-1 text-sm text-bx-slate-500">
                     Contract · Mapping · Retry · Logging · Signatures
                   </p>
                 </div>
-                <div aria-hidden="true" className="mx-auto h-8 w-px bg-bx-gold-500" />
+                <div aria-hidden="true" className="mx-auto h-8 w-px bg-bx-teal-500" />
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {(
                     [
@@ -184,15 +184,15 @@ export default function IntegrationsPage() {
                   ).map(([label, icon]) => (
                     <div
                       key={label}
-                      className="flex flex-col items-center gap-2 border border-bx-gold-500/30 bg-bx-ivory px-2 py-3 font-sans text-sm font-bold text-bx-ink"
+                      className="flex flex-col items-center gap-2 border border-bx-teal-500/30 bg-bx-white rounded-2xl px-2 py-3 font-sans text-sm font-bold text-bx-navy-900"
                     >
-                      <Icon name={icon} size={22} className="text-bx-gold-600" />
+                      <Icon name={icon} size={22} className="text-bx-teal-600" />
                       {label}
                     </div>
                   ))}
                 </div>
               </div>
-              <p className="mt-6 text-sm leading-relaxed text-bx-muted">
+              <p className="mt-6 text-sm leading-relaxed text-bx-slate-500">
                 Provider categories are shown, never provider names or logos.
                 Each box is a category of connection, configured per tenant and
                 proven in a sandbox before it goes live.
@@ -210,7 +210,7 @@ export default function IntegrationsPage() {
         heading={
           <>
             Adapters are{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               the only way in or out.
             </span>
           </>
@@ -222,14 +222,14 @@ export default function IntegrationsPage() {
       />
 
       {/* Event / webhook retry model — dark */}
-      <Section tone="maroon" id="events" ariaLabel="Event and webhook retry model">
+      <Section tone="navy" id="events" ariaLabel="Event and webhook retry model">
         <SectionIntro
           dark
           label="Events & webhooks"
           heading={
             <>
               When delivery fails,{" "}
-              <span className="font-display font-semibold italic text-bx-champagne">
+              <span className="font-sans font-semibold italic text-bx-teal-400">
                 nothing is lost.
               </span>
             </>
@@ -239,14 +239,14 @@ export default function IntegrationsPage() {
         <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {RETRY_STEPS.map((step, i) => (
             <Reveal key={step.title} delay={i * 0.08}>
-              <li className="h-full border-t-2 border-bx-gold-500 pt-5">
-                <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-gold-400">
+              <li className="h-full border-t-2 border-bx-teal-500 pt-5">
+                <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-teal-400">
                   {step.step}
                 </span>
-                <h3 className="mt-2 font-sans text-lg font-extrabold leading-tight text-bx-ivory">
+                <h3 className="mt-2 font-sans text-lg font-extrabold leading-tight text-bx-white">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+                <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-300/85">
                   {step.text}
                 </p>
               </li>
@@ -254,7 +254,7 @@ export default function IntegrationsPage() {
           ))}
         </ol>
         <Reveal delay={0.1} className="mt-12">
-          <p className="max-w-[68ch] text-base leading-relaxed text-bx-champagne/85">
+          <p className="max-w-[68ch] text-base leading-relaxed text-bx-slate-300/85">
             Idempotency is part of the contract: a retried delivery does not
             double-post a payment or duplicate a record. Financially material
             actions are designed to be safe to retry — because in production,
@@ -273,24 +273,24 @@ export default function IntegrationsPage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {HONESTY.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
-              <div className="h-full border border-bx-gold-500/25 bg-bx-ivory p-6">
-                <Icon name="shield" size={26} className="text-bx-gold-600" />
-                <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-ink">
+              <div className="h-full border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6">
+                <Icon name="shield" size={26} className="text-bx-teal-600" />
+                <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-bx-muted">{item.text}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-500">{item.text}</p>
               </div>
             </Reveal>
           ))}
         </div>
         <Reveal delay={0.1} className="mt-12">
-          <p className="max-w-[68ch] text-base leading-relaxed text-bx-muted">
+          <p className="max-w-[68ch] text-base leading-relaxed text-bx-slate-500">
             Connections are assessed and built during implementation — see{" "}
-            <Link href="/services/integration-migration" className="font-bold text-bx-maroon-700 hover:underline">
+            <Link href="/services/integration-migration" className="font-bold text-bx-teal-700 hover:underline">
               Integration &amp; Migration
             </Link>{" "}
             — and the event and API model is part of the{" "}
-            <Link href="/platform/architecture" className="font-bold text-bx-maroon-700 hover:underline">
+            <Link href="/platform/architecture" className="font-bold text-bx-teal-700 hover:underline">
               architecture
             </Link>
             .
@@ -302,7 +302,7 @@ export default function IntegrationsPage() {
         heading="Integration questions, answered plainly."
         copy="Which providers, what happens when a webhook fails, and how a connection is proven before it goes live."
         items={INTEGRATIONS_FAQS}
-        tone="cream"
+        tone="mint"
       />
 
       <CtaBand

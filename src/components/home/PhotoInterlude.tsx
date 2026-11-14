@@ -1,6 +1,6 @@
 /**
  * H06 — Immersive photographic interlude: a full-bleed boardroom photograph
- * with a slow scroll-linked drift and a maroon overlay. One statement, one
+ * with a slow scroll-linked drift and a navy overlay. One statement, one
  * line of support, one link. The drift is transform-only and disabled for
  * reduced motion.
  */
@@ -26,7 +26,7 @@ export default function PhotoInterlude() {
     <section
       ref={ref}
       aria-label="Built for the people who run the business"
-      className="relative flex min-h-[480px] items-center overflow-hidden bg-bx-maroon-950 text-bx-ivory lg:min-h-[70vh]"
+      className="relative flex min-h-[480px] items-center overflow-hidden bg-bx-navy-950 text-bx-white lg:min-h-[70vh]"
     >
       <motion.div
         aria-hidden="true"
@@ -46,24 +46,24 @@ export default function PhotoInterlude() {
           the text sits on the left, where the gradient stays strongest. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/75 via-bx-maroon-950/55 to-bx-maroon-950/35"
+        className="absolute inset-0 bg-gradient-to-r from-bx-navy-950/75 via-bx-navy-950/55 to-bx-navy-950/35"
       />
       <Container className="relative py-24 lg:py-32">
         <div className="max-w-2xl">
-          <p className="text-[13px] font-sans font-bold uppercase tracking-[0.28em] text-bx-gold-400">
+          <p className="text-[13px] font-sans font-bold uppercase tracking-[0.28em] text-bx-teal-400">
             Operational excellence
           </p>
-          <h2 className="mt-5 font-display text-[38px] font-semibold leading-[1.08] sm:text-6xl">
+          <h2 className="mt-5 font-sans text-[38px] font-semibold leading-[1.08] sm:text-6xl">
             Built for the people who run the business.
           </h2>
-          <p className="mt-5 max-w-[56ch] text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
+          <p className="mt-5 max-w-[56ch] text-base leading-relaxed text-bx-slate-300/90 sm:text-lg">
             Technology is judged at 9am on a Monday, in the middle of a queue
             — not in a demo. BridgeX is designed for the desks that live in it:
             clear queues, honest statuses, and nothing hidden behind a ticket.
           </p>
           <Link
             href="/company/about"
-            className="group mt-8 inline-flex items-center gap-2 font-sans text-base font-bold text-bx-gold-400 hover:text-bx-champagne"
+            className="group mt-8 inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-400 hover:text-bx-slate-300"
           >
             About BridgeX
             <Icon

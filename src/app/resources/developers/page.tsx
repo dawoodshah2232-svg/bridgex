@@ -68,7 +68,7 @@ export default function DevelopersPage() {
         title={
           <>
             Build on BridgeX,{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               when the sandbox lands.
             </span>
           </>
@@ -82,14 +82,14 @@ export default function DevelopersPage() {
 
       <nav
         aria-label="On this page"
-        className="sticky top-[72px] z-30 border-b border-bx-gold-500/30 bg-bx-ivory/95 backdrop-blur"
+        className="sticky top-[72px] z-30 border-b border-bx-teal-500/30 bg-bx-white/95 backdrop-blur"
       >
         <Container className="flex gap-1 overflow-x-auto py-3">
           {ANCHORS.map((a) => (
             <Link
               key={a.href}
               href={a.href}
-              className="shrink-0 whitespace-nowrap px-3 py-2 font-sans text-sm font-bold text-bx-maroon-700 hover:bg-bx-cream hover:text-bx-maroon-900"
+              className="shrink-0 whitespace-nowrap px-3 py-2 font-sans text-sm font-bold text-bx-teal-700 hover:bg-bx-mint-50 hover:text-bx-navy-900"
             >
               {a.label}
             </Link>
@@ -97,7 +97,7 @@ export default function DevelopersPage() {
         </Container>
       </nav>
 
-      <Section tone="ivory" id="start" ariaLabel="Start here">
+      <Section tone="white" id="start" ariaLabel="Start here">
         <SectionIntro
           label="Start here"
           heading="Three steps before you write a line of integration code"
@@ -106,14 +106,14 @@ export default function DevelopersPage() {
         <ol className="mt-12 grid gap-5 md:grid-cols-3">
           {START_STEPS.map((s, i) => (
             <Reveal key={s.step} delay={i * 0.08} className="h-full">
-              <li className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-7">
-                <span className="font-display text-5xl font-semibold italic text-bx-gold-600">
+              <li className="flex h-full flex-col border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7">
+                <span className="font-sans text-5xl font-semibold italic text-bx-teal-600">
                   {s.step}
                 </span>
-                <h3 className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                <h3 className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                   {s.title}
                 </h3>
-                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                   {s.text}
                 </p>
               </li>
@@ -129,7 +129,7 @@ export default function DevelopersPage() {
         heading={
           <>
             Built for the engineers who will{" "}
-            <span className="font-display italic text-bx-maroon-700">
+            <span className="font-sans italic text-bx-teal-700">
               integrate BridgeX.
             </span>
           </>
@@ -147,7 +147,7 @@ export default function DevelopersPage() {
         imageHeight={1797}
       />
 
-      <Section tone="cream" id="versioning" ariaLabel="API versioning">
+      <Section tone="mint" id="versioning" ariaLabel="API versioning">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <SectionIntro
@@ -156,11 +156,11 @@ export default function DevelopersPage() {
               copy="The API versions by URL: /v1, /v2, and so on. The version is part of the contract, not an afterthought bolted on after the first breaking change."
             />
             <div className="mt-8 space-y-4">
-              <div className="border border-bx-gold-500/30 bg-bx-white p-6">
-                <p className="font-mono text-sm font-bold text-bx-maroon-700">
+              <div className="border border-bx-teal-500/30 bg-bx-white rounded-2xl p-6">
+                <p className="font-mono text-sm font-bold text-bx-teal-700">
                   {EXAMPLE_API_BASE}/v1/…
                 </p>
-                <p className="mt-2 text-[15px] leading-relaxed text-bx-muted">
+                <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-500">
                   Example base URL for every sample on this page. The host
                   is an example — it does not resolve, and the samples
                   cannot be executed against it.
@@ -169,9 +169,9 @@ export default function DevelopersPage() {
               <DemoLabel text="Example base URL — not a live endpoint" />
             </div>
           </div>
-          <div className="space-y-5 text-base leading-relaxed text-bx-ink/90">
+          <div className="space-y-5 text-base leading-relaxed text-bx-navy-900/90">
             <p>
-              <strong className="font-sans text-bx-ink">
+              <strong className="font-sans text-bx-navy-900">
                 Additive changes stay in a version.
               </strong>{" "}
               New fields, new endpoints and new optional parameters arrive
@@ -180,7 +180,7 @@ export default function DevelopersPage() {
               ignore unknown fields.
             </p>
             <p>
-              <strong className="font-sans text-bx-ink">
+              <strong className="font-sans text-bx-navy-900">
                 Breaking changes get a new version.
               </strong>{" "}
               Renamed fields, removed endpoints and changed semantics ship
@@ -188,7 +188,7 @@ export default function DevelopersPage() {
               published deprecation notice period. No silent changes, ever.
             </p>
             <p>
-              <strong className="font-sans text-bx-ink">
+              <strong className="font-sans text-bx-navy-900">
                 v1 is planned, not live.
               </strong>{" "}
               The version number in these examples is a design decision,
@@ -199,7 +199,7 @@ export default function DevelopersPage() {
         </div>
       </Section>
 
-      <Section tone="ivory" id="authentication" ariaLabel="Authentication">
+      <Section tone="white" id="authentication" ariaLabel="Authentication">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <SectionIntro
             label="Authentication"
@@ -207,38 +207,38 @@ export default function DevelopersPage() {
             copy="There are no real credentials, no token endpoint and no auth specification yet. This section describes the design direction only."
           />
           <div>
-            <div className="border border-bx-gold-500/30 bg-bx-white p-7 sm:p-8">
+            <div className="border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 sm:p-8">
               <div className="flex flex-wrap items-center gap-3">
                 <StatusBadge status="Planned" />
-                <span className="font-sans text-sm font-bold text-bx-muted">
+                <span className="font-sans text-sm font-bold text-bx-slate-500">
                   Design direction — details with the sandbox
                 </span>
               </div>
-              <ul className="mt-6 space-y-4 text-base leading-relaxed text-bx-ink/90">
+              <ul className="mt-6 space-y-4 text-base leading-relaxed text-bx-navy-900/90">
                 <li className="flex items-start gap-2.5">
-                  <Icon name="check" size={18} className="mt-1 shrink-0 text-bx-gold-600" />
+                  <Icon name="check" size={18} className="mt-1 shrink-0 text-bx-teal-600" />
                   Scoped API keys issued per environment, so a sandbox key
                   can never touch production data.
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Icon name="check" size={18} className="mt-1 shrink-0 text-bx-gold-600" />
+                  <Icon name="check" size={18} className="mt-1 shrink-0 text-bx-teal-600" />
                   Tokens carry only the permissions their integration
                   needs — least privilege, enforced server-side.
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Icon name="check" size={18} className="mt-1 shrink-0 text-bx-gold-600" />
+                  <Icon name="check" size={18} className="mt-1 shrink-0 text-bx-teal-600" />
                   Keys are revocable per integration, with rotation that
                   does not require downtime.
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Icon name="check" size={18} className="mt-1 shrink-0 text-bx-gold-600" />
+                  <Icon name="check" size={18} className="mt-1 shrink-0 text-bx-teal-600" />
                   Every authenticated call is written to the audit trail,
                   like every other action on the platform.
                 </li>
               </ul>
-              <p className="mt-6 border-t border-bx-gold-500/25 pt-5 text-[15px] leading-relaxed text-bx-muted">
+              <p className="mt-6 border-t border-bx-teal-500/25 pt-5 text-[15px] leading-relaxed text-bx-slate-500">
                 The samples below use{" "}
-                <code className="rounded bg-bx-cream px-1.5 py-0.5 font-mono text-sm text-bx-maroon-700">
+                <code className="rounded bg-bx-mint-50 px-1.5 py-0.5 font-mono text-sm text-bx-teal-700">
                   Bearer EXAMPLE_TOKEN
                 </code>{" "}
                 as a placeholder. It is not a credential and will never
@@ -249,7 +249,7 @@ export default function DevelopersPage() {
         </div>
       </Section>
 
-      <Section tone="cream" id="endpoints" ariaLabel="Example endpoints">
+      <Section tone="mint" id="endpoints" ariaLabel="Example endpoints">
         <SectionIntro
           label="Endpoints"
           heading="Four examples, annotated"
@@ -258,27 +258,27 @@ export default function DevelopersPage() {
         <div className="mt-12 space-y-12">
           {API_ENDPOINTS.map((endpoint) => (
             <Reveal key={endpoint.id}>
-              <article className="border border-bx-gold-500/30 bg-bx-white">
-                <div className="border-b border-bx-gold-500/25 p-6 sm:p-8">
+              <article className="border border-bx-teal-500/30 bg-bx-white rounded-2xl">
+                <div className="border-b border-bx-teal-500/25 p-6 sm:p-8">
                   <div className="flex flex-wrap items-center gap-3">
                     <span
                       className={`px-3 py-1 font-mono text-sm font-bold ${
                         endpoint.method === "GET"
-                          ? "bg-bx-maroon-700 text-bx-ivory"
-                          : "bg-bx-gold-500 text-bx-maroon-950"
+                          ? "bg-bx-navy-700 text-bx-white"
+                          : "bg-bx-teal-500 text-bx-white"
                       }`}
                     >
                       {endpoint.method}
                     </span>
-                    <code className="break-all font-mono text-base font-bold text-bx-ink sm:text-lg">
+                    <code className="break-all font-mono text-base font-bold text-bx-navy-900 sm:text-lg">
                       {endpoint.path}
                     </code>
                     <StatusBadge status="Demo" />
                   </div>
-                  <h3 className="mt-4 font-sans text-xl font-extrabold text-bx-ink">
+                  <h3 className="mt-4 font-sans text-xl font-extrabold text-bx-navy-900">
                     {endpoint.title}
                   </h3>
-                  <p className="mt-2 max-w-[72ch] text-base leading-relaxed text-bx-muted">
+                  <p className="mt-2 max-w-[72ch] text-base leading-relaxed text-bx-slate-500">
                     {endpoint.description}
                   </p>
                 </div>
@@ -299,7 +299,7 @@ export default function DevelopersPage() {
         heading={
           <>
             Plain HTTP.{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               Any client, any language.
             </span>
           </>
@@ -310,7 +310,7 @@ export default function DevelopersPage() {
         imageHeight={900}
       />
 
-      <Section tone="ivory" id="webhooks" ariaLabel="Webhooks and events">
+      <Section tone="white" id="webhooks" ariaLabel="Webhooks and events">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <div>
             <SectionIntro
@@ -326,32 +326,32 @@ export default function DevelopersPage() {
           </div>
           <div>
             <div
-              className="overflow-x-auto border border-bx-gold-500/30 bg-bx-white"
+              className="overflow-x-auto border border-bx-teal-500/30 bg-bx-white rounded-2xl"
               tabIndex={0}
               role="region"
               aria-label="Webhook events table — scroll sideways to see all columns"
             >
               <table className="w-full min-w-[520px] text-left">
                 <thead>
-                  <tr className="border-b border-bx-gold-500/30 bg-bx-cream">
-                    <th scope="col" className="px-5 py-4 font-sans text-sm font-extrabold text-bx-ink">
+                  <tr className="border-b border-bx-teal-500/30 bg-bx-mint-50">
+                    <th scope="col" className="px-5 py-4 font-sans text-sm font-extrabold text-bx-navy-900">
                       Event
                     </th>
-                    <th scope="col" className="px-5 py-4 font-sans text-sm font-extrabold text-bx-ink">
+                    <th scope="col" className="px-5 py-4 font-sans text-sm font-extrabold text-bx-navy-900">
                       When it fires
                     </th>
-                    <th scope="col" className="px-5 py-4 font-sans text-sm font-extrabold text-bx-ink">
+                    <th scope="col" className="px-5 py-4 font-sans text-sm font-extrabold text-bx-navy-900">
                       Status
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   {WEBHOOK_EVENTS.map((event) => (
-                    <tr key={event.event} className="border-b border-bx-gold-500/20 last:border-b-0">
-                      <td className="px-5 py-4 font-mono text-sm font-bold text-bx-maroon-700">
+                    <tr key={event.event} className="border-b border-bx-teal-500/20 last:border-b-0">
+                      <td className="px-5 py-4 font-mono text-sm font-bold text-bx-teal-700">
                         {event.event}
                       </td>
-                      <td className="px-5 py-4 text-[15px] leading-relaxed text-bx-muted">
+                      <td className="px-5 py-4 text-[15px] leading-relaxed text-bx-slate-500">
                         {event.description}
                       </td>
                       <td className="px-5 py-4">
@@ -362,7 +362,7 @@ export default function DevelopersPage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-[15px] leading-relaxed text-bx-muted">
+            <p className="mt-4 text-[15px] leading-relaxed text-bx-slate-500">
               Planned delivery: signed payloads, exponential-backoff
               retries, and an idempotency key on every event so a redelivery
               never double-applies.
@@ -371,7 +371,7 @@ export default function DevelopersPage() {
         </div>
       </Section>
 
-      <Section tone="maroon" id="limits" ariaLabel="Rate limits and errors">
+      <Section tone="navy" id="limits" ariaLabel="Rate limits and errors">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <SectionIntro
             dark
@@ -380,42 +380,42 @@ export default function DevelopersPage() {
             copy="The limits below are the design targets for the sandbox, stated as plans — not enforced anywhere today, because there is nothing to enforce them on yet."
           />
           <div className="space-y-5">
-            <div className="border border-bx-gold-500/30 bg-bx-maroon-800/60 p-6">
+            <div className="border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
               <div className="flex items-center gap-4">
                 <FeatureIcon icon="gauge" size="sm" tone="dark" />
-                <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
+                <h3 className="font-sans text-lg font-extrabold text-bx-white">
                   Rate limits (planned)
                 </h3>
               </div>
-              <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-3 text-[15px] leading-relaxed text-bx-slate-300/85">
                 Per-key limits with clear headers on every response, so a
                 client always knows how much budget remains. Exceeding a
                 limit returns HTTP 429 with a retry-after hint — never a
                 silent failure.
               </p>
             </div>
-            <div className="border border-bx-gold-500/30 bg-bx-maroon-800/60 p-6">
+            <div className="border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
               <div className="flex items-center gap-4">
                 <FeatureIcon icon="alert" size="sm" tone="dark" />
-                <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
+                <h3 className="font-sans text-lg font-extrabold text-bx-white">
                   Errors (planned)
                 </h3>
               </div>
-              <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-3 text-[15px] leading-relaxed text-bx-slate-300/85">
                 Every error carries a stable machine-readable code, a
                 human-readable message and a link to the relevant docs
                 section. 4xx errors mean the request was wrong; 5xx errors
                 mean we were — and the message will say which.
               </p>
             </div>
-            <div className="border border-bx-gold-500/30 bg-bx-maroon-800/60 p-6">
+            <div className="border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
               <div className="flex items-center gap-4">
                 <FeatureIcon icon="spark" size="sm" tone="dark" />
-                <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
+                <h3 className="font-sans text-lg font-extrabold text-bx-white">
                   SDKs (planned)
                 </h3>
               </div>
-              <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-3 text-[15px] leading-relaxed text-bx-slate-300/85">
                 Client libraries are on the roadmap after the sandbox
                 proves the API shape. Until then, the examples on this page
                 are plain HTTP — any client, any language.
@@ -425,7 +425,7 @@ export default function DevelopersPage() {
         </div>
       </Section>
 
-      <Section tone="ivory" ariaLabel="Frequently asked questions">
+      <Section tone="white" ariaLabel="Frequently asked questions">
         <div className="mx-auto max-w-3xl">
           <SectionIntro
             label="Questions"

@@ -82,7 +82,7 @@ export default function ClientExperiencePage() {
         title={
           <>
             The room your clients{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               actually meet you in.
             </span>
           </>
@@ -98,7 +98,7 @@ export default function ClientExperiencePage() {
       />
 
       {/* Audiences — interactive tabs */}
-      <Section tone="cream" id="audiences" ariaLabel="Who the experience is built for">
+      <Section tone="mint" id="audiences" ariaLabel="Who the experience is built for">
         <SectionIntro
           label="Three audiences, one record"
           heading="One platform, three very different rooms."
@@ -117,7 +117,7 @@ export default function ClientExperiencePage() {
         heading={
           <>
             A room that reads{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               as your business.
             </span>
           </>
@@ -129,7 +129,7 @@ export default function ClientExperiencePage() {
       />
 
       {/* Mobile-first — phone mock in code */}
-      <Section tone="ivory" id="mobile" ariaLabel="Mobile-first layouts">
+      <Section tone="white" id="mobile" ariaLabel="Mobile-first layouts">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <SectionIntro
@@ -140,11 +140,11 @@ export default function ClientExperiencePage() {
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {MOBILE_POINTS.map((point, i) => (
                 <Reveal key={point.title} delay={i * 0.07}>
-                  <div className="h-full border border-bx-gold-500/25 bg-bx-white p-5">
-                    <h3 className="font-sans text-base font-extrabold leading-tight text-bx-ink">
+                  <div className="h-full border border-bx-teal-500/25 bg-bx-white rounded-2xl p-5">
+                    <h3 className="font-sans text-base font-extrabold leading-tight text-bx-navy-900">
                       {point.title}
                     </h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-bx-muted">{point.text}</p>
+                    <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-500">{point.text}</p>
                   </div>
                 </Reveal>
               ))}
@@ -153,35 +153,35 @@ export default function ClientExperiencePage() {
 
           {/* Phone frame — code-drawn, illustrative */}
           <Reveal delay={0.12} className="lg:col-span-5">
-            <div className="mx-auto max-w-[340px] border border-bx-gold-500/40 bg-bx-maroon-950 p-3">
-              <div className="bg-bx-ivory p-5">
+            <div className="mx-auto max-w-[340px] border border-bx-teal-500/40 bg-bx-navy-950 p-3">
+              <div className="bg-bx-white p-5">
                 <div className="flex items-center justify-between">
-                  <p className="font-sans text-sm font-extrabold text-bx-ink">Your Brand</p>
+                  <p className="font-sans text-sm font-extrabold text-bx-navy-900">Your Brand</p>
                   <span
                     aria-hidden="true"
-                    className="block h-2 w-2 rotate-45 bg-bx-gold-600"
+                    className="block h-2 w-2 rotate-45 bg-bx-teal-600"
                   />
                 </div>
-                <p className="mt-4 font-sans text-xl font-extrabold leading-tight text-bx-ink">
+                <p className="mt-4 font-sans text-xl font-extrabold leading-tight text-bx-navy-900">
                   Good morning, Amira.
                 </p>
-                <p className="mt-1 text-sm text-bx-muted">
+                <p className="mt-1 text-sm text-bx-slate-500">
                   Your account is verified and ready.
                 </p>
                 <div className="mt-5 space-y-3">
                   {PHONE_ROWS.map((row) => (
                     <div
                       key={row.label}
-                      className="flex items-baseline justify-between gap-3 border-b border-bx-gold-500/20 pb-3"
+                      className="flex items-baseline justify-between gap-3 border-b border-bx-teal-500/20 pb-3"
                     >
-                      <span className="text-sm text-bx-muted">{row.label}</span>
-                      <span className="text-right font-sans text-sm font-bold text-bx-ink">
+                      <span className="text-sm text-bx-slate-500">{row.label}</span>
+                      <span className="text-right font-sans text-sm font-bold text-bx-navy-900">
                         {row.value}
                       </span>
                     </div>
                   ))}
                 </div>
-                <p className="mt-5 border border-bx-gold-600/50 px-3 py-2 text-center font-sans text-sm font-bold text-bx-maroon-700">
+                <p className="mt-5 border border-bx-teal-600/50 px-3 py-2 text-center font-sans text-sm font-bold text-bx-teal-700">
                   Fund your account
                 </p>
               </div>
@@ -194,71 +194,71 @@ export default function ClientExperiencePage() {
       </Section>
 
       {/* Notifications & documents — dark */}
-      <Section tone="maroon" id="notifications" ariaLabel="Notifications and documents">
+      <Section tone="navy" id="notifications" ariaLabel="Notifications and documents">
         <SectionIntro
           dark
           label="Staying in touch"
           heading={
             <>
               Notifications and documents,{" "}
-              <span className="font-display font-semibold italic text-bx-champagne">
+              <span className="font-sans font-semibold italic text-bx-teal-400">
                 where they belong.
               </span>
             </>
           }
           copy="Clients do not chase updates when updates come to them — and documents do not get lost when they live on the record instead of in an inbox."
         />
-        <div className="mt-12 grid gap-px border border-bx-gold-500/25 bg-bx-gold-500/25 md:grid-cols-2">
-          <div className="bg-bx-maroon-900 p-6 sm:p-8">
-            <Icon name="mail" size={28} className="text-bx-gold-400" />
-            <h3 className="mt-4 font-sans text-xl font-extrabold leading-tight text-bx-ivory">
+        <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 md:grid-cols-2">
+          <div className="bg-bx-navy-900 rounded-2xl p-6 sm:p-8">
+            <Icon name="mail" size={28} className="text-bx-teal-400" />
+            <h3 className="mt-4 font-sans text-xl font-extrabold leading-tight text-bx-white">
               Notifications with a reason
             </h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/85">
+            <p className="mt-3 text-[15px] leading-relaxed text-bx-slate-300/85">
               Every notification is tied to a status change the client cares
               about: a document approved, a payment settled, a reply from
               support. Clients choose their channels, and every message is
               logged on the record — so support can see exactly what a client
               was told, and when.
             </p>
-            <ul className="mt-5 space-y-2.5 text-[15px] leading-relaxed text-bx-champagne/85">
+            <ul className="mt-5 space-y-2.5 text-[15px] leading-relaxed text-bx-slate-300/85">
               <li className="flex gap-3">
-                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-400" />
+                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-400" />
                 Email, SMS and push — per client preference
               </li>
               <li className="flex gap-3">
-                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-400" />
+                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-400" />
                 Status changes, not marketing noise
               </li>
               <li className="flex gap-3">
-                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-400" />
+                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-400" />
                 Every send logged against the client record
               </li>
             </ul>
           </div>
-          <div className="bg-bx-maroon-900 p-6 sm:p-8">
-            <Icon name="document" size={28} className="text-bx-gold-400" />
-            <h3 className="mt-4 font-sans text-xl font-extrabold leading-tight text-bx-ivory">
+          <div className="bg-bx-navy-900 rounded-2xl p-6 sm:p-8">
+            <Icon name="document" size={28} className="text-bx-teal-400" />
+            <h3 className="mt-4 font-sans text-xl font-extrabold leading-tight text-bx-white">
               Documents on the record
             </h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/85">
+            <p className="mt-3 text-[15px] leading-relaxed text-bx-slate-300/85">
               Identity documents, agreements, statements and uploads live
               against the client, the case or the account they belong to —
               versioned, permissioned and retrievable. When a document
               expires, the client is asked for a new one before it becomes a
               problem.
             </p>
-            <ul className="mt-5 space-y-2.5 text-[15px] leading-relaxed text-bx-champagne/85">
+            <ul className="mt-5 space-y-2.5 text-[15px] leading-relaxed text-bx-slate-300/85">
               <li className="flex gap-3">
-                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-400" />
+                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-400" />
                 Versioned, so the signed copy is the retrievable copy
               </li>
               <li className="flex gap-3">
-                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-400" />
+                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-400" />
                 Expiry reminders before a document lapses
               </li>
               <li className="flex gap-3">
-                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-400" />
+                <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-400" />
                 Access governed by role, like everything else
               </li>
             </ul>
@@ -267,7 +267,7 @@ export default function ClientExperiencePage() {
       </Section>
 
       {/* Branded journeys */}
-      <Section tone="ivory" ariaLabel="Branded client journeys">
+      <Section tone="white" ariaLabel="Branded client journeys">
         <SectionIntro
           label="Branded journeys"
           heading="A journey is a story you tell in your own words."
@@ -277,15 +277,15 @@ export default function ClientExperiencePage() {
           <WorkflowSteps steps={JOURNEY_STEPS} />
         </div>
         <Reveal delay={0.1} className="mt-12">
-          <p className="max-w-[68ch] text-base leading-relaxed text-bx-muted">
+          <p className="max-w-[68ch] text-base leading-relaxed text-bx-slate-500">
             Journeys are configured in the{" "}
-            <Link href="/platform/no-code-studio" className="font-bold text-bx-maroon-700 hover:underline">
+            <Link href="/platform/no-code-studio" className="font-bold text-bx-teal-700 hover:underline">
               No-Code Studio
             </Link>{" "}
             and run through the operations layer — so a journey step that
             needs a human lands in a queue with the client’s whole history
             attached, and the{" "}
-            <Link href="/solutions/digital-onboarding" className="font-bold text-bx-maroon-700 hover:underline">
+            <Link href="/solutions/digital-onboarding" className="font-bold text-bx-teal-700 hover:underline">
               onboarding solution
             </Link>{" "}
             describes the verification detail.
@@ -297,7 +297,7 @@ export default function ClientExperiencePage() {
         heading="Client experience questions, answered plainly."
         copy="Branding, partner visibility, mobile behaviour, and what happens when an advisor leaves."
         items={CLIENT_EXPERIENCE_FAQS}
-        tone="cream"
+        tone="mint"
       />
 
       <CtaBand

@@ -23,7 +23,7 @@ export default function SearchPage() {
   return (
     <>
       {/* Dark hero — clears the fixed 72px header. */}
-      <section className="relative overflow-hidden bg-bx-maroon-900 pb-14 pt-[72px] text-bx-ivory sm:pb-16">
+      <section className="relative overflow-hidden bg-bx-navy-900 pb-14 pt-[72px] text-bx-white sm:pb-16">
         <HeroMedia
           image="/images/abstract-glass-ceiling.jpg"
           alt="Skyscrapers seen through a glass ceiling"
@@ -32,20 +32,20 @@ export default function SearchPage() {
           imageHeight={900}
         />
         <Container className="relative pt-14 sm:pt-20">
-          <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-gold-400">
+          <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-teal-400">
             Search BridgeX
           </p>
           <h1 className="mt-4 max-w-[16ch] font-sans text-[42px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance sm:text-[56px]">
             Find the page you’re looking for.
           </h1>
-          <p className="mt-5 max-w-[62ch] text-lg leading-relaxed text-bx-champagne/85">
+          <p className="mt-5 max-w-[62ch] text-lg leading-relaxed text-bx-slate-300/85">
             Every platform page, solution, industry, guide and insight — in
             one place, searched as you type.
           </p>
         </Container>
       </section>
 
-      <section className="bg-bx-ivory py-14 sm:py-16">
+      <section className="bg-bx-white py-14 sm:py-16">
         <Container>
           <Suspense fallback={<SearchBox initialQuery="" />}>
             <SearchExperience />

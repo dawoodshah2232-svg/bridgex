@@ -74,7 +74,7 @@ export default function ArchitecturePage() {
         title={
           <>
             Separated by design.{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               Connected by foundation.
             </span>
           </>
@@ -89,7 +89,7 @@ export default function ArchitecturePage() {
       />
 
       {/* Interactive architecture diagram */}
-      <Section tone="cream" id="diagram" ariaLabel="Interactive architecture diagram">
+      <Section tone="mint" id="diagram" ariaLabel="Interactive architecture diagram">
         <SectionIntro
           label="The diagram"
           heading="Explore the architecture — layer by layer."
@@ -101,7 +101,7 @@ export default function ArchitecturePage() {
       </Section>
 
       {/* Why separation matters */}
-      <Section tone="ivory" ariaLabel="Why separation matters">
+      <Section tone="white" ariaLabel="Why separation matters">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionIntro
@@ -113,7 +113,7 @@ export default function ArchitecturePage() {
               <div className="relative">
                 <div
                   aria-hidden="true"
-                  className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
+                  className="absolute -left-3 -top-3 h-full w-full border border-bx-teal-500/50"
                 />
                 <img
                   src={asset("/images/banking-hall.jpg")}
@@ -124,7 +124,7 @@ export default function ArchitecturePage() {
                   className="relative aspect-[3/2] w-full object-cover"
                 />
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+              <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
                 A structure holds because its parts are separate — and joined
                 through one foundation.
               </p>
@@ -147,15 +147,15 @@ export default function ArchitecturePage() {
                 },
               ].map((item, i) => (
                 <Reveal key={item.title} delay={i * 0.08}>
-                  <div className="flex gap-5 border-t border-bx-gold-500/30 pt-6">
-                    <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-maroon-700">
+                  <div className="flex gap-5 border-t border-bx-teal-500/30 pt-6">
+                    <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-teal-700">
                       0{i + 1}
                     </span>
                     <div>
-                      <h3 className="font-sans text-xl font-extrabold leading-tight text-bx-ink">
+                      <h3 className="font-sans text-xl font-extrabold leading-tight text-bx-navy-900">
                         {item.title}
                       </h3>
-                      <p className="mt-2 max-w-[62ch] text-base leading-relaxed text-bx-muted">
+                      <p className="mt-2 max-w-[62ch] text-base leading-relaxed text-bx-slate-500">
                         {item.text}
                       </p>
                     </div>
@@ -175,7 +175,7 @@ export default function ArchitecturePage() {
         heading={
           <>
             The diagram{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               is the architecture.
             </span>
           </>
@@ -198,12 +198,12 @@ export default function ArchitecturePage() {
             <div className="mt-10 space-y-6">
               {API_POINTS.map((point) => (
                 <div key={point.title} className="flex gap-4">
-                  <Icon name="code" size={24} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                  <Icon name="code" size={24} className="mt-0.5 shrink-0 text-bx-teal-600" />
                   <div>
-                    <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-ink">
+                    <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                       {point.title}
                     </h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-bx-muted">
+                    <p className="mt-1.5 text-[15px] leading-relaxed text-bx-slate-500">
                       {point.text}
                     </p>
                   </div>
@@ -212,11 +212,11 @@ export default function ArchitecturePage() {
             </div>
           </div>
           <Reveal delay={0.12} className="lg:col-span-5">
-            <div className="border border-bx-gold-500/25 bg-bx-maroon-950 p-6 sm:p-7">
-              <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-gold-400">
+            <div className="border border-bx-teal-500/25 bg-bx-navy-950 p-6 sm:p-7">
+              <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-400">
                 Example — not a live endpoint
               </p>
-              <pre className="mt-4 overflow-x-auto font-sans text-sm leading-relaxed text-bx-champagne/90">
+              <pre className="mt-4 overflow-x-auto font-sans text-sm leading-relaxed text-bx-slate-300/90">
                 <code>{`GET  /v1/clients/{id}
 POST /v1/clients/{id}/accounts
 POST /v1/payments/{id}/approve
@@ -229,11 +229,11 @@ Events:
   commission.approved
   case.escalated`}</code>
               </pre>
-              <p className="mt-5 border-t border-bx-gold-500/25 pt-4 text-sm leading-relaxed text-bx-champagne/75">
+              <p className="mt-5 border-t border-bx-teal-500/25 pt-4 text-sm leading-relaxed text-bx-slate-300/75">
                 Endpoint shapes shown to illustrate the API-first design.
                 Versioned API documentation is published with the developer
                 resources — see the{" "}
-                <Link href="/resources/developers" className="font-bold text-bx-gold-400 hover:underline">
+                <Link href="/resources/developers" className="font-bold text-bx-teal-400 hover:underline">
                   developer docs
                 </Link>
                 .
@@ -244,28 +244,28 @@ Events:
       </Section>
 
       {/* Enterprise controls — dark */}
-      <Section tone="maroon" id="controls" ariaLabel="Enterprise controls">
+      <Section tone="navy" id="controls" ariaLabel="Enterprise controls">
         <SectionIntro
           dark
           label="Enterprise controls"
           heading={
             <>
               Controls that hold{" "}
-              <span className="font-display font-semibold italic text-bx-champagne">
+              <span className="font-sans font-semibold italic text-bx-teal-400">
                 under review.
               </span>
             </>
           }
           copy="These are design principles of the platform — how it is built to behave — not audit claims or certifications. Each one exists so that a decision, a payment or a change can be explained afterwards."
         />
-        <div className="mt-12 grid gap-px border border-bx-gold-500/25 bg-bx-gold-500/25 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2 lg:grid-cols-3">
           {ENTERPRISE_CONTROLS.map((control) => (
-            <div key={control.title} className="bg-bx-maroon-900 p-6 sm:p-7">
-              <Icon name={control.icon} size={28} className="text-bx-gold-400" />
-              <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-ivory">
+            <div key={control.title} className="bg-bx-navy-900 rounded-2xl p-6 sm:p-7">
+              <Icon name={control.icon} size={28} className="text-bx-teal-400" />
+              <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-white">
                 {control.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-300/85">
                 {control.text}
               </p>
             </div>
@@ -274,7 +274,7 @@ Events:
       </Section>
 
       {/* Coexistence */}
-      <Section tone="ivory" ariaLabel="Built to coexist">
+      <Section tone="white" ariaLabel="Built to coexist">
         <SectionIntro
           label="Coexistence"
           heading="Built to live alongside what you already run."
@@ -284,11 +284,11 @@ Events:
           <WorkflowSteps steps={COEXISTENCE} />
         </div>
         <Reveal delay={0.1} className="mt-12">
-          <p className="max-w-[68ch] text-base leading-relaxed text-bx-muted">
+          <p className="max-w-[68ch] text-base leading-relaxed text-bx-slate-500">
             The same staged approach governs data migration: source mapping,
             staged loads, dual running where it helps, and reconciliation
             before anything is switched off. The{" "}
-            <Link href="/services/integration-migration" className="font-bold text-bx-maroon-700 hover:underline">
+            <Link href="/services/integration-migration" className="font-bold text-bx-teal-700 hover:underline">
               integration &amp; migration service
             </Link>{" "}
             describes the process in full.
@@ -300,7 +300,7 @@ Events:
         heading="Architecture questions, answered plainly."
         copy="How the layers communicate, how changes are controlled, and what the audit log actually keeps."
         items={ARCHITECTURE_FAQS}
-        tone="cream"
+        tone="mint"
       />
 
       <CtaBand

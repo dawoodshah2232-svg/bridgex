@@ -48,19 +48,19 @@ const COUNTRIES = ["United Arab Emirates", "United Kingdom", "India", "Brazil", 
 function Trace({ steps }: { steps: TraceStep[] }) {
   return (
     <ol className="relative">
-      <span aria-hidden="true" className="absolute bottom-4 left-[15px] top-4 w-px bg-bx-gold-500/40" />
+      <span aria-hidden="true" className="absolute bottom-4 left-[15px] top-4 w-px bg-bx-teal-500/40" />
       {steps.map((step) => (
         <li key={step.text} className="relative flex gap-5 pb-5 last:pb-0">
           <span
             aria-hidden="true"
             className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 ${
               step.state === "done"
-                ? "border-bx-maroon-700 bg-bx-maroon-700 text-bx-ivory"
+                ? "border-bx-navy-700 bg-bx-navy-700 text-bx-white"
                 : step.state === "failed"
-                  ? "border-bx-maroon-700 bg-bx-ivory text-bx-maroon-700"
+                  ? "border-bx-navy-700 bg-bx-white text-bx-teal-700"
                   : step.state === "active"
-                    ? "border-bx-gold-600 bg-bx-ivory text-bx-gold-600"
-                    : "border-bx-gold-500/50 bg-bx-ivory text-bx-muted"
+                    ? "border-bx-teal-600 bg-bx-white text-bx-teal-600"
+                    : "border-bx-teal-500/50 bg-bx-white text-bx-slate-500"
             }`}
           >
             {step.state === "done" ? (
@@ -72,8 +72,8 @@ function Trace({ steps }: { steps: TraceStep[] }) {
             )}
           </span>
           <span className="pt-0.5">
-            <span className="block font-sans text-[15px] font-bold text-bx-ink">{step.text}</span>
-            <span className="mt-0.5 block text-[13px] tabular-nums text-bx-muted">{step.time}</span>
+            <span className="block font-sans text-[15px] font-bold text-bx-navy-900">{step.text}</span>
+            <span className="mt-0.5 block text-[13px] tabular-nums text-bx-slate-500">{step.time}</span>
           </span>
         </li>
       ))}
@@ -133,40 +133,40 @@ export default function PaymentsPreview() {
   };
 
   return (
-    <div className="border border-bx-gold-500/30 bg-bx-ivory">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-gold-500/30 px-5 py-4 sm:px-8">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">Payment flow — illustrative transaction</h3>
+    <div className="border border-bx-teal-500/30 bg-bx-white rounded-2xl">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-teal-500/30 px-5 py-4 sm:px-8">
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">Payment flow — illustrative transaction</h3>
         <DemoLabel text="Illustrative data — no real funds" />
       </div>
       <div className="grid gap-0 lg:grid-cols-2">
         {/* Left: configure + route */}
-        <div className="border-b border-bx-gold-500/30 px-5 py-6 sm:px-8 lg:border-b-0 lg:border-r">
+        <div className="border-b border-bx-teal-500/30 px-5 py-6 sm:px-8 lg:border-b-0 lg:border-r">
           <fieldset disabled={phase !== "configure"}>
             <legend className="sr-only">Configure the illustrative payment</legend>
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="pay-direction" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-muted">
+                <label htmlFor="pay-direction" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-slate-500">
                   Direction
                 </label>
                 <select
                   id="pay-direction"
                   value={direction}
                   onChange={(e) => setDirection(e.target.value as "Deposit" | "Withdrawal")}
-                  className="mt-2 min-h-[48px] w-full border border-bx-gold-500/40 bg-bx-white px-3 text-[15px] text-bx-ink"
+                  className="mt-2 min-h-[48px] w-full border border-bx-teal-500/40 bg-bx-white rounded-2xl px-3 text-[15px] text-bx-navy-900"
                 >
                   <option>Deposit</option>
                   <option>Withdrawal</option>
                 </select>
               </div>
               <div>
-                <label htmlFor="pay-method" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-muted">
+                <label htmlFor="pay-method" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-slate-500">
                   Method category
                 </label>
                 <select
                   id="pay-method"
                   value={method}
                   onChange={(e) => setMethod(e.target.value as Method)}
-                  className="mt-2 min-h-[48px] w-full border border-bx-gold-500/40 bg-bx-white px-3 text-[15px] text-bx-ink"
+                  className="mt-2 min-h-[48px] w-full border border-bx-teal-500/40 bg-bx-white rounded-2xl px-3 text-[15px] text-bx-navy-900"
                 >
                   <option>Card</option>
                   <option>Bank transfer</option>
@@ -174,7 +174,7 @@ export default function PaymentsPreview() {
                 </select>
               </div>
               <div>
-                <label htmlFor="pay-amount" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-muted">
+                <label htmlFor="pay-amount" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-slate-500">
                   Amount (USD)
                 </label>
                 <input
@@ -184,21 +184,21 @@ export default function PaymentsPreview() {
                   onChange={(e) => setAmount(e.target.value)}
                   aria-invalid={!amountValid}
                   aria-describedby="pay-amount-hint"
-                  className="mt-2 min-h-[48px] w-full border border-bx-gold-500/40 bg-bx-white px-3 text-[15px] tabular-nums text-bx-ink"
+                  className="mt-2 min-h-[48px] w-full border border-bx-teal-500/40 bg-bx-white rounded-2xl px-3 text-[15px] tabular-nums text-bx-navy-900"
                 />
-                <p id="pay-amount-hint" className="mt-1.5 text-[13px] text-bx-muted">
+                <p id="pay-amount-hint" className="mt-1.5 text-[13px] text-bx-slate-500">
                   Illustrative only. Enter 1 – 100,000.
                 </p>
               </div>
               <div>
-                <label htmlFor="pay-country" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-muted">
+                <label htmlFor="pay-country" className="block font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-slate-500">
                   Client country
                 </label>
                 <select
                   id="pay-country"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
-                  className="mt-2 min-h-[48px] w-full border border-bx-gold-500/40 bg-bx-white px-3 text-[15px] text-bx-ink"
+                  className="mt-2 min-h-[48px] w-full border border-bx-teal-500/40 bg-bx-white rounded-2xl px-3 text-[15px] text-bx-navy-900"
                 >
                   {COUNTRIES.map((c) => (
                     <option key={c}>{c}</option>
@@ -209,13 +209,13 @@ export default function PaymentsPreview() {
           </fieldset>
 
           {!amountValid && (
-            <p role="alert" className="mt-4 border-l-2 border-bx-maroon-700 bg-bx-cream px-4 py-3 text-sm text-bx-ink">
+            <p role="alert" className="mt-4 border-l-2 border-bx-navy-700 bg-bx-mint-50 px-4 py-3 text-sm text-bx-navy-900">
               Enter an amount between 1 and 100,000 USD to route this payment.
             </p>
           )}
 
           <div className="mt-6">
-            <h4 className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-muted">
+            <h4 className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-slate-500">
               Routing decision — {method} · {country}
             </h4>
             <ol className="mt-3 space-y-2.5">
@@ -224,23 +224,23 @@ export default function PaymentsPreview() {
                   key={route.gateway}
                   className={`flex items-center justify-between gap-4 border px-4 py-3 ${
                     phase !== "configure" && i === 0
-                      ? "border-bx-maroon-700 bg-bx-maroon-700/5"
-                      : "border-bx-gold-500/30 bg-bx-white"
+                      ? "border-bx-navy-700 bg-bx-navy-700/5"
+                      : "border-bx-teal-500/30 bg-bx-white"
                   }`}
                 >
                   <span>
-                    <span className="block font-sans text-[15px] font-bold text-bx-ink">
+                    <span className="block font-sans text-[15px] font-bold text-bx-navy-900">
                       {i + 1}. {route.gateway}
                     </span>
-                    <span className="block text-[13px] text-bx-muted">{route.note}</span>
+                    <span className="block text-[13px] text-bx-slate-500">{route.note}</span>
                   </span>
-                  <span className="shrink-0 font-sans text-sm font-extrabold tabular-nums text-bx-maroon-700">
+                  <span className="shrink-0 font-sans text-sm font-extrabold tabular-nums text-bx-teal-700">
                     {route.weight}%
                   </span>
                 </li>
               ))}
             </ol>
-            <p className="mt-3 text-[13px] leading-relaxed text-bx-muted">
+            <p className="mt-3 text-[13px] leading-relaxed text-bx-slate-500">
               Priority and weighted routing, restricted by country, currency,
               amount and client profile. Restrictions are configuration, not code.
             </p>
@@ -274,8 +274,8 @@ export default function PaymentsPreview() {
             )}
           </div>
           {direction === "Withdrawal" && (
-            <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-bx-muted">
-              <Icon name="shield" size={18} className="mt-0.5 shrink-0 text-bx-gold-600" />
+            <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-bx-slate-500">
+              <Icon name="shield" size={18} className="mt-0.5 shrink-0 text-bx-teal-600" />
               Withdrawals pass an approval step before release. This preview
               shows the routing and retry; approval happens in the finance queue.
             </p>
@@ -283,22 +283,22 @@ export default function PaymentsPreview() {
         </div>
 
         {/* Right: status trace */}
-        <div className="bg-bx-cream/60 px-5 py-6 sm:px-8">
-          <h4 className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-muted">
+        <div className="bg-bx-mint-50/60 px-5 py-6 sm:px-8">
+          <h4 className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-bx-slate-500">
             Payment status trace
           </h4>
-          <p className="mt-1 text-[13px] tabular-nums text-bx-muted">
+          <p className="mt-1 text-[13px] tabular-nums text-bx-slate-500">
             Reference PAY-2026-11842 · {direction} · ${amountNum.toLocaleString("en-US")} · {method}
           </p>
           <div className="mt-6" aria-live="polite">
             <Trace steps={trace} />
           </div>
           {phase === "settled" && (
-            <div className="mt-6 border border-bx-maroon-700/40 bg-bx-white px-4 py-4">
-              <p className="font-sans text-[15px] font-bold text-bx-ink">
+            <div className="mt-6 border border-bx-navy-700/40 bg-bx-white px-4 py-4">
+              <p className="font-sans text-[15px] font-bold text-bx-navy-900">
                 Settled — and the client never saw the failure.
               </p>
-              <p className="mt-1.5 text-sm leading-relaxed text-bx-muted">
+              <p className="mt-1.5 text-sm leading-relaxed text-bx-slate-500">
                 The decline was retried automatically through the next eligible
                 provider. The trace, the retry and the reconciliation are all
                 recorded — support can answer “where is my money?” in seconds.
@@ -306,7 +306,7 @@ export default function PaymentsPreview() {
             </div>
           )}
           {phase === "configure" && (
-            <p className="mt-6 text-sm leading-relaxed text-bx-muted">
+            <p className="mt-6 text-sm leading-relaxed text-bx-slate-500">
               Route the payment to see the trace build. The first gateway will
               decline — watch the cascade recover it.
             </p>

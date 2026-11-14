@@ -126,7 +126,7 @@ export default function PlatformOverview() {
         title={
           <>
             Four layers.{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               One connected business.
             </span>
           </>
@@ -141,13 +141,13 @@ export default function PlatformOverview() {
       />
 
       {/* The problem: disconnected tools */}
-      <Section tone="ivory" ariaLabel="The cost of disconnected tools">
+      <Section tone="white" ariaLabel="The cost of disconnected tools">
         <SectionIntro
           label="Why one platform"
           heading={
             <>
               Disconnected tools tax{" "}
-              <span className="font-display font-semibold italic text-bx-maroon-700">
+              <span className="font-sans font-semibold italic text-bx-teal-700">
                 every team.
               </span>
             </>
@@ -157,14 +157,14 @@ export default function PlatformOverview() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PAINS.map((pain, i) => (
             <Reveal key={pain.title} delay={i * 0.08}>
-              <div className="h-full border border-bx-gold-500/25 bg-bx-white p-6">
-                <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-maroon-700">
+              <div className="h-full border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6">
+                <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-teal-700">
                   0{i + 1}
                 </span>
-                <h3 className="mt-3 font-sans text-lg font-extrabold leading-tight text-bx-ink">
+                <h3 className="mt-3 font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                   {pain.title}
                 </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-bx-muted">{pain.text}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-500">{pain.text}</p>
               </div>
             </Reveal>
           ))}
@@ -172,7 +172,7 @@ export default function PlatformOverview() {
       </Section>
 
       {/* The four layers — interactive explorer */}
-      <Section tone="cream" id="layers" ariaLabel="The four platform layers">
+      <Section tone="mint" id="layers" ariaLabel="The four platform layers">
         <SectionIntro
           label="The platform"
           heading="Four layers, each with its own job."
@@ -184,28 +184,28 @@ export default function PlatformOverview() {
       </Section>
 
       {/* Shared foundation — dark */}
-      <Section tone="maroon" id="foundation" ariaLabel="The shared foundation">
+      <Section tone="navy" id="foundation" ariaLabel="The shared foundation">
         <SectionIntro
           dark
           label="Cross-cutting model"
           heading={
             <>
               The foundation every layer{" "}
-              <span className="font-display font-semibold italic text-bx-champagne">
+              <span className="font-sans font-semibold italic text-bx-teal-400">
                 stands on.
               </span>
             </>
           }
           copy="Six capabilities run under everything in BridgeX. They are why a change made in one layer is visible to the others immediately — and why a permission set once applies everywhere."
         />
-        <div className="mt-12 grid gap-px border border-bx-gold-500/25 bg-bx-gold-500/25 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2 lg:grid-cols-3">
           {FOUNDATION_ITEMS.map((item) => (
-            <div key={item.title} className="bg-bx-maroon-900 p-6 sm:p-7">
-              <Icon name={item.icon} size={28} className="text-bx-gold-400" />
-              <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-ivory">
+            <div key={item.title} className="bg-bx-navy-900 rounded-2xl p-6 sm:p-7">
+              <Icon name={item.icon} size={28} className="text-bx-teal-400" />
+              <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-white">
                 {item.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-300/85">
                 {item.text}
               </p>
             </div>
@@ -214,7 +214,7 @@ export default function PlatformOverview() {
         <Reveal delay={0.1} className="mt-10">
           <Link
             href="/platform/architecture"
-            className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-gold-400 hover:text-bx-champagne"
+            className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-400 hover:text-bx-slate-300"
           >
             See how the foundation is built — Architecture
             <Icon
@@ -234,7 +234,7 @@ export default function PlatformOverview() {
         heading={
           <>
             One record, from first registration{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               to settled payout.
             </span>
           </>
@@ -246,7 +246,7 @@ export default function PlatformOverview() {
       />
 
       {/* One journey across the layers */}
-      <Section tone="ivory" ariaLabel="One client journey across the layers">
+      <Section tone="white" ariaLabel="One client journey across the layers">
         <SectionIntro
           label="How it connects"
           heading="One client, one journey, four layers working together."
@@ -265,13 +265,13 @@ export default function PlatformOverview() {
         heading={
           <>
             The same record,{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-sans font-semibold italic text-bx-teal-700">
               at every step.
             </span>
           </>
         }
         copy="At every step, the same record is being read and written: the client room shows it, operations works it, integrations move money against it, and intelligence reports on it. There is no nightly sync to drift, and no second copy of the truth."
-        tone="cream"
+        tone="mint"
         imageWidth={1600}
         imageHeight={1067}
       />
@@ -288,19 +288,19 @@ export default function PlatformOverview() {
             <Link
               key={solution.href}
               href={solution.href}
-              className="group flex items-start gap-4 border border-bx-gold-500/25 bg-bx-ivory p-5 transition-colors duration-200 hover:border-bx-gold-500/60 hover:bg-bx-cream"
+              className="group flex items-start gap-4 border border-bx-teal-500/25 bg-bx-white rounded-2xl p-5 transition-colors duration-200 hover:border-bx-teal-500/60 hover:bg-bx-mint-50"
             >
-              <Icon name={solutionIcon(solution.slug)} size={28} className="mt-0.5 shrink-0 text-bx-gold-600" />
+              <Icon name={solutionIcon(solution.slug)} size={28} className="mt-0.5 shrink-0 text-bx-teal-600" />
               <span>
-                <span className="flex items-center gap-2 font-sans text-base font-extrabold leading-tight text-bx-ink">
+                <span className="flex items-center gap-2 font-sans text-base font-extrabold leading-tight text-bx-navy-900">
                   {solution.label}
                   <Icon
                     name="arrowUpRight"
                     size={16}
-                    className="text-bx-gold-600 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="text-bx-teal-600 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </span>
-                <span className="mt-1 block text-sm leading-relaxed text-bx-muted">
+                <span className="mt-1 block text-sm leading-relaxed text-bx-slate-500">
                   {solution.text}
                 </span>
               </span>
@@ -308,30 +308,30 @@ export default function PlatformOverview() {
           ))}
           <Link
             href="/platform/no-code-studio"
-            className="group flex items-start gap-4 border border-bx-maroon-900 bg-bx-maroon-900 p-5 transition-colors duration-200 hover:bg-bx-maroon-800"
+            className="group flex items-start gap-4 border border-bx-navy-900 bg-bx-navy-900 rounded-2xl p-5 transition-colors duration-200 hover:bg-bx-navy-800"
           >
-            <Icon name="sliders" size={28} className="mt-0.5 shrink-0 text-bx-gold-400" />
+            <Icon name="sliders" size={28} className="mt-0.5 shrink-0 text-bx-teal-400" />
             <span>
-              <span className="flex items-center gap-2 font-sans text-base font-extrabold leading-tight text-bx-ivory">
+              <span className="flex items-center gap-2 font-sans text-base font-extrabold leading-tight text-bx-white">
                 Configure it yourself
                 <Icon
                   name="arrowUpRight"
                   size={16}
-                  className="text-bx-gold-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="text-bx-teal-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </span>
-              <span className="mt-1 block text-sm leading-relaxed text-bx-champagne/85">
+              <span className="mt-1 block text-sm leading-relaxed text-bx-slate-300/85">
                 No-Code Studio — shape objects, forms, workflows and journeys
                 without code.
               </span>
             </span>
           </Link>
         </div>
-        <p className="mt-8 text-sm text-bx-muted">
+        <p className="mt-8 text-sm text-bx-slate-500">
           Layer pages:{" "}
           {PLATFORM_LAYERS.map((layer, i) => (
             <span key={layer.href}>
-              <Link href={layer.href} className="font-bold text-bx-maroon-700 hover:underline">
+              <Link href={layer.href} className="font-bold text-bx-teal-700 hover:underline">
                 {layer.name}
               </Link>
               {i < PLATFORM_LAYERS.length - 1 ? " · " : ""}
@@ -344,7 +344,7 @@ export default function PlatformOverview() {
         heading="Platform questions, answered plainly."
         copy="The questions decision-makers ask first — about adoption, coexistence, access and what happens when something fails."
         items={PLATFORM_FAQS}
-        tone="cream"
+        tone="mint"
       />
 
       <CtaBand

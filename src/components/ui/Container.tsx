@@ -18,13 +18,12 @@ export function Container({
   );
 }
 
-type SectionTone = "ivory" | "cream" | "maroon" | "white";
+type SectionTone = "white" | "mint" | "navy";
 
 const TONES: Record<SectionTone, string> = {
-  ivory: "bg-bx-ivory text-bx-ink",
-  cream: "bg-bx-cream text-bx-ink",
-  maroon: "bg-bx-maroon-900 text-bx-ivory",
-  white: "bg-bx-white text-bx-ink",
+  white: "bg-bx-white text-bx-navy-900",
+  mint: "bg-bx-mint-50 text-bx-navy-900",
+  navy: "bg-bx-navy-900 text-bx-white",
 };
 
 /**
@@ -35,7 +34,7 @@ const TONES: Record<SectionTone, string> = {
  */
 export function Section({
   children,
-  tone = "ivory",
+  tone = "white",
   id,
   className = "",
   ariaLabel,

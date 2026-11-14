@@ -27,7 +27,7 @@ export default function FaqAccordion({
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className="divide-y divide-bx-gold-500/25 border-y border-bx-gold-500/25">
+    <div className="divide-y divide-bx-teal-500/25 border-y border-bx-teal-500/25">
       {items.map((item, i) => {
         const isOpen = open === i;
         const panelId = `faq-panel-${i}`;
@@ -43,15 +43,15 @@ export default function FaqAccordion({
                 onClick={() => setOpen(isOpen ? null : i)}
                 className={`flex w-full items-center justify-between gap-6 py-5 text-left font-sans text-lg font-bold transition-colors duration-200 sm:text-xl ${
                   dark
-                    ? "text-bx-ivory hover:text-bx-gold-400"
-                    : "text-bx-ink hover:text-bx-maroon-700"
+                    ? "text-bx-white hover:text-bx-teal-400"
+                    : "text-bx-navy-900 hover:text-bx-teal-700"
                 }`}
               >
                 {item.question}
                 <span
                   className={`shrink-0 transition-transform duration-200 ${
                     isOpen ? "rotate-45" : ""
-                  } ${dark ? "text-bx-gold-400" : "text-bx-gold-600"}`}
+                  } ${dark ? "text-bx-teal-400" : "text-bx-teal-600"}`}
                 >
                   <Icon name="plus" size={22} />
                 </span>
@@ -74,7 +74,7 @@ export default function FaqAccordion({
                 >
                   <p
                     className={`max-w-[68ch] pb-6 pr-10 text-base leading-relaxed ${
-                      dark ? "text-bx-champagne/85" : "text-bx-muted"
+                      dark ? "text-bx-slate-300/85" : "text-bx-slate-500"
                     }`}
                   >
                     {item.answer}

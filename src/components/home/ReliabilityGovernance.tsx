@@ -35,14 +35,14 @@ const PRINCIPLES: { icon: IconName; title: string; text: string }[] = [
 
 export default function ReliabilityGovernance() {
   return (
-    <Section tone="maroon" ariaLabel="Reliability and governance">
+    <Section tone="navy" ariaLabel="Reliability and governance">
       <SectionIntro
         dark
         label="Reliability & governance"
         heading={
           <>
             Designed to be{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               trusted.
             </span>
           </>
@@ -60,25 +60,25 @@ export default function ReliabilityGovernance() {
             loading="lazy"
             className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
           />
-          <figcaption className="mt-3 text-sm text-bx-champagne/70">
+          <figcaption className="mt-3 text-sm text-bx-slate-300/70">
             Trust is a daily practice: permissions, approvals and audit on
             every workflow — not a policy document on a shelf.
           </figcaption>
         </figure>
       </Reveal>
 
-      <div className="mt-12 grid gap-px border border-bx-gold-500/25 bg-bx-gold-500/25 sm:grid-cols-2 lg:mt-16">
+      <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2 lg:mt-16">
         {PRINCIPLES.map((p, i) => (
           <Reveal key={p.title} delay={0.07 * i} className="h-full">
-            <div className="flex h-full flex-col bg-bx-maroon-900 p-7 sm:p-8">
-              {/* Gold-ring tile (fix, 14 Nov): the bare 30px glyphs read
+            <div className="flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 sm:p-8">
+              {/* Teal-ring tile (fix, 14 Nov): the bare 30px glyphs read
                   as small marks; the FeatureIcon tile gives each
                   principle a visible anchor. */}
               <FeatureIcon icon={p.icon} tone="dark" size="md" className="[&>*]:self-start" />
-              <h3 className="mt-5 font-sans text-xl font-bold text-bx-ivory">
+              <h3 className="mt-5 font-sans text-xl font-bold text-bx-white">
                 {p.title}
               </h3>
-              <p className="mt-2.5 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-2.5 text-[15px] leading-relaxed text-bx-slate-300/85">
                 {p.text}
               </p>
             </div>
@@ -87,13 +87,13 @@ export default function ReliabilityGovernance() {
       </div>
 
       <Reveal delay={0.15} className="mt-px">
-        <div className="flex flex-col gap-4 border border-t-0 border-bx-gold-500/25 bg-bx-maroon-950/70 p-7 sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+        <div className="flex flex-col gap-4 border border-t-0 border-bx-teal-500/25 bg-bx-navy-950/70 p-7 sm:flex-row sm:items-center sm:gap-8 sm:p-8">
           <FeatureIcon icon="sliders" tone="dark" size="md" className="shrink-0" />
           <div>
-            <h3 className="font-sans text-xl font-bold text-bx-ivory">
+            <h3 className="font-sans text-xl font-bold text-bx-white">
               Safe configuration
             </h3>
-            <p className="mt-1.5 max-w-[72ch] text-[15px] leading-relaxed text-bx-champagne/85">
+            <p className="mt-1.5 max-w-[72ch] text-[15px] leading-relaxed text-bx-slate-300/85">
               Changes go through draft, review and publish — with rollback.
               Nothing reaches production by accident, and nothing changes
               without a record of who approved it.
@@ -103,7 +103,7 @@ export default function ReliabilityGovernance() {
       </Reveal>
 
       <Reveal delay={0.2}>
-        <p className="mt-8 text-sm leading-relaxed text-bx-champagne/60">
+        <p className="mt-8 text-sm leading-relaxed text-bx-slate-300/60">
           These are design principles of the platform, not audit claims.
           BridgeX claims no certification, licence or regulatory status unless
           it has been independently obtained — and any such claim will name its

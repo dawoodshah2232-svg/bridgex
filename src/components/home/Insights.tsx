@@ -13,14 +13,14 @@ import Icon from "../icons";
 
 export default function Insights() {
   return (
-    <Section tone="cream" ariaLabel="Editorial insights">
+    <Section tone="mint" ariaLabel="Editorial insights">
       <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
         <SectionIntro
           label="From the BridgeX team"
           heading={
             <>
               Notes on running a{" "}
-              <span className="font-display font-semibold italic text-bx-maroon-700">
+              <span className="font-sans font-semibold italic text-bx-teal-700">
                 financial business.
               </span>
             </>
@@ -30,7 +30,7 @@ export default function Insights() {
         <Reveal delay={0.15} className="shrink-0">
           <Link
             href="/resources/blog"
-            className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-maroon-700 hover:text-bx-maroon-900"
+            className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
           >
             All insights
             <Icon
@@ -47,7 +47,7 @@ export default function Insights() {
           <Reveal key={article.slug} delay={0.08 * i} className="h-full">
             <Link
               href="/resources/blog"
-              className="group flex h-full flex-col bg-bx-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-20px_rgba(35,11,22,0.35)]"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#E5E7EB] bg-bx-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-20px_rgba(15,23,42,0.15)]"
             >
               <span className="block overflow-hidden">
                 <img
@@ -61,22 +61,22 @@ export default function Insights() {
               </span>
               <span className="flex flex-1 flex-col p-6 sm:p-7">
                 <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] font-sans font-bold">
-                  <span className="uppercase tracking-[0.14em] text-bx-maroon-700">
+                  <span className="uppercase tracking-[0.14em] text-bx-teal-700">
                     {article.category}
                   </span>
-                  <span aria-hidden="true" className="text-bx-gold-600">·</span>
-                  <span className="text-bx-muted">
+                  <span aria-hidden="true" className="text-bx-teal-600">·</span>
+                  <span className="text-bx-slate-500">
                     {formatInsightDate(article.date)} · {article.readMinutes}{" "}
                     min read
                   </span>
                 </span>
-                <span className="mt-3 font-sans text-xl font-bold leading-snug text-bx-ink group-hover:text-bx-maroon-700">
+                <span className="mt-3 font-sans text-xl font-bold leading-snug text-bx-navy-900 group-hover:text-bx-teal-700">
                   {article.title}
                 </span>
-                <span className="mt-2.5 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                <span className="mt-2.5 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                   {article.excerpt}
                 </span>
-                <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700 group-hover:text-bx-maroon-900">
+                <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-teal-700 group-hover:text-bx-navy-900">
                   Read on the blog
                   <Icon
                     name="arrowRight"

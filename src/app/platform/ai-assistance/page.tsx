@@ -106,16 +106,16 @@ export default function AiAssistancePage() {
       />
 
       {/* Status panel — honest, prominent */}
-      <Section tone="cream" ariaLabel="Current status">
-        <div className="grid gap-8 border border-bx-gold-500/40 bg-bx-white p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-10">
+      <Section tone="mint" ariaLabel="Current status">
+        <div className="grid gap-8 border border-bx-teal-500/40 bg-bx-white rounded-2xl p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-10">
           <div className="lg:col-span-5">
             <DemoLabel text="Status: In development" />
-            <h2 className="mt-5 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-3xl">
+            <h2 className="mt-5 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-3xl">
               Not live. Not promised for a date. Designed in the open.
             </h2>
           </div>
           <div className="lg:col-span-7">
-            <p className="text-base leading-relaxed text-bx-muted">
+            <p className="text-base leading-relaxed text-bx-slate-500">
               Governed AI assistance is a roadmap capability. The uses on this
               page are illustrative designs — scenarios showing how assistance
               would work inside the platform&apos;s existing rules. No AI agent
@@ -124,9 +124,9 @@ export default function AiAssistancePage() {
               pilot, and each stage has to pass its own review before the next
               begins.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-bx-muted">
+            <p className="mt-4 text-base leading-relaxed text-bx-slate-500">
               Product updates will describe progress as it happens — see{" "}
-              <Link href="/resources/product-updates" className="font-bold text-bx-maroon-700 hover:underline">
+              <Link href="/resources/product-updates" className="font-bold text-bx-teal-700 hover:underline">
                 Product Updates
               </Link>
               .
@@ -136,7 +136,7 @@ export default function AiAssistancePage() {
       </Section>
 
       {/* Illustrative uses */}
-      <Section tone="ivory" id="uses" ariaLabel="Illustrative uses">
+      <Section tone="white" id="uses" ariaLabel="Illustrative uses">
         <SectionIntro
           label="Illustrative uses"
           heading="Four places assistance would earn its keep."
@@ -148,18 +148,18 @@ export default function AiAssistancePage() {
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {AI_USES.map((use, i) => (
             <Reveal key={use.title} delay={(i % 2) * 0.08}>
-              <article className="flex h-full flex-col border border-bx-gold-500/25 bg-bx-white p-6 sm:p-8">
+              <article className="flex h-full flex-col border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center gap-3">
-                  <Icon name={use.icon} size={28} className="text-bx-gold-600" />
-                  <h3 className="font-sans text-xl font-extrabold leading-tight text-bx-ink">
+                  <Icon name={use.icon} size={28} className="text-bx-teal-600" />
+                  <h3 className="font-sans text-xl font-extrabold leading-tight text-bx-navy-900">
                     {use.title}
                   </h3>
                 </div>
-                <p className="mt-4 flex-1 text-base leading-relaxed text-bx-muted">
+                <p className="mt-4 flex-1 text-base leading-relaxed text-bx-slate-500">
                   {use.scenario}
                 </p>
-                <p className="mt-6 border-l-2 border-bx-gold-500 bg-bx-cream px-4 py-3 text-[15px] leading-relaxed text-bx-ink">
-                  <span className="font-sans font-bold text-bx-maroon-700">
+                <p className="mt-6 border-l-2 border-bx-teal-500 bg-bx-mint-50 px-4 py-3 text-[15px] leading-relaxed text-bx-navy-900">
+                  <span className="font-sans font-bold text-bx-teal-700">
                     Human checkpoint:{" "}
                   </span>
                   {use.checkpoint}
@@ -178,7 +178,7 @@ export default function AiAssistancePage() {
         heading={
           <>
             Designed{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               in the open.
             </span>
           </>
@@ -190,28 +190,28 @@ export default function AiAssistancePage() {
       />
 
       {/* Governance principles — dark */}
-      <Section tone="maroon" id="governance" ariaLabel="Governance principles">
+      <Section tone="navy" id="governance" ariaLabel="Governance principles">
         <SectionIntro
           dark
           label="How it is governed"
           heading={
             <>
               Four rules the design{" "}
-              <span className="font-display font-semibold italic text-bx-champagne">
+              <span className="font-sans font-semibold italic text-bx-teal-400">
                 does not bend.
               </span>
             </>
           }
           copy="These principles are set before the first line of assistance is built — because governance added after a capability ships is governance that gets negotiated away."
         />
-        <div className="mt-12 grid gap-px border border-bx-gold-500/25 bg-bx-gold-500/25 sm:grid-cols-2">
+        <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2">
           {PRINCIPLES.map((principle) => (
-            <div key={principle.title} className="bg-bx-maroon-900 p-6 sm:p-8">
-              <Icon name={principle.icon} size={28} className="text-bx-gold-400" />
-              <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-ivory">
+            <div key={principle.title} className="bg-bx-navy-900 rounded-2xl p-6 sm:p-8">
+              <Icon name={principle.icon} size={28} className="text-bx-teal-400" />
+              <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-white">
                 {principle.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-300/85">
                 {principle.text}
               </p>
             </div>
@@ -230,18 +230,18 @@ export default function AiAssistancePage() {
             />
             <ul className="mt-8 space-y-3">
               {NEVER.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-ink">
-                  <Icon name="close" size={20} className="mt-0.5 shrink-0 text-bx-maroon-700" />
+                <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-navy-900">
+                  <Icon name="close" size={20} className="mt-0.5 shrink-0 text-bx-teal-700" />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
           <div className="lg:col-span-6">
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
               The road to launch
             </p>
-            <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-bx-ink sm:text-4xl">
+            <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-bx-navy-900 sm:text-4xl">
               Stages, not dates.
             </h2>
             <ol className="mt-8 space-y-0">
@@ -250,25 +250,25 @@ export default function AiAssistancePage() {
                   {i < ROADMAP.length - 1 && (
                     <span
                       aria-hidden="true"
-                      className="absolute left-[7px] top-5 h-full w-px bg-bx-gold-500/50"
+                      className="absolute left-[7px] top-5 h-full w-px bg-bx-teal-500/50"
                     />
                   )}
                   <span
                     aria-hidden="true"
                     className={`relative z-10 mt-1.5 h-3.5 w-3.5 shrink-0 rotate-45 border ${
                       i === 0
-                        ? "border-bx-gold-600 bg-bx-gold-600"
-                        : "border-bx-gold-600 bg-bx-white"
+                        ? "border-bx-teal-600 bg-bx-teal-600"
+                        : "border-bx-teal-600 bg-bx-white"
                     }`}
                   />
                   <div>
-                    <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
+                    <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700">
                       {stage.stage}
                     </p>
-                    <h3 className="mt-1 font-sans text-lg font-extrabold leading-tight text-bx-ink">
+                    <h3 className="mt-1 font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                       {stage.title}
                     </h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-bx-muted">
+                    <p className="mt-1.5 text-[15px] leading-relaxed text-bx-slate-500">
                       {stage.text}
                     </p>
                   </div>
@@ -283,7 +283,7 @@ export default function AiAssistancePage() {
         heading="AI assistance questions, answered plainly."
         copy="Availability, human approval, data access, evidence — and when it will launch."
         items={AI_FAQS}
-        tone="cream"
+        tone="mint"
       />
 
       <CtaBand

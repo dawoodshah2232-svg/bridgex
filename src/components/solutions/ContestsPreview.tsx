@@ -92,18 +92,18 @@ export default function ContestsPreview() {
   const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div className="border border-bx-gold-500/30 bg-bx-ivory">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-gold-500/30 px-5 py-4 sm:px-8">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">
+    <div className="border border-bx-teal-500/30 bg-bx-white rounded-2xl">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-teal-500/30 px-5 py-4 sm:px-8">
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">
           Winter Trading Cup — illustrative contest
         </h3>
         <DemoLabel text="Illustrative data — fictional traders" />
       </div>
 
       {/* Countdown + registration */}
-      <div className="flex flex-col gap-6 border-b border-bx-gold-500/30 bg-bx-maroon-900 px-5 py-6 text-bx-ivory sm:px-8 lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex flex-col gap-6 border-b border-bx-teal-500/30 bg-bx-navy-900 px-5 py-6 text-bx-white sm:px-8 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-gold-400">
+          <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-400">
             {ended ? "Contest ended" : "Contest ends in"}
           </p>
           {ended ? (
@@ -115,16 +115,16 @@ export default function ContestsPreview() {
               {days}d : {pad(hours)}h : {pad(mins)}m : {pad(secs)}s
             </p>
           )}
-          <p className="mt-1.5 text-sm text-bx-champagne/80">
+          <p className="mt-1.5 text-sm text-bx-slate-300/80">
             1 – 20 December 2026 · Open to funded standard accounts · Prizes
             paid after approval.
           </p>
         </div>
         <div className="shrink-0">
           {registered ? (
-            <p className="border border-bx-gold-500/60 px-5 py-3.5 text-center font-sans text-sm font-bold text-bx-champagne" role="status">
+            <p className="border border-bx-teal-500/60 px-5 py-3.5 text-center font-sans text-sm font-bold text-bx-slate-300" role="status">
               Registered for the demo contest.
-              <span className="block text-[13px] font-normal text-bx-champagne/70">
+              <span className="block text-[13px] font-normal text-bx-slate-300/70">
                 No account was created — this is a simulated registration.
               </span>
             </p>
@@ -148,8 +148,8 @@ export default function ContestsPreview() {
                 aria-pressed={format === f}
                 className={`min-h-[40px] border px-3.5 font-sans text-sm font-bold transition-colors duration-150 ${
                   format === f
-                    ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                    : "border-bx-gold-500/40 bg-bx-white text-bx-maroon-700 hover:border-bx-maroon-700"
+                    ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                    : "border-bx-teal-500/40 bg-bx-white text-bx-teal-700 hover:border-bx-navy-700"
                 }`}
               >
                 {f}
@@ -165,7 +165,7 @@ export default function ContestsPreview() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search by trader handle…"
-            className="min-h-[44px] w-full border border-bx-gold-500/40 bg-bx-white px-4 text-[15px] text-bx-ink placeholder:text-bx-muted lg:max-w-xs"
+            className="min-h-[44px] w-full border border-bx-teal-500/40 bg-bx-white rounded-2xl px-4 text-[15px] text-bx-navy-900 placeholder:text-bx-slate-500 lg:max-w-xs"
           />
         </div>
 
@@ -178,7 +178,7 @@ export default function ContestsPreview() {
         >
           <table className="w-full min-w-[620px] border-collapse text-left">
             <thead>
-              <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">
+              <tr className="border-b border-bx-teal-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-slate-500">
                 <th scope="col" className="py-3 pr-4 font-bold">Rank</th>
                 <th scope="col" className="py-3 pr-4 font-bold">Trader</th>
                 <th scope="col" className="py-3 pr-4 text-right font-bold">{metricLabel[format]}</th>
@@ -189,42 +189,42 @@ export default function ContestsPreview() {
             </thead>
             <tbody>
               {ranked.map((t, i) => (
-                <tr key={t.handle} className="border-b border-bx-gold-500/15">
+                <tr key={t.handle} className="border-b border-bx-teal-500/15">
                   <td className="py-3.5 pr-4">
                     <span
                       className={`inline-flex h-8 w-8 items-center justify-center font-sans text-sm font-extrabold tabular-nums ${
                         i === 0
-                          ? "bg-bx-gold-500 text-bx-maroon-950"
+                          ? "bg-bx-teal-500 text-bx-white"
                           : i < 3
-                            ? "bg-bx-maroon-800 text-bx-ivory"
-                            : "border border-bx-gold-500/40 text-bx-maroon-700"
+                            ? "bg-bx-navy-800 text-bx-white"
+                            : "border border-bx-teal-500/40 text-bx-teal-700"
                       }`}
                     >
                       {i + 1}
                     </span>
                   </td>
                   <td className="py-3.5 pr-4">
-                    <span className="block text-sm font-bold text-bx-ink">{t.handle}</span>
+                    <span className="block text-sm font-bold text-bx-navy-900">{t.handle}</span>
                     {t.flagged && (
-                      <span className="mt-0.5 block text-[13px] text-bx-maroon-700">{t.flagged}</span>
+                      <span className="mt-0.5 block text-[13px] text-bx-teal-700">{t.flagged}</span>
                     )}
                   </td>
-                  <td className="py-3.5 pr-4 text-right text-sm font-bold tabular-nums text-bx-ink">
+                  <td className="py-3.5 pr-4 text-right text-sm font-bold tabular-nums text-bx-navy-900">
                     {metricValue(t)}
                   </td>
-                  <td className="py-3.5 pr-4 text-right text-sm tabular-nums text-bx-muted">
+                  <td className="py-3.5 pr-4 text-right text-sm tabular-nums text-bx-slate-500">
                     +{t.profitPct.toFixed(1)}%
                   </td>
-                  <td className="py-3.5 pr-4 text-right text-sm tabular-nums text-bx-muted">
+                  <td className="py-3.5 pr-4 text-right text-sm tabular-nums text-bx-slate-500">
                     {t.volume.toLocaleString("en-US")}
                   </td>
                   <td className="py-3.5">
                     {t.flagged ? (
-                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap border border-bx-maroon-700 bg-bx-maroon-700/10 px-2.5 py-1 text-[12px] font-bold text-bx-maroon-700">
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap border border-bx-navy-700 bg-bx-navy-700/10 px-2.5 py-1 text-[12px] font-bold text-bx-teal-700">
                         <Icon name="shield" size={13} /> Under review
                       </span>
                     ) : (
-                      <span className="inline-flex whitespace-nowrap border border-bx-gold-600/50 px-2.5 py-1 text-[12px] font-bold text-bx-maroon-700">
+                      <span className="inline-flex whitespace-nowrap border border-bx-teal-600/50 px-2.5 py-1 text-[12px] font-bold text-bx-teal-700">
                         Verified
                       </span>
                     )}
@@ -234,24 +234,24 @@ export default function ContestsPreview() {
             </tbody>
           </table>
           {ranked.length === 0 && (
-            <p className="py-8 text-center text-sm text-bx-muted" role="status">
+            <p className="py-8 text-center text-sm text-bx-slate-500" role="status">
               No traders match that search.
             </p>
           )}
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+        <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
           Flagged entries stay on the board, marked for review — they are not
           quietly removed, and no prize is paid until a human has decided.
         </p>
 
         {/* Prize tiers */}
-        <h4 className="mt-8 font-sans text-lg font-extrabold text-bx-ink">Prize tiers</h4>
+        <h4 className="mt-8 font-sans text-lg font-extrabold text-bx-navy-900">Prize tiers</h4>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PRIZE_TIERS.map((tier) => (
-            <li key={tier.place} className="border border-bx-gold-500/30 bg-bx-white p-5">
-              <p className="font-display text-2xl font-semibold text-bx-maroon-700">{tier.place}</p>
-              <p className="mt-2 font-sans text-[15px] font-bold text-bx-ink">{tier.prize}</p>
-              <p className="mt-1 text-[13px] leading-relaxed text-bx-muted">{tier.note}</p>
+            <li key={tier.place} className="border border-bx-teal-500/30 bg-bx-white rounded-2xl p-5">
+              <p className="font-sans text-2xl font-semibold text-bx-teal-700">{tier.place}</p>
+              <p className="mt-2 font-sans text-[15px] font-bold text-bx-navy-900">{tier.prize}</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-bx-slate-500">{tier.note}</p>
             </li>
           ))}
         </ul>

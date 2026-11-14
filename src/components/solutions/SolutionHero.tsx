@@ -3,8 +3,8 @@
  *
  * One photographic treatment for all seven solutions: a full-bleed
  * photograph with a slow Ken Burns drift (HeroMedia) under a strong
- * maroon scrim, the solution's icon from SOLUTION_ICONS in a
- * gold-ring FeatureIcon tile, and white headline copy. Every
+ * navy scrim, the solution's icon from SOLUTION_ICONS in a
+ * teal-ring FeatureIcon tile, and white headline copy. Every
  * solution hero is dark, so every solution route belongs in
  * DARK_HERO_ROUTES (navigation.ts) — the coordinator owns that
  * list; this component only renders.
@@ -22,9 +22,9 @@ import Reveal from "@/components/ui/Reveal";
 
 function Headline({ solution }: { solution: SolutionContent }) {
   return (
-    <h1 className="mt-5 font-sans text-[40px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance text-bx-ivory sm:text-6xl lg:text-[68px]">
+    <h1 className="mt-5 font-sans text-[40px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance text-bx-white sm:text-6xl lg:text-[68px]">
       {solution.heroHeadline}{" "}
-      <span className="font-display font-semibold italic text-bx-gold-400">
+      <span className="bg-gradient-to-r from-bx-teal-400 to-bx-cyan-500 bg-clip-text text-transparent">
         {solution.heroAccent}
       </span>
     </h1>
@@ -34,7 +34,7 @@ function Headline({ solution }: { solution: SolutionContent }) {
 function HeroCopy({ solution }: { solution: SolutionContent }) {
   return (
     <>
-      <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
+      <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-slate-300/90 sm:text-lg">
         {solution.heroIntro}
       </p>
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -51,7 +51,7 @@ function HeroCopy({ solution }: { solution: SolutionContent }) {
 
 function Notice({ text }: { text: string }) {
   return (
-    <p className="mt-8 border-l-2 border-bx-gold-400/70 bg-bx-maroon-950/60 px-4 py-3 text-sm leading-relaxed text-bx-champagne/90">
+    <p className="mt-8 border-l-2 border-bx-teal-400/70 bg-bx-navy-950/60 px-4 py-3 text-sm leading-relaxed text-bx-slate-300/90">
       <strong className="font-sans font-bold">Please note: </strong>
       {text}
     </p>
@@ -62,7 +62,7 @@ export default function SolutionHero({ solution }: { solution: SolutionContent }
   const img = solution.heroImage;
 
   return (
-    <header className="relative flex min-h-[560px] overflow-hidden bg-bx-maroon-950 pt-[72px] text-bx-ivory sm:min-h-[620px] lg:min-h-[680px]">
+    <header className="relative flex min-h-[560px] overflow-hidden bg-bx-navy-950 pt-[72px] text-bx-white sm:min-h-[620px] lg:min-h-[680px]">
       <HeroMedia
         image={img.src}
         alt={img.alt}
@@ -78,7 +78,7 @@ export default function SolutionHero({ solution }: { solution: SolutionContent }
         <Reveal className="mt-8 max-w-4xl">
           <div className="flex items-center gap-4">
             <FeatureIcon icon={solution.icon} tone="dark" size="md" />
-            <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-gold-400">
+            <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-teal-400">
               {solution.eyebrow}
             </p>
           </div>

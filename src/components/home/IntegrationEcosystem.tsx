@@ -2,7 +2,7 @@
  * H08 — Integration ecosystem: category badges ONLY. No provider logos,
  * no provider names — BridgeX claims no integration until it is built,
  * tested and signed off. Five category cards in a hairline grid plus a
- * maroon "Talk to an expert" card, then the honest note.
+ * navy "Talk to an expert" card, then the honest note.
  *
  * Card grid (fix, 14 Nov): the old five-row text list read as a
  * document — the categories now carry FeatureIcon tiles in a visual
@@ -49,13 +49,13 @@ export default function IntegrationEcosystem() {
     // Tightened top (final polish, 14 Nov): with the Industries
     // section's tightened bottom above, the boundary gap is ~96px at
     // lg instead of ~192px (two full section paddings).
-    <Section tone="cream" ariaLabel="Integration ecosystem" className="pt-10 sm:pt-12 lg:pt-12">
+    <Section tone="mint" ariaLabel="Integration ecosystem" className="pt-10 sm:pt-12 lg:pt-12">
       <SectionIntro
         label="Integration ecosystem"
         heading={
           <>
             Connected to the tools{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-sans font-semibold italic text-bx-teal-700">
               you already use.
             </span>
           </>
@@ -73,7 +73,7 @@ export default function IntegrationEcosystem() {
             loading="lazy"
             className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
           />
-          <figcaption className="mt-3 text-sm text-bx-muted">
+          <figcaption className="mt-3 text-sm text-bx-slate-500">
             One event-driven layer connects trading, payments, verification,
             communications and market data.
           </figcaption>
@@ -81,41 +81,41 @@ export default function IntegrationEcosystem() {
       </Reveal>
 
       <div className="mt-12 lg:mt-16">
-        <ul className="grid gap-px border border-bx-gold-500/30 bg-bx-gold-500/30 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-px border border-bx-teal-500/30 bg-bx-teal-500/30 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((cat, i) => (
-            <li key={cat.name} className="bg-bx-ivory">
+            <li key={cat.name} className="bg-bx-white">
               <Reveal delay={0.06 * i} className="h-full">
                 <div className="flex h-full flex-col p-7 sm:p-8">
                   {/* FeatureIcon centres its tile; self-start pulls it
                       left to match the card's left-aligned text. */}
                   <FeatureIcon icon={cat.icon} size="md" className="[&>*]:self-start" />
-                  <h3 className="mt-5 font-sans text-xl font-bold text-bx-ink">
+                  <h3 className="mt-5 font-sans text-xl font-bold text-bx-navy-900">
                     {cat.name}
                   </h3>
-                  <p className="mt-2.5 text-[15px] leading-relaxed text-bx-muted">
+                  <p className="mt-2.5 text-[15px] leading-relaxed text-bx-slate-500">
                     {cat.text}
                   </p>
                 </div>
               </Reveal>
             </li>
           ))}
-          <li className="bg-bx-maroon-900">
+          <li className="bg-bx-navy-900">
             <Reveal delay={0.3} className="h-full">
               <Link
                 href="/company/contact"
-                className="group flex h-full flex-col justify-between p-7 transition-colors duration-200 hover:bg-bx-maroon-800 sm:p-8"
+                className="group flex h-full flex-col justify-between p-7 transition-colors duration-200 hover:bg-bx-navy-800 sm:p-8"
               >
                 <div>
                   <FeatureIcon icon="send" tone="dark" size="md" className="[&>*]:self-start" />
-                  <h3 className="mt-5 font-sans text-xl font-bold text-bx-ivory">
+                  <h3 className="mt-5 font-sans text-xl font-bold text-bx-white">
                     Talk to an expert
                   </h3>
-                  <p className="mt-2.5 text-[15px] leading-relaxed text-bx-champagne/85">
+                  <p className="mt-2.5 text-[15px] leading-relaxed text-bx-slate-300/85">
                     Tell us which tools you run today — we will map the
                     adapters and the honest status of each one.
                   </p>
                 </div>
-                <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-gold-400">
+                <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-teal-400">
                   Contact us
                   <Icon
                     name="arrowRight"
@@ -129,8 +129,8 @@ export default function IntegrationEcosystem() {
         </ul>
 
         <Reveal delay={0.1} className="mt-8">
-          <p className="border border-bx-gold-600/50 bg-bx-ivory px-6 py-5 text-[15px] leading-relaxed text-bx-ink">
-            <strong className="font-sans font-bold text-bx-maroon-700">
+          <p className="border border-bx-teal-600/50 bg-bx-white px-6 py-5 text-[15px] leading-relaxed text-bx-navy-900">
+            <strong className="font-sans font-bold text-bx-teal-700">
               An honest note on integrations:{" "}
             </strong>
             adapters are scoped per engagement. BridgeX claims no integration

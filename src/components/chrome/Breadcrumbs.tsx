@@ -43,13 +43,13 @@ export default function Breadcrumbs({
                   <Icon
                     name="chevronRight"
                     size={14}
-                    className={dark ? "text-bx-gold-400/70" : "text-bx-gold-600/70"}
+                    className={dark ? "text-bx-teal-400/70" : "text-bx-teal-600/70"}
                   />
                 )}
                 {isLast ? (
                   <span
                     aria-current="page"
-                    className={`font-bold ${dark ? "text-bx-ivory" : "text-bx-ink"}`}
+                    className={`font-bold ${dark ? "text-bx-white" : "text-bx-navy-900"}`}
                   >
                     {item.label}
                   </span>
@@ -58,8 +58,8 @@ export default function Breadcrumbs({
                     href={item.href}
                     className={`transition-colors hover:underline ${
                       dark
-                        ? "text-bx-champagne/80 hover:text-bx-champagne"
-                        : "text-bx-muted hover:text-bx-maroon-700"
+                        ? "text-bx-slate-300/80 hover:text-bx-slate-300"
+                        : "text-bx-slate-500 hover:text-bx-teal-700"
                     }`}
                   >
                     {item.label}

@@ -27,7 +27,7 @@ export default function PartnersPage() {
         title={
           <>
             Better together,{" "}
-            <em className="font-display font-semibold italic text-bx-maroon-700">
+            <em className="font-sans font-semibold italic text-bx-teal-700">
               on honest terms.
             </em>
           </>
@@ -58,21 +58,21 @@ export default function PartnersPage() {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {PARTNER_MODELS.map((model, i) => (
             <Reveal key={model.title} delay={i * 0.07}>
-              <article className="flex h-full flex-col border border-bx-maroon-900/15 bg-bx-ivory p-7">
+              <article className="flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7">
                 <FeatureIcon icon={model.icon} size="sm" className="items-start" />
-                <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
+                <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                   {model.title}
                 </h3>
-                <p className="mt-3 flex-1 font-body text-[15px] leading-relaxed text-bx-muted">
+                <p className="mt-3 flex-1 font-body text-[15px] leading-relaxed text-bx-slate-500">
                   {model.description}
                 </p>
-                <ul className="mt-5 space-y-2.5 border-t border-bx-gold-500/30 pt-5">
+                <ul className="mt-5 space-y-2.5 border-t border-bx-teal-500/30 pt-5">
                   {model.points.map((point) => (
                     <li
                       key={point}
-                      className="flex items-start gap-2.5 font-body text-sm leading-relaxed text-bx-ink"
+                      className="flex items-start gap-2.5 font-body text-sm leading-relaxed text-bx-navy-900"
                     >
-                      <span aria-hidden="true" className="mt-0.5 shrink-0 text-bx-gold-600">
+                      <span aria-hidden="true" className="mt-0.5 shrink-0 text-bx-teal-600">
                         <Icon name="check" size={16} />
                       </span>
                       {point}
@@ -93,13 +93,13 @@ export default function PartnersPage() {
         heading={
           <>
             Terms agreed{" "}
-            <em className="font-display font-semibold italic text-bx-maroon-700">
+            <em className="font-sans font-semibold italic text-bx-teal-700">
               in writing.
             </em>
           </>
         }
         copy="A partnership starts with a conversation about what each side brings. If there is a fit, the terms are agreed per relationship and put in writing — no tier tables, no published commission rates, because the right terms depend on what each side brings."
-        tone="ivory"
+        tone="white"
         imageWidth={1600}
         imageHeight={1068}
         ctaLabel="Apply to partner"
@@ -107,7 +107,7 @@ export default function PartnersPage() {
       />
 
       {/* Application form */}
-      <Section tone="cream" id="apply" ariaLabel="Partner application">
+      <Section tone="mint" id="apply" ariaLabel="Partner application">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
           <div>
             <SectionIntro
@@ -116,21 +116,21 @@ export default function PartnersPage() {
               copy="A few lines is enough to start. Tell us what your company does, who your clients are, and what working together might look like."
             />
             <Reveal className="mt-8">
-              <div className="border border-bx-gold-600/50 bg-bx-white px-6 py-6">
-                <h3 className="font-sans text-base font-extrabold text-bx-ink">
+              <div className="border border-bx-teal-600/50 bg-bx-white px-6 py-6">
+                <h3 className="font-sans text-base font-extrabold text-bx-navy-900">
                   What happens after you apply
                 </h3>
-                <ol className="mt-4 space-y-3 font-body text-[15px] leading-relaxed text-bx-muted">
+                <ol className="mt-4 space-y-3 font-body text-[15px] leading-relaxed text-bx-slate-500">
                   <li>
-                    <span className="font-sans font-extrabold text-bx-maroon-700">1. </span>
+                    <span className="font-sans font-extrabold text-bx-teal-700">1. </span>
                     A person reads your application — not an autoresponder.
                   </li>
                   <li>
-                    <span className="font-sans font-extrabold text-bx-maroon-700">2. </span>
+                    <span className="font-sans font-extrabold text-bx-teal-700">2. </span>
                     We reply within a few working days to arrange a conversation.
                   </li>
                   <li>
-                    <span className="font-sans font-extrabold text-bx-maroon-700">3. </span>
+                    <span className="font-sans font-extrabold text-bx-teal-700">3. </span>
                     If there is a fit, terms are agreed per relationship, in writing.
                   </li>
                 </ol>
@@ -138,11 +138,11 @@ export default function PartnersPage() {
             </Reveal>
           </div>
           <Reveal delay={0.08}>
-            <div className="border border-bx-maroon-900/15 bg-bx-white px-6 py-8 sm:px-10 sm:py-10">
-              <h2 className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-ink">
+            <div className="border border-bx-navy-900/15 bg-bx-white px-6 py-8 sm:px-10 sm:py-10">
+              <h2 className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-navy-900">
                 Partner application
               </h2>
-              <p className="mt-2 font-body text-base leading-relaxed text-bx-muted">
+              <p className="mt-2 font-body text-base leading-relaxed text-bx-slate-500">
                 We do not publish tier tables or commission rates — the right
                 terms depend on what each side brings, and we agree them
                 together.
@@ -156,7 +156,7 @@ export default function PartnersPage() {
       </Section>
 
       {/* FAQ */}
-      <Section tone="ivory" ariaLabel="Partnership frequently asked questions">
+      <Section tone="white" ariaLabel="Partnership frequently asked questions">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
           <SectionIntro
             label="Questions"

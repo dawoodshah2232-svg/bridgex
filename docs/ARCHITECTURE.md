@@ -15,7 +15,7 @@ src/
   app/            layout.tsx (header/footer shell, metadata), page.tsx (homepage), globals.css
   components/
     chrome/       Header, MegaMenu, MobileNav, Footer, Breadcrumbs, SkipLink, BackToTop
-    ui/           Container/Section, Button, Reveal, SectionIntro, GoldLineDivider,
+    ui/           Container/Section, Button, Reveal, SectionIntro, TealLineDivider,
                   FaqAccordion, CtaBand, DemoLabel
     home/         Hero, ValueIntro, CapabilityTiles, ArchitectureDiagram,
                   DemoPreview, PhotoInterlude, IndustrySelector,
@@ -29,9 +29,10 @@ src/
   lib/
     paths.ts      BASE_PATH + asset() helper + site constants
 public/
-  fonts/          4 self-hosted woff2 files (Cormorant Garamond 600/700 variable,
-                  Manrope variable, Inter variable — latin subsets)
-  images/         7 Pexels photos (see DESIGN.md for the list + credits)
+  fonts/          2 self-hosted woff2 files (DM Sans variable 100–1000,
+                  Inter variable — latin subsets; DM Sans is the only
+                  family used, Inter is the fallback)
+  images/         ~70 Pexels photos (see IMAGE-MANIFEST.md for the list)
   brand/          Shipped logo SVGs + explorations/
   favicon.svg
 docs/             PRD, ARCHITECTURE, RULES, DESIGN, TASKS, MEMORY
@@ -49,7 +50,7 @@ docs/             PRD, ARCHITECTURE, RULES, DESIGN, TASKS, MEMORY
   `asset()` in `src/lib/paths.ts`. `Header` normalises `usePathname()`
   (strips a leading `/bridgex` if present, drops trailing slash) before
   comparing against the registry.
-- **Fixed header (72px).** Transparent over dark heroes, frosted ivory on
+- **Fixed header (72px).** Transparent over dark heroes, frosted white on
   scroll. Pages must clear it: the homepage hero carries its own top
   padding; Batch 2 inner-page templates add `pt-[72px]` (or a hero with
   built-in clearance). `HEADER_HEIGHT` is exported from Header.tsx.

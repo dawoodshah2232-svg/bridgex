@@ -1,9 +1,9 @@
 /**
  * FeatureIcon — a premium icon tile with a label.
  *
- * A CIRCLE with a thin gold ring (never the tinted square the
- * house rules ban): soft champagne wash on light surfaces, gold
- * icon on a deep maroon wash on dark surfaces. The label sits
+ * A CIRCLE with a thin teal ring (never the tinted square the
+ * house rules ban): soft pale mint wash on light surfaces, teal
+ * icon on a deep navy wash on dark surfaces. The label sits
  * under the tile in small tracked capitals.
  *
  * `icon` takes either an IconName ("crm") or one of the named
@@ -39,9 +39,9 @@ export default function FeatureIcon({
   const { tile, icon: iconSize } = SIZES[size];
   const tileCls =
     tone === "dark"
-      ? "border-bx-gold-400/50 bg-bx-maroon-800/60 text-bx-gold-400"
-      : "border-bx-gold-500/60 bg-bx-champagne/40 text-bx-gold-600";
-  const labelCls = tone === "dark" ? "text-bx-champagne" : "text-bx-maroon-700";
+      ? "border-bx-teal-400/50 bg-bx-navy-800/60 text-bx-teal-400"
+      : "border-bx-teal-500/60 bg-bx-mint-100/40 text-bx-teal-600";
+  const labelCls = tone === "dark" ? "text-bx-slate-300" : "text-bx-teal-700";
   // A component prop renders directly; a string name goes through <Icon>.
   const Glyph: IconComponent | null = typeof icon === "string" ? null : icon;
 

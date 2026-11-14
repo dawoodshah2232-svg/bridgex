@@ -53,7 +53,7 @@ export default function ResourcesPage() {
         title={
           <>
             Everything we publish,{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               in one place.
             </span>
           </>
@@ -65,7 +65,7 @@ export default function ResourcesPage() {
         imageHeight={1066}
       />
 
-      <Section tone="ivory" ariaLabel="Search and filter resources">
+      <Section tone="white" ariaLabel="Search and filter resources">
         <SectionIntro
           label="Search the library"
           heading="Find the piece you need"
@@ -76,7 +76,7 @@ export default function ResourcesPage() {
         </Reveal>
       </Section>
 
-      <Section tone="cream" ariaLabel="Browse by section">
+      <Section tone="mint" ariaLabel="Browse by section">
         <SectionIntro
           label="Browse by section"
           heading="Six shelves, one library"
@@ -87,7 +87,7 @@ export default function ResourcesPage() {
             <Reveal key={section.href} delay={(i % 3) * 0.08} className="h-full">
               <Link
                 href={section.href}
-                className="group flex h-full flex-col overflow-hidden border border-bx-gold-500/30 bg-bx-white transition-colors duration-200 hover:border-bx-gold-500/70"
+                className="group flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl transition-colors duration-200 hover:border-bx-teal-500/70"
               >
                 <div className="overflow-hidden">
                   <img
@@ -103,15 +103,15 @@ export default function ResourcesPage() {
                   <Icon
                     name={section.icon}
                     size={28}
-                    className="text-bx-gold-600"
+                    className="text-bx-teal-600"
                   />
-                  <span className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                  <span className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                     {section.label}
                   </span>
-                  <span className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                  <span className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                     {section.description}
                   </span>
-                  <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700">
+                  <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-teal-700">
                     Browse {section.label}
                     <Icon
                       name="arrowRight"
@@ -133,7 +133,7 @@ export default function ResourcesPage() {
         heading={
           <>
             New pieces appear here{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               as they are finished.
             </span>
           </>
@@ -156,7 +156,7 @@ export default function ResourcesPage() {
           <Reveal>
             <Link
               href="/resources/blog"
-              className="inline-flex min-h-[48px] items-center gap-2.5 border-2 border-bx-maroon-900 px-6 font-sans text-[15px] font-bold text-bx-maroon-900 transition-colors hover:bg-bx-maroon-900 hover:text-bx-ivory"
+              className="inline-flex min-h-[48px] items-center gap-2.5 border-2 border-bx-navy-900 px-6 font-sans text-[15px] font-bold text-bx-navy-900 transition-colors hover:bg-bx-navy-900 hover:text-bx-white"
             >
               All insights
               <Icon name="arrowRight" size={18} />
@@ -168,7 +168,7 @@ export default function ResourcesPage() {
             <Reveal key={article.slug} delay={i * 0.08} className="h-full">
               <Link
                 href="/resources/blog"
-                className="group flex h-full flex-col border border-bx-gold-500/30 bg-bx-ivory transition-colors duration-200 hover:border-bx-gold-500/70"
+                className="group flex h-full flex-col border border-bx-teal-500/30 bg-bx-white rounded-2xl transition-colors duration-200 hover:border-bx-teal-500/70"
               >
                 <div className="overflow-hidden">
                   <img
@@ -181,16 +181,16 @@ export default function ResourcesPage() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-maroon-700">
+                  <span className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-teal-700">
                     {article.category} · {formatInsightDate(article.date)}
                   </span>
-                  <span className="mt-3 font-sans text-lg font-extrabold leading-snug text-bx-ink">
+                  <span className="mt-3 font-sans text-lg font-extrabold leading-snug text-bx-navy-900">
                     {article.title}
                   </span>
-                  <span className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                  <span className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                     {article.excerpt}
                   </span>
-                  <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700">
+                  <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-teal-700">
                     Read on the blog index
                     <Icon
                       name="arrowRight"
@@ -205,7 +205,7 @@ export default function ResourcesPage() {
         </div>
       </Section>
 
-      <Section tone="ivory" ariaLabel="Frequently asked questions">
+      <Section tone="white" ariaLabel="Frequently asked questions">
         <div className="mx-auto max-w-3xl">
           <SectionIntro
             label="Questions"

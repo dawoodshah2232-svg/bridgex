@@ -14,7 +14,7 @@ import type { LegalSection } from "@/content/legal";
 import { Container } from "../ui/Container";
 import InnerHero from "./InnerHero";
 import DraftNotice from "./DraftNotice";
-import GoldLineDivider from "../ui/GoldLineDivider";
+import TealLineDivider from "../ui/TealLineDivider";
 import CtaBand from "../ui/CtaBand";
 import Icon from "../icons";
 
@@ -54,7 +54,7 @@ export default function LegalPage({
         imageWidth={imageWidth}
         imageHeight={imageHeight}
       />
-      <div className="bg-bx-ivory pb-16 sm:pb-20 lg:pb-24">
+      <div className="bg-bx-white pb-16 sm:pb-20 lg:pb-24">
         <Container>
           <div className="pt-2">
             <DraftNotice updated={updated} />
@@ -65,15 +65,15 @@ export default function LegalPage({
               aria-label="On this page"
               className="lg:sticky lg:top-24 lg:self-start"
             >
-              <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+              <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-teal-700">
                 On this page
               </p>
-              <ul className="mt-4 space-y-1 border-l border-bx-gold-500/40">
+              <ul className="mt-4 space-y-1 border-l border-bx-teal-500/40">
                 {sections.map((s) => (
                   <li key={s.id}>
                     <a
                       href={`#${s.id}`}
-                      className="-ml-px block border-l-2 border-transparent py-2 pl-4 font-sans text-[15px] font-bold text-bx-muted transition-colors hover:border-bx-gold-500 hover:text-bx-maroon-700"
+                      className="-ml-px block border-l-2 border-transparent py-2 pl-4 font-sans text-[15px] font-bold text-bx-slate-500 transition-colors hover:border-bx-teal-500 hover:text-bx-teal-700"
                     >
                       {s.heading}
                     </a>
@@ -91,17 +91,17 @@ export default function LegalPage({
                   aria-labelledby={`${s.id}-heading`}
                   className="scroll-mt-24"
                 >
-                  {i > 0 && <GoldLineDivider className="my-10" />}
+                  {i > 0 && <TealLineDivider className="my-10" />}
                   <h2
                     id={`${s.id}-heading`}
-                    className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-ink sm:text-[28px]"
+                    className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-navy-900 sm:text-[28px]"
                   >
                     {s.heading}
                   </h2>
                   {s.paragraphs.map((p, j) => (
                     <p
                       key={j}
-                      className="mt-4 max-w-[70ch] font-body text-base leading-relaxed text-bx-muted"
+                      className="mt-4 max-w-[70ch] font-body text-base leading-relaxed text-bx-slate-500"
                     >
                       {p}
                     </p>
@@ -111,11 +111,11 @@ export default function LegalPage({
                       {s.bullets.map((b) => (
                         <li
                           key={b}
-                          className="flex items-start gap-3 font-body text-base leading-relaxed text-bx-muted"
+                          className="flex items-start gap-3 font-body text-base leading-relaxed text-bx-slate-500"
                         >
                           <span
                             aria-hidden="true"
-                            className="mt-1.5 shrink-0 text-bx-gold-600"
+                            className="mt-1.5 shrink-0 text-bx-teal-600"
                           >
                             <Icon name="check" size={18} />
                           </span>

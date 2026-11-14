@@ -50,7 +50,7 @@ export default function GuidesPage() {
         title={
           <>
             Practical guides,{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               written for operators.
             </span>
           </>
@@ -62,7 +62,7 @@ export default function GuidesPage() {
         imageHeight={450}
       />
 
-      <Section tone="ivory" ariaLabel="Guides">
+      <Section tone="white" ariaLabel="Guides">
         <SectionIntro
           label="The collection"
           heading="Five guides, five jobs to be done"
@@ -73,7 +73,7 @@ export default function GuidesPage() {
         </Reveal>
       </Section>
 
-      <Section tone="cream" ariaLabel="How to use these guides">
+      <Section tone="mint" ariaLabel="How to use these guides">
         <SectionIntro
           label="How to use these guides"
           heading="Built to be read, shared and argued with"
@@ -82,12 +82,12 @@ export default function GuidesPage() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {HOW_TO_USE.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col items-center border border-bx-gold-500/30 bg-bx-white p-7 text-center">
+              <div className="flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
                 <FeatureIcon icon={item.icon} size="md" />
-                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                   {item.text}
                 </p>
               </div>
@@ -95,11 +95,11 @@ export default function GuidesPage() {
           ))}
         </div>
         <Reveal className="mt-10 text-center">
-          <p className="text-base leading-relaxed text-bx-muted">
+          <p className="text-base leading-relaxed text-bx-slate-500">
             Have a topic we should cover next?{" "}
             <Link
               href="/company/contact"
-              className="font-bold text-bx-maroon-700 underline decoration-bx-gold-500 decoration-2 underline-offset-2 hover:text-bx-maroon-900"
+              className="font-bold text-bx-teal-700 underline decoration-bx-teal-500 decoration-2 underline-offset-2 hover:text-bx-navy-900"
             >
               Suggest a guide topic
             </Link>{" "}
@@ -108,7 +108,7 @@ export default function GuidesPage() {
         </Reveal>
       </Section>
 
-      <Section tone="ivory" ariaLabel="Frequently asked questions">
+      <Section tone="white" ariaLabel="Frequently asked questions">
         <div className="mx-auto max-w-3xl">
           <SectionIntro
             label="Questions"

@@ -1,10 +1,10 @@
 /**
  * Inner-page hero for the platform routes — one component, two moods.
  *
- * - Light (default): ivory editorial hero, breadcrumbs above the headline,
+ * - Light (default): white editorial hero, breadcrumbs above the headline,
  *   optional photograph on the right on desktop.
  * - Dark: full-bleed photographic hero via HeroMedia — slow Ken Burns
- *   drift, strong maroon scrim, gold bridge-line motif. All eight platform
+ *   drift, strong navy scrim, teal bridge-line motif. All eight platform
  *   pages use the dark hero. Pages using it are reported to the coordinator
  *   so they can be added to DARK_HERO_ROUTES (transparent header state).
  *
@@ -53,7 +53,7 @@ export default function PageHero({
 }) {
   if (dark) {
     return (
-      <header className="relative overflow-hidden bg-bx-maroon-950 text-bx-ivory">
+      <header className="relative overflow-hidden bg-bx-navy-950 text-bx-white">
         {image && (
           <HeroMedia
             image={image.src}
@@ -72,18 +72,18 @@ export default function PageHero({
           </div>
           <div className="mt-8 max-w-3xl">
             {badge && (
-              <p className="mb-5 inline-flex items-center gap-2 border border-bx-gold-500/60 px-3 py-1.5 font-sans text-[12px] font-bold uppercase tracking-[0.18em] text-bx-gold-400">
-                <span aria-hidden="true" className="h-1.5 w-1.5 rotate-45 bg-bx-gold-400" />
+              <p className="mb-5 inline-flex items-center gap-2 border border-bx-teal-500/60 px-3 py-1.5 font-sans text-[12px] font-bold uppercase tracking-[0.18em] text-bx-teal-400">
+                <span aria-hidden="true" className="h-1.5 w-1.5 rotate-45 bg-bx-teal-400" />
                 {badge}
               </p>
             )}
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-gold-400">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-400">
               {eyebrow}
             </p>
             <h1 className="mt-4 font-sans text-[42px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance sm:text-6xl lg:text-[76px]">
               {title}
             </h1>
-            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
+            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-slate-300/90 sm:text-lg">
               {copy}
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -101,24 +101,24 @@ export default function PageHero({
   }
 
   return (
-    <header className="bg-bx-ivory pt-[72px]">
+    <header className="bg-bx-white pt-[72px]">
       <Container className="pb-14 pt-10 sm:pb-20 sm:pt-14">
         <Breadcrumbs href={href} />
         <div className={`mt-8 ${image ? "grid items-center gap-10 lg:grid-cols-12 lg:gap-14" : ""}`}>
           <div className={image ? "lg:col-span-7" : "max-w-3xl"}>
             {badge && (
-              <p className="mb-5 inline-flex items-center gap-2 border border-bx-gold-600/60 px-3 py-1.5 font-sans text-[12px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
-                <span aria-hidden="true" className="h-1.5 w-1.5 rotate-45 bg-bx-gold-600" />
+              <p className="mb-5 inline-flex items-center gap-2 border border-bx-teal-600/60 px-3 py-1.5 font-sans text-[12px] font-bold uppercase tracking-[0.18em] text-bx-teal-700">
+                <span aria-hidden="true" className="h-1.5 w-1.5 rotate-45 bg-bx-teal-600" />
                 {badge}
               </p>
             )}
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
               {eyebrow}
             </p>
-            <h1 className="mt-4 font-sans text-[42px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance text-bx-ink sm:text-6xl lg:text-[72px]">
+            <h1 className="mt-4 font-sans text-[42px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance text-bx-navy-900 sm:text-6xl lg:text-[72px]">
               {title}
             </h1>
-            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-muted sm:text-lg">
+            <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-bx-slate-500 sm:text-lg">
               {copy}
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -135,7 +135,7 @@ export default function PageHero({
               <div className="relative">
                 <div
                   aria-hidden="true"
-                  className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
+                  className="absolute -left-3 -top-3 h-full w-full border border-bx-teal-500/50"
                 />
                 <img
                   src={asset(image.src)}

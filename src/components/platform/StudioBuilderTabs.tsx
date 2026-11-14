@@ -46,14 +46,14 @@ export default function StudioBuilderTabs() {
                 }
                 className={`flex min-h-[52px] items-center gap-3 border px-4 text-left font-sans text-[15px] font-bold transition-colors duration-200 ${
                   isActive
-                    ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                    : "border-bx-gold-500/25 bg-bx-white text-bx-ink hover:border-bx-gold-500/60"
+                    ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                    : "border-bx-teal-500/25 bg-bx-white text-bx-navy-900 hover:border-bx-teal-500/60"
                 }`}
               >
                 <Icon
                   name={item.icon}
                   size={20}
-                  className={`shrink-0 ${isActive ? "text-bx-gold-400" : "text-bx-gold-600"}`}
+                  className={`shrink-0 ${isActive ? "text-bx-teal-400" : "text-bx-teal-600"}`}
                 />
                 {item.name}
               </button>
@@ -73,41 +73,41 @@ export default function StudioBuilderTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="border border-bx-gold-500/25 bg-bx-white p-6 sm:p-8 lg:p-10"
+            className="border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8 lg:p-10"
           >
-            <h3 className="font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-3xl">
+            <h3 className="font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-3xl">
               {builder.name}
             </h3>
-            <p className="mt-2 font-sans text-lg font-bold text-bx-maroon-700">
+            <p className="mt-2 font-sans text-lg font-bold text-bx-teal-700">
               {builder.tagline}
             </p>
-            <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-bx-muted">
+            <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-bx-slate-500">
               {builder.detail}
             </p>
 
             {/* Simulated builder panel — illustration only, never live editing */}
-            <div className="mt-8 border border-bx-gold-500/30 bg-bx-ivory">
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-gold-500/25 px-5 py-3">
-                <p className="font-sans text-sm font-bold text-bx-ink">
+            <div className="mt-8 border border-bx-teal-500/30 bg-bx-white rounded-2xl">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-teal-500/25 px-5 py-3">
+                <p className="font-sans text-sm font-bold text-bx-navy-900">
                   {builder.name} builder — simulated view
                 </p>
                 <DemoLabel text="Simulated editing — demo preview" />
               </div>
-              <ul className="divide-y divide-bx-gold-500/15 px-5 py-2">
+              <ul className="divide-y divide-bx-teal-500/15 px-5 py-2">
                 {builder.sample.map((line) => (
                   <li
                     key={line}
-                    className="flex items-center gap-3 py-3 font-sans text-[15px] text-bx-ink"
+                    className="flex items-center gap-3 py-3 font-sans text-[15px] text-bx-navy-900"
                   >
                     <span
                       aria-hidden="true"
-                      className="h-1.5 w-1.5 shrink-0 rotate-45 bg-bx-gold-600"
+                      className="h-1.5 w-1.5 shrink-0 rotate-45 bg-bx-teal-600"
                     />
                     {line}
                   </li>
                 ))}
               </ul>
-              <p className="border-t border-bx-gold-500/25 px-5 py-3 text-sm leading-relaxed text-bx-muted">
+              <p className="border-t border-bx-teal-500/25 px-5 py-3 text-sm leading-relaxed text-bx-slate-500">
                 This panel illustrates the shape of a builder screen. It does
                 not edit or publish configuration — a working studio is shown
                 in a private demo.

@@ -47,7 +47,7 @@ const JOURNEY_STEPS = [
 
 function StatusPill({ status }: { status: string }) {
   return (
-    <span className="inline-flex whitespace-nowrap border border-bx-gold-600/50 px-2.5 py-1 text-[12px] font-bold text-bx-maroon-700">
+    <span className="inline-flex whitespace-nowrap border border-bx-teal-600/50 px-2.5 py-1 text-[12px] font-bold text-bx-teal-700">
       {status}
     </span>
   );
@@ -57,7 +57,7 @@ function OperationsPanel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">
           Today&apos;s queues
         </h3>
         <DemoLabel />
@@ -70,7 +70,7 @@ function OperationsPanel() {
       >
         <table className="w-full min-w-[560px] border-collapse text-left">
           <thead>
-            <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">
+            <tr className="border-b border-bx-teal-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-slate-500">
               <th scope="col" className="py-3 pr-4 font-bold">Reference</th>
               <th scope="col" className="py-3 pr-4 font-bold">Case</th>
               <th scope="col" className="py-3 pr-4 font-bold">Desk</th>
@@ -79,12 +79,12 @@ function OperationsPanel() {
           </thead>
           <tbody>
             {OPERATIONS_ROWS.map((row) => (
-              <tr key={row.ref} className="border-b border-bx-gold-500/15">
-                <td className="py-3.5 pr-4 font-sans text-sm font-bold tabular-nums text-bx-maroon-700">
+              <tr key={row.ref} className="border-b border-bx-teal-500/15">
+                <td className="py-3.5 pr-4 font-sans text-sm font-bold tabular-nums text-bx-teal-700">
                   {row.ref}
                 </td>
-                <td className="py-3.5 pr-4 text-sm text-bx-ink">{row.type}</td>
-                <td className="py-3.5 pr-4 text-sm text-bx-muted">{row.desk}</td>
+                <td className="py-3.5 pr-4 text-sm text-bx-navy-900">{row.type}</td>
+                <td className="py-3.5 pr-4 text-sm text-bx-slate-500">{row.desk}</td>
                 <td className="py-3.5">
                   <StatusPill status={row.status} />
                 </td>
@@ -93,7 +93,7 @@ function OperationsPanel() {
           </tbody>
         </table>
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+      <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
         One queue for onboarding, funding and service cases — routed by desk,
         visible by role, with every action written to the audit log.
       </p>
@@ -105,7 +105,7 @@ function PartnersPanel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">
           Commission ledger
         </h3>
         <DemoLabel text="Illustrative data — fictional partners" />
@@ -118,7 +118,7 @@ function PartnersPanel() {
       >
         <table className="w-full min-w-[620px] border-collapse text-left">
           <thead>
-            <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">
+            <tr className="border-b border-bx-teal-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-slate-500">
               <th scope="col" className="py-3 pr-4 font-bold">Partner</th>
               <th scope="col" className="py-3 pr-4 font-bold">Period</th>
               <th scope="col" className="py-3 pr-4 text-right font-bold">Volume (lots)</th>
@@ -128,11 +128,11 @@ function PartnersPanel() {
           </thead>
           <tbody>
             {PARTNER_ROWS.map((row) => (
-              <tr key={row.partner} className="border-b border-bx-gold-500/15">
-                <td className="py-3.5 pr-4 text-sm font-bold text-bx-ink">{row.partner}</td>
-                <td className="py-3.5 pr-4 text-sm tabular-nums text-bx-muted">{row.period}</td>
-                <td className="py-3.5 pr-4 text-right text-sm tabular-nums text-bx-ink">{row.volume}</td>
-                <td className="py-3.5 pr-4 text-right text-sm font-bold tabular-nums text-bx-ink">{row.commission}</td>
+              <tr key={row.partner} className="border-b border-bx-teal-500/15">
+                <td className="py-3.5 pr-4 text-sm font-bold text-bx-navy-900">{row.partner}</td>
+                <td className="py-3.5 pr-4 text-sm tabular-nums text-bx-slate-500">{row.period}</td>
+                <td className="py-3.5 pr-4 text-right text-sm tabular-nums text-bx-navy-900">{row.volume}</td>
+                <td className="py-3.5 pr-4 text-right text-sm font-bold tabular-nums text-bx-navy-900">{row.commission}</td>
                 <td className="py-3.5">
                   <StatusPill status={row.status} />
                 </td>
@@ -141,7 +141,7 @@ function PartnersPanel() {
           </tbody>
         </table>
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+      <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
         Every figure traces back to its source trades — attribution, tier and
         adjustments included — so a partner statement is never an argument.
       </p>
@@ -153,7 +153,7 @@ function JourneyPanel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">
           Amara Chen — individual application
         </h3>
         <DemoLabel text="Illustrative data — fictional applicant" />
@@ -161,7 +161,7 @@ function JourneyPanel() {
       <ol className="relative mt-6">
         <span
           aria-hidden="true"
-          className="absolute bottom-4 left-[15px] top-4 w-px bg-bx-gold-500/40"
+          className="absolute bottom-4 left-[15px] top-4 w-px bg-bx-teal-500/40"
         />
         {JOURNEY_STEPS.map((step) => (
           <li key={step.title} className="relative flex gap-5 pb-6 last:pb-0">
@@ -169,10 +169,10 @@ function JourneyPanel() {
               aria-hidden="true"
               className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 ${
                 step.state === "done"
-                  ? "border-bx-maroon-700 bg-bx-maroon-700 text-bx-ivory"
+                  ? "border-bx-navy-700 bg-bx-navy-700 text-bx-white"
                   : step.state === "active"
-                    ? "border-bx-gold-600 bg-bx-ivory text-bx-gold-600"
-                    : "border-bx-gold-500/50 bg-bx-ivory text-bx-muted"
+                    ? "border-bx-teal-600 bg-bx-white text-bx-teal-600"
+                    : "border-bx-teal-500/50 bg-bx-white text-bx-slate-500"
               }`}
             >
               {step.state === "done" ? (
@@ -182,22 +182,22 @@ function JourneyPanel() {
               )}
             </span>
             <span className="pt-0.5">
-              <span className="block font-sans text-base font-bold text-bx-ink">
+              <span className="block font-sans text-base font-bold text-bx-navy-900">
                 {step.title}
                 {step.state === "active" && (
-                  <span className="ml-2 border border-bx-gold-600/60 px-1.5 py-0.5 align-middle text-[10px] font-bold uppercase tracking-[0.12em] text-bx-maroon-700">
+                  <span className="ml-2 border border-bx-teal-600/60 px-1.5 py-0.5 align-middle text-[10px] font-bold uppercase tracking-[0.12em] text-bx-teal-700">
                     In progress
                   </span>
                 )}
               </span>
-              <span className="mt-0.5 block text-sm text-bx-muted">
+              <span className="mt-0.5 block text-sm text-bx-slate-500">
                 {step.detail}
               </span>
             </span>
           </li>
         ))}
       </ol>
-      <p className="mt-5 text-sm leading-relaxed text-bx-muted">
+      <p className="mt-5 text-sm leading-relaxed text-bx-slate-500">
         The applicant sees the same journey from their side — what is needed,
         what is next, and who to contact — instead of silence.
       </p>
@@ -227,7 +227,7 @@ export default function DemoPreview() {
         heading={
           <>
             A preview of the{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-sans font-semibold italic text-bx-teal-700">
               working day.
             </span>
           </>
@@ -240,7 +240,7 @@ export default function DemoPreview() {
         <div
           role="tablist"
           aria-label="Demo preview"
-          className="flex flex-col gap-2 border-b border-bx-gold-500/30 sm:flex-row sm:gap-0"
+          className="flex flex-col gap-2 border-b border-bx-teal-500/30 sm:flex-row sm:gap-0"
         >
           {TABS.map((tab) => {
             const selected = active === tab.id;
@@ -259,8 +259,8 @@ export default function DemoPreview() {
                 onKeyDown={(e) => onTabKeyDown(e, tab.id)}
                 className={`relative min-h-[56px] px-5 py-3 text-left transition-colors duration-200 sm:px-6 ${
                   selected
-                    ? "text-bx-maroon-900"
-                    : "text-bx-muted hover:text-bx-maroon-700"
+                    ? "text-bx-navy-900"
+                    : "text-bx-slate-500 hover:text-bx-teal-700"
                 }`}
               >
                 <span className="block font-sans text-base font-bold">
@@ -269,7 +269,7 @@ export default function DemoPreview() {
                 <span className="block text-[13px]">{tab.hint}</span>
                 <span
                   aria-hidden="true"
-                  className={`absolute inset-x-0 -bottom-px h-[2px] bg-bx-gold-500 transition-opacity duration-200 ${
+                  className={`absolute inset-x-0 -bottom-px h-[2px] bg-bx-teal-500 transition-opacity duration-200 ${
                     selected ? "opacity-100" : "opacity-0"
                   }`}
                 />
@@ -279,7 +279,7 @@ export default function DemoPreview() {
         </div>
 
         {/* Panels */}
-        <div className="bg-bx-cream/60 px-5 py-8 sm:px-8">
+        <div className="bg-bx-mint-50/60 px-5 py-8 sm:px-8">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={active}
@@ -309,7 +309,7 @@ export default function DemoPreview() {
             loading="lazy"
             className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
           />
-          <figcaption className="mt-3 text-sm text-bx-muted">
+          <figcaption className="mt-3 text-sm text-bx-slate-500">
             Operations, partners and the client journey — three views of the
             same connected system, in the room where the work happens.
           </figcaption>

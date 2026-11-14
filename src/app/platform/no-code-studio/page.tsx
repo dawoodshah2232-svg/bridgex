@@ -73,7 +73,7 @@ export default function NoCodeStudioPage() {
         title={
           <>
             Shape the platform{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               around your business.
             </span>
           </>
@@ -88,7 +88,7 @@ export default function NoCodeStudioPage() {
       />
 
       {/* Builder family — interactive explorer */}
-      <Section tone="cream" id="builders" ariaLabel="The builder family">
+      <Section tone="mint" id="builders" ariaLabel="The builder family">
         <SectionIntro
           label="Eleven builders, one studio"
           heading="Choose a builder to see what it shapes."
@@ -103,7 +103,7 @@ export default function NoCodeStudioPage() {
       </Section>
 
       {/* Why no-code matters here */}
-      <Section tone="ivory" ariaLabel="Why configuration matters">
+      <Section tone="white" ariaLabel="Why configuration matters">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionIntro
@@ -115,7 +115,7 @@ export default function NoCodeStudioPage() {
               <div className="relative">
                 <div
                   aria-hidden="true"
-                  className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
+                  className="absolute -left-3 -top-3 h-full w-full border border-bx-teal-500/50"
                 />
                 <img
                   src={asset("/images/abstract-glass-lines.jpg")}
@@ -126,7 +126,7 @@ export default function NoCodeStudioPage() {
                   className="relative aspect-[3/4] w-full object-cover"
                 />
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+              <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
                 The same pieces, composed differently — configuration is how
                 one platform fits many businesses.
               </p>
@@ -149,13 +149,13 @@ export default function NoCodeStudioPage() {
                 },
               ].map((item, i) => (
                 <Reveal key={item.title} delay={i * 0.08}>
-                  <div className="flex gap-5 border-t border-bx-gold-500/30 pt-6">
-                    <Icon name="sliders" size={24} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                  <div className="flex gap-5 border-t border-bx-teal-500/30 pt-6">
+                    <Icon name="sliders" size={24} className="mt-0.5 shrink-0 text-bx-teal-600" />
                     <div>
-                      <h3 className="font-sans text-xl font-extrabold leading-tight text-bx-ink">
+                      <h3 className="font-sans text-xl font-extrabold leading-tight text-bx-navy-900">
                         {item.title}
                       </h3>
-                      <p className="mt-2 max-w-[62ch] text-base leading-relaxed text-bx-muted">
+                      <p className="mt-2 max-w-[62ch] text-base leading-relaxed text-bx-slate-500">
                         {item.text}
                       </p>
                     </div>
@@ -168,14 +168,14 @@ export default function NoCodeStudioPage() {
       </Section>
 
       {/* Governance — dark */}
-      <Section tone="maroon" id="governance" ariaLabel="Configuration governance">
+      <Section tone="navy" id="governance" ariaLabel="Configuration governance">
         <SectionIntro
           dark
           label="Governed change"
           heading={
             <>
               Fast to change.{" "}
-              <span className="font-display font-semibold italic text-bx-champagne">
+              <span className="font-sans font-semibold italic text-bx-teal-400">
                 Hard to break.
               </span>
             </>
@@ -185,14 +185,14 @@ export default function NoCodeStudioPage() {
         <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {GOVERNANCE.map((step, i) => (
             <Reveal key={step.title} delay={i * 0.08}>
-              <li className="h-full border-t-2 border-bx-gold-500 pt-5">
-                <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-gold-400">
+              <li className="h-full border-t-2 border-bx-teal-500 pt-5">
+                <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-teal-400">
                   0{i + 1}
                 </span>
-                <h3 className="mt-2 font-sans text-lg font-extrabold leading-tight text-bx-ivory">
+                <h3 className="mt-2 font-sans text-lg font-extrabold leading-tight text-bx-white">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+                <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-300/85">
                   {step.text}
                 </p>
               </li>
@@ -209,7 +209,7 @@ export default function NoCodeStudioPage() {
         heading={
           <>
             Configuration is{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               the surface of the business.
             </span>
           </>
@@ -230,21 +230,21 @@ export default function NoCodeStudioPage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {CANNOT.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
-              <div className="h-full border border-bx-gold-500/25 bg-bx-ivory p-6">
-                <Icon name="shield" size={26} className="text-bx-gold-600" />
-                <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-ink">
+              <div className="h-full border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6">
+                <Icon name="shield" size={26} className="text-bx-teal-600" />
+                <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-bx-muted">{item.text}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-500">{item.text}</p>
               </div>
             </Reveal>
           ))}
         </div>
         <Reveal delay={0.1} className="mt-12">
-          <p className="max-w-[68ch] text-base leading-relaxed text-bx-muted">
+          <p className="max-w-[68ch] text-base leading-relaxed text-bx-slate-500">
             Configuration sits on the shared foundation — the same permissions,
             workflows and audit log as everything else. The{" "}
-            <Link href="/platform/architecture" className="font-bold text-bx-maroon-700 hover:underline">
+            <Link href="/platform/architecture" className="font-bold text-bx-teal-700 hover:underline">
               architecture page
             </Link>{" "}
             shows how the foundation holds it all together.
@@ -253,7 +253,7 @@ export default function NoCodeStudioPage() {
       </Section>
 
       {/* Where builders show up */}
-      <Section tone="ivory" ariaLabel="Where builders show up">
+      <Section tone="white" ariaLabel="Where builders show up">
         <SectionIntro
           label="In practice"
           heading="Builders shape what clients and teams actually see."
@@ -287,7 +287,7 @@ export default function NoCodeStudioPage() {
         heading="Studio questions, answered plainly."
         copy="What configuration can and cannot change, who may publish, and how a wrong change is undone."
         items={STUDIO_FAQS}
-        tone="cream"
+        tone="mint"
       />
 
       <CtaBand

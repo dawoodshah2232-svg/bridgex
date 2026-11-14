@@ -56,7 +56,7 @@ export interface SolutionContent {
   eyebrow: string;
   metaTitle: string;
   metaDescription: string;
-  /** Headline split: `heroHeadline` in sans, `heroAccent` in Cormorant italic. */
+  /** Headline split: `heroHeadline` in sans, `heroAccent` in teal gradient. */
   heroHeadline: string;
   heroAccent: string;
   heroIntro: string;

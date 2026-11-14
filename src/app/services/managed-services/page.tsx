@@ -28,7 +28,7 @@ export default function ManagedServicesPage() {
         title={
           <>
             Go-live is the beginning,{" "}
-            <em className="font-display font-semibold italic text-bx-gold-400">
+            <em className="font-sans font-semibold italic text-bx-teal-400">
               not the finish line.
             </em>
           </>
@@ -59,23 +59,23 @@ export default function ManagedServicesPage() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {MANAGED_PILLARS.map((pillar, i) => (
             <Reveal key={pillar.title} delay={(i % 2) * 0.07}>
-              <article className="flex h-full flex-col border border-bx-maroon-900/15 bg-bx-ivory p-7 sm:p-8">
+              <article className="flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7 sm:p-8">
                 <div className="flex items-center gap-5">
                   <FeatureIcon icon={pillar.icon} size="sm" className="shrink-0" />
-                  <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink sm:text-2xl">
+                  <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900 sm:text-2xl">
                     {pillar.title}
                   </h3>
                 </div>
-                <p className="mt-4 font-body text-base leading-relaxed text-bx-muted">
+                <p className="mt-4 font-body text-base leading-relaxed text-bx-slate-500">
                   {pillar.description}
                 </p>
-                <ul className="mt-6 space-y-2.5 border-t border-bx-gold-500/30 pt-6">
+                <ul className="mt-6 space-y-2.5 border-t border-bx-teal-500/30 pt-6">
                   {pillar.items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-2.5 font-body text-[15px] leading-relaxed text-bx-ink"
+                      className="flex items-start gap-2.5 font-body text-[15px] leading-relaxed text-bx-navy-900"
                     >
-                      <span aria-hidden="true" className="mt-0.5 shrink-0 text-bx-gold-600">
+                      <span aria-hidden="true" className="mt-0.5 shrink-0 text-bx-teal-600">
                         <Icon name="check" size={18} />
                       </span>
                       {item}
@@ -96,7 +96,7 @@ export default function ManagedServicesPage() {
         heading={
           <>
             The platform,{" "}
-            <em className="font-display font-semibold italic text-bx-gold-400">
+            <em className="font-sans font-semibold italic text-bx-teal-400">
               watched.
             </em>
           </>
@@ -110,7 +110,7 @@ export default function ManagedServicesPage() {
       </PhotoBand>
 
       {/* Support workflow strip */}
-      <Section tone="maroon" ariaLabel="How a support request is handled">
+      <Section tone="navy" ariaLabel="How a support request is handled">
         <SectionIntro
           dark
           label="Support workflow"
@@ -125,14 +125,14 @@ export default function ManagedServicesPage() {
             { step: "Close & learn", text: "Confirmed with you, then recorded so the next time is faster." },
           ].map((item, i) => (
             <Reveal key={item.step} delay={i * 0.07}>
-              <li className="h-full border border-bx-gold-500/30 bg-bx-maroon-800/60 p-6">
-                <span className="font-display text-3xl font-semibold text-bx-gold-400">
+              <li className="h-full border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
+                <span className="font-sans text-3xl font-semibold text-bx-teal-400">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 font-sans text-lg font-extrabold text-bx-ivory">
+                <h3 className="mt-3 font-sans text-lg font-extrabold text-bx-white">
                   {item.step}
                 </h3>
-                <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-champagne/85">
+                <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-slate-300/85">
                   {item.text}
                 </p>
               </li>
@@ -142,7 +142,7 @@ export default function ManagedServicesPage() {
       </Section>
 
       {/* Reporting — honest */}
-      <Section tone="ivory" ariaLabel="What we report">
+      <Section tone="white" ariaLabel="What we report">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <div>
             <SectionIntro
@@ -154,7 +154,7 @@ export default function ManagedServicesPage() {
               <div className="relative mb-3 mr-3 max-w-sm sm:mb-4 sm:mr-4">
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-teal-500/60 sm:translate-x-4 sm:translate-y-4"
                 />
                 <img
                   src={asset("/images/support-headset.jpg")}
@@ -170,19 +170,19 @@ export default function ManagedServicesPage() {
           <div className="space-y-4">
             {MANAGED_REPORTING.map((report, i) => (
               <Reveal key={report.title} delay={i * 0.06}>
-                <article className="border border-bx-maroon-900/15 bg-bx-white p-6 sm:p-7">
-                  <h3 className="font-sans text-lg font-extrabold text-bx-ink">
+                <article className="border border-bx-navy-900/15 bg-bx-white p-6 sm:p-7">
+                  <h3 className="font-sans text-lg font-extrabold text-bx-navy-900">
                     {report.title}
                   </h3>
-                  <p className="mt-2 max-w-[66ch] font-body text-[15px] leading-relaxed text-bx-muted">
+                  <p className="mt-2 max-w-[66ch] font-body text-[15px] leading-relaxed text-bx-slate-500">
                     {report.description}
                   </p>
                 </article>
               </Reveal>
             ))}
             <Reveal delay={0.18}>
-              <p className="border border-bx-gold-600/50 bg-bx-cream px-6 py-5 font-body text-[15px] leading-relaxed text-bx-ink">
-                <span className="font-sans font-extrabold text-bx-maroon-700">
+              <p className="border border-bx-teal-600/50 bg-bx-mint-50 px-6 py-5 font-body text-[15px] leading-relaxed text-bx-navy-900">
+                <span className="font-sans font-extrabold text-bx-teal-700">
                   No invented SLAs.{" "}
                 </span>
                 Support scope, response targets and reporting are agreed per
@@ -195,7 +195,7 @@ export default function ManagedServicesPage() {
       </Section>
 
       {/* FAQ */}
-      <Section tone="cream" ariaLabel="Managed services frequently asked questions">
+      <Section tone="mint" ariaLabel="Managed services frequently asked questions">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
           <SectionIntro
             label="Questions"

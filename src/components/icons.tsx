@@ -1,9 +1,9 @@
 /**
  * Drawn icon system — one cohesive custom SVG set.
  *
- * House style: fine gold line icons. Stroke-based, 24×24 viewBox,
+ * House style: fine teal line icons. Stroke-based, 24×24 viewBox,
  * currentColor, round caps/joins, default stroke 1.5 (readable at
- * 16px, on maroon and on ivory). Every path is original hand-drawn
+ * 16px, on navy and on white). Every path is original hand-drawn
  * geometry — no copied icon-font glyphs.
  *
  * Three ways to use an icon:

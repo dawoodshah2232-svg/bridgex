@@ -184,13 +184,13 @@ export default function IndustrySelector() {
     // Tightened bottom (final polish, 14 Nov): with the Integration
     // section's tightened top below, the boundary gap is ~96px at lg
     // instead of ~192px (two full section paddings).
-    <Section tone="ivory" ariaLabel="Industries" className="pb-10 sm:pb-12 lg:pb-12">
+    <Section tone="white" ariaLabel="Industries" className="pb-10 sm:pb-12 lg:pb-12">
       <SectionIntro
         label="Who BridgeX is for"
         heading={
           <>
             One core,{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-sans font-semibold italic text-bx-teal-700">
               nine industries.
             </span>
           </>
@@ -221,11 +221,11 @@ export default function IndustrySelector() {
                 }
                 className={`flex min-h-[56px] items-center gap-4 border px-5 py-3 text-left transition-all duration-200 ${
                   isSelected
-                    ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                    : "border-bx-gold-500/30 bg-transparent text-bx-ink hover:border-bx-maroon-700 hover:bg-bx-cream"
+                    ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                    : "border-bx-teal-500/30 bg-transparent text-bx-navy-900 hover:border-bx-navy-700 hover:bg-bx-mint-50"
                 }`}
               >
-                <span className={isSelected ? "text-bx-gold-400" : "text-bx-maroon-700"}>
+                <span className={isSelected ? "text-bx-teal-400" : "text-bx-teal-700"}>
                   <Icon name={industryIcon(ind.slug)} size={24} />
                 </span>
                 <span className="flex-1 font-sans text-[15px] font-bold sm:text-base">
@@ -234,7 +234,7 @@ export default function IndustrySelector() {
                 <Icon
                   name="chevronRight"
                   size={18}
-                  className={isSelected ? "text-bx-gold-400" : "text-bx-gold-600"}
+                  className={isSelected ? "text-bx-teal-400" : "text-bx-teal-600"}
                 />
               </button>
             );
@@ -253,7 +253,7 @@ export default function IndustrySelector() {
               animate={{ opacity: 1, y: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, y: -10 }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-7 sm:p-9"
+              className="flex h-full flex-col border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 sm:p-9"
             >
               <img
                 src={asset(industry.image)}
@@ -263,24 +263,24 @@ export default function IndustrySelector() {
                 loading="lazy"
                 className="aspect-[16/9] w-full object-cover"
               />
-              <span className="mt-6 text-bx-maroon-700">
+              <span className="mt-6 text-bx-teal-700">
                 <Icon name={industryIcon(industry.slug)} size={36} strokeWidth={1.5} />
               </span>
-              <h3 className="mt-5 font-sans text-2xl font-bold text-bx-ink sm:text-[28px]">
+              <h3 className="mt-5 font-sans text-2xl font-bold text-bx-navy-900 sm:text-[28px]">
                 {industry.label}
               </h3>
-              <p className="mt-3 max-w-[60ch] text-base leading-relaxed text-bx-muted">
+              <p className="mt-3 max-w-[60ch] text-base leading-relaxed text-bx-slate-500">
                 {industry.description}
               </p>
-              <p className="mt-7 font-sans text-[13px] font-bold uppercase tracking-[0.2em] text-bx-maroon-700">
+              <p className="mt-7 font-sans text-[13px] font-bold uppercase tracking-[0.2em] text-bx-teal-700">
                 Common challenges
               </p>
               <ul className="mt-4 space-y-3">
                 {industry.challenges.map((c) => (
-                  <li key={c} className="flex gap-3 text-[15px] leading-relaxed text-bx-ink">
+                  <li key={c} className="flex gap-3 text-[15px] leading-relaxed text-bx-navy-900">
                     <span
                       aria-hidden="true"
-                      className="mt-2 block h-2 w-2 shrink-0 rotate-45 bg-bx-gold-500"
+                      className="mt-2 block h-2 w-2 shrink-0 rotate-45 bg-bx-teal-500"
                     />
                     {c}
                   </li>
@@ -288,7 +288,7 @@ export default function IndustrySelector() {
               </ul>
               <Link
                 href={industry.href}
-                className="group mt-8 inline-flex items-center gap-2 self-start font-sans text-base font-bold text-bx-maroon-700 hover:text-bx-maroon-900"
+                className="group mt-8 inline-flex items-center gap-2 self-start font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
               >
                 Explore {industry.label}
                 <Icon

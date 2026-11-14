@@ -176,10 +176,10 @@ export default function DemoBookingForm() {
                 aria-hidden="true"
                 className={`flex h-9 w-9 shrink-0 items-center justify-center font-sans text-sm font-extrabold ${
                   state === "current"
-                    ? "bg-bx-maroon-900 text-bx-gold-400"
+                    ? "bg-bx-navy-900 text-bx-teal-400"
                     : state === "done"
-                      ? "bg-bx-gold-500 text-bx-maroon-950"
-                      : "border border-bx-maroon-900/25 text-bx-muted"
+                      ? "bg-bx-teal-500 text-bx-white"
+                      : "border border-bx-navy-900/25 text-bx-slate-500"
                 }`}
               >
                 {state === "done" ? <Icon name="check" size={18} /> : i + 1}
@@ -187,13 +187,13 @@ export default function DemoBookingForm() {
               <span className="pt-0.5">
                 <span
                   className={`block font-sans text-[15px] font-bold ${
-                    state === "todo" ? "text-bx-muted" : "text-bx-ink"
+                    state === "todo" ? "text-bx-slate-500" : "text-bx-navy-900"
                   }`}
                   aria-current={state === "current" ? "step" : undefined}
                 >
                   Step {i + 1}: {s.title}
                 </span>
-                <span className="block text-sm text-bx-muted">{s.description}</span>
+                <span className="block text-sm text-bx-slate-500">{s.description}</span>
               </span>
             </li>
           );
@@ -322,7 +322,7 @@ export default function DemoBookingForm() {
                 <>
                   I am happy for BridgeX to contact me about this demo
                   request.{" "}
-                  <span className="text-bx-muted">
+                  <span className="text-bx-slate-500">
                     We use your details only to arrange the demo — see the
                     Privacy Policy.
                   </span>
@@ -374,7 +374,7 @@ export default function DemoBookingForm() {
           </Button>
         )}
       </div>
-      <p className="mt-6 text-sm leading-relaxed text-bx-muted">
+      <p className="mt-6 text-sm leading-relaxed text-bx-slate-500">
         Your request is stored locally on this device until online submission
         is connected. Nothing is sent anywhere yet.
       </p>

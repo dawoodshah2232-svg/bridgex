@@ -14,7 +14,7 @@
 ## Code
 - TypeScript strict. Files focused, <800 lines. No `any` without a comment.
 - One animation system: framer-motion 12 + CSS micro-states. No GSAP.
-- Tailwind v4 utilities; design tokens only (`bg-bx-maroon-900`, never raw
+- Tailwind v4 utilities; design tokens only (`bg-bx-navy-900`, never raw
   hex in classNames). New tokens go in `globals.css` `@theme`.
 - All nav lists come from `src/content/navigation.ts`. Never hardcode a
   nav list in a component. Route hrefs in content (deep links, CTAs) must
@@ -54,9 +54,10 @@
   (native button semantics). No focus traps.
 - Visible focus (global `:focus-visible` style). 44px minimum touch
   targets. `prefers-reduced-motion` honoured everywhere.
-- Contrast: body ≥4.5:1, large text ≥3:1. Never small gold text on ivory
-  (gold-600 #A77A2F is ~3.9:1 on ivory — large text / icons / borders
-  only). Muted #766D73 on ivory passes at 4.6:1.
+- Contrast: body ≥4.5:1, large text ≥3:1. Never small teal-400 text on
+  white (#2DD4BF is ~2.1:1 — dark backgrounds only); teal-600 #0D9488
+  is ~3.6:1 on white — large text / links / icons / borders only.
+  Slate-500 #64748B on white passes at 4.8:1.
 
 ## Responsive
 Verify at 360 / 390 / 768 / 1024 / 1440 / 1920. No horizontal overflow.

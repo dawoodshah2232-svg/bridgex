@@ -3,7 +3,7 @@
  *
  * Every resource page opens with the same cinematic treatment: a
  * full-bleed photograph with the slow Ken Burns drift (HeroMedia),
- * a strong maroon scrim, white editorial type, and breadcrumbs.
+ * a strong navy scrim, white editorial type, and breadcrumbs.
  * All seven resource routes are dark heroes — the coordinator keeps
  * them in DARK_HERO_ROUTES (navigation.ts) for the transparent
  * header state. The hero content renders visible at SSR (no reveal
@@ -36,7 +36,7 @@ export default function ResourceHero({
   imageHeight?: number;
 }) {
   return (
-    <header className="relative overflow-hidden bg-bx-maroon-950 pt-[72px] text-bx-ivory">
+    <header className="relative overflow-hidden bg-bx-navy-950 pt-[72px] text-bx-white">
       <HeroMedia
         image={image}
         alt={imageAlt}
@@ -48,13 +48,13 @@ export default function ResourceHero({
       />
       <Container className="relative flex min-h-[480px] flex-col justify-center pb-20 pt-12 sm:min-h-[540px] sm:pt-16">
         <Breadcrumbs href={href} dark />
-        <p className="mt-8 text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-gold-400">
+        <p className="mt-8 text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-teal-400">
           {eyebrow}
         </p>
         <h1 className="mt-4 max-w-4xl font-sans text-[40px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance sm:text-6xl">
           {title}
         </h1>
-        <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
+        <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-bx-slate-300/90 sm:text-lg">
           {copy}
         </p>
       </Container>

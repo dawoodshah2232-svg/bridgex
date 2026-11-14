@@ -22,7 +22,7 @@ Hero headline: "Connect every part of your financial business."
   industries + 4 services + 7 resources + 4 company + book-demo + 3 legal).
 - Global chrome: sticky header with mega-menus, mobile drill-down nav,
   footer sitemap, breadcrumbs, skip link.
-- Shared components: Reveal, SectionIntro, GoldLineDivider, CtaBand,
+- Shared components: Reveal, SectionIntro, TealLineDivider, CtaBand,
   FaqAccordion, buttons, Container/Section, DemoLabel.
 - Homepage H01–H13 in spec order, with real photography and interactive
   demo preview tabs (illustrative data, clearly labelled).

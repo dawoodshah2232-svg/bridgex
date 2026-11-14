@@ -166,40 +166,40 @@ export default function EventsForm() {
   if (!loaded) {
     // Avoid a flash of the empty form before the saved state is known.
     return (
-      <div className="border border-bx-gold-500/30 bg-bx-white p-8 sm:p-10">
-        <p className="text-base text-bx-muted">Loading the form…</p>
+      <div className="border border-bx-teal-500/30 bg-bx-white rounded-2xl p-8 sm:p-10">
+        <p className="text-base text-bx-slate-500">Loading the form…</p>
       </div>
     );
   }
 
   if (saved && !editing) {
     return (
-      <div className="border border-bx-gold-500/30 bg-bx-white p-8 sm:p-10">
-        <p className="flex items-start gap-3 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+      <div className="border border-bx-teal-500/30 bg-bx-white rounded-2xl p-8 sm:p-10">
+        <p className="flex items-start gap-3 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
           <Icon
             name="check"
             size={24}
-            className="mt-0.5 shrink-0 text-bx-gold-600"
+            className="mt-0.5 shrink-0 text-bx-teal-600"
           />
           Interest saved on this device
         </p>
         <dl className="mt-6 space-y-3 text-base leading-relaxed">
           <div className="flex flex-wrap gap-x-3">
-            <dt className="font-sans font-bold text-bx-muted">Name</dt>
-            <dd className="text-bx-ink">{saved.name}</dd>
+            <dt className="font-sans font-bold text-bx-slate-500">Name</dt>
+            <dd className="text-bx-navy-900">{saved.name}</dd>
           </div>
           <div className="flex flex-wrap gap-x-3">
-            <dt className="font-sans font-bold text-bx-muted">Email</dt>
-            <dd className="text-bx-ink">{saved.email}</dd>
+            <dt className="font-sans font-bold text-bx-slate-500">Email</dt>
+            <dd className="text-bx-navy-900">{saved.email}</dd>
           </div>
           <div className="flex flex-wrap gap-x-3">
-            <dt className="font-sans font-bold text-bx-muted">Topic</dt>
-            <dd className="text-bx-ink">{topicLabel(saved.topic)}</dd>
+            <dt className="font-sans font-bold text-bx-slate-500">Topic</dt>
+            <dd className="text-bx-navy-900">{topicLabel(saved.topic)}</dd>
           </div>
         </dl>
-        <p className="mt-6 border-t border-bx-gold-500/25 pt-5 text-base leading-relaxed text-bx-muted">
+        <p className="mt-6 border-t border-bx-teal-500/25 pt-5 text-base leading-relaxed text-bx-slate-500">
           This is saved in your browser on this device only. It has{" "}
-          <strong className="text-bx-ink">not</strong> been sent to BridgeX
+          <strong className="text-bx-navy-900">not</strong> been sent to BridgeX
           — there is no backend connected to this form yet. When event
           registration opens, this page will say so, and you can register
           properly then.
@@ -208,14 +208,14 @@ export default function EventsForm() {
           <button
             type="button"
             onClick={startEdit}
-            className="min-h-[48px] border-2 border-bx-maroon-900 px-6 font-sans text-[15px] font-bold text-bx-maroon-900 transition-colors hover:bg-bx-maroon-900 hover:text-bx-ivory"
+            className="min-h-[48px] border-2 border-bx-navy-900 px-6 font-sans text-[15px] font-bold text-bx-navy-900 transition-colors hover:bg-bx-navy-900 hover:text-bx-white"
           >
             Update your details
           </button>
           <button
             type="button"
             onClick={clearSaved}
-            className="min-h-[48px] px-2 font-sans text-[15px] font-bold text-bx-maroon-700 hover:underline"
+            className="min-h-[48px] px-2 font-sans text-[15px] font-bold text-bx-teal-700 hover:underline"
           >
             Remove saved interest
           </button>
@@ -230,12 +230,12 @@ export default function EventsForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="border border-bx-gold-500/30 bg-bx-white p-8 sm:p-10"
+      className="border border-bx-teal-500/30 bg-bx-white rounded-2xl p-8 sm:p-10"
     >
-      <p className="font-sans text-xl font-extrabold text-bx-ink">
+      <p className="font-sans text-xl font-extrabold text-bx-navy-900">
         Register interest
       </p>
-      <p className="mt-2 max-w-[62ch] text-base leading-relaxed text-bx-muted">
+      <p className="mt-2 max-w-[62ch] text-base leading-relaxed text-bx-slate-500">
         Tell us which session you would attend. Your interest is saved in
         this browser only — nothing is sent to BridgeX until registration
         properly opens.
@@ -244,9 +244,9 @@ export default function EventsForm() {
       {hasErrors && (
         <div
           role="alert"
-          className="mt-6 border border-bx-maroon-700/50 bg-bx-cream px-5 py-4"
+          className="mt-6 border border-bx-navy-700/50 bg-bx-mint-50 px-5 py-4"
         >
-          <p className="font-sans font-bold text-bx-maroon-700">
+          <p className="font-sans font-bold text-bx-teal-700">
             Please check the highlighted fields below.
           </p>
         </div>
@@ -255,9 +255,9 @@ export default function EventsForm() {
       {spam && (
         <div
           role="alert"
-          className="mt-6 border border-bx-maroon-700/50 bg-bx-cream px-5 py-4"
+          className="mt-6 border border-bx-navy-700/50 bg-bx-mint-50 px-5 py-4"
         >
-          <p className="font-sans font-bold text-bx-maroon-700">
+          <p className="font-sans font-bold text-bx-teal-700">
             That submission looked automated, so it was not saved. Please
             take a moment, check the form, and try again.
           </p>
@@ -282,7 +282,7 @@ export default function EventsForm() {
         <div>
           <label
             htmlFor="events-name"
-            className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700"
+            className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700"
           >
             Full name
           </label>
@@ -294,10 +294,10 @@ export default function EventsForm() {
             autoComplete="name"
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? "events-name-error" : undefined}
-            className="mt-2 min-h-[52px] w-full border-2 border-bx-maroon-900/25 bg-bx-ivory px-4 font-body text-base text-bx-ink focus:border-bx-maroon-700 focus:outline-none"
+            className="mt-2 min-h-[52px] w-full border-2 border-bx-navy-900/25 bg-bx-white px-4 font-body text-base text-bx-navy-900 focus:border-bx-navy-700 focus:outline-none"
           />
           {errors.name && (
-            <p id="events-name-error" role="alert" className="mt-2 text-sm font-bold text-bx-maroon-700">
+            <p id="events-name-error" role="alert" className="mt-2 text-sm font-bold text-bx-teal-700">
               {errors.name}
             </p>
           )}
@@ -305,7 +305,7 @@ export default function EventsForm() {
         <div>
           <label
             htmlFor="events-email"
-            className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700"
+            className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700"
           >
             Work email
           </label>
@@ -317,10 +317,10 @@ export default function EventsForm() {
             autoComplete="email"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "events-email-error" : undefined}
-            className="mt-2 min-h-[52px] w-full border-2 border-bx-maroon-900/25 bg-bx-ivory px-4 font-body text-base text-bx-ink focus:border-bx-maroon-700 focus:outline-none"
+            className="mt-2 min-h-[52px] w-full border-2 border-bx-navy-900/25 bg-bx-white px-4 font-body text-base text-bx-navy-900 focus:border-bx-navy-700 focus:outline-none"
           />
           {errors.email && (
-            <p id="events-email-error" role="alert" className="mt-2 text-sm font-bold text-bx-maroon-700">
+            <p id="events-email-error" role="alert" className="mt-2 text-sm font-bold text-bx-teal-700">
               {errors.email}
             </p>
           )}
@@ -330,7 +330,7 @@ export default function EventsForm() {
       <div className="mt-6">
         <label
           htmlFor="events-topic"
-          className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700"
+          className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700"
         >
           Topic interest
         </label>
@@ -340,7 +340,7 @@ export default function EventsForm() {
           onChange={(e) => setTopic(e.target.value)}
           aria-invalid={!!errors.topic}
           aria-describedby={errors.topic ? "events-topic-error" : undefined}
-          className="mt-2 min-h-[52px] w-full border-2 border-bx-maroon-900/25 bg-bx-ivory px-4 font-body text-base text-bx-ink focus:border-bx-maroon-700 focus:outline-none"
+          className="mt-2 min-h-[52px] w-full border-2 border-bx-navy-900/25 bg-bx-white px-4 font-body text-base text-bx-navy-900 focus:border-bx-navy-700 focus:outline-none"
         >
           <option value="">Choose a session…</option>
           {EVENT_TOPICS.map((t) => (
@@ -351,7 +351,7 @@ export default function EventsForm() {
           <option value="any">Any topic — tell me about all of them</option>
         </select>
         {errors.topic && (
-          <p id="events-topic-error" role="alert" className="mt-2 text-sm font-bold text-bx-maroon-700">
+          <p id="events-topic-error" role="alert" className="mt-2 text-sm font-bold text-bx-teal-700">
             {errors.topic}
           </p>
         )}
@@ -366,18 +366,18 @@ export default function EventsForm() {
             onChange={(e) => setConsent(e.target.checked)}
             aria-invalid={!!errors.consent}
             aria-describedby={errors.consent ? "events-consent-error" : undefined}
-            className="mt-1 h-5 w-5 shrink-0 accent-bx-maroon-700"
+            className="mt-1 h-5 w-5 shrink-0 accent-bx-teal-600"
           />
           <label
             htmlFor="events-consent"
-            className="text-base leading-relaxed text-bx-ink"
+            className="text-base leading-relaxed text-bx-navy-900"
           >
             I am happy for BridgeX to contact me about this event when
             registration opens.
           </label>
         </div>
         {errors.consent && (
-          <p id="events-consent-error" role="alert" className="mt-2 text-sm font-bold text-bx-maroon-700">
+          <p id="events-consent-error" role="alert" className="mt-2 text-sm font-bold text-bx-teal-700">
             {errors.consent}
           </p>
         )}
@@ -385,12 +385,12 @@ export default function EventsForm() {
 
       <button
         type="submit"
-        className="mt-8 inline-flex min-h-[56px] items-center justify-center gap-2.5 bg-bx-gold-500 px-8 font-sans text-base font-bold text-bx-maroon-950 transition-all duration-200 hover:bg-bx-gold-400 active:scale-[0.97]"
+        className="mt-8 inline-flex min-h-[56px] items-center justify-center gap-2.5 rounded-full bg-bx-teal-500 px-8 font-sans text-base font-bold text-bx-white transition-all duration-200 hover:bg-bx-teal-600 active:scale-[0.97]"
       >
         Save my interest
         <Icon name="arrowRight" size={18} />
       </button>
-      <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+      <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
         Saved on this device only. No account is created, and nothing
         leaves your browser.
       </p>

@@ -43,12 +43,12 @@ export default function LayerExplorer() {
                 }
                 className={`flex min-h-[72px] items-center gap-4 border px-5 py-4 text-left transition-colors duration-200 ${
                   isActive
-                    ? "border-bx-gold-500 bg-bx-maroon-900 text-bx-ivory"
-                    : "border-bx-gold-500/25 bg-bx-white text-bx-ink hover:border-bx-gold-500/60"
+                    ? "border-bx-teal-500 bg-bx-navy-900 text-bx-white"
+                    : "border-bx-teal-500/25 bg-bx-white text-bx-navy-900 hover:border-bx-teal-500/60"
                 }`}
               >
                 <span
-                  className={`font-sans text-sm font-bold ${isActive ? "text-bx-gold-400" : "text-bx-maroon-700"}`}
+                  className={`font-sans text-sm font-bold ${isActive ? "text-bx-teal-400" : "text-bx-teal-700"}`}
                 >
                   0{i + 1}
                 </span>
@@ -58,7 +58,7 @@ export default function LayerExplorer() {
                   </span>
                   <span
                     className={`mt-0.5 block text-sm leading-snug ${
-                      isActive ? "text-bx-champagne/85" : "text-bx-muted"
+                      isActive ? "text-bx-slate-300/85" : "text-bx-slate-500"
                     }`}
                   >
                     {item.tag}
@@ -67,7 +67,7 @@ export default function LayerExplorer() {
                 <Icon
                   name={layerIcon(item.id)}
                   size={28}
-                  className={isActive ? "text-bx-gold-400" : "text-bx-gold-600"}
+                  className={isActive ? "text-bx-teal-400" : "text-bx-teal-600"}
                 />
               </button>
             );
@@ -86,19 +86,19 @@ export default function LayerExplorer() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="flex h-full flex-col border border-bx-gold-500/25 bg-bx-white p-6 sm:p-8 lg:p-10"
+            className="flex h-full flex-col border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8 lg:p-10"
           >
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
               Layer 0{selected + 1} — {layer.name}
             </p>
-            <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-3xl">
+            <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-3xl">
               {layer.tag}
             </h3>
-            <p className="mt-4 text-base leading-relaxed text-bx-muted">{layer.detail}</p>
+            <p className="mt-4 text-base leading-relaxed text-bx-slate-500">{layer.detail}</p>
             <ul className="mt-6 space-y-3">
               {layer.points.map((point) => (
-                <li key={point} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-ink">
-                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                <li key={point} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-navy-900">
+                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-600" />
                   {point}
                 </li>
               ))}
@@ -106,7 +106,7 @@ export default function LayerExplorer() {
             <div className="mt-auto pt-8">
               <Link
                 href={layer.href}
-                className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-maroon-700 hover:text-bx-maroon-900"
+                className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
               >
                 Explore the {layer.name} layer
                 <Icon

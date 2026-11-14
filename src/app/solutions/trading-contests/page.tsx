@@ -1,8 +1,8 @@
 /**
  * Trading Contest Management — solution page (spec S7).
  * Photographic dark hero (gold trophy on deep red, v2 image).
- * Composition: leaderboard preview on its maroon stage, problem as
- * an ImageText block (gold award statuette photo), capabilities, photographic
+ * Composition: leaderboard preview on its navy stage, problem as
+ * an ImageText block (teal award statuette photo), capabilities, photographic
  * use-case cards, dark workflow, image-led benefits, security,
  * integrations, comparison, a sunset-skyline PhotoBand interlude,
  * FAQ.
@@ -48,7 +48,7 @@ export default function TradingContestsPage() {
         heading={s.problemHeading}
         copy={s.problemCopy}
         pains={s.pains}
-        tone="cream"
+        tone="mint"
         image={{
           src: "/images/solutions-contests-statuette.jpg",
           alt: "Gold award statuette with a star",
@@ -62,7 +62,7 @@ export default function TradingContestsPage() {
         heading={s.capabilitiesHeading}
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
-        tone="ivory"
+        tone="white"
         icons={["contests", "chart", "shield"]}
       />
 
@@ -92,7 +92,7 @@ export default function TradingContestsPage() {
         label={s.benefitsLabel}
         heading={s.benefitsHeading}
         benefits={s.benefits}
-        tone="cream"
+        tone="mint"
         icons={["chart", "eye", "report", "funnel", "star", "network"]}
         image={{
           src: "/images/workshop-presentation.jpg",
@@ -118,7 +118,7 @@ export default function TradingContestsPage() {
         icons={["chart", "crm", "wallet", "ib"]}
       />
 
-      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="mint" />
 
       <PhotoBand
         image="/images/skyline-sunset.jpg"
@@ -131,7 +131,7 @@ export default function TradingContestsPage() {
         imageHeight={899}
       />
 
-      <FaqSection faqs={s.faqs} tone="ivory" />
+      <FaqSection faqs={s.faqs} tone="white" />
 
       <RelatedSolutions related={s.related} />
       <CtaBand heading={s.ctaHeading} copy={s.ctaCopy} />

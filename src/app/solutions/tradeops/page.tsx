@@ -1,7 +1,7 @@
 /**
  * TradeOps Control Center — solution page (spec S5).
  * Photographic dark hero with a concept notice. Composition: the
- * dark-console preview leads on its maroon stage, then the problem
+ * dark-console preview leads on its navy stage, then the problem
  * as an ImageText block (compliance desk), dark workflow,
  * capabilities, image-led benefits, photographic use-case cards,
  * security, integrations, comparison, a glass-tower PhotoBand
@@ -39,7 +39,7 @@ export default function TradeOpsPage() {
     <>
       <SolutionHero solution={s} />
 
-      <PreviewShell label={s.previewLabel} heading={s.previewHeading} copy={s.previewCopy} tone="ivory">
+      <PreviewShell label={s.previewLabel} heading={s.previewHeading} copy={s.previewCopy} tone="white">
         <TradeOpsPreview />
       </PreviewShell>
 
@@ -48,7 +48,7 @@ export default function TradeOpsPage() {
         heading={s.problemHeading}
         copy={s.problemCopy}
         pains={s.pains}
-        tone="cream"
+        tone="mint"
         image={{
           src: "/images/compliance-desk.jpg",
           alt: "Businesswoman reviewing paperwork in an office",
@@ -79,7 +79,7 @@ export default function TradeOpsPage() {
         label={s.benefitsLabel}
         heading={s.benefitsHeading}
         benefits={s.benefits}
-        tone="cream"
+        tone="mint"
         icons={["eye", "users", "workflow", "calendar", "audit", "refresh"]}
         image={{
           src: "/images/analyst-workstation.jpg",
@@ -95,7 +95,7 @@ export default function TradeOpsPage() {
         heading={s.useCasesHeading}
         copy={s.useCasesCopy}
         useCases={s.useCases}
-        tone="ivory"
+        tone="white"
         images={[
           { src: "/images/industries-brokers.jpg", alt: "Brokerage trading environment", width: 1600, height: 1200 },
           { src: "/images/industries-prop-firms.jpg", alt: "Prop trading workspace", width: 1600, height: 1067 },
@@ -118,7 +118,7 @@ export default function TradeOpsPage() {
         icons={["code", "crm", "wallet", "send"]}
       />
 
-      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="mint" />
 
       <PhotoBand
         image="/images/band-glass-tower.jpg"
@@ -131,7 +131,7 @@ export default function TradeOpsPage() {
         imageHeight={1098}
       />
 
-      <FaqSection faqs={s.faqs} tone="ivory" />
+      <FaqSection faqs={s.faqs} tone="white" />
 
       <RelatedSolutions related={s.related} />
       <CtaBand heading={s.ctaHeading} copy={s.ctaCopy} />

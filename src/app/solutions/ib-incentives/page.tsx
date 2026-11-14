@@ -1,7 +1,7 @@
 /**
  * IB & Incentive Management — solution page (spec S4).
  * Photographic dark hero. Composition: problem as an ImageText block
- * (partners photo), capabilities, preview on its maroon stage, dark
+ * (partners photo), capabilities, preview on its navy stage, dark
  * workflow, image-led benefits, photographic use-case cards,
  * security, comparison before integrations, a Kuala Lumpur skyline
  * PhotoBand interlude, FAQ.
@@ -43,7 +43,7 @@ export default function IbIncentivesPage() {
         heading={s.problemHeading}
         copy={s.problemCopy}
         pains={s.pains}
-        tone="cream"
+        tone="mint"
         image={{
           src: "/images/solutions-partners.jpg",
           alt: "Two businessmen shaking hands and smiling in a bright modern office",
@@ -58,7 +58,7 @@ export default function IbIncentivesPage() {
         heading={s.capabilitiesHeading}
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
-        tone="ivory"
+        tone="white"
         icons={["ib", "chart", "report"]}
       />
 
@@ -79,7 +79,7 @@ export default function IbIncentivesPage() {
         label={s.benefitsLabel}
         heading={s.benefitsHeading}
         benefits={s.benefits}
-        tone="cream"
+        tone="mint"
         icons={["route", "report", "network", "document", "refresh", "users"]}
         image={{
           src: "/images/team-collaboration.jpg",
@@ -109,13 +109,13 @@ export default function IbIncentivesPage() {
         icons={["shield", "audit", "lock", "key"]}
       />
 
-      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="mint" />
 
       <IntegrationList
         heading={s.integrationsHeading}
         copy={s.integrationsCopy}
         items={s.integrations}
-        tone="ivory"
+        tone="white"
         icons={["chart", "crm", "wallet", "report"]}
       />
 

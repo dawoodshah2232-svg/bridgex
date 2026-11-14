@@ -42,7 +42,7 @@ export default function ArticleReader({
         return (
           <article
             key={article.slug}
-            className="overflow-hidden border border-bx-gold-500/30 bg-bx-white"
+            className="overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl"
           >
             <div
               className={
@@ -61,17 +61,17 @@ export default function ArticleReader({
                 />
               </div>
               <div className="flex flex-col p-6 sm:p-8">
-                <p className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-maroon-700">
+                <p className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-teal-700">
                   {article.category} · {formatInsightDate(article.date)} ·{" "}
                   {article.readMinutes} min read
                 </p>
-                <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-[28px]">
+                <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-[28px]">
                   {article.title}
                 </h3>
-                <p className="mt-3 text-base leading-relaxed text-bx-muted">
+                <p className="mt-3 text-base leading-relaxed text-bx-slate-500">
                   {article.excerpt}
                 </p>
-                <p className="mt-4 font-sans text-sm font-bold text-bx-muted">
+                <p className="mt-4 font-sans text-sm font-bold text-bx-slate-500">
                   BridgeX editorial
                 </p>
                 <div className="mt-6">
@@ -81,7 +81,7 @@ export default function ArticleReader({
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setOpenSlug(isOpen ? null : article.slug)}
-                    className="inline-flex min-h-[48px] items-center gap-2.5 border-2 border-bx-maroon-900 px-6 font-sans text-[15px] font-bold text-bx-maroon-900 transition-colors hover:bg-bx-maroon-900 hover:text-bx-ivory"
+                    className="inline-flex min-h-[48px] items-center gap-2.5 border-2 border-bx-navy-900 px-6 font-sans text-[15px] font-bold text-bx-navy-900 transition-colors hover:bg-bx-navy-900 hover:text-bx-white"
                   >
                     {isOpen ? "Close article" : "Read the full article"}
                     <span
@@ -109,13 +109,13 @@ export default function ArticleReader({
                   }}
                   className="overflow-hidden"
                 >
-                  <div className="border-t border-bx-gold-500/25 bg-bx-ivory px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
+                  <div className="border-t border-bx-teal-500/25 bg-bx-white px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
                     <div className="max-w-[68ch]">
                       {article.body.map((paragraph, i) => {
                         const breakInfo = ARTICLE_BREAKS[article.slug];
                         return (
                           <Fragment key={i}>
-                            <p className="mb-5 text-base leading-relaxed text-bx-ink/90 last:mb-0 sm:text-lg sm:leading-relaxed">
+                            <p className="mb-5 text-base leading-relaxed text-bx-navy-900/90 last:mb-0 sm:text-lg sm:leading-relaxed">
                               {paragraph}
                             </p>
                             {/* Photographic break halfway through the
@@ -123,7 +123,7 @@ export default function ArticleReader({
                                 taken verbatim from the article. */}
                             {i === 2 && breakInfo && (
                               <figure className="my-8">
-                                <div className="overflow-hidden border border-bx-gold-500/30">
+                                <div className="overflow-hidden border border-bx-teal-500/30">
                                   <img
                                     src={asset(breakInfo.image)}
                                     alt={breakInfo.imageAlt}
@@ -133,7 +133,7 @@ export default function ArticleReader({
                                     className="aspect-[21/10] w-full object-cover"
                                   />
                                 </div>
-                                <figcaption className="mt-4 border-l-2 border-bx-gold-500 pl-4 font-display text-xl italic leading-snug text-bx-maroon-700 sm:text-2xl">
+                                <figcaption className="mt-4 border-l-2 border-bx-teal-500 pl-4 font-sans text-xl italic leading-snug text-bx-teal-700 sm:text-2xl">
                                   “{breakInfo.quote}”
                                 </figcaption>
                               </figure>
@@ -141,7 +141,7 @@ export default function ArticleReader({
                           </Fragment>
                         );
                       })}
-                      <p className="mt-8 border-t border-bx-gold-500/25 pt-5 font-sans text-sm text-bx-muted">
+                      <p className="mt-8 border-t border-bx-teal-500/25 pt-5 font-sans text-sm text-bx-slate-500">
                         Published {formatInsightDate(article.date)} by
                         BridgeX editorial. This is an opinion piece about
                         brokerage operations — it describes no client,
@@ -150,7 +150,7 @@ export default function ArticleReader({
                       <button
                         type="button"
                         onClick={() => setOpenSlug(null)}
-                        className="mt-6 inline-flex min-h-[44px] items-center gap-2 font-sans text-[15px] font-bold text-bx-maroon-700 hover:underline"
+                        className="mt-6 inline-flex min-h-[44px] items-center gap-2 font-sans text-[15px] font-bold text-bx-teal-700 hover:underline"
                       >
                         Close this article
                         <Icon name="chevronDown" size={18} className="rotate-180" />

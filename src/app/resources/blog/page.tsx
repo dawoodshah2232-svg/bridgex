@@ -9,7 +9,7 @@ import SectionIntro from "@/components/ui/SectionIntro";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import Reveal from "@/components/ui/Reveal";
-import GoldLineDivider from "@/components/ui/GoldLineDivider";
+import TealLineDivider from "@/components/ui/TealLineDivider";
 import { asset } from "@/lib/paths";
 import { INSIGHT_ARTICLES } from "@/content/insights";
 import { ARTICLE_BODIES, BLOG_FAQS } from "@/content/resource-editorial";
@@ -38,7 +38,7 @@ export default function BlogPage() {
         title={
           <>
             Notes on running a{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               brokerage well.
             </span>
           </>
@@ -50,7 +50,7 @@ export default function BlogPage() {
         imageHeight={1067}
       />
 
-      <Section tone="ivory" ariaLabel="Articles">
+      <Section tone="white" ariaLabel="Articles">
         <SectionIntro
           label="The library so far"
           heading="Three essays, three recurring problems"
@@ -61,15 +61,15 @@ export default function BlogPage() {
         </Reveal>
       </Section>
 
-      <Section tone="maroon" ariaLabel="How we write">
+      <Section tone="navy" ariaLabel="How we write">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            {/* Offset gold frame lives inside the wrapper's own
+            {/* Offset teal frame lives inside the wrapper's own
                 margin, so nothing overflows at 375px. */}
             <div className="relative mb-3 mr-3 sm:mb-4 sm:mr-4">
               <div
                 aria-hidden="true"
-                className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-teal-500/60 sm:translate-x-4 sm:translate-y-4"
               />
               <img
                 src={asset("/images/team-strategy.jpg")}
@@ -87,7 +87,7 @@ export default function BlogPage() {
               label="How we write"
               heading="Written, not generated. Opinionated, not inflated."
             />
-            <div className="mt-8 space-y-6 text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
+            <div className="mt-8 space-y-6 text-base leading-relaxed text-bx-slate-300/90 sm:text-lg">
               <p>
                 Every article here is written by a person at BridgeX, from our
                 own view of how brokerage operations work. We name the problem
@@ -100,8 +100,8 @@ export default function BlogPage() {
                 case studies — with permission, with checked facts, and with
                 the customer’s name on them.
               </p>
-              <GoldLineDivider className="pt-2" />
-              <p className="font-sans text-sm font-bold uppercase tracking-[0.16em] text-bx-gold-400">
+              <TealLineDivider className="pt-2" />
+              <p className="font-sans text-sm font-bold uppercase tracking-[0.16em] text-bx-teal-400">
                 BridgeX editorial · New pieces appear here as they are finished
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function BlogPage() {
         </div>
       </Section>
 
-      <Section tone="ivory" ariaLabel="Frequently asked questions">
+      <Section tone="white" ariaLabel="Frequently asked questions">
         <div className="mx-auto max-w-3xl">
           <SectionIntro
             label="Questions"

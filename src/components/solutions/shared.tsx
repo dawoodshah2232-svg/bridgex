@@ -7,7 +7,7 @@
  *
  * Visual language (enrichment pass): problem and benefit sections open
  * as alternating ImageText blocks; icons are meaningful IconNames from
- * the shared set, shown in gold-ring tiles — the FeatureIcon tile
+ * the shared set, shown in teal-ring tiles — the FeatureIcon tile
  * language, in row layout (FeatureIcon itself is vertical-only, so the
  * local RingTile below reproduces its exact tile classes for rows).
  * Use-case cards carry a photograph per industry. The interactive
@@ -28,22 +28,21 @@ import type {
 import { Container, Section } from "@/components/ui/Container";
 import FaqAccordion, { type FaqItem } from "@/components/ui/FaqAccordion";
 import FeatureIcon from "@/components/ui/FeatureIcon";
-import { GoldRule } from "@/components/ui/GoldLineDivider";
+import { TealRule } from "@/components/ui/TealLineDivider";
 import ImageText from "@/components/ui/ImageText";
 import Reveal from "@/components/ui/Reveal";
 import SectionIntro from "@/components/ui/SectionIntro";
 
-type LightTone = "cream" | "ivory" | "white";
+type LightTone = "mint" | "white";
 
 const LIGHT_TONE_BG: Record<LightTone, string> = {
-  ivory: "bg-bx-ivory",
-  cream: "bg-bx-cream",
+  mint: "bg-bx-mint-50",
   white: "bg-bx-white",
 };
 
 /**
- * Gold-ring icon tile in row layout — the FeatureIcon tile (circle,
- * thin gold ring, champagne wash on light / deep maroon wash on dark),
+ * Teal-ring icon tile in row layout — the FeatureIcon tile (circle,
+ * thin teal ring, pale mint wash on light / deep navy wash on dark),
  * for rows where FeatureIcon's vertical tile-plus-label layout does
  * not fit. Classes match FeatureIcon exactly. The default tile is
  * 56px with a 26px glyph (fix, 14 Nov): the old 44px tile read as
@@ -65,8 +64,8 @@ function RingTile({
       aria-hidden="true"
       className={`flex shrink-0 items-center justify-center rounded-full border ${tileClass} ${
         dark
-          ? "border-bx-gold-400/50 bg-bx-maroon-800/60 text-bx-gold-400"
-          : "border-bx-gold-500/60 bg-bx-champagne/40 text-bx-gold-600"
+          ? "border-bx-teal-400/50 bg-bx-navy-800/60 text-bx-teal-400"
+          : "border-bx-teal-500/60 bg-bx-mint-100/40 text-bx-teal-600"
       }`}
     >
       <Icon name={icon} size={size} />
@@ -76,8 +75,8 @@ function RingTile({
 
 /* ------------------------------------------------------------------ */
 /* Preview shell — the anchor target for "See the preview" CTAs.       */
-/* The preview itself is untouched; it sits on a deep-maroon stage     */
-/* with a gold hairline, like a console on a desk.                     */
+/* The preview itself is untouched; it sits on a deep-navy stage     */
+/* with a teal hairline, like a console on a desk.                     */
 /* ------------------------------------------------------------------ */
 
 export function PreviewShell({
@@ -91,7 +90,7 @@ export function PreviewShell({
   label: string;
   heading: ReactNode;
   copy: string;
-  tone?: "white" | "ivory" | "cream";
+  tone?: "white" | "white" | "mint";
   className?: string;
   children: ReactNode;
 }) {
@@ -99,7 +98,7 @@ export function PreviewShell({
     <Section tone={tone} id="preview" ariaLabel="Interactive preview" className={className}>
       <SectionIntro label={label} heading={heading} copy={copy} />
       <Reveal className="mt-12 lg:mt-16" delay={0.08}>
-        <div className="border border-bx-gold-500/40 bg-bx-maroon-900 p-3 sm:p-4">
+        <div className="overflow-hidden rounded-2xl border border-bx-teal-500/40 bg-bx-navy-900 rounded-2xl p-3 sm:p-4">
           {children}
         </div>
       </Reveal>
@@ -118,7 +117,7 @@ export function ProblemSection({
   heading,
   copy,
   pains,
-  tone = "cream",
+  tone = "mint",
   image,
   flip = false,
 }: {
@@ -155,19 +154,19 @@ export function ProblemSection({
             {pains.map((pain, i) => (
               <li
                 key={pain.title}
-                className="flex gap-5 border-t border-bx-gold-500/30 py-6 sm:gap-7"
+                className="flex gap-5 border-t border-bx-teal-500/30 py-6 sm:gap-7"
               >
                 <span
                   aria-hidden="true"
-                  className="font-display text-2xl font-semibold text-bx-gold-600"
+                  className="font-sans text-2xl font-semibold text-bx-teal-600"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span>
-                  <span className="block font-sans text-lg font-bold text-bx-ink">
+                  <span className="block font-sans text-lg font-bold text-bx-navy-900">
                     {pain.title}
                   </span>
-                  <span className="mt-1 block max-w-[58ch] text-[15px] leading-relaxed text-bx-muted">
+                  <span className="mt-1 block max-w-[58ch] text-[15px] leading-relaxed text-bx-slate-500">
                     {pain.copy}
                   </span>
                 </span>
@@ -182,7 +181,7 @@ export function ProblemSection({
 
 /* ------------------------------------------------------------------ */
 /* Capabilities — grouped feature breakdown (spec §7 inventory).       */
-/* Each group carries its icon in a gold-ring tile; the `icons` array  */
+/* Each group carries its icon in a teal-ring tile; the `icons` array  */
 /* maps by group index (IconName strings, resolved by <Icon>).         */
 /* ------------------------------------------------------------------ */
 
@@ -191,7 +190,7 @@ export function CapabilityGroups({
   heading,
   copy,
   groups,
-  tone = "ivory",
+  tone = "white",
   className = "",
   icons,
 }: {
@@ -209,23 +208,23 @@ export function CapabilityGroups({
       <div className="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-3 lg:gap-8">
         {groups.map((group, gi) => (
           <Reveal key={group.title} delay={gi * 0.08}>
-            <div className="border-t-2 border-bx-maroon-800 pt-6">
+            <div className="border-t-2 border-bx-navy-800 pt-6">
               <span className="flex items-center gap-4">
                 <RingTile icon={icons[gi % icons.length]} />
-                <h3 className="font-sans text-xl font-extrabold text-bx-ink">
+                <h3 className="font-sans text-xl font-extrabold text-bx-navy-900">
                   {group.title}
                 </h3>
               </span>
-              <p className="mt-3 text-[15px] leading-relaxed text-bx-muted">
+              <p className="mt-3 text-[15px] leading-relaxed text-bx-slate-500">
                 {group.intro}
               </p>
               <ul className="mt-6 space-y-5">
                 {group.items.map((item) => (
                   <li key={item.title}>
-                    <p className="font-sans text-[15px] font-bold text-bx-ink">
+                    <p className="font-sans text-[15px] font-bold text-bx-navy-900">
                       {item.title}
                     </p>
-                    <p className="mt-1 text-sm leading-relaxed text-bx-muted">
+                    <p className="mt-1 text-sm leading-relaxed text-bx-slate-500">
                       {item.copy}
                     </p>
                   </li>
@@ -261,14 +260,14 @@ export function WorkflowSteps({
   icons?: IconName[];
 }) {
   return (
-    <Section tone={dark ? "maroon" : "ivory"} ariaLabel="Workflow">
+    <Section tone={dark ? "navy" : "white"} ariaLabel="Workflow">
       <SectionIntro label={label} heading={heading} copy={copy} dark={dark} />
       <div className="relative mt-12 lg:mt-16">
         {/* Connecting line — centred on the 40px number squares (top 20px). */}
         <span
           aria-hidden="true"
           className={`absolute left-0 right-0 top-[20px] hidden h-px lg:block ${
-            dark ? "bg-bx-gold-500/40" : "bg-bx-gold-500/50"
+            dark ? "bg-bx-teal-500/40" : "bg-bx-teal-500/50"
           }`}
         />
         <ol className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -278,29 +277,29 @@ export function WorkflowSteps({
               aria-hidden="true"
               className={`relative z-10 flex h-10 w-10 items-center justify-center font-sans text-sm font-extrabold ${
                 dark
-                  ? "bg-bx-gold-500 text-bx-maroon-950"
-                  : "bg-bx-maroon-800 text-bx-ivory"
+                  ? "bg-bx-teal-500 text-bx-white"
+                  : "bg-bx-navy-800 text-bx-white"
               }`}
             >
               {i + 1}
             </span>
             <h3
               className={`mt-4 flex items-center gap-2.5 font-sans text-lg font-bold ${
-                dark ? "text-bx-ivory" : "text-bx-ink"
+                dark ? "text-bx-white" : "text-bx-navy-900"
               }`}
             >
               {icons && (
                 <Icon
                   name={icons[i % icons.length]}
                   size={20}
-                  className={`shrink-0 ${dark ? "text-bx-gold-400" : "text-bx-gold-600"}`}
+                  className={`shrink-0 ${dark ? "text-bx-teal-400" : "text-bx-teal-600"}`}
                 />
               )}
               {step.title}
             </h3>
             <p
               className={`mt-1.5 max-w-[52ch] text-[15px] leading-relaxed ${
-                dark ? "text-bx-champagne/85" : "text-bx-muted"
+                dark ? "text-bx-slate-300/85" : "text-bx-slate-500"
               }`}
             >
               {step.copy}
@@ -343,11 +342,11 @@ export function BenefitGrid({
         <li key={benefit.title} className="flex gap-5">
           <RingTile icon={icons ? icons[i % icons.length] : "check"} />
           <div>
-            <h3 className="font-sans text-lg font-bold text-bx-ink">
+            <h3 className="font-sans text-lg font-bold text-bx-navy-900">
               <span className="sr-only">Benefit {i + 1}: </span>
               {benefit.title}
             </h3>
-            <p className="mt-1.5 max-w-[56ch] text-[15px] leading-relaxed text-bx-muted">
+            <p className="mt-1.5 max-w-[56ch] text-[15px] leading-relaxed text-bx-slate-500">
               {benefit.copy}
             </p>
           </div>
@@ -400,7 +399,7 @@ export function UseCaseCards({
   heading,
   copy,
   useCases,
-  tone = "cream",
+  tone = "mint",
   images,
 }: {
   label: string;
@@ -419,7 +418,7 @@ export function UseCaseCards({
             <Reveal delay={i * 0.08} className="h-full">
               <Link
                 href={useCase.href}
-                className="group flex h-full flex-col overflow-hidden border border-bx-gold-500/30 bg-bx-white transition-colors duration-200 hover:border-bx-gold-500/70"
+                className="group flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl transition-colors duration-200 hover:border-bx-teal-500/70"
               >
                 {images?.[i] && (
                   <div className="overflow-hidden">
@@ -434,19 +433,19 @@ export function UseCaseCards({
                   </div>
                 )}
                 <div className="flex flex-1 flex-col p-7">
-                  <GoldRule />
-                  <h3 className="mt-5 flex items-center gap-2.5 font-sans text-xl font-extrabold text-bx-ink group-hover:text-bx-maroon-700">
+                  <TealRule />
+                  <h3 className="mt-5 flex items-center gap-2.5 font-sans text-xl font-extrabold text-bx-navy-900 group-hover:text-bx-teal-700">
                     <Icon
                       name={industryIcon(useCase.href.split("/").pop() ?? "")}
                       size={22}
-                      className="shrink-0 text-bx-gold-600"
+                      className="shrink-0 text-bx-teal-600"
                     />
                     {useCase.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                  <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                     {useCase.copy}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700">
+                  <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-teal-700">
                     Explore this industry
                     <Icon
                       name="arrowRight"
@@ -465,8 +464,8 @@ export function UseCaseCards({
 }
 
 /* ------------------------------------------------------------------ */
-/* Security — maroon panel with permission/audit items. Each item      */
-/* carries its own icon in a dark gold-ring tile.                      */
+/* Security — navy panel with permission/audit items. Each item      */
+/* carries its own icon in a dark teal-ring tile.                      */
 /* ------------------------------------------------------------------ */
 
 export function SecurityPanel({
@@ -481,7 +480,7 @@ export function SecurityPanel({
   icons?: IconName[];
 }) {
   return (
-    <Section tone="maroon" ariaLabel="Security and permissions">
+    <Section tone="navy" ariaLabel="Security and permissions">
       <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
           <SectionIntro
@@ -496,8 +495,8 @@ export function SecurityPanel({
         </div>
         <ul className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
           {items.map((item, i) => (
-            <li key={item.title} className="border-t border-bx-gold-500/30 pt-5">
-              <h3 className="flex items-center gap-3 font-sans text-base font-bold text-bx-ivory">
+            <li key={item.title} className="border-t border-bx-teal-500/30 pt-5">
+              <h3 className="flex items-center gap-3 font-sans text-base font-bold text-bx-white">
                 <RingTile
                   icon={icons ? icons[i % icons.length] : "shield"}
                   dark
@@ -506,7 +505,7 @@ export function SecurityPanel({
                 />
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-bx-champagne/85">
+              <p className="mt-2 text-sm leading-relaxed text-bx-slate-300/85">
                 {item.copy}
               </p>
             </li>
@@ -519,7 +518,7 @@ export function SecurityPanel({
 
 /* ------------------------------------------------------------------ */
 /* Integrations — category list, no provider names or logos. Each      */
-/* cell carries its own icon in a gold-ring tile.                      */
+/* cell carries its own icon in a teal-ring tile.                      */
 /* ------------------------------------------------------------------ */
 
 export function IntegrationList({
@@ -532,24 +531,24 @@ export function IntegrationList({
   heading: string;
   copy: string;
   items: CopyBlock[];
-  tone?: "white" | "ivory";
+  tone?: "white" | "white";
   icons?: IconName[];
 }) {
   return (
     <Section tone={tone} ariaLabel="Integrations">
       <SectionIntro label="Integration approach" heading={heading} copy={copy} />
-      <ul className="mt-12 grid gap-px overflow-hidden border border-bx-gold-500/30 bg-bx-gold-500/30 sm:grid-cols-2 lg:mt-16">
+      <ul className="mt-12 grid gap-px overflow-hidden border border-bx-teal-500/30 bg-bx-teal-500/30 sm:grid-cols-2 lg:mt-16">
         {items.map((item, i) => (
-          <li key={item.title} className="bg-bx-ivory p-6 sm:p-7">
+          <li key={item.title} className="bg-bx-white p-6 sm:p-7">
             {icons && <RingTile icon={icons[i % icons.length]} />}
             <h3
-              className={`font-sans text-base font-bold text-bx-ink ${
+              className={`font-sans text-base font-bold text-bx-navy-900 ${
                 icons ? "mt-4" : ""
               }`}
             >
               {item.title}
             </h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-bx-muted">
+            <p className="mt-1.5 text-sm leading-relaxed text-bx-slate-500">
               {item.copy}
             </p>
           </li>
@@ -569,12 +568,12 @@ export function ComparisonTable({
   heading,
   copy,
   rows,
-  tone = "cream",
+  tone = "mint",
 }: {
   heading: string;
   copy: string;
   rows: ComparisonRow[];
-  tone?: "cream" | "ivory";
+  tone?: "mint" | "white";
 }) {
   return (
     <Section tone={tone} ariaLabel="Comparison">
@@ -587,11 +586,11 @@ export function ComparisonTable({
       >
         <table className="w-full min-w-[720px] border-collapse bg-bx-white text-left">
           <thead>
-            <tr className="bg-bx-maroon-900 text-bx-ivory">
+            <tr className="bg-bx-navy-900 text-bx-white">
               <th scope="col" className="w-[18%] px-5 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em]">
                 Aspect
               </th>
-              <th scope="col" className="w-[41%] px-5 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-gold-400">
+              <th scope="col" className="w-[41%] px-5 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-bx-teal-400">
                 With BridgeX
               </th>
               <th scope="col" className="w-[41%] px-5 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em]">
@@ -601,14 +600,14 @@ export function ComparisonTable({
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.aspect} className="border-b border-bx-gold-500/25 align-top last:border-b-0">
-                <th scope="row" className="px-5 py-4 font-sans text-[15px] font-bold text-bx-ink">
+              <tr key={row.aspect} className="border-b border-bx-teal-500/25 align-top last:border-b-0">
+                <th scope="row" className="px-5 py-4 font-sans text-[15px] font-bold text-bx-navy-900">
                   {row.aspect}
                 </th>
-                <td className="px-5 py-4 text-[15px] leading-relaxed text-bx-ink">
+                <td className="px-5 py-4 text-[15px] leading-relaxed text-bx-navy-900">
                   {row.bridgex}
                 </td>
-                <td className="px-5 py-4 text-[15px] leading-relaxed text-bx-muted">
+                <td className="px-5 py-4 text-[15px] leading-relaxed text-bx-slate-500">
                   {row.typical}
                 </td>
               </tr>
@@ -624,7 +623,7 @@ export function ComparisonTable({
 /* FAQ + related links.                                                */
 /* ------------------------------------------------------------------ */
 
-export function FaqSection({ faqs, tone = "ivory" }: { faqs: FaqItem[]; tone?: "ivory" | "white" }) {
+export function FaqSection({ faqs, tone = "white" }: { faqs: FaqItem[]; tone?: "white" | "white" }) {
   return (
     <Section tone={tone} ariaLabel="Frequently asked questions">
       <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
@@ -641,10 +640,10 @@ export function FaqSection({ faqs, tone = "ivory" }: { faqs: FaqItem[]; tone?: "
 
 export function RelatedSolutions({ related }: { related: RelatedLink[] }) {
   return (
-    <section aria-label="Related solutions" className="bg-bx-ivory pb-16 sm:pb-20 lg:pb-24">
+    <section aria-label="Related solutions" className="bg-bx-white pb-16 sm:pb-20 lg:pb-24">
       <Container>
-        <div className="border-t border-bx-gold-500/30 pt-10">
-          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+        <div className="border-t border-bx-teal-500/30 pt-10">
+          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
             Continue exploring
           </h2>
           <ul className="mt-5 flex flex-wrap gap-x-10 gap-y-3">
@@ -652,13 +651,13 @@ export function RelatedSolutions({ related }: { related: RelatedLink[] }) {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-ink hover:text-bx-maroon-700"
+                  className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-navy-900 hover:text-bx-teal-700"
                 >
                   {link.label}
                   <Icon
                     name="arrowRight"
                     size={16}
-                    className="text-bx-gold-600 transition-transform duration-200 group-hover:translate-x-1"
+                    className="text-bx-teal-600 transition-transform duration-200 group-hover:translate-x-1"
                   />
                 </Link>
               </li>

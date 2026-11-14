@@ -99,7 +99,7 @@ export interface IndustryContent {
   metaDescription: string;
 
   eyebrow: string;
-  /** H1 is split so the middle phrase renders in Cormorant italic. */
+  /** H1 is split so the middle phrase renders in teal gradient. */
   heroBefore: string;
   heroAccent: string;
   heroAfter: string;
@@ -112,7 +112,7 @@ export interface IndustryContent {
    * render as a JourneySection directly below the hero.
    */
   heroVariant: HeroVariant;
-  /** Gold bridge-line motif along the bottom of the hero photo. */
+  /** Teal bridge-line motif along the bottom of the hero photo. */
   heroBridgeLine?: boolean;
   /** Required for photo heroes; ignored for diagram heroes. */
   image?: IndustryImage;
@@ -167,7 +167,7 @@ export interface IndustryContent {
     steps?: FlowStep[];
     /** Honest integration status: what is an adapter, what is scoped. */
     integrationNote: string;
-    /** Dark (maroon) architecture section; default is cream. */
+    /** Dark (navy) architecture section; default is pale mint. */
     dark?: boolean;
   };
 

@@ -1,7 +1,7 @@
 /**
  * PAMM & Copy Trading — solution page (spec S3).
  * Photographic dark hero with an in-development notice. Composition:
- * preview first on its maroon stage, capabilities, problem as an
+ * preview first on its navy stage, capabilities, problem as an
  * ImageText block (trader workstation), dark workflow, photographic
  * use-case cards before image-led benefits, security, integrations,
  * comparison, a Hong Kong skyline PhotoBand interlude, FAQ.
@@ -47,7 +47,7 @@ export default function PammCopyTradingPage() {
         heading={s.capabilitiesHeading}
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
-        tone="cream"
+        tone="mint"
         icons={["search", "chart", "gauge"]}
       />
 
@@ -56,7 +56,7 @@ export default function PammCopyTradingPage() {
         heading={s.problemHeading}
         copy={s.problemCopy}
         pains={s.pains}
-        tone="ivory"
+        tone="white"
         image={{
           src: "/images/trader-workstation.jpg",
           alt: "Trading desk with a laptop showing a candlestick chart and a wall of monitors",
@@ -91,7 +91,7 @@ export default function PammCopyTradingPage() {
         label={s.benefitsLabel}
         heading={s.benefitsHeading}
         benefits={s.benefits}
-        tone="cream"
+        tone="mint"
         icons={["chart", "gauge", "database", "eye", "checkCircle", "users"]}
         image={{
           src: "/images/pamm-benefits.jpg",
@@ -113,11 +113,11 @@ export default function PammCopyTradingPage() {
         heading={s.integrationsHeading}
         copy={s.integrationsCopy}
         items={s.integrations}
-        tone="ivory"
+        tone="white"
         icons={["chart", "crm", "wallet", "report"]}
       />
 
-      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="mint" />
 
       <PhotoBand
         image="/images/band-skyline-hongkong.jpg"
@@ -130,7 +130,7 @@ export default function PammCopyTradingPage() {
         imageHeight={1440}
       />
 
-      <FaqSection faqs={s.faqs} tone="ivory" />
+      <FaqSection faqs={s.faqs} tone="white" />
 
       <RelatedSolutions related={s.related} />
       <CtaBand heading={s.ctaHeading} copy={s.ctaCopy} />

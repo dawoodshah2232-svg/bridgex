@@ -1,7 +1,7 @@
 /**
  * Digital Onboarding & KYC — solution page (spec S6).
  * Photographic dark hero. Composition: problem as an ImageText block
- * (compliance review), preview stepper on its maroon stage, dark
+ * (compliance review), preview stepper on its navy stage, dark
  * workflow, capabilities, photographic use-case cards before
  * image-led benefits, security, comparison before integrations, a
  * London bridge PhotoBand interlude, FAQ.
@@ -43,7 +43,7 @@ export default function DigitalOnboardingPage() {
         heading={s.problemHeading}
         copy={s.problemCopy}
         pains={s.pains}
-        tone="cream"
+        tone="mint"
         image={{
           src: "/images/compliance-review.jpg",
           alt: "Professional reviewing documents at a desk",
@@ -71,7 +71,7 @@ export default function DigitalOnboardingPage() {
         heading={s.capabilitiesHeading}
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
-        tone="ivory"
+        tone="white"
         icons={["route", "shield", "checkCircle"]}
       />
 
@@ -92,7 +92,7 @@ export default function DigitalOnboardingPage() {
         label={s.benefitsLabel}
         heading={s.benefitsHeading}
         benefits={s.benefits}
-        tone="cream"
+        tone="mint"
         icons={["funnel", "clock", "checkCircle", "building", "workflow", "audit"]}
         image={{
           src: "/images/solutions-onboarding.jpg",
@@ -109,13 +109,13 @@ export default function DigitalOnboardingPage() {
         icons={["document", "key", "lock", "audit"]}
       />
 
-      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="mint" />
 
       <IntegrationList
         heading={s.integrationsHeading}
         copy={s.integrationsCopy}
         items={s.integrations}
-        tone="ivory"
+        tone="white"
         icons={["checkCircle", "shield", "chart", "crm"]}
       />
 

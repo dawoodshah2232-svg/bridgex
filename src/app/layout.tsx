@@ -7,6 +7,10 @@ import CookieBanner from "@/components/CookieBanner";
 import { SITE_URL, asset } from "@/lib/paths";
 import { jsonLdString, organizationJsonLd } from "@/lib/seo";
 
+export const viewport = {
+  themeColor: "#ffffff",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -31,7 +35,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "BridgeX — illuminated cable-stayed bridge at night",
+        alt: "BridgeX — Connected Infrastructure for Modern Financial Businesses",
       },
     ],
   },
@@ -44,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-bx-ivory font-body text-bx-ink">
+      <body className="min-h-screen bg-bx-white font-body text-bx-navy-900">
         <SkipLink />
         <Header />
         <main id="main">{children}</main>

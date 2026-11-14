@@ -196,7 +196,7 @@ export default function ContactForm() {
         label={
           <>
             I am happy for BridgeX to contact me about my enquiry.{" "}
-            <span className="text-bx-muted">
+            <span className="text-bx-slate-500">
               We use your details only to respond — see the Privacy Policy.
             </span>
           </>
@@ -218,7 +218,7 @@ export default function ContactForm() {
       <Button type="submit" size="lg" disabled={status === "submitting"} className="w-full sm:w-auto">
         {status === "submitting" ? "Saving…" : "Send message"}
       </Button>
-      <p className="text-sm leading-relaxed text-bx-muted">
+      <p className="text-sm leading-relaxed text-bx-slate-500">
         Your message is stored locally on this device until online submission
         is connected. Nothing is sent anywhere yet.
       </p>

@@ -72,25 +72,25 @@ function TreeNode({
         aria-pressed={isSelected}
         className={`flex w-full flex-wrap items-center justify-between gap-x-4 gap-y-1 border px-4 py-3 text-left transition-colors duration-150 ${
           isSelected
-            ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-            : "border-bx-gold-500/30 bg-bx-white text-bx-ink hover:border-bx-maroon-700"
+            ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+            : "border-bx-teal-500/30 bg-bx-white text-bx-navy-900 hover:border-bx-navy-700"
         }`}
       >
         <span>
           <span className="block font-sans text-[15px] font-bold">{node.name}</span>
-          <span className={`block text-[13px] ${isSelected ? "text-bx-champagne/80" : "text-bx-muted"}`}>
+          <span className={`block text-[13px] ${isSelected ? "text-bx-slate-300/80" : "text-bx-slate-500"}`}>
             {node.tier}
           </span>
         </span>
         <span className="text-right text-sm tabular-nums">
           <span className="block font-bold">{node.volume}</span>
-          <span className={`block text-[13px] ${isSelected ? "text-bx-champagne/80" : "text-bx-muted"}`}>
+          <span className={`block text-[13px] ${isSelected ? "text-bx-slate-300/80" : "text-bx-slate-500"}`}>
             {node.partners === 0 ? "No sub-partners" : `${node.partners} sub-partners`}
           </span>
         </span>
       </button>
       {node.children && node.children.length > 0 && (
-        <ul className="mt-2 space-y-2 border-l-2 border-bx-gold-500/40 pl-4 sm:pl-6">
+        <ul className="mt-2 space-y-2 border-l-2 border-bx-teal-500/40 pl-4 sm:pl-6">
           {node.children.map((child) => (
             <TreeNode key={child.name} node={child} depth={depth + 1} selected={selected} onSelect={onSelect} />
           ))}
@@ -116,10 +116,10 @@ function HierarchyPanel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">Partner hierarchy</h3>
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">Partner hierarchy</h3>
         <DemoLabel text="Illustrative data — fictional partners" />
       </div>
-      <p className="mt-3 text-[15px] leading-relaxed text-bx-muted">
+      <p className="mt-3 text-[15px] leading-relaxed text-bx-slate-500">
         {countNodes(HIERARCHY)} partners across three tiers. Select any partner
         to see their position in the network.
       </p>
@@ -127,9 +127,9 @@ function HierarchyPanel() {
         <ul className="space-y-2">
           <TreeNode node={HIERARCHY} depth={0} selected={selected} onSelect={setSelected} />
         </ul>
-        <div className="h-fit border border-bx-gold-500/30 bg-bx-white px-5 py-6" aria-live="polite">
-          <h4 className="font-sans text-lg font-extrabold text-bx-ink">{node.name}</h4>
-          <p className="mt-0.5 text-sm text-bx-muted">{node.tier}</p>
+        <div className="h-fit border border-bx-teal-500/30 bg-bx-white rounded-2xl px-5 py-6" aria-live="polite">
+          <h4 className="font-sans text-lg font-extrabold text-bx-navy-900">{node.name}</h4>
+          <p className="mt-0.5 text-sm text-bx-slate-500">{node.tier}</p>
           <dl className="mt-5 space-y-4">
             {[
               ["Referred volume (Mar 2026)", node.volume],
@@ -137,14 +137,14 @@ function HierarchyPanel() {
               ["Attribution rule", "First touch — referral link"],
               ["Program", "Volume rebate · Tier rates apply"],
             ].map(([term, value]) => (
-              <div key={term} className="border-b border-bx-gold-500/15 pb-3 last:border-b-0 last:pb-0">
-                <dt className="text-[12px] font-sans font-bold uppercase tracking-[0.14em] text-bx-muted">{term}</dt>
-                <dd className="mt-1 text-[15px] font-bold text-bx-ink">{value}</dd>
+              <div key={term} className="border-b border-bx-teal-500/15 pb-3 last:border-b-0 last:pb-0">
+                <dt className="text-[12px] font-sans font-bold uppercase tracking-[0.14em] text-bx-slate-500">{term}</dt>
+                <dd className="mt-1 text-[15px] font-bold text-bx-navy-900">{value}</dd>
               </div>
             ))}
           </dl>
-          <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-bx-muted">
-            <Icon name="audit" size={18} className="mt-0.5 shrink-0 text-bx-gold-600" />
+          <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-bx-slate-500">
+            <Icon name="audit" size={18} className="mt-0.5 shrink-0 text-bx-teal-600" />
             Overrides are computed from this structure — a Tier 1 partner earns
             on their own volume and on their downline, per the program rules.
           </p>
@@ -179,10 +179,10 @@ const LEDGER: LedgerRow[] = [
 const LEDGER_STATUSES: ("All" | LedgerStatus)[] = ["All", "Earned", "Approved", "Settled", "Adjusted"];
 
 const STATUS_STYLE: Record<LedgerStatus, string> = {
-  Earned: "border-bx-gold-600/60 text-bx-maroon-700",
-  Approved: "border-bx-maroon-700 bg-bx-maroon-700/10 text-bx-maroon-700",
-  Settled: "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory",
-  Adjusted: "border-bx-maroon-800/60 text-bx-maroon-800",
+  Earned: "border-bx-teal-600/60 text-bx-teal-700",
+  Approved: "border-bx-navy-700 bg-bx-navy-700/10 text-bx-teal-700",
+  Settled: "border-bx-navy-900 bg-bx-navy-900 text-bx-white",
+  Adjusted: "border-bx-navy-800/60 text-bx-navy-800",
 };
 
 function LedgerPanel() {
@@ -196,7 +196,7 @@ function LedgerPanel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">Commission ledger</h3>
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">Commission ledger</h3>
         <DemoLabel text="Illustrative data — fictional ledger" />
       </div>
       <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Filter ledger by status">
@@ -208,8 +208,8 @@ function LedgerPanel() {
             aria-pressed={status === s}
             className={`min-h-[40px] border px-3.5 font-sans text-sm font-bold transition-colors duration-150 ${
               status === s
-                ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                : "border-bx-gold-500/40 bg-bx-white text-bx-maroon-700 hover:border-bx-maroon-700"
+                ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                : "border-bx-teal-500/40 bg-bx-white text-bx-teal-700 hover:border-bx-navy-700"
             }`}
           >
             {s}
@@ -224,7 +224,7 @@ function LedgerPanel() {
       >
         <table className="w-full min-w-[760px] border-collapse text-left">
           <thead>
-            <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">
+            <tr className="border-b border-bx-teal-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-slate-500">
               <th scope="col" className="py-3 pr-4 font-bold">Partner</th>
               <th scope="col" className="py-3 pr-4 font-bold">Period</th>
               <th scope="col" className="py-3 pr-4 font-bold">Model</th>
@@ -236,12 +236,12 @@ function LedgerPanel() {
           </thead>
           <tbody>
             {filtered.map((row) => (
-              <tr key={`${row.partner}-${row.period}`} className="border-b border-bx-gold-500/15 align-top">
-                <td className="py-3.5 pr-4 text-sm font-bold text-bx-ink">{row.partner}</td>
-                <td className="py-3.5 pr-4 text-sm tabular-nums text-bx-muted">{row.period}</td>
-                <td className="py-3.5 pr-4 text-sm text-bx-muted">{row.model}</td>
-                <td className="py-3.5 pr-4 text-right text-sm tabular-nums text-bx-ink">{row.volume.toLocaleString("en-US")}</td>
-                <td className="py-3.5 pr-4 text-right text-sm font-bold tabular-nums text-bx-ink">
+              <tr key={`${row.partner}-${row.period}`} className="border-b border-bx-teal-500/15 align-top">
+                <td className="py-3.5 pr-4 text-sm font-bold text-bx-navy-900">{row.partner}</td>
+                <td className="py-3.5 pr-4 text-sm tabular-nums text-bx-slate-500">{row.period}</td>
+                <td className="py-3.5 pr-4 text-sm text-bx-slate-500">{row.model}</td>
+                <td className="py-3.5 pr-4 text-right text-sm tabular-nums text-bx-navy-900">{row.volume.toLocaleString("en-US")}</td>
+                <td className="py-3.5 pr-4 text-right text-sm font-bold tabular-nums text-bx-navy-900">
                   ${row.commission.toLocaleString("en-US")}
                 </td>
                 <td className="py-3.5 pr-4">
@@ -249,16 +249,16 @@ function LedgerPanel() {
                     {row.status}
                   </span>
                 </td>
-                <td className="py-3.5 text-sm leading-snug text-bx-muted">{row.source}</td>
+                <td className="py-3.5 text-sm leading-snug text-bx-slate-500">{row.source}</td>
               </tr>
             ))}
           </tbody>
           <tfoot>
-            <tr className="border-t-2 border-bx-maroon-800">
-              <td colSpan={4} className="py-4 pr-4 font-sans text-sm font-bold text-bx-ink">
+            <tr className="border-t-2 border-bx-navy-800">
+              <td colSpan={4} className="py-4 pr-4 font-sans text-sm font-bold text-bx-navy-900">
                 Total shown ({filtered.length} {filtered.length === 1 ? "entry" : "entries"})
               </td>
-              <td className="py-4 pr-4 text-right font-sans text-base font-extrabold tabular-nums text-bx-maroon-700">
+              <td className="py-4 pr-4 text-right font-sans text-base font-extrabold tabular-nums text-bx-teal-700">
                 ${total.toLocaleString("en-US")}
               </td>
               <td colSpan={2} />
@@ -266,7 +266,7 @@ function LedgerPanel() {
           </tfoot>
         </table>
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+      <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
         Every entry traces to its source trades — attribution, tier and
         adjustments included. The adjusted Harborline entry shows a clawback
         recorded as a ledger event, not a quiet edit.
@@ -285,9 +285,9 @@ export default function IbPreview() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className="border border-bx-gold-500/30 bg-bx-ivory">
+    <div className="border border-bx-teal-500/30 bg-bx-white rounded-2xl">
       <TabList tabs={TABS} activeId={active} onSelect={setActive} prefix="ib" ariaLabel="IB preview" />
-      <div className="bg-bx-cream/60 px-5 py-8 sm:px-8">
+      <div className="bg-bx-mint-50/60 px-5 py-8 sm:px-8">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={active}

@@ -38,7 +38,7 @@ export default function ProductUpdatesPage() {
         title={
           <>
             What shipped, what changed,{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               what is next.
             </span>
           </>
@@ -50,7 +50,7 @@ export default function ProductUpdatesPage() {
         imageHeight={1067}
       />
 
-      <Section tone="cream" ariaLabel="What the status labels mean">
+      <Section tone="mint" ariaLabel="What the status labels mean">
         <SectionIntro
           label="Read the labels"
           heading="Four words, four honest meanings"
@@ -59,12 +59,12 @@ export default function ProductUpdatesPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {UPDATE_STATUS_DEFINITIONS.map((def, i) => (
             <Reveal key={def.status} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col items-center border border-bx-gold-500/30 bg-bx-white p-6 text-center">
+              <div className="flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-6 text-center">
                 <FeatureIcon icon={def.icon} size="md" />
                 <div className="mt-5">
                   <StatusBadge status={def.status} />
                 </div>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                   {def.meaning}
                 </p>
               </div>
@@ -73,45 +73,45 @@ export default function ProductUpdatesPage() {
         </div>
       </Section>
 
-      <Section tone="ivory" ariaLabel="Changelog">
+      <Section tone="white" ariaLabel="Changelog">
         <SectionIntro
           label="The changelog"
           heading="Newest first, back to October 2026"
           copy="Entries are never rewritten to flatter the present. When something changes, the correction is published as a new entry."
         />
-        <ol className="relative mt-12 space-y-10 border-l-2 border-bx-gold-500/40 pl-8 sm:pl-12">
+        <ol className="relative mt-12 space-y-10 border-l-2 border-bx-teal-500/40 pl-8 sm:pl-12">
           {PRODUCT_UPDATES.map((update, i) => (
             <Reveal key={update.id} delay={Math.min(i, 3) * 0.06}>
               <li className="relative">
                 <span
                   aria-hidden="true"
-                  className="absolute -left-8 top-2 block h-3.5 w-3.5 rotate-45 border-2 border-bx-gold-500 bg-bx-ivory sm:-left-12"
+                  className="absolute -left-8 top-2 block h-3.5 w-3.5 rotate-45 border-2 border-bx-teal-500 bg-bx-white sm:-left-12"
                 />
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <time
                     dateTime={update.date}
-                    className="font-sans text-sm font-bold text-bx-muted"
+                    className="font-sans text-sm font-bold text-bx-slate-500"
                   >
                     {formatResourceDate(update.date)}
                   </time>
                   <StatusBadge status={update.status} />
                 </div>
-                <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink">
+                <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900">
                   {update.title}
                 </h3>
-                <p className="mt-2 max-w-[68ch] text-base leading-relaxed text-bx-muted">
+                <p className="mt-2 max-w-[68ch] text-base leading-relaxed text-bx-slate-500">
                   {update.summary}
                 </p>
                 <ul className="mt-4 space-y-2">
                   {update.items.map((item) => (
                     <li
                       key={item}
-                      className="flex max-w-[68ch] items-start gap-2.5 text-[15px] leading-relaxed text-bx-ink/90"
+                      className="flex max-w-[68ch] items-start gap-2.5 text-[15px] leading-relaxed text-bx-navy-900/90"
                     >
                       <Icon
                         name="check"
                         size={18}
-                        className="mt-0.5 shrink-0 text-bx-gold-600"
+                        className="mt-0.5 shrink-0 text-bx-teal-600"
                       />
                       {item}
                     </li>
@@ -122,7 +122,7 @@ export default function ProductUpdatesPage() {
           ))}
         </ol>
         <Reveal className="mt-14">
-          <p className="border-t border-bx-gold-500/25 pt-6 text-base leading-relaxed text-bx-muted">
+          <p className="border-t border-bx-teal-500/25 pt-6 text-base leading-relaxed text-bx-slate-500">
             That is the whole log so far. The next entry appears here on
             the day the next change is made — not before.
           </p>
@@ -136,7 +136,7 @@ export default function ProductUpdatesPage() {
         heading={
           <>
             Planned means{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               planned.
             </span>
           </>
@@ -151,7 +151,7 @@ export default function ProductUpdatesPage() {
         </ButtonLink>
       </PhotoBand>
 
-      <Section tone="cream" ariaLabel="Frequently asked questions">
+      <Section tone="mint" ariaLabel="Frequently asked questions">
         <div className="mx-auto max-w-3xl">
           <SectionIntro
             label="Questions"

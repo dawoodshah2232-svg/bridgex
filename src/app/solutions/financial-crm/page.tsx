@@ -1,7 +1,7 @@
 /**
  * Financial CRM — solution page (spec S1).
  * Photographic dark hero. Composition: problem as an ImageText block
- * (handshake photo), then the preview on its maroon stage,
+ * (handshake photo), then the preview on its navy stage,
  * capabilities, a dark workflow, image-led benefits, photographic
  * use-case cards, security, integrations, comparison, a Bosphorus
  * PhotoBand interlude, FAQ.
@@ -43,7 +43,7 @@ export default function FinancialCrmPage() {
         heading={s.problemHeading}
         copy={s.problemCopy}
         pains={s.pains}
-        tone="cream"
+        tone="mint"
         image={{
           src: "/images/solutions-crm-handshake.jpg",
           alt: "Business partners shaking hands in a meeting room",
@@ -64,7 +64,7 @@ export default function FinancialCrmPage() {
         heading={s.capabilitiesHeading}
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
-        tone="ivory"
+        tone="white"
         className="pt-10 sm:pt-12 lg:pt-12"
         icons={["funnel", "crm", "shield"]}
       />
@@ -98,7 +98,7 @@ export default function FinancialCrmPage() {
         heading={s.useCasesHeading}
         copy={s.useCasesCopy}
         useCases={s.useCases}
-        tone="cream"
+        tone="mint"
         images={[
           { src: "/images/industries-brokers.jpg", alt: "Brokerage trading environment", width: 1600, height: 1200 },
           { src: "/images/banking-hall.jpg", alt: "Spacious modern banking hall with a dramatic ceiling", width: 1600, height: 1067 },
@@ -121,7 +121,7 @@ export default function FinancialCrmPage() {
         icons={["chart", "shield", "wallet", "mail", "report"]}
       />
 
-      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="mint" />
 
       <PhotoBand
         image="/images/band-bridge-istanbul.jpg"
@@ -134,7 +134,7 @@ export default function FinancialCrmPage() {
         imageHeight={1280}
       />
 
-      <FaqSection faqs={s.faqs} tone="ivory" />
+      <FaqSection faqs={s.faqs} tone="white" />
 
       <RelatedSolutions related={s.related} />
       <CtaBand heading={s.ctaHeading} copy={s.ctaCopy} />

@@ -1,7 +1,7 @@
 /**
  * Payment Orchestration — solution page (spec S2).
  * Photographic dark hero. Composition: the payment-flow preview
- * leads on its maroon stage, then the problem as an ImageText block
+ * leads on its navy stage, then the problem as an ImageText block
  * (POS photo), capabilities, image-led benefits, a light workflow,
  * photographic use-case cards, security, comparison before
  * integrations, a Singapore skyline PhotoBand interlude, FAQ.
@@ -38,7 +38,7 @@ export default function PaymentOrchestrationPage() {
     <>
       <SolutionHero solution={s} />
 
-      <PreviewShell label={s.previewLabel} heading={s.previewHeading} copy={s.previewCopy} tone="ivory">
+      <PreviewShell label={s.previewLabel} heading={s.previewHeading} copy={s.previewCopy} tone="white">
         <PaymentsPreview />
       </PreviewShell>
 
@@ -47,7 +47,7 @@ export default function PaymentOrchestrationPage() {
         heading={s.problemHeading}
         copy={s.problemCopy}
         pains={s.pains}
-        tone="cream"
+        tone="mint"
         image={{
           src: "/images/payments-pos.jpg",
           alt: "Card payment being processed at a point-of-sale terminal",
@@ -70,7 +70,7 @@ export default function PaymentOrchestrationPage() {
         label={s.benefitsLabel}
         heading={s.benefitsHeading}
         benefits={s.benefits}
-        tone="cream"
+        tone="mint"
         icons={["refresh", "network", "eye", "lock", "report", "sliders"]}
         image={{
           src: "/images/payments-contactless.jpg",
@@ -108,7 +108,7 @@ export default function PaymentOrchestrationPage() {
         icons={["lock", "shield", "key", "audit"]}
       />
 
-      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+      <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="mint" />
 
       <IntegrationList
         heading={s.integrationsHeading}
@@ -129,7 +129,7 @@ export default function PaymentOrchestrationPage() {
         imageHeight={1013}
       />
 
-      <FaqSection faqs={s.faqs} tone="ivory" />
+      <FaqSection faqs={s.faqs} tone="white" />
 
       <RelatedSolutions related={s.related} />
       <CtaBand heading={s.ctaHeading} copy={s.ctaCopy} />

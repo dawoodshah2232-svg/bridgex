@@ -38,10 +38,10 @@ const STAGES: Stage[] = ["New", "Contacted", "Qualified", "Converted"];
 const DESKS = ["All desks", "EMEA", "APAC", "LATAM"];
 
 const STAGE_STYLE: Record<Stage, string> = {
-  New: "border-bx-gold-600/60 text-bx-maroon-700",
-  Contacted: "border-bx-maroon-800/50 text-bx-maroon-800",
-  Qualified: "border-bx-maroon-700 bg-bx-maroon-700/10 text-bx-maroon-700",
-  Converted: "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory",
+  New: "border-bx-teal-600/60 text-bx-teal-700",
+  Contacted: "border-bx-navy-800/50 text-bx-navy-800",
+  Qualified: "border-bx-navy-700 bg-bx-navy-700/10 text-bx-teal-700",
+  Converted: "border-bx-navy-900 bg-bx-navy-900 text-bx-white",
 };
 
 function StagePill({ stage }: { stage: Stage }) {
@@ -72,7 +72,7 @@ function LeadListPanel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">Leads — this week</h3>
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">Leads — this week</h3>
         <DemoLabel text="Illustrative data — fictional leads" />
       </div>
       <div className="mt-5 flex flex-col gap-4 lg:flex-row lg:items-center">
@@ -85,7 +85,7 @@ function LeadListPanel() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by name or country…"
-          className="min-h-[44px] w-full border border-bx-gold-500/40 bg-bx-white px-4 text-[15px] text-bx-ink placeholder:text-bx-muted lg:max-w-xs"
+          className="min-h-[44px] w-full border border-bx-teal-500/40 bg-bx-white rounded-2xl px-4 text-[15px] text-bx-navy-900 placeholder:text-bx-slate-500 lg:max-w-xs"
         />
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by stage">
           {(["All", ...STAGES] as const).map((s) => (
@@ -96,8 +96,8 @@ function LeadListPanel() {
               aria-pressed={stage === s}
               className={`min-h-[40px] border px-3.5 font-sans text-sm font-bold transition-colors duration-150 ${
                 stage === s
-                  ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                  : "border-bx-gold-500/40 bg-bx-white text-bx-maroon-700 hover:border-bx-maroon-700"
+                  ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                  : "border-bx-teal-500/40 bg-bx-white text-bx-teal-700 hover:border-bx-navy-700"
               }`}
             >
               {s}
@@ -113,7 +113,7 @@ function LeadListPanel() {
       >
         <table className="w-full min-w-[640px] border-collapse text-left">
           <thead>
-            <tr className="border-b border-bx-gold-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-muted">
+            <tr className="border-b border-bx-teal-500/40 text-[12px] font-sans uppercase tracking-[0.14em] text-bx-slate-500">
               <th scope="col" className="py-3 pr-4 font-bold">Lead</th>
               <th scope="col" className="py-3 pr-4 font-bold">Country</th>
               <th scope="col" className="py-3 pr-4 font-bold">Desk</th>
@@ -124,24 +124,24 @@ function LeadListPanel() {
           </thead>
           <tbody>
             {filtered.map((lead) => (
-              <tr key={lead.name} className="border-b border-bx-gold-500/15">
-                <td className="py-3.5 pr-4 text-sm font-bold text-bx-ink">{lead.name}</td>
-                <td className="py-3.5 pr-4 text-sm text-bx-muted">{lead.country}</td>
-                <td className="py-3.5 pr-4 text-sm text-bx-muted">{lead.desk}</td>
-                <td className="py-3.5 pr-4 text-sm text-bx-muted">{lead.source}</td>
-                <td className="py-3.5 pr-4 text-sm text-bx-muted">{lead.owner}</td>
+              <tr key={lead.name} className="border-b border-bx-teal-500/15">
+                <td className="py-3.5 pr-4 text-sm font-bold text-bx-navy-900">{lead.name}</td>
+                <td className="py-3.5 pr-4 text-sm text-bx-slate-500">{lead.country}</td>
+                <td className="py-3.5 pr-4 text-sm text-bx-slate-500">{lead.desk}</td>
+                <td className="py-3.5 pr-4 text-sm text-bx-slate-500">{lead.source}</td>
+                <td className="py-3.5 pr-4 text-sm text-bx-slate-500">{lead.owner}</td>
                 <td className="py-3.5"><StagePill stage={lead.stage} /></td>
               </tr>
             ))}
           </tbody>
         </table>
         {filtered.length === 0 && (
-          <p className="py-8 text-center text-sm text-bx-muted" role="status">
+          <p className="py-8 text-center text-sm text-bx-slate-500" role="status">
             No leads match that search and stage. Try clearing the search.
           </p>
         )}
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-bx-muted" role="status">
+      <p className="mt-4 text-sm leading-relaxed text-bx-slate-500" role="status">
         Showing {filtered.length} of {LEADS.length} leads.
         Duplicates are flagged at capture, and every lead has one owner.
       </p>
@@ -156,7 +156,7 @@ function PipelinePanel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">Pipeline by stage</h3>
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">Pipeline by stage</h3>
         <DemoLabel text="Illustrative data — fictional pipeline" />
       </div>
       <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Filter pipeline by desk">
@@ -168,8 +168,8 @@ function PipelinePanel() {
             aria-pressed={desk === d}
             className={`min-h-[40px] border px-3.5 font-sans text-sm font-bold transition-colors duration-150 ${
               desk === d
-                ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                : "border-bx-gold-500/40 bg-bx-white text-bx-maroon-700 hover:border-bx-maroon-700"
+                ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                : "border-bx-teal-500/40 bg-bx-white text-bx-teal-700 hover:border-bx-navy-700"
             }`}
           >
             {d}
@@ -180,37 +180,37 @@ function PipelinePanel() {
         {STAGES.map((stage) => {
           const leads = inDesk.filter((l) => l.stage === stage);
           return (
-            <div key={stage} className="border border-bx-gold-500/30 bg-bx-white p-4">
+            <div key={stage} className="border border-bx-teal-500/30 bg-bx-white rounded-2xl p-4">
               <p className="flex items-baseline justify-between font-sans">
-                <span className="text-sm font-bold text-bx-ink">{stage}</span>
-                <span className="text-2xl font-extrabold text-bx-maroon-700 tabular-nums">
+                <span className="text-sm font-bold text-bx-navy-900">{stage}</span>
+                <span className="text-2xl font-extrabold text-bx-teal-700 tabular-nums">
                   {leads.length}
                 </span>
               </p>
-              <span aria-hidden="true" className="mt-3 block h-[3px] w-full bg-bx-cream">
+              <span aria-hidden="true" className="mt-3 block h-[3px] w-full bg-bx-mint-50">
                 <span
-                  className="block h-[3px] bg-bx-gold-500"
+                  className="block h-[3px] bg-bx-teal-500"
                   style={{ width: `${inDesk.length === 0 ? 0 : Math.round((leads.length / inDesk.length) * 100)}%` }}
                 />
               </span>
               <ul className="mt-4 space-y-2.5">
                 {leads.map((lead) => (
-                  <li key={lead.name} className="border-l-2 border-bx-gold-500/60 pl-3">
-                    <p className="text-sm font-bold text-bx-ink">{lead.name}</p>
-                    <p className="text-[13px] text-bx-muted">
+                  <li key={lead.name} className="border-l-2 border-bx-teal-500/60 pl-3">
+                    <p className="text-sm font-bold text-bx-navy-900">{lead.name}</p>
+                    <p className="text-[13px] text-bx-slate-500">
                       {lead.country} · {lead.owner}
                     </p>
                   </li>
                 ))}
                 {leads.length === 0 && (
-                  <li className="text-sm text-bx-muted">No leads at this stage.</li>
+                  <li className="text-sm text-bx-slate-500">No leads at this stage.</li>
                 )}
               </ul>
             </div>
           );
         })}
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+      <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
         {desk === "All desks"
           ? "All desks combined. Filter by desk to see each team's pipeline."
           : `Showing the ${desk} desk — ${inDesk.length} leads in the pipeline.`}
@@ -308,7 +308,7 @@ function Contact360Panel() {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h3 className="font-sans text-xl font-bold text-bx-ink">Contact 360</h3>
+        <h3 className="font-sans text-xl font-bold text-bx-navy-900">Contact 360</h3>
         <DemoLabel text="Illustrative data — fictional contacts" />
       </div>
       <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Choose a contact record">
@@ -320,8 +320,8 @@ function Contact360Panel() {
             aria-pressed={contactIdx === i}
             className={`min-h-[44px] border px-4 font-sans text-sm font-bold transition-colors duration-150 ${
               contactIdx === i
-                ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                : "border-bx-gold-500/40 bg-bx-white text-bx-maroon-700 hover:border-bx-maroon-700"
+                ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                : "border-bx-teal-500/40 bg-bx-white text-bx-teal-700 hover:border-bx-navy-700"
             }`}
           >
             {c.name}
@@ -329,10 +329,10 @@ function Contact360Panel() {
         ))}
       </div>
 
-      <div className="mt-6 border border-bx-gold-500/30 bg-bx-white">
-        <div className="border-b border-bx-gold-500/30 px-5 py-4 sm:px-6">
-          <p className="font-sans text-lg font-extrabold text-bx-ink">{contact.name}</p>
-          <p className="mt-0.5 text-sm text-bx-muted">
+      <div className="mt-6 border border-bx-teal-500/30 bg-bx-white rounded-2xl">
+        <div className="border-b border-bx-teal-500/30 px-5 py-4 sm:px-6">
+          <p className="font-sans text-lg font-extrabold text-bx-navy-900">{contact.name}</p>
+          <p className="mt-0.5 text-sm text-bx-slate-500">
             {contact.type} · {contact.roles}
           </p>
         </div>
@@ -352,9 +352,9 @@ function Contact360Panel() {
                 ["Linked accounts", contact.accounts],
                 ["Open cases", contact.cases.filter((c) => c.status !== "Resolved").length.toString()],
               ].map(([term, value]) => (
-                <div key={term} className="border-l-2 border-bx-gold-500/60 pl-3">
-                  <dt className="text-[12px] font-sans font-bold uppercase tracking-[0.14em] text-bx-muted">{term}</dt>
-                  <dd className="mt-1 text-[15px] font-bold text-bx-ink">{value}</dd>
+                <div key={term} className="border-l-2 border-bx-teal-500/60 pl-3">
+                  <dt className="text-[12px] font-sans font-bold uppercase tracking-[0.14em] text-bx-slate-500">{term}</dt>
+                  <dd className="mt-1 text-[15px] font-bold text-bx-navy-900">{value}</dd>
                 </div>
               ))}
             </dl>
@@ -363,8 +363,8 @@ function Contact360Panel() {
             <ol className="space-y-4">
               {contact.activities.map((a) => (
                 <li key={a.when} className="flex gap-4">
-                  <span className="shrink-0 text-[13px] font-bold tabular-nums text-bx-maroon-700">{a.when}</span>
-                  <span className="text-[15px] leading-relaxed text-bx-ink">{a.text}</span>
+                  <span className="shrink-0 text-[13px] font-bold tabular-nums text-bx-teal-700">{a.when}</span>
+                  <span className="text-[15px] leading-relaxed text-bx-navy-900">{a.text}</span>
                 </li>
               ))}
             </ol>
@@ -372,9 +372,9 @@ function Contact360Panel() {
           {subTab === "documents" && (
             <ul className="space-y-3">
               {contact.documents.map((d) => (
-                <li key={d.name} className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-gold-500/15 pb-3 last:border-b-0 last:pb-0">
-                  <span className="text-[15px] font-bold text-bx-ink">{d.name}</span>
-                  <span className="border border-bx-gold-600/50 px-2.5 py-1 text-[12px] font-bold text-bx-maroon-700">{d.status}</span>
+                <li key={d.name} className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-teal-500/15 pb-3 last:border-b-0 last:pb-0">
+                  <span className="text-[15px] font-bold text-bx-navy-900">{d.name}</span>
+                  <span className="border border-bx-teal-600/50 px-2.5 py-1 text-[12px] font-bold text-bx-teal-700">{d.status}</span>
                 </li>
               ))}
             </ul>
@@ -382,16 +382,16 @@ function Contact360Panel() {
           {subTab === "cases" && (
             <div>
               {contact.cases.length === 0 ? (
-                <p className="text-[15px] text-bx-muted">No support cases on this record.</p>
+                <p className="text-[15px] text-bx-slate-500">No support cases on this record.</p>
               ) : (
                 <ul className="space-y-3">
                   {contact.cases.map((c) => (
-                    <li key={c.ref} className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-gold-500/15 pb-3 last:border-b-0 last:pb-0">
+                    <li key={c.ref} className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-teal-500/15 pb-3 last:border-b-0 last:pb-0">
                       <span>
-                        <span className="font-sans text-sm font-bold tabular-nums text-bx-maroon-700">{c.ref} · </span>
-                        <span className="text-[15px] text-bx-ink">{c.subject}</span>
+                        <span className="font-sans text-sm font-bold tabular-nums text-bx-teal-700">{c.ref} · </span>
+                        <span className="text-[15px] text-bx-navy-900">{c.subject}</span>
                       </span>
-                      <span className="border border-bx-gold-600/50 px-2.5 py-1 text-[12px] font-bold text-bx-maroon-700">{c.status}</span>
+                      <span className="border border-bx-teal-600/50 px-2.5 py-1 text-[12px] font-bold text-bx-teal-700">{c.status}</span>
                     </li>
                   ))}
                 </ul>
@@ -400,8 +400,8 @@ function Contact360Panel() {
           )}
         </div>
       </div>
-      <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-bx-muted">
-        <Icon name="shield" size={18} className="mt-0.5 shrink-0 text-bx-gold-600" />
+      <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-bx-slate-500">
+        <Icon name="shield" size={18} className="mt-0.5 shrink-0 text-bx-teal-600" />
         Field-level access applies here: a sales user sees the pipeline view, a
         compliance user sees KYC and documents — the same record, different
         permissions.
@@ -421,9 +421,9 @@ export default function CrmPreview() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className="border border-bx-gold-500/30 bg-bx-ivory">
+    <div className="border border-bx-teal-500/30 bg-bx-white rounded-2xl">
       <TabList tabs={TABS} activeId={active} onSelect={setActive} prefix="crm" ariaLabel="CRM preview" />
-      <div className="bg-bx-cream/60 px-5 py-8 sm:px-8">
+      <div className="bg-bx-mint-50/60 px-5 py-8 sm:px-8">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={active}

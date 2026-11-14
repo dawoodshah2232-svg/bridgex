@@ -48,14 +48,14 @@ export default function IntegrationExplorer() {
               }
               className={`flex min-h-[96px] flex-col items-start gap-2 border px-4 py-4 text-left transition-colors duration-200 ${
                 isActive
-                  ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                  : "border-bx-gold-500/25 bg-bx-white text-bx-ink hover:border-bx-gold-500/60"
+                  ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                  : "border-bx-teal-500/25 bg-bx-white text-bx-navy-900 hover:border-bx-teal-500/60"
               }`}
             >
               <Icon
                 name={item.icon}
                 size={26}
-                className={isActive ? "text-bx-gold-400" : "text-bx-gold-600"}
+                className={isActive ? "text-bx-teal-400" : "text-bx-teal-600"}
               />
               <span className="font-sans text-[15px] font-extrabold leading-tight">
                 {item.name}
@@ -75,28 +75,28 @@ export default function IntegrationExplorer() {
           animate={{ opacity: 1, y: 0 }}
           exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 grid gap-8 border border-bx-gold-500/25 bg-bx-white p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-10"
+          className="mt-6 grid gap-8 border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-10"
         >
           <div className="lg:col-span-7">
-            <h3 className="font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-3xl">
+            <h3 className="font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-3xl">
               {category.name}
             </h3>
-            <p className="mt-2 font-sans text-lg font-bold text-bx-maroon-700">
+            <p className="mt-2 font-sans text-lg font-bold text-bx-teal-700">
               {category.tagline}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-bx-muted">{category.detail}</p>
-            <p className="mt-6 border-l-2 border-bx-gold-500 bg-bx-cream px-4 py-3 text-[15px] leading-relaxed text-bx-ink">
+            <p className="mt-4 text-base leading-relaxed text-bx-slate-500">{category.detail}</p>
+            <p className="mt-6 border-l-2 border-bx-teal-500 bg-bx-mint-50 px-4 py-3 text-[15px] leading-relaxed text-bx-navy-900">
               {category.note}
             </p>
           </div>
           <div className="lg:col-span-5">
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700">
               What the adapter handles
             </p>
             <ul className="mt-4 space-y-3">
               {category.handles.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-ink">
-                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-navy-900">
+                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-600" />
                   {item}
                 </li>
               ))}

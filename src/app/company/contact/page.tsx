@@ -39,7 +39,7 @@ export default function ContactPage() {
         title={
           <>
             Talk to a person{" "}
-            <em className="font-display font-semibold italic text-bx-maroon-700">
+            <em className="font-sans font-semibold italic text-bx-teal-700">
               about your business.
             </em>
           </>
@@ -50,16 +50,16 @@ export default function ContactPage() {
         imageWidth={1600}
         imageHeight={1067}
       />
-      <div className="bg-bx-ivory pb-16 sm:pb-20 lg:pb-24">
+      <div className="bg-bx-white pb-16 sm:pb-20 lg:pb-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
             {/* Form */}
             <Reveal>
-              <div className="border border-bx-maroon-900/15 bg-bx-white px-6 py-8 sm:px-10 sm:py-10">
-                <h2 className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-ink">
+              <div className="border border-bx-navy-900/15 bg-bx-white px-6 py-8 sm:px-10 sm:py-10">
+                <h2 className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-navy-900">
                   Send us a message
                 </h2>
-                <p className="mt-2 font-body text-base leading-relaxed text-bx-muted">
+                <p className="mt-2 font-body text-base leading-relaxed text-bx-slate-500">
                   Tell us about your business and what you would like to
                   discuss. The more specific you are, the more useful our
                   reply will be.
@@ -73,21 +73,21 @@ export default function ContactPage() {
             {/* Side panel */}
             <div className="space-y-6">
               <Reveal delay={0.08}>
-                <div className="bg-bx-maroon-900 px-7 py-8 text-bx-ivory">
+                <div className="bg-bx-navy-900 px-7 py-8 text-bx-white">
                   <h2 className="font-sans text-xl font-extrabold tracking-[-0.01em]">
                     What happens next
                   </h2>
                   <ol className="mt-6 space-y-6">
                     {NEXT_STEPS.map((step, i) => (
                       <li key={step.title} className="flex gap-4">
-                        <span className="font-display text-2xl font-semibold text-bx-gold-400">
+                        <span className="font-sans text-2xl font-semibold text-bx-teal-400">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <div>
                           <h3 className="font-sans text-base font-extrabold">
                             {step.title}
                           </h3>
-                          <p className="mt-1 font-body text-[15px] leading-relaxed text-bx-champagne/85">
+                          <p className="mt-1 font-body text-[15px] leading-relaxed text-bx-slate-300/85">
                             {step.text}
                           </p>
                         </div>
@@ -98,14 +98,14 @@ export default function ContactPage() {
               </Reveal>
 
               <Reveal delay={0.14}>
-                <div className="border border-bx-gold-600/50 bg-bx-cream px-7 py-8">
-                  <span className="text-bx-gold-600">
+                <div className="border border-bx-teal-600/50 bg-bx-mint-50 px-7 py-8">
+                  <span className="text-bx-teal-600">
                     <Icon name="mail" size={28} />
                   </span>
-                  <h2 className="mt-4 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
+                  <h2 className="mt-4 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                     Business details
                   </h2>
-                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-muted">
+                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-slate-500">
                     Phone numbers and office addresses will be published here
                     once they are confirmed. Until then, this form is the way
                     to reach us — and the details on this page are editable
@@ -115,11 +115,11 @@ export default function ContactPage() {
               </Reveal>
 
               <Reveal delay={0.2}>
-                <div className="border border-bx-maroon-900/15 bg-bx-white px-7 py-8">
-                  <h2 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
+                <div className="border border-bx-navy-900/15 bg-bx-white px-7 py-8">
+                  <h2 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                     Prefer a demo instead?
                   </h2>
-                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-muted">
+                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-slate-500">
                     If you want to see the platform running on your own
                     workflows, a private demo is the fastest route — 45 to 60
                     minutes, built around your business.
@@ -127,7 +127,7 @@ export default function ContactPage() {
                   <p className="mt-4">
                     <Link
                       href="/book-demo"
-                      className="inline-flex items-center gap-2 font-sans text-[15px] font-extrabold text-bx-maroon-700 hover:text-bx-maroon-900"
+                      className="inline-flex items-center gap-2 font-sans text-[15px] font-extrabold text-bx-teal-700 hover:text-bx-navy-900"
                     >
                       Book a Private Demo
                       <Icon name="arrowRight" size={18} />
@@ -157,7 +157,7 @@ export default function ContactPage() {
         heading={
           <>
             We read{" "}
-            <em className="font-display font-semibold italic text-bx-gold-400">
+            <em className="font-sans font-semibold italic text-bx-teal-400">
               every message.
             </em>
           </>

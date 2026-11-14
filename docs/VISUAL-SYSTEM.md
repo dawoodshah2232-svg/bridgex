@@ -8,9 +8,9 @@ and `src/app/globals.css`; this file covers only what F1 built.
 
 ## Icons — `src/components/icons.tsx`
 
-One cohesive custom SVG set. House style: fine gold line icons,
+One cohesive custom SVG set. House style: fine teal line icons,
 stroke-based, 24×24 viewBox, `currentColor`, round caps/joins,
-default stroke **1.5** (readable at 16px, on maroon and on ivory).
+default stroke **1.5** (readable at 16px, on navy and on white).
 Every path is original hand-drawn geometry — no copied icon-font
 glyphs. Icons are decorative (`aria-hidden`); never convey meaning
 by icon alone.
@@ -21,17 +21,17 @@ by icon alone.
 import Icon, { CrmIcon, solutionIcon } from "@/components/icons";
 
 // 1. Generic component (existing callers already use this)
-<Icon name="crm" size={28} className="text-bx-gold-600" />
+<Icon name="crm" size={28} className="text-bx-teal-600" />
 
 // 2. Individual named component (same props: size, className, strokeWidth)
-<CrmIcon size={28} className="text-bx-gold-600" />
+<CrmIcon size={28} className="text-bx-teal-600" />
 
 // 3. Resolve a content slug to an icon (unknown slugs → "layers")
 <Icon name={solutionIcon(solution.slug)} size={28} />
 ```
 
-Colour: `text-bx-gold-600` on ivory/cream/white, `text-bx-gold-400`
-on maroon. Gold-600 on ivory is ~3.9:1 — fine for icons (3:1
+Colour: `text-bx-teal-600` on white/mint, `text-bx-teal-400`
+on navy. Teal-600 on white is ~3.6:1 — fine for icons (3:1
 graphics threshold), never for small text.
 
 ### Full inventory (70 icons)
@@ -153,7 +153,7 @@ their `icon` fields against `IconName`.
 All image props take a **root-relative public path**
 (`"/images/skyline-dusk.jpg"`) and are routed through `asset()` for
 the `/bridgex` basePath. All take real `alt` text. All use the
-locked palette tokens only — never raw hex, never blue/mint.
+locked palette tokens only — never raw hex (teal/navy/mint are the palette now).
 
 ### PhotoBand — full-bleed photographic band
 
@@ -174,12 +174,12 @@ import { ButtonLink } from "@/components/ui/Button";
 ```
 
 Props: `image`, `alt`, `eyebrow?`, `heading?` (ReactNode, so a
-Cormorant accent phrase is possible), `copy?`, `children?` (usually
+teal-gradient accent phrase is possible), `copy?`, `children?` (usually
 a CTA row, rendered in a wrapping flex), `height?` (`"sm" | "md" |
 "lg"`, min-heights 320/420/520px, taller on desktop),
 `imageWidth?` / `imageHeight?` (default 1600×900),
 `className?`. Image is lazy-loaded — bands sit below the fold.
-The maroon gradient scrim is heavy enough for white text at every
+The navy gradient scrim is heavy enough for white text at every
 height. The content is wrapped in `Reveal` (safe: visible at SSR).
 
 ### ImageText — alternating image / text block
@@ -197,7 +197,7 @@ import ImageText from "@/components/ui/ImageText";
   ctaLabel="Explore the platform"
   ctaHref="/platform"
   flip // image right, text left on desktop
-  tone="cream" // "ivory" | "cream" | "white" — default "ivory"
+  tone="mint" // "white" | "mint" — default "white"
 />
 ```
 
@@ -209,9 +209,9 @@ Props: `image`, `alt`, `eyebrow?`, `heading` (ReactNode, required),
 image eagerly with high priority — use for blocks directly below
 the hero; React 19 then also preloads it — see HeroMedia),
 `className?`, `children?` (extra content between bullets and
-CTA). The photo carries a gold hairline frame offset down-right;
+CTA). The photo carries a teal hairline frame offset down-right;
 the frame lives inside the wrapper's own margin, so it never
-overflows — safe at 375px. A warm champagne background sits
+overflows — safe at 375px. A pale-mint background sits
 behind the photo so the frame never reads as an empty outlined
 rectangle while the image loads. On mobile the image always
 stacks first (it is first in the DOM).
@@ -221,13 +221,13 @@ stacks first (it is first in the DOM).
 ```tsx
 import HeroMedia from "@/components/ui/HeroMedia";
 
-<section className="relative overflow-hidden bg-bx-maroon-950">
+<section className="relative overflow-hidden bg-bx-navy-950">
   <HeroMedia
     image="/images/hero-bridge.jpg"
     alt="Cable-stayed bridge at night over a river, city lights"
     scrim="strong"   // "strong" | "medium" — default "strong"
     kenBurns         // default true
-    bridgeLine       // gold bridge-line motif along the bottom
+    bridgeLine       // teal bridge-line motif along the bottom
   />
   <div className="relative">{/* hero content, H1, CTAs */}</div>
 </section>
@@ -246,7 +246,7 @@ automatically emits a `<link rel="preload" as="image">` for
 `fetchPriority="high"` images during SSR, so the photograph
 starts loading before the body is parsed (verified in the built
 HTML, 14 Nov fix pass). Do NOT add a manual preload link — it
-duplicates React's. `scrim="strong"` (flat 50% maroon-950 plus a
+duplicates React's. `scrim="strong"` (flat 50% navy-950 plus a
 vertical gradient, darkest at the bottom where the H1 sits) is
 the safe choice for white H1 text over any photograph; use
 `"medium"` (flat 35%) only over an already-dark image. Scrims
@@ -271,10 +271,10 @@ Props: `icon` (an `IconName` string **or** a named icon component),
 `label?` (short, one or two words — rendered under the tile in
 small tracked capitals), `size?` (`"sm" | "md" | "lg"` — 48/64/80px
 tiles, 22/28/36px icons), `tone?` (`"light" | "dark"`),
-`className?`. The tile is a **circle** with a thin gold ring —
+`className?`. The tile is a **circle** with a thin teal ring —
 deliberately not the tinted square the house rules ban: soft
-champagne wash + gold-600 icon on light surfaces, deep maroon
-wash + gold-400 icon on dark surfaces.
+mint wash + teal-600 icon on light surfaces, deep navy
+wash + teal-400 icon on dark surfaces.
 
 ## Ken Burns — usage rule
 

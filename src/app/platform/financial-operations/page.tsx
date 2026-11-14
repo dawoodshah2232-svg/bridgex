@@ -81,7 +81,7 @@ export default function FinancialOperationsPage() {
         title={
           <>
             The work of the business,{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               in one queue.
             </span>
           </>
@@ -96,7 +96,7 @@ export default function FinancialOperationsPage() {
       />
 
       {/* Lifecycle — interactive stepper */}
-      <Section tone="cream" id="lifecycle" ariaLabel="Account lifecycle">
+      <Section tone="mint" id="lifecycle" ariaLabel="Account lifecycle">
         <SectionIntro
           label="The lifecycle"
           heading="Five stages. One record, carried through all of them."
@@ -108,7 +108,7 @@ export default function FinancialOperationsPage() {
       </Section>
 
       {/* Wallets & payments */}
-      <Section tone="ivory" id="payments" ariaLabel="Wallets and payments">
+      <Section tone="white" id="payments" ariaLabel="Wallets and payments">
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <SectionIntro
@@ -120,12 +120,12 @@ export default function FinancialOperationsPage() {
               {MONEY_POINTS.map((point, i) => (
                 <Reveal key={point.title} delay={i * 0.08}>
                   <div className="flex gap-4">
-                    <Icon name={point.icon} size={26} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                    <Icon name={point.icon} size={26} className="mt-0.5 shrink-0 text-bx-teal-600" />
                     <div>
-                      <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-ink">
+                      <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
                         {point.title}
                       </h3>
-                      <p className="mt-1.5 max-w-[58ch] text-[15px] leading-relaxed text-bx-muted">
+                      <p className="mt-1.5 max-w-[58ch] text-[15px] leading-relaxed text-bx-slate-500">
                         {point.text}
                       </p>
                     </div>
@@ -134,10 +134,10 @@ export default function FinancialOperationsPage() {
               ))}
             </div>
             <Reveal delay={0.1} className="mt-10">
-              <p className="max-w-[62ch] text-base leading-relaxed text-bx-muted">
+              <p className="max-w-[62ch] text-base leading-relaxed text-bx-slate-500">
                 Routing, cascading retry and provider failover are described in
                 detail on the{" "}
-                <Link href="/solutions/payment-orchestration" className="font-bold text-bx-maroon-700 hover:underline">
+                <Link href="/solutions/payment-orchestration" className="font-bold text-bx-teal-700 hover:underline">
                   payment orchestration
                 </Link>{" "}
                 page. BridgeX never stores raw card data — collection uses
@@ -148,27 +148,27 @@ export default function FinancialOperationsPage() {
 
           {/* Illustrative wallet ledger */}
           <Reveal delay={0.12} className="lg:col-span-5">
-            <div className="border border-bx-gold-500/25 bg-bx-white p-6">
+            <div className="border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
+                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700">
                   Wallet activity — sample
                 </p>
                 <DemoLabel text="Illustrative data" />
               </div>
-              <ul className="mt-5 divide-y divide-bx-gold-500/20">
+              <ul className="mt-5 divide-y divide-bx-teal-500/20">
                 {WALLET_ROWS.map((row) => (
                   <li key={row.label} className="py-3.5">
                     <div className="flex items-baseline justify-between gap-4">
-                      <span className="text-[15px] font-bold text-bx-ink">{row.label}</span>
-                      <span className="font-sans text-[15px] font-bold text-bx-ink">
+                      <span className="text-[15px] font-bold text-bx-navy-900">{row.label}</span>
+                      <span className="font-sans text-[15px] font-bold text-bx-navy-900">
                         {row.value}
                       </span>
                     </div>
-                    <span className="mt-1 inline-block text-sm text-bx-muted">{row.status}</span>
+                    <span className="mt-1 inline-block text-sm text-bx-slate-500">{row.status}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 border-t border-bx-gold-500/20 pt-4 text-sm leading-relaxed text-bx-muted">
+              <p className="mt-4 border-t border-bx-teal-500/20 pt-4 text-sm leading-relaxed text-bx-slate-500">
                 Fictional entries shown to illustrate the ledger layout. Real
                 entries link to their payment request, provider event and
                 reconciliation match.
@@ -186,7 +186,7 @@ export default function FinancialOperationsPage() {
         heading={
           <>
             One queue, one record,{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               one audit trail.
             </span>
           </>
@@ -201,13 +201,13 @@ export default function FinancialOperationsPage() {
       <Section tone="white" ariaLabel="Service cases and incentives">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
               Service cases
             </p>
-            <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-bx-ink sm:text-4xl">
+            <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-bx-navy-900 sm:text-4xl">
               Cases arrive with the answers half-attached.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-bx-muted">
+            <p className="mt-4 text-base leading-relaxed text-bx-slate-500">
               A case opens with the client&apos;s accounts, payments, documents
               and history already linked — so the agent starts by helping, not
               by investigating. Assignment and escalation follow configured
@@ -221,21 +221,21 @@ export default function FinancialOperationsPage() {
                 "Escalation rules by type, age and value",
                 "Client-visible status, so fewer cases chase their own update",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-ink">
-                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-navy-900">
+                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-600" />
                   {item}
                 </li>
               ))}
             </ul>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
               Incentives
             </p>
-            <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-bx-ink sm:text-4xl">
+            <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-bx-navy-900 sm:text-4xl">
               Commissions a partner can audit — and so can you.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-bx-muted">
+            <p className="mt-4 text-base leading-relaxed text-bx-slate-500">
               Partner earnings are calculated from configured program rules and
               held as ledger entries: earned, adjusted, approved, settled. Each
               entry traces to its source event and its rule — so when a partner
@@ -249,15 +249,15 @@ export default function FinancialOperationsPage() {
                 "Clawbacks recorded, never silently edited",
                 "Partner statements generated from the ledger",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-ink">
-                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-navy-900">
+                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-600" />
                   {item}
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[15px] leading-relaxed text-bx-muted">
+            <p className="mt-6 text-[15px] leading-relaxed text-bx-slate-500">
               Full detail:{" "}
-              <Link href="/solutions/ib-incentives" className="font-bold text-bx-maroon-700 hover:underline">
+              <Link href="/solutions/ib-incentives" className="font-bold text-bx-teal-700 hover:underline">
                 IB &amp; Incentive Management
               </Link>
               .
@@ -267,27 +267,27 @@ export default function FinancialOperationsPage() {
       </Section>
 
       {/* Approvals — dark */}
-      <Section tone="maroon" id="approvals" ariaLabel="Approvals and maker-checker controls">
+      <Section tone="navy" id="approvals" ariaLabel="Approvals and maker-checker controls">
         <SectionIntro
           dark
           label="Approvals"
           heading={
             <>
               Nothing material moves{" "}
-              <span className="font-display font-semibold italic text-bx-champagne">
+              <span className="font-sans font-semibold italic text-bx-teal-400">
                 on one person’s say-so.
               </span>
             </>
           }
           copy="Approvals are not a formality in BridgeX — they are the mechanism by which the business proves, afterwards, that the right person released the right amount for the right reason."
         />
-        <div className="mt-12 grid gap-px border border-bx-gold-500/25 bg-bx-gold-500/25 sm:grid-cols-2">
+        <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2">
           {APPROVAL_POINTS.map((point) => (
-            <div key={point.title} className="bg-bx-maroon-900 p-6 sm:p-8">
-              <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-ivory">
+            <div key={point.title} className="bg-bx-navy-900 rounded-2xl p-6 sm:p-8">
+              <h3 className="font-sans text-lg font-extrabold leading-tight text-bx-white">
                 {point.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+              <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-300/85">
                 {point.text}
               </p>
             </div>
@@ -299,7 +299,7 @@ export default function FinancialOperationsPage() {
         heading="Operations questions, answered plainly."
         copy="Approvals, reconciliation, escalation, commissions and card data — the questions finance and compliance ask first."
         items={FINANCIAL_OPERATIONS_FAQS}
-        tone="cream"
+        tone="mint"
       />
 
       <CtaBand

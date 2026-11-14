@@ -1,7 +1,7 @@
 /**
  * ImageText — the alternating image / text block.
  *
- * Photograph on one side inside a gold hairline frame, offset
+ * Photograph on one side inside a teal hairline frame, offset
  * down-right (the frame sits in the wrapper's own margin, so it
  * never overflows — safe at 375px). Eyebrow / heading / copy /
  * check-marked bullets / CTA on the other. `flip` mirrors the
@@ -11,8 +11,8 @@
  * `image` is a root-relative public path ("/images/team-discussion.jpg");
  * it is routed through `asset()` for the /bridgex basePath.
  *
- * The photograph carries a warm champagne background behind it, so the
- * gold frame never reads as an empty outlined rectangle while the image
+ * The photograph carries a warm pale mint background behind it, so the
+ * teal frame never reads as an empty outlined rectangle while the image
  * is still loading (fix, 14 Nov). Pass `eager` for blocks directly
  * below the hero — their images are in or near the first viewport.
  */
@@ -23,12 +23,11 @@ import { Container } from "./Container";
 import { ButtonLink } from "./Button";
 import Reveal from "./Reveal";
 
-type ImageTextTone = "ivory" | "cream" | "white";
+type ImageTextTone = "white" | "mint";
 
 const TONES: Record<ImageTextTone, string> = {
-  ivory: "bg-bx-ivory",
-  cream: "bg-bx-cream",
   white: "bg-bx-white",
+  mint: "bg-bx-mint-50",
 };
 
 export default function ImageText({
@@ -41,7 +40,7 @@ export default function ImageText({
   ctaLabel,
   ctaHref,
   flip = false,
-  tone = "ivory",
+  tone = "white",
   imageWidth = 1200,
   imageHeight = 900,
   eager = false,
@@ -52,9 +51,9 @@ export default function ImageText({
   image: string;
   /** Real alt text describing the actual photograph. */
   alt: string;
-  /** Optional small tracked label above the heading (maroon-700 on light). */
+  /** Optional small tracked label above the heading (teal-700 on light). */
   eyebrow?: string;
-  /** Heading — ReactNode so callers can set a Cormorant accent phrase. */
+  /** Heading — ReactNode so callers can set a teal-gradient accent phrase. */
   heading: ReactNode;
   copy?: string;
   /** Optional check-marked bullet list under the copy. */
@@ -80,12 +79,12 @@ export default function ImageText({
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Image first in the DOM: stacks image-first on mobile. */}
           <Reveal className={flip ? "lg:order-2" : ""}>
-            {/* The offset gold frame lives inside the wrapper's own
+            {/* The offset teal frame lives inside the wrapper's own
                 right/bottom margin, so nothing overflows at 375px. */}
             <div className="relative mb-3 mr-3 sm:mb-4 sm:mr-4">
               <div
                 aria-hidden="true"
-                className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-teal-500/60 sm:translate-x-4 sm:translate-y-4"
               />
               <img
                 src={asset(image)}
@@ -94,21 +93,21 @@ export default function ImageText({
                 height={imageHeight}
                 loading={eager ? "eager" : "lazy"}
                 fetchPriority={eager ? "high" : undefined}
-                className="relative aspect-[4/3] w-full bg-bx-champagne/60 object-cover"
+                className="relative aspect-[4/3] w-full bg-bx-mint-100/60 object-cover"
               />
             </div>
           </Reveal>
           <Reveal delay={0.05} className={flip ? "lg:order-1" : ""}>
             {eyebrow && (
-              <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+              <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-teal-700">
                 {eyebrow}
               </p>
             )}
-            <h2 className="mt-4 font-sans text-[34px] font-extrabold leading-[1.08] tracking-[-0.02em] text-balance text-bx-ink sm:text-5xl">
+            <h2 className="mt-4 font-sans text-[34px] font-extrabold leading-[1.08] tracking-[-0.02em] text-balance text-bx-navy-900 sm:text-5xl">
               {heading}
             </h2>
             {copy && (
-              <p className="mt-5 max-w-[65ch] text-base leading-relaxed text-bx-muted sm:text-lg">
+              <p className="mt-5 max-w-[65ch] text-base leading-relaxed text-bx-slate-500 sm:text-lg">
                 {copy}
               </p>
             )}
@@ -116,8 +115,8 @@ export default function ImageText({
               <ul className="mt-7 space-y-3">
                 {bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-3">
-                    <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-600" />
-                    <span className="text-[15px] leading-relaxed text-bx-ink sm:text-base">
+                    <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-600" />
+                    <span className="text-[15px] leading-relaxed text-bx-navy-900 sm:text-base">
                       {bullet}
                     </span>
                   </li>

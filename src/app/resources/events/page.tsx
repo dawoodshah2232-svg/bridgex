@@ -53,7 +53,7 @@ export default function EventsPage() {
         title={
           <>
             Events,{" "}
-            <span className="font-display italic text-bx-gold-400">
+            <span className="font-sans italic text-bx-teal-400">
               coming soon.
             </span>
           </>
@@ -65,7 +65,7 @@ export default function EventsPage() {
         imageHeight={1067}
       />
 
-      <Section tone="ivory" ariaLabel="Planned webinars">
+      <Section tone="white" ariaLabel="Planned webinars">
         <SectionIntro
           label="The planned programme"
           heading="Four sessions, four recurring questions"
@@ -74,7 +74,7 @@ export default function EventsPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {EVENT_TOPICS.map((topic, i) => (
             <Reveal key={topic.id} delay={(i % 2) * 0.08} className="h-full">
-              <article className="flex h-full flex-col overflow-hidden border border-bx-gold-500/30 bg-bx-white">
+              <article className="flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl">
                 <div className="overflow-hidden">
                   <img
                     src={asset(topic.image)}
@@ -88,35 +88,35 @@ export default function EventsPage() {
                 <div className="flex flex-1 flex-col p-7 sm:p-8">
                   <div className="flex flex-wrap items-center gap-3">
                     <StatusBadge status="Planned" />
-                    <span className="font-sans text-[13px] font-bold text-bx-muted">
+                    <span className="font-sans text-[13px] font-bold text-bx-slate-500">
                       {topic.format}
                     </span>
                   </div>
-                  <h3 className="mt-4 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink">
+                  <h3 className="mt-4 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900">
                     {topic.title}
                   </h3>
-                  <p className="mt-1 font-sans text-sm font-bold text-bx-muted">
+                  <p className="mt-1 font-sans text-sm font-bold text-bx-slate-500">
                     For {topic.audience}
                   </p>
-                  <p className="mt-3 flex-1 text-base leading-relaxed text-bx-muted">
+                  <p className="mt-3 flex-1 text-base leading-relaxed text-bx-slate-500">
                     {topic.description}
                   </p>
-                  <ul className="mt-5 space-y-2 border-t border-bx-gold-500/25 pt-5">
+                  <ul className="mt-5 space-y-2 border-t border-bx-teal-500/25 pt-5">
                     {topic.points.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-2.5 text-[15px] leading-relaxed text-bx-ink/90"
+                        className="flex items-start gap-2.5 text-[15px] leading-relaxed text-bx-navy-900/90"
                       >
                         <Icon
                           name="check"
                           size={18}
-                          className="mt-0.5 shrink-0 text-bx-gold-600"
+                          className="mt-0.5 shrink-0 text-bx-teal-600"
                         />
                         {point}
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-5 font-sans text-sm font-bold text-bx-maroon-700">
+                  <p className="mt-5 font-sans text-sm font-bold text-bx-teal-700">
                     Date to be announced
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export default function EventsPage() {
         </div>
       </Section>
 
-      <Section tone="cream" ariaLabel="What to expect">
+      <Section tone="mint" ariaLabel="What to expect">
         <SectionIntro
           label="What to expect"
           heading="Sessions worth an hour of your day"
@@ -135,12 +135,12 @@ export default function EventsPage() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {WHAT_TO_EXPECT.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col items-center border border-bx-gold-500/30 bg-bx-white p-7 text-center">
+              <div className="flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
                 <FeatureIcon icon={item.icon} size="md" />
-                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-slate-500">
                   {item.text}
                 </p>
               </div>
@@ -149,7 +149,7 @@ export default function EventsPage() {
         </div>
       </Section>
 
-      <Section tone="ivory" id="register" ariaLabel="Register interest">
+      <Section tone="white" id="register" ariaLabel="Register interest">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           <div>
             <SectionIntro
@@ -157,30 +157,30 @@ export default function EventsPage() {
               heading="Be first to hear when a date is set"
               copy="Choose the session you would attend and save your interest. It stays in your browser on this device — nothing is sent to BridgeX yet, and the form says so plainly."
             />
-            <p className="mt-8 text-base leading-relaxed text-bx-muted">
+            <p className="mt-8 text-base leading-relaxed text-bx-slate-500">
               Prefer to talk now instead of waiting for a webinar?{" "}
               <Link
                 href="/company/contact"
-                className="font-bold text-bx-maroon-700 underline decoration-bx-gold-500 decoration-2 underline-offset-2 hover:text-bx-maroon-900"
+                className="font-bold text-bx-teal-700 underline decoration-bx-teal-500 decoration-2 underline-offset-2 hover:text-bx-navy-900"
               >
                 Contact us
               </Link>{" "}
               or{" "}
               <Link
                 href="/book-demo"
-                className="font-bold text-bx-maroon-700 underline decoration-bx-gold-500 decoration-2 underline-offset-2 hover:text-bx-maroon-900"
+                className="font-bold text-bx-teal-700 underline decoration-bx-teal-500 decoration-2 underline-offset-2 hover:text-bx-navy-900"
               >
                 book a private demo
               </Link>
               .
             </p>
             <Reveal className="mt-10">
-              {/* Offset gold frame lives inside the wrapper's own
+              {/* Offset teal frame lives inside the wrapper's own
                   margin, so nothing overflows at 375px. */}
               <div className="relative mb-3 mr-3 sm:mb-4 sm:mr-4">
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-teal-500/60 sm:translate-x-4 sm:translate-y-4"
                 />
                 <img
                   src={asset("/images/boardroom-conference.jpg")}
@@ -199,7 +199,7 @@ export default function EventsPage() {
         </div>
       </Section>
 
-      <Section tone="cream" ariaLabel="Frequently asked questions">
+      <Section tone="mint" ariaLabel="Frequently asked questions">
         <div className="mx-auto max-w-3xl">
           <SectionIntro
             label="Questions"

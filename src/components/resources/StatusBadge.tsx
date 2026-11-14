@@ -5,10 +5,10 @@
 import type { UpdateStatus } from "@/content/resources";
 
 const STYLES: Record<UpdateStatus, string> = {
-  Live: "border-bx-maroon-700/60 bg-bx-maroon-700 text-bx-ivory",
-  Sandbox: "border-bx-gold-600/60 bg-bx-gold-600/10 text-bx-maroon-700",
-  Demo: "border-bx-gold-500/60 bg-bx-cream text-bx-maroon-700",
-  Planned: "border-dashed border-bx-muted/60 bg-transparent text-bx-muted",
+  Live: "border-bx-navy-700/60 bg-bx-navy-700 text-bx-white",
+  Sandbox: "border-bx-teal-600/60 bg-bx-teal-600/10 text-bx-teal-700",
+  Demo: "border-bx-teal-500/60 bg-bx-mint-50 text-bx-teal-700",
+  Planned: "border-dashed border-bx-slate-500/60 bg-transparent text-bx-slate-500",
 };
 
 export default function StatusBadge({ status }: { status: UpdateStatus }) {

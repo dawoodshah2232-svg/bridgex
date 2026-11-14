@@ -3,7 +3,7 @@
  *
  * The four layers render as a stacked SVG-free diagram (real HTML buttons,
  * so the diagram is keyboard-operable and readable without JS), joined by
- * a gold trace line on the left. Below the stack, the shared foundation
+ * a teal trace line on the left. Below the stack, the shared foundation
  * bar lists the six cross-cutting capabilities; selecting a layer or a
  * foundation item swaps the detail panel on the right.
  */
@@ -42,10 +42,10 @@ export default function ArchitectureExplorer() {
           aria-orientation="vertical"
           className="relative"
         >
-          {/* Gold trace line joining the layers */}
+          {/* Teal trace line joining the layers */}
           <div
             aria-hidden="true"
-            className="absolute bottom-6 left-[27px] top-6 w-px bg-bx-gold-500/50"
+            className="absolute bottom-6 left-[27px] top-6 w-px bg-bx-teal-500/50"
           />
           <div className="relative flex flex-col gap-3">
             {PLATFORM_LAYERS.map((item, i) => {
@@ -64,16 +64,16 @@ export default function ArchitectureExplorer() {
                   }
                   className={`flex min-h-[76px] items-center gap-4 border px-5 py-4 text-left transition-colors duration-200 ${
                     isActive
-                      ? "border-bx-gold-500 bg-bx-maroon-900 text-bx-ivory"
-                      : "border-bx-gold-500/25 bg-bx-white text-bx-ink hover:border-bx-gold-500/60"
+                      ? "border-bx-teal-500 bg-bx-navy-900 text-bx-white"
+                      : "border-bx-teal-500/25 bg-bx-white text-bx-navy-900 hover:border-bx-teal-500/60"
                   }`}
                 >
                   <span
                     aria-hidden="true"
                     className={`relative z-10 h-3 w-3 shrink-0 rotate-45 border ${
                       isActive
-                        ? "border-bx-gold-400 bg-bx-gold-400"
-                        : "border-bx-gold-600 bg-bx-ivory"
+                        ? "border-bx-teal-400 bg-bx-teal-400"
+                        : "border-bx-teal-600 bg-bx-white"
                     }`}
                   />
                   <span className="flex-1">
@@ -82,7 +82,7 @@ export default function ArchitectureExplorer() {
                     </span>
                     <span
                       className={`mt-0.5 block text-sm leading-snug ${
-                        isActive ? "text-bx-champagne/85" : "text-bx-muted"
+                        isActive ? "text-bx-slate-300/85" : "text-bx-slate-500"
                       }`}
                     >
                       {item.text}
@@ -91,7 +91,7 @@ export default function ArchitectureExplorer() {
                   <Icon
                     name={layerIcon(item.id)}
                     size={26}
-                    className={isActive ? "text-bx-gold-400" : "text-bx-gold-600"}
+                    className={isActive ? "text-bx-teal-400" : "text-bx-teal-600"}
                   />
                 </button>
               );
@@ -100,7 +100,7 @@ export default function ArchitectureExplorer() {
         </div>
 
         {/* Shared foundation */}
-        <p className="mb-3 mt-8 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+        <p className="mb-3 mt-8 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
           Shared foundation — select to inspect
         </p>
         <div
@@ -130,14 +130,14 @@ export default function ArchitectureExplorer() {
                 }
                 className={`flex min-h-[64px] flex-col items-start gap-1.5 border px-4 py-3 text-left transition-colors duration-200 ${
                   isActive
-                    ? "border-bx-gold-500 bg-bx-maroon-800 text-bx-ivory"
-                    : "border-bx-gold-500/25 bg-bx-cream text-bx-ink hover:border-bx-gold-500/60"
+                    ? "border-bx-teal-500 bg-bx-navy-800 text-bx-white"
+                    : "border-bx-teal-500/25 bg-bx-mint-50 text-bx-navy-900 hover:border-bx-teal-500/60"
                 }`}
               >
                 <Icon
                   name={item.icon}
                   size={20}
-                  className={isActive ? "text-bx-gold-400" : "text-bx-gold-600"}
+                  className={isActive ? "text-bx-teal-400" : "text-bx-teal-600"}
                 />
                 <span className="font-sans text-sm font-bold leading-tight">{item.title}</span>
               </button>
@@ -160,21 +160,21 @@ export default function ArchitectureExplorer() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="flex h-full flex-col border border-bx-gold-500/25 bg-bx-white p-6 sm:p-8 lg:p-10"
+            className="flex h-full flex-col border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8 lg:p-10"
           >
             {isLayer ? (
               <>
-                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
                   Layer — {layer.name}
                 </p>
-                <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-3xl">
+                <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-3xl">
                   {layer.tag}
                 </h3>
-                <p className="mt-4 text-base leading-relaxed text-bx-muted">{layer.detail}</p>
+                <p className="mt-4 text-base leading-relaxed text-bx-slate-500">{layer.detail}</p>
                 <ul className="mt-6 space-y-3">
                   {layer.points.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-ink">
-                      <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-gold-600" />
+                    <li key={point} className="flex items-start gap-3 text-[15px] leading-relaxed text-bx-navy-900">
+                      <Icon name="check" size={20} className="mt-0.5 shrink-0 text-bx-teal-600" />
                       {point}
                     </li>
                   ))}
@@ -182,7 +182,7 @@ export default function ArchitectureExplorer() {
                 <div className="mt-auto pt-8">
                   <Link
                     href={layer.href}
-                    className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-maroon-700 hover:text-bx-maroon-900"
+                    className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
                   >
                     Open the {layer.name} page
                     <Icon
@@ -195,15 +195,15 @@ export default function ArchitectureExplorer() {
               </>
             ) : (
               <>
-                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
                   Shared foundation
                 </p>
-                <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-3xl">
+                <h3 className="mt-3 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-3xl">
                   {foundation.title}
                 </h3>
-                <p className="mt-4 text-base leading-relaxed text-bx-muted">{foundation.text}</p>
-                <p className="mt-4 text-base leading-relaxed text-bx-muted">{foundation.detail}</p>
-                <p className="mt-auto pt-8 text-sm leading-relaxed text-bx-muted">
+                <p className="mt-4 text-base leading-relaxed text-bx-slate-500">{foundation.text}</p>
+                <p className="mt-4 text-base leading-relaxed text-bx-slate-500">{foundation.detail}</p>
+                <p className="mt-auto pt-8 text-sm leading-relaxed text-bx-slate-500">
                   Foundation capabilities run under every layer — they are the
                   reason a change in one layer is visible to the others without
                   a sync, a copy or a second source of truth.

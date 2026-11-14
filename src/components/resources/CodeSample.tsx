@@ -48,14 +48,14 @@ export default function CodeSample({
   }
 
   return (
-    <figure className="overflow-hidden border border-bx-gold-500/30 bg-bx-maroon-950">
-      <figcaption className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-gold-500/25 px-4 py-2.5">
-        <span className="font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-bx-gold-400">
+    <figure className="overflow-hidden border border-bx-teal-500/30 bg-bx-navy-950">
+      <figcaption className="flex flex-wrap items-center justify-between gap-3 border-b border-bx-teal-500/25 px-4 py-2.5">
+        <span className="font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-bx-teal-400">
           {label}
         </span>
         <span className="flex items-center gap-3">
           {example && (
-            <span className="font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-bx-champagne/80">
+            <span className="font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-bx-slate-300/80">
               Example — not a live endpoint
             </span>
           )}
@@ -63,7 +63,7 @@ export default function CodeSample({
             type="button"
             onClick={copy}
             aria-live="polite"
-            className="min-h-[32px] border border-bx-champagne/40 px-3 font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-bx-champagne transition-colors hover:bg-bx-champagne hover:text-bx-maroon-950"
+            className="min-h-[32px] border border-bx-white/40 px-3 font-sans text-[12px] font-bold uppercase tracking-[0.14em] text-bx-slate-300 transition-colors hover:bg-bx-mint-100 hover:text-bx-navy-900"
           >
             {copied ? "Copied" : "Copy"}
           </button>
@@ -73,7 +73,7 @@ export default function CodeSample({
         tabIndex={0}
         role="region"
         aria-label={`Code sample — ${label}`}
-        className="overflow-x-auto p-4 font-mono text-[13px] leading-relaxed text-bx-ivory/90 sm:text-sm"
+        className="overflow-x-auto p-4 font-mono text-[13px] leading-relaxed text-bx-white/90 sm:text-sm"
       >
         <code>{code}</code>
       </pre>

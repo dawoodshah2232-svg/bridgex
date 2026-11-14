@@ -18,7 +18,7 @@ export default function BackToTop() {
     <button
       type="button"
       onClick={goTop}
-      className="inline-flex min-h-[44px] items-center gap-2 border border-bx-gold-500/40 px-4 font-sans text-sm font-bold text-bx-champagne transition-colors duration-200 hover:border-bx-gold-400 hover:text-bx-gold-400 active:scale-[0.97]"
+      className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-[#E2E8F0] px-4 font-sans text-sm font-bold text-bx-slate-500 transition-colors duration-200 hover:border-bx-teal-500 hover:text-bx-teal-600 active:scale-[0.97]"
     >
       Back to top
       <span className="rotate-180">

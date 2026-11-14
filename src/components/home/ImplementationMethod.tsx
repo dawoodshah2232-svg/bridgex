@@ -1,7 +1,7 @@
 /**
  * H10 — Implementation method: Discover → Configure → Integrate → Launch →
  * Improve. A real <ol> (order carries meaning here), horizontal on desktop
- * with a connecting gold line, stacked on mobile. Each step names its
+ * with a connecting teal line, stacked on mobile. Each step names its
  * deliverable.
  */
 import Link from "next/link";
@@ -46,14 +46,14 @@ const STEPS: { name: string; icon: IconName; text: string; deliverable: string }
 
 export default function ImplementationMethod() {
   return (
-    <Section tone="ivory" ariaLabel="Implementation method">
+    <Section tone="white" ariaLabel="Implementation method">
       <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
         <SectionIntro
           label="How we work with you"
           heading={
             <>
               From first workshop{" "}
-              <span className="font-display font-semibold italic text-bx-maroon-700">
+              <span className="font-sans font-semibold italic text-bx-teal-700">
                 to live operations.
               </span>
             </>
@@ -63,7 +63,7 @@ export default function ImplementationMethod() {
         <Reveal delay={0.15} className="shrink-0">
           <Link
             href="/services/implementation"
-            className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-maroon-700 hover:text-bx-maroon-900"
+            className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
           >
             Our implementation service
             <Icon
@@ -79,27 +79,27 @@ export default function ImplementationMethod() {
         {/* Connecting line (desktop) */}
         <span
           aria-hidden="true"
-          className="absolute left-0 right-0 top-[7px] hidden h-px bg-bx-gold-500/50 lg:block"
+          className="absolute left-0 right-0 top-[7px] hidden h-px bg-bx-teal-500/50 lg:block"
         />
         {STEPS.map((step, i) => (
           <li key={step.name} className="relative">
             <Reveal delay={0.08 * i}>
               <span
                 aria-hidden="true"
-                className="relative z-10 block h-[15px] w-[15px] rotate-45 border-2 border-bx-gold-500 bg-bx-ivory"
+                className="relative z-10 block h-[15px] w-[15px] rotate-45 border-2 border-bx-teal-500 bg-bx-white"
               />
-              <h3 className="mt-5 flex items-center gap-2.5 font-sans text-xl font-bold text-bx-ink">
+              <h3 className="mt-5 flex items-center gap-2.5 font-sans text-xl font-bold text-bx-navy-900">
                 <Icon
                   name={step.icon}
                   size={22}
-                  className="shrink-0 text-bx-gold-600"
+                  className="shrink-0 text-bx-teal-600"
                 />
                 {step.name}
               </h3>
-              <p className="mt-2.5 text-[15px] leading-relaxed text-bx-muted">
+              <p className="mt-2.5 text-[15px] leading-relaxed text-bx-slate-500">
                 {step.text}
               </p>
-              <p className="mt-4 border-l-2 border-bx-gold-500 pl-3 text-sm leading-relaxed text-bx-maroon-700">
+              <p className="mt-4 border-l-2 border-bx-teal-500 pl-3 text-sm leading-relaxed text-bx-teal-700">
                 <span className="font-sans font-bold">You get: </span>
                 {step.deliverable}
               </p>
@@ -118,7 +118,7 @@ export default function ImplementationMethod() {
             loading="lazy"
             className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
           />
-          <figcaption className="mt-3 text-sm text-bx-muted">
+          <figcaption className="mt-3 text-sm text-bx-slate-500">
             Discovery starts with your team in the room — mapping how the
             business actually operates, before anything is configured.
           </figcaption>

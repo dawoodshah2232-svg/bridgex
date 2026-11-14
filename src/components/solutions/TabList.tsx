@@ -44,7 +44,7 @@ export default function TabList({
     <div
       role="tablist"
       aria-label={ariaLabel}
-      className="flex flex-col gap-2 border-b border-bx-gold-500/30 sm:flex-row sm:gap-0"
+      className="flex flex-col gap-2 border-b border-bx-teal-500/30 sm:flex-row sm:gap-0"
     >
       {tabs.map((tab) => {
         const selected = activeId === tab.id;
@@ -64,18 +64,18 @@ export default function TabList({
             className={`relative min-h-[56px] px-5 py-3 text-left transition-colors duration-200 sm:px-6 ${
               selected
                 ? dark
-                  ? "text-bx-champagne"
-                  : "text-bx-maroon-900"
+                  ? "text-bx-slate-300"
+                  : "text-bx-navy-900"
                 : dark
-                  ? "text-bx-champagne/60 hover:text-bx-champagne"
-                  : "text-bx-muted hover:text-bx-maroon-700"
+                  ? "text-bx-slate-300/60 hover:text-bx-slate-300"
+                  : "text-bx-slate-500 hover:text-bx-teal-700"
             }`}
           >
             <span className="block font-sans text-base font-bold">{tab.label}</span>
             {tab.hint && <span className="block text-[13px]">{tab.hint}</span>}
             <span
               aria-hidden="true"
-              className={`absolute inset-x-0 -bottom-px h-[2px] bg-bx-gold-500 transition-opacity duration-200 ${
+              className={`absolute inset-x-0 -bottom-px h-[2px] bg-bx-teal-500 transition-opacity duration-200 ${
                 selected ? "opacity-100" : "opacity-0"
               }`}
             />

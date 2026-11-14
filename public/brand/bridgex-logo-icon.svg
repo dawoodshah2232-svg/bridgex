@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="BridgeX mark">
   <title>BridgeX — symbol only</title>
   <desc>Angular B/X bridge glyph: a maroon diagonal bar crossed by a gold bar that passes behind it at the centre. Crisp at 16px.</desc>
-  <polygon points="35.2,7.2 40.8,12.8 30.3,23.3 24.7,17.7" fill="#C29A55"/>
-  <polygon points="17.7,24.7 23.3,30.3 12.8,40.8 7.2,35.2" fill="#C29A55"/>
-  <polygon points="7.2,12.8 12.8,7.2 40.8,35.2 35.2,40.8" fill="#360F20"/>
+  <polygon points="35.2,7.2 40.8,12.8 30.3,23.3 24.7,17.7" fill="#14B8A6"/>
+  <polygon points="17.7,24.7 23.3,30.3 12.8,40.8 7.2,35.2" fill="#14B8A6"/>
+  <polygon points="7.2,12.8 12.8,7.2 40.8,35.2 35.2,40.8" fill="#0F172A"/>
 </svg>

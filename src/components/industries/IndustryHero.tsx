@@ -3,8 +3,8 @@
  * (visual-enrichment pass, Nov 2026).
  *
  * One cinematic composition per page: a full-bleed per-industry
- * photograph via HeroMedia (slow Ken Burns drift, strong maroon
- * scrim, optional gold bridge-line motif), the industry icon from
+ * photograph via HeroMedia (slow Ken Burns drift, strong navy
+ * scrim, optional teal bridge-line motif), the industry icon from
  * INDUSTRY_ICONS in the eyebrow, the split H1, support copy and
  * the two CTAs. All nine industry routes are DARK HERO routes —
  * the coordinator keeps DARK_HERO_ROUTES in
@@ -32,7 +32,7 @@ export default function IndustryHero({
   const image = content.image;
   if (!image) return null;
   return (
-    <section className="relative overflow-hidden bg-bx-maroon-950 text-bx-ivory">
+    <section className="relative overflow-hidden bg-bx-navy-950 text-bx-white">
       <HeroMedia
         image={image.src}
         alt={image.alt}
@@ -46,22 +46,22 @@ export default function IndustryHero({
       <Container className="relative pb-20 pt-[136px] sm:pt-[152px] lg:pb-28">
         <Breadcrumbs href={content.href} dark />
         <div className="mt-8 max-w-3xl">
-          <p className="flex items-center gap-3 text-[13px] font-sans font-bold uppercase tracking-[0.24em] text-bx-gold-400">
+          <p className="flex items-center gap-3 text-[13px] font-sans font-bold uppercase tracking-[0.24em] text-bx-teal-400">
             <Icon
               name={industryIcon(content.slug)}
               size={20}
-              className="shrink-0 text-bx-gold-400"
+              className="shrink-0 text-bx-teal-400"
             />
             {content.eyebrow}
           </p>
-          <h1 className="mt-6 font-sans text-[40px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance text-bx-ivory sm:text-6xl lg:text-[68px]">
+          <h1 className="mt-6 font-sans text-[40px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance text-bx-white sm:text-6xl lg:text-[68px]">
             {content.heroBefore}
-            <em className="font-display font-semibold italic tracking-normal text-bx-champagne">
+            <em className="bg-gradient-to-r from-bx-teal-400 to-bx-cyan-500 bg-clip-text not-italic text-transparent">
               {content.heroAccent}
             </em>
             {content.heroAfter}
           </h1>
-          <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-bx-champagne/90">
+          <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-bx-slate-300/90">
             {content.heroSupport}
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">

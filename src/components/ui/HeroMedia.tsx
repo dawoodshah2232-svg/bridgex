@@ -5,9 +5,9 @@
  * hero's content sits above it in the normal flow (positioned
  * `relative`). Layers, bottom to top: photograph with a slow
  * Ken Burns drift (`.bx-kenburns`, transform-only, ~24s) → flat
- * maroon tint → vertical maroon gradient (darker at the top for
+ * navy tint → vertical navy gradient (darker at the top for
  * the nav, darkest at the bottom where the H1 sits) → optional
- * gold bridge-line motif along the bottom edge.
+ * teal bridge-line motif along the bottom edge.
  *
  * The image is eager with fetchPriority="high" — heroes are
  * above the fold. React 19 automatically emits a
@@ -39,18 +39,18 @@ type HeroScrim = "strong" | "medium";
  * open so the photograph reads. */
 const SCRIMS: Record<HeroScrim, { flat: string; gradient: string }> = {
   strong: {
-    flat: "bg-bx-maroon-950/50",
+    flat: "bg-bx-navy-950/50",
     gradient:
-      "bg-gradient-to-b from-bx-maroon-950/60 via-bx-maroon-950/20 to-bx-maroon-950/75",
+      "bg-gradient-to-b from-bx-navy-950/60 via-bx-navy-950/20 to-bx-navy-950/75",
   },
   medium: {
-    flat: "bg-bx-maroon-950/35",
+    flat: "bg-bx-navy-950/35",
     gradient:
-      "bg-gradient-to-b from-bx-maroon-950/45 via-transparent to-bx-maroon-950/60",
+      "bg-gradient-to-b from-bx-navy-950/45 via-transparent to-bx-navy-950/60",
   },
 };
 
-/** Thin gold bridge-line motif — same geometry language as CtaBand. */
+/** Thin teal bridge-line motif — same geometry language as CtaBand. */
 function BridgeLine() {
   return (
     <svg
@@ -64,14 +64,14 @@ function BridgeLine() {
       <path
         d="M0 70 L560 70 L600 14 L640 70 L1200 70"
         fill="none"
-        stroke="#C29A55"
+        stroke="#2DD4BF"
         strokeWidth="1.5"
       />
       {/* Suspension cable */}
       <path
         d="M0 70 Q300 18 600 14 Q900 18 1200 70"
         fill="none"
-        stroke="#C29A55"
+        stroke="#2DD4BF"
         strokeOpacity="0.45"
         strokeWidth="1"
       />
@@ -98,7 +98,7 @@ export default function HeroMedia({
   scrim?: HeroScrim;
   /** Slow Ken Burns drift (default true; disabled by reduced motion). */
   kenBurns?: boolean;
-  /** Gold bridge-line motif along the bottom edge. */
+  /** Teal bridge-line motif along the bottom edge. */
   bridgeLine?: boolean;
   /** CSS object-position for the crop (default centred). */
   objectPosition?: string;

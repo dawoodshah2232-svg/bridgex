@@ -1,9 +1,9 @@
 /**
  * H01 — Cinematic hero.
  *
- * Real photography (illuminated cable-stayed bridge at night), maroon
+ * Real photography (illuminated cable-stayed bridge at night), navy
  * vignette scrim for headline contrast, spec-required eyebrow, H1, support
- * copy, two CTAs, scroll cue, and an animated gold bridge-line motif.
+ * copy, two CTAs, scroll cue, and an animated teal bridge-line motif.
  * A compact operations preview (desktop only) shows the product in miniature
  * — clearly labelled as illustrative demo data.
  *
@@ -48,7 +48,7 @@ function BridgeMotif() {
       <motion.path
         d="M0 110 L1200 110"
         fill="none"
-        stroke="#C29A55"
+        stroke="#14B8A6"
         strokeOpacity="0.7"
         strokeWidth="1.5"
         {...draw}
@@ -57,7 +57,7 @@ function BridgeMotif() {
       <motion.path
         d="M0 110 Q300 30 600 44 Q900 30 1200 110"
         fill="none"
-        stroke="#D9B875"
+        stroke="#2DD4BF"
         strokeOpacity="0.55"
         strokeWidth="1.25"
         {...draw}
@@ -66,7 +66,7 @@ function BridgeMotif() {
       <motion.path
         d="M300 18 V118 M900 18 V118"
         fill="none"
-        stroke="#C29A55"
+        stroke="#14B8A6"
         strokeOpacity="0.8"
         strokeWidth="2"
         {...draw}
@@ -90,14 +90,14 @@ function BridgeMotif() {
           y1={yTop}
           x2={x}
           y2="110"
-          stroke="#C29A55"
+          stroke="#14B8A6"
           strokeOpacity="0.35"
           strokeWidth="1"
         />
       ))}
       {/* Tower beacons */}
-      <circle cx="300" cy="14" r="3" fill="#D9B875" />
-      <circle cx="900" cy="14" r="3" fill="#D9B875" />
+      <circle cx="300" cy="14" r="3" fill="#2DD4BF" />
+      <circle cx="900" cy="14" r="3" fill="#2DD4BF" />
     </svg>
   );
 }
@@ -129,16 +129,15 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-bx-maroon-950 text-bx-ivory"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-bx-navy-950 text-bx-white"
     >
-      {/* Background photograph + maroon vignette scrim. The scrim is
-          light enough for the bridge photograph to show (fix, 14 Nov:
+      {/* Background photograph + navy vignette scrim. The scrim is
+          light enough for the trading photograph to show (fix, 14 Nov:
           the old 95/85/65 gradient left the left two-thirds almost
           black; final polish the same day: 80/60/35 → 65/45/25, bottom
-          gradient 100% → 85%) — the night photo is dark, so the white
-          headline keeps strong contrast even at these levels
-          (computed from the photo: white H1 5th-percentile 12.5:1,
-          champagne support copy 5.4:1 — both above WCAG AA). */}
+          gradient 100% → 85%). Re-verify headline contrast whenever
+          the hero photograph changes — the old 12.5:1 / 5.4:1 figures
+          were computed against the previous bridge photo. */}
       <div className="absolute inset-0" aria-hidden="true">
         {/* fetchPriority="high" makes React 19 emit a preload link for
             this image during SSR — no manual <link> needed. */}
@@ -151,18 +150,18 @@ export default function Hero() {
           style={{ animationPlayState: inView ? "running" : "paused" }}
           className="h-full w-full object-cover object-[70%_center] animate-bx-drift"
         />
-        <div className="absolute inset-0 bg-bx-maroon-950/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/65 via-bx-maroon-950/45 to-bx-maroon-950/25" />
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bx-maroon-950/85 to-transparent" />
+        <div className="absolute inset-0 bg-bx-navy-950/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bx-navy-950/65 via-bx-navy-950/45 to-bx-navy-950/25" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bx-navy-950/85 to-transparent" />
       </div>
 
       <Container className="relative flex flex-1 flex-col justify-center pb-16 pt-[136px] sm:pt-[152px]">
         <div className="max-w-3xl">
           <motion.p
             {...rise(0)}
-            className="flex items-center gap-3 text-[13px] font-sans font-bold uppercase tracking-[0.28em] text-bx-gold-400"
+            className="flex items-center gap-3 text-[13px] font-sans font-bold uppercase tracking-[0.28em] text-bx-teal-400"
           >
-            <span aria-hidden="true" className="h-px w-10 bg-bx-gold-400" />
+            <span aria-hidden="true" className="h-px w-10 bg-bx-teal-400" />
             BridgeX&nbsp;|&nbsp;Capital Markets Technology
           </motion.p>
 
@@ -171,7 +170,7 @@ export default function Hero() {
             className="mt-6 font-sans text-[42px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance sm:text-6xl lg:text-[76px]"
           >
             Connect{" "}
-            <em className="font-display font-semibold italic tracking-normal text-bx-champagne">
+            <em className="bg-gradient-to-r from-bx-teal-400 to-bx-cyan-500 bg-clip-text not-italic text-transparent">
               every part
             </em>{" "}
             of your financial business.
@@ -179,7 +178,7 @@ export default function Hero() {
 
           <motion.p
             {...rise(0.1)}
-            className="mt-6 max-w-[62ch] text-lg leading-relaxed text-bx-champagne/90 sm:text-xl"
+            className="mt-6 max-w-[62ch] text-lg leading-relaxed text-bx-slate-300/90 sm:text-xl"
           >
             From onboarding and client relationships to trading operations,
             payments and partner growth — BridgeX brings your workflows
@@ -205,28 +204,28 @@ export default function Hero() {
         <motion.aside
           {...rise(0.2)}
           aria-label="Operations preview"
-          className="absolute bottom-24 right-10 hidden w-[340px] border border-bx-gold-500/40 bg-bx-maroon-950/85 p-5 backdrop-blur-sm xl:block"
+          className="absolute bottom-24 right-10 hidden w-[340px] border border-bx-teal-500/40 bg-bx-navy-950/85 p-5 backdrop-blur-sm xl:block"
         >
           <div className="flex items-center justify-between gap-3">
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-champagne">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-slate-300">
               Operations · Today
             </p>
           </div>
           <div className="mt-3">
             <DemoLabel dark />
           </div>
-          <ul className="mt-4 divide-y divide-bx-gold-500/20">
+          <ul className="mt-4 divide-y divide-bx-teal-500/20">
             {PREVIEW_ROWS.map((row) => (
               <li key={row.label} className="flex items-baseline justify-between gap-3 py-2.5">
                 <span>
-                  <span className="block text-sm font-bold text-bx-ivory">
+                  <span className="block text-sm font-bold text-bx-white">
                     {row.label}
                   </span>
-                  <span className="block text-[13px] text-bx-champagne/70">
+                  <span className="block text-[13px] text-bx-slate-300/70">
                     {row.detail}
                   </span>
                 </span>
-                <span className="shrink-0 text-[12px] font-bold uppercase tracking-wide text-bx-gold-400">
+                <span className="shrink-0 text-[12px] font-bold uppercase tracking-wide text-bx-teal-400">
                   {row.state}
                 </span>
               </li>
@@ -235,7 +234,7 @@ export default function Hero() {
         </motion.aside>
       </Container>
 
-      {/* Gold bridge-line motif + scroll cue */}
+      {/* Teal bridge-line motif + scroll cue */}
       <div className="relative">
         <div className="mx-auto max-w-[1440px] px-5 opacity-70 sm:px-8 lg:px-10">
           <BridgeMotif />
@@ -243,10 +242,10 @@ export default function Hero() {
         <Container className="relative pb-8">
           <Link
             href="#value"
-            className="group inline-flex items-center gap-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-champagne/80 transition-colors hover:text-bx-gold-400"
+            className="group inline-flex items-center gap-3 font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-slate-300/80 transition-colors hover:text-bx-teal-400"
           >
             Scroll
-            <span className="animate-bounce text-bx-gold-400">
+            <span className="animate-bounce text-bx-teal-400">
               <Icon name="chevronDown" size={18} />
             </span>
           </Link>

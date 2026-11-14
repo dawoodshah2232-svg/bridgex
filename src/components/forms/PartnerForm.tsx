@@ -202,7 +202,7 @@ export default function PartnerForm() {
           <>
             I am happy for BridgeX to contact me about this partnership
             application.{" "}
-            <span className="text-bx-muted">
+            <span className="text-bx-slate-500">
               We use your details only to respond — see the Privacy Policy.
             </span>
           </>
@@ -224,7 +224,7 @@ export default function PartnerForm() {
       <Button type="submit" size="lg" disabled={status === "submitting"} className="w-full sm:w-auto">
         {status === "submitting" ? "Saving…" : "Submit application"}
       </Button>
-      <p className="text-sm leading-relaxed text-bx-muted">
+      <p className="text-sm leading-relaxed text-bx-slate-500">
         Your application is stored locally on this device until online
         submission is connected. Nothing is sent anywhere yet.
       </p>

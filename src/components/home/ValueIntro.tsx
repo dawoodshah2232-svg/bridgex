@@ -43,7 +43,7 @@ const DISCONNECTS: { title: string; icon: IconName; text: string }[] = [
 
 export default function ValueIntro() {
   return (
-    <Section id="value" tone="ivory" ariaLabel="One connected operating ecosystem">
+    <Section id="value" tone="white" ariaLabel="One connected operating ecosystem">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <SectionIntro
@@ -51,7 +51,7 @@ export default function ValueIntro() {
             heading={
               <>
                 One connected operating{" "}
-                <span className="font-display font-semibold italic text-bx-maroon-700">
+                <span className="font-sans font-semibold italic text-bx-teal-700">
                   ecosystem.
                 </span>
               </>
@@ -59,7 +59,7 @@ export default function ValueIntro() {
             copy="A brokerage is not one business. It is five or six, running on five or six disconnected systems — and the gaps between them are where clients wait, money stalls and partners lose trust."
           />
           <Reveal delay={0.15} className="mt-8">
-            <p className="max-w-[52ch] text-base leading-relaxed text-bx-ink">
+            <p className="max-w-[52ch] text-base leading-relaxed text-bx-navy-900">
               BridgeX was built from the connection outward: one shared record
               for every client, one ledger for every movement of money, one
               workflow engine tying onboarding, operations, payments and
@@ -68,7 +68,7 @@ export default function ValueIntro() {
             </p>
             <Link
               href="/platform"
-              className="group mt-7 inline-flex items-center gap-2 font-sans text-base font-bold text-bx-maroon-700 hover:text-bx-maroon-900"
+              className="group mt-7 inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
             >
               Explore the platform
               <Icon
@@ -82,15 +82,15 @@ export default function ValueIntro() {
 
         <div className="lg:col-span-7">
           <Reveal delay={0.1}>
-            <ul className="divide-y divide-bx-gold-500/25 border-y border-bx-gold-500/25">
+            <ul className="divide-y divide-bx-teal-500/25 border-y border-bx-teal-500/25">
               {DISCONNECTS.map((d) => (
                 <li key={d.title} className="flex gap-5 py-5">
                   <FeatureIcon icon={d.icon} size="sm" className="shrink-0" />
                   <div>
-                    <h3 className="font-sans text-lg font-bold text-bx-ink">
+                    <h3 className="font-sans text-lg font-bold text-bx-navy-900">
                       {d.title}
                     </h3>
-                    <p className="mt-1 text-base leading-relaxed text-bx-muted">
+                    <p className="mt-1 text-base leading-relaxed text-bx-slate-500">
                       {d.text}
                     </p>
                   </div>
@@ -111,7 +111,7 @@ export default function ValueIntro() {
             loading="lazy"
             className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[440px]"
           />
-          <figcaption className="mt-3 text-sm text-bx-muted">
+          <figcaption className="mt-3 text-sm text-bx-slate-500">
             The markets never sleep in one timezone. Neither should your
             operations.
           </figcaption>

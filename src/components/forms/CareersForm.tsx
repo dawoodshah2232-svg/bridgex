@@ -185,7 +185,7 @@ export default function CareersForm() {
           <>
             I am happy for BridgeX to keep my details on file for future
             roles.{" "}
-            <span className="text-bx-muted">
+            <span className="text-bx-slate-500">
               You can ask us to delete them at any time — see the Privacy
               Policy.
             </span>
@@ -208,7 +208,7 @@ export default function CareersForm() {
       <Button type="submit" size="lg" disabled={status === "submitting"} className="w-full sm:w-auto">
         {status === "submitting" ? "Saving…" : "Send inquiry"}
       </Button>
-      <p className="text-sm leading-relaxed text-bx-muted">
+      <p className="text-sm leading-relaxed text-bx-slate-500">
         Your inquiry is stored locally on this device until online submission
         is connected. Nothing is sent anywhere yet.
       </p>

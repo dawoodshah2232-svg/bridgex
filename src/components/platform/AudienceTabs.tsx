@@ -41,14 +41,14 @@ export default function AudienceTabs() {
               }
               className={`flex min-h-[56px] flex-1 items-center justify-center gap-3 border px-5 font-sans text-base font-bold transition-colors duration-200 ${
                 isActive
-                  ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
-                  : "border-bx-gold-500/30 bg-transparent text-bx-ink hover:border-bx-gold-500/70"
+                  ? "border-bx-navy-900 bg-bx-navy-900 text-bx-white"
+                  : "border-bx-teal-500/30 bg-transparent text-bx-navy-900 hover:border-bx-teal-500/70"
               }`}
             >
               <Icon
                 name={item.icon}
                 size={22}
-                className={isActive ? "text-bx-gold-400" : "text-bx-gold-600"}
+                className={isActive ? "text-bx-teal-400" : "text-bx-teal-600"}
               />
               {item.label}
             </button>
@@ -66,18 +66,18 @@ export default function AudienceTabs() {
           animate={{ opacity: 1, y: 0 }}
           exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 grid gap-8 border border-bx-gold-500/25 bg-bx-white p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-10"
+          className="mt-6 grid gap-8 border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-10"
         >
           <div className="lg:col-span-7">
-            <h3 className="font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink sm:text-3xl">
+            <h3 className="font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-3xl">
               {audience.headline}
             </h3>
-            <p className="mt-4 text-base leading-relaxed text-bx-muted">{audience.copy}</p>
+            <p className="mt-4 text-base leading-relaxed text-bx-slate-500">{audience.copy}</p>
             <div className="mt-8 space-y-6">
               {audience.features.map((feature) => (
                 <div key={feature.title}>
-                  <h4 className="font-sans text-lg font-bold text-bx-ink">{feature.title}</h4>
-                  <p className="mt-1.5 text-[15px] leading-relaxed text-bx-muted">
+                  <h4 className="font-sans text-lg font-bold text-bx-navy-900">{feature.title}</h4>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-bx-slate-500">
                     {feature.text}
                   </p>
                 </div>
@@ -94,24 +94,24 @@ export default function AudienceTabs() {
               loading="lazy"
               className="aspect-[16/10] w-full object-cover"
             />
-            <div className="mt-6 border border-bx-gold-500/25 bg-bx-ivory p-5 sm:p-6">
+            <div className="mt-6 border border-bx-teal-500/25 bg-bx-white rounded-2xl p-5 sm:p-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
+                <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700">
                   {audience.label} — at a glance
                 </p>
                 <DemoLabel text="Illustrative data" />
               </div>
-              <dl className="mt-5 divide-y divide-bx-gold-500/20">
+              <dl className="mt-5 divide-y divide-bx-teal-500/20">
                 {audience.preview.map((row) => (
                   <div key={row.label} className="flex items-baseline justify-between gap-4 py-3">
-                    <dt className="text-sm text-bx-muted">{row.label}</dt>
-                    <dd className="text-right font-sans text-[15px] font-bold text-bx-ink">
+                    <dt className="text-sm text-bx-slate-500">{row.label}</dt>
+                    <dd className="text-right font-sans text-[15px] font-bold text-bx-navy-900">
                       {row.value}
                     </dd>
                   </div>
                 ))}
               </dl>
-              <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+              <p className="mt-4 text-sm leading-relaxed text-bx-slate-500">
                 Sample values shown to illustrate the layout. Your portal shows
                 your own records, in your brand.
               </p>

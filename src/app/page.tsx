@@ -29,7 +29,7 @@ export default function Home() {
         heading={
           <>
             Built for the business{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               behind the trading.
             </span>
           </>
@@ -53,7 +53,7 @@ export default function Home() {
         heading={
           <>
             A system that{" "}
-            <span className="font-display font-semibold italic text-bx-champagne">
+            <span className="font-sans font-semibold italic text-bx-teal-400">
               keeps getting better.
             </span>
           </>

@@ -18,14 +18,14 @@ export function FaqSection({
   heading,
   copy,
   items,
-  tone = "ivory",
+  tone = "white",
 }: {
   id?: string;
   label?: string;
   heading: string;
   copy?: string;
   items: FaqItem[];
-  tone?: "ivory" | "cream" | "white";
+  tone?: "white" | "mint" | "white";
 }) {
   return (
     <Section tone={tone} id={id} ariaLabel="Frequently asked questions">
@@ -49,15 +49,15 @@ export function WorkflowSteps({
   return (
     <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {steps.map((step, i) => (
-        <li key={step.title} className="relative border-t-2 border-bx-gold-500 pt-5">
+        <li key={step.title} className="relative border-t-2 border-bx-teal-500 pt-5">
           <Reveal delay={i * 0.08}>
-            <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-maroon-700">
+            <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-teal-700">
               0{i + 1}
             </span>
-            <h3 className="mt-2 font-sans text-lg font-extrabold leading-tight text-bx-ink">
+            <h3 className="mt-2 font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
               {step.title}
             </h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-bx-muted">{step.text}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-bx-slate-500">{step.text}</p>
           </Reveal>
         </li>
       ))}
@@ -78,7 +78,7 @@ export function CheckList({
     <div>
       <h3
         className={`font-sans text-xl font-extrabold leading-tight ${
-          dark ? "text-bx-ivory" : "text-bx-ink"
+          dark ? "text-bx-white" : "text-bx-navy-900"
         }`}
       >
         {title}
@@ -88,13 +88,13 @@ export function CheckList({
           <li
             key={item}
             className={`flex items-start gap-3 text-[15px] leading-relaxed ${
-              dark ? "text-bx-champagne/90" : "text-bx-ink"
+              dark ? "text-bx-slate-300/90" : "text-bx-navy-900"
             }`}
           >
             <Icon
               name="check"
               size={20}
-              className={`mt-0.5 shrink-0 ${dark ? "text-bx-gold-400" : "text-bx-gold-600"}`}
+              className={`mt-0.5 shrink-0 ${dark ? "text-bx-teal-400" : "text-bx-teal-600"}`}
             />
             {item}
           </li>

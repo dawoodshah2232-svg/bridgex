@@ -1,7 +1,7 @@
 /**
  * PhotoBand — a full-bleed photographic band between page sections.
  *
- * Real photograph under a maroon gradient scrim, with an optional
+ * Real photograph under a navy gradient scrim, with an optional
  * eyebrow / heading / copy and any children (usually a CTA row).
  * The image is lazy-loaded — bands sit below the fold by design.
  * The scrim is heavy enough for white text at every height.
@@ -38,9 +38,9 @@ export default function PhotoBand({
   image: string;
   /** Real alt text describing the actual photograph. */
   alt: string;
-  /** Optional small tracked label above the heading (gold-400 on dark). */
+  /** Optional small tracked label above the heading (teal-400 on dark). */
   eyebrow?: string;
-  /** Optional heading — ReactNode so callers can set a Cormorant accent. */
+  /** Optional heading — ReactNode so callers can set a teal-gradient accent. */
   heading?: ReactNode;
   copy?: string;
   /** Optional extra content below the copy — usually a CTA row. */
@@ -52,7 +52,7 @@ export default function PhotoBand({
   className?: string;
 }) {
   return (
-    <section className={`relative overflow-hidden bg-bx-maroon-950 text-bx-ivory ${className}`}>
+    <section className={`relative overflow-hidden bg-bx-navy-950 text-bx-white ${className}`}>
       <div className="absolute inset-0">
         <img
           src={asset(image)}
@@ -62,12 +62,12 @@ export default function PhotoBand({
           loading="lazy"
           className="h-full w-full object-cover"
         />
-        {/* Maroon scrim: darker at the edges, readable white text.
+        {/* Navy scrim: darker at the edges, readable white text.
             Light enough for the photograph to show (fix, 14 Nov) — the
             band photos are night/dusk shots, so white text keeps strong
             contrast even at these levels. */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-bx-maroon-950/65 via-bx-maroon-950/40 to-bx-maroon-950/65"
+          className="absolute inset-0 bg-gradient-to-b from-bx-navy-950/65 via-bx-navy-950/40 to-bx-navy-950/65"
           aria-hidden="true"
         />
       </div>
@@ -76,7 +76,7 @@ export default function PhotoBand({
       >
         <Reveal className="max-w-3xl">
           {eyebrow && (
-            <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-gold-400">
+            <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-teal-400">
               {eyebrow}
             </p>
           )}
@@ -86,7 +86,7 @@ export default function PhotoBand({
             </h2>
           )}
           {copy && (
-            <p className="mt-5 max-w-[65ch] text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
+            <p className="mt-5 max-w-[65ch] text-base leading-relaxed text-bx-slate-300/90 sm:text-lg">
               {copy}
             </p>
           )}

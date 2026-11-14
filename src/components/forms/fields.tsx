@@ -9,8 +9,8 @@ import type { ReactNode } from "react";
 import Icon from "../icons";
 
 const INPUT_CLS =
-  "w-full border bg-bx-white px-4 py-3 font-body text-base text-bx-ink placeholder:text-bx-muted/70 transition-colors duration-200 disabled:opacity-60";
-const INPUT_OK = "border-bx-maroon-900/25 hover:border-bx-maroon-900/50";
+  "w-full rounded-xl border bg-bx-white px-4 py-3 font-body text-base text-bx-navy-900 placeholder:text-bx-slate-500/70 transition-colors duration-200 disabled:opacity-60";
+const INPUT_OK = "border-bx-navy-900/25 hover:border-bx-navy-900/50";
 const INPUT_ERR = "border-red-800";
 
 function FieldError({ id, error }: { id: string; error?: string }) {
@@ -36,11 +36,11 @@ function FieldWrap({ id, label, error, hint, required, children }: FieldProps) {
     <div>
       <label
         htmlFor={id}
-        className="mb-2 block font-sans text-sm font-bold text-bx-ink"
+        className="mb-2 block font-sans text-sm font-bold text-bx-navy-900"
       >
         {label}
         {required && (
-          <span aria-hidden="true" className="text-bx-maroon-700">
+          <span aria-hidden="true" className="text-bx-teal-700">
             {" "}
             *
           </span>
@@ -48,7 +48,7 @@ function FieldWrap({ id, label, error, hint, required, children }: FieldProps) {
       </label>
       {children}
       {hint && !error && (
-        <p id={`${id}-hint`} className="mt-2 text-sm text-bx-muted">
+        <p id={`${id}-hint`} className="mt-2 text-sm text-bx-slate-500">
           {hint}
         </p>
       )}
@@ -184,7 +184,7 @@ export function FormSelect({
         aria-describedby={
           error ? `${id}-error` : hint ? `${id}-hint` : undefined
         }
-        className={`${INPUT_CLS} min-h-[48px] appearance-none ${error ? INPUT_ERR : INPUT_OK} ${value ? "" : "text-bx-muted"}`}
+        className={`${INPUT_CLS} min-h-[48px] appearance-none ${error ? INPUT_ERR : INPUT_OK} ${value ? "" : "text-bx-slate-500"}`}
       >
         <option value="" disabled>
           {placeholder}
@@ -226,11 +226,11 @@ export function FormCheckbox({
           disabled={disabled}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${id}-error` : undefined}
-          className="mt-1 h-5 w-5 shrink-0 accent-bx-maroon-700"
+          className="mt-1 h-5 w-5 shrink-0 accent-bx-teal-600"
         />
         <label
           htmlFor={id}
-          className="font-body text-[15px] leading-relaxed text-bx-ink"
+          className="font-body text-[15px] leading-relaxed text-bx-navy-900"
         >
           {label}
         </label>
@@ -292,21 +292,21 @@ export function FormSuccess({
   return (
     <div
       role="status"
-      className="border border-bx-gold-500/40 bg-bx-cream px-6 py-8 sm:px-8"
+      className="rounded-2xl border border-bx-teal-500/40 bg-bx-mint-50 px-6 py-8 sm:px-8"
     >
-      <span className="inline-flex h-12 w-12 items-center justify-center bg-bx-maroon-900 text-bx-gold-400">
+      <span className="inline-flex h-12 w-12 items-center justify-center bg-bx-navy-900 text-bx-teal-400">
         <Icon name="check" size={24} />
       </span>
-      <h3 className="mt-5 font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-ink">
+      <h3 className="mt-5 font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-navy-900">
         {heading}
       </h3>
-      <div className="mt-3 space-y-3 font-body text-base leading-relaxed text-bx-muted">
+      <div className="mt-3 space-y-3 font-body text-base leading-relaxed text-bx-slate-500">
         {children}
       </div>
       <button
         type="button"
         onClick={onReset}
-        className="mt-6 font-sans text-[15px] font-bold text-bx-maroon-700 underline underline-offset-4 hover:text-bx-maroon-900"
+        className="mt-6 font-sans text-[15px] font-bold text-bx-teal-700 underline underline-offset-4 hover:text-bx-navy-900"
       >
         {resetLabel}
       </button>
@@ -319,7 +319,7 @@ export function FormErrorBanner({ message }: { message: string }) {
   return (
     <div
       role="alert"
-      className="border border-red-800/50 bg-red-50 px-5 py-4 font-body text-[15px] leading-relaxed text-red-900"
+      className="rounded-xl border border-red-800/50 bg-red-50 px-5 py-4 font-body text-[15px] leading-relaxed text-red-900"
     >
       {message}
     </div>

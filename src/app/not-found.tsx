@@ -26,7 +26,7 @@ export default function NotFound() {
   return (
     <>
       {/* Dark hero — clears the fixed 72px header. */}
-      <section className="relative overflow-hidden bg-bx-maroon-900 pb-16 pt-[72px] text-bx-ivory sm:pb-20">
+      <section className="relative overflow-hidden bg-bx-navy-900 pb-16 pt-[72px] text-bx-white sm:pb-20">
         <HeroMedia
           image="/images/hero-skyline-sf.jpg"
           alt="San Francisco financial district skyline at twilight across the bay"
@@ -36,13 +36,13 @@ export default function NotFound() {
           imageHeight={1067}
         />
         <Container className="relative pt-14 sm:pt-20">
-          <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-gold-400">
+          <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-teal-400">
             404 — Page not found
           </p>
           <h1 className="mt-4 max-w-[16ch] font-sans text-[42px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance sm:text-[56px]">
             This page isn’t here.
           </h1>
-          <p className="mt-5 max-w-[62ch] text-lg leading-relaxed text-bx-champagne/85">
+          <p className="mt-5 max-w-[62ch] text-lg leading-relaxed text-bx-slate-300/85">
             The link may have moved, or the address may be mistyped. Search
             the site, or head back to the homepage and start from there.
           </p>
@@ -57,21 +57,21 @@ export default function NotFound() {
         </Container>
       </section>
 
-      <section className="bg-bx-ivory py-14 sm:py-16">
+      <section className="bg-bx-white py-14 sm:py-16">
         <Container>
-          <h2 className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-ink sm:text-3xl">
+          <h2 className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-navy-900 sm:text-3xl">
             Or start from a section
           </h2>
           <ul className="mt-8 grid gap-x-10 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
             {sections.map((group) => {
               const href = group.overviewHref ?? group.featuredHref;
               return (
-                <li key={group.id} className="border-b border-bx-gold-500/20">
+                <li key={group.id} className="border-b border-bx-teal-500/20">
                   <Link href={href} className="group block py-4">
-                    <span className="font-sans text-[16px] font-bold text-bx-ink transition-colors group-hover:text-bx-maroon-700">
+                    <span className="font-sans text-[16px] font-bold text-bx-navy-900 transition-colors group-hover:text-bx-teal-700">
                       {group.label}
                     </span>
-                    <span className="mt-1 block text-[14px] leading-relaxed text-bx-muted">
+                    <span className="mt-1 block text-[14px] leading-relaxed text-bx-slate-500">
                       {group.blurb}
                     </span>
                   </Link>

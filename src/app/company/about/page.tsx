@@ -11,7 +11,7 @@ import Reveal from "@/components/ui/Reveal";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import { ButtonLink } from "@/components/ui/Button";
-import GoldLineDivider from "@/components/ui/GoldLineDivider";
+import TealLineDivider from "@/components/ui/TealLineDivider";
 import PhotoBand from "@/components/ui/PhotoBand";
 import ImageText from "@/components/ui/ImageText";
 import Icon from "@/components/icons";
@@ -31,7 +31,7 @@ export default function AboutPage() {
         title={
           <>
             Connected infrastructure for{" "}
-            <em className="font-display font-semibold italic text-bx-maroon-700">
+            <em className="font-sans font-semibold italic text-bx-teal-700">
               modern financial businesses.
             </em>
           </>
@@ -53,19 +53,19 @@ export default function AboutPage() {
       </InnerHero>
 
       {/* Mission — editorial statement */}
-      <Section tone="maroon" ariaLabel="Our mission">
+      <Section tone="navy" ariaLabel="Our mission">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-gold-400">
+          <p className="text-[13px] font-sans font-bold uppercase tracking-[0.22em] text-bx-teal-400">
             Our mission
           </p>
-          <p className="mt-6 font-display text-3xl font-semibold leading-[1.25] text-bx-ivory sm:text-4xl lg:text-[44px]">
+          <p className="mt-6 font-sans text-3xl font-semibold leading-[1.25] text-bx-white sm:text-4xl lg:text-[44px]">
             &ldquo;Where markets connect&rdquo; is not a slogan. It is the
             job: every client, every account, every payment and every partner,
             connected — so the business can see itself clearly and act on what
             it sees.
           </p>
-          <GoldLineDivider className="mx-auto mt-10 max-w-md" />
-          <p className="mx-auto mt-8 max-w-[62ch] font-body text-base leading-relaxed text-bx-champagne/85">
+          <TealLineDivider className="mx-auto mt-10 max-w-md" />
+          <p className="mx-auto mt-8 max-w-[62ch] font-body text-base leading-relaxed text-bx-slate-300/85">
             We measure that by whether your teams stop reconciling systems by
             hand — not by how many features we can list.
           </p>
@@ -80,18 +80,18 @@ export default function AboutPage() {
         heading={
           <>
             Technology should fit the business —{" "}
-            <em className="font-display font-semibold italic text-bx-maroon-700">
+            <em className="font-sans font-semibold italic text-bx-teal-700">
               not the other way round.
             </em>
           </>
         }
         copy="Every financial business runs differently: different desks, different products, different rules. A platform that forces one shape on all of them creates workarounds, and workarounds become the real system. We build the other way. BridgeX is configured around how your business actually operates — your entities, your journeys, your approval habits. Configuration, not custom code, so your setup stays upgradeable and every change stays reversible."
         flip
-        tone="ivory"
+        tone="white"
         imageWidth={1920}
         imageHeight={1280}
       >
-        <p className="mt-5 max-w-[65ch] text-base leading-relaxed text-bx-muted sm:text-lg">
+        <p className="mt-5 max-w-[65ch] text-base leading-relaxed text-bx-slate-500 sm:text-lg">
           And we are honest about the boundary. We build technology for
           financial businesses. We do not run your brokerage, hold your
           clients&rsquo; funds, or make regulatory claims on your behalf.
@@ -110,15 +110,15 @@ export default function AboutPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {ABOUT_PRINCIPLES.map((principle, i) => (
             <Reveal key={principle.title} delay={(i % 2) * 0.07}>
-              <article className="flex h-full gap-5 border border-bx-maroon-900/15 bg-bx-ivory p-7">
-                <span className="shrink-0 text-bx-gold-600">
+              <article className="flex h-full gap-5 border border-bx-navy-900/15 bg-bx-white p-7">
+                <span className="shrink-0 text-bx-teal-600">
                   <Icon name={principle.icon} size={30} />
                 </span>
                 <div>
-                  <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
+                  <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                     {principle.title}
                   </h3>
-                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-muted">
+                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-slate-500">
                     {principle.description}
                   </p>
                 </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
         heading={
           <>
             Every client, every account,{" "}
-            <em className="font-display font-semibold italic text-bx-gold-400">
+            <em className="font-sans font-semibold italic text-bx-teal-400">
               every partner — connected.
             </em>
           </>
@@ -150,7 +150,7 @@ export default function AboutPage() {
       </PhotoBand>
 
       {/* Company details — explicitly editable placeholders */}
-      <Section tone="cream" ariaLabel="Company details">
+      <Section tone="mint" ariaLabel="Company details">
         <div className="mx-auto max-w-3xl">
           <SectionIntro
             label="Company details"
@@ -158,24 +158,24 @@ export default function AboutPage() {
             align="center"
           />
           <Reveal className="mt-10">
-            <div className="border border-bx-gold-600/50 bg-bx-white">
-              <p className="border-b border-bx-gold-500/30 bg-bx-cream px-6 py-4 font-body text-[15px] leading-relaxed text-bx-ink">
-                <span className="font-sans font-extrabold uppercase tracking-[0.08em] text-bx-maroon-700">
+            <div className="border border-bx-teal-600/50 bg-bx-white">
+              <p className="border-b border-bx-teal-500/30 bg-bx-mint-50 px-6 py-4 font-body text-[15px] leading-relaxed text-bx-navy-900">
+                <span className="font-sans font-extrabold uppercase tracking-[0.08em] text-bx-teal-700">
                   Editable placeholders —{" "}
                 </span>
                 these details are being confirmed and will be updated here.
                 We publish nothing invented in their place.
               </p>
-              <dl className="divide-y divide-bx-gold-500/20">
+              <dl className="divide-y divide-bx-teal-500/20">
                 {EDITABLE_COMPANY_DETAILS.map((detail) => (
                   <div
                     key={detail.label}
                     className="grid gap-1 px-6 py-4 sm:grid-cols-[1fr_1fr] sm:gap-6"
                   >
-                    <dt className="font-sans text-sm font-extrabold uppercase tracking-[0.08em] text-bx-maroon-700">
+                    <dt className="font-sans text-sm font-extrabold uppercase tracking-[0.08em] text-bx-teal-700">
                       {detail.label}
                     </dt>
-                    <dd className="font-body text-base text-bx-muted">
+                    <dd className="font-body text-base text-bx-slate-500">
                       {detail.value}
                     </dd>
                   </div>
@@ -187,7 +187,7 @@ export default function AboutPage() {
       </Section>
 
       {/* FAQ */}
-      <Section tone="ivory" ariaLabel="About BridgeX frequently asked questions">
+      <Section tone="white" ariaLabel="About BridgeX frequently asked questions">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
           <SectionIntro
             label="Questions"

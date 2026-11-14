@@ -1,30 +1,34 @@
 /**
- * Buttons — one system, used everywhere.
+ * Buttons — one system, used everywhere (bridgexapps.com style).
  *
- * - primary: antique gold fill, maroon-950 text (7.5:1 contrast).
- * - secondary: ink/maroon outline on light backgrounds.
- * - secondaryLight: champagne outline on dark backgrounds.
+ * - primary: solid teal fill, white text, soft teal shadow.
+ * - secondary: white pill, light-grey border, navy text.
+ * - secondaryLight: white outline on dark backgrounds.
+ * - onTeal: white pill with teal text, for use on the teal CTA band.
  *
- * Press feedback (scale 0.97 on :active) per the Apple motion rules.
+ * All buttons are fully pill-shaped (rounded-full). Press feedback
+ * (scale 0.97 on :active) per the Apple motion rules.
  * Never render a button without a real destination.
  */
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Icon from "../icons";
 
-type Variant = "primary" | "secondary" | "secondaryLight";
+type Variant = "primary" | "secondary" | "secondaryLight" | "onTeal";
 type Size = "md" | "lg";
 
 const BASE =
-  "inline-flex items-center justify-center gap-2.5 font-sans font-bold tracking-[0.01em] transition-all duration-200 active:scale-[0.97] select-none";
+  "inline-flex items-center justify-center gap-2.5 rounded-full font-sans font-bold tracking-[0.01em] transition-all duration-200 active:scale-[0.97] select-none";
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg-bx-gold-500 text-bx-maroon-950 hover:bg-bx-gold-400 hover:text-bx-maroon-950",
+    "bg-bx-teal-500 text-bx-white shadow-[0_10px_24px_-10px_rgba(20,184,166,0.7)] hover:bg-bx-teal-600",
   secondary:
-    "border-2 border-bx-maroon-900 text-bx-maroon-900 hover:bg-bx-maroon-900 hover:text-bx-ivory bg-transparent",
+    "border border-[#E2E8F0] bg-bx-white text-bx-navy-900 hover:border-bx-teal-500 hover:text-bx-teal-600",
   secondaryLight:
-    "border-2 border-bx-champagne/70 text-bx-champagne hover:bg-bx-champagne hover:text-bx-maroon-950 hover:border-bx-champagne bg-transparent",
+    "border border-bx-white/70 text-bx-white hover:bg-bx-white hover:text-bx-navy-900 hover:border-bx-white bg-transparent",
+  onTeal:
+    "bg-bx-white text-bx-teal-700 shadow-[0_10px_24px_-10px_rgba(0,0,0,0.35)] hover:bg-bx-mint-100",
 };
 
 const SIZES: Record<Size, string> = {

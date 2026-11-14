@@ -23,7 +23,7 @@ export default function CareersPage() {
         title={
           <>
             Build things{" "}
-            <em className="font-display font-semibold italic text-bx-maroon-700">
+            <em className="font-sans font-semibold italic text-bx-teal-700">
               that hold up.
             </em>
           </>
@@ -38,14 +38,14 @@ export default function CareersPage() {
       {/* No open roles — stated plainly */}
       <Section tone="white" ariaLabel="Open roles">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <div className="border border-bx-gold-600/50 bg-bx-cream px-6 py-10 sm:px-10">
-            <span className="mx-auto block w-fit text-bx-gold-600">
+          <div className="border border-bx-teal-600/50 bg-bx-mint-50 px-6 py-10 sm:px-10">
+            <span className="mx-auto block w-fit text-bx-teal-600">
               <Icon name="users" size={36} />
             </span>
-            <h2 className="mt-5 font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-ink sm:text-3xl">
+            <h2 className="mt-5 font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-navy-900 sm:text-3xl">
               No open roles currently listed
             </h2>
-            <p className="mx-auto mt-3 max-w-[58ch] font-body text-base leading-relaxed text-bx-muted">
+            <p className="mx-auto mt-3 max-w-[58ch] font-body text-base leading-relaxed text-bx-slate-500">
               We do not post roles that do not exist. When a role opens, it
               will be listed here with a real description and a real hiring
               process. In the meantime, the general inquiry form below is open
@@ -56,7 +56,7 @@ export default function CareersPage() {
       </Section>
 
       {/* What working here is like */}
-      <Section tone="ivory" ariaLabel="What working at BridgeX is like">
+      <Section tone="white" ariaLabel="What working at BridgeX is like">
         <SectionIntro
           label="How we work"
           heading="What it is like here."
@@ -65,15 +65,15 @@ export default function CareersPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {CAREERS_VALUES.map((value, i) => (
             <Reveal key={value.title} delay={(i % 2) * 0.07}>
-              <article className="flex h-full gap-5 border border-bx-maroon-900/15 bg-bx-white p-7">
-                <span className="shrink-0 text-bx-gold-600">
+              <article className="flex h-full gap-5 border border-bx-navy-900/15 bg-bx-white p-7">
+                <span className="shrink-0 text-bx-teal-600">
                   <Icon name={value.icon} size={30} />
                 </span>
                 <div>
-                  <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
+                  <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                     {value.title}
                   </h3>
-                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-muted">
+                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-slate-500">
                     {value.description}
                   </p>
                 </div>
@@ -84,7 +84,7 @@ export default function CareersPage() {
       </Section>
 
       {/* General inquiry form */}
-      <Section tone="cream" ariaLabel="General inquiry">
+      <Section tone="mint" ariaLabel="General inquiry">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
           <div>
             <SectionIntro
@@ -96,7 +96,7 @@ export default function CareersPage() {
               <div className="relative mb-3 mr-3 max-w-sm sm:mb-4 sm:mr-4">
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-teal-500/60 sm:translate-x-4 sm:translate-y-4"
                 />
                 <img
                   src={asset("/images/team-laptop.jpg")}
@@ -109,8 +109,8 @@ export default function CareersPage() {
               </div>
             </Reveal>
             <Reveal className="mt-8">
-              <p className="border border-bx-gold-600/50 bg-bx-white px-6 py-5 font-body text-[15px] leading-relaxed text-bx-muted">
-                <span className="font-sans font-extrabold text-bx-maroon-700">
+              <p className="border border-bx-teal-600/50 bg-bx-white px-6 py-5 font-body text-[15px] leading-relaxed text-bx-slate-500">
+                <span className="font-sans font-extrabold text-bx-teal-700">
                   An honest note:{" "}
                 </span>
                 there are no open roles right now, so we cannot promise a
@@ -121,11 +121,11 @@ export default function CareersPage() {
             </Reveal>
           </div>
           <Reveal delay={0.08}>
-            <div className="border border-bx-maroon-900/15 bg-bx-white px-6 py-8 sm:px-10 sm:py-10">
-              <h2 className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-ink">
+            <div className="border border-bx-navy-900/15 bg-bx-white px-6 py-8 sm:px-10 sm:py-10">
+              <h2 className="font-sans text-2xl font-extrabold tracking-[-0.02em] text-bx-navy-900">
                 General inquiry
               </h2>
-              <p className="mt-2 font-body text-base leading-relaxed text-bx-muted">
+              <p className="mt-2 font-body text-base leading-relaxed text-bx-slate-500">
                 A few lines about what you do and what interests you — links
                 to a portfolio or profile are welcome.
               </p>
