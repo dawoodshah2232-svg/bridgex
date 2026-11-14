@@ -1,7 +1,8 @@
 /**
  * Asset & Fund Managers industry page (spec §9).
  * Copy lives in src/content/industries/asset-fund-managers.ts.
- * Light photo hero — no DARK_HERO_ROUTES entry needed.
+ * DARK HERO — coordinator: add "/industries/asset-fund-managers" to
+ * DARK_HERO_ROUTES in src/content/navigation.ts.
  */
 import type { Metadata } from "next";
 import { industryBySlug } from "@/content/industries";

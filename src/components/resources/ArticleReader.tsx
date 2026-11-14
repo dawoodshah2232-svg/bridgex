@@ -9,13 +9,14 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Icon from "@/components/icons";
 import { asset } from "@/lib/paths";
 import {
   formatInsightDate,
   type InsightArticle,
 } from "@/content/insights";
+import { ARTICLE_BREAKS } from "@/content/resource-editorial";
 
 export interface ReadableArticle extends InsightArticle {
   body: string[];
@@ -110,14 +111,36 @@ export default function ArticleReader({
                 >
                   <div className="border-t border-bx-gold-500/25 bg-bx-ivory px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
                     <div className="max-w-[68ch]">
-                      {article.body.map((paragraph, i) => (
-                        <p
-                          key={i}
-                          className="mb-5 text-base leading-relaxed text-bx-ink/90 last:mb-0 sm:text-lg sm:leading-relaxed"
-                        >
-                          {paragraph}
-                        </p>
-                      ))}
+                      {article.body.map((paragraph, i) => {
+                        const breakInfo = ARTICLE_BREAKS[article.slug];
+                        return (
+                          <Fragment key={i}>
+                            <p className="mb-5 text-base leading-relaxed text-bx-ink/90 last:mb-0 sm:text-lg sm:leading-relaxed">
+                              {paragraph}
+                            </p>
+                            {/* Photographic break halfway through the
+                                read: a real photo plus a pull-quote
+                                taken verbatim from the article. */}
+                            {i === 2 && breakInfo && (
+                              <figure className="my-8">
+                                <div className="overflow-hidden border border-bx-gold-500/30">
+                                  <img
+                                    src={asset(breakInfo.image)}
+                                    alt={breakInfo.imageAlt}
+                                    width={1600}
+                                    height={762}
+                                    loading="lazy"
+                                    className="aspect-[21/10] w-full object-cover"
+                                  />
+                                </div>
+                                <figcaption className="mt-4 border-l-2 border-bx-gold-500 pl-4 font-display text-xl italic leading-snug text-bx-maroon-700 sm:text-2xl">
+                                  “{breakInfo.quote}”
+                                </figcaption>
+                              </figure>
+                            )}
+                          </Fragment>
+                        );
+                      })}
                       <p className="mt-8 border-t border-bx-gold-500/25 pt-5 font-sans text-sm text-bx-muted">
                         Published {formatInsightDate(article.date)} by
                         BridgeX editorial. This is an opinion piece about

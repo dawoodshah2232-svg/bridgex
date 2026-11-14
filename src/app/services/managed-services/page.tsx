@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MANAGED_FAQ, MANAGED_PILLARS, MANAGED_REPORTING } from "@/content/company";
+import { asset } from "@/lib/paths";
 import InnerHero from "@/components/company/InnerHero";
 import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
@@ -7,6 +8,8 @@ import Reveal from "@/components/ui/Reveal";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import { ButtonLink } from "@/components/ui/Button";
+import PhotoBand from "@/components/ui/PhotoBand";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import Icon from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -19,19 +22,20 @@ export default function ManagedServicesPage() {
   return (
     <>
       <InnerHero
+        dark
         href="/services/managed-services"
         eyebrow="Services — Managed Services"
         title={
           <>
             Go-live is the beginning,{" "}
-            <em className="font-display font-semibold italic text-bx-maroon-700">
+            <em className="font-display font-semibold italic text-bx-gold-400">
               not the finish line.
             </em>
           </>
         }
         copy="After launch, managed services keep the platform healthy and your team supported: a clear support route, monitoring that surfaces problems early, disciplined change management, and regular reviews that keep the configuration aligned with your business."
-        image="/images/services-workshop.jpg"
-        imageAlt="Colleagues collaborating around a whiteboard during a working session"
+        image="/images/banking-hall.jpg"
+        imageAlt=""
         imageWidth={1600}
         imageHeight={1067}
       >
@@ -39,7 +43,7 @@ export default function ManagedServicesPage() {
           <ButtonLink href="/company/contact" size="lg">
             Discuss managed services
           </ButtonLink>
-          <ButtonLink href="/services/implementation" variant="secondary" size="lg">
+          <ButtonLink href="/services/implementation" variant="secondaryLight" size="lg">
             Implementation method
           </ButtonLink>
         </div>
@@ -56,10 +60,8 @@ export default function ManagedServicesPage() {
           {MANAGED_PILLARS.map((pillar, i) => (
             <Reveal key={pillar.title} delay={(i % 2) * 0.07}>
               <article className="flex h-full flex-col border border-bx-maroon-900/15 bg-bx-ivory p-7 sm:p-8">
-                <div className="flex items-center gap-4">
-                  <span className="text-bx-gold-600">
-                    <Icon name={pillar.icon} size={30} />
-                  </span>
+                <div className="flex items-center gap-5">
+                  <FeatureIcon icon={pillar.icon} size="sm" className="shrink-0" />
                   <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink sm:text-2xl">
                     {pillar.title}
                   </h3>
@@ -85,6 +87,27 @@ export default function ManagedServicesPage() {
           ))}
         </div>
       </Section>
+
+      {/* Photo interlude — watched, not just running */}
+      <PhotoBand
+        image="/images/band-bridge-london.jpg"
+        alt="London bridge and skyscrapers at twilight"
+        eyebrow="Managed services"
+        heading={
+          <>
+            The platform,{" "}
+            <em className="font-display font-semibold italic text-bx-gold-400">
+              watched.
+            </em>
+          </>
+        }
+        copy="Monitoring surfaces problems before your team has to report them — and every request is tracked to a resolution."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1280}
+      >
+        <ButtonLink href="/company/contact">Discuss managed services</ButtonLink>
+      </PhotoBand>
 
       {/* Support workflow strip */}
       <Section tone="maroon" ariaLabel="How a support request is handled">
@@ -121,11 +144,29 @@ export default function ManagedServicesPage() {
       {/* Reporting — honest */}
       <Section tone="ivory" ariaLabel="What we report">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-          <SectionIntro
-            label="Reporting"
-            heading="Reported from real data. Nothing else."
-            copy="We report what we measure. Where the platform is instrumented, you see real availability and support figures. Where it is not, we say so — we do not publish numbers we cannot stand behind."
-          />
+          <div>
+            <SectionIntro
+              label="Reporting"
+              heading="Reported from real data. Nothing else."
+              copy="We report what we measure. Where the platform is instrumented, you see real availability and support figures. Where it is not, we say so — we do not publish numbers we cannot stand behind."
+            />
+            <Reveal className="mt-10">
+              <div className="relative mb-3 mr-3 max-w-sm sm:mb-4 sm:mr-4">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                />
+                <img
+                  src={asset("/images/support-headset.jpg")}
+                  alt="Customer support agent wearing a headset and smiling"
+                  width={1200}
+                  height={1500}
+                  loading="lazy"
+                  className="relative aspect-[4/5] w-full object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
           <div className="space-y-4">
             {MANAGED_REPORTING.map((report, i) => (
               <Reveal key={report.title} delay={i * 0.06}>

@@ -9,6 +9,9 @@ import { Section, Container } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
+import ImageText from "@/components/ui/ImageText";
+import PhotoBand from "@/components/ui/PhotoBand";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import Reveal from "@/components/ui/Reveal";
 import DemoLabel from "@/components/ui/DemoLabel";
 import { ButtonLink } from "@/components/ui/Button";
@@ -71,7 +74,6 @@ export default function DevelopersPage() {
           </>
         }
         copy="Versioned API architecture, example endpoints and a planned webhook catalogue — documented honestly. There is no live endpoint today; every sample on this page is an example, and it says so next to the code."
-        dark
         image="/images/resources-code.jpg"
         imageAlt="A laptop screen showing a code editor with syntax-highlighted source code"
         imageWidth={1600}
@@ -119,6 +121,31 @@ export default function DevelopersPage() {
           ))}
         </ol>
       </Section>
+
+      <ImageText
+        image="/images/team-laptop.jpg"
+        alt="Diverse team collaborating around a laptop"
+        eyebrow="For engineers"
+        heading={
+          <>
+            Built for the engineers who will{" "}
+            <span className="font-display italic text-bx-maroon-700">
+              integrate BridgeX.
+            </span>
+          </>
+        }
+        copy="Versioned API architecture, example endpoints and a planned webhook catalogue — documented before the sandbox exists, so integration design can start now."
+        bullets={[
+          "Versioned from the first request",
+          "Four example endpoints, annotated",
+          "A planned webhook catalogue with signed delivery",
+        ]}
+        ctaLabel="See the example endpoints"
+        ctaHref="#endpoints"
+        tone="white"
+        imageWidth={1200}
+        imageHeight={1800}
+      />
 
       <Section tone="cream" id="versioning" ariaLabel="API versioning">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
@@ -265,6 +292,24 @@ export default function DevelopersPage() {
         </div>
       </Section>
 
+      <PhotoBand
+        image="/images/abstract-glass-ceiling.jpg"
+        alt="Skyscrapers seen through a glass ceiling"
+        eyebrow="The shape of the API"
+        heading={
+          <>
+            Plain HTTP.{" "}
+            <span className="font-display italic text-bx-gold-400">
+              Any client, any language.
+            </span>
+          </>
+        }
+        copy="Until the sandbox proves the API shape, the examples on this page are plain HTTP — no SDK to install, no client library to learn."
+        height="sm"
+        imageWidth={1600}
+        imageHeight={900}
+      />
+
       <Section tone="ivory" id="webhooks" ariaLabel="Webhooks and events">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <div>
@@ -336,10 +381,13 @@ export default function DevelopersPage() {
           />
           <div className="space-y-5">
             <div className="border border-bx-gold-500/30 bg-bx-maroon-800/60 p-6">
-              <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
-                Rate limits (planned)
-              </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+              <div className="flex items-center gap-4">
+                <FeatureIcon icon="gauge" size="sm" tone="dark" />
+                <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
+                  Rate limits (planned)
+                </h3>
+              </div>
+              <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/85">
                 Per-key limits with clear headers on every response, so a
                 client always knows how much budget remains. Exceeding a
                 limit returns HTTP 429 with a retry-after hint — never a
@@ -347,10 +395,13 @@ export default function DevelopersPage() {
               </p>
             </div>
             <div className="border border-bx-gold-500/30 bg-bx-maroon-800/60 p-6">
-              <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
-                Errors (planned)
-              </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+              <div className="flex items-center gap-4">
+                <FeatureIcon icon="alert" size="sm" tone="dark" />
+                <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
+                  Errors (planned)
+                </h3>
+              </div>
+              <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/85">
                 Every error carries a stable machine-readable code, a
                 human-readable message and a link to the relevant docs
                 section. 4xx errors mean the request was wrong; 5xx errors
@@ -358,10 +409,13 @@ export default function DevelopersPage() {
               </p>
             </div>
             <div className="border border-bx-gold-500/30 bg-bx-maroon-800/60 p-6">
-              <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
-                SDKs (planned)
-              </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-bx-champagne/85">
+              <div className="flex items-center gap-4">
+                <FeatureIcon icon="spark" size="sm" tone="dark" />
+                <h3 className="font-sans text-lg font-extrabold text-bx-ivory">
+                  SDKs (planned)
+                </h3>
+              </div>
+              <p className="mt-3 text-[15px] leading-relaxed text-bx-champagne/85">
                 Client libraries are on the roadmap after the sandbox
                 proves the API shape. Until then, the examples on this page
                 are plain HTTP — any client, any language.

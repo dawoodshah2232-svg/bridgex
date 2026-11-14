@@ -7,29 +7,33 @@ import Link from "next/link";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import Reveal from "../ui/Reveal";
-import Icon from "../icons";
+import Icon, { layerIcon } from "../icons";
 
 const LAYERS = [
   {
     href: "/platform/client-experience",
+    slug: "client-experience",
     name: "Experience",
     tag: "What clients, partners and advisors touch",
     text: "Branded client rooms, partner portals and advisor interfaces — web and mobile, in your brand.",
   },
   {
     href: "/platform/financial-operations",
+    slug: "financial-operations",
     name: "Operations",
     tag: "How the business runs day to day",
     text: "Accounts, wallets, payments, service cases and approvals — one queue, one record, one audit trail.",
   },
   {
     href: "/platform/integrations",
+    slug: "integrations",
     name: "Integrations",
     tag: "How BridgeX talks to the rest of your stack",
     text: "Adapters for trading platforms, payment providers, KYC and market data, with webhooks and retries.",
   },
   {
     href: "/platform/analytics",
+    slug: "analytics",
     name: "Intelligence",
     tag: "How you see what is happening",
     text: "Executive dashboards, partner and sales funnels, exception queues and audit-ready reporting.",
@@ -112,11 +116,18 @@ export default function ArchitectureDiagram() {
                         {layer.text}
                       </span>
                     </span>
-                    <Icon
-                      name="arrowUpRight"
-                      size={22}
-                      className="mt-1 shrink-0 text-bx-gold-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    />
+                    <span className="mt-1 flex shrink-0 flex-col items-center gap-2">
+                      <Icon
+                        name={layerIcon(layer.slug)}
+                        size={28}
+                        className="text-bx-gold-400"
+                      />
+                      <Icon
+                        name="arrowUpRight"
+                        size={22}
+                        className="text-bx-gold-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </span>
                   </Link>
                 </Reveal>
               </li>

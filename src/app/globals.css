@@ -120,10 +120,31 @@ body {
   will-change: transform;
 }
 
+/* Slow cinematic Ken Burns drift for hero media (transform-only).
+   Scale stays above 1 whenever the image translates, so no edge
+   gaps appear at any point in the cycle. Used by HeroMedia.
+   The prefers-reduced-motion block below disables it. */
+@keyframes bx-kenburns {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: scale(1.08) translate(-1.5%, 1%);
+  }
+}
+.bx-kenburns {
+  animation: bx-kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
 /* Respect reduced motion globally; components honour it too. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  /* Ken Burns drift off entirely — the hero image sits still. */
+  .bx-kenburns {
+    animation: none;
   }
   *,
   *::before,

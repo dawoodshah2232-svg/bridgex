@@ -13,6 +13,7 @@ import IntegrationEcosystem from "@/components/home/IntegrationEcosystem";
 import ReliabilityGovernance from "@/components/home/ReliabilityGovernance";
 import ImplementationMethod from "@/components/home/ImplementationMethod";
 import Insights from "@/components/home/Insights";
+import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
 
 export default function Home() {
@@ -21,6 +22,23 @@ export default function Home() {
       <Hero />
       <ValueIntro />
       <CapabilityTiles />
+      <PhotoBand
+        image="/images/band-bridge-istanbul.jpg"
+        alt="Bosphorus Bridge glowing red above Istanbul at night"
+        eyebrow="Why BridgeX"
+        heading={
+          <>
+            Built for the business{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              behind the trading.
+            </span>
+          </>
+        }
+        copy="One platform for onboarding, operations, payments and growth — connected through one record, one ledger, one audit trail."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1280}
+      />
       <ArchitectureDiagram />
       <DemoPreview />
       <PhotoInterlude />
@@ -28,6 +46,23 @@ export default function Home() {
       <IntegrationEcosystem />
       <ReliabilityGovernance />
       <ImplementationMethod />
+      <PhotoBand
+        image="/images/band-skyline-singapore.jpg"
+        alt="Singapore skyline with illuminated skyscrapers at dusk"
+        eyebrow="Keep improving"
+        heading={
+          <>
+            A system that{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              keeps getting better.
+            </span>
+          </>
+        }
+        copy="Launch is not the end of the work. We review what the data says and tune the workflows — onboarding, routing, incentives — so the platform grows with the business."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1013}
+      />
       <Insights />
       <CtaBand />
     </>

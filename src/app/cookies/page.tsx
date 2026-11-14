@@ -17,6 +17,10 @@ export default function CookiesPage() {
       intro="What we store in your browser and why, how the consent banner works, and how you can manage or delete cookies yourself."
       updated="13 November 2026"
       sections={COOKIE_SECTIONS}
+      image="/images/signing-agreement.jpg"
+      imageAlt="Businessman handing a pen to sign an agreement"
+      imageWidth={1600}
+      imageHeight={1067}
     />
   );
 }

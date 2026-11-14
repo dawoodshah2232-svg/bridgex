@@ -16,9 +16,10 @@ import { FaqSection, WorkflowSteps } from "@/components/platform/Sections";
 import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
-import GoldLineDivider from "@/components/ui/GoldLineDivider";
+import PhotoBand from "@/components/ui/PhotoBand";
+import ImageText from "@/components/ui/ImageText";
 import CtaBand from "@/components/ui/CtaBand";
-import Icon, { type IconName } from "@/components/icons";
+import Icon, { solutionIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Platform Overview — Four Layers, One Connected Business",
@@ -64,48 +65,48 @@ const JOURNEY = [
   },
 ];
 
-const SOLUTIONS: { href: string; label: string; text: string; icon: IconName }[] = [
+const SOLUTIONS: { href: string; slug: string; label: string; text: string }[] = [
   {
     href: "/solutions/financial-crm",
+    slug: "financial-crm",
     label: "Financial CRM",
     text: "Leads, contact 360 and pipelines.",
-    icon: "crm",
   },
   {
     href: "/solutions/payment-orchestration",
+    slug: "payment-orchestration",
     label: "Payment Orchestration",
     text: "Routing, retry and reconciliation.",
-    icon: "payments",
   },
   {
     href: "/solutions/pamm-copy-trading",
+    slug: "pamm-copy-trading",
     label: "PAMM & Copy Trading",
     text: "Strategies, allocations and fees.",
-    icon: "pamm",
   },
   {
     href: "/solutions/ib-incentives",
+    slug: "ib-incentives",
     label: "IB & Incentive Management",
     text: "Hierarchies, ledgers and payouts.",
-    icon: "ib",
   },
   {
     href: "/solutions/tradeops",
+    slug: "tradeops",
     label: "TradeOps Control Center",
     text: "Server operations with approval.",
-    icon: "tradeops",
   },
   {
     href: "/solutions/digital-onboarding",
+    slug: "digital-onboarding",
     label: "Digital Onboarding & KYC",
     text: "Adaptive journeys and verification.",
-    icon: "onboarding",
   },
   {
     href: "/solutions/trading-contests",
+    slug: "trading-contests",
     label: "Trading Contest Management",
     text: "Contests, rankings and prizes.",
-    icon: "contests",
   },
 ];
 
@@ -132,8 +133,8 @@ export default function PlatformOverview() {
         }
         copy="BridgeX is not four products bolted together. It is one platform organised as four layers — experience, operations, integrations and intelligence — all standing on the same foundation, reading from the same records."
         image={{
-          src: "/images/hero-bridge.jpg",
-          alt: "",
+          src: "/images/hero-skyline-nyc.jpg",
+          alt: "New York City skyline with One World Trade Center at dusk",
           width: 1920,
           height: 1080,
         }}
@@ -225,6 +226,25 @@ export default function PlatformOverview() {
         </Reveal>
       </Section>
 
+      {/* Photographic interlude — the city the business operates in */}
+      <PhotoBand
+        image="/images/band-bridge-london.jpg"
+        alt="London bridge and skyscrapers at twilight"
+        eyebrow="How it connects"
+        heading={
+          <>
+            One record, from first registration{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              to settled payout.
+            </span>
+          </>
+        }
+        copy="Every layer reads the same record — so the client room, the operations queue and the board pack never disagree."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1280}
+      />
+
       {/* One journey across the layers */}
       <Section tone="ivory" ariaLabel="One client journey across the layers">
         <SectionIntro
@@ -235,16 +255,26 @@ export default function PlatformOverview() {
         <div className="mt-12">
           <WorkflowSteps steps={JOURNEY} />
         </div>
-        <Reveal delay={0.1} className="mt-12">
-          <GoldLineDivider />
-          <p className="mt-8 max-w-[68ch] text-base leading-relaxed text-bx-muted">
-            At every step, the same record is being read and written: the
-            client room shows it, operations works it, integrations move money
-            against it, and intelligence reports on it. There is no nightly
-            sync to drift, and no second copy of the truth.
-          </p>
-        </Reveal>
       </Section>
+
+      {/* The same record, at every step — image-led close to the journey */}
+      <ImageText
+        image="/images/team-discussion.jpg"
+        alt="Team in discussion around a table"
+        eyebrow="One record"
+        heading={
+          <>
+            The same record,{" "}
+            <span className="font-display font-semibold italic text-bx-maroon-700">
+              at every step.
+            </span>
+          </>
+        }
+        copy="At every step, the same record is being read and written: the client room shows it, operations works it, integrations move money against it, and intelligence reports on it. There is no nightly sync to drift, and no second copy of the truth."
+        tone="cream"
+        imageWidth={1400}
+        imageHeight={933}
+      />
 
       {/* Solutions that run on the platform */}
       <Section tone="white" ariaLabel="Solutions built on the platform">
@@ -260,7 +290,7 @@ export default function PlatformOverview() {
               href={solution.href}
               className="group flex items-start gap-4 border border-bx-gold-500/25 bg-bx-ivory p-5 transition-colors duration-200 hover:border-bx-gold-500/60 hover:bg-bx-cream"
             >
-              <Icon name={solution.icon} size={28} className="mt-0.5 shrink-0 text-bx-gold-600" />
+              <Icon name={solutionIcon(solution.slug)} size={28} className="mt-0.5 shrink-0 text-bx-gold-600" />
               <span>
                 <span className="flex items-center gap-2 font-sans text-base font-extrabold leading-tight text-bx-ink">
                   {solution.label}

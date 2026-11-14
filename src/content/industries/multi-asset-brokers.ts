@@ -21,6 +21,32 @@ export const multiAssetBrokers: IndustryContent = {
     width: 1600,
     height: 1200,
   },
+  heroBridgeLine: true,
+  secondaryImage: {
+    src: "/images/trading-floor-desk.jpg",
+    alt: "Trader analysing charts across multiple monitors",
+    width: 1920,
+    height: 1282,
+  },
+  useCaseFlip: true,
+  challengeImage: {
+    src: "/images/traders-discussion.jpg",
+    alt: "Two traders discussing market charts on a laptop and tablet",
+    width: 1600,
+    height: 1067,
+  },
+  bandImage: {
+    src: "/images/hero-skyline-nyc.jpg",
+    alt: "New York City skyline with One World Trade Center at dusk",
+    width: 1920,
+    height: 1080,
+  },
+  band: {
+    eyebrow: "One operating view",
+    heading: "No trader falls between systems.",
+    copy: "Leads, onboarding, trading accounts, deposits, partners and risk — connected workflows, one desk, one record.",
+  },
+  bandPosition: "after-modules",
   challenges: {
     label: "The challenges",
     heading: "A brokerage is only as fast as its slowest handoff.",

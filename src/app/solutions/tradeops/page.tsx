@@ -1,8 +1,11 @@
 /**
  * TradeOps Control Center — solution page (spec S5).
- * Plain light hero with a concept notice. Composition: the dark-console
- * preview leads, then problem, dark workflow, capabilities, benefits,
- * use cases, security, integrations, comparison, FAQ.
+ * Photographic dark hero with a concept notice. Composition: the
+ * dark-console preview leads on its maroon stage, then the problem
+ * as an ImageText block (compliance desk), dark workflow,
+ * capabilities, image-led benefits, photographic use-case cards,
+ * security, integrations, comparison, a glass-tower PhotoBand
+ * interlude, FAQ.
  */
 import type { Metadata } from "next";
 import { SOLUTIONS } from "@/content/solutions";
@@ -22,6 +25,7 @@ import {
   WorkflowSteps,
 } from "@/components/solutions/shared";
 import CtaBand from "@/components/ui/CtaBand";
+import PhotoBand from "@/components/ui/PhotoBand";
 
 const s = SOLUTIONS["tradeops"];
 
@@ -45,6 +49,12 @@ export default function TradeOpsPage() {
         copy={s.problemCopy}
         pains={s.pains}
         tone="cream"
+        image={{
+          src: "/images/compliance-desk.jpg",
+          alt: "Businesswoman reviewing paperwork in an office",
+          width: 1600,
+          height: 1068,
+        }}
       />
 
       <WorkflowSteps
@@ -53,6 +63,7 @@ export default function TradeOpsPage() {
         copy={s.workflowCopy}
         steps={s.workflowSteps}
         dark
+        icons={["document", "checkCircle", "eye", "shield", "play", "audit"]}
       />
 
       <CapabilityGroups
@@ -61,10 +72,23 @@ export default function TradeOpsPage() {
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
         tone="white"
-        icons={["tradeops", "sliders", "shield"]}
+        icons={["operations", "workflow", "checkCircle"]}
       />
 
-      <BenefitGrid label={s.benefitsLabel} heading={s.benefitsHeading} benefits={s.benefits} tone="cream" />
+      <BenefitGrid
+        label={s.benefitsLabel}
+        heading={s.benefitsHeading}
+        benefits={s.benefits}
+        tone="cream"
+        icons={["eye", "users", "workflow", "calendar", "audit", "refresh"]}
+        image={{
+          src: "/images/analyst-workstation.jpg",
+          alt: "Analyst working at a workstation",
+          width: 1400,
+          height: 935,
+        }}
+        flip
+      />
 
       <UseCaseCards
         label={s.useCasesLabel}
@@ -72,13 +96,40 @@ export default function TradeOpsPage() {
         copy={s.useCasesCopy}
         useCases={s.useCases}
         tone="ivory"
+        images={[
+          { src: "/images/industries-brokers.jpg", alt: "Brokerage trading environment", width: 1600, height: 1200 },
+          { src: "/images/industries-prop-firms.jpg", alt: "Prop trading workspace", width: 1600, height: 1067 },
+          { src: "/images/industries-securities.jpg", alt: "Securities trading concept", width: 1600, height: 1067 },
+        ]}
       />
 
-      <SecurityPanel heading={s.securityHeading} copy={s.securityCopy} items={s.securityItems} />
+      <SecurityPanel
+        heading={s.securityHeading}
+        copy={s.securityCopy}
+        items={s.securityItems}
+        icons={["key", "users", "lock", "audit"]}
+      />
 
-      <IntegrationList heading={s.integrationsHeading} copy={s.integrationsCopy} items={s.integrations} tone="white" />
+      <IntegrationList
+        heading={s.integrationsHeading}
+        copy={s.integrationsCopy}
+        items={s.integrations}
+        tone="white"
+        icons={["code", "crm", "wallet", "send"]}
+      />
 
       <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+
+      <PhotoBand
+        image="/images/band-glass-tower.jpg"
+        alt="Curved glass skyscraper facade against a dusk sky"
+        eyebrow="TradeOps Control Center"
+        heading="Fewer incidents, calmer operations."
+        copy="Validation and dry-run surface bad scope and bad values while they are still free to fix."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1098}
+      />
 
       <FaqSection faqs={s.faqs} tone="ivory" />
 

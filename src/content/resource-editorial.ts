@@ -45,6 +45,36 @@ export const ARTICLE_BODIES: Record<string, string[]> = {
 
 /* ------------------------------------------------------------------ */
 
+/**
+ * Mid-read photographic breaks for the blog index, keyed by the
+ * INSIGHT_ARTICLES slug. Each break pairs a real photograph with a
+ * pull-quote taken verbatim from the article's own text — no new
+ * claims, just a visual pause halfway through a long read.
+ */
+export interface ArticleBreak {
+  image: string;
+  imageAlt: string;
+  quote: string;
+}
+
+export const ARTICLE_BREAKS: Record<string, ArticleBreak> = {
+  "one-ledger-one-truth": {
+    image: "/images/compliance-desk.jpg",
+    imageAlt: "Businesswoman reviewing paperwork in an office",
+    quote: "Reconciliation stops being detective work and becomes a check.",
+  },
+  "partner-growth-without-the-spreadsheet": {
+    image: "/images/handshake-partners.jpg",
+    imageAlt: "Business partners shaking hands during a meeting",
+    quote: "The spreadsheet is not the enemy. It is a prototype that outlived its brief.",
+  },
+  "onboarding-is-a-journey-not-a-form": {
+    image: "/images/solutions-onboarding.jpg",
+    imageAlt: "Client onboarding meeting",
+    quote: "The firms that convert treat onboarding as a guided journey.",
+  },
+};
+
 /* ------------------------------------------------------------------ */
 /* FAQs (one set per page)                                             */
 /* ------------------------------------------------------------------ */

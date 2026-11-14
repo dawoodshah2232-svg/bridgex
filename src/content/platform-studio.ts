@@ -67,7 +67,7 @@ export const STUDIO_BUILDERS: StudioBuilder[] = [
   {
     id: "workflows",
     name: "Workflows",
-    icon: "exchanges",
+    icon: "workflow",
     tagline: "If this, then that — with an approver in the loop.",
     detail:
       "Automate the steps between events: when a document is approved, open the account; when a withdrawal exceeds a threshold, route it to finance. Workflows run the same way every time, and the version that ran is recorded with the case.",
@@ -103,7 +103,7 @@ export const STUDIO_BUILDERS: StudioBuilder[] = [
   {
     id: "reports",
     name: "Reports",
-    icon: "audit",
+    icon: "report",
     tagline: "The numbers your reviewers ask for.",
     detail:
       "Build tabular reports from live operational data — funding summaries, onboarding throughput, commission ledgers — with filters, grouping and scheduled exports. A report is a saved question, not a one-off export that nobody can reproduce.",
@@ -112,7 +112,7 @@ export const STUDIO_BUILDERS: StudioBuilder[] = [
   {
     id: "dashboards",
     name: "Dashboards",
-    icon: "pamm",
+    icon: "chart",
     tagline: "A live view, composed for a role.",
     detail:
       "Compose dashboards from charts, queues and KPIs, and publish them per role: executives see the business, finance sees the money, compliance sees the exceptions. Everyone looks at the same underlying records, through a lens built for their job.",
@@ -188,7 +188,7 @@ export const INTEGRATION_CATEGORIES: IntegrationCategory[] = [
   {
     id: "marketdata",
     name: "Market data & CRM",
-    icon: "pamm",
+    icon: "chart",
     tagline: "Prices and reference data, where your teams can use them.",
     detail:
       "Market-data adapters bring pricing and reference data into dashboards and client views, while CRM synchronisation keeps external sales and marketing tools in step with the BridgeX record. Feeds are monitored for staleness, so a dead feed is an alert — not a dashboard quietly showing yesterday's prices.",

@@ -47,6 +47,10 @@ export interface HubItem {
   href: string;
   /** Small meta line, e.g. a date or "5 min read". */
   meta: string;
+  /** Card thumbnail (root-relative public path; render through asset()). */
+  image: string;
+  /** Real alt text describing the thumbnail photograph. */
+  imageAlt: string;
 }
 
 /** The six resource sections, for the hub's "browse by section" grid. */
@@ -55,6 +59,10 @@ export interface ResourceSection {
   label: string;
   description: string;
   icon: IconName;
+  /** Section card photograph (root-relative public path). */
+  image: string;
+  /** Real alt text describing the section photograph. */
+  imageAlt: string;
 }
 
 export const RESOURCE_SECTIONS: ResourceSection[] = [
@@ -64,6 +72,8 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
     description:
       "Original editorial on brokerage operations — reconciliation, partner growth and onboarding, written by the BridgeX team.",
     icon: "book",
+    image: "/images/skyline-dusk.jpg",
+    imageAlt: "City skyline at dusk",
   },
   {
     href: "/resources/guides",
@@ -71,6 +81,8 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
     description:
       "Practical, operator-focused guides: launching a brokerage, designing an IB programme, running onboarding and payments well.",
     icon: "document",
+    image: "/images/workshop-presentation.jpg",
+    imageAlt: "Professionals attending a business seminar",
   },
   {
     href: "/resources/case-studies",
@@ -78,6 +90,8 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
     description:
       "Authentic client stories, published only when customers agree to share them. None yet — here is what we will document.",
     icon: "users",
+    image: "/images/band-glass-tower.jpg",
+    imageAlt: "Curved glass skyscraper facade against a dusk sky",
   },
   {
     href: "/resources/product-updates",
@@ -85,6 +99,8 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
     description:
       "What shipped, what changed and what is next — labelled honestly as Live, Sandbox, Demo or Planned.",
     icon: "layers",
+    image: "/images/hero-skyline-sf.jpg",
+    imageAlt: "San Francisco financial district skyline at twilight across the bay",
   },
   {
     href: "/resources/developers",
@@ -92,6 +108,8 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
     description:
       "Versioned API architecture, example endpoints and planned webhooks — built for the engineers who will integrate BridgeX.",
     icon: "code",
+    image: "/images/resources-code.jpg",
+    imageAlt: "Developer code on screen",
   },
   {
     href: "/resources/events",
@@ -99,6 +117,8 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
     description:
       "Planned webinars on onboarding, partner economics and payments. No dates yet — register interest and we will tell you first.",
     icon: "calendar",
+    image: "/images/resources-audience.jpg",
+    imageAlt: "Audience at an event",
   },
 ];
 
@@ -115,6 +135,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Guides",
     href: "/resources/guides",
     meta: "Guide · 8 min read",
+    image: "/images/signing-contract.jpg",
+    imageAlt: "Person signing documents with a pen",
   },
   {
     id: "guide-ib-programme",
@@ -124,6 +146,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Guides",
     href: "/resources/guides",
     meta: "Guide · 7 min read",
+    image: "/images/handshake-partners.jpg",
+    imageAlt: "Business partners shaking hands during a meeting",
   },
   {
     id: "guide-onboarding-kyc",
@@ -133,6 +157,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Guides",
     href: "/resources/guides",
     meta: "Guide · 9 min read",
+    image: "/images/compliance-review.jpg",
+    imageAlt: "Professional reviewing documents at a desk",
   },
   {
     id: "guide-payment-routing",
@@ -142,6 +168,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Guides",
     href: "/resources/guides",
     meta: "Guide · 6 min read",
+    image: "/images/payments-pos.jpg",
+    imageAlt: "Card payment being processed at a point-of-sale terminal",
   },
   {
     id: "guide-reporting",
@@ -151,6 +179,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Guides",
     href: "/resources/guides",
     meta: "Guide · 6 min read",
+    image: "/images/trading-floor-desk.jpg",
+    imageAlt: "Trader analysing charts across multiple monitors",
   },
   {
     id: "update-hub-launch",
@@ -160,6 +190,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Product updates",
     href: "/resources/product-updates",
     meta: "Live · 13 Nov 2026",
+    image: "/images/resources-library.jpg",
+    imageAlt: "Rows of bookshelves filled with books in a bright library",
   },
   {
     id: "update-developer-docs",
@@ -169,6 +201,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Product updates",
     href: "/resources/product-updates",
     meta: "Demo · 12 Nov 2026",
+    image: "/images/resources-code.jpg",
+    imageAlt: "Developer code on screen",
   },
   {
     id: "update-sandbox",
@@ -178,6 +212,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Product updates",
     href: "/resources/product-updates",
     meta: "Planned · 27 Oct 2026",
+    image: "/images/abstract-glass-lines.jpg",
+    imageAlt: "Low-angle view of a glass skyscraper facade",
   },
   {
     id: "dev-api-reference",
@@ -187,6 +223,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Developers",
     href: "/resources/developers",
     meta: "Example endpoints · v1 (planned)",
+    image: "/images/abstract-glass-ceiling.jpg",
+    imageAlt: "Skyscrapers seen through a glass ceiling",
   },
   {
     id: "dev-webhooks",
@@ -196,6 +234,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Developers",
     href: "/resources/developers",
     meta: "Planned · v1",
+    image: "/images/abstract-mirrored-tower.jpg",
+    imageAlt: "Modern tower with a mirrored glass facade",
   },
   {
     id: "event-onboarding-webinar",
@@ -205,6 +245,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Events",
     href: "/resources/events",
     meta: "Planned webinar · 45 min + Q&A",
+    image: "/images/workshop-presentation.jpg",
+    imageAlt: "Professionals attending a business seminar",
   },
   {
     id: "event-payments-webinar",
@@ -214,6 +256,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Events",
     href: "/resources/events",
     meta: "Planned webinar · 45 min + Q&A",
+    image: "/images/boardroom-conference.jpg",
+    imageAlt: "Business panel seated at a long conference table",
   },
   {
     id: "case-studies-soon",
@@ -223,6 +267,8 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     category: "Case studies",
     href: "/resources/case-studies",
     meta: "Coming soon",
+    image: "/images/band-glass-tower.jpg",
+    imageAlt: "Curved glass skyscraper facade against a dusk sky",
   },
 ];
 
@@ -241,6 +287,15 @@ export interface Guide {
   audience: string;
   readMinutes: number;
   summary: string;
+  /** Card header photograph (root-relative public path). */
+  image: string;
+  /** Real alt text describing the header photograph. */
+  imageAlt: string;
+  /** Mid-read photographic break inside the expanded guide. */
+  breakImage: string;
+  breakImageAlt: string;
+  /** Pull-quote from the guide's own text, under the break image. */
+  breakQuote: string;
   keyPoints: string[];
   sections: GuideSection[];
 }
@@ -254,6 +309,11 @@ export const GUIDES: Guide[] = [
     readMinutes: 8,
     summary:
       "The decisions to make before go-live — entities, accounts, onboarding, payments and partners — in the order that avoids rework.",
+    image: "/images/signing-contract.jpg",
+    imageAlt: "Person signing documents with a pen",
+    breakImage: "/images/lobby-office.jpg",
+    breakImageAlt: "Modern office lobby with wooden panels and large windows",
+    breakQuote: "One client record, shared by every workflow",
     keyPoints: [
       "Decide the operating model before choosing tools",
       "Onboarding, payments and partners share one client record",
@@ -292,6 +352,11 @@ export const GUIDES: Guide[] = [
     readMinutes: 7,
     summary:
       "Tiers, attribution rules and a commission ledger your partners can check themselves — trust is a feature, not a promise.",
+    image: "/images/handshake-partners.jpg",
+    imageAlt: "Business partners shaking hands during a meeting",
+    breakImage: "/images/team-collaboration.jpg",
+    breakImageAlt: "Team collaborating over a laptop in a bright office",
+    breakQuote: "Every earning needs a cause a partner can inspect",
     keyPoints: [
       "Write the attribution rule down before the first referral",
       "Every earning needs a cause a partner can inspect",
@@ -330,6 +395,11 @@ export const GUIDES: Guide[] = [
     readMinutes: 9,
     summary:
       "Journey design, verification, approval queues and the handoff to a live trading account — run as one workflow, not five.",
+    image: "/images/compliance-review.jpg",
+    imageAlt: "Professional reviewing documents at a desk",
+    breakImage: "/images/signing-agreement.jpg",
+    breakImageAlt: "Businessman handing a pen to sign an agreement",
+    breakQuote: "Verification is a service, not a gate",
     keyPoints: [
       "Ask for information when it earns its place",
       "Different applicants need different journeys",
@@ -368,6 +438,11 @@ export const GUIDES: Guide[] = [
     readMinutes: 6,
     summary:
       "Routing rules, cascading retry and reconciliation: how deposits stop being a daily mystery for your finance team.",
+    image: "/images/payments-pos.jpg",
+    imageAlt: "Card payment being processed at a point-of-sale terminal",
+    breakImage: "/images/payments-contactless.jpg",
+    breakImageAlt: "Close-up of a contactless payment terminal",
+    breakQuote: "A declined card is not the end of a deposit; it is the middle of one.",
     keyPoints: [
       "Route by country, currency, amount and client profile",
       "A declined payment deserves a second route, not a dead end",
@@ -406,6 +481,11 @@ export const GUIDES: Guide[] = [
     readMinutes: 6,
     summary:
       "Funnels, exception queues and audit trails — the small set of views that tells an operator what actually needs attention.",
+    image: "/images/trading-floor-desk.jpg",
+    imageAlt: "Trader analysing charts across multiple monitors",
+    breakImage: "/images/analyst-workstation.jpg",
+    breakImageAlt: "Analyst working at a workstation",
+    breakQuote: "Audit trails are for Tuesdays, not just auditors",
     keyPoints: [
       "Start with four views, not forty dashboards",
       "Exceptions deserve a queue, not a report",
@@ -454,21 +534,25 @@ export interface ProductUpdate {
 }
 
 /** What each status label means on this page (and across the site). */
-export const UPDATE_STATUS_DEFINITIONS: { status: UpdateStatus; meaning: string }[] = [
+export const UPDATE_STATUS_DEFINITIONS: { status: UpdateStatus; meaning: string; icon: IconName }[] = [
   {
     status: "Live",
+    icon: "checkCircle",
     meaning: "Available on the BridgeX website today, as described.",
   },
   {
     status: "Sandbox",
+    icon: "gauge",
     meaning: "Available in a test environment with sample data only.",
   },
   {
     status: "Demo",
+    icon: "eye",
     meaning: "A preview or illustration — not a working production module.",
   },
   {
     status: "Planned",
+    icon: "clock",
     meaning: "On the roadmap. Not built yet, and no date is promised.",
   },
 ];
@@ -565,6 +649,10 @@ export interface EventTopic {
   audience: string;
   description: string;
   points: string[];
+  /** Card photograph (root-relative public path). */
+  image: string;
+  /** Real alt text describing the card photograph. */
+  imageAlt: string;
 }
 
 export const EVENT_TOPICS: EventTopic[] = [
@@ -580,6 +668,8 @@ export const EVENT_TOPICS: EventTopic[] = [
       "Designing different journeys for individuals and corporates",
       "Approval queues that move at the speed of the business",
     ],
+    image: "/images/workshop-presentation.jpg",
+    imageAlt: "Professionals attending a business seminar",
   },
   {
     id: "partner-economics-webinar",
@@ -593,6 +683,8 @@ export const EVENT_TOPICS: EventTopic[] = [
       "The commission ledger as a shared record, not a monthly claim",
       "Payout rhythms partners can plan around",
     ],
+    image: "/images/boardroom-executives.jpg",
+    imageAlt: "Senior executives in discussion around a boardroom table",
   },
   {
     id: "payments-webinar",
@@ -606,6 +698,8 @@ export const EVENT_TOPICS: EventTopic[] = [
       "Declines as part of the flow, not the end of it",
       "Exception queues worked daily instead of quarterly",
     ],
+    image: "/images/payments-pos.jpg",
+    imageAlt: "Card payment being processed at a point-of-sale terminal",
   },
   {
     id: "tradeops-webinar",
@@ -619,6 +713,8 @@ export const EVENT_TOPICS: EventTopic[] = [
       "Four-eyes review for the changes that matter",
       "Audit logs that answer questions instead of raising them",
     ],
+    image: "/images/trading-floor-desk.jpg",
+    imageAlt: "Trader analysing charts across multiple monitors",
   },
 ];
 

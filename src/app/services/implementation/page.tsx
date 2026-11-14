@@ -4,6 +4,7 @@ import {
   IMPLEMENTATION_PHASES,
   RESPONSIBILITY_MATRIX,
 } from "@/content/company";
+import { asset } from "@/lib/paths";
 import InnerHero from "@/components/company/InnerHero";
 import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
@@ -11,8 +12,10 @@ import Reveal from "@/components/ui/Reveal";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import { ButtonLink } from "@/components/ui/Button";
+import PhotoBand from "@/components/ui/PhotoBand";
 import PhaseTimeline from "@/components/services/PhaseTimeline";
 import ResponsibilityMatrix from "@/components/services/ResponsibilityMatrix";
+import Icon from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Implementation — Discover, Design, Build, Validate, Deploy",
@@ -36,10 +39,10 @@ export default function ImplementationPage() {
           </>
         }
         copy="Implementation is a joint project with a named team on both sides, a written plan, and a gate at the end of every phase. You always know where things stand — and nothing goes live until your team has tested it."
-        image="/images/boardroom-meeting.jpg"
+        image="/images/workshop-presentation.jpg"
         imageAlt=""
-        imageWidth={1400}
-        imageHeight={933}
+        imageWidth={1600}
+        imageHeight={968}
       >
         <div className="mt-8 flex flex-wrap gap-4">
           <ButtonLink href="#phases" size="lg">
@@ -63,8 +66,29 @@ export default function ImplementationPage() {
         </div>
       </Section>
 
+      {/* Photo interlude — the gate, not the rush */}
+      <PhotoBand
+        image="/images/interlude-boardroom.jpg"
+        alt="Empty boardroom with a long table"
+        eyebrow="The method, in one line"
+        heading={
+          <>
+            A gate at the end of{" "}
+            <em className="font-display font-semibold italic text-bx-gold-400">
+              every phase.
+            </em>
+          </>
+        }
+        copy="Each phase closes with a decision, in writing — that the work is done well enough to proceed. Validation is never compressed."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1282}
+      >
+        <ButtonLink href="#responsibility">See who owns what</ButtonLink>
+      </PhotoBand>
+
       {/* Responsibility matrix */}
-      <Section tone="cream" ariaLabel="Who owns what">
+      <Section tone="cream" id="responsibility" ariaLabel="Who owns what">
         <SectionIntro
           label="Joint delivery"
           heading="Who owns what — agreed up front."
@@ -86,41 +110,68 @@ export default function ImplementationPage() {
       {/* Realistic deliverables */}
       <Section tone="white" ariaLabel="What you receive">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-          <SectionIntro
-            label="Deliverables"
-            heading="What you actually receive."
-            copy="No vague promises. These are the artefacts every implementation produces, and they stay with you whether or not you continue with managed services."
-          />
+          <div>
+            <SectionIntro
+              label="Deliverables"
+              heading="What you actually receive."
+              copy="No vague promises. These are the artefacts every implementation produces, and they stay with you whether or not you continue with managed services."
+            />
+            <Reveal className="mt-10">
+              <div className="relative mb-3 mr-3 sm:mb-4 sm:mr-4">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                />
+                <img
+                  src={asset("/images/services-workshop.jpg")}
+                  alt="Workshop session in progress"
+                  width={1600}
+                  height={1067}
+                  loading="lazy"
+                  className="relative aspect-[3/2] w-full object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
           <ul className="grid gap-4 sm:grid-cols-2">
             {[
               {
                 title: "Discovery & scope statement",
                 text: "What we agreed to build, and what success looks like.",
+                icon: "document" as const,
               },
               {
                 title: "Configuration design",
                 text: "Data model, journeys, roles and integrations — documented.",
+                icon: "sliders" as const,
               },
               {
                 title: "Staging environment",
                 text: "The full build, tested by your team before it matters.",
+                icon: "layers" as const,
               },
               {
                 title: "Reconciliation report",
                 text: "Migrated data proven against the source, in writing.",
+                icon: "audit" as const,
               },
               {
                 title: "Training records",
                 text: "Who was trained, on what, and what they can do now.",
+                icon: "book" as const,
               },
               {
                 title: "Go-live runbook & handover",
                 text: "Cutover steps, rollback trigger, and the support handover.",
+                icon: "checkCircle" as const,
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={(i % 2) * 0.07}>
                 <li className="h-full border border-bx-maroon-900/15 bg-bx-ivory p-6">
-                  <h3 className="font-sans text-lg font-extrabold text-bx-ink">
+                  <span className="text-bx-gold-600">
+                    <Icon name={item.icon} size={28} />
+                  </span>
+                  <h3 className="mt-4 font-sans text-lg font-extrabold text-bx-ink">
                     {item.title}
                   </h3>
                   <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-muted">

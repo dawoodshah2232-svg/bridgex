@@ -1,13 +1,17 @@
 /**
  * /platform/no-code-studio — No-Code Studio (spec §8).
- * Light hero, the eleven-builder interactive explorer with a clearly
- * labelled SIMULATED builder preview (no real publishing exists behind
- * this page), configuration governance, and a "what the studio cannot do"
- * honesty panel. Light hero.
+ * Dark photographic hero, the eleven-builder interactive explorer with a
+ * clearly labelled SIMULATED builder preview (no real publishing exists
+ * behind this page), configuration governance, and a "what the studio
+ * cannot do" honesty panel.
+ *
+ * DARK HERO — the coordinator adds "/platform/no-code-studio" to
+ * DARK_HERO_ROUTES.
  */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { STUDIO_FAQS } from "@/content/platform-studio";
+import { asset } from "@/lib/paths";
 import PageHero from "@/components/platform/PageHero";
 import StudioBuilderTabs from "@/components/platform/StudioBuilderTabs";
 import { FaqSection, WorkflowSteps } from "@/components/platform/Sections";
@@ -15,6 +19,7 @@ import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
 import DemoLabel from "@/components/ui/DemoLabel";
+import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
 import Icon from "@/components/icons";
 
@@ -63,16 +68,23 @@ export default function NoCodeStudioPage() {
     <>
       <PageHero
         href="/platform/no-code-studio"
+        dark
         eyebrow="Platform · Configuration"
         title={
           <>
             Shape the platform{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-display font-semibold italic text-bx-champagne">
               around your business.
             </span>
           </>
         }
         copy="Every brokerage works a little differently. The No-Code Studio is where those differences become configuration — objects, forms, documents, workflows, journeys, programs, reports and dashboards — built by the people who run the operation, without waiting on a release."
+        image={{
+          src: "/images/band-glass-tower.jpg",
+          alt: "Curved glass skyscraper facade against a dusk sky",
+          width: 1920,
+          height: 1098,
+        }}
       />
 
       {/* Builder family — interactive explorer */}
@@ -99,6 +111,26 @@ export default function NoCodeStudioPage() {
               heading="Your operation changes faster than your release cycle."
               copy="A new country rule, a new partner program, a new document requirement — these are Tuesday problems, not roadmap items. Configuration is how a platform keeps up with the business it serves."
             />
+            <Reveal delay={0.12} className="mt-10">
+              <div className="relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
+                />
+                <img
+                  src={asset("/images/abstract-glass-lines.jpg")}
+                  alt="Low-angle view of a glass skyscraper facade"
+                  width={1200}
+                  height={1800}
+                  loading="lazy"
+                  className="relative aspect-[3/4] w-full object-cover"
+                />
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+                The same pieces, composed differently — configuration is how
+                one platform fits many businesses.
+              </p>
+            </Reveal>
           </div>
           <div className="lg:col-span-7">
             <div className="space-y-8">
@@ -168,6 +200,25 @@ export default function NoCodeStudioPage() {
           ))}
         </ol>
       </Section>
+
+      {/* Photographic interlude — configuration is the surface */}
+      <PhotoBand
+        image="/images/hero-skyline-frankfurt.jpg"
+        alt="Frankfurt financial district and river bridge at sunset"
+        eyebrow="In practice"
+        heading={
+          <>
+            Configuration is{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              the surface of the business.
+            </span>
+          </>
+        }
+        copy="Draft, review, publish — and roll back. Every change follows the same governed path, because a platform that anyone can change is a platform nobody can trust."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1280}
+      />
 
       {/* What the studio cannot do — honesty panel */}
       <Section tone="white" ariaLabel="What the studio cannot do">

@@ -1,7 +1,8 @@
 /**
  * Bonds & Fixed Income industry page (spec §9).
  * Copy lives in src/content/industries/bonds-fixed-income.ts.
- * Light diagram hero — no DARK_HERO_ROUTES entry needed.
+ * DARK HERO — coordinator: add "/industries/bonds-fixed-income" to
+ * DARK_HERO_ROUTES in src/content/navigation.ts.
  */
 import type { Metadata } from "next";
 import { industryBySlug } from "@/content/industries";

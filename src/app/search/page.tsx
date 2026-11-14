@@ -9,6 +9,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Container } from "@/components/ui/Container";
+import HeroMedia from "@/components/ui/HeroMedia";
 import SearchBox from "@/components/search/SearchBox";
 import SearchExperience from "@/components/search/SearchExperience";
 
@@ -22,8 +23,15 @@ export default function SearchPage() {
   return (
     <>
       {/* Dark hero — clears the fixed 72px header. */}
-      <section className="bg-bx-maroon-900 pb-14 pt-[72px] text-bx-ivory sm:pb-16">
-        <Container className="pt-14 sm:pt-20">
+      <section className="relative overflow-hidden bg-bx-maroon-900 pb-14 pt-[72px] text-bx-ivory sm:pb-16">
+        <HeroMedia
+          image="/images/abstract-glass-ceiling.jpg"
+          alt="Skyscrapers seen through a glass ceiling"
+          scrim="strong"
+          imageWidth={1600}
+          imageHeight={900}
+        />
+        <Container className="relative pt-14 sm:pt-20">
           <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-gold-400">
             Search BridgeX
           </p>

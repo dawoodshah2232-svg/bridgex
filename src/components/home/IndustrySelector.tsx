@@ -10,23 +10,32 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { asset } from "@/lib/paths";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
-import Icon, { type IconName } from "../icons";
+import Icon, { industryIcon } from "../icons";
 import { onTabListKeyDown } from "../platform/tabs";
 
 interface Industry {
   href: string;
-  icon: IconName;
+  slug: string;
   label: string;
   description: string;
   challenges: string[];
+  image: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
 }
 
 const INDUSTRIES: Industry[] = [
   {
     href: "/industries/multi-asset-brokers",
-    icon: "brokers",
+    slug: "multi-asset-brokers",
+    image: "/images/industries-brokers.jpg",
+    imageAlt: "Brokerage trading environment",
+    imageWidth: 1600,
+    imageHeight: 1200,
     label: "Multi-Asset Brokers",
     description:
       "The full trader lifecycle — onboarding, client area, partner commissions, deposits and risk operations — on one connected core.",
@@ -38,7 +47,11 @@ const INDUSTRIES: Industry[] = [
   },
   {
     href: "/industries/banks",
-    icon: "banks",
+    slug: "banks",
+    image: "/images/banking-hall.jpg",
+    imageAlt: "Spacious modern banking hall with a dramatic ceiling",
+    imageWidth: 1600,
+    imageHeight: 1067,
     label: "Banks",
     description:
       "Bank-branded trading journeys for existing clients, with branch and relationship-manager coordination and compliance-grade permissions.",
@@ -50,7 +63,11 @@ const INDUSTRIES: Industry[] = [
   },
   {
     href: "/industries/securities-derivatives",
-    icon: "securities",
+    slug: "securities-derivatives",
+    image: "/images/industries-securities.jpg",
+    imageAlt: "Securities trading concept",
+    imageWidth: 1600,
+    imageHeight: 1067,
     label: "Securities & Derivatives",
     description:
       "Institutional and corporate account relationships, multi-entity CRM, controls and payment workflows — built for complexity.",
@@ -62,7 +79,11 @@ const INDUSTRIES: Industry[] = [
   },
   {
     href: "/industries/wealth-management",
-    icon: "wealth",
+    slug: "wealth-management",
+    image: "/images/wealth-advisor.jpg",
+    imageAlt: "Financial advisor discussing plans with clients",
+    imageWidth: 1600,
+    imageHeight: 1068,
     label: "Wealth Management",
     description:
       "Advisor workspaces, suitability evidence, pooled strategies, investor statements and introducer fees — connected, not bolted on.",
@@ -74,7 +95,11 @@ const INDUSTRIES: Industry[] = [
   },
   {
     href: "/industries/asset-fund-managers",
-    icon: "assetFund",
+    slug: "asset-fund-managers",
+    image: "/images/industries-asset-fund.jpg",
+    imageAlt: "Fund management office scene",
+    imageWidth: 1600,
+    imageHeight: 900,
     label: "Asset & Fund Managers",
     description:
       "Subscription workflows, an investor portal, capital calls and payouts, and distributor trail fees — handled as one flow.",
@@ -86,7 +111,11 @@ const INDUSTRIES: Industry[] = [
   },
   {
     href: "/industries/exchanges",
-    icon: "exchanges",
+    slug: "exchanges",
+    image: "/images/industries-exchanges-v2.jpg",
+    imageAlt: "New York Stock Exchange facade at night, warm gold light",
+    imageWidth: 1920,
+    imageHeight: 1440,
     label: "Exchanges & Trading Venues",
     description:
       "Membership onboarding, participant service, fee schedules, registration and conformance workflows — for venues and their members.",
@@ -98,7 +127,11 @@ const INDUSTRIES: Industry[] = [
   },
   {
     href: "/industries/bonds-fixed-income",
-    icon: "bonds",
+    slug: "bonds-fixed-income",
+    image: "/images/banking-columns.jpg",
+    imageAlt: "Ornate Corinthian column capital on a classical bank building",
+    imageWidth: 1200,
+    imageHeight: 1010,
     label: "Bonds & Fixed Income",
     description:
       "Onboarding and suitability for fixed-income clients, order and allocation visibility, and coupon and corporate-action service flows.",
@@ -110,7 +143,11 @@ const INDUSTRIES: Industry[] = [
   },
   {
     href: "/industries/prop-firms",
-    icon: "prop",
+    slug: "prop-firms",
+    image: "/images/industries-prop-firms.jpg",
+    imageAlt: "Prop trading workspace",
+    imageWidth: 1600,
+    imageHeight: 1067,
     label: "Prop Trading Firms",
     description:
       "Challenge lifecycles, affiliates, trading contests, profit-share workflows and risk compliance — the prop model, end to end.",
@@ -122,7 +159,11 @@ const INDUSTRIES: Industry[] = [
   },
   {
     href: "/industries/digital-assets",
-    icon: "digitalAssets",
+    slug: "digital-assets",
+    image: "/images/industries-digital-assets.jpg",
+    imageAlt: "Digital assets concept",
+    imageWidth: 1600,
+    imageHeight: 987,
     label: "Digital Asset Firms",
     description:
       "KYC, fiat on/off ramp concepts, CRM support, ambassador referrals and multi-jurisdiction review — for digital-asset businesses.",
@@ -182,7 +223,7 @@ export default function IndustrySelector() {
                 }`}
               >
                 <span className={isSelected ? "text-bx-gold-400" : "text-bx-maroon-700"}>
-                  <Icon name={ind.icon} size={24} />
+                  <Icon name={industryIcon(ind.slug)} size={24} />
                 </span>
                 <span className="flex-1 font-sans text-[15px] font-bold sm:text-base">
                   {ind.label}
@@ -211,8 +252,16 @@ export default function IndustrySelector() {
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
               className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-7 sm:p-9"
             >
-              <span className="text-bx-maroon-700">
-                <Icon name={industry.icon} size={36} strokeWidth={1.5} />
+              <img
+                src={asset(industry.image)}
+                alt={industry.imageAlt}
+                width={industry.imageWidth}
+                height={industry.imageHeight}
+                loading="lazy"
+                className="aspect-[16/9] w-full object-cover"
+              />
+              <span className="mt-6 text-bx-maroon-700">
+                <Icon name={industryIcon(industry.slug)} size={36} strokeWidth={1.5} />
               </span>
               <h3 className="mt-5 font-sans text-2xl font-bold text-bx-ink sm:text-[28px]">
                 {industry.label}

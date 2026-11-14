@@ -13,7 +13,13 @@
  * paint. Hero content renders visible, always.
  *
  * DARK HEROES in this group (coordinator: add to DARK_HERO_ROUTES):
- *   /services/implementation, /book-demo
+ *   /services/implementation, /services/managed-services,
+ *   /services/integration-migration, /book-demo
+ *
+ * Dark variant: the photograph drifts with the shared Ken Burns motion
+ * (`.bx-kenburns`, transform-only, disabled by prefers-reduced-motion)
+ * under a HeroMedia-style scrim — flat maroon tint plus a vertical
+ * gradient, darkest at the bottom where the H1 sits.
  */
 import type { ReactNode } from "react";
 import { asset } from "@/lib/paths";
@@ -49,16 +55,17 @@ export default function InnerHero({
     return (
       <header className="relative overflow-hidden bg-bx-maroon-900 text-bx-ivory">
         {image && (
-          <div className="absolute inset-0" aria-hidden="true">
+          <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
             <img
               src={asset(image)}
               alt=""
               width={imageWidth ?? 1600}
               height={imageHeight ?? 900}
               fetchPriority="high"
-              className="h-full w-full object-cover"
+              className="bx-kenburns h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-bx-maroon-950/85" />
+            <div className="absolute inset-0 bg-bx-maroon-950/70" />
+            <div className="absolute inset-0 bg-gradient-to-b from-bx-maroon-950/70 via-transparent to-bx-maroon-950/80" />
           </div>
         )}
         <Container className="relative pb-16 pt-[72px] sm:pb-20 sm:pt-[72px] lg:pb-24">

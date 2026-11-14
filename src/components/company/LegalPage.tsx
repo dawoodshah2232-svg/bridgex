@@ -5,6 +5,10 @@
  * on-page contents list (anchor links), and the legal sections rendered
  * from content with semantic headings. Server component; pages pass their
  * section data in.
+ *
+ * Visual touch is deliberately restrained: an optional side photograph
+ * in the hero (signing / compliance imagery) and nothing else — these
+ * pages must stay readable documents.
  */
 import type { LegalSection } from "@/content/legal";
 import { Container } from "../ui/Container";
@@ -21,6 +25,10 @@ export default function LegalPage({
   intro,
   updated,
   sections,
+  image,
+  imageAlt = "",
+  imageWidth,
+  imageHeight,
 }: {
   href: string;
   eyebrow: string;
@@ -28,10 +36,24 @@ export default function LegalPage({
   intro: string;
   updated: string;
   sections: LegalSection[];
+  /** Optional restrained hero photograph (signing / compliance imagery). */
+  image?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }) {
   return (
     <>
-      <InnerHero href={href} eyebrow={eyebrow} title={title} copy={intro} />
+      <InnerHero
+        href={href}
+        eyebrow={eyebrow}
+        title={title}
+        copy={intro}
+        image={image}
+        imageAlt={imageAlt}
+        imageWidth={imageWidth}
+        imageHeight={imageHeight}
+      />
       <div className="bg-bx-ivory pb-20 sm:pb-24 lg:pb-32">
         <Container>
           <div className="pt-2">

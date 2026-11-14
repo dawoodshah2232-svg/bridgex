@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DEMO_FAQ } from "@/content/company";
+import { asset } from "@/lib/paths";
 import InnerHero from "@/components/company/InnerHero";
 import DemoBookingForm from "@/components/forms/DemoBookingForm";
 import { Section } from "@/components/ui/Container";
@@ -49,6 +50,10 @@ export default function BookDemoPage() {
           </>
         }
         copy="Three short steps. Tell us who you are, what your business does, and what you want to see — and we will build a demo around it."
+        image="/images/handshake-deal.jpg"
+        imageAlt=""
+        imageWidth={1600}
+        imageHeight={1067}
       />
 
       {/* Form + promises */}
@@ -61,6 +66,22 @@ export default function BookDemoPage() {
           </Reveal>
 
           <div className="space-y-6">
+            <Reveal>
+              <div className="relative mb-3 mr-3 sm:mb-4 sm:mr-4">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                />
+                <img
+                  src={asset("/images/portrait-window.jpg")}
+                  alt="Businessman looking out over skyscrapers from a high-rise office"
+                  width={1600}
+                  height={1000}
+                  loading="lazy"
+                  className="relative aspect-[16/10] w-full object-cover"
+                />
+              </div>
+            </Reveal>
             {DEMO_PROMISES.map((promise, i) => (
               <Reveal key={promise.title} delay={0.08 + i * 0.06}>
                 <div className="border border-bx-maroon-900/15 bg-bx-white p-6 sm:p-7">

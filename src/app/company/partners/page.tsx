@@ -8,6 +8,8 @@ import Reveal from "@/components/ui/Reveal";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import { ButtonLink } from "@/components/ui/Button";
+import ImageText from "@/components/ui/ImageText";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import Icon from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -31,10 +33,10 @@ export default function PartnersPage() {
           </>
         }
         copy="BridgeX works best as part of an ecosystem — firms that sell into financial businesses, technology providers whose products connect to brokerage operations, and introducers who spot a fit. Partnership terms are agreed per relationship, in writing."
-        image="/images/interlude-boardroom.jpg"
-        imageAlt="A diverse team collaborating in a modern conference room"
-        imageWidth={1920}
-        imageHeight={1282}
+        image="/images/handshake-partners.jpg"
+        imageAlt="Business partners shaking hands during a meeting"
+        imageWidth={1600}
+        imageHeight={1067}
       >
         <div className="mt-8 flex flex-wrap gap-4">
           <ButtonLink href="#apply" size="lg">
@@ -57,9 +59,7 @@ export default function PartnersPage() {
           {PARTNER_MODELS.map((model, i) => (
             <Reveal key={model.title} delay={i * 0.07}>
               <article className="flex h-full flex-col border border-bx-maroon-900/15 bg-bx-ivory p-7">
-                <span className="text-bx-gold-600">
-                  <Icon name={model.icon} size={30} />
-                </span>
+                <FeatureIcon icon={model.icon} size="sm" className="items-start" />
                 <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink">
                   {model.title}
                 </h3>
@@ -84,6 +84,27 @@ export default function PartnersPage() {
           ))}
         </div>
       </Section>
+
+      {/* Terms, in writing */}
+      <ImageText
+        image="/images/signing-contract.jpg"
+        alt="Person signing documents with a pen"
+        eyebrow="Honest terms"
+        heading={
+          <>
+            Terms agreed{" "}
+            <em className="font-display font-semibold italic text-bx-maroon-700">
+              in writing.
+            </em>
+          </>
+        }
+        copy="A partnership starts with a conversation about what each side brings. If there is a fit, the terms are agreed per relationship and put in writing — no tier tables, no published commission rates, because the right terms depend on what each side brings."
+        tone="ivory"
+        imageWidth={1600}
+        imageHeight={1068}
+        ctaLabel="Apply to partner"
+        ctaHref="#apply"
+      />
 
       {/* Application form */}
       <Section tone="cream" id="apply" ariaLabel="Partner application">

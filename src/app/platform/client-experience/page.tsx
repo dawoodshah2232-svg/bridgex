@@ -1,8 +1,11 @@
 /**
  * /platform/client-experience — Client Experience (spec §8).
- * Light hero with a photograph, audience tabs (client room / partner
+ * Dark photographic hero, audience tabs (client room / partner
  * portal / advisor interface), mobile-first layouts, notifications &
- * documents, and branded journeys. Light hero.
+ * documents, and branded journeys.
+ *
+ * DARK HERO — the coordinator adds "/platform/client-experience" to
+ * DARK_HERO_ROUTES.
  */
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -14,6 +17,7 @@ import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
 import DemoLabel from "@/components/ui/DemoLabel";
+import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
 import Icon from "@/components/icons";
 
@@ -73,21 +77,22 @@ export default function ClientExperiencePage() {
     <>
       <PageHero
         href="/platform/client-experience"
+        dark
         eyebrow="Platform · Experience layer"
         title={
           <>
             The room your clients{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-display font-semibold italic text-bx-champagne">
               actually meet you in.
             </span>
           </>
         }
         copy="Most of what a client thinks of your business is the room you give them: how it looks, whether it answers, and whether it remembers them. BridgeX builds that room in your brand — for clients, for partners, and for the advisors who look after them."
         image={{
-          src: "/images/team-discussion.jpg",
-          alt: "Professionals discussing documents together in a bright meeting room",
-          width: 1400,
-          height: 933,
+          src: "/images/team-collaboration.jpg",
+          alt: "Team collaborating over a laptop in a bright office",
+          width: 1600,
+          height: 1068,
         }}
       />
 
@@ -102,6 +107,25 @@ export default function ClientExperiencePage() {
           <AudienceTabs />
         </div>
       </Section>
+
+      {/* Photographic interlude — the room reads as your business */}
+      <PhotoBand
+        image="/images/lobby-office.jpg"
+        alt="Modern office lobby with wooden panels and large windows"
+        eyebrow="Your brand, not ours"
+        heading={
+          <>
+            A room that reads{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              as your business.
+            </span>
+          </>
+        }
+        copy="Logo, colours, wording and domain are all configurable, and the journeys clients walk use your copy and your steps. BridgeX stays in the background."
+        height="sm"
+        imageWidth={1600}
+        imageHeight={1067}
+      />
 
       {/* Mobile-first — phone mock in code */}
       <Section tone="ivory" id="mobile" ariaLabel="Mobile-first layouts">

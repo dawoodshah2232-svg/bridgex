@@ -1,8 +1,11 @@
 /**
  * /platform/analytics — Data & Analytics (spec §8).
- * Light hero, role-view dashboard tabs with illustrative KPI cards and a
- * code-drawn funnel, exception queues, payment monitoring, and exports &
- * audit. Light hero.
+ * Dark photographic hero, role-view dashboard tabs with illustrative KPI
+ * cards and a code-drawn funnel, exception queues, payment monitoring,
+ * and exports & audit.
+ *
+ * DARK HERO — the coordinator adds "/platform/analytics" to
+ * DARK_HERO_ROUTES.
  */
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -14,6 +17,7 @@ import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
 import DemoLabel from "@/components/ui/DemoLabel";
+import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
 import Icon from "@/components/icons";
 import { asset } from "@/lib/paths";
@@ -67,16 +71,23 @@ export default function AnalyticsPage() {
     <>
       <PageHero
         href="/platform/analytics"
+        dark
         eyebrow="Platform · Intelligence layer"
         title={
           <>
             The number in the board pack{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-display font-semibold italic text-bx-champagne">
               and the number in the queue agree.
             </span>
           </>
         }
         copy="Dashboards, funnels and exception queues drawn from the same operational records your teams work with. There is no reporting copy to drift out of sync — so the figure a manager sees and the figure an agent works from are the same figure."
+        image={{
+          src: "/images/trader-workstation.jpg",
+          alt: "Trader working at a multi-monitor trading workstation",
+          width: 1600,
+          height: 1067,
+        }}
       />
 
       {/* Role views — interactive tabs */}
@@ -90,6 +101,25 @@ export default function AnalyticsPage() {
           <AnalyticsViews />
         </div>
       </Section>
+
+      {/* Photographic interlude — the same truth, four jobs */}
+      <PhotoBand
+        image="/images/band-skyline-hongkong.jpg"
+        alt="Hong Kong skyscrapers and skyline at twilight"
+        eyebrow="Role-specific views"
+        heading={
+          <>
+            The same truth,{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              arranged for their decisions.
+            </span>
+          </>
+        }
+        copy="Executives, finance, compliance and sales each get views built for their job — drawn from the same operational records, so the numbers agree everywhere."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1440}
+      />
 
       {/* Funnels — editorial + photo */}
       <Section tone="ivory" id="funnels" ariaLabel="Funnels">
@@ -136,10 +166,10 @@ export default function AnalyticsPage() {
                 className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
               />
               <img
-                src={asset("/images/skyline-dusk.jpg")}
-                alt="Manhattan skyline at dusk, city lights coming on across the towers"
-                width={1600}
-                height={1067}
+                src={asset("/images/boardroom-executives.jpg")}
+                alt="Senior executives in discussion around a boardroom table"
+                width={1920}
+                height={1280}
                 loading="lazy"
                 className="relative aspect-[3/2] w-full object-cover"
               />

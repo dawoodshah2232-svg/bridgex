@@ -21,10 +21,13 @@ import type { IndustryContent } from "./industries/types";
 export type {
   ArchitectureLayer,
   ArchitectureVariant,
+  BandHeight,
+  BandPosition,
   ChallengeLayout,
   FlowStep,
   HeroVariant,
   IllustrativePanel,
+  IndustryBand,
   IndustryChallenge,
   IndustryContent,
   IndustryImage,

@@ -27,6 +27,26 @@ export const digitalAssets: IndustryContent = {
     width: 1600,
     height: 2400,
   },
+  heroBridgeLine: true,
+  useCaseFlip: true,
+  challengeImage: {
+    src: "/images/abstract-mirrored-tower.jpg",
+    alt: "Modern tower with a mirrored glass facade",
+    width: 1200,
+    height: 1800,
+  },
+  bandImage: {
+    src: "/images/band-skyline-singapore.jpg",
+    alt: "Singapore skyline with illuminated skyscrapers at dusk",
+    width: 1920,
+    height: 1013,
+  },
+  band: {
+    eyebrow: "Jurisdiction-aware",
+    heading: "Many jurisdictions, one client record.",
+    copy: "Country rules shape onboarding, regional routing shapes ramps, and one record carries the client through reviews, referrals and reporting.",
+  },
+  bandPosition: "after-modules",
   challenges: {
     label: "The challenges",
     heading: "Many jurisdictions, one client record.",

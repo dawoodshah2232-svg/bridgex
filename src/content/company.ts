@@ -32,7 +32,7 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
     description:
       "A structured path from first workshop to go-live — discovery, design, build, validation and deployment, with a named team on both sides.",
     href: "/services/implementation",
-    icon: "layers",
+    icon: "workflow",
     points: ["Scoped in phases", "Joint delivery plan", "Validated before launch"],
   },
   {
@@ -56,7 +56,7 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
     description:
       "Adapters that connect BridgeX to the trading platforms, payment providers, KYC services and data sources you already use.",
     href: "/services/integration-migration",
-    icon: "exchanges",
+    icon: "ecosystem",
     points: ["Adapter architecture", "Staged connection", "Retry and monitoring"],
   },
   {
@@ -64,7 +64,7 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
     description:
       "Your history moves with you: source mapping, staged migration, reconciliation against the source, and a rollback plan before anything goes live.",
     href: "/services/integration-migration",
-    icon: "document",
+    icon: "route",
     points: ["Source mapping", "Staged migration", "Reconciled totals"],
   },
   {
@@ -80,7 +80,7 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
     description:
       "Ongoing help after launch: support workflows, monitoring, change management and continuous optimisation of your configuration.",
     href: "/services/managed-services",
-    icon: "users",
+    icon: "headset",
     points: ["Named support route", "Monitored platform", "Regular reviews"],
   },
 ];
@@ -277,7 +277,7 @@ export const MANAGED_PILLARS: ManagedPillar[] = [
     title: "Support workflows",
     description:
       "A clear route for your team when something is wrong or unclear — triaged, tracked and closed with you, not into a void.",
-    icon: "users",
+    icon: "headset",
     items: [
       "Named support channel for your team",
       "Triage by impact, not by arrival order",
@@ -288,7 +288,7 @@ export const MANAGED_PILLARS: ManagedPillar[] = [
     title: "Monitoring",
     description:
       "The platform is watched so problems surface before your team has to report them.",
-    icon: "tradeops",
+    icon: "gauge",
     items: [
       "Platform health and availability monitoring",
       "Integration and job-failure alerts",
@@ -555,7 +555,7 @@ export const PARTNER_MODELS: {
     title: "Technology integrations",
     description:
       "For providers of trading platforms, payments, KYC, market data or communications — build an adapter with us.",
-    icon: "exchanges",
+    icon: "ecosystem",
     points: ["Adapter architecture guidance", "Sandbox and test access", "Joint release notes"],
   },
   {

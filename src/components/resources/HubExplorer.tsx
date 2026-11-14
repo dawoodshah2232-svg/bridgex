@@ -8,7 +8,8 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import Icon from "@/components/icons";
+import Icon, { type IconName } from "@/components/icons";
+import { asset } from "@/lib/paths";
 import type { HubItem, ResourceCategory } from "@/content/resources";
 
 const CATEGORIES: ("All" | ResourceCategory)[] = [
@@ -20,6 +21,17 @@ const CATEGORIES: ("All" | ResourceCategory)[] = [
   "Events",
   "Case studies",
 ];
+
+/** Resource-type marker icon per category — shown on pills and cards. */
+const CATEGORY_ICONS: Record<"All" | ResourceCategory, IconName> = {
+  All: "layers",
+  Insights: "book",
+  Guides: "document",
+  "Product updates": "refresh",
+  Developers: "code",
+  Events: "calendar",
+  "Case studies": "users",
+};
 
 export default function HubExplorer({ items }: { items: HubItem[] }) {
   const [query, setQuery] = useState("");
@@ -80,12 +92,17 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
               type="button"
               aria-pressed={active}
               onClick={() => setCategory(c)}
-              className={`min-h-[44px] border-2 px-4 font-sans text-sm font-bold transition-colors duration-200 ${
+              className={`inline-flex min-h-[44px] items-center gap-2 border-2 px-4 font-sans text-sm font-bold transition-colors duration-200 ${
                 active
                   ? "border-bx-maroon-900 bg-bx-maroon-900 text-bx-ivory"
                   : "border-bx-maroon-900/25 bg-transparent text-bx-maroon-900 hover:border-bx-maroon-900"
               }`}
             >
+              <Icon
+                name={CATEGORY_ICONS[c]}
+                size={16}
+                className={active ? "text-bx-gold-400" : "text-bx-gold-600"}
+              />
               {c}
             </button>
           );
@@ -119,27 +136,44 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
             <li key={item.id} className="h-full">
               <Link
                 href={item.href}
-                className="group flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-6 transition-colors duration-200 hover:border-bx-gold-500/70 hover:bg-bx-cream/60"
+                className="group flex h-full flex-col overflow-hidden border border-bx-gold-500/30 bg-bx-white transition-colors duration-200 hover:border-bx-gold-500/70 hover:bg-bx-cream/60"
               >
-                <span className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-maroon-700">
-                  {item.category}
-                </span>
-                <span className="mt-3 font-sans text-xl font-extrabold leading-snug text-bx-ink">
-                  {item.title}
-                </span>
-                <span className="mt-3 flex-1 text-[15px] leading-relaxed text-bx-muted">
-                  {item.summary}
-                </span>
-                <span className="mt-5 flex items-center justify-between gap-3 border-t border-bx-gold-500/25 pt-4">
-                  <span className="font-sans text-[13px] font-bold text-bx-muted">
-                    {item.meta}
-                  </span>
-                  <Icon
-                    name="arrowRight"
-                    size={18}
-                    className="shrink-0 text-bx-gold-600 transition-transform duration-200 group-hover:translate-x-1"
+                <div className="overflow-hidden">
+                  <img
+                    src={asset(item.image)}
+                    alt={item.imageAlt}
+                    width={1200}
+                    height={750}
+                    loading="lazy"
+                    className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
                   />
-                </span>
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="flex items-center gap-2 font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-maroon-700">
+                    <Icon
+                      name={CATEGORY_ICONS[item.category]}
+                      size={16}
+                      className="text-bx-gold-600"
+                    />
+                    {item.category}
+                  </span>
+                  <span className="mt-3 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                    {item.title}
+                  </span>
+                  <span className="mt-3 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                    {item.summary}
+                  </span>
+                  <span className="mt-5 flex items-center justify-between gap-3 border-t border-bx-gold-500/25 pt-4">
+                    <span className="font-sans text-[13px] font-bold text-bx-muted">
+                      {item.meta}
+                    </span>
+                    <Icon
+                      name="arrowRight"
+                      size={18}
+                      className="shrink-0 text-bx-gold-600 transition-transform duration-200 group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
               </Link>
             </li>
           ))}

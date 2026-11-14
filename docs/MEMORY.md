@@ -94,3 +94,15 @@
   non-link headings in menus/footers — never dead links.
 - Cormorant Garamond is accent-only (italic phrases, tagline, interlude
   statement) — never body text.
+- Visual system (14 Nov): one cohesive 70-icon fine-gold-line set in
+  `src/components/icons.tsx` with SOLUTION/INDUSTRY/LAYER slug maps;
+  shared `PhotoBand`/`ImageText`/`HeroMedia`/`FeatureIcon` in
+  `src/components/ui/`; documented in `docs/VISUAL-SYSTEM.md`.
+  Photography is real Pexels only, bundled in `public/images/`,
+  inventoried in `docs/IMAGE-MANIFEST.md` — never AI images with
+  text/numbers/dashboards, never fake client imagery.
+- `DARK_HERO_ROUTES` must list every route whose hero is dark
+  photographic, or the fixed header renders frosted ivory instead of
+  transparent over it (37 entries after the 14 Nov visual pass).
+  The 404 page cannot be keyed (bogus pathnames) — frosted header
+  there is expected and fine.

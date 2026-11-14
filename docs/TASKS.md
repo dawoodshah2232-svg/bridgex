@@ -95,6 +95,22 @@
   need HTTP/1.1 on this VM (egress proxy resets HTTP/2 git traffic —
   set in repo config).
 
+## Visual-enrichment pass (14 Nov) — DONE, LIVE
+Dawood's verdict: too much text, no images, no relatable icons.
+- [x] F1 foundation: 70-icon fine-gold-line SVG set
+  (`src/components/icons.tsx`, SOLUTION/INDUSTRY/LAYER slug maps) +
+  shared `PhotoBand`, `ImageText`, `HeroMedia` (Ken Burns + scrim),
+  `FeatureIcon` + additive Ken Burns CSS + `docs/VISUAL-SYSTEM.md`
+- [x] F2 photography: 43 new real Pexels photos bundled (68 total,
+  ~13.8 MB) + `docs/IMAGE-MANIFEST.md`; replaced exchanges hero
+  (German UI text) and contests trophy (saturated yellow)
+- [x] P1–P5: all 44 routes image-led — photographic dark heroes with
+  Ken Burns, ImageText blocks, PhotoBand interludes, image cards,
+  meaningful icons throughout; previews/forms/FAQs/SEO untouched
+- [x] Integration: `DARK_HERO_ROUTES` expanded 12 → 37 entries
+  (24 conversions + `/search`); tsc + ESLint clean; 0 `opacity:0`
+  in built HTML; all 44 routes + new assets verified live
+
 ## Later batches (from spec §14)
 - [ ] Batch 6: product foundation (portals, RBAC, tenant-safe data model)
   — only after the website is stable and Dawood approves. Never in this
@@ -107,5 +123,6 @@
   live-browser job).
 - [ ] FaqAccordion renders only the default-open answer with JS disabled
   (interactive by nature; CSS-only fallback would need a rework).
-- [ ] Contests hero photo is a soft-focus band crop (no sharp landscape
-  trophy found on Pexels).
+- [x] Contests hero photo replaced 14 Nov (`solutions-contests-v2.jpg`,
+  gold trophy on deep red); exchanges hero replaced the same day
+  (`industries-exchanges-v2.jpg`, NYSE at night).

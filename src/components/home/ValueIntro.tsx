@@ -101,10 +101,10 @@ export default function ValueIntro() {
       <Reveal delay={0.1} className="mt-14 lg:mt-20">
         <figure>
           <img
-            src={asset("/images/skyline-dusk.jpg")}
-            alt="Manhattan skyline at dusk, skyscrapers lit against a deepening evening sky over the Hudson River"
-            width={1600}
-            height={1067}
+            src={asset("/images/hero-bridge-night.jpg")}
+            alt="Illuminated suspension bridge over a river at night"
+            width={1920}
+            height={1280}
             loading="lazy"
             className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[440px]"
           />

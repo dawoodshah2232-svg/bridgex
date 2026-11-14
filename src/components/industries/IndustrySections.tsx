@@ -3,19 +3,28 @@
  *
  * Each section has 2–3 layout variants, chosen per industry in the
  * content file, so the nine pages read as siblings — not copies.
+ * The visual-enrichment pass (Nov 2026) made every section
+ * image-led: challenges pair with a photograph (the pairing differs
+ * by layout), the module map uses FeatureIcon tiles, use cases sit
+ * beside a photograph as cards, and architecture layers carry their
+ * layer icon. All copy is unchanged — only the presentation moved.
  *
- * - Challenges: "numbered" (editorial numbered list), "grid" (cards),
- *   "split" (sticky intro, hairline-divided list).
+ * - Challenges: "numbered" (photo + intro lead row, numbered list
+ *   below), "grid" (sticky photo panel beside the cards), "split"
+ *   (photo under the sticky intro).
  * - Module map: "rows" (linked ledger rows), "cards" (linked tiles),
- *   "table" (three-column grid ledger).
- * - Use cases: 3-column cards, or a split with a secondary photograph
- *   when the content provides one.
- * - Architecture: "layers" (stacked bands) or "flow" (FlowDiagram),
- *   plus an honest integration-status note on every page.
+ *   "table" (three-column grid ledger) — all with FeatureIcon tiles.
+ * - Use cases: photograph beside card-stacked cases; the photo side
+ *   flips per industry (see `useCaseFlip` in content).
+ * - Journey: the banks/bonds hero diagrams, now a section directly
+ *   below the photographic hero (FlowDiagram, unchanged behaviour).
+ * - Architecture: "layers" (stacked bands, layer icons) or "flow"
+ *   (FlowDiagram), plus an honest integration-status note.
  */
 import Link from "next/link";
 import type {
   ArchitectureLayer,
+  FlowStep,
   IllustrativePanel,
   IndustryContent,
   IndustryImage,
@@ -23,11 +32,12 @@ import type {
 } from "@/content/industries";
 import { asset } from "@/lib/paths";
 import Icon, { type IconName } from "../icons";
-import { Section } from "../ui/Container";
+import { Container, Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import FaqAccordion, { type FaqItem } from "../ui/FaqAccordion";
 import DemoLabel from "../ui/DemoLabel";
 import Reveal from "../ui/Reveal";
+import FeatureIcon from "../ui/FeatureIcon";
 import { GoldRule } from "../ui/GoldLineDivider";
 import FlowDiagram from "./FlowDiagram";
 
@@ -53,14 +63,93 @@ function moduleIcon(href: string): IconName {
   return map[href] ?? "layers";
 }
 
+/** Icon for an architecture layer, by layer name. */
+function layerIconName(name: string): IconName {
+  const map: Record<string, IconName> = {
+    Experience: "experience",
+    Operations: "operations",
+    Integrations: "ecosystem",
+    Intelligence: "intelligence",
+  };
+  return map[name] ?? "layers";
+}
+
+/**
+ * Photograph in the house gold hairline frame (offset up-left).
+ * Lazy-loaded — every use sits below the fold. The frame offset
+ * stays inside the page's side padding, so it never overflows
+ * at 375px.
+ */
+function FramedImage({
+  image,
+  aspect,
+  className = "",
+}: {
+  image: IndustryImage;
+  aspect: string;
+  className?: string;
+}) {
+  return (
+    <div className={`relative ${className}`}>
+      <div
+        aria-hidden="true"
+        className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
+      />
+      <img
+        src={asset(image.src)}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading="lazy"
+        className={`relative w-full object-cover ${aspect}`}
+      />
+    </div>
+  );
+}
+
+/* ---------------- Journey (banks / bonds hero diagrams) ---------------- */
+
+export function JourneySection({
+  diagram,
+}: {
+  diagram: { title: string; steps: FlowStep[] };
+}) {
+  return (
+    <section
+      aria-label={diagram.title}
+      className="bg-bx-ivory pb-2 pt-20 sm:pt-24 lg:pt-28"
+    >
+      <Container>
+        <div className="mx-auto max-w-[1100px] border border-bx-gold-500/30 bg-bx-white p-5 sm:p-8 lg:p-10">
+          <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-maroon-700">
+            The journey
+          </p>
+          <h2 className="mt-3 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink sm:text-2xl">
+            {diagram.title}
+          </h2>
+          <div className="mt-6">
+            <FlowDiagram steps={diagram.steps} />
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 /* ---------------- Challenges ---------------- */
 
 export function ChallengesSection({
   data,
+  image,
+  imageFlip = false,
 }: {
   data: IndustryContent["challenges"];
+  image?: IndustryImage;
+  imageFlip?: boolean;
 }) {
   if (data.layout === "split") {
+    // Sticky intro column carries the photograph under the copy.
+    const portrait = image ? image.height > image.width : false;
     return (
       <Section tone="ivory" id="challenges" ariaLabel="Industry challenges">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -71,6 +160,14 @@ export function ChallengesSection({
                 heading={data.heading}
                 copy={data.copy}
               />
+              {image && (
+                <Reveal className="mt-10">
+                  <FramedImage
+                    image={image}
+                    aspect={portrait ? "aspect-[4/5]" : "aspect-[4/3]"}
+                  />
+                </Reveal>
+              )}
             </div>
           </div>
           <ol className="lg:col-span-8">
@@ -106,33 +203,68 @@ export function ChallengesSection({
   }
 
   if (data.layout === "grid") {
+    // Sticky photo panel beside the card grid; flip swaps the side.
     return (
       <Section tone="ivory" id="challenges" ariaLabel="Industry challenges">
         <SectionIntro label={data.label} heading={data.heading} copy={data.copy} />
-        <ol className="mt-12 grid gap-6 sm:grid-cols-2">
-          {data.items.map((item, i) => (
-            <li
-              key={item.title}
-              className="border border-bx-gold-500/25 bg-bx-white p-7 sm:p-8"
-            >
-              <Reveal delay={(i % 2) * 0.08}>
-                <GoldRule />
-                <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink sm:text-2xl">
-                  {item.title}
-                </h3>
-                <p className="mt-3 leading-relaxed text-bx-muted">{item.body}</p>
-              </Reveal>
-            </li>
-          ))}
-        </ol>
+        <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-12">
+          {image && (
+            <div className={imageFlip ? "lg:order-2 lg:col-span-4" : "lg:col-span-4"}>
+              <div className="lg:sticky lg:top-28">
+                <Reveal>
+                  <FramedImage image={image} aspect="aspect-[4/3]" />
+                </Reveal>
+              </div>
+            </div>
+          )}
+          <ol
+            className={`grid gap-6 sm:grid-cols-2 ${
+              image
+                ? imageFlip
+                  ? "lg:order-1 lg:col-span-8"
+                  : "lg:col-span-8"
+                : ""
+            }`}
+          >
+            {data.items.map((item, i) => (
+              <li
+                key={item.title}
+                className="border border-bx-gold-500/25 bg-bx-white p-7 sm:p-8"
+              >
+                <Reveal delay={(i % 2) * 0.08}>
+                  <GoldRule />
+                  <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink sm:text-2xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 leading-relaxed text-bx-muted">{item.body}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
+        </div>
       </Section>
     );
   }
 
-  // "numbered" — editorial two-column numbered list.
+  // "numbered" — photo + intro lead row, editorial numbered list below.
   return (
     <Section tone="ivory" id="challenges" ariaLabel="Industry challenges">
-      <SectionIntro label={data.label} heading={data.heading} copy={data.copy} />
+      {image ? (
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <Reveal className={imageFlip ? "lg:order-2" : ""}>
+            <FramedImage image={image} aspect="aspect-[4/3]" />
+          </Reveal>
+          <div className={imageFlip ? "lg:order-1" : ""}>
+            <SectionIntro
+              label={data.label}
+              heading={data.heading}
+              copy={data.copy}
+            />
+          </div>
+        </div>
+      ) : (
+        <SectionIntro label={data.label} heading={data.heading} copy={data.copy} />
+      )}
       <ol className="mt-12 grid gap-x-12 md:grid-cols-2">
         {data.items.map((item, i) => (
           <li
@@ -171,22 +303,22 @@ function ModuleRows({ items }: { items: ModuleMapItem[] }) {
             href={item.href}
             className="group grid gap-2 py-7 transition-colors hover:bg-bx-white sm:grid-cols-[1fr_auto] sm:items-start sm:gap-8 sm:px-4"
           >
-            <span>
-              <span className="flex items-center gap-3">
-                <Icon
-                  name={moduleIcon(item.href)}
-                  size={22}
-                  className="shrink-0 text-bx-gold-600"
+            <div>
+              <div className="flex items-center gap-4">
+                <FeatureIcon
+                  icon={moduleIcon(item.href)}
+                  size="sm"
+                  className="shrink-0"
                 />
                 <span className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink transition-colors group-hover:text-bx-maroon-700">
                   {item.label}
                 </span>
-              </span>
-              <span className="mt-2 block max-w-[68ch] leading-relaxed text-bx-muted">
+              </div>
+              <span className="mt-3 block max-w-[68ch] leading-relaxed text-bx-muted sm:pl-16">
                 {item.detail}
               </span>
-            </span>
-            <span className="flex items-center gap-2 sm:pt-1">
+            </div>
+            <span className="flex items-center gap-2 sm:pt-3">
               <span className="font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-bx-maroon-700">
                 {item.outcome}
               </span>
@@ -213,11 +345,9 @@ function ModuleCards({ items }: { items: ModuleMapItem[] }) {
               href={item.href}
               className="group flex h-full flex-col border border-bx-gold-500/25 bg-bx-white p-7 transition-colors hover:border-bx-gold-500/60"
             >
-              <Icon
-                name={moduleIcon(item.href)}
-                size={28}
-                className="text-bx-gold-600"
-              />
+              <div className="flex justify-start">
+                <FeatureIcon icon={moduleIcon(item.href)} size="md" />
+              </div>
               <span className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-ink transition-colors group-hover:text-bx-maroon-700">
                 {item.label}
               </span>
@@ -258,13 +388,18 @@ function ModuleTable({ items }: { items: ModuleMapItem[] }) {
         {items.map((item) => (
           <li
             key={item.href}
-            className="grid gap-2 border-b border-bx-gold-500/25 py-6 md:grid-cols-12 md:gap-6 md:py-7"
+            className="grid gap-2 border-b border-bx-gold-500/25 py-6 md:grid-cols-12 md:items-center md:gap-6 md:py-7"
           >
             <span className="md:col-span-4">
               <Link
                 href={item.href}
-                className="group inline-flex items-center gap-2 font-sans text-lg font-extrabold tracking-[-0.01em] text-bx-ink transition-colors hover:text-bx-maroon-700"
+                className="group inline-flex items-center gap-3 font-sans text-lg font-extrabold tracking-[-0.01em] text-bx-ink transition-colors hover:text-bx-maroon-700"
               >
+                <FeatureIcon
+                  icon={moduleIcon(item.href)}
+                  size="sm"
+                  className="shrink-0"
+                />
                 {item.label}
                 <Icon
                   name="arrowUpRight"
@@ -336,10 +471,12 @@ export function UseCasesSection({
   data,
   image,
   illustrative,
+  flip = false,
 }: {
   data: IndustryContent["useCases"];
   image?: IndustryImage;
   illustrative?: IllustrativePanel;
+  flip?: boolean;
 }) {
   const portrait = image ? image.height > image.width : false;
   return (
@@ -347,29 +484,23 @@ export function UseCasesSection({
       <SectionIntro label={data.label} heading={data.heading} copy={data.copy} />
       {image ? (
         <div className="mt-12 grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-5">
-            <div className="relative">
-              <div
-                aria-hidden="true"
-                className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
-              />
-              <img
-                src={asset(image.src)}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                loading="lazy"
-                className={`relative w-full object-cover ${
-                  portrait ? "aspect-[4/5]" : "aspect-[4/3]"
-                }`}
-              />
+          <div className={flip ? "lg:order-2 lg:col-span-5" : "lg:col-span-5"}>
+            <div className="lg:sticky lg:top-28">
+              <Reveal>
+                <FramedImage
+                  image={image}
+                  aspect={portrait ? "aspect-[4/5]" : "aspect-[4/3]"}
+                />
+              </Reveal>
             </div>
           </div>
-          <ol className="lg:col-span-7">
+          <ol
+            className={`space-y-5 lg:col-span-7 ${flip ? "lg:order-1" : ""}`}
+          >
             {data.items.map((item, i) => (
               <li
                 key={item.title}
-                className="border-t border-bx-gold-500/25 py-7 first:border-t-0 first:pt-0"
+                className="border border-bx-gold-500/25 bg-bx-ivory p-6 sm:p-7"
               >
                 <Reveal delay={i * 0.06}>
                   <p
@@ -437,22 +568,32 @@ function ArchitectureLayers({
           <Reveal delay={i * 0.06}>
             <div className="grid gap-4 md:grid-cols-12 md:gap-8">
               <div className="md:col-span-4">
+                <div className="flex items-start gap-4">
+                  <FeatureIcon
+                    icon={layerIconName(layer.name)}
+                    size="sm"
+                    tone={dark ? "dark" : "light"}
+                    className="shrink-0"
+                  />
+                  <div>
+                    <p
+                      className={`font-sans text-[12px] font-bold uppercase tracking-[0.2em] ${
+                        dark ? "text-bx-gold-400" : "text-bx-maroon-700"
+                      }`}
+                    >
+                      Layer {String(i + 1).padStart(2, "0")}
+                    </p>
+                    <h3
+                      className={`mt-1 font-sans text-xl font-extrabold tracking-[-0.01em] sm:text-2xl ${
+                        dark ? "text-bx-ivory" : "text-bx-ink"
+                      }`}
+                    >
+                      {layer.name}
+                    </h3>
+                  </div>
+                </div>
                 <p
-                  className={`font-sans text-[12px] font-bold uppercase tracking-[0.2em] ${
-                    dark ? "text-bx-gold-400" : "text-bx-maroon-700"
-                  }`}
-                >
-                  Layer {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3
-                  className={`mt-2 font-sans text-xl font-extrabold tracking-[-0.01em] sm:text-2xl ${
-                    dark ? "text-bx-ivory" : "text-bx-ink"
-                  }`}
-                >
-                  {layer.name}
-                </h3>
-                <p
-                  className={`mt-1 text-[15px] leading-relaxed ${
+                  className={`mt-3 text-[15px] leading-relaxed ${
                     dark ? "text-bx-champagne/80" : "text-bx-muted"
                   }`}
                 >

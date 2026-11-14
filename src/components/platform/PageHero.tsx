@@ -3,9 +3,10 @@
  *
  * - Light (default): ivory editorial hero, breadcrumbs above the headline,
  *   optional photograph on the right on desktop.
- * - Dark: maroon hero with an optional photograph under a heavy overlay.
- *   Pages using the dark hero are reported to the coordinator so they can
- *   be added to DARK_HERO_ROUTES (transparent header state).
+ * - Dark: full-bleed photographic hero via HeroMedia — slow Ken Burns
+ *   drift, strong maroon scrim, gold bridge-line motif. All eight platform
+ *   pages use the dark hero. Pages using it are reported to the coordinator
+ *   so they can be added to DARK_HERO_ROUTES (transparent header state).
  *
  * Both variants clear the fixed 72px header. The h1 is the page's only h1.
  */
@@ -13,6 +14,7 @@ import type { ReactNode } from "react";
 import Breadcrumbs from "@/components/chrome/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
+import HeroMedia from "@/components/ui/HeroMedia";
 import { asset } from "@/lib/paths";
 
 export interface HeroImage {
@@ -52,18 +54,15 @@ export default function PageHero({
     return (
       <header className="relative overflow-hidden bg-bx-maroon-950 text-bx-ivory">
         {image && (
-          <div className="absolute inset-0" aria-hidden="true">
-            <img
-              src={asset(image.src)}
-              alt=""
-              width={image.width}
-              height={image.height}
-              fetchPriority="high"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-bx-maroon-950/82" />
-            <div className="absolute inset-0 bg-gradient-to-t from-bx-maroon-950 via-bx-maroon-950/40 to-transparent" />
-          </div>
+          <HeroMedia
+            image={image.src}
+            alt={image.alt}
+            scrim="strong"
+            kenBurns
+            bridgeLine
+            imageWidth={image.width}
+            imageHeight={image.height}
+          />
         )}
         <Container className="relative pb-16 pt-[72px] sm:pb-20 sm:pt-[72px] lg:pb-24">
           <div className="pt-10 sm:pt-14">

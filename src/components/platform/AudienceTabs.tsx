@@ -8,6 +8,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { AUDIENCES } from "@/content/platform";
+import { asset } from "@/lib/paths";
 import Icon from "@/components/icons";
 import DemoLabel from "@/components/ui/DemoLabel";
 import { onTabListKeyDown } from "./tabs";
@@ -85,7 +86,15 @@ export default function AudienceTabs() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="border border-bx-gold-500/25 bg-bx-ivory p-5 sm:p-6">
+            <img
+              src={asset(audience.image)}
+              alt={audience.imageAlt}
+              width={audience.imageWidth}
+              height={audience.imageHeight}
+              loading="lazy"
+              className="aspect-[16/10] w-full object-cover"
+            />
+            <div className="mt-6 border border-bx-gold-500/25 bg-bx-ivory p-5 sm:p-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
                   {audience.label} — at a glance

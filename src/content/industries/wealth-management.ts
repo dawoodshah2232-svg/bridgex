@@ -14,13 +14,39 @@ export const wealthManagement: IndustryContent = {
   heroAfter: " not administering.",
   heroSupport:
     "Suitability forms, statements, introducer fees and pooled strategies — the work around the advice is what eats the week. BridgeX gives advisors one workspace where the client, the mandate and the paperwork all live together.",
-  heroVariant: "photo-light",
+  heroVariant: "photo-dark",
   image: {
+    src: "/images/wealth-advisor.jpg",
+    alt: "Financial advisor discussing plans with clients",
+    width: 1600,
+    height: 1068,
+  },
+  secondaryImage: {
     src: "/images/industries-wealth.jpg",
     alt: "An advisor holding a pen over documents across a desk from a client with hands clasped",
     width: 1600,
     height: 1067,
   },
+  challengeImage: {
+    src: "/images/wealth-meeting.jpg",
+    alt: "Advisor and client reviewing financial documents together",
+    width: 1600,
+    height: 1067,
+  },
+  challengeImageFlip: true,
+  bandImage: {
+    src: "/images/portrait-window.jpg",
+    alt: "Businessman looking out over skyscrapers from a high-rise office",
+    width: 1600,
+    height: 1068,
+  },
+  band: {
+    eyebrow: "The advisor's workspace",
+    heading: "The client, the mandate and the paperwork — together.",
+    copy: "Suitability, statements, pooled strategies and introducer fees, in one workspace.",
+  },
+  bandPosition: "after-modules",
+  bandHeight: "sm",
   challenges: {
     label: "The challenges",
     heading: "The advice is the easy part. The admin isn't.",

@@ -21,6 +21,31 @@ export const securitiesDerivatives: IndustryContent = {
     width: 1600,
     height: 1067,
   },
+  secondaryImage: {
+    src: "/images/boardroom-conference.jpg",
+    alt: "Business panel seated at a long conference table",
+    width: 1600,
+    height: 1067,
+  },
+  useCaseFlip: true,
+  challengeImage: {
+    src: "/images/compliance-review.jpg",
+    alt: "Professional reviewing documents at a desk",
+    width: 1600,
+    height: 1200,
+  },
+  bandImage: {
+    src: "/images/band-skyline-kl.jpg",
+    alt: "Kuala Lumpur cityscape with towers at sunset",
+    width: 1920,
+    height: 1280,
+  },
+  band: {
+    eyebrow: "Structure, represented",
+    heading: "The group, the mandate and the money — in one place.",
+    copy: "Entities, authorised persons, mandates and controls, with payments and service inside the same record.",
+  },
+  bandPosition: "after-use-cases",
   challenges: {
     label: "The challenges",
     heading: "Institutional clients are structures, not records.",

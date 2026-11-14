@@ -142,7 +142,8 @@ export default function Hero() {
           style={{ animationPlayState: inView ? "running" : "paused" }}
           className="h-full w-full object-cover object-[70%_center] animate-bx-drift"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/95 via-bx-maroon-950/80 to-bx-maroon-950/55" />
+        <div className="absolute inset-0 bg-bx-maroon-950/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/95 via-bx-maroon-950/85 to-bx-maroon-950/65" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bx-maroon-950 to-transparent" />
       </div>
 

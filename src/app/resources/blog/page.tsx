@@ -10,6 +10,7 @@ import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import Reveal from "@/components/ui/Reveal";
 import GoldLineDivider from "@/components/ui/GoldLineDivider";
+import { asset } from "@/lib/paths";
 import { INSIGHT_ARTICLES } from "@/content/insights";
 import { ARTICLE_BODIES, BLOG_FAQS } from "@/content/resource-editorial";
 import ResourceHero from "@/components/resources/ResourceHero";
@@ -37,7 +38,7 @@ export default function BlogPage() {
         title={
           <>
             Notes on running a{" "}
-            <span className="font-display italic text-bx-maroon-700">
+            <span className="font-display italic text-bx-gold-400">
               brokerage well.
             </span>
           </>
@@ -47,7 +48,6 @@ export default function BlogPage() {
         imageAlt="A city skyline at dusk, office lights coming on across the towers"
         imageWidth={1600}
         imageHeight={1067}
-        layout="split"
       />
 
       <Section tone="ivory" ariaLabel="Articles">
@@ -62,29 +62,49 @@ export default function BlogPage() {
       </Section>
 
       <Section tone="maroon" ariaLabel="How we write">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-          <SectionIntro
-            dark
-            label="How we write"
-            heading="Written, not generated. Opinionated, not inflated."
-          />
-          <div className="space-y-6 text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
-            <p>
-              Every article here is written by a person at BridgeX, from our
-              own view of how brokerage operations work. We name the problem
-              plainly, say what we would do about it, and leave out the
-              adjectives that usually fill this kind of page.
-            </p>
-            <p>
-              The essays describe no client, no deployment and no result.
-              When we have customer stories to tell, they will appear as
-              case studies — with permission, with checked facts, and with
-              the customer’s name on them.
-            </p>
-            <GoldLineDivider className="pt-2" />
-            <p className="font-sans text-sm font-bold uppercase tracking-[0.16em] text-bx-gold-400">
-              BridgeX editorial · New pieces appear here as they are finished
-            </p>
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <Reveal>
+            {/* Offset gold frame lives inside the wrapper's own
+                margin, so nothing overflows at 375px. */}
+            <div className="relative mb-3 mr-3 sm:mb-4 sm:mr-4">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+              />
+              <img
+                src={asset("/images/team-strategy.jpg")}
+                alt="Colleagues discussing strategy in a relaxed office lounge"
+                width={1600}
+                height={1067}
+                loading="lazy"
+                className="relative aspect-[4/3] w-full object-cover"
+              />
+            </div>
+          </Reveal>
+          <div>
+            <SectionIntro
+              dark
+              label="How we write"
+              heading="Written, not generated. Opinionated, not inflated."
+            />
+            <div className="mt-8 space-y-6 text-base leading-relaxed text-bx-champagne/90 sm:text-lg">
+              <p>
+                Every article here is written by a person at BridgeX, from our
+                own view of how brokerage operations work. We name the problem
+                plainly, say what we would do about it, and leave out the
+                adjectives that usually fill this kind of page.
+              </p>
+              <p>
+                The essays describe no client, no deployment and no result.
+                When we have customer stories to tell, they will appear as
+                case studies — with permission, with checked facts, and with
+                the customer’s name on them.
+              </p>
+              <GoldLineDivider className="pt-2" />
+              <p className="font-sans text-sm font-bold uppercase tracking-[0.16em] text-bx-gold-400">
+                BridgeX editorial · New pieces appear here as they are finished
+              </p>
+            </div>
           </div>
         </div>
       </Section>

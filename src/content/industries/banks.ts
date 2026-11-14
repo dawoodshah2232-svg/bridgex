@@ -14,7 +14,14 @@ export const banks: IndustryContent = {
   heroAfter: "",
   heroSupport:
     "Your clients already trust your brand with their money. BridgeX lets a bank offer trading as a natural extension of that relationship — branded, permissioned, and coordinated between branch, relationship manager and compliance.",
-  heroVariant: "diagram",
+  heroVariant: "photo-dark",
+  heroBridgeLine: true,
+  image: {
+    src: "/images/hero-skyline-frankfurt.jpg",
+    alt: "Frankfurt financial district and river bridge at sunset",
+    width: 1920,
+    height: 1280,
+  },
   heroDiagram: {
     title: "From branch conversation to trading account",
     steps: [
@@ -46,6 +53,25 @@ export const banks: IndustryContent = {
     width: 1400,
     height: 933,
   },
+  challengeImage: {
+    src: "/images/banking-hall.jpg",
+    alt: "Spacious modern banking hall with a dramatic ceiling",
+    width: 1600,
+    height: 1067,
+  },
+  bandImage: {
+    src: "/images/band-bridge-london.jpg",
+    alt: "London bridge and skyscrapers at twilight",
+    width: 1920,
+    height: 1280,
+  },
+  band: {
+    eyebrow: "The relationship, extended",
+    heading: "Trading that builds on years of trust.",
+    copy: "Bank-branded journeys, permissioned and coordinated between branch, relationship manager and compliance.",
+  },
+  bandPosition: "after-challenges",
+  bandHeight: "sm",
   challenges: {
     label: "The challenges",
     heading: "Trading should extend the relationship — not split it.",

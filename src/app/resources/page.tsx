@@ -9,6 +9,8 @@ import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
+import PhotoBand from "@/components/ui/PhotoBand";
+import { ButtonLink } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import Icon from "@/components/icons";
 import { asset } from "@/lib/paths";
@@ -36,6 +38,8 @@ const ARTICLE_ITEMS: HubItem[] = INSIGHT_ARTICLES.map((a) => ({
   category: "Insights",
   href: "/resources/blog",
   meta: `${a.category} · ${formatInsightDate(a.date)} · ${a.readMinutes} min read`,
+  image: a.image,
+  imageAlt: a.imageAlt,
 }));
 
 const ALL_ITEMS: HubItem[] = [...ARTICLE_ITEMS, ...RESOURCE_HUB_ITEMS];
@@ -55,7 +59,6 @@ export default function ResourcesPage() {
           </>
         }
         copy="Editorial insight, practical guides, honest product updates and developer docs — written by the BridgeX team, free to read, and searchable below."
-        dark
         image="/images/resources-library.jpg"
         imageAlt="Rows of bookshelves filled with books in a bright library"
         imageWidth={1600}
@@ -84,32 +87,64 @@ export default function ResourcesPage() {
             <Reveal key={section.href} delay={(i % 3) * 0.08} className="h-full">
               <Link
                 href={section.href}
-                className="group flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-7 transition-colors duration-200 hover:border-bx-gold-500/70"
+                className="group flex h-full flex-col overflow-hidden border border-bx-gold-500/30 bg-bx-white transition-colors duration-200 hover:border-bx-gold-500/70"
               >
-                <Icon
-                  name={section.icon}
-                  size={28}
-                  className="text-bx-gold-600"
-                />
-                <span className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-ink">
-                  {section.label}
-                </span>
-                <span className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
-                  {section.description}
-                </span>
-                <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700">
-                  Browse {section.label}
-                  <Icon
-                    name="arrowRight"
-                    size={16}
-                    className="transition-transform duration-200 group-hover:translate-x-1"
+                <div className="overflow-hidden">
+                  <img
+                    src={asset(section.image)}
+                    alt={section.imageAlt}
+                    width={1200}
+                    height={750}
+                    loading="lazy"
+                    className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
                   />
-                </span>
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <Icon
+                    name={section.icon}
+                    size={28}
+                    className="text-bx-gold-600"
+                  />
+                  <span className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                    {section.label}
+                  </span>
+                  <span className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
+                    {section.description}
+                  </span>
+                  <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-maroon-700">
+                    Browse {section.label}
+                    <Icon
+                      name="arrowRight"
+                      size={16}
+                      className="transition-transform duration-200 group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
               </Link>
             </Reveal>
           ))}
         </div>
       </Section>
+
+      <PhotoBand
+        image="/images/band-bridge-istanbul.jpg"
+        alt="Bosphorus Bridge glowing red above Istanbul at night"
+        eyebrow="The library"
+        heading={
+          <>
+            New pieces appear here{" "}
+            <span className="font-display italic text-bx-gold-400">
+              as they are finished.
+            </span>
+          </>
+        }
+        copy="The hub grows with every release — the next guide, the next essay, the next update lands here first."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1280}
+      >
+        <ButtonLink href="/resources/blog">Read the latest insights</ButtonLink>
+      </PhotoBand>
 
       <Section tone="white" ariaLabel="Latest editorial">
         <div className="flex flex-wrap items-end justify-between gap-6">

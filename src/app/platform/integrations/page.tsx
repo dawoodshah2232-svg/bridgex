@@ -1,9 +1,12 @@
 /**
  * /platform/integrations — Integrations (spec §8).
- * Light hero, category explorer (provider CATEGORIES only — no named
- * providers, no logos, no unverified claims), adapter architecture,
- * event/webhook retry model, and an honest "what we do not claim" panel.
- * Light hero.
+ * Dark photographic hero, category explorer (provider CATEGORIES only —
+ * no named providers, no logos, no unverified claims), adapter
+ * architecture, event/webhook retry model, and an honest "what we do not
+ * claim" panel.
+ *
+ * DARK HERO — the coordinator adds "/platform/integrations" to
+ * DARK_HERO_ROUTES.
  */
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -14,8 +17,9 @@ import { FaqSection } from "@/components/platform/Sections";
 import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
+import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
-import Icon from "@/components/icons";
+import Icon, { type IconName } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Integrations — Adapters for Trading, Payments, KYC & Market Data",
@@ -81,16 +85,23 @@ export default function IntegrationsPage() {
     <>
       <PageHero
         href="/platform/integrations"
+        dark
         eyebrow="Platform · Integrations layer"
         title={
           <>
             Connected to your stack —{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-display font-semibold italic text-bx-champagne">
               honestly connected.
             </span>
           </>
         }
         copy="BridgeX talks to trading platforms, payment providers, identity verification, communications and market data through adapters with defined contracts — tested in a sandbox before they touch real data, and never claimed before they are proven."
+        image={{
+          src: "/images/hero-skyline-sf.jpg",
+          alt: "San Francisco financial district skyline at twilight across the bay",
+          width: 1920,
+          height: 1280,
+        }}
       />
 
       {/* Category explorer */}
@@ -161,18 +172,21 @@ export default function IntegrationsPage() {
                 </div>
                 <div aria-hidden="true" className="mx-auto h-8 w-px bg-bx-gold-500" />
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  {[
-                    "Trading platforms",
-                    "Payment providers",
-                    "KYC & AML",
-                    "Communications",
-                    "Market data",
-                    "External CRM",
-                  ].map((label) => (
+                  {(
+                    [
+                      ["Trading platforms", "brokers"],
+                      ["Payment providers", "payments"],
+                      ["KYC & AML", "shield"],
+                      ["Communications", "mail"],
+                      ["Market data", "chart"],
+                      ["External CRM", "crm"],
+                    ] as [string, IconName][]
+                  ).map(([label, icon]) => (
                     <div
                       key={label}
-                      className="border border-bx-gold-500/30 bg-bx-ivory px-2 py-3 font-sans text-sm font-bold text-bx-ink"
+                      className="flex flex-col items-center gap-2 border border-bx-gold-500/30 bg-bx-ivory px-2 py-3 font-sans text-sm font-bold text-bx-ink"
                     >
+                      <Icon name={icon} size={22} className="text-bx-gold-600" />
                       {label}
                     </div>
                   ))}
@@ -187,6 +201,25 @@ export default function IntegrationsPage() {
           </Reveal>
         </div>
       </Section>
+
+      {/* Photographic interlude — adapters are the only way in or out */}
+      <PhotoBand
+        image="/images/band-skyline-kl.jpg"
+        alt="Kuala Lumpur cityscape with towers at sunset"
+        eyebrow="Adapter architecture"
+        heading={
+          <>
+            Adapters are{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              the only way in or out.
+            </span>
+          </>
+        }
+        copy="Nothing talks to a provider directly from a screen or a workflow — every call passes through an adapter that enforces the contract, logs the run and handles failure the same way."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1280}
+      />
 
       {/* Event / webhook retry model — dark */}
       <Section tone="maroon" id="events" ariaLabel="Event and webhook retry model">

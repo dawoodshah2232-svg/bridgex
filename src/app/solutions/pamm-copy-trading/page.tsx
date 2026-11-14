@@ -1,8 +1,10 @@
 /**
  * PAMM & Copy Trading — solution page (spec S3).
- * Plain light hero with an in-development notice. Composition: preview
- * first, capabilities, problem, dark workflow, use cases before benefits,
- * security, integrations, comparison, FAQ.
+ * Photographic dark hero with an in-development notice. Composition:
+ * preview first on its maroon stage, capabilities, problem as an
+ * ImageText block (trader workstation), dark workflow, photographic
+ * use-case cards before image-led benefits, security, integrations,
+ * comparison, a Hong Kong skyline PhotoBand interlude, FAQ.
  */
 import type { Metadata } from "next";
 import { SOLUTIONS } from "@/content/solutions";
@@ -22,6 +24,7 @@ import {
   WorkflowSteps,
 } from "@/components/solutions/shared";
 import CtaBand from "@/components/ui/CtaBand";
+import PhotoBand from "@/components/ui/PhotoBand";
 
 const s = SOLUTIONS["pamm-copy-trading"];
 
@@ -45,7 +48,7 @@ export default function PammCopyTradingPage() {
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
         tone="cream"
-        icons={["pamm", "users", "audit"]}
+        icons={["search", "chart", "gauge"]}
       />
 
       <ProblemSection
@@ -54,6 +57,12 @@ export default function PammCopyTradingPage() {
         copy={s.problemCopy}
         pains={s.pains}
         tone="ivory"
+        image={{
+          src: "/images/trader-workstation.jpg",
+          alt: "Trader working at a multi-monitor trading workstation",
+          width: 1600,
+          height: 1067,
+        }}
       />
 
       <WorkflowSteps
@@ -62,6 +71,7 @@ export default function PammCopyTradingPage() {
         copy={s.workflowCopy}
         steps={s.workflowSteps}
         dark
+        icons={["search", "users", "wallet", "eye", "chart", "checkCircle"]}
       />
 
       <UseCaseCards
@@ -70,15 +80,55 @@ export default function PammCopyTradingPage() {
         copy={s.useCasesCopy}
         useCases={s.useCases}
         tone="white"
+        images={[
+          { src: "/images/industries-asset-fund.jpg", alt: "Fund management office scene", width: 1600, height: 900 },
+          { src: "/images/industries-wealth.jpg", alt: "Wealth management concept", width: 1600, height: 1067 },
+          { src: "/images/industries-brokers.jpg", alt: "Brokerage trading environment", width: 1600, height: 1200 },
+        ]}
       />
 
-      <BenefitGrid label={s.benefitsLabel} heading={s.benefitsHeading} benefits={s.benefits} tone="cream" />
+      <BenefitGrid
+        label={s.benefitsLabel}
+        heading={s.benefitsHeading}
+        benefits={s.benefits}
+        tone="cream"
+        icons={["chart", "gauge", "database", "eye", "checkCircle", "users"]}
+        image={{
+          src: "/images/wealth-advisor.jpg",
+          alt: "Financial advisor discussing plans with clients",
+          width: 1600,
+          height: 1068,
+        }}
+        flip
+      />
 
-      <SecurityPanel heading={s.securityHeading} copy={s.securityCopy} items={s.securityItems} />
+      <SecurityPanel
+        heading={s.securityHeading}
+        copy={s.securityCopy}
+        items={s.securityItems}
+        icons={["gauge", "users", "audit", "document"]}
+      />
 
-      <IntegrationList heading={s.integrationsHeading} copy={s.integrationsCopy} items={s.integrations} tone="ivory" />
+      <IntegrationList
+        heading={s.integrationsHeading}
+        copy={s.integrationsCopy}
+        items={s.integrations}
+        tone="ivory"
+        icons={["chart", "crm", "wallet", "report"]}
+      />
 
       <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+
+      <PhotoBand
+        image="/images/band-skyline-hongkong.jpg"
+        alt="Hong Kong skyscrapers and skyline at twilight"
+        eyebrow="PAMM & Copy Trading"
+        heading="Trust, built on arithmetic."
+        copy="High-water-mark logic shown step by step, so a fee is a calculation — not a claim."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1440}
+      />
 
       <FaqSection faqs={s.faqs} tone="ivory" />
 

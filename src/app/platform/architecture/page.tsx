@@ -1,18 +1,22 @@
 /**
  * /platform/architecture — Architecture (spec §8).
- * Light editorial hero (diagram-led, no photograph), the interactive
- * stacked architecture diagram, API-first, enterprise controls and
- * coexistence. Light hero — no DARK_HERO_ROUTES entry needed.
+ * Dark photographic hero, the interactive stacked architecture diagram,
+ * API-first, enterprise controls and coexistence.
+ *
+ * DARK HERO — the coordinator adds "/platform/architecture" to
+ * DARK_HERO_ROUTES.
  */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ARCHITECTURE_FAQS, ENTERPRISE_CONTROLS } from "@/content/platform";
+import { asset } from "@/lib/paths";
 import PageHero from "@/components/platform/PageHero";
 import ArchitectureExplorer from "@/components/platform/ArchitectureExplorer";
 import { FaqSection, WorkflowSteps } from "@/components/platform/Sections";
 import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
+import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
 import Icon from "@/components/icons";
 
@@ -65,16 +69,23 @@ export default function ArchitecturePage() {
     <>
       <PageHero
         href="/platform/architecture"
+        dark
         eyebrow="Platform · Architecture"
         title={
           <>
             Separated by design.{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-display font-semibold italic text-bx-champagne">
               Connected by foundation.
             </span>
           </>
         }
         copy="BridgeX keeps its four layers apart on purpose — so each can change without breaking the others — and joins them through one foundation: one tenant model, one data model, one set of roles, one workflow engine, one event system and one audit log."
+        image={{
+          src: "/images/hero-bridge-rotterdam.jpg",
+          alt: "Erasmus Bridge and Rotterdam skyline at blue hour",
+          width: 1920,
+          height: 1280,
+        }}
       />
 
       {/* Interactive architecture diagram */}
@@ -98,6 +109,26 @@ export default function ArchitecturePage() {
               heading="Separation is what makes change safe."
               copy="When the client experience changes, the ledger does not notice. When a payment provider is swapped, the onboarding journey does not care. That is not an accident of the diagram — it is the point of it."
             />
+            <Reveal delay={0.12} className="mt-10">
+              <div className="relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute -left-3 -top-3 h-full w-full border border-bx-gold-500/50"
+                />
+                <img
+                  src={asset("/images/banking-hall.jpg")}
+                  alt="Spacious modern banking hall with a dramatic ceiling"
+                  width={1600}
+                  height={1067}
+                  loading="lazy"
+                  className="relative aspect-[3/2] w-full object-cover"
+                />
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-bx-muted">
+                A structure holds because its parts are separate — and joined
+                through one foundation.
+              </p>
+            </Reveal>
           </div>
           <div className="lg:col-span-7">
             <div className="space-y-8">
@@ -135,6 +166,25 @@ export default function ArchitecturePage() {
           </div>
         </div>
       </Section>
+
+      {/* Photographic interlude — the diagram is the architecture */}
+      <PhotoBand
+        image="/images/skyline-sunset.jpg"
+        alt="City skyline at sunset"
+        eyebrow="The diagram"
+        heading={
+          <>
+            The diagram{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              is the architecture.
+            </span>
+          </>
+        }
+        copy="Layers never talk to each other directly, and never keep private copies of data — a change in one layer is visible to the others because it lands in the same records."
+        height="sm"
+        imageWidth={1600}
+        imageHeight={899}
+      />
 
       {/* API-first */}
       <Section tone="white" id="api-first" ariaLabel="API-first design">

@@ -14,13 +14,37 @@ export const propFirms: IndustryContent = {
   heroAfter: "",
   heroSupport:
     "A prop firm is a lifecycle business: challenges, evaluations, funded traders, profit-share, affiliates and risk rules — all moving at once. BridgeX runs the whole lifecycle, so growth doesn't mean more spreadsheets and more disputes.",
-  heroVariant: "photo-light",
+  heroVariant: "photo-dark",
   image: {
+    src: "/images/trading-floor-desk.jpg",
+    alt: "Trader analysing charts across multiple monitors",
+    width: 1920,
+    height: 1282,
+  },
+  secondaryImage: {
     src: "/images/industries-prop-firms.jpg",
     alt: "Printed candlestick charts, a laptop, a magnifying glass and glasses arranged on a desk",
     width: 1600,
     height: 1067,
   },
+  challengeImage: {
+    src: "/images/trader-workstation.jpg",
+    alt: "Trader working at a multi-monitor trading workstation",
+    width: 1600,
+    height: 1067,
+  },
+  bandImage: {
+    src: "/images/hero-bridge-night.jpg",
+    alt: "Illuminated suspension bridge over a river at night",
+    width: 1920,
+    height: 1280,
+  },
+  band: {
+    eyebrow: "One lifecycle",
+    heading: "Growth adds traders, not tools.",
+    copy: "Challenges, evaluations, funded traders, profit-share, affiliates and risk rules — all moving at once, in one system.",
+  },
+  bandPosition: "after-challenges",
   challenges: {
     label: "The challenges",
     heading: "Growth breaks the spreadsheet first.",

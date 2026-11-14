@@ -56,9 +56,10 @@ export interface SolutionContent {
   heroHeadline: string;
   heroAccent: string;
   heroIntro: string;
-  heroImage?: SolutionImage;
+  /** Full-bleed hero photograph (HeroMedia). Required — every solution hero is photographic. */
+  heroImage: SolutionImage;
+  /** Always true: every solution hero is a dark photographic hero (coordinator mirrors this in DARK_HERO_ROUTES). */
   darkHero: boolean;
-  heroLayout: "split" | "stacked" | "plain";
   /** Honest status note shown under the hero (e.g. concept / in development). */
   notice?: string;
   problemLabel: string;
@@ -112,8 +113,8 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "in one clear view.",
     heroIntro:
       "BridgeX Financial CRM keeps leads, contacts, accounts, conversations and cases in one place — so sales, support and compliance stop working from different versions of the truth.",
-    darkHero: false,
-    heroLayout: "plain",
+    heroImage: { src: "/images/wealth-meeting.jpg", alt: "Advisor and client reviewing financial documents together", width: 1600, height: 1067 },
+    darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Growth outruns the spreadsheet — then the spreadsheet fights back",
     problemCopy:
@@ -250,7 +251,6 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
       "BridgeX Payment Orchestration routes deposits and withdrawals across your providers, retries intelligently when a route fails, and reconciles every movement — so funding stops being a support ticket.",
     heroImage: { src: "/images/solutions-payments.jpg", alt: "A person holding a payment card while using a laptop, entering payment details online", width: 1600, height: 1067 },
     darkHero: true,
-    heroLayout: "split",
     problemLabel: "The problem",
     problemHeading: "One provider, one point of failure",
     problemCopy:
@@ -383,8 +383,8 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "with the maths visible.",
     heroIntro:
       "BridgeX PAMM & Copy Trading connects strategy managers with investors — subscriptions, allocation, risk settings and fee logic in one place, with every figure traceable to its source.",
-    darkHero: false,
-    heroLayout: "plain",
+    heroImage: { src: "/images/traders-discussion.jpg", alt: "Two traders discussing market charts on a laptop and tablet", width: 1600, height: 1067 },
+    darkHero: true,
     notice:
       "PAMM and copy-trading engines are in active development. The preview below demonstrates the intended experience with illustrative data — it is not a live trading system, and no performance figures here are real.",
     problemLabel: "The problem",
@@ -520,9 +520,8 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "grow with you.",
     heroIntro:
       "BridgeX IB & Incentive Management runs the whole partner lifecycle — registration, attribution, multi-tier rebates, a commission ledger and payouts — with a source-to-payout audit trail behind every figure.",
-    heroImage: { src: "/images/solutions-partners.jpg", alt: "Two businessmen shaking hands and smiling in a bright modern office", width: 1600, height: 1067 },
+    heroImage: { src: "/images/handshake-partners.jpg", alt: "Business partners shaking hands during a meeting", width: 1600, height: 1067 },
     darkHero: true,
-    heroLayout: "split",
     problemLabel: "The problem",
     problemHeading: "Partner growth stalls when the numbers are argued about",
     problemCopy:
@@ -655,8 +654,8 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "without crossing your fingers.",
     heroIntro:
       "TradeOps Control Center is how operations teams run MT4/MT5 servers safely: batch changes validated and dry-run first, approved by a second pair of eyes, executed with progress tracking — and logged so every change can be explained.",
-    darkHero: false,
-    heroLayout: "plain",
+    heroImage: { src: "/images/trading-floor-desk.jpg", alt: "Trader analysing charts across multiple monitors", width: 1920, height: 1282 },
+    darkHero: true,
     notice:
       "TradeOps is a managed-operations concept for authorised server environments. This marketing site has no live trade-server access — the preview below is a simulated dry-run with illustrative data.",
     problemLabel: "The problem",
@@ -788,9 +787,8 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "in one journey.",
     heroIntro:
       "BridgeX Digital Onboarding guides each applicant through the steps that apply to them — and only those steps. Verification, screening and approval happen in the same flow, so good applicants reach an account quickly and risky ones reach a human.",
-    heroImage: { src: "/images/solutions-onboarding.jpg", alt: "Two people at a wooden table signing a formal document, one holding a pen over the paperwork", width: 1600, height: 1067 },
-    darkHero: false,
-    heroLayout: "split",
+    heroImage: { src: "/images/signing-contract.jpg", alt: "Person signing documents with a pen", width: 1600, height: 1068 },
+    darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Onboarding that treats everyone like a suspect loses the good clients first",
     problemCopy:
@@ -923,9 +921,8 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "and keeps it fair.",
     heroIntro:
       "BridgeX Trading Contest Management runs the whole contest — creation, registration, live rankings, fairness review and prize payouts — so a campaign that excites traders does not become a dispute that embarrasses the brand.",
-    heroImage: { src: "/images/solutions-contests.jpg", alt: "A gold trophy bowl and its soft shadow on a pale background", width: 1600, height: 686 },
-    darkHero: false,
-    heroLayout: "stacked",
+    heroImage: { src: "/images/solutions-contests-v2.jpg", alt: "Hand holding a gold trophy against a deep red background", width: 1600, height: 2400 },
+    darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Contests are easy to announce and hard to run honestly",
     problemCopy:

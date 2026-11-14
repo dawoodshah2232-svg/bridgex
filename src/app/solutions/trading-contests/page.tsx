@@ -1,8 +1,11 @@
 /**
  * Trading Contest Management — solution page (spec S7).
- * Stacked light hero with wide photo. Composition: leaderboard preview,
- * problem, capabilities, use cases, dark workflow, benefits, security,
- * integrations, comparison, FAQ.
+ * Photographic dark hero (gold trophy on deep red, v2 image).
+ * Composition: leaderboard preview on its maroon stage, problem as
+ * an ImageText block (award photo), capabilities, photographic
+ * use-case cards, dark workflow, image-led benefits, security,
+ * integrations, comparison, a sunset-skyline PhotoBand interlude,
+ * FAQ.
  */
 import type { Metadata } from "next";
 import { SOLUTIONS } from "@/content/solutions";
@@ -22,6 +25,7 @@ import {
   WorkflowSteps,
 } from "@/components/solutions/shared";
 import CtaBand from "@/components/ui/CtaBand";
+import PhotoBand from "@/components/ui/PhotoBand";
 
 const s = SOLUTIONS["trading-contests"];
 
@@ -45,6 +49,12 @@ export default function TradingContestsPage() {
         copy={s.problemCopy}
         pains={s.pains}
         tone="cream"
+        image={{
+          src: "/images/solutions-contests-award.jpg",
+          alt: "Man in a tuxedo holding a gold award statuette",
+          width: 1600,
+          height: 1067,
+        }}
       />
 
       <CapabilityGroups
@@ -53,7 +63,7 @@ export default function TradingContestsPage() {
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
         tone="ivory"
-        icons={["contests", "users", "shield"]}
+        icons={["contests", "chart", "shield"]}
       />
 
       <UseCaseCards
@@ -62,6 +72,11 @@ export default function TradingContestsPage() {
         copy={s.useCasesCopy}
         useCases={s.useCases}
         tone="white"
+        images={[
+          { src: "/images/industries-prop-firms.jpg", alt: "Prop trading workspace", width: 1600, height: 1067 },
+          { src: "/images/industries-brokers.jpg", alt: "Brokerage trading environment", width: 1600, height: 1200 },
+          { src: "/images/industries-digital-assets.jpg", alt: "Digital assets concept", width: 1600, height: 987 },
+        ]}
       />
 
       <WorkflowSteps
@@ -70,15 +85,51 @@ export default function TradingContestsPage() {
         copy={s.workflowCopy}
         steps={s.workflowSteps}
         dark
+        icons={["plus", "users", "chart", "star", "eye", "wallet"]}
       />
 
-      <BenefitGrid label={s.benefitsLabel} heading={s.benefitsHeading} benefits={s.benefits} tone="cream" />
+      <BenefitGrid
+        label={s.benefitsLabel}
+        heading={s.benefitsHeading}
+        benefits={s.benefits}
+        tone="cream"
+        icons={["chart", "eye", "report", "funnel", "star", "network"]}
+        image={{
+          src: "/images/workshop-presentation.jpg",
+          alt: "Professionals attending a business seminar",
+          width: 1600,
+          height: 968,
+        }}
+        flip
+      />
 
-      <SecurityPanel heading={s.securityHeading} copy={s.securityCopy} items={s.securityItems} />
+      <SecurityPanel
+        heading={s.securityHeading}
+        copy={s.securityCopy}
+        items={s.securityItems}
+        icons={["alert", "eye", "shield", "audit"]}
+      />
 
-      <IntegrationList heading={s.integrationsHeading} copy={s.integrationsCopy} items={s.integrations} tone="white" />
+      <IntegrationList
+        heading={s.integrationsHeading}
+        copy={s.integrationsCopy}
+        items={s.integrations}
+        tone="white"
+        icons={["chart", "crm", "wallet", "ib"]}
+      />
 
       <ComparisonTable heading={s.comparisonHeading} copy={s.comparisonCopy} rows={s.comparisonRows} tone="cream" />
+
+      <PhotoBand
+        image="/images/skyline-sunset.jpg"
+        alt="City skyline at sunset"
+        eyebrow="Trading Contest Management"
+        heading="Contests that build the brand instead of risking it."
+        copy="Live, feed-driven boards with clear rules — no manual edits, no unexplained changes."
+        height="sm"
+        imageWidth={1600}
+        imageHeight={899}
+      />
 
       <FaqSection faqs={s.faqs} tone="ivory" />
 

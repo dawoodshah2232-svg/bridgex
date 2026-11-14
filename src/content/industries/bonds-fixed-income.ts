@@ -14,7 +14,13 @@ export const bondsFixedIncome: IndustryContent = {
   heroAfter: "",
   heroSupport:
     "Fixed income runs on process: onboarding, suitability, orders, allocations, coupons and corporate actions. BridgeX makes each step visible to the client and the desk — so service stops being a phone call to find out what happened.",
-  heroVariant: "diagram",
+  heroVariant: "photo-dark",
+  image: {
+    src: "/images/banking-columns.jpg",
+    alt: "Ornate Corinthian column capital on a classical bank building",
+    width: 1200,
+    height: 1010,
+  },
   heroDiagram: {
     title: "From suitability to coupon payment",
     steps: [
@@ -40,6 +46,32 @@ export const bondsFixedIncome: IndustryContent = {
       },
     ],
   },
+  secondaryImage: {
+    src: "/images/compliance-desk.jpg",
+    alt: "Businesswoman reviewing paperwork in an office",
+    width: 1600,
+    height: 1068,
+  },
+  useCaseFlip: true,
+  challengeImage: {
+    src: "/images/signing-agreement.jpg",
+    alt: "Businessman handing a pen to sign an agreement",
+    width: 1600,
+    height: 1067,
+  },
+  bandImage: {
+    src: "/images/skyline-sunset.jpg",
+    alt: "City skyline at sunset",
+    width: 1600,
+    height: 899,
+  },
+  band: {
+    eyebrow: "Visibility is the service",
+    heading: "The process, visible at every step.",
+    copy: "Onboarding, suitability, orders, allocations, coupons and corporate actions — each step a record the client and the desk can both see.",
+  },
+  bandPosition: "after-use-cases",
+  bandHeight: "sm",
   challenges: {
     label: "The challenges",
     heading: "Fixed income is a process business. Clients deserve to see the process.",

@@ -5,6 +5,8 @@ import ContactForm from "@/components/forms/ContactForm";
 import { Container } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
+import PhotoBand from "@/components/ui/PhotoBand";
+import { ButtonLink } from "@/components/ui/Button";
 import Icon from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -43,6 +45,10 @@ export default function ContactPage() {
           </>
         }
         copy="No phone queues, no chatbot loops. Send a message and a member of the BridgeX team will read it and reply."
+        image="/images/lobby-office.jpg"
+        imageAlt="Modern office lobby with wooden panels and large windows"
+        imageWidth={1600}
+        imageHeight={1067}
       />
       <div className="bg-bx-ivory pb-20 sm:pb-24 lg:pb-32">
         <Container>
@@ -142,6 +148,27 @@ export default function ContactPage() {
           </div>
         </Container>
       </div>
+
+      {/* Photo interlude — a person, not a queue */}
+      <PhotoBand
+        image="/images/skyline-sunset.jpg"
+        alt="City skyline at sunset"
+        eyebrow="Company — Contact"
+        heading={
+          <>
+            We read{" "}
+            <em className="font-display font-semibold italic text-bx-gold-400">
+              every message.
+            </em>
+          </>
+        }
+        copy="No phone queues, no chatbot loops — a member of the BridgeX team will read it and reply."
+        height="sm"
+        imageWidth={1600}
+        imageHeight={899}
+      >
+        <ButtonLink href="/book-demo">Book a Private Demo</ButtonLink>
+      </PhotoBand>
     </>
   );
 }

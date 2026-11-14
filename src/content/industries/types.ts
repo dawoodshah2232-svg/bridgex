@@ -20,6 +20,20 @@ export type ChallengeLayout = "numbered" | "grid" | "split";
 export type ModuleLayout = "rows" | "cards" | "table";
 export type ArchitectureVariant = "layers" | "flow";
 
+/** Where the full-bleed PhotoBand interlude sits on the page. */
+export type BandPosition = "after-challenges" | "after-modules" | "after-use-cases";
+export type BandHeight = "sm" | "md" | "lg";
+
+/**
+ * Copy for the full-bleed PhotoBand interlude. Restates the page's own
+ * claims in shorter form — never a new claim, stat or promise.
+ */
+export interface IndustryBand {
+  eyebrow: string;
+  heading: string;
+  copy: string;
+}
+
 export interface IndustryImage {
   /** Public path, basePath-free (rendered through asset()). */
   src: string;
@@ -88,13 +102,36 @@ export interface IndustryContent {
   heroAccent: string;
   heroAfter: string;
   heroSupport: string;
+  /**
+   * All nine pages are "photo-dark" since the visual-enrichment pass
+   * (Nov 2026): a full-bleed photographic hero via HeroMedia. The
+   * "photo-light" and "diagram" variants are kept in the union for
+   * history but no page uses them — banks/bonds journey diagrams now
+   * render as a JourneySection directly below the hero.
+   */
   heroVariant: HeroVariant;
+  /** Gold bridge-line motif along the bottom of the hero photo. */
+  heroBridgeLine?: boolean;
   /** Required for photo heroes; ignored for diagram heroes. */
   image?: IndustryImage;
-  /** Required for diagram heroes. */
+  /**
+   * Required for diagram heroes. Still rendered for banks/bonds —
+   * as the JourneySection below the photographic hero.
+   */
   heroDiagram?: { title: string; steps: FlowStep[] };
   /** Optional second photo, shown beside the use cases. */
   secondaryImage?: IndustryImage;
+  /** Flip the use-case split so the photo sits on the right. */
+  useCaseFlip?: boolean;
+  /** Photo paired with the challenges section (layout decides how). */
+  challengeImage?: IndustryImage;
+  /** Mirror the challenge image/text pairing on desktop. */
+  challengeImageFlip?: boolean;
+  /** Full-bleed PhotoBand interlude: image + copy + placement. */
+  bandImage?: IndustryImage;
+  band?: IndustryBand;
+  bandPosition?: BandPosition;
+  bandHeight?: BandHeight;
 
   challenges: {
     label: string;

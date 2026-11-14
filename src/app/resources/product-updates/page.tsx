@@ -9,6 +9,9 @@ import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
+import PhotoBand from "@/components/ui/PhotoBand";
+import FeatureIcon from "@/components/ui/FeatureIcon";
+import { ButtonLink } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import Icon from "@/components/icons";
 import {
@@ -35,12 +38,16 @@ export default function ProductUpdatesPage() {
         title={
           <>
             What shipped, what changed,{" "}
-            <span className="font-display italic text-bx-maroon-700">
+            <span className="font-display italic text-bx-gold-400">
               what is next.
             </span>
           </>
         }
         copy="The changelog for the BridgeX website and the platform roadmap. Every entry carries an honest status label — Live, Sandbox, Demo or Planned — so you can always tell a preview from a product."
+        image="/images/hero-skyline-sf.jpg"
+        imageAlt="San Francisco financial district skyline at twilight across the bay"
+        imageWidth={1920}
+        imageHeight={1280}
       />
 
       <Section tone="cream" ariaLabel="What the status labels mean">
@@ -52,8 +59,11 @@ export default function ProductUpdatesPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {UPDATE_STATUS_DEFINITIONS.map((def, i) => (
             <Reveal key={def.status} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-6">
-                <StatusBadge status={def.status} />
+              <div className="flex h-full flex-col items-center border border-bx-gold-500/30 bg-bx-white p-6 text-center">
+                <FeatureIcon icon={def.icon} size="md" />
+                <div className="mt-5">
+                  <StatusBadge status={def.status} />
+                </div>
                 <p className="mt-4 flex-1 text-[15px] leading-relaxed text-bx-muted">
                   {def.meaning}
                 </p>
@@ -118,6 +128,28 @@ export default function ProductUpdatesPage() {
           </p>
         </Reveal>
       </Section>
+
+      <PhotoBand
+        image="/images/band-skyline-kl.jpg"
+        alt="Kuala Lumpur cityscape with towers at sunset"
+        eyebrow="The roadmap"
+        heading={
+          <>
+            Planned means{" "}
+            <span className="font-display italic text-bx-gold-400">
+              planned.
+            </span>
+          </>
+        }
+        copy="No date is promised until there is one to promise. When a module reaches the sandbox, the entry appears here first — and the developer docs say so too."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1280}
+      >
+        <ButtonLink href="/resources/developers">
+          Read the developer docs
+        </ButtonLink>
+      </PhotoBand>
 
       <Section tone="cream" ariaLabel="Frequently asked questions">
         <div className="mx-auto max-w-3xl">

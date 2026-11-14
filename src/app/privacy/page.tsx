@@ -17,6 +17,10 @@ export default function PrivacyPage() {
       intro="What personal data we collect when you use this website or contact us, how we use it, how long we keep it, and the rights you have over it."
       updated="13 November 2026"
       sections={PRIVACY_SECTIONS}
+      image="/images/signing-contract.jpg"
+      imageAlt="Person signing documents with a pen"
+      imageWidth={1600}
+      imageHeight={1068}
     />
   );
 }

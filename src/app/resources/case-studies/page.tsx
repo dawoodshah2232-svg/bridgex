@@ -11,7 +11,8 @@ import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import Reveal from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
-import Icon from "@/components/icons";
+import FeatureIcon from "@/components/ui/FeatureIcon";
+import { asset } from "@/lib/paths";
 import { CASE_STUDY_FAQS } from "@/content/resource-editorial";
 import ResourceHero from "@/components/resources/ResourceHero";
 
@@ -86,17 +87,16 @@ export default function CaseStudiesPage() {
         title={
           <>
             Case studies,{" "}
-            <span className="font-display italic text-bx-maroon-700">
+            <span className="font-display italic text-bx-gold-400">
               coming soon.
             </span>
           </>
         }
         copy="We have no client stories to publish yet — and we would rather say so than invent a logo wall. When the first BridgeX customers agree to share their stories, they will appear here, with their names on them and their facts checked."
-        image="/images/interlude-boardroom.jpg"
-        imageAlt="A diverse team working together around a table in a modern conference room"
+        image="/images/band-glass-tower.jpg"
+        imageAlt="Curved glass skyscraper facade against a dusk sky"
         imageWidth={1920}
-        imageHeight={1282}
-        layout="split"
+        imageHeight={1098}
       />
 
       <Section tone="cream" ariaLabel="Why this page is empty">
@@ -127,9 +127,9 @@ export default function CaseStudiesPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {COVERAGE_AREAS.map((area, i) => (
             <Reveal key={area.title} delay={(i % 3) * 0.08} className="h-full">
-              <div className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-7">
-                <Icon name={area.icon} size={28} className="text-bx-gold-600" />
-                <h3 className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+              <div className="flex h-full flex-col items-center border border-bx-gold-500/30 bg-bx-white p-7 text-center">
+                <FeatureIcon icon={area.icon} size="md" />
+                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-ink">
                   {area.title}
                 </h3>
                 <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
@@ -168,8 +168,20 @@ export default function CaseStudiesPage() {
       </Section>
 
       <Section tone="ivory" ariaLabel="Are you a BridgeX customer">
-        <div className="grid items-center gap-10 border border-bx-gold-500/30 bg-bx-white p-8 sm:p-10 lg:grid-cols-[1.4fr_1fr] lg:gap-14">
-          <div>
+        {/* Abstract architecture imagery only — no client photos, no
+            logos, nothing that implies client work exists yet. */}
+        <div className="grid items-stretch gap-10 overflow-hidden border border-bx-gold-500/30 bg-bx-white lg:grid-cols-[0.8fr_1.4fr_1fr] lg:gap-0">
+          <div className="overflow-hidden">
+            <img
+              src={asset("/images/abstract-glass-lines.jpg")}
+              alt="Low-angle view of a glass skyscraper facade"
+              width={1200}
+              height={1800}
+              loading="lazy"
+              className="aspect-[16/10] h-full w-full object-cover lg:aspect-auto lg:min-h-[320px]"
+            />
+          </div>
+          <div className="p-8 sm:p-10 lg:py-12">
             <h2 className="font-sans text-[28px] font-extrabold leading-tight tracking-[-0.02em] text-bx-ink sm:text-4xl">
               Are you a BridgeX customer with a story to tell?
             </h2>
@@ -179,7 +191,7 @@ export default function CaseStudiesPage() {
               until you have approved the final wording.
             </p>
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
+          <div className="flex flex-col justify-center gap-4 p-8 pt-0 sm:flex-row sm:p-10 sm:pt-0 lg:flex-col lg:p-10">
             <ButtonLink href="/company/contact" size="lg">
               Tell us your story
             </ButtonLink>

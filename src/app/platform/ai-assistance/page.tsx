@@ -7,7 +7,11 @@
  * approval, evidence and role-limited context throughout. Nothing here
  * claims AI agents are operational; the "In development" label stays
  * visible in the hero and in the status panel. Route status in the
- * registry is "roadmap". Light hero.
+ * registry is "roadmap". Dark photographic hero — abstract glass
+ * imagery only, never binary-digit clichés.
+ *
+ * DARK HERO — the coordinator adds "/platform/ai-assistance" to
+ * DARK_HERO_ROUTES.
  */
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -18,6 +22,7 @@ import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
 import DemoLabel from "@/components/ui/DemoLabel";
+import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
 import Icon from "@/components/icons";
 
@@ -87,10 +92,17 @@ export default function AiAssistancePage() {
     <>
       <PageHero
         href="/platform/ai-assistance"
+        dark
         badge="In development — roadmap"
         eyebrow="Platform · Intelligence layer"
         title="Governed AI Assistance — In Development"
         copy="BridgeX is designing AI assistance the way it designs everything else: with a human in the loop, evidence behind every suggestion, and permissions that hold. This page describes what that assistance is intended to do — not what it does today, because it is not operational yet."
+        image={{
+          src: "/images/abstract-glass-ceiling.jpg",
+          alt: "Skyscrapers seen through a glass ceiling",
+          width: 1600,
+          height: 900,
+        }}
       />
 
       {/* Status panel — honest, prominent */}
@@ -157,6 +169,25 @@ export default function AiAssistancePage() {
           ))}
         </div>
       </Section>
+
+      {/* Photographic interlude — designed in the open */}
+      <PhotoBand
+        image="/images/abstract-mirrored-tower.jpg"
+        alt="Modern tower with a mirrored glass facade"
+        eyebrow="Roadmap"
+        heading={
+          <>
+            Designed{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              in the open.
+            </span>
+          </>
+        }
+        copy="No AI agent is making decisions on BridgeX today. The work moves through design, sandbox evaluation and pilot — and each stage has to pass its own review before the next begins."
+        height="sm"
+        imageWidth={1200}
+        imageHeight={1800}
+      />
 
       {/* Governance principles — dark */}
       <Section tone="maroon" id="governance" ariaLabel="Governance principles">

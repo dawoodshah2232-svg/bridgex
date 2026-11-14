@@ -8,8 +8,9 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Icon from "@/components/icons";
+import { asset } from "@/lib/paths";
 import type { Guide } from "@/content/resources";
 
 export default function GuideReader({ guides }: { guides: Guide[] }) {
@@ -20,16 +21,28 @@ export default function GuideReader({ guides }: { guides: Guide[] }) {
 
   return (
     <div className="space-y-8">
-      {guides.map((guide) => {
+      {guides.map((guide, index) => {
         const isOpen = openSlug === guide.slug;
         const panelId = `guide-panel-${guide.slug}`;
         const buttonId = `guide-button-${guide.slug}`;
         return (
           <article
             key={guide.slug}
-            className="border border-bx-gold-500/30 bg-bx-white"
+            className="overflow-hidden border border-bx-gold-500/30 bg-bx-white"
           >
-            <div className="p-6 sm:p-8 lg:p-10">
+            <div className="grid sm:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr]">
+              <div className="relative overflow-hidden">
+                <img
+                  src={asset(guide.image)}
+                  alt={guide.imageAlt}
+                  width={1200}
+                  height={800}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : undefined}
+                  className="aspect-[16/10] h-full w-full object-cover sm:aspect-auto sm:min-h-[260px]"
+                />
+              </div>
+              <div className="p-6 sm:p-8 lg:p-10">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <span className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-maroon-700">
                   {guide.category}
@@ -84,6 +97,7 @@ export default function GuideReader({ guides }: { guides: Guide[] }) {
                 </button>
               </div>
             </div>
+            </div>
 
             <AnimatePresence initial={false}>
               {isOpen && (
@@ -102,20 +116,42 @@ export default function GuideReader({ guides }: { guides: Guide[] }) {
                 >
                   <div className="border-t border-bx-gold-500/25 bg-bx-ivory px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
                     <div className="max-w-[68ch]">
-                      {guide.sections.map((section) => (
-                        <div key={section.heading} className="mb-8 last:mb-0">
-                          <h4 className="font-sans text-xl font-extrabold leading-snug text-bx-ink">
-                            {section.heading}
-                          </h4>
-                          {section.body.map((paragraph, i) => (
-                            <p
-                              key={i}
-                              className="mt-3 text-base leading-relaxed text-bx-ink/90 sm:text-[17px]"
-                            >
-                              {paragraph}
-                            </p>
-                          ))}
-                        </div>
+                      {guide.sections.map((section, sectionIndex) => (
+                        <Fragment key={section.heading}>
+                          <div className="mb-8 last:mb-0">
+                            <h4 className="font-sans text-xl font-extrabold leading-snug text-bx-ink">
+                              {section.heading}
+                            </h4>
+                            {section.body.map((paragraph, i) => (
+                              <p
+                                key={i}
+                                className="mt-3 text-base leading-relaxed text-bx-ink/90 sm:text-[17px]"
+                              >
+                                {paragraph}
+                              </p>
+                            ))}
+                          </div>
+                          {/* Photographic break after the first
+                              section: a real photo plus a pull-quote
+                              taken from the guide's own text. */}
+                          {sectionIndex === 0 && (
+                            <figure className="mb-8">
+                              <div className="overflow-hidden border border-bx-gold-500/30">
+                                <img
+                                  src={asset(guide.breakImage)}
+                                  alt={guide.breakImageAlt}
+                                  width={1600}
+                                  height={762}
+                                  loading="lazy"
+                                  className="aspect-[21/10] w-full object-cover"
+                                />
+                              </div>
+                              <figcaption className="mt-4 border-l-2 border-bx-gold-500 pl-4 font-display text-xl italic leading-snug text-bx-maroon-700 sm:text-2xl">
+                                “{guide.breakQuote}”
+                              </figcaption>
+                            </figure>
+                          )}
+                        </Fragment>
                       ))}
                       <p className="mt-8 border-t border-bx-gold-500/25 pt-5 text-base leading-relaxed text-bx-muted">
                         Want this guide as a document for your team?{" "}

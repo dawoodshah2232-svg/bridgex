@@ -1,8 +1,11 @@
 /**
  * /platform/financial-operations — Financial Operations (spec §8).
- * Light hero with a photograph, the interactive lifecycle stepper
+ * Dark photographic hero, the interactive lifecycle stepper
  * (Onboard → Open → Fund → Serve → Settle), wallets & payments, and a
- * dark approvals panel. Light hero.
+ * dark approvals panel.
+ *
+ * DARK HERO — the coordinator adds "/platform/financial-operations" to
+ * DARK_HERO_ROUTES.
  */
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -14,6 +17,7 @@ import { Section } from "@/components/ui/Container";
 import SectionIntro from "@/components/ui/SectionIntro";
 import Reveal from "@/components/ui/Reveal";
 import DemoLabel from "@/components/ui/DemoLabel";
+import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
 import Icon from "@/components/icons";
 
@@ -72,21 +76,22 @@ export default function FinancialOperationsPage() {
     <>
       <PageHero
         href="/platform/financial-operations"
+        dark
         eyebrow="Platform · Operations layer"
         title={
           <>
             The work of the business,{" "}
-            <span className="font-display font-semibold italic text-bx-maroon-700">
+            <span className="font-display font-semibold italic text-bx-champagne">
               in one queue.
             </span>
           </>
         }
         copy="Onboarding, accounts, wallets, payments, cases, incentives and approvals — the daily work of a financial business, run from one record with one audit trail. Nobody reconstructs a case from three systems before answering it."
         image={{
-          src: "/images/analyst-workstation.jpg",
-          alt: "Analyst working at a multi-monitor trading workstation",
-          width: 1400,
-          height: 935,
+          src: "/images/compliance-review.jpg",
+          alt: "Professional reviewing documents at a desk",
+          width: 1600,
+          height: 1200,
         }}
       />
 
@@ -172,6 +177,25 @@ export default function FinancialOperationsPage() {
           </Reveal>
         </div>
       </Section>
+
+      {/* Photographic interlude — the operations floor */}
+      <PhotoBand
+        image="/images/trading-floor-desk.jpg"
+        alt="Trader analysing charts across multiple monitors"
+        eyebrow="The lifecycle"
+        heading={
+          <>
+            One queue, one record,{" "}
+            <span className="font-display font-semibold italic text-bx-champagne">
+              one audit trail.
+            </span>
+          </>
+        }
+        copy="From first application to settled payout, the same record carries the client through every stage — no re-keying, no re-verifying, no starting over."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1282}
+      />
 
       {/* Service cases + incentives — split editorial */}
       <Section tone="white" ariaLabel="Service cases and incentives">

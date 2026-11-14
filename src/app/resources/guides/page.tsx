@@ -11,7 +11,7 @@ import SectionIntro from "@/components/ui/SectionIntro";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import Reveal from "@/components/ui/Reveal";
-import Icon from "@/components/icons";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import { GUIDES } from "@/content/resources";
 import { GUIDE_FAQS } from "@/content/resource-editorial";
 import ResourceHero from "@/components/resources/ResourceHero";
@@ -50,16 +50,16 @@ export default function GuidesPage() {
         title={
           <>
             Practical guides,{" "}
-            <span className="font-display italic text-bx-maroon-700">
+            <span className="font-display italic text-bx-gold-400">
               written for operators.
             </span>
           </>
         }
         copy="Five guides on the work financial businesses actually do: launching, partnering, onboarding, getting paid and knowing what is going on. Read each one in full, right here."
-        image="/images/resources-library.jpg"
-        imageAlt="Rows of bookshelves filled with books in a bright library"
+        image="/images/workshop-presentation.jpg"
+        imageAlt="Professionals attending a business seminar"
         imageWidth={1600}
-        imageHeight={1066}
+        imageHeight={968}
       />
 
       <Section tone="ivory" ariaLabel="Guides">
@@ -82,9 +82,9 @@ export default function GuidesPage() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {HOW_TO_USE.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-7">
-                <Icon name={item.icon} size={28} className="text-bx-gold-600" />
-                <h3 className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+              <div className="flex h-full flex-col items-center border border-bx-gold-500/30 bg-bx-white p-7 text-center">
+                <FeatureIcon icon={item.icon} size="md" />
+                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-ink">
                   {item.title}
                 </h3>
                 <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">

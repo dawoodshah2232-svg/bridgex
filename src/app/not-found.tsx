@@ -11,6 +11,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { NAV_GROUPS } from "@/content/navigation";
 import { Container } from "@/components/ui/Container";
+import HeroMedia from "@/components/ui/HeroMedia";
 import { ButtonLink } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
@@ -25,8 +26,16 @@ export default function NotFound() {
   return (
     <>
       {/* Dark hero — clears the fixed 72px header. */}
-      <section className="bg-bx-maroon-900 pb-16 pt-[72px] text-bx-ivory sm:pb-20">
-        <Container className="pt-14 sm:pt-20">
+      <section className="relative overflow-hidden bg-bx-maroon-900 pb-16 pt-[72px] text-bx-ivory sm:pb-20">
+        <HeroMedia
+          image="/images/hero-skyline-sf.jpg"
+          alt="San Francisco financial district skyline at twilight across the bay"
+          scrim="strong"
+          bridgeLine
+          imageWidth={1920}
+          imageHeight={1280}
+        />
+        <Container className="relative pt-14 sm:pt-20">
           <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-gold-400">
             404 — Page not found
           </p>

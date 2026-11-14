@@ -12,6 +12,8 @@ import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import { ButtonLink } from "@/components/ui/Button";
 import GoldLineDivider from "@/components/ui/GoldLineDivider";
+import PhotoBand from "@/components/ui/PhotoBand";
+import ImageText from "@/components/ui/ImageText";
 import Icon from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -71,34 +73,32 @@ export default function AboutPage() {
       </Section>
 
       {/* Philosophy */}
-      <Section tone="ivory" ariaLabel="Our philosophy">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-          <SectionIntro
-            label="Philosophy"
-            heading="Technology should fit the business — not the other way round."
-            copy="Every financial business runs differently: different desks, different products, different rules. A platform that forces one shape on all of them creates workarounds, and workarounds become the real system. We build the other way."
-          />
-          <div className="space-y-6">
-            <Reveal>
-              <p className="max-w-[68ch] font-body text-base leading-relaxed text-bx-muted sm:text-lg">
-                BridgeX is configured around how your business actually
-                operates — your entities, your journeys, your approval habits.
-                Configuration, not custom code, so your setup stays
-                upgradeable and every change stays reversible.
-              </p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <p className="max-w-[68ch] font-body text-base leading-relaxed text-bx-muted sm:text-lg">
-                And we are honest about the boundary. We build technology for
-                financial businesses. We do not run your brokerage, hold your
-                clients&apos; funds, or make regulatory claims on your behalf.
-                Your obligations stay yours; our job is to make the evidence
-                for them easy to produce.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </Section>
+      <ImageText
+        image="/images/boardroom-executives.jpg"
+        alt="Senior executives in discussion around a boardroom table"
+        eyebrow="Philosophy"
+        heading={
+          <>
+            Technology should fit the business —{" "}
+            <em className="font-display font-semibold italic text-bx-maroon-700">
+              not the other way round.
+            </em>
+          </>
+        }
+        copy="Every financial business runs differently: different desks, different products, different rules. A platform that forces one shape on all of them creates workarounds, and workarounds become the real system. We build the other way. BridgeX is configured around how your business actually operates — your entities, your journeys, your approval habits. Configuration, not custom code, so your setup stays upgradeable and every change stays reversible."
+        flip
+        tone="ivory"
+        imageWidth={1920}
+        imageHeight={1280}
+      >
+        <p className="mt-5 max-w-[65ch] text-base leading-relaxed text-bx-muted sm:text-lg">
+          And we are honest about the boundary. We build technology for
+          financial businesses. We do not run your brokerage, hold your
+          clients&rsquo; funds, or make regulatory claims on your behalf.
+          Your obligations stay yours; our job is to make the evidence
+          for them easy to produce.
+        </p>
+      </ImageText>
 
       {/* Principles */}
       <Section tone="white" ariaLabel="Product principles">
@@ -127,6 +127,27 @@ export default function AboutPage() {
           ))}
         </div>
       </Section>
+
+      {/* Photo interlude — the tagline, as a photograph */}
+      <PhotoBand
+        image="/images/hero-bridge-night.jpg"
+        alt="Illuminated suspension bridge over a river at night"
+        eyebrow="Where markets connect"
+        heading={
+          <>
+            Every client, every account,{" "}
+            <em className="font-display font-semibold italic text-bx-gold-400">
+              every partner — connected.
+            </em>
+          </>
+        }
+        copy="So the business can see itself clearly and act on what it sees."
+        height="sm"
+        imageWidth={1920}
+        imageHeight={1280}
+      >
+        <ButtonLink href="/book-demo">See it in action</ButtonLink>
+      </PhotoBand>
 
       {/* Company details — explicitly editable placeholders */}
       <Section tone="cream" ariaLabel="Company details">

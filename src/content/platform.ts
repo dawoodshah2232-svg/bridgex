@@ -38,6 +38,11 @@ export interface Audience {
   copy: string;
   features: { title: string; text: string }[];
   preview: { label: string; value: string }[];
+  /** Panel photograph (root-relative public path, rendered via asset()). */
+  image: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
 }
 
 export interface OpsStage {
@@ -47,6 +52,11 @@ export interface OpsStage {
   text: string;
   detail: string;
   points: string[];
+  /** Panel photograph (root-relative public path, rendered via asset()). */
+  image: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
 }
 
 export interface StudioBuilder {
@@ -105,7 +115,7 @@ export const PLATFORM_LAYERS: PlatformLayer[] = [
       "Responsive layouts that work on a phone first, not as an afterthought",
     ],
     href: "/platform/client-experience",
-    icon: "users",
+    icon: "experience",
   },
   {
     id: "operations",
@@ -121,7 +131,7 @@ export const PLATFORM_LAYERS: PlatformLayer[] = [
       "Approvals and maker-checker controls on money-moving actions",
     ],
     href: "/platform/financial-operations",
-    icon: "tradeops",
+    icon: "operations",
   },
   {
     id: "integrations",
@@ -137,7 +147,7 @@ export const PLATFORM_LAYERS: PlatformLayer[] = [
       "No provider logos or named integrations we have not verified",
     ],
     href: "/platform/integrations",
-    icon: "exchanges",
+    icon: "ecosystem",
   },
   {
     id: "intelligence",
@@ -153,7 +163,7 @@ export const PLATFORM_LAYERS: PlatformLayer[] = [
       "Exports and audit trails built for review, not for screenshots",
     ],
     href: "/platform/analytics",
-    icon: "pamm",
+    icon: "intelligence",
   },
 ];
 
@@ -188,14 +198,14 @@ export const FOUNDATION_ITEMS: FoundationItem[] = [
     text: "Rules and journeys that run the same way, every time.",
     detail:
       "Approvals, escalations, notifications and status changes are driven by configurable workflows, not by whoever happens to be on shift. A workflow version is drafted, reviewed and published — and the version that ran is recorded with the case it touched.",
-    icon: "exchanges",
+    icon: "workflow",
   },
   {
     title: "Events & webhooks",
     text: "Every meaningful change is an event other systems can trust.",
     detail:
       "When a client is verified, a payment settles or a commission is approved, BridgeX emits an event. Adapters and webhooks deliver those events to connected systems with retries and delivery records, so downstream tools stay in step without polling or manual exports.",
-    icon: "code",
+    icon: "route",
   },
   {
     title: "Audit logging",
@@ -248,7 +258,7 @@ export const AUDIENCES: Audience[] = [
   {
     id: "client",
     label: "Client room",
-    icon: "users",
+    icon: "experience",
     headline: "Your brand, their home base.",
     copy: "Clients register, verify their identity, open accounts, fund wallets and follow every request — inside a room that looks and reads like your business. Nothing in it says BridgeX unless you want it to.",
     features: [
@@ -271,6 +281,10 @@ export const AUDIENCES: Audience[] = [
       { label: "Open requests", value: "Withdrawal — awaiting approval" },
       { label: "Unread messages", value: "1 — support replied" },
     ],
+    image: "/images/wealth-meeting.jpg",
+    imageAlt: "Advisor and client reviewing financial documents together",
+    imageWidth: 1600,
+    imageHeight: 1067,
   },
   {
     id: "partner",
@@ -298,6 +312,10 @@ export const AUDIENCES: Audience[] = [
       { label: "Pending approval", value: "310.50 USD" },
       { label: "Next payout", value: "Requested — in review" },
     ],
+    image: "/images/handshake-partners.jpg",
+    imageAlt: "Business partners shaking hands during a meeting",
+    imageWidth: 1600,
+    imageHeight: 1067,
   },
   {
     id: "advisor",
@@ -325,6 +343,10 @@ export const AUDIENCES: Audience[] = [
       { label: "Meetings this week", value: "9 scheduled" },
       { label: "Pending suitability reviews", value: "3" },
     ],
+    image: "/images/wealth-advisor.jpg",
+    imageAlt: "Financial advisor discussing plans with clients",
+    imageWidth: 1600,
+    imageHeight: 1068,
   },
 ];
 
@@ -346,6 +368,10 @@ export const OPS_STAGES: OpsStage[] = [
       "Suitability assessments attached to the record",
       "Approval queues with reviewer notes and history",
     ],
+    image: "/images/signing-contract.jpg",
+    imageAlt: "Person signing documents with a pen",
+    imageWidth: 1600,
+    imageHeight: 1068,
   },
   {
     id: "open",
@@ -360,6 +386,10 @@ export const OPS_STAGES: OpsStage[] = [
       "Entitlements and limits by client segment",
       "Every account linked back to its verification evidence",
     ],
+    image: "/images/lobby-office.jpg",
+    imageAlt: "Modern office lobby with wooden panels and large windows",
+    imageWidth: 1600,
+    imageHeight: 1067,
   },
   {
     id: "fund",
@@ -374,6 +404,10 @@ export const OPS_STAGES: OpsStage[] = [
       "Approval gates on release, with maker-checker where configured",
       "Three-way reconciliation: provider, ledger and platform",
     ],
+    image: "/images/payments-pos.jpg",
+    imageAlt: "Card payment being processed at a point-of-sale terminal",
+    imageWidth: 1600,
+    imageHeight: 1067,
   },
   {
     id: "serve",
@@ -388,6 +422,10 @@ export const OPS_STAGES: OpsStage[] = [
       "Escalation and assignment rules by case type",
       "Client-visible status, so fewer cases chase their own update",
     ],
+    image: "/images/compliance-desk.jpg",
+    imageAlt: "Businesswoman reviewing paperwork in an office",
+    imageWidth: 1600,
+    imageHeight: 1068,
   },
   {
     id: "settle",
@@ -402,6 +440,10 @@ export const OPS_STAGES: OpsStage[] = [
       "Clawbacks and corrections recorded, never silently edited",
       "Partner statements generated from the ledger",
     ],
+    image: "/images/handshake-deal.jpg",
+    imageAlt: "Professional handshake sealing a business agreement",
+    imageWidth: 1600,
+    imageHeight: 1067,
   },
 ];
 

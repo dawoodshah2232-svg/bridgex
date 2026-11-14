@@ -10,7 +10,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { PLATFORM_LAYERS } from "@/content/platform";
-import Icon from "@/components/icons";
+import Icon, { layerIcon } from "@/components/icons";
 import { onTabListKeyDown } from "./tabs";
 
 export default function LayerExplorer() {
@@ -65,7 +65,7 @@ export default function LayerExplorer() {
                   </span>
                 </span>
                 <Icon
-                  name={item.icon}
+                  name={layerIcon(item.id)}
                   size={28}
                   className={isActive ? "text-bx-gold-400" : "text-bx-gold-600"}
                 />

@@ -11,7 +11,9 @@ import SectionIntro from "@/components/ui/SectionIntro";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBand from "@/components/ui/CtaBand";
 import Reveal from "@/components/ui/Reveal";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import Icon from "@/components/icons";
+import { asset } from "@/lib/paths";
 import { EVENT_TOPICS } from "@/content/resources";
 import { EVENTS_FAQS } from "@/content/resource-editorial";
 import ResourceHero from "@/components/resources/ResourceHero";
@@ -51,7 +53,7 @@ export default function EventsPage() {
         title={
           <>
             Events,{" "}
-            <span className="font-display italic text-bx-maroon-700">
+            <span className="font-display italic text-bx-gold-400">
               coming soon.
             </span>
           </>
@@ -61,7 +63,6 @@ export default function EventsPage() {
         imageAlt="An audience seated in rows, watching a presentation in a darkened hall"
         imageWidth={1600}
         imageHeight={1067}
-        layout="split"
       />
 
       <Section tone="ivory" ariaLabel="Planned webinars">
@@ -73,40 +74,52 @@ export default function EventsPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {EVENT_TOPICS.map((topic, i) => (
             <Reveal key={topic.id} delay={(i % 2) * 0.08} className="h-full">
-              <article className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-7 sm:p-8">
-                <div className="flex flex-wrap items-center gap-3">
-                  <StatusBadge status="Planned" />
-                  <span className="font-sans text-[13px] font-bold text-bx-muted">
-                    {topic.format}
-                  </span>
+              <article className="flex h-full flex-col overflow-hidden border border-bx-gold-500/30 bg-bx-white">
+                <div className="overflow-hidden">
+                  <img
+                    src={asset(topic.image)}
+                    alt={topic.imageAlt}
+                    width={1200}
+                    height={675}
+                    loading="lazy"
+                    className="aspect-[16/9] w-full object-cover"
+                  />
                 </div>
-                <h3 className="mt-4 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink">
-                  {topic.title}
-                </h3>
-                <p className="mt-1 font-sans text-sm font-bold text-bx-muted">
-                  For {topic.audience}
-                </p>
-                <p className="mt-3 flex-1 text-base leading-relaxed text-bx-muted">
-                  {topic.description}
-                </p>
-                <ul className="mt-5 space-y-2 border-t border-bx-gold-500/25 pt-5">
-                  {topic.points.map((point) => (
-                    <li
-                      key={point}
-                      className="flex items-start gap-2.5 text-[15px] leading-relaxed text-bx-ink/90"
-                    >
-                      <Icon
-                        name="check"
-                        size={18}
-                        className="mt-0.5 shrink-0 text-bx-gold-600"
-                      />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 font-sans text-sm font-bold text-bx-maroon-700">
-                  Date to be announced
-                </p>
+                <div className="flex flex-1 flex-col p-7 sm:p-8">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <StatusBadge status="Planned" />
+                    <span className="font-sans text-[13px] font-bold text-bx-muted">
+                      {topic.format}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-ink">
+                    {topic.title}
+                  </h3>
+                  <p className="mt-1 font-sans text-sm font-bold text-bx-muted">
+                    For {topic.audience}
+                  </p>
+                  <p className="mt-3 flex-1 text-base leading-relaxed text-bx-muted">
+                    {topic.description}
+                  </p>
+                  <ul className="mt-5 space-y-2 border-t border-bx-gold-500/25 pt-5">
+                    {topic.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex items-start gap-2.5 text-[15px] leading-relaxed text-bx-ink/90"
+                      >
+                        <Icon
+                          name="check"
+                          size={18}
+                          className="mt-0.5 shrink-0 text-bx-gold-600"
+                        />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 font-sans text-sm font-bold text-bx-maroon-700">
+                    Date to be announced
+                  </p>
+                </div>
               </article>
             </Reveal>
           ))}
@@ -122,9 +135,9 @@ export default function EventsPage() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {WHAT_TO_EXPECT.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col border border-bx-gold-500/30 bg-bx-white p-7">
-                <Icon name={item.icon} size={28} className="text-bx-gold-600" />
-                <h3 className="mt-4 font-sans text-xl font-extrabold leading-snug text-bx-ink">
+              <div className="flex h-full flex-col items-center border border-bx-gold-500/30 bg-bx-white p-7 text-center">
+                <FeatureIcon icon={item.icon} size="md" />
+                <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-ink">
                   {item.title}
                 </h3>
                 <p className="mt-2 flex-1 text-[15px] leading-relaxed text-bx-muted">
@@ -161,6 +174,24 @@ export default function EventsPage() {
               </Link>
               .
             </p>
+            <Reveal className="mt-10">
+              {/* Offset gold frame lives inside the wrapper's own
+                  margin, so nothing overflows at 375px. */}
+              <div className="relative mb-3 mr-3 sm:mb-4 sm:mr-4">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                />
+                <img
+                  src={asset("/images/boardroom-conference.jpg")}
+                  alt="Business panel seated at a long conference table"
+                  width={1600}
+                  height={1067}
+                  loading="lazy"
+                  className="relative aspect-[16/10] w-full object-cover"
+                />
+              </div>
+            </Reveal>
           </div>
           <Reveal>
             <EventsForm />

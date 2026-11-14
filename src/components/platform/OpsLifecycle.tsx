@@ -8,6 +8,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { OPS_STAGES } from "@/content/platform";
+import { asset } from "@/lib/paths";
 import Icon from "@/components/icons";
 import { onTabListKeyDown } from "./tabs";
 
@@ -89,7 +90,15 @@ export default function OpsLifecycle() {
             <p className="mt-4 text-base leading-relaxed text-bx-muted">{stage.detail}</p>
           </div>
           <div className="lg:col-span-5">
-            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
+            <img
+              src={asset(stage.image)}
+              alt={stage.imageAlt}
+              width={stage.imageWidth}
+              height={stage.imageHeight}
+              loading="lazy"
+              className="aspect-[16/10] w-full object-cover"
+            />
+            <p className="mt-6 font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-maroon-700">
               What happens here
             </p>
             <ul className="mt-4 space-y-3">

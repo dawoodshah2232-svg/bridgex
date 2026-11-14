@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CAREERS_VALUES } from "@/content/company";
+import { asset } from "@/lib/paths";
 import InnerHero from "@/components/company/InnerHero";
 import CareersForm from "@/components/forms/CareersForm";
 import { Section } from "@/components/ui/Container";
@@ -28,8 +29,8 @@ export default function CareersPage() {
           </>
         }
         copy="BridgeX is built by a small team that owns its work end to end — from the first workshop note to the system running in production. Financial operations software has to be right, not just fast, and that shapes how we work."
-        image="/images/skyline-dusk.jpg"
-        imageAlt="City skyline at dusk, seen across the water"
+        image="/images/team-strategy.jpg"
+        imageAlt="Colleagues discussing strategy in a relaxed office lounge"
         imageWidth={1600}
         imageHeight={1067}
       />
@@ -91,6 +92,22 @@ export default function CareersPage() {
               heading="Interested anyway? Say hello."
               copy="Tell us what you do and what kind of work interests you. If a role opens that fits, your inquiry is already in front of us."
             />
+            <Reveal className="mt-8">
+              <div className="relative mb-3 mr-3 max-w-sm sm:mb-4 sm:mr-4">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-3 translate-y-3 border border-bx-gold-500/60 sm:translate-x-4 sm:translate-y-4"
+                />
+                <img
+                  src={asset("/images/team-laptop.jpg")}
+                  alt="Diverse team collaborating around a laptop"
+                  width={1200}
+                  height={1500}
+                  loading="lazy"
+                  className="relative aspect-[4/5] w-full object-cover"
+                />
+              </div>
+            </Reveal>
             <Reveal className="mt-8">
               <p className="border border-bx-gold-600/50 bg-bx-white px-6 py-5 font-body text-[15px] leading-relaxed text-bx-muted">
                 <span className="font-sans font-extrabold text-bx-maroon-700">

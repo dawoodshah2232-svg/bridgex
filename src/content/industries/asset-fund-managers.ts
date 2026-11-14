@@ -14,13 +14,38 @@ export const assetFundManagers: IndustryContent = {
   heroAfter: "",
   heroSupport:
     "Raising and servicing a fund means subscription workflows, investor portals, capital calls, payouts and distributor fees — all of it auditable. BridgeX gives managers one system of record for the investor relationship.",
-  heroVariant: "photo-light",
+  heroVariant: "photo-dark",
   image: {
+    src: "/images/boardroom-executives.jpg",
+    alt: "Senior executives in discussion around a boardroom table",
+    width: 1920,
+    height: 1280,
+  },
+  secondaryImage: {
+    src: "/images/signing-contract.jpg",
+    alt: "Person signing documents with a pen",
+    width: 1600,
+    height: 1068,
+  },
+  useCaseFlip: true,
+  challengeImage: {
     src: "/images/industries-asset-fund.jpg",
     alt: "Overhead view of colleagues reviewing printed charts and reports around a wooden table",
     width: 1600,
     height: 900,
   },
+  bandImage: {
+    src: "/images/band-skyline-hongkong.jpg",
+    alt: "Hong Kong skyscrapers and skyline at twilight",
+    width: 1920,
+    height: 1440,
+  },
+  band: {
+    eyebrow: "One system of record",
+    heading: "Every investor step reads from the same record.",
+    copy: "From the first subscription form to the distributor's trail-fee statement — subscriptions, calls, payouts and fees, all of it auditable.",
+  },
+  bandPosition: "after-challenges",
   challenges: {
     label: "The challenges",
     heading: "The fund grows. The paperwork grows faster.",

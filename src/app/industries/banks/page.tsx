@@ -1,7 +1,8 @@
 /**
  * Banks industry page (spec §9).
  * Copy lives in src/content/industries/banks.ts.
- * Light diagram hero — no DARK_HERO_ROUTES entry needed.
+ * DARK HERO — coordinator: add "/industries/banks" to
+ * DARK_HERO_ROUTES in src/content/navigation.ts.
  */
 import type { Metadata } from "next";
 import { industryBySlug } from "@/content/industries";
