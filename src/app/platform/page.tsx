@@ -260,7 +260,7 @@ export default function PlatformOverview() {
       {/* The same record, at every step — image-led close to the journey */}
       <ImageText
         image="/images/team-discussion.jpg"
-        alt="Trader on the phone at a desk with two laptops showing charts"
+        alt="Trader on the phone reviewing a tablet at his desk"
         eyebrow="One record"
         heading={
           <>

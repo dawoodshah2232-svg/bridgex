@@ -256,7 +256,7 @@ export function CookieSettingsLink() {
     <button
       type="button"
       onClick={() => openCookieSettings()}
-      className="flex min-h-[44px] items-center text-sm text-bx-slate-300/80 transition-colors hover:text-bx-white"
+      className="flex min-h-[44px] items-center text-sm text-bx-slate-500 transition-colors hover:text-bx-teal-600"
     >
       Cookie settings
     </button>

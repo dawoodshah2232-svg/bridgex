@@ -43,7 +43,7 @@ export const INSIGHT_ARTICLES: InsightArticle[] = [
     readMinutes: 5,
     image: "/images/team-discussion.jpg",
     imageAlt:
-      "Trader on the phone at a desk with two laptops showing charts",
+      "Trader on the phone reviewing a tablet at his desk",
   },
   {
     slug: "onboarding-is-a-journey-not-a-form",

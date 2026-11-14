@@ -46,9 +46,9 @@ export default function IbIncentivesPage() {
         tone="mint"
         image={{
           src: "/images/solutions-partners.jpg",
-          alt: "Two traders working together at a desk with a laptop and tablet",
-          width: 1422,
-          height: 1067,
+          alt: "Trader studying a tablet with a concerned expression",
+          width: 1600,
+          height: 1068,
         }}
         flip
       />

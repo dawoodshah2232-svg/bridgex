@@ -86,9 +86,9 @@ export default function FinancialCrmPage() {
         icons={["database", "clock", "chart", "users", "key", "audit"]}
         image={{
           src: "/images/team-discussion.jpg",
-          alt: "Trader on the phone at a desk with two laptops showing charts",
+          alt: "Trader on the phone reviewing a tablet at his desk",
           width: 1600,
-          height: 1067,
+          height: 1068,
         }}
         flip
       />
