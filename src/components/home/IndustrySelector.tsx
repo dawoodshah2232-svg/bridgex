@@ -181,7 +181,10 @@ export default function IndustrySelector() {
   const industry = INDUSTRIES[selected];
 
   return (
-    <Section tone="ivory" ariaLabel="Industries">
+    // Tightened bottom (final polish, 14 Nov): with the Integration
+    // section's tightened top below, the boundary gap is ~96px at lg
+    // instead of ~192px (two full section paddings).
+    <Section tone="ivory" ariaLabel="Industries" className="pb-10 sm:pb-12 lg:pb-12">
       <SectionIntro
         label="Who BridgeX is for"
         heading={

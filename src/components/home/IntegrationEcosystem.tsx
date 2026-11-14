@@ -46,7 +46,10 @@ const CATEGORIES: { name: string; icon: IconName; text: string }[] = [
 
 export default function IntegrationEcosystem() {
   return (
-    <Section tone="cream" ariaLabel="Integration ecosystem">
+    // Tightened top (final polish, 14 Nov): with the Industries
+    // section's tightened bottom above, the boundary gap is ~96px at
+    // lg instead of ~192px (two full section paddings).
+    <Section tone="cream" ariaLabel="Integration ecosystem" className="pt-10 sm:pt-12 lg:pt-12">
       <SectionIntro
         label="Integration ecosystem"
         heading={

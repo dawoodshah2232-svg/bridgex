@@ -146,6 +146,41 @@ Dawood's verdict: too much text, no images, no relatable icons.
   `opacity:0` in built HTML; preload links present on hero pages;
   all 44 routes + changed assets verified live after deploy
 
+## Final polish pass (14 Nov, after the second live browser check)
+- [x] (1) Contests headless photo replaced: the tuxedo-man source cuts
+  the face at the mouth and the below-chin re-crop still read as a
+  torso — swapped for `solutions-contests-statuette.jpg` (gold star
+  statuette, Pexels 7005047, pre-cropped to the top 4:3 band); old
+  `solutions-contests-award.jpg` deleted from the repo
+- [x] (2) CRM problem photo replaced: overexposed faceless handshake
+  → `solutions-crm-handshake.jpg` (Pexels 8730120, three
+  professionals, all faces in frame); `handshake-deal.jpg` kept —
+  still used on /book-demo and in platform.ts
+- [x] (3) CRM hero re-cropped: `wealth-meeting.jpg` (NOT
+  handshake-partners — that is the IB hero) gains
+  `objectPosition: "50% 18%"` — the centred crop cut both heads at
+  the top edge; 18% keeps both heads in frame with margin under the
+  full Ken Burns drift (verified by simulated crops)
+- [x] (4) Two empty bands tightened at the boundary only (NOT global
+  padding): homepage Industries bottom + Integration top, and CRM
+  PreviewShell bottom + CapabilityGroups top, each to 48px at lg
+  (~96px total, matching gaps elsewhere). PreviewShell and
+  CapabilityGroups gain an optional `className` prop passed to
+  Section; verified in built CSS that Tailwind emits the side
+  utilities after `py-24`, so they win
+- [x] (5) Home hero scrim lightened again (65/45/25 horizontal,
+  bottom gradient 85%) with contrast computed from the photo, not
+  guessed: white H1 5th-percentile 12.5:1, champagne support copy
+  5.4:1 — both above WCAG AA
+- [x] (6) Trophy hero: NO change — 8 warmer Pexels candidates were
+  downloaded, visually inspected and rejected (blue/green accents,
+  readable text, chrome-silver statue, leopard-print bowl
+  reflection, portrait geometry); the current v2 crop stays
+- [x] Verification: tsc clean; build passes; 0 `opacity:0` in built
+  HTML; all 44 sitemap URLs have built pages; changed assets +
+  object-positions + new scrim classes present in built HTML;
+  live verification after deploy (see MEMORY.md)
+
 ## Later batches (from spec §14)
 - [ ] Batch 6: product foundation (portals, RBAC, tenant-safe data model)
   — only after the website is stable and Dawood approves. Never in this
@@ -161,3 +196,7 @@ Dawood's verdict: too much text, no images, no relatable icons.
 - [x] Contests hero photo replaced 14 Nov (`solutions-contests-v2.jpg`,
   gold trophy on deep red); exchanges hero replaced the same day
   (`industries-exchanges-v2.jpg`, NYSE at night).
+- [ ] IB-incentives hero (`handshake-partners.jpg`, centred crop) cuts
+  the man's hair at the top edge — same defect class as the CRM hero
+  fixed in the final polish pass. Needs a re-crop decision (not in
+  that pass's scope).

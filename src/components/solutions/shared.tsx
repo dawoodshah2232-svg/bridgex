@@ -85,16 +85,18 @@ export function PreviewShell({
   heading,
   copy,
   tone = "white",
+  className = "",
   children,
 }: {
   label: string;
   heading: ReactNode;
   copy: string;
   tone?: "white" | "ivory" | "cream";
+  className?: string;
   children: ReactNode;
 }) {
   return (
-    <Section tone={tone} id="preview" ariaLabel="Interactive preview">
+    <Section tone={tone} id="preview" ariaLabel="Interactive preview" className={className}>
       <SectionIntro label={label} heading={heading} copy={copy} />
       <Reveal className="mt-12 lg:mt-16" delay={0.08}>
         <div className="border border-bx-gold-500/40 bg-bx-maroon-900 p-3 sm:p-4">
@@ -190,6 +192,7 @@ export function CapabilityGroups({
   copy,
   groups,
   tone = "ivory",
+  className = "",
   icons,
 }: {
   label: string;
@@ -197,10 +200,11 @@ export function CapabilityGroups({
   copy: string;
   groups: CapabilityGroup[];
   tone?: LightTone;
+  className?: string;
   icons: IconName[];
 }) {
   return (
-    <Section tone={tone} ariaLabel="Capabilities">
+    <Section tone={tone} ariaLabel="Capabilities" className={className}>
       <SectionIntro label={label} heading={heading} copy={copy} />
       <div className="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-3 lg:gap-8">
         {groups.map((group, gi) => (

@@ -117,7 +117,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "in one clear view.",
     heroIntro:
       "BridgeX Financial CRM keeps leads, contacts, accounts, conversations and cases in one place — so sales, support and compliance stop working from different versions of the truth.",
-    heroImage: { src: "/images/wealth-meeting.jpg", alt: "Advisor and client reviewing financial documents together", width: 1600, height: 1067 },
+    heroImage: { src: "/images/wealth-meeting.jpg", alt: "Advisor and client reviewing financial documents together", width: 1600, height: 1067, objectPosition: "50% 18%" },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Growth outruns the spreadsheet — then the spreadsheet fights back",

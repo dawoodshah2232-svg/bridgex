@@ -2,7 +2,7 @@
  * Trading Contest Management — solution page (spec S7).
  * Photographic dark hero (gold trophy on deep red, v2 image).
  * Composition: leaderboard preview on its maroon stage, problem as
- * an ImageText block (award photo), capabilities, photographic
+ * an ImageText block (gold award statuette photo), capabilities, photographic
  * use-case cards, dark workflow, image-led benefits, security,
  * integrations, comparison, a sunset-skyline PhotoBand interlude,
  * FAQ.
@@ -50,10 +50,10 @@ export default function TradingContestsPage() {
         pains={s.pains}
         tone="cream"
         image={{
-          src: "/images/solutions-contests-award.jpg",
-          alt: "Man in a tuxedo holding a gold award statuette",
+          src: "/images/solutions-contests-statuette.jpg",
+          alt: "Gold award statuette with a star",
           width: 1600,
-          height: 857,
+          height: 1200,
         }}
       />
 

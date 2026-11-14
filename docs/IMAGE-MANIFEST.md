@@ -1,7 +1,7 @@
 # BridgeX Image Manifest
 
 **Location:** `public/images/` · **Reference in code:** via the `asset()` helper (basePath `/bridgex`), e.g. `asset('/images/hero-bridge.jpg')`.
-**Last updated:** 2026-11-14 (visual-defects fix pass — see "Removed (14 Nov fix pass)" and the updated rows below).
+**Last updated:** 2026-11-14 (final polish pass — see "Removed (final polish, 14 Nov)" and the updated rows below).
 
 ## Totals
 
@@ -11,7 +11,9 @@
 | **New images (enrichment pass, F2)** | **43** | **~9.4 MB** |
 | Removed in the 14 Nov fix pass | −1 | −0.2 MB |
 | Recompressed in the 14 Nov fix pass | — | −0.3 MB |
-| **Total** | **67** | **~13.3 MB** |
+| New in the final polish pass (14 Nov) | +2 | +0.25 MB |
+| Removed in the final polish pass (14 Nov) | −1 | −0.1 MB |
+| **Total** | **68** | **~13.5 MB** |
 
 All 43 new photos are real photography from **Pexels** (Pexels licence — free to use, no attribution required, no watermark). No AI-generated images. No `cwebp` on the VM, so all files are optimized JPEGs from Pexels CDN params (`?auto=compress&cs=tinysrgb&w=…`); heroes/bands at 1920w, cards at 1200–1600w. Every file was verified with `file` + Pillow (real JPEG, correct dimensions) and **visually inspected** — see the rejected log at the bottom for what was caught and removed.
 
@@ -22,7 +24,7 @@ Budgets: heroes/bands ≤ 600 KB, all other images ≤ 400 KB. Largest file is `
 | Old file (keep on disk for now, do NOT delete) | Problem | New file | Action |
 |---|---|---|---|
 | `industries-exchanges.jpg` (1600×1067, 390 KB) | Small blurred German UI text visible in the image | **`industries-exchanges-v2.jpg`** (1600×1200, 429 KB) — NYSE facade at night, warm gold light, no UI text | Swap the hero on `/industries/exchanges` to the v2 file. Companion detail shot: `industries-exchanges-detail.jpg` (pediment sculptures, lettering cropped out). |
-| `solutions-contests.jpg` (1600×686, 111 KB) | Trophy photo is saturated yellow | **`solutions-contests-v2.jpg`** (1600×2400, 250 KB) — gold trophy held against a deep red background (portrait, on-palette) | Swap the hero on `/solutions/trading-contests` to the v2 file. Landscape alternative for image/text blocks: `solutions-contests-award.jpg` (man in tuxedo holding a gold statuette, maroon-red background). Hero uses `objectPosition: "50% 30%"` so the cup is fully visible (14 Nov fix — the centred crop cut the cup off). |
+| `solutions-contests.jpg` (1600×686, 111 KB) | Trophy photo is saturated yellow | **`solutions-contests-v2.jpg`** (1600×2400, 250 KB) — gold trophy held against a deep red background (portrait, on-palette) | Swap the hero on `/solutions/trading-contests` to the v2 file. Landscape companion for image/text blocks: `solutions-contests-statuette.jpg` (gold star statuette close-up, Pexels 7005047) — replaced the headless tuxedo photo in the final polish pass, 14 Nov. Hero uses `objectPosition: "50% 30%"` so the cup is fully visible (14 Nov fix — the centred crop cut the cup off). |
 
 Note: the v2 exchanges hero still shows the NYSE name engraved on the building frieze, small and at an angle — architectural lettering on a real landmark, not UI text. The detail shot was cropped to remove its lettering band entirely.
 
@@ -32,7 +34,7 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 |---|---|
 | Home + shared heroes/bands | `hero-skyline-sf`, `hero-skyline-frankfurt`, `hero-skyline-nyc`, `hero-bridge-night`, `hero-bridge-rotterdam`, `band-skyline-singapore`, `band-skyline-hongkong`, `band-skyline-kl`, `band-bridge-istanbul`, `band-bridge-london`, `band-glass-tower` |
 | Platform (8 pages) | `trading-floor-desk`, `trader-workstation`, `abstract-glass-ceiling`, `abstract-glass-lines`, `abstract-mirrored-tower`, `team-laptop`, `compliance-desk` |
-| Solutions (7 pages) | `solutions-contests-v2`, `solutions-contests-award`, `payments-pos`, `payments-contactless`, `signing-contract`, `handshake-partners`, `compliance-review`, `team-collaboration` (PAMM hero, 14 Nov fix) |
+| Solutions (7 pages) | `solutions-contests-v2`, `solutions-contests-statuette`, `solutions-crm-handshake`, `payments-pos`, `payments-contactless`, `signing-contract`, `handshake-partners`, `compliance-review`, `team-collaboration` (PAMM hero, 14 Nov fix) |
 | Industries (9 pages) | `industries-exchanges-v2`, `industries-exchanges-detail`, `wealth-advisor`, `wealth-meeting`, `banking-columns`, `banking-hall`, `boardroom-executives`, `trading-floor-desk` |
 | Services (4 pages) | `workshop-presentation`, `support-headset`, `team-collaboration`, `lobby-office` |
 | Resources (7 pages) | `workshop-presentation`, `boardroom-conference`, `team-strategy`, `portrait-executive` |
@@ -80,7 +82,8 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | `support-headset.jpg` | 1200×1800 | 224 KB | Portrait card / `/services/managed-services` / `/company/contact` — support agent portrait, clean studio background | Customer support agent wearing a headset and smiling |
 | `portrait-executive.jpg` | 1200×1800 | 169 KB | Portrait card / `/company/about` / `/company/partners` — businessman in blue suit by office window (4:5-friendly) | Businessman in a suit holding documents by an office window |
 | `portrait-window.jpg` | 1600×1068 | 173 KB | `/company/about` / `/book-demo` image block — executive silhouette looking over a city skyline | Businessman looking out over skyscrapers from a high-rise office |
-| `handshake-deal.jpg` | 1600×1067 | 79 KB | `/company/partners` / `/book-demo` / `/solutions/financial-crm` — handshake close-up over a laptop | Professional handshake sealing a business agreement |
+| `handshake-deal.jpg` | 1600×1067 | 79 KB | `/company/partners` / `/book-demo` — handshake close-up over a laptop (no longer on `/solutions/financial-crm`: replaced by `solutions-crm-handshake.jpg` in the final polish pass, 14 Nov — the old crop was overexposed with no faces) | Professional handshake sealing a business agreement |
+| `solutions-crm-handshake.jpg` | 1600×1068 | 138 KB | `/solutions/financial-crm` problem block (final polish, 14 Nov) — three professionals in a meeting room, two shaking hands, all faces in frame, properly exposed | Business partners shaking hands in a meeting room |
 | `handshake-partners.jpg` | 1600×1067 | 162 KB | `/company/partners` hero alt / `/solutions/ib-incentives` — multiethnic partners shaking hands over coffee | Business partners shaking hands during a meeting |
 
 ## D. New images — trading & markets
@@ -113,14 +116,14 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | File | Dimensions | Size | Suggested slot(s) | Alt text |
 |---|---|---|---|---|
 | `wealth-advisor.jpg` | 1600×1068 | 153 KB | `/industries/wealth-management` hero or image block — advisor discussing plans with senior clients | Financial advisor discussing plans with clients |
-| `wealth-meeting.jpg` | 1600×1067 | 155 KB | `/industries/wealth-management` alt / `/solutions/financial-crm` — advisor and client reviewing documents | Advisor and client reviewing financial documents together |
+| `wealth-meeting.jpg` | 1600×1067 | 155 KB | `/industries/wealth-management` alt / `/solutions/financial-crm` — advisor and client reviewing documents; CRM hero uses `objectPosition: "50% 18%"` (final polish, 14 Nov — the centred crop cut both heads at the top edge) | Advisor and client reviewing financial documents together |
 
 ## H. New images — contests (see Replacements above)
 
 | File | Dimensions | Size | Suggested slot(s) | Alt text |
 |---|---|---|---|---|
-| `solutions-contests-v2.jpg` | 1600×2400 | 250 KB | **REPLACES `solutions-contests.jpg`** — `/solutions/trading-contests` hero (portrait), with `objectPosition: "50% 30%"` so the cup is fully visible | Hand holding a gold trophy against a deep red background |
-| `solutions-contests-award.jpg` | 1600×857 | 101 KB | `/solutions/trading-contests` image block (landscape companion) — cropped from y=210 in the 14 Nov fix: the source cut the man's face mid-face, so the crop is now clearly below the chin (bow tie, statuette, hands only) | Man in a tuxedo holding a gold award statuette |
+| `solutions-contests-v2.jpg` | 1600×2400 | 250 KB | **REPLACES `solutions-contests.jpg`** — `/solutions/trading-contests` hero (portrait), with `objectPosition: "50% 30%"` so the cup is fully visible. Re-evaluated in the final polish pass (14 Nov): 8 warmer Pexels candidates were checked and none fits the wide hero geometry without a worse defect (see rejected log) — v2 kept. | Hand holding a gold trophy against a deep red background |
+| `solutions-contests-statuette.jpg` | 1600×1200 | 112 KB | `/solutions/trading-contests` image block (final polish, 14 Nov) — gold star statuette close-up, pre-cropped to the top 4:3 band so the head + star are in frame; no person, no text | Gold award statuette with a star |
 
 ## I. Existing images (Batch 1–2, kept as-is)
 
@@ -187,8 +190,9 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | `portrait-window.jpg` | 8572125 | |
 | `signing-agreement.jpg` | 7841502 | |
 | `signing-contract.jpg` | 8730374 | |
-| `solutions-contests-award.jpg` | 7005636 | |
+| `solutions-contests-statuette.jpg` | 7005047 | Pre-cropped to the top 4:3 band (y 0–1200) |
 | `solutions-contests-v2.jpg` | 6250957 | |
+| `solutions-crm-handshake.jpg` | 8730120 | |
 | `support-headset.jpg` | 7709235 | |
 | `team-collaboration.jpg` | 6829538 | |
 | `team-laptop.jpg` | 3182750 | |
@@ -205,6 +209,12 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 |---|---|---|
 | `traders-discussion.jpg` (Pexels 5833270, 1600×1067) | Face-crop defect found in the live browser check: the right man's face is half-cut at the right edge of the SOURCE, and both men's heads are cropped at the top. No re-crop can fix a half-face — the photo had to go. | Home DemoPreview figure → `trading-floor-desk.jpg` (over-the-shoulder, no face); `/solutions/pamm-copy-trading` hero → `team-collaboration.jpg` (all four faces whole, objectPosition "50% 12%"); `/industries/multi-asset-brokers` challenge image → `boardroom-executives.jpg`. |
 
+## Removed (final polish, 14 Nov — deleted from the repo, do NOT re-add)
+
+| File | Reason removed | Replaced by |
+|---|---|---|
+| `solutions-contests-award.jpg` (Pexels 7005636, 1600×857) | Headless-photo defect confirmed live: the source cuts the man's face at the mouth, and the below-chin re-crop (14 Nov fix pass) still read as a decapitated torso beside the heading. The "intentional below-chin crop" does not work. | `/solutions/trading-contests` problem block → `solutions-contests-statuette.jpg` (Pexels 7005047, gold star statuette, no person). |
+
 ## Rejected during visual QA (downloaded, then deleted — do NOT re-add)
 
 | Candidate | Reason rejected |
@@ -218,6 +228,15 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | Pexels 7979605 as `wealth-meeting.jpg` | Readable text on a T-shirt graphic ("1999" etc.) + too-casual styling for wealth |
 | Pexels 8441775 as `wealth-meeting.jpg` | Laptop screen shows "MAPS COMPARISON INFOGRAPHIC" with readable percentages — replaced with 7821714 |
 | Pexels 5824876 as `banking-hall.jpg` | Grand Central info booth: readable "THE METLIFE BUILDING", "MTA METRO-NORTH TRAIN INFORMATION", clock numerals; also a train station, not a bank — replaced with 36286286 |
+| Pexels 29707905 as contests hero | Row of trophies: blue ribbons + green tablecloth (off-palette) + readable Polish plaque text; busy, no single hero subject |
+| Pexels 2098604 as contests hero | Oscar-like statue on black reads chrome-silver, not warm gold; centred behind the headline; the hero band cuts its head |
+| Pexels 6532362 as contests hero | Warm gold bowl, but the bowl's reflection is a prominent leopard print at hero scale; light-grey background |
+| Pexels 7005636 as contests problem image | The old award photo itself — source cuts the man's face at the mouth; same defect class as the photo being replaced |
+| Pexels 36512552 / 7005064 / 7005696 as contests hero | All portrait 2:3 — the same wide-hero geometry problem as the current v2 (only ~24% of height visible); no improvement |
+| Pexels 3182784 as CRM problem image | Top-down table shot, no faces visible, people cropped at all edges |
+| Pexels 6285089 as CRM problem image | Faces fine, but the background screen shows colourful bars with readable "01–05" numerals (off-palette green/blue) |
+| Pexels 6918529 as CRM problem image | Left man is a headless torso — same defect class as the award photo |
+| Pexels 8730173 as CRM hero | Four faces in frame, but the same shoot/people/room as the new problem image (8730120) — using both on one page would look repetitive |
 
 ## Coverage gaps
 

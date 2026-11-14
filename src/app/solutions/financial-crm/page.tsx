@@ -45,14 +45,17 @@ export default function FinancialCrmPage() {
         pains={s.pains}
         tone="cream"
         image={{
-          src: "/images/handshake-deal.jpg",
-          alt: "Professional handshake sealing a business agreement",
+          src: "/images/solutions-crm-handshake.jpg",
+          alt: "Business partners shaking hands in a meeting room",
           width: 1600,
-          height: 1067,
+          height: 1068,
         }}
       />
 
-      <PreviewShell label={s.previewLabel} heading={s.previewHeading} copy={s.previewCopy} tone="white">
+      {/* Tightened boundary (final polish, 14 Nov): the preview table and
+          the capabilities heading sat ~192px apart (two full section
+          paddings). 48px + 48px matches the ~96px gaps elsewhere. */}
+      <PreviewShell label={s.previewLabel} heading={s.previewHeading} copy={s.previewCopy} tone="white" className="pb-10 sm:pb-12 lg:pb-12">
         <CrmPreview />
       </PreviewShell>
 
@@ -62,6 +65,7 @@ export default function FinancialCrmPage() {
         copy={s.capabilitiesCopy}
         groups={s.capabilityGroups}
         tone="ivory"
+        className="pt-10 sm:pt-12 lg:pt-12"
         icons={["funnel", "crm", "shield"]}
       />
 

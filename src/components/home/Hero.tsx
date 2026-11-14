@@ -134,8 +134,11 @@ export default function Hero() {
       {/* Background photograph + maroon vignette scrim. The scrim is
           light enough for the bridge photograph to show (fix, 14 Nov:
           the old 95/85/65 gradient left the left two-thirds almost
-          black) — the night photo is dark, so the white headline keeps
-          strong contrast even at these levels. */}
+          black; final polish the same day: 80/60/35 → 65/45/25, bottom
+          gradient 100% → 85%) — the night photo is dark, so the white
+          headline keeps strong contrast even at these levels
+          (computed from the photo: white H1 5th-percentile 12.5:1,
+          champagne support copy 5.4:1 — both above WCAG AA). */}
       <div className="absolute inset-0" aria-hidden="true">
         {/* fetchPriority="high" makes React 19 emit a preload link for
             this image during SSR — no manual <link> needed. */}
@@ -149,8 +152,8 @@ export default function Hero() {
           className="h-full w-full object-cover object-[70%_center] animate-bx-drift"
         />
         <div className="absolute inset-0 bg-bx-maroon-950/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/80 via-bx-maroon-950/60 to-bx-maroon-950/35" />
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bx-maroon-950 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bx-maroon-950/65 via-bx-maroon-950/45 to-bx-maroon-950/25" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bx-maroon-950/85 to-transparent" />
       </div>
 
       <Container className="relative flex flex-1 flex-col justify-center pb-16 pt-[136px] sm:pt-[152px]">

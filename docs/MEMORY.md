@@ -119,3 +119,17 @@
   photo for header contrast. `traders-discussion.jpg` is deleted
   (half-face in the source) — do NOT re-add; see IMAGE-MANIFEST.md
   "Removed (14 Nov fix pass)".
+- Final polish pass (14 Nov, after the second live browser check):
+  the CRM hero is `wealth-meeting.jpg` (NOT `handshake-partners.jpg`
+  — that is the IB-incentives hero), cropped `objectPosition "50%
+  18%"` so both heads stay in frame under the Ken Burns drift.
+  `solutions-contests-award.jpg` (Pexels 7005636) is deleted — the
+  source cuts the man's face at the mouth and the below-chin re-crop
+  still read as a torso; do NOT re-add. The contests hero v2 stays:
+  8 warmer Pexels candidates were inspected and all rejected (see
+  IMAGE-MANIFEST.md rejected log). Section-boundary gaps are fixed
+  by passing `pb-*/pt-*` classes to that Section only (via the
+  `className` prop PreviewShell/CapabilityGroups now accept) — never
+  by changing the global `py-24`; Tailwind v4 emits side utilities
+  after `py-*` in the built CSS, so they win. Home hero scrim is
+  65/45/25 + bottom 85% (computed: white H1 p5 12.5:1).
