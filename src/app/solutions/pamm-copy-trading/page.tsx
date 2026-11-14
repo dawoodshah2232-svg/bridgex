@@ -81,7 +81,7 @@ export default function PammCopyTradingPage() {
         useCases={s.useCases}
         tone="white"
         images={[
-          { src: "/images/industries-asset-fund.jpg", alt: "Fund management office scene", width: 1600, height: 900 },
+          { src: "/images/pamm-asset-fund.jpg", alt: "Fund management office scene", width: 1600, height: 770 },
           { src: "/images/industries-wealth.jpg", alt: "Wealth management concept", width: 1600, height: 1067 },
           { src: "/images/industries-brokers.jpg", alt: "Brokerage trading environment", width: 1600, height: 1200 },
         ]}
@@ -94,9 +94,9 @@ export default function PammCopyTradingPage() {
         tone="cream"
         icons={["chart", "gauge", "database", "eye", "checkCircle", "users"]}
         image={{
-          src: "/images/wealth-advisor.jpg",
+          src: "/images/pamm-benefits.jpg",
           alt: "Financial advisor discussing plans with clients",
-          width: 1600,
+          width: 1424,
           height: 1068,
         }}
         flip
