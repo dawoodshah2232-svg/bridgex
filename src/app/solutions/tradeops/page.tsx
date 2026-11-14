@@ -83,9 +83,9 @@ export default function TradeOpsPage() {
         icons={["eye", "users", "workflow", "calendar", "audit", "refresh"]}
         image={{
           src: "/images/analyst-workstation.jpg",
-          alt: "Analyst working at a workstation",
-          width: 1400,
-          height: 935,
+          alt: "Desk with a laptop and monitor showing charts",
+          width: 1600,
+          height: 1067,
         }}
         flip
       />

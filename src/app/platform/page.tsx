@@ -272,8 +272,8 @@ export default function PlatformOverview() {
         }
         copy="At every step, the same record is being read and written: the client room shows it, operations works it, integrations move money against it, and intelligence reports on it. There is no nightly sync to drift, and no second copy of the truth."
         tone="cream"
-        imageWidth={1400}
-        imageHeight={933}
+        imageWidth={1600}
+        imageHeight={1067}
       />
 
       {/* Solutions that run on the platform */}

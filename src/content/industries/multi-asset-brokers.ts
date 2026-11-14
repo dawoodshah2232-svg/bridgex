@@ -24,9 +24,9 @@ export const multiAssetBrokers: IndustryContent = {
   heroBridgeLine: true,
   secondaryImage: {
     src: "/images/trading-floor-desk.jpg",
-    alt: "Trader analysing charts across multiple monitors",
+    alt: "Hands over a trading desk with laptops showing charts",
     width: 1920,
-    height: 1282,
+    height: 1280,
   },
   useCaseFlip: true,
   challengeImage: {

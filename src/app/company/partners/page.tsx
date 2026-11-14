@@ -34,9 +34,9 @@ export default function PartnersPage() {
         }
         copy="BridgeX works best as part of an ecosystem — firms that sell into financial businesses, technology providers whose products connect to brokerage operations, and introducers who spot a fit. Partnership terms are agreed per relationship, in writing."
         image="/images/handshake-partners.jpg"
-        imageAlt="Business partners shaking hands during a meeting"
-        imageWidth={1600}
-        imageHeight={1067}
+        imageAlt="Partners in discussion around a boardroom table"
+        imageWidth={1920}
+        imageHeight={1280}
       >
         <div className="mt-8 flex flex-wrap gap-4">
           <ButtonLink href="#apply" size="lg">

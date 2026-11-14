@@ -65,7 +65,7 @@ export const ARTICLE_BREAKS: Record<string, ArticleBreak> = {
   },
   "partner-growth-without-the-spreadsheet": {
     image: "/images/handshake-partners.jpg",
-    imageAlt: "Business partners shaking hands during a meeting",
+    imageAlt: "Partners in discussion around a boardroom table",
     quote: "The spreadsheet is not the enemy. It is a prototype that outlived its brief.",
   },
   "onboarding-is-a-journey-not-a-form": {

@@ -69,7 +69,7 @@ export default function ImplementationPage() {
       {/* Photo interlude — the gate, not the rush */}
       <PhotoBand
         image="/images/interlude-boardroom.jpg"
-        alt="Empty boardroom with a long table"
+        alt="Colleague presenting to teammates in a meeting room"
         eyebrow="The method, in one line"
         heading={
           <>
@@ -81,8 +81,8 @@ export default function ImplementationPage() {
         }
         copy="Each phase closes with a decision, in writing — that the work is done well enough to proceed. Validation is never compressed."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1282}
+        imageWidth={1800}
+        imageHeight={1280}
       >
         <ButtonLink href="#responsibility">See who owns what</ButtonLink>
       </PhotoBand>

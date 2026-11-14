@@ -90,9 +90,9 @@ export default function ClientExperiencePage() {
         copy="Most of what a client thinks of your business is the room you give them: how it looks, whether it answers, and whether it remembers them. BridgeX builds that room in your brand — for clients, for partners, and for the advisors who look after them."
         image={{
           src: "/images/team-collaboration.jpg",
-          alt: "Team collaborating over a laptop in a bright office",
+          alt: "Colleagues reviewing documents together at a meeting table",
           width: 1600,
-          height: 1068,
+          height: 1067,
           objectPosition: "50% 8%",
         }}
       />

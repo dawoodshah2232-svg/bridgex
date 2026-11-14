@@ -117,7 +117,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "in one clear view.",
     heroIntro:
       "BridgeX Financial CRM keeps leads, contacts, accounts, conversations and cases in one place — so sales, support and compliance stop working from different versions of the truth.",
-    heroImage: { src: "/images/solutions-crm-hero.jpg", alt: "Advisor and client in discussion at a meeting table with laptop and documents", width: 1600, height: 900, objectPosition: "50% 0%" },
+    heroImage: { src: "/images/solutions-crm-hero.jpg", alt: "Consultant working on a laptop at her desk", width: 1600, height: 1007, objectPosition: "50% 0%" },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Growth outruns the spreadsheet — then the spreadsheet fights back",
@@ -387,7 +387,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "with the maths visible.",
     heroIntro:
       "BridgeX PAMM & Copy Trading connects strategy managers with investors — subscriptions, allocation, risk settings and fee logic in one place, with every figure traceable to its source.",
-    heroImage: { src: "/images/team-collaboration.jpg", alt: "Team collaborating over a laptop in a bright office", width: 1600, height: 1068, objectPosition: "50% 12%" },
+    heroImage: { src: "/images/pamm-hero.jpg", alt: "Trading monitors showing candlestick charts in a dark office", width: 1600, height: 1067, objectPosition: "50% 50%" },
     darkHero: true,
     notice:
       "PAMM and copy-trading engines are in active development. The preview below demonstrates the intended experience with illustrative data — it is not a live trading system, and no performance figures here are real.",
@@ -658,7 +658,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "without crossing your fingers.",
     heroIntro:
       "TradeOps Control Center is how operations teams run MT4/MT5 servers safely: batch changes validated and dry-run first, approved by a second pair of eyes, executed with progress tracking — and logged so every change can be explained.",
-    heroImage: { src: "/images/trading-floor-desk.jpg", alt: "Trader analysing charts across multiple monitors", width: 1920, height: 1282 },
+    heroImage: { src: "/images/trading-floor-desk.jpg", alt: "Hands over a trading desk with laptops showing charts", width: 1920, height: 1280 },
     darkHero: true,
     notice:
       "TradeOps is a managed-operations concept for authorised server environments. This marketing site has no live trade-server access — the preview below is a simulated dry-run with illustrative data.",

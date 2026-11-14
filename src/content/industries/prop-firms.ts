@@ -17,9 +17,9 @@ export const propFirms: IndustryContent = {
   heroVariant: "photo-dark",
   image: {
     src: "/images/trading-floor-desk.jpg",
-    alt: "Trader analysing charts across multiple monitors",
+    alt: "Hands over a trading desk with laptops showing charts",
     width: 1920,
-    height: 1282,
+    height: 1280,
   },
   secondaryImage: {
     src: "/images/industries-prop-firms.jpg",
@@ -29,7 +29,7 @@ export const propFirms: IndustryContent = {
   },
   challengeImage: {
     src: "/images/trader-workstation.jpg",
-    alt: "Trader working at a multi-monitor trading workstation",
+    alt: "Trading desk with a laptop showing a candlestick chart and a wall of monitors",
     width: 1600,
     height: 1067,
   },

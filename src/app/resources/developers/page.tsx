@@ -124,7 +124,7 @@ export default function DevelopersPage() {
 
       <ImageText
         image="/images/team-laptop.jpg"
-        alt="Diverse team collaborating around a laptop"
+        alt="Diverse team in discussion around a boardroom table"
         eyebrow="For engineers"
         heading={
           <>
@@ -144,7 +144,7 @@ export default function DevelopersPage() {
         ctaHref="#endpoints"
         tone="white"
         imageWidth={1200}
-        imageHeight={1800}
+        imageHeight={1797}
       />
 
       <Section tone="cream" id="versioning" ariaLabel="API versioning">

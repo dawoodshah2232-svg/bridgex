@@ -31,7 +31,7 @@ export const INSIGHT_ARTICLES: InsightArticle[] = [
     readMinutes: 6,
     image: "/images/analyst-workstation.jpg",
     imageAlt:
-      "An analyst reviewing market charts across several monitors at a workstation",
+      "Desk with a laptop and monitor showing charts, a calculator and papers",
   },
   {
     slug: "partner-growth-without-the-spreadsheet",

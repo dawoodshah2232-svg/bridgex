@@ -100,7 +100,7 @@ export default function CareersPage() {
                 />
                 <img
                   src={asset("/images/team-laptop.jpg")}
-                  alt="Diverse team collaborating around a laptop"
+                  alt="Diverse team in discussion around a boardroom table"
                   width={1200}
                   height={1500}
                   loading="lazy"

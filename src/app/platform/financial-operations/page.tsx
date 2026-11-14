@@ -181,7 +181,7 @@ export default function FinancialOperationsPage() {
       {/* Photographic interlude — the operations floor */}
       <PhotoBand
         image="/images/trading-floor-desk.jpg"
-        alt="Trader analysing charts across multiple monitors"
+        alt="Hands over a trading desk with laptops showing charts"
         eyebrow="The lifecycle"
         heading={
           <>
@@ -194,7 +194,7 @@ export default function FinancialOperationsPage() {
         copy="From first application to settled payout, the same record carries the client through every stage — no re-keying, no re-verifying, no starting over."
         height="sm"
         imageWidth={1920}
-        imageHeight={1282}
+        imageHeight={1280}
       />
 
       {/* Service cases + incentives — split editorial */}

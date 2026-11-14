@@ -147,7 +147,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/guides",
     meta: "Guide · 7 min read",
     image: "/images/handshake-partners.jpg",
-    imageAlt: "Business partners shaking hands during a meeting",
+    imageAlt: "Partners in discussion around a boardroom table",
   },
   {
     id: "guide-onboarding-kyc",
@@ -180,7 +180,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/guides",
     meta: "Guide · 6 min read",
     image: "/images/trading-floor-desk.jpg",
-    imageAlt: "Trader analysing charts across multiple monitors",
+    imageAlt: "Hands over a trading desk with laptops showing charts",
   },
   {
     id: "update-hub-launch",
@@ -257,7 +257,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/events",
     meta: "Planned webinar · 45 min + Q&A",
     image: "/images/boardroom-conference.jpg",
-    imageAlt: "Business panel seated at a long conference table",
+    imageAlt: "Colleagues in discussion around a boardroom table",
   },
   {
     id: "case-studies-soon",
@@ -353,9 +353,9 @@ export const GUIDES: Guide[] = [
     summary:
       "Tiers, attribution rules and a commission ledger your partners can check themselves — trust is a feature, not a promise.",
     image: "/images/handshake-partners.jpg",
-    imageAlt: "Business partners shaking hands during a meeting",
+    imageAlt: "Partners in discussion around a boardroom table",
     breakImage: "/images/team-collaboration.jpg",
-    breakImageAlt: "Team collaborating over a laptop in a bright office",
+    breakImageAlt: "Colleagues reviewing documents together at a meeting table",
     breakQuote: "Every earning needs a cause a partner can inspect",
     keyPoints: [
       "Write the attribution rule down before the first referral",
@@ -482,9 +482,9 @@ export const GUIDES: Guide[] = [
     summary:
       "Funnels, exception queues and audit trails — the small set of views that tells an operator what actually needs attention.",
     image: "/images/trading-floor-desk.jpg",
-    imageAlt: "Trader analysing charts across multiple monitors",
+    imageAlt: "Hands over a trading desk with laptops showing charts",
     breakImage: "/images/analyst-workstation.jpg",
-    breakImageAlt: "Analyst working at a workstation",
+    breakImageAlt: "Desk with a laptop and monitor showing charts",
     breakQuote: "Audit trails are for Tuesdays, not just auditors",
     keyPoints: [
       "Start with four views, not forty dashboards",
@@ -714,7 +714,7 @@ export const EVENT_TOPICS: EventTopic[] = [
       "Audit logs that answer questions instead of raising them",
     ],
     image: "/images/trading-floor-desk.jpg",
-    imageAlt: "Trader analysing charts across multiple monitors",
+    imageAlt: "Hands over a trading desk with laptops showing charts",
   },
 ];
 

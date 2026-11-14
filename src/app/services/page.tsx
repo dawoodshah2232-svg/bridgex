@@ -143,7 +143,7 @@ export default function ServicesPage() {
       {/* How engagements work */}
       <ImageText
         image="/images/team-collaboration.jpg"
-        alt="Team collaborating over a laptop in a bright office"
+        alt="Colleagues reviewing documents together at a meeting table"
         eyebrow="How we work"
         heading={
           <>
@@ -156,7 +156,7 @@ export default function ServicesPage() {
         copy="Every engagement follows the same discipline: agree the scope, build in a staging environment, validate against your real workflows, and only then go live. You always know what phase you are in and what comes next."
         tone="cream"
         imageWidth={1600}
-        imageHeight={1068}
+        imageHeight={1067}
         ctaLabel="See the full implementation method"
         ctaHref="/services/implementation"
       >

@@ -23,7 +23,7 @@ export const securitiesDerivatives: IndustryContent = {
   },
   secondaryImage: {
     src: "/images/boardroom-conference.jpg",
-    alt: "Business panel seated at a long conference table",
+    alt: "Colleagues in discussion around a boardroom table",
     width: 1600,
     height: 1067,
   },

@@ -313,9 +313,9 @@ export const AUDIENCES: Audience[] = [
       { label: "Next payout", value: "Requested — in review" },
     ],
     image: "/images/handshake-partners.jpg",
-    imageAlt: "Business partners shaking hands during a meeting",
-    imageWidth: 1600,
-    imageHeight: 1067,
+    imageAlt: "Partners in discussion around a boardroom table",
+    imageWidth: 1920,
+    imageHeight: 1280,
   },
   {
     id: "advisor",

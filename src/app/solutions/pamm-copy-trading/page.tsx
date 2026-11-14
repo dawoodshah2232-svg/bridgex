@@ -59,7 +59,7 @@ export default function PammCopyTradingPage() {
         tone="ivory"
         image={{
           src: "/images/trader-workstation.jpg",
-          alt: "Trader working at a multi-monitor trading workstation",
+          alt: "Trading desk with a laptop showing a candlestick chart and a wall of monitors",
           width: 1600,
           height: 1067,
         }}

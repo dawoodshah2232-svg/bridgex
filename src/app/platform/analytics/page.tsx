@@ -84,7 +84,7 @@ export default function AnalyticsPage() {
         copy="Dashboards, funnels and exception queues drawn from the same operational records your teams work with. There is no reporting copy to drift out of sync — so the figure a manager sees and the figure an agent works from are the same figure."
         image={{
           src: "/images/trader-workstation.jpg",
-          alt: "Trader working at a multi-monitor trading workstation",
+          alt: "Trading desk with a laptop showing a candlestick chart and a wall of monitors",
           width: 1600,
           height: 1067,
         }}

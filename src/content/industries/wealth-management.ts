@@ -16,8 +16,8 @@ export const wealthManagement: IndustryContent = {
     "Suitability forms, statements, introducer fees and pooled strategies — the work around the advice is what eats the week. BridgeX gives advisors one workspace where the client, the mandate and the paperwork all live together.",
   heroVariant: "photo-dark",
   image: {
-    src: "/images/wealth-advisor.jpg",
-    alt: "Financial advisor discussing plans with clients",
+    src: "/images/wealth-signing.jpg",
+    alt: "Advisor and client signing documents at a white table",
     width: 1600,
     height: 1068,
   },
