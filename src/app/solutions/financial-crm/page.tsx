@@ -46,9 +46,9 @@ export default function FinancialCrmPage() {
         tone="mint"
         image={{
           src: "/images/solutions-crm-handshake.jpg",
-          alt: "Business partners shaking hands in a meeting room",
-          width: 1600,
-          height: 1068,
+          alt: "Bearded trader looking at a screen with market data behind him",
+          width: 1422,
+          height: 1067,
         }}
       />
 
@@ -86,7 +86,7 @@ export default function FinancialCrmPage() {
         icons={["database", "clock", "chart", "users", "key", "audit"]}
         image={{
           src: "/images/team-discussion.jpg",
-          alt: "Team in discussion around a table",
+          alt: "Trader on the phone at a desk with two laptops showing charts",
           width: 1600,
           height: 1067,
         }}
@@ -101,7 +101,7 @@ export default function FinancialCrmPage() {
         tone="mint"
         images={[
           { src: "/images/industries-brokers.jpg", alt: "Brokerage trading environment", width: 1600, height: 1200 },
-          { src: "/images/banking-hall.jpg", alt: "Spacious modern banking hall with a dramatic ceiling", width: 1600, height: 1067 },
+          { src: "/images/banking-hall.jpg", alt: "Trader with a tablet working at a multi-monitor trading desk", width: 1600, height: 1068 },
           { src: "/images/industries-wealth.jpg", alt: "Wealth management concept", width: 1600, height: 1067 },
         ]}
       />
@@ -125,13 +125,13 @@ export default function FinancialCrmPage() {
 
       <PhotoBand
         image="/images/band-bridge-istanbul.jpg"
-        alt="Bosphorus Bridge glowing red above Istanbul at night"
+        alt="Dark trading monitors showing candlestick charts"
         eyebrow="Financial CRM"
         heading="One source of truth."
         copy="Sales, support and compliance read the same record, so the client gets one coherent experience."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1067}
       />
 
       <FaqSection faqs={s.faqs} tone="white" />

@@ -31,15 +31,15 @@ export const multiAssetBrokers: IndustryContent = {
   useCaseFlip: true,
   challengeImage: {
     src: "/images/boardroom-executives.jpg",
-    alt: "Senior executives in discussion around a boardroom table",
-    width: 1400,
+    alt: "Trader at a laptop in a dark office with a wall of market data",
+    width: 1920,
     height: 1280,
   },
   bandImage: {
     src: "/images/hero-skyline-nyc.jpg",
-    alt: "New York City skyline with One World Trade Center at dusk",
-    width: 1920,
-    height: 1080,
+    alt: "Multi-monitor trading desk with candlestick charts and a hand on the keyboard",
+    width: 1600,
+    height: 1067,
   },
   band: {
     eyebrow: "One operating view",

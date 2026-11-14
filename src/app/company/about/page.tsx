@@ -38,9 +38,9 @@ export default function AboutPage() {
         }
         copy="BridgeX exists because financial businesses run on too many disconnected systems. Onboarding in one place, client records in another, payments somewhere else, partners tracked in spreadsheets. We build the connected layer that brings them together."
         image="/images/company-collaboration.jpg"
-        imageAlt="Colleagues working together at laptops in a bright office"
+        imageAlt="Two traders reviewing a tablet and notebook on a sofa"
         imageWidth={1600}
-        imageHeight={1067}
+        imageHeight={900}
       >
         <div className="mt-8 flex flex-wrap gap-4">
           <ButtonLink href="/book-demo" size="lg">
@@ -75,7 +75,7 @@ export default function AboutPage() {
       {/* Philosophy */}
       <ImageText
         image="/images/boardroom-executives.jpg"
-        alt="Senior executives in discussion around a boardroom table"
+        alt="Trader at a laptop in a dark office with a wall of market data"
         eyebrow="Philosophy"
         heading={
           <>
@@ -131,7 +131,7 @@ export default function AboutPage() {
       {/* Photo interlude — the tagline, as a photograph */}
       <PhotoBand
         image="/images/hero-bridge-night.jpg"
-        alt="Illuminated suspension bridge over a river at night"
+        alt="Close-up of a monitor showing a rising candlestick chart"
         eyebrow="Where markets connect"
         heading={
           <>
@@ -143,8 +143,8 @@ export default function AboutPage() {
         }
         copy="So the business can see itself clearly and act on what it sees."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1068}
       >
         <ButtonLink href="/book-demo">See it in action</ButtonLink>
       </PhotoBand>

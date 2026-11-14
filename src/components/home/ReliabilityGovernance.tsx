@@ -54,7 +54,7 @@ export default function ReliabilityGovernance() {
         <figure>
           <img
             src={asset("/images/portrait-window.jpg")}
-            alt="Businessman looking out over skyscrapers from a high-rise office"
+            alt="Close-up of a monitor showing a candlestick chart with volume bars"
             width={1600}
             height={1068}
             loading="lazy"

@@ -124,7 +124,7 @@ export default function DevelopersPage() {
 
       <ImageText
         image="/images/team-laptop.jpg"
-        alt="Diverse team in discussion around a boardroom table"
+        alt="Clasped hands at a desk with two laptops showing trading charts"
         eyebrow="For engineers"
         heading={
           <>
@@ -143,8 +143,8 @@ export default function DevelopersPage() {
         ctaLabel="See the example endpoints"
         ctaHref="#endpoints"
         tone="white"
-        imageWidth={1200}
-        imageHeight={1797}
+        imageWidth={1600}
+        imageHeight={2400}
       />
 
       <Section tone="mint" id="versioning" ariaLabel="API versioning">
@@ -294,7 +294,7 @@ export default function DevelopersPage() {
 
       <PhotoBand
         image="/images/abstract-glass-ceiling.jpg"
-        alt="Skyscrapers seen through a glass ceiling"
+        alt="Hand pointing at a candlestick chart on a dark trading monitor"
         eyebrow="The shape of the API"
         heading={
           <>
@@ -306,8 +306,8 @@ export default function DevelopersPage() {
         }
         copy="Until the sandbox proves the API shape, the examples on this page are plain HTTP — no SDK to install, no client library to learn."
         height="sm"
-        imageWidth={1600}
-        imageHeight={900}
+        imageWidth={1920}
+        imageHeight={1080}
       />
 
       <Section tone="white" id="webhooks" ariaLabel="Webhooks and events">

@@ -29,14 +29,14 @@ export const wealthManagement: IndustryContent = {
   },
   challengeImage: {
     src: "/images/wealth-meeting.jpg",
-    alt: "Advisor and client reviewing financial documents together",
-    width: 1600,
+    alt: "Trader seen from behind holding a phone at a desk with laptops showing charts",
+    width: 1422,
     height: 1067,
   },
   challengeImageFlip: true,
   bandImage: {
     src: "/images/portrait-window.jpg",
-    alt: "Businessman looking out over skyscrapers from a high-rise office",
+    alt: "Close-up of a monitor showing a candlestick chart with volume bars",
     width: 1600,
     height: 1068,
   },

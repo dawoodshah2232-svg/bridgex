@@ -45,9 +45,9 @@ export default function BlogPage() {
         }
         copy="Original editorial from the BridgeX team — on reconciliation, partner trust and onboarding that converts. Each article opens in full right here; there is nothing to download and nothing behind a form."
         image="/images/skyline-dusk.jpg"
-        imageAlt="A city skyline at dusk, office lights coming on across the towers"
-        imageWidth={1600}
-        imageHeight={1067}
+        imageAlt="Close-up of a tablet showing a green candlestick chart"
+        imageWidth={1920}
+        imageHeight={1280}
       />
 
       <Section tone="white" ariaLabel="Articles">
@@ -73,9 +73,9 @@ export default function BlogPage() {
               />
               <img
                 src={asset("/images/team-strategy.jpg")}
-                alt="Colleagues discussing strategy in a relaxed office lounge"
-                width={1600}
-                height={1067}
+                alt="Trader seen from behind with arms raised at a multi-monitor desk"
+                width={1920}
+                height={1282}
                 loading="lazy"
                 className="relative aspect-[4/3] w-full object-cover"
               />

@@ -37,7 +37,7 @@ export default function ManagedServicesPage() {
         image="/images/banking-hall.jpg"
         imageAlt=""
         imageWidth={1600}
-        imageHeight={1067}
+        imageHeight={1068}
       >
         <div className="mt-8 flex flex-wrap gap-4">
           <ButtonLink href="/company/contact" size="lg">
@@ -91,7 +91,7 @@ export default function ManagedServicesPage() {
       {/* Photo interlude — watched, not just running */}
       <PhotoBand
         image="/images/band-bridge-london.jpg"
-        alt="London bridge and skyscrapers at twilight"
+        alt="Hand pointing at candlestick charts across dark trading monitors"
         eyebrow="Managed services"
         heading={
           <>
@@ -103,8 +103,8 @@ export default function ManagedServicesPage() {
         }
         copy="Monitoring surfaces problems before your team has to report them — and every request is tracked to a resolution."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={900}
       >
         <ButtonLink href="/company/contact">Discuss managed services</ButtonLink>
       </PhotoBand>

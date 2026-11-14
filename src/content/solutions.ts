@@ -117,7 +117,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "in one clear view.",
     heroIntro:
       "BridgeX Financial CRM keeps leads, contacts, accounts, conversations and cases in one place — so sales, support and compliance stop working from different versions of the truth.",
-    heroImage: { src: "/images/solutions-crm-hero.jpg", alt: "Consultant working on a laptop at her desk", width: 1600, height: 1007, objectPosition: "50% 0%" },
+    heroImage: { src: "/images/solutions-crm-hero.jpg", alt: "Dark trading monitors showing candlestick charts with trend lines", width: 1920, height: 1282, objectPosition: "50% 0%" },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Growth outruns the spreadsheet — then the spreadsheet fights back",
@@ -253,7 +253,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "without the guesswork.",
     heroIntro:
       "BridgeX Payment Orchestration routes deposits and withdrawals across your providers, retries intelligently when a route fails, and reconciles every movement — so funding stops being a support ticket.",
-    heroImage: { src: "/images/solutions-payments.jpg", alt: "A person holding a payment card while using a laptop, entering payment details online", width: 1600, height: 1067 },
+    heroImage: { src: "/images/solutions-payments.jpg", alt: "Hand holding a phone with a trading chart in front of a laptop with market screens", width: 1920, height: 1213 },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "One provider, one point of failure",
@@ -524,7 +524,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "grow with you.",
     heroIntro:
       "BridgeX IB & Incentive Management runs the whole partner lifecycle — registration, attribution, multi-tier rebates, a commission ledger and payouts — with a source-to-payout audit trail behind every figure.",
-    heroImage: { src: "/images/solutions-ib-hero.jpg", alt: "Business partners shaking hands after a meeting", width: 1600, height: 1068, objectPosition: "45% 0%" },
+    heroImage: { src: "/images/solutions-ib-hero.jpg", alt: "Dark trading monitor showing a candlestick chart with trend lines", width: 1920, height: 1282, objectPosition: "45% 0%" },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Partner growth stalls when the numbers are argued about",

@@ -41,8 +41,8 @@ export default function ImplementationPage() {
         copy="Implementation is a joint project with a named team on both sides, a written plan, and a gate at the end of every phase. You always know where things stand — and nothing goes live until your team has tested it."
         image="/images/workshop-presentation-wide.jpg"
         imageAlt=""
-        imageWidth={1600}
-        imageHeight={450}
+        imageWidth={1920}
+        imageHeight={1080}
       >
         <div className="mt-8 flex flex-wrap gap-4">
           <ButtonLink href="#phases" size="lg">
@@ -69,7 +69,7 @@ export default function ImplementationPage() {
       {/* Photo interlude — the gate, not the rush */}
       <PhotoBand
         image="/images/interlude-boardroom.jpg"
-        alt="Colleague presenting to teammates in a meeting room"
+        alt="Close-up of a monitor showing a line chart with a trading range"
         eyebrow="The method, in one line"
         heading={
           <>
@@ -81,8 +81,8 @@ export default function ImplementationPage() {
         }
         copy="Each phase closes with a decision, in writing — that the work is done well enough to proceed. Validation is never compressed."
         height="sm"
-        imageWidth={1800}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1068}
       >
         <ButtonLink href="#responsibility">See who owns what</ButtonLink>
       </PhotoBand>
@@ -124,7 +124,7 @@ export default function ImplementationPage() {
                 />
                 <img
                   src={asset("/images/services-workshop.jpg")}
-                  alt="Workshop session in progress"
+                  alt="Two traders discussing a tablet and notebook on a sofa"
                   width={1600}
                   height={1067}
                   loading="lazy"

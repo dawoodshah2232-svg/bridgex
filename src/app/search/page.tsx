@@ -26,10 +26,10 @@ export default function SearchPage() {
       <section className="relative overflow-hidden bg-bx-navy-900 pb-14 pt-[72px] text-bx-white sm:pb-16">
         <HeroMedia
           image="/images/abstract-glass-ceiling.jpg"
-          alt="Skyscrapers seen through a glass ceiling"
+          alt="Hand pointing at a candlestick chart on a dark trading monitor"
           scrim="strong"
-          imageWidth={1600}
-          imageHeight={900}
+          imageWidth={1920}
+          imageHeight={1080}
         />
         <Container className="relative pt-14 sm:pt-20">
           <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-teal-400">

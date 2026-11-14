@@ -96,9 +96,9 @@ export default function TradingContestsPage() {
         icons={["chart", "eye", "report", "funnel", "star", "network"]}
         image={{
           src: "/images/workshop-presentation.jpg",
-          alt: "Professionals attending a business seminar",
+          alt: "Trader celebrating a win at a desk with a laptop and a large market-data wall",
           width: 1600,
-          height: 968,
+          height: 1067,
         }}
         flip
       />
@@ -122,13 +122,13 @@ export default function TradingContestsPage() {
 
       <PhotoBand
         image="/images/skyline-sunset.jpg"
-        alt="City skyline at sunset"
+        alt="Trader on the phone at a desk with two laptops showing charts, seen from behind"
         eyebrow="Trading Contest Management"
         heading="Contests that build the brand instead of risking it."
         copy="Live, feed-driven boards with clear rules — no manual edits, no unexplained changes."
         height="sm"
         imageWidth={1600}
-        imageHeight={899}
+        imageHeight={1067}
       />
 
       <FaqSection faqs={s.faqs} tone="white" />

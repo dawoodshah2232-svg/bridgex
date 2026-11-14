@@ -48,9 +48,9 @@ export const bondsFixedIncome: IndustryContent = {
   },
   secondaryImage: {
     src: "/images/compliance-desk.jpg",
-    alt: "Businesswoman reviewing paperwork in an office",
+    alt: "Printed stock reports with candlestick charts, a magnifier and a calculator",
     width: 1600,
-    height: 1068,
+    height: 1067,
   },
   useCaseFlip: true,
   challengeImage: {
@@ -61,9 +61,9 @@ export const bondsFixedIncome: IndustryContent = {
   },
   bandImage: {
     src: "/images/skyline-sunset.jpg",
-    alt: "City skyline at sunset",
+    alt: "Trader on the phone at a desk with two laptops showing charts, seen from behind",
     width: 1600,
-    height: 899,
+    height: 1067,
   },
   band: {
     eyebrow: "Visibility is the service",

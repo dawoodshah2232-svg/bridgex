@@ -82,7 +82,7 @@ export default function ArchitecturePage() {
         copy="BridgeX keeps its four layers apart on purpose — so each can change without breaking the others — and joins them through one foundation: one tenant model, one data model, one set of roles, one workflow engine, one event system and one audit log."
         image={{
           src: "/images/hero-bridge-rotterdam.jpg",
-          alt: "Erasmus Bridge and Rotterdam skyline at blue hour",
+          alt: "Analyst pointing at a large wall screen showing a market chart",
           width: 1920,
           height: 1280,
         }}
@@ -117,9 +117,9 @@ export default function ArchitecturePage() {
                 />
                 <img
                   src={asset("/images/banking-hall.jpg")}
-                  alt="Spacious modern banking hall with a dramatic ceiling"
+                  alt="Trader with a tablet working at a multi-monitor trading desk"
                   width={1600}
-                  height={1067}
+                  height={1068}
                   loading="lazy"
                   className="relative aspect-[3/2] w-full object-cover"
                 />
@@ -170,7 +170,7 @@ export default function ArchitecturePage() {
       {/* Photographic interlude — the diagram is the architecture */}
       <PhotoBand
         image="/images/skyline-sunset.jpg"
-        alt="City skyline at sunset"
+        alt="Trader on the phone at a desk with two laptops showing charts, seen from behind"
         eyebrow="The diagram"
         heading={
           <>
@@ -183,7 +183,7 @@ export default function ArchitecturePage() {
         copy="Layers never talk to each other directly, and never keep private copies of data — a change in one layer is visible to the others because it lands in the same records."
         height="sm"
         imageWidth={1600}
-        imageHeight={899}
+        imageHeight={1067}
       />
 
       {/* API-first */}

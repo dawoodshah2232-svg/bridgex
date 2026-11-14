@@ -89,9 +89,9 @@ export default function FinancialOperationsPage() {
         copy="Onboarding, accounts, wallets, payments, cases, incentives and approvals — the daily work of a financial business, run from one record with one audit trail. Nobody reconstructs a case from three systems before answering it."
         image={{
           src: "/images/compliance-review.jpg",
-          alt: "Professional reviewing documents at a desk",
+          alt: "Overhead view of printed market analytics with a magnifier, notebook and pencils",
           width: 1600,
-          height: 1200,
+          height: 1067,
         }}
       />
 

@@ -30,9 +30,9 @@ export default function CareersPage() {
         }
         copy="BridgeX is built by a small team that owns its work end to end — from the first workshop note to the system running in production. Financial operations software has to be right, not just fast, and that shapes how we work."
         image="/images/team-strategy.jpg"
-        imageAlt="Colleagues discussing strategy in a relaxed office lounge"
-        imageWidth={1600}
-        imageHeight={1067}
+        imageAlt="Trader seen from behind with arms raised at a multi-monitor desk"
+        imageWidth={1920}
+        imageHeight={1282}
       />
 
       {/* No open roles — stated plainly */}
@@ -100,9 +100,9 @@ export default function CareersPage() {
                 />
                 <img
                   src={asset("/images/team-laptop.jpg")}
-                  alt="Diverse team in discussion around a boardroom table"
-                  width={1200}
-                  height={1500}
+                  alt="Clasped hands at a desk with two laptops showing trading charts"
+                  width={1600}
+                  height={2400}
                   loading="lazy"
                   className="relative aspect-[4/5] w-full object-cover"
                 />

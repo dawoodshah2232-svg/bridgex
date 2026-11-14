@@ -73,7 +73,7 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
       "Original editorial on brokerage operations — reconciliation, partner growth and onboarding, written by the BridgeX team.",
     icon: "book",
     image: "/images/skyline-dusk.jpg",
-    imageAlt: "City skyline at dusk",
+    imageAlt: "Close-up of a tablet showing a green candlestick chart",
   },
   {
     href: "/resources/guides",
@@ -82,7 +82,7 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
       "Practical, operator-focused guides: launching a brokerage, designing an IB programme, running onboarding and payments well.",
     icon: "document",
     image: "/images/workshop-presentation.jpg",
-    imageAlt: "Professionals attending a business seminar",
+    imageAlt: "Trader celebrating a win at a desk with a laptop and a large market-data wall",
   },
   {
     href: "/resources/case-studies",
@@ -91,7 +91,7 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
       "Authentic client stories, published only when customers agree to share them. None yet — here is what we will document.",
     icon: "users",
     image: "/images/band-glass-tower.jpg",
-    imageAlt: "Curved glass skyscraper facade against a dusk sky",
+    imageAlt: "Two traders pointing at a tablet showing a chart on a desk",
   },
   {
     href: "/resources/product-updates",
@@ -100,7 +100,7 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
       "What shipped, what changed and what is next — labelled honestly as Live, Sandbox, Demo or Planned.",
     icon: "layers",
     image: "/images/hero-skyline-sf.jpg",
-    imageAlt: "San Francisco financial district skyline at twilight across the bay",
+    imageAlt: "Multi-monitor trading desk showing candlestick and line charts",
   },
   {
     href: "/resources/developers",
@@ -118,7 +118,7 @@ export const RESOURCE_SECTIONS: ResourceSection[] = [
       "Planned webinars on onboarding, partner economics and payments. No dates yet — register interest and we will tell you first.",
     icon: "calendar",
     image: "/images/resources-audience.jpg",
-    imageAlt: "Audience at an event",
+    imageAlt: "Trader seen from behind raising his arms in celebration at a multi-monitor desk",
   },
 ];
 
@@ -147,7 +147,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/guides",
     meta: "Guide · 7 min read",
     image: "/images/handshake-partners.jpg",
-    imageAlt: "Partners in discussion around a boardroom table",
+    imageAlt: "Magnifier over a printed stacked area chart",
   },
   {
     id: "guide-onboarding-kyc",
@@ -158,7 +158,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/guides",
     meta: "Guide · 9 min read",
     image: "/images/compliance-review.jpg",
-    imageAlt: "Professional reviewing documents at a desk",
+    imageAlt: "Overhead view of printed market analytics with a magnifier, notebook and pencils",
   },
   {
     id: "guide-payment-routing",
@@ -169,7 +169,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/guides",
     meta: "Guide · 6 min read",
     image: "/images/payments-pos.jpg",
-    imageAlt: "Card payment being processed at a point-of-sale terminal",
+    imageAlt: "Hands pointing at a tablet showing a candlestick chart",
   },
   {
     id: "guide-reporting",
@@ -191,7 +191,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/product-updates",
     meta: "Live · 13 Nov 2026",
     image: "/images/resources-library.jpg",
-    imageAlt: "Rows of bookshelves filled with books in a bright library",
+    imageAlt: "Close-up of a printed stock report with a candlestick chart",
   },
   {
     id: "update-developer-docs",
@@ -213,7 +213,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/product-updates",
     meta: "Planned · 27 Oct 2026",
     image: "/images/abstract-glass-lines.jpg",
-    imageAlt: "Low-angle view of a glass skyscraper facade",
+    imageAlt: "Hands holding a phone with a trading app in front of a laptop showing candlestick charts",
   },
   {
     id: "dev-api-reference",
@@ -224,7 +224,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/developers",
     meta: "Example endpoints · v1 (planned)",
     image: "/images/abstract-glass-ceiling.jpg",
-    imageAlt: "Skyscrapers seen through a glass ceiling",
+    imageAlt: "Hand pointing at a candlestick chart on a dark trading monitor",
   },
   {
     id: "dev-webhooks",
@@ -235,7 +235,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/developers",
     meta: "Planned · v1",
     image: "/images/abstract-mirrored-tower.jpg",
-    imageAlt: "Modern tower with a mirrored glass facade",
+    imageAlt: "Hand holding a phone with a rising chart in front of a laptop with trading screens and a coffee",
   },
   {
     id: "event-onboarding-webinar",
@@ -246,7 +246,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/events",
     meta: "Planned webinar · 45 min + Q&A",
     image: "/images/workshop-presentation.jpg",
-    imageAlt: "Professionals attending a business seminar",
+    imageAlt: "Trader celebrating a win at a desk with a laptop and a large market-data wall",
   },
   {
     id: "event-payments-webinar",
@@ -257,7 +257,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/events",
     meta: "Planned webinar · 45 min + Q&A",
     image: "/images/boardroom-conference.jpg",
-    imageAlt: "Colleagues in discussion around a boardroom table",
+    imageAlt: "Trader studying a tablet with a hand on his chin",
   },
   {
     id: "case-studies-soon",
@@ -268,7 +268,7 @@ export const RESOURCE_HUB_ITEMS: HubItem[] = [
     href: "/resources/case-studies",
     meta: "Coming soon",
     image: "/images/band-glass-tower.jpg",
-    imageAlt: "Curved glass skyscraper facade against a dusk sky",
+    imageAlt: "Two traders pointing at a tablet showing a chart on a desk",
   },
 ];
 
@@ -312,7 +312,7 @@ export const GUIDES: Guide[] = [
     image: "/images/signing-contract.jpg",
     imageAlt: "Person signing documents with a pen",
     breakImage: "/images/lobby-office.jpg",
-    breakImageAlt: "Modern office lobby with wooden panels and large windows",
+    breakImageAlt: "Overhead desk with printed charts, a magnifier, cash and a calculator",
     breakQuote: "One client record, shared by every workflow",
     keyPoints: [
       "Decide the operating model before choosing tools",
@@ -353,9 +353,9 @@ export const GUIDES: Guide[] = [
     summary:
       "Tiers, attribution rules and a commission ledger your partners can check themselves — trust is a feature, not a promise.",
     image: "/images/handshake-partners.jpg",
-    imageAlt: "Partners in discussion around a boardroom table",
+    imageAlt: "Magnifier over a printed stacked area chart",
     breakImage: "/images/team-collaboration.jpg",
-    breakImageAlt: "Colleagues reviewing documents together at a meeting table",
+    breakImageAlt: "Hand pointing at a printed bar chart and line graph on a wooden desk",
     breakQuote: "Every earning needs a cause a partner can inspect",
     keyPoints: [
       "Write the attribution rule down before the first referral",
@@ -396,7 +396,7 @@ export const GUIDES: Guide[] = [
     summary:
       "Journey design, verification, approval queues and the handoff to a live trading account — run as one workflow, not five.",
     image: "/images/compliance-review.jpg",
-    imageAlt: "Professional reviewing documents at a desk",
+    imageAlt: "Overhead view of printed market analytics with a magnifier, notebook and pencils",
     breakImage: "/images/signing-agreement.jpg",
     breakImageAlt: "Businessman handing a pen to sign an agreement",
     breakQuote: "Verification is a service, not a gate",
@@ -439,9 +439,9 @@ export const GUIDES: Guide[] = [
     summary:
       "Routing rules, cascading retry and reconciliation: how deposits stop being a daily mystery for your finance team.",
     image: "/images/payments-pos.jpg",
-    imageAlt: "Card payment being processed at a point-of-sale terminal",
+    imageAlt: "Hands pointing at a tablet showing a candlestick chart",
     breakImage: "/images/payments-contactless.jpg",
-    breakImageAlt: "Close-up of a contactless payment terminal",
+    breakImageAlt: "Laptop with trading charts beside euro banknotes, coins and a calculator",
     breakQuote: "A declined card is not the end of a deposit; it is the middle of one.",
     keyPoints: [
       "Route by country, currency, amount and client profile",
@@ -669,7 +669,7 @@ export const EVENT_TOPICS: EventTopic[] = [
       "Approval queues that move at the speed of the business",
     ],
     image: "/images/workshop-presentation.jpg",
-    imageAlt: "Professionals attending a business seminar",
+    imageAlt: "Trader celebrating a win at a desk with a laptop and a large market-data wall",
   },
   {
     id: "partner-economics-webinar",
@@ -684,7 +684,7 @@ export const EVENT_TOPICS: EventTopic[] = [
       "Payout rhythms partners can plan around",
     ],
     image: "/images/boardroom-executives.jpg",
-    imageAlt: "Senior executives in discussion around a boardroom table",
+    imageAlt: "Trader at a laptop in a dark office with a wall of market data",
   },
   {
     id: "payments-webinar",
@@ -699,7 +699,7 @@ export const EVENT_TOPICS: EventTopic[] = [
       "Exception queues worked daily instead of quarterly",
     ],
     image: "/images/payments-pos.jpg",
-    imageAlt: "Card payment being processed at a point-of-sale terminal",
+    imageAlt: "Hands pointing at a tablet showing a candlestick chart",
   },
   {
     id: "tradeops-webinar",

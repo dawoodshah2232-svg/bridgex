@@ -112,9 +112,9 @@ export default function ImplementationMethod() {
         <figure>
           <img
             src={asset("/images/workshop-presentation-wide.jpg")}
-            alt="Professionals attending a business seminar"
-            width={1600}
-            height={450}
+            alt="Hand gesturing at a candlestick chart on a dark trading monitor"
+            width={1920}
+            height={1080}
             loading="lazy"
             className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
           />

@@ -94,9 +94,9 @@ export default function CaseStudiesPage() {
         }
         copy="We have no client stories to publish yet — and we would rather say so than invent a logo wall. When the first BridgeX customers agree to share their stories, they will appear here, with their names on them and their facts checked."
         image="/images/band-glass-tower.jpg"
-        imageAlt="Curved glass skyscraper facade against a dusk sky"
-        imageWidth={1920}
-        imageHeight={1098}
+        imageAlt="Two traders pointing at a tablet showing a chart on a desk"
+        imageWidth={1600}
+        imageHeight={1040}
       />
 
       <Section tone="mint" ariaLabel="Why this page is empty">
@@ -174,9 +174,9 @@ export default function CaseStudiesPage() {
           <div className="overflow-hidden">
             <img
               src={asset("/images/abstract-glass-lines.jpg")}
-              alt="Low-angle view of a glass skyscraper facade"
-              width={1200}
-              height={1800}
+              alt="Hands holding a phone with a trading app in front of a laptop showing candlestick charts"
+              width={1400}
+              height={2100}
               loading="lazy"
               className="aspect-[16/10] h-full w-full object-cover lg:aspect-auto lg:min-h-[320px]"
             />

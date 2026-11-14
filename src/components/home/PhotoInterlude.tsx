@@ -36,8 +36,8 @@ export default function PhotoInterlude() {
         <img
           src={asset("/images/interlude-boardroom.jpg")}
           alt=""
-          width={1800}
-          height={1280}
+          width={1600}
+          height={1068}
           loading="lazy"
           className="h-full w-full object-cover"
         />

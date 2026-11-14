@@ -105,9 +105,9 @@ export default function ValueIntro() {
         <figure>
           <img
             src={asset("/images/hero-bridge-night.jpg")}
-            alt="Illuminated suspension bridge over a river at night"
-            width={1920}
-            height={1280}
+            alt="Close-up of a monitor showing a rising candlestick chart"
+            width={1600}
+            height={1068}
             loading="lazy"
             className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[440px]"
           />

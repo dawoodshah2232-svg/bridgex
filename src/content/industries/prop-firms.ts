@@ -35,9 +35,9 @@ export const propFirms: IndustryContent = {
   },
   bandImage: {
     src: "/images/hero-bridge-night.jpg",
-    alt: "Illuminated suspension bridge over a river at night",
-    width: 1920,
-    height: 1280,
+    alt: "Close-up of a monitor showing a rising candlestick chart",
+    width: 1600,
+    height: 1068,
   },
   band: {
     eyebrow: "One lifecycle",

@@ -60,12 +60,12 @@ export interface ArticleBreak {
 export const ARTICLE_BREAKS: Record<string, ArticleBreak> = {
   "one-ledger-one-truth": {
     image: "/images/compliance-desk.jpg",
-    imageAlt: "Businesswoman reviewing paperwork in an office",
+    imageAlt: "Printed stock reports with candlestick charts, a magnifier and a calculator",
     quote: "Reconciliation stops being detective work and becomes a check.",
   },
   "partner-growth-without-the-spreadsheet": {
     image: "/images/handshake-partners.jpg",
-    imageAlt: "Partners in discussion around a boardroom table",
+    imageAlt: "Magnifier over a printed stacked area chart",
     quote: "The spreadsheet is not the enemy. It is a prototype that outlived its brief.",
   },
   "onboarding-is-a-journey-not-a-form": {

@@ -98,9 +98,9 @@ export default function IntegrationsPage() {
         copy="BridgeX talks to trading platforms, payment providers, identity verification, communications and market data through adapters with defined contracts — tested in a sandbox before they touch real data, and never claimed before they are proven."
         image={{
           src: "/images/hero-skyline-sf.jpg",
-          alt: "San Francisco financial district skyline at twilight across the bay",
-          width: 1600,
-          height: 1067,
+          alt: "Multi-monitor trading desk showing candlestick and line charts",
+          width: 1920,
+          height: 1281,
         }}
       />
 
@@ -205,7 +205,7 @@ export default function IntegrationsPage() {
       {/* Photographic interlude — adapters are the only way in or out */}
       <PhotoBand
         image="/images/band-skyline-kl.jpg"
-        alt="Kuala Lumpur cityscape with towers at sunset"
+        alt="Two laptops showing trading charts with a hand holding a phone"
         eyebrow="Adapter architecture"
         heading={
           <>
@@ -217,8 +217,8 @@ export default function IntegrationsPage() {
         }
         copy="Nothing talks to a provider directly from a screen or a workflow — every call passes through an adapter that enforces the contract, logs the run and handles failure the same way."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1067}
       />
 
       {/* Event / webhook retry model — dark */}

@@ -31,15 +31,15 @@ export const digitalAssets: IndustryContent = {
   useCaseFlip: true,
   challengeImage: {
     src: "/images/abstract-mirrored-tower.jpg",
-    alt: "Modern tower with a mirrored glass facade",
-    width: 1200,
-    height: 1800,
+    alt: "Hand holding a phone with a rising chart in front of a laptop with trading screens and a coffee",
+    width: 1600,
+    height: 2411,
   },
   bandImage: {
     src: "/images/band-skyline-singapore.jpg",
-    alt: "Singapore skyline with illuminated skyscrapers at dusk",
-    width: 1920,
-    height: 1013,
+    alt: "Clasped hands at a desk with a laptop showing trading charts and a calculator",
+    width: 1600,
+    height: 1148,
   },
   band: {
     eyebrow: "Jurisdiction-aware",

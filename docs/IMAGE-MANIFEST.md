@@ -1,7 +1,9 @@
 # BridgeX Image Manifest
 
 **Location:** `public/images/` · **Reference in code:** via the `asset()` helper (basePath `/bridgex`), e.g. `asset('/images/hero-bridge.jpg')`.
-**Last updated:** 2026-11-14 (final crop round — defects D1–D5 + coverage audit C1–C6; see the record below).
+**Last updated:** 2026-11-14 (forex re-theme photo swap — 48 files replaced, 24 kept, 1 deleted; see the record below).
+
+> ⚠️ **The 14 Nov forex re-theme superseded most of this file's photo tables.** Sections A–I and the Pexels sources table below describe the PRE-swap photos for the 48 swapped files — their dimensions, sizes, alt texts and Pexels IDs are stale for those files. The authoritative current record for the swapped files is the **Forex re-theme photo swap** section directly below. The KEEP files' entries in sections A–I are still current. The historical pass records (sweep, final crop round, PAMM follow-up) are kept as-is below; they describe defects in photos that no longer exist on disk for the swapped slots.
 
 ## Totals
 
@@ -19,10 +21,107 @@
 | New in the final crop round (14 Nov) | +2 | +0.23 MB |
 | File swaps in the final crop round (14 Nov) | — | ~0 MB |
 | **Total** | **71** | **~14 MB** |
+| File swaps in the forex re-theme (14 Nov) | — (48 files replaced in place, same filenames) | — |
+| Deleted in the forex re-theme (14 Nov) | −1 (`portrait-executive.jpg`, orphan, zero usages) | −0.17 MB |
+| **Total (verified on disk after the forex swap, 14 Nov)** | **72** | **14.4 MB** |
+
+> Note: the running total above (71) never reconciled with the on-disk audit (73 files before the swap — the "Correction" row's 69 was itself off by the 4 files added between passes). The verified on-disk count is the authority: **72 files, 14.4 MB** after the swap (48 new forex photos + 24 keeps).
 
 All 43 new photos are real photography from **Pexels** (Pexels licence — free to use, no attribution required, no watermark). No AI-generated images. No `cwebp` on the VM, so all files are optimized JPEGs from Pexels CDN params (`?auto=compress&cs=tinysrgb&w=…`); heroes/bands at 1920w, cards at 1200–1600w. Every file was verified with `file` + Pillow (real JPEG, correct dimensions) and **visually inspected** — see the rejected log at the bottom for what was caught and removed.
 
 Budgets: heroes/bands ≤ 600 KB, all other images ≤ 400 KB. Largest file is `industries-exchanges-v2.jpg` at 429 KB (recompressed 1920×1440 → 1600×1200 q78 in the 14 Nov fix pass, down from 596 KB).
+
+## Forex re-theme photo swap (14 Nov 2026)
+
+**Order (Dawood, 14 Nov):** images must be realistic forex-business photography — trading desks, monitors with charts/candlesticks, analysts at screens, trading floors, market-data walls, brokers at work — matching the bridgexapps.com re-theme. All generic corporate/lifestyle photos (meetings, boardrooms, seminars, handshakes, lobbies, teams, skylines) replaced. Same filenames = straight replacements; alt text + width/height props updated at all 141 usage sites (verified by `verify-alts.py`: 0 old alt strings remain in `src/`, every explicit dim matches the new file).
+
+**Method:** all 73 files audited (full-size visual inspection); 83 candidates inspected at full size; 157 PIL aspect sims (desktop + mobile, Ken Burns drift extremes for heroes). **Parent verification (independent, same day) re-inspected the 48 staged files and found 6 text/brand defects the photo pass missed plus 1 incomplete fix — all fixed before shipping (see the fix notes in the table).** Lesson, third time: never trust a single pass's "no readable text" claim — zoom every screen.
+
+**Counts:** 73 files audited · **48 swaps** · **24 keeps** · **1 drop** (`portrait-executive.jpg`, orphan). Every file ≤300 KB; heroes 1920px wide, rest ≤1600px long edge. Sourcing: Pexels site search/API were Cloudflare-blocked, so IDs were found by CDN-probing ranges around known trading-photo clusters (658 IDs probed); source URLs are canonical `pexels.com/photo/<id>/` — the pages themselves could not be opened, but every ID resolves on the Pexels CDN and content was verified visually.
+
+### Screen-text acceptance line (decided 14 Nov, applies to all 48)
+
+- **REMOVED (blurred/filled):** anything clearly legible and brand-identifying at display size — BINANCE wordmarks/diamonds (the project's own rejected log already excluded BINANCE logos) and the `t.me/AlphaTradeZone` Telegram handle (a specific third-party signals group).
+- **ACCEPTED:** illegible-at-display-size or neutral tool attributions — TradingView attributions ("Chart by TradingView", tab text); the BITSTAMP data label on `abstract-glass-ceiling.jpg` (~2px/char at display — illegible); the faint "Bybit" watermark on Shoot A chart screens (dark red on red, partial, barely discernible at 3× zoom — same class as the accepted "D" instrument watermark); tiny hp bezel marks (illegible at display size); generic words ("STOCK MARKET", "Stock Report", "HOLD"/"SELL" notes); CMC Markets/Kraken browser-tab titles on `abstract-glass-lines.jpg` (illegible at 3:4 panel size, outside the 16:10 crop).
+
+### Swap table (48)
+
+| File | Pexels | Dims | Size | Alt text (new) | Verification notes |
+|---|---|---|---|---|---|
+| `abstract-glass-ceiling.jpg` | 5831339 | 1920×1080 | 152 KB | Hand pointing at a candlestick chart on a dark trading monitor | Hand points at a dark monitor with a yellow/red candlestick chart. **Parent fix:** the plan's bottom-12% pre-crop did NOT remove the hp bezel logo (still visible at the bottom edge) — trimmed a further 48px (1920×1128 → 1920×1080). Re-simmed hero/4:3/16:10 clean. BITSTAMP label accepted (illegible at display). |
+| `abstract-glass-lines.jpg` | 6771901 | 1400×2100 | 288 KB | Hands holding a phone with a trading app in front of a laptop showing candlestick charts | Portrait. CMC Markets/Kraken browser tabs illegible at display size (accepted). Resized 1600×2400 → 1400×2100 (q78) for the ≤300 KB budget. Same shoot as KEEP `industries-digital-assets-app.jpg` (distant pages). |
+| `abstract-mirrored-tower.jpg` | 6802052 | 1600×2411 | 294 KB | Hand holding a phone with a rising chart in front of a laptop with trading screens and a coffee | Portrait. No face. q70 for the ≤300 KB budget. |
+| `band-bridge-istanbul.jpg` | 38412414 | 1600×1067 | 111 KB | Dark trading monitors showing candlestick charts | No face, no readable text. Same shoot as KEEP `pamm-hero.jpg` (not used on the PAMM page). |
+| `band-bridge-london.jpg` | 5833757 | 1600×900 | 170 KB | Hand pointing at candlestick charts across dark trading monitors | No face. Faint "60" chart annotation + faint red Bybit watermark (accepted classes). TradingView tab text visible (accepted). |
+| `band-glass-tower.jpg` | 5831270 | 1600×1040 | 219 KB | Two traders pointing at a tablet showing a chart on a desk | Two traders' hands point at a tablet with a chart; no faces. **Parent fix:** a chin + lower-lip fragment sat at the very top edge (file y 0–1.8%) — trimmed top 28px (1600×1068 → 1600×1040). Re-simmed 4:3/16:10/3:2 clean. Note: the plan's slot line claims a PhotoBand usage — the file has NO band usage (ImageText + cards only). |
+| `band-skyline-hongkong.jpg` | 5833763 | 1600×900 | 153 KB | Hand gesturing at a candlestick chart on a dark trading monitor | No face. Faint "60" annotation + faint Bybit watermark (accepted). |
+| `band-skyline-kl.jpg` | 7691770 | 1600×1067 | 205 KB | Two laptops showing trading charts with a hand holding a phone | **Parent fix:** yellow BINANCE diamond + wordmark on the black laptop screen (out of focus but recognisable) — heavy-blurred the whole header strip (x 600–760, y 245–290, radius 25, desat 0.05). Objective check after: 0 bright-yellow pixels in the header region. Blurred background figures (heads out of frame) — distant-background exception. |
+| `band-skyline-singapore.jpg` | 6801647 | 1600×1148 | 199 KB | Clasped hands at a desk with a laptop showing trading charts and a calculator | No face. Laptop-screen zoom + objective yellow-pixel check: no brand mark (an early suspected mark was a misread). Blurred background figure (legs/torso, head out of frame) — distant-background exception. |
+| `banking-hall.jpg` | 5831269 | 1600×1068 | 223 KB | Trader with a tablet working at a multi-monitor trading desk | Head fully in frame, centred-right. **Parent fix:** readable `t.me/AlphaTradeZone` on the right monitor — removed with a sampled-colour fill (x 1240–1400, y 700–780, median screen colour + grain). First blur attempt failed (box mispositioned, radius too small, feather left the text legible) — the fill replaced it. Man's open-mouth expression is mid-speech engagement, accepted. |
+| `boardroom-conference.jpg` | 5831340 | 1600×1068 | 144 KB | Trader studying a tablet with a hand on his chin | Head fully in frame. |
+| `boardroom-executives.jpg` | 7567434 | 1920×1280 | 249 KB | Trader at a laptop in a dark office with a wall of market data | Head fully in frame at left. "Chart by TradingView" visible on screen (accepted). Same man as the home hero (Shoot D). Hero uses `objectPosition: "40% 50%"`. |
+| `boardroom-meeting.jpg` | 5831346 | 1600×1068 | 287 KB | Trader pointing at a candlestick chart on a multi-monitor desk | Bald trader pointing at a chart; head fully in frame. **Parent fix:** same `t.me/AlphaTradeZone` as `banking-hall.jpg` (same shoot/desk) — sampled-colour fill (x 1340–1500, y 790–865). First blur attempt failed the same way. NOTE: this photo FAILED the band sim (chin cut at the top of the 4:1 crop) — used here only because this slot has no band usage. |
+| `company-collaboration.jpg` | 5833744 | 1600×900 | 215 KB | Two traders reviewing a tablet and notebook on a sofa | Both heads fully in frame. Same two men/sofa as `services-workshop.jpg` (different poses/pages). |
+| `compliance-desk.jpg` | 7947707 | 1600×1067 | 285 KB | Printed stock reports with candlestick charts, a magnifier and a calculator | No face. "Stock Report" is generic text, not a brand. |
+| `compliance-review.jpg` | 7947663 | 1600×1067 | 236 KB | Overhead view of printed market analytics with a magnifier, notebook and pencils | No face. |
+| `handshake-deal.jpg` | 6801874 | 1600×1152 | 190 KB | Hand holding a phone with a trading chart in front of a laptop with market screens | No face. Near-identical to `solutions-payments.jpg` (same hand/phone/laptop, Shoot C, different pages). |
+| `handshake-partners.jpg` | 7947753 | 1600×1067 | 241 KB | Magnifier over a printed stacked area chart | No face. "Stacked Area Chart" + Group A–D labels are generic chart text. |
+| `hero-bridge.jpg` | 7567432 | 1920×1280 | 231 KB | Trader at a laptop in a dark office beneath a large market-data wall | **HOME HERO.** Head small and centred, whole in all sims incl. mobile centre slice. The market wall shows a Binance-style UI ("CAKE/USDT", "Buy CAKE", "Log In or Register Now") — NO legible Binance wordmark/logo. **Hero headline contrast must be re-verified against this photo** (the old 12.5:1/5.4:1 figures were computed against the bridge photo). `og-image.jpg` is a 1200×630 crop of this file. |
+| `hero-bridge-night.jpg` | 5831268 | 1600×1068 | 112 KB | Close-up of a monitor showing a rising candlestick chart | No face. |
+| `hero-bridge-rotterdam.jpg` | 7691741 | 1920×1280 | 286 KB | Analyst pointing at a large wall screen showing a market chart | Head fully in frame at right; hero mobile slice shows the chart screen only (head fully outside — no cut head). Wall screen shows Binance UI in Russian (Cyrillic). **Parent fix:** a 13×9px yellow diamond at the screen's top-left (x 370–383, y 476–485, found by objective yellow-pixel scan) — blurred out; 0 bright-yellow pixels after. q82 (q88 re-save inflated the file to 341 KB). |
+| `hero-skyline-frankfurt.jpg` | 7567428 | 1920×1280 | 197 KB | Trader with crossed arms in front of a screen reading STOCK MARKET | Head whole. Hero band shows "MARKET" only ("STOCK" above the crop — acceptable, headline overlays it). |
+| `hero-skyline-nyc.jpg` | 5833752 | 1600×1067 | 173 KB | Multi-monitor trading desk with candlestick charts and a hand on the keyboard | No face; no watermark (checked at full size — the rejected Bybit frame was 5833750, not this one). |
+| `hero-skyline-sf.jpg` | 5833747 | 1920×1281 | 235 KB | Multi-monitor trading desk showing candlestick and line charts | No person. Right-monitor bottom zoom-checked: NO `t.me` text (blurred UI + green button only). "…gView.com" TradingView tab text visible (accepted). |
+| `interlude-boardroom.jpg` | 5831258 | 1600×1068 | 116 KB | Close-up of a monitor showing a line chart with a trading range | No face. (First choice 5831253 failed the band sim — chin cut.) |
+| `lobby-office.jpg` | 6801641 | 1600×1067 | 147 KB | Overhead desk with printed charts, a magnifier, cash and a calculator | No face. |
+| `pamm-benefits.jpg` | 7567443 | 1600×1067 | 225 KB | Overhead view of hands holding a phone with a trading app beside a laptop and printed charts | No face. Laptop corner shows Binance-style UI with "CAKE" but no legible wordmark. |
+| `payments-contactless.jpg` | 6771607 | 1600×1067 | 252 KB | Laptop with trading charts beside euro banknotes, coins and a calculator | No face. German trading site on screen (Ethereum USD, "Voreinstellungen") — no legible brand. Calculator reads 68.654. |
+| `payments-pos.jpg` | 5833753 | 1600×900 | 176 KB | Hands pointing at a tablet showing a candlestick chart | No faces. |
+| `portrait-window.jpg` | 5831266 | 1600×1068 | 104 KB | Close-up of a monitor showing a candlestick chart with volume bars | No face. "BINANCE:BTCUSDT"-style TradingView symbol headers exist at y ~2–5% — OUTSIDE all display crops (band shows y 31–69%, 16:10 starts y 3.2%). (First choice 5831341 failed the band/figure sims — chin cut.) |
+| `resources-audience.jpg` | 5831337 | 1920×1282 | 281 KB | Trader seen from behind raising his arms in celebration at a multi-monitor desk | Back of head fully in frame, no face. Near-identical composition to `team-strategy.jpg` (same bald man, same desk, arms raised — different pages). Right-monitor bottom zoom-checked: NO `t.me` text. Diver wallpaper on the top monitor (odd but harmless). q82. |
+| `resources-library.jpg` | 7947709 | 1920×1280 | 158 KB | Close-up of a printed stock report with a candlestick chart | No face. Generic "Stock Report" text. Dark. |
+| `services-workshop.jpg` | 5833748 | 1600×1067 | 261 KB | Two traders discussing a tablet and notebook on a sofa | Both heads fully in frame. Same two men/sofa as `company-collaboration.jpg` (different poses/pages). |
+| `skyline-dusk.jpg` | 186461 | 1920×1280 | 139 KB | Close-up of a tablet showing a green candlestick chart | No face. |
+| `skyline-sunset.jpg` | 7691746 | 1600×1067 | 158 KB | Trader on the phone at a desk with two laptops showing charts, seen from behind | Head fully in frame; head fully OUTSIDE the wide band/figure crops (torso/laptops only — no cut head). Readable pink "SELL" + green "HOLD" sticky notes exist in the source at y ~82–95% — OUTSIDE all display crops (bands + figure only). Same man/desk as `team-discussion.jpg` (different pages). CtaBand usage is gone (re-theme removed the CtaBand photo layer — solid teal band now). |
+| `solutions-crm-handshake.jpg` | 7567431 | 1422×1067 | 166 KB | Bearded trader looking at a screen with market data behind him | Head fully in frame after LEFT-ANCHORED 4:3 pre-crop (1422×1067 — the uncropped head grazed the left edge). Same man as the home hero (Shoot D). |
+| `solutions-crm-hero.jpg` | 5831252 | 1920×1282 | 213 KB | Dark trading monitors showing candlestick charts with trend lines | No face. Faint large symbol letters (chart platform's instrument watermark, e.g. "D") + tiny hp bezel mark, illegible at display size (accepted). **KNOWN NIT: near-identical to `solutions-ib-hero.jpg`** (same monitor/screen, same chart, same prices 9848.0/9301.0/9136.0/9061.0/9058.0/8989.0/8422.0) — two consecutive Solutions pages show near-identical heroes. Accepted (different pages, dark + scrimmed). Hero uses `objectPosition: "50% 0%"`. |
+| `solutions-ib-hero.jpg` | 5831251 | 1920×1282 | 248 KB | Dark trading monitor showing a candlestick chart with trend lines | No face. Same faint symbol watermark as 5831252 (same shoot). See the CRM-hero nit above. Hero uses `objectPosition: "45% 0%"`. |
+| `solutions-partners.jpg` | 5831254 | 1422×1067 | 232 KB | Two traders working together at a desk with a laptop and tablet | Both heads fully in frame after RIGHT-ANCHORED 4:3 pre-crop (1422×1067 — the right-hand head grazed the right edge uncropped). |
+| `solutions-payments.jpg` | 6802042 | 1920×1213 | 203 KB | Hand holding a phone with a trading chart in front of a laptop with market screens | No face. Near-identical to `handshake-deal.jpg` (same hand/phone/laptop, Shoot C, different pages). |
+| `team-collaboration.jpg` | 590041 | 1500×994 | 290 KB | Hand pointing at a printed bar chart and line graph on a wooden desk | No face. Desktop band is mostly wood at left (plain but fine under scrim). Resized 1600×1060 → 1500×994 (q80) for the ≤300 KB budget. |
+| `team-discussion.jpg` | 7691740 | 1600×1067 | 205 KB | Trader on the phone at a desk with two laptops showing charts | Head fully in frame; head fully OUTSIDE the desktop band crop (shoulder/phone/laptops only). **Parent fix:** readable yellow BINANCE wordmark + diamond on the right laptop screen — heavy-blurred (tight box x 1255–1365, y 292–335, radius 20, desat 0.2). Objective check after: 0 bright-yellow pixels in the header region. The "Buy Crypto" button's yellow pill survives as a generic UI shape with no legible text (accepted). |
+| `team-laptop.jpg` | 7691753 | 1600×2400 | 293 KB | Clasped hands at a desk with two laptops showing trading charts | Portrait. No face. **Parent fix:** yellow BINANCE diamond + wordmark on the black laptop screen — heavy-blurred (box x 708–790, y 585–660, radius 20, desat 0.1, bright 0.7). Objective check after: 0 bright-yellow AND 0 dull-yellow pixels in the patch area. A ~3px dull dot (the diamond's left tip) remains at the patch edge — invisible at display size, accepted. Out-of-focus shape at the left edge reads as the subject's own shoulder, not a cut head. "HOLD"/"SELL" notes partly visible at the bottom of the 4:5 crop — generic words, accepted. q82 (q88 re-save hit 350 KB). |
+| `team-strategy.jpg` | 5831355 | 1920×1282 | 283 KB | Trader seen from behind with arms raised at a multi-monitor desk | Back of head fully in frame, no face. Near-identical composition to `resources-audience.jpg` (different pages). q82. |
+| `wealth-advisor.jpg` | 7947742 | 1600×1067 | 277 KB | Close-up of a printed stock report with a candlestick chart | No face. Generic "Stock Report" text. q82. |
+| `wealth-meeting.jpg` | 7691761 | 1422×1067 | 160 KB | Trader seen from behind holding a phone at a desk with laptops showing charts | Back of head fully in frame after RIGHT-ANCHORED 4:3 pre-crop (1422×1067). **Parent fix:** readable BINANCE on the laptop screen top-left — heavy-blurred (tight box x 118–200, y 432–465, radius 20). A 12×6px yellow dot remains at x 217–229 (a separate header accent, not the wordmark — accepted). Two blurred background figures with heads cut at the top edge — distant heavily-blurred background figures (rule exception). Phone shows a Forex Factory-style economic calendar (generic data). |
+| `workshop-presentation.jpg` | 7567444 | 1600×1067 | 226 KB | Trader celebrating a win at a desk with a laptop and a large market-data wall | **REPLACEMENT OF A REJECTED PICK:** the plan's 5831255 was REJECTED at parent verification — the head is cut at the LEFT edge (rear of skull clipped by the frame edge; the plan's "head fully in frame after LEFT-ANCHORED 4:3 pre-crop" was wrong; no crop can fix it since the head grazed the left edge in the original too). Replacement 7567444 (from the verified spares): bearded trader, both fists raised, laptop + large market-data wall; head fully in frame, centred; fists whole in 16:10 (simmed). Same man as the home hero, asset-fund hero and CRM card (Shoot D concentration grows — accepted, different framing/pose each time). |
+| `workshop-presentation-wide.jpg` | 5833762 | 1920×1080 | 231 KB | Hand gesturing at a candlestick chart on a dark trading monitor | No face. Faint "60" chart annotation. |
+
+### KEEP list (24 — already forex-fitting, visually verified)
+
+`analyst-workstation`, `banking-columns` (classical bank capital — genuinely in context for the Bonds hero), `industries-asset-fund`, `industries-brokers`, `industries-digital-assets`, `industries-digital-assets-app`, `industries-exchanges-detail`, `industries-exchanges-v2`, `industries-prop-firms`, `industries-securities`, `industries-wealth`, `pamm-asset-fund`, `pamm-hero`, `resources-code`, `services-team` (byte-identical to `industries-asset-fund`), `signing-agreement`, `signing-contract`, `solutions-contests-statuette`, `solutions-contests-v2`, `solutions-onboarding`, `support-headset`, `trader-workstation`, `trading-floor-desk`, `wealth-signing` (**FLAG:** the tablet on the desk reflects the advisor's face upside-down — hidden in the current hero crop; never re-crop it looser).
+
+### Same-shoot concentration (known, accepted)
+
+- **Shoot A — Tima Miroshnichenko two-trader office (58312xx/58313xx/58337xx): 22 files.** 16 are no-face monitor/desk close-ups; only 7 show the two men recognisably, never twice on one page. Dominates because it is the largest verified pool of real multi-monitor trading photography on Pexels.
+- **Shoot B — bright loft office (76917xx): 6 files.** Same shoot as KEEP `trading-floor-desk.jpg` — the loft office already appears on the site.
+- **Shoot C — hands/phone (68016xx/68018xx/68020xx): 5 files.** All no-face.
+- **Shoot D — dark office, bearded trader (75674xx): 6 files** (home hero, asset-fund hero, frankfurt hero, PAMM benefits, CRM card, workshop replacement). The same man now appears on home, asset-fund, CRM and contests/exchanges pages — different framings/poses each time, accepted.
+- **Shoot E — hands + phone, dark (67719xx): 1 file.** Same shoot as KEEP `industries-digital-assets-app.jpg`.
+- **Shoot F — report flat-lays (79476xx/79477xx): 5 files.**
+- **Shoot G — dark monitors (384124xx): 1 file.** Same shoot as KEEP `pamm-hero.jpg`.
+- **Singles: 3 files** (6771607, 186461, 590041).
+
+### Pre-crops baked into the finals
+
+- `abstract-glass-ceiling.jpg`: bottom 12% + a further 48px (hp bezel logo — the first crop missed it).
+- `band-glass-tower.jpg`: top 28px (chin fragment at the top edge).
+- `solutions-crm-handshake.jpg`: left-anchored 4:3 (1422×1067). `solutions-partners.jpg`: right-anchored 4:3 (1422×1067). `wealth-meeting.jpg`: right-anchored 4:3 (1422×1067).
+- `abstract-glass-lines.jpg`: resized to 1400×2100; `team-collaboration.jpg`: resized to 1500×994 (both for the ≤300 KB budget).
+
+### Sim lesson (carried forward)
+
+A seated person's head spans y ≈ 5–35% of a 3:2 frame while a 4:1 PhotoBand crop shows y ≈ 31–69% — chin/lower face lands inside the band and reads as a head cut at the top edge. Three first-choice band photos failed the sim on exactly this (5831253, 5831341, 5831346-as-band). Any future band candidate with a person must be simmed, not eyeballed. **And: visual fraction-readings of zoomed crops carry ±30px error — the first blur round missed 6 of 6 texts for exactly this reason. Locate screen text objectively (yellow-pixel scan for yellow marks; wide boxes with generous margins) and always re-verify after the fix.**
 
 ## 🔄 Replacements (page workers: switch references to these)
 
@@ -286,6 +385,15 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | Pexels 6949938 as `team-collaboration.jpg` | Conference/podium shot, all heads whole — but foreground heads y 55–95% cut at the hero band bottom (C4 backup) |
 | Pexels 6949494 as `team-collaboration.jpg` | Foreground woman's hair at x 2% — fails 4:3 (C5 backup, fine for full-frame) |
 | Pexels 7433900 as `interlude-boardroom.jpg` | Passes mobile but is the same shoot as the D4 pick (7433919) — would repeat on the homepage. Used as the C5 pick instead. |
+| Pexels 5831255 as `workshop-presentation.jpg` (forex swap, 14 Nov) | **THE PHOTO PLAN'S OWN PICK** — the head is cut at the LEFT edge (rear of skull clipped by the frame edge); the plan's "head fully in frame after LEFT-ANCHORED 4:3 pre-crop" was wrong, and no crop can fix it since the head grazed the left edge in the original too. Replaced by 7567444 (verified spare) at parent verification. |
+| Pexels 5831348 as a spare (forex swap, 14 Nov) | Large legible hp logo on the monitor back + weak composition — rejected at parent inspection. |
+| Pexels 38412415 (forex swap, 14 Nov) | BINANCE logo on the laptop screen. |
+| Pexels 5833749 / 5833754 / 5833760 (forex swap, 14 Nov) | acer logo on the laptop bezel. |
+| Pexels 5831253 / 5831341 (forex swap, 14 Nov) | Chin cut in the 4:1 band sim (and 3.56:1 figure for 5831341) — band-failed, usable only in non-band slots. |
+| Pexels 5833750 (forex swap, 14 Nov) | Faint Bybit watermark on the chart — rejected here, though the fainter Bybit watermark on the SHIPPED Shoot A frames (5833757/5833763/5831251/5831252) was accepted (dark red on red, partial, barely discernible at 3× zoom — a judgement call, recorded in the swap table). |
+| Pexels 7691744 / 7691751 / 7691765 / 7691767 + all 36733xx probed (forex swap, 14 Nov) | Handshake / meetings / generic corporate office — the thing the forex swap was removing. |
+| Pexels 7691750 / 7691755 / 7691760 / 7691763 / 7691764 / 7691766 / 7691768 / 7691771 / 7691773 / 6801640 / 6801644 (forex swap, 14 Nov) | Cash-focused, not trading. |
+| Pexels 6801651 / 6801646 / 6802043 / 6802045 / 6802051 / 6771613 / 6801649 (forex swap, 14 Nov) | Gimmicky / readable promo text (BUY/HOLD/SELL sticky notes, "STOCK MARKET NOW" note, money falling, "BEST CRYPTOCURRENCIES TO INVEST IN" headline, blank laptop screen). |
 
 ## Systematic photo-crop sweep (14 Nov 2026)
 
@@ -360,8 +468,9 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 
 ## Coverage gaps
 
+- **Forex imagery (CLOSED 14 Nov by the re-theme swap):** all 48 generic corporate/lifestyle slots now show realistic forex-business photography; the 24 keeps were already forex-fitting. The remaining gap is variety within the trading-desk subject (Shoot A dominates with 22 files) — a future pass could diversify with a second trading-floor shoot if one is found and verified.
 - **Dedicated digital-assets abstract:** no coin-logo-free crypto-native shot was sourced; `abstract-mirrored-tower.jpg` + the existing `industries-digital-assets*.jpg` cover the page. If a page worker wants a distinct digital-assets visual, a dark abstract glass/steel crop from `band-glass-tower.jpg` is the fallback.
 - **Bonds / fixed-income:** covered by `banking-columns.jpg` (classical architecture) — no dedicated bonds image; acceptable, as fixed-income has no natural photographic subject beyond architecture.
-- **AI assistance page** (`/platform/ai-assistance`): no AI-specific photo was sourced (brief excluded binary-digit clichés and fake screenshots); `abstract-glass-ceiling.jpg` / `abstract-glass-lines.jpg` are the intended visuals.
+- **AI assistance page** (`/platform/ai-assistance`): no AI-specific photo was sourced (brief excluded binary-digit clichés and fake screenshots); `abstract-glass-ceiling.jpg` / `abstract-glass-lines.jpg` are the intended visuals — both are now forex trading photos (hand pointing at a chart; phone + trading app), which suit the page better than the old glass abstracts did.
 - **Legal pages** (`/privacy`, `/cookies`, `/security-policy`): no dedicated photos; `signing-contract.jpg` / `compliance-desk.jpg` fit if a page worker wants imagery there.
 - 7 cityscape/architecture files were verified by file + dimensions + source description but not eyeballed individually (`band-skyline-singapore`, `band-skyline-hongkong`, `band-skyline-kl`, `band-bridge-london`, `abstract-glass-ceiling`, `abstract-glass-lines`, `abstract-mirrored-tower`); text risk in these subjects is negligible (distant signage only). All 36 other new images were visually inspected.

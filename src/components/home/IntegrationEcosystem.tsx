@@ -67,9 +67,9 @@ export default function IntegrationEcosystem() {
         <figure>
           <img
             src={asset("/images/skyline-sunset.jpg")}
-            alt="City skyline at sunset"
+            alt="Trader on the phone at a desk with two laptops showing charts, seen from behind"
             width={1600}
-            height={899}
+            height={1067}
             loading="lazy"
             className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
           />

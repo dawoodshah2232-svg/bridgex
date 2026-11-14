@@ -43,7 +43,7 @@ export const INSIGHT_ARTICLES: InsightArticle[] = [
     readMinutes: 5,
     image: "/images/team-discussion.jpg",
     imageAlt:
-      "Business professionals discussing documents together in a modern meeting room",
+      "Trader on the phone at a desk with two laptops showing charts",
   },
   {
     slug: "onboarding-is-a-journey-not-a-form",
@@ -55,7 +55,7 @@ export const INSIGHT_ARTICLES: InsightArticle[] = [
     readMinutes: 7,
     image: "/images/boardroom-meeting.jpg",
     imageAlt:
-      "Professionals in a business meeting inside a modern office boardroom",
+      "Trader pointing at a candlestick chart on a multi-monitor desk",
   },
 ];
 

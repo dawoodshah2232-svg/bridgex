@@ -60,9 +60,9 @@ export default function EventsPage() {
         }
         copy="No BridgeX event has a date yet — and this page will not pretend otherwise. Four webinars are planned, on the topics operators ask us about most. Register interest below and you will hear first when registration opens."
         image="/images/resources-audience.jpg"
-        imageAlt="An audience seated in rows, watching a presentation in a darkened hall"
-        imageWidth={1600}
-        imageHeight={1067}
+        imageAlt="Trader seen from behind raising his arms in celebration at a multi-monitor desk"
+        imageWidth={1920}
+        imageHeight={1282}
       />
 
       <Section tone="white" ariaLabel="Planned webinars">
@@ -184,9 +184,9 @@ export default function EventsPage() {
                 />
                 <img
                   src={asset("/images/boardroom-conference.jpg")}
-                  alt="Colleagues in discussion around a boardroom table"
+                  alt="Trader studying a tablet with a hand on his chin"
                   width={1600}
-                  height={1067}
+                  height={1068}
                   loading="lazy"
                   className="relative aspect-[16/10] w-full object-cover"
                 />

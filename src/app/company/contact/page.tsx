@@ -46,7 +46,7 @@ export default function ContactPage() {
         }
         copy="No phone queues, no chatbot loops. Send a message and a member of the BridgeX team will read it and reply."
         image="/images/lobby-office.jpg"
-        imageAlt="Modern office lobby with wooden panels and large windows"
+        imageAlt="Overhead desk with printed charts, a magnifier, cash and a calculator"
         imageWidth={1600}
         imageHeight={1067}
       />
@@ -152,7 +152,7 @@ export default function ContactPage() {
       {/* Photo interlude — a person, not a queue */}
       <PhotoBand
         image="/images/skyline-sunset.jpg"
-        alt="City skyline at sunset"
+        alt="Trader on the phone at a desk with two laptops showing charts, seen from behind"
         eyebrow="Company — Contact"
         heading={
           <>
@@ -165,7 +165,7 @@ export default function ContactPage() {
         copy="No phone queues, no chatbot loops — a member of the BridgeX team will read it and reply."
         height="sm"
         imageWidth={1600}
-        imageHeight={899}
+        imageHeight={1067}
       >
         <ButtonLink href="/book-demo">Book a Private Demo</ButtonLink>
       </PhotoBand>

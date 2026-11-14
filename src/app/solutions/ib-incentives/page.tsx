@@ -46,8 +46,8 @@ export default function IbIncentivesPage() {
         tone="mint"
         image={{
           src: "/images/solutions-partners.jpg",
-          alt: "Two businessmen shaking hands and smiling in a bright modern office",
-          width: 1600,
+          alt: "Two traders working together at a desk with a laptop and tablet",
+          width: 1422,
           height: 1067,
         }}
         flip
@@ -83,9 +83,9 @@ export default function IbIncentivesPage() {
         icons={["route", "report", "network", "document", "refresh", "users"]}
         image={{
           src: "/images/team-collaboration.jpg",
-          alt: "Colleagues reviewing documents together at a meeting table",
-          width: 1600,
-          height: 1067,
+          alt: "Hand pointing at a printed bar chart and line graph on a wooden desk",
+          width: 1500,
+          height: 994,
         }}
       />
 
@@ -121,13 +121,13 @@ export default function IbIncentivesPage() {
 
       <PhotoBand
         image="/images/band-skyline-kl.jpg"
-        alt="Kuala Lumpur cityscape with towers at sunset"
+        alt="Two laptops showing trading charts with a hand holding a phone"
         eyebrow="IB & Incentive Management"
         heading="A partner channel that scales without the arguments."
         copy="A configured rule, applied the same way every time, with a log to show it."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1067}
       />
 
       <FaqSection faqs={s.faqs} tone="white" />

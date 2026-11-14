@@ -57,9 +57,9 @@ export default function GuidesPage() {
         }
         copy="Five guides on the work financial businesses actually do: launching, partnering, onboarding, getting paid and knowing what is going on. Read each one in full, right here."
         image="/images/workshop-presentation-wide.jpg"
-        imageAlt="Professionals attending a business seminar"
-        imageWidth={1600}
-        imageHeight={450}
+        imageAlt="Hand gesturing at a candlestick chart on a dark trading monitor"
+        imageWidth={1920}
+        imageHeight={1080}
       />
 
       <Section tone="white" ariaLabel="Guides">

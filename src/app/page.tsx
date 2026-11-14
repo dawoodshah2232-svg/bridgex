@@ -24,7 +24,7 @@ export default function Home() {
       <CapabilityTiles />
       <PhotoBand
         image="/images/band-bridge-istanbul.jpg"
-        alt="Bosphorus Bridge glowing red above Istanbul at night"
+        alt="Dark trading monitors showing candlestick charts"
         eyebrow="Why BridgeX"
         heading={
           <>
@@ -36,8 +36,8 @@ export default function Home() {
         }
         copy="One platform for onboarding, operations, payments and growth — connected through one record, one ledger, one audit trail."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1067}
       />
       <ArchitectureDiagram />
       <DemoPreview />
@@ -48,7 +48,7 @@ export default function Home() {
       <ImplementationMethod />
       <PhotoBand
         image="/images/band-skyline-singapore.jpg"
-        alt="Singapore skyline with illuminated skyscrapers at dusk"
+        alt="Clasped hands at a desk with a laptop showing trading charts and a calculator"
         eyebrow="Keep improving"
         heading={
           <>
@@ -60,8 +60,8 @@ export default function Home() {
         }
         copy="Launch is not the end of the work. We review what the data says and tune the workflows — onboarding, routing, incentives — so the platform grows with the business."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1013}
+        imageWidth={1600}
+        imageHeight={1148}
       />
       <Insights />
       <CtaBand />

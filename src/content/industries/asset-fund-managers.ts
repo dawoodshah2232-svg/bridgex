@@ -17,8 +17,8 @@ export const assetFundManagers: IndustryContent = {
   heroVariant: "photo-dark",
   image: {
     src: "/images/boardroom-executives.jpg",
-    alt: "Senior executives in discussion around a boardroom table",
-    width: 1400,
+    alt: "Trader at a laptop in a dark office with a wall of market data",
+    width: 1920,
     height: 1280,
     objectPosition: "40% 50%",
   },
@@ -37,9 +37,9 @@ export const assetFundManagers: IndustryContent = {
   },
   bandImage: {
     src: "/images/band-skyline-hongkong.jpg",
-    alt: "Hong Kong skyscrapers and skyline at twilight",
-    width: 1920,
-    height: 1440,
+    alt: "Hand gesturing at a candlestick chart on a dark trading monitor",
+    width: 1600,
+    height: 900,
   },
   band: {
     eyebrow: "One system of record",

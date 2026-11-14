@@ -81,9 +81,9 @@ export default function NoCodeStudioPage() {
         copy="Every brokerage works a little differently. The No-Code Studio is where those differences become configuration — objects, forms, documents, workflows, journeys, programs, reports and dashboards — built by the people who run the operation, without waiting on a release."
         image={{
           src: "/images/band-glass-tower.jpg",
-          alt: "Curved glass skyscraper facade against a dusk sky",
-          width: 1920,
-          height: 1098,
+          alt: "Two traders pointing at a tablet showing a chart on a desk",
+          width: 1600,
+          height: 1040,
         }}
       />
 
@@ -119,9 +119,9 @@ export default function NoCodeStudioPage() {
                 />
                 <img
                   src={asset("/images/abstract-glass-lines.jpg")}
-                  alt="Low-angle view of a glass skyscraper facade"
-                  width={1200}
-                  height={1800}
+                  alt="Hands holding a phone with a trading app in front of a laptop showing candlestick charts"
+                  width={1400}
+                  height={2100}
                   loading="lazy"
                   className="relative aspect-[3/4] w-full object-cover"
                 />
@@ -204,7 +204,7 @@ export default function NoCodeStudioPage() {
       {/* Photographic interlude — configuration is the surface */}
       <PhotoBand
         image="/images/hero-skyline-frankfurt.jpg"
-        alt="Frankfurt financial district and river bridge at sunset"
+        alt="Trader with crossed arms in front of a screen reading STOCK MARKET"
         eyebrow="In practice"
         heading={
           <>

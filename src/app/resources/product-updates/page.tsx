@@ -45,9 +45,9 @@ export default function ProductUpdatesPage() {
         }
         copy="The changelog for the BridgeX website and the platform roadmap. Every entry carries an honest status label — Live, Sandbox, Demo or Planned — so you can always tell a preview from a product."
         image="/images/hero-skyline-sf.jpg"
-        imageAlt="San Francisco financial district skyline at twilight across the bay"
-        imageWidth={1600}
-        imageHeight={1067}
+        imageAlt="Multi-monitor trading desk showing candlestick and line charts"
+        imageWidth={1920}
+        imageHeight={1281}
       />
 
       <Section tone="mint" ariaLabel="What the status labels mean">
@@ -131,7 +131,7 @@ export default function ProductUpdatesPage() {
 
       <PhotoBand
         image="/images/band-skyline-kl.jpg"
-        alt="Kuala Lumpur cityscape with towers at sunset"
+        alt="Two laptops showing trading charts with a hand holding a phone"
         eyebrow="The roadmap"
         heading={
           <>
@@ -143,8 +143,8 @@ export default function ProductUpdatesPage() {
         }
         copy="No date is promised until there is one to promise. When a module reaches the sandbox, the entry appears here first — and the developer docs say so too."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1067}
       >
         <ButtonLink href="/resources/developers">
           Read the developer docs

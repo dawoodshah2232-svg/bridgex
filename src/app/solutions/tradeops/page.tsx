@@ -51,9 +51,9 @@ export default function TradeOpsPage() {
         tone="mint"
         image={{
           src: "/images/compliance-desk.jpg",
-          alt: "Businesswoman reviewing paperwork in an office",
+          alt: "Printed stock reports with candlestick charts, a magnifier and a calculator",
           width: 1600,
-          height: 1068,
+          height: 1067,
         }}
       />
 
@@ -122,13 +122,13 @@ export default function TradeOpsPage() {
 
       <PhotoBand
         image="/images/band-glass-tower.jpg"
-        alt="Curved glass skyscraper facade against a dusk sky"
+        alt="Two traders pointing at a tablet showing a chart on a desk"
         eyebrow="TradeOps Control Center"
         heading="Fewer incidents, calmer operations."
         copy="Validation and dry-run surface bad scope and bad values while they are still free to fix."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1098}
+        imageWidth={1600}
+        imageHeight={1040}
       />
 
       <FaqSection faqs={s.faqs} tone="white" />

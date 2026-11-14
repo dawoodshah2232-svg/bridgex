@@ -18,7 +18,7 @@ export const banks: IndustryContent = {
   heroBridgeLine: true,
   image: {
     src: "/images/hero-skyline-frankfurt.jpg",
-    alt: "Frankfurt financial district and river bridge at sunset",
+    alt: "Trader with crossed arms in front of a screen reading STOCK MARKET",
     width: 1920,
     height: 1280,
   },
@@ -49,21 +49,21 @@ export const banks: IndustryContent = {
   },
   secondaryImage: {
     src: "/images/boardroom-meeting.jpg",
-    alt: "Business meeting in a modern boardroom",
-    width: 1400,
-    height: 933,
+    alt: "Trader pointing at a candlestick chart on a multi-monitor desk",
+    width: 1600,
+    height: 1068,
   },
   challengeImage: {
     src: "/images/banking-hall.jpg",
-    alt: "Spacious modern banking hall with a dramatic ceiling",
+    alt: "Trader with a tablet working at a multi-monitor trading desk",
     width: 1600,
-    height: 1067,
+    height: 1068,
   },
   bandImage: {
     src: "/images/band-bridge-london.jpg",
-    alt: "London bridge and skyscrapers at twilight",
-    width: 1920,
-    height: 1280,
+    alt: "Hand pointing at candlestick charts across dark trading monitors",
+    width: 1600,
+    height: 900,
   },
   band: {
     eyebrow: "The relationship, extended",

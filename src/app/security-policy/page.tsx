@@ -18,9 +18,9 @@ export default function SecurityPolicyPage() {
       updated="13 November 2026"
       sections={SECURITY_SECTIONS}
       image="/images/compliance-desk.jpg"
-      imageAlt="Businesswoman reviewing paperwork in an office"
+      imageAlt="Printed stock reports with candlestick charts, a magnifier and a calculator"
       imageWidth={1600}
-      imageHeight={1068}
+      imageHeight={1067}
     />
   );
 }

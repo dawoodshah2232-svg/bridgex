@@ -50,9 +50,9 @@ export default function PaymentOrchestrationPage() {
         tone="mint"
         image={{
           src: "/images/payments-pos.jpg",
-          alt: "Card payment being processed at a point-of-sale terminal",
+          alt: "Hands pointing at a tablet showing a candlestick chart",
           width: 1600,
-          height: 1067,
+          height: 900,
         }}
         flip
       />
@@ -74,9 +74,9 @@ export default function PaymentOrchestrationPage() {
         icons={["refresh", "network", "eye", "lock", "report", "sliders"]}
         image={{
           src: "/images/payments-contactless.jpg",
-          alt: "Close-up of a contactless payment terminal",
-          width: 1200,
-          height: 801,
+          alt: "Laptop with trading charts beside euro banknotes, coins and a calculator",
+          width: 1600,
+          height: 1067,
         }}
       />
 
@@ -120,13 +120,13 @@ export default function PaymentOrchestrationPage() {
 
       <PhotoBand
         image="/images/band-skyline-singapore.jpg"
-        alt="Singapore skyline with illuminated skyscrapers at dusk"
+        alt="Clasped hands at a desk with a laptop showing trading charts and a calculator"
         eyebrow="Payment Orchestration"
         heading="Funding that behaves like infrastructure."
         copy="Three-way matching runs continuously, and only the exceptions need a human."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1013}
+        imageWidth={1600}
+        imageHeight={1148}
       />
 
       <FaqSection faqs={s.faqs} tone="white" />

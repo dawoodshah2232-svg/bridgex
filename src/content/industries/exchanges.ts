@@ -24,9 +24,9 @@ export const exchanges: IndustryContent = {
   heroBridgeLine: true,
   secondaryImage: {
     src: "/images/workshop-presentation.jpg",
-    alt: "Professionals attending a business seminar",
+    alt: "Trader celebrating a win at a desk with a laptop and a large market-data wall",
     width: 1600,
-    height: 968,
+    height: 1067,
   },
   challengeImage: {
     src: "/images/industries-exchanges-detail.jpg",
@@ -37,9 +37,9 @@ export const exchanges: IndustryContent = {
   challengeImageFlip: true,
   bandImage: {
     src: "/images/band-bridge-istanbul.jpg",
-    alt: "Bosphorus Bridge glowing red above Istanbul at night",
-    width: 1920,
-    height: 1280,
+    alt: "Dark trading monitors showing candlestick charts",
+    width: 1600,
+    height: 1067,
   },
   band: {
     eyebrow: "The participant lifecycle",

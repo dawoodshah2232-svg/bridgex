@@ -49,9 +49,9 @@ const INDUSTRIES: Industry[] = [
     href: "/industries/banks",
     slug: "banks",
     image: "/images/banking-hall.jpg",
-    imageAlt: "Spacious modern banking hall with a dramatic ceiling",
+    imageAlt: "Trader with a tablet working at a multi-monitor trading desk",
     imageWidth: 1600,
-    imageHeight: 1067,
+    imageHeight: 1068,
     label: "Banks",
     description:
       "Bank-branded trading journeys for existing clients, with branch and relationship-manager coordination and compliance-grade permissions.",
@@ -81,9 +81,9 @@ const INDUSTRIES: Industry[] = [
     href: "/industries/wealth-management",
     slug: "wealth-management",
     image: "/images/wealth-advisor.jpg",
-    imageAlt: "Financial advisor discussing plans with clients",
+    imageAlt: "Close-up of a printed stock report with a candlestick chart",
     imageWidth: 1600,
-    imageHeight: 1068,
+    imageHeight: 1067,
     label: "Wealth Management",
     description:
       "Advisor workspaces, suitability evidence, pooled strategies, investor statements and introducer fees — connected, not bolted on.",

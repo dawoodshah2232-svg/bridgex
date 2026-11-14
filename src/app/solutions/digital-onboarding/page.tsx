@@ -46,9 +46,9 @@ export default function DigitalOnboardingPage() {
         tone="mint"
         image={{
           src: "/images/compliance-review.jpg",
-          alt: "Professional reviewing documents at a desk",
+          alt: "Overhead view of printed market analytics with a magnifier, notebook and pencils",
           width: 1600,
-          height: 1200,
+          height: 1067,
         }}
         flip
       />
@@ -82,7 +82,7 @@ export default function DigitalOnboardingPage() {
         useCases={s.useCases}
         tone="white"
         images={[
-          { src: "/images/banking-hall.jpg", alt: "Spacious modern banking hall with a dramatic ceiling", width: 1600, height: 1067 },
+          { src: "/images/banking-hall.jpg", alt: "Trader with a tablet working at a multi-monitor trading desk", width: 1600, height: 1068 },
           { src: "/images/industries-brokers.jpg", alt: "Brokerage trading environment", width: 1600, height: 1200 },
           { src: "/images/industries-digital-assets.jpg", alt: "Digital assets concept", width: 1600, height: 987 },
         ]}
@@ -121,13 +121,13 @@ export default function DigitalOnboardingPage() {
 
       <PhotoBand
         image="/images/band-bridge-london.jpg"
-        alt="London bridge and skyscrapers at twilight"
+        alt="Hand pointing at candlestick charts across dark trading monitors"
         eyebrow="Digital Onboarding & KYC"
         heading="Faster for good applicants, stricter where it counts."
         copy="Applicants only answer what applies to them, so fewer abandon the form halfway."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={900}
       />
 
       <FaqSection faqs={s.faqs} tone="white" />

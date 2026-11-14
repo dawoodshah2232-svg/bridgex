@@ -145,7 +145,7 @@ export default function Hero() {
           src={asset("/images/hero-bridge.jpg")}
           alt=""
           width={1920}
-          height={1080}
+          height={1280}
           fetchPriority="high"
           style={{ animationPlayState: inView ? "running" : "paused" }}
           className="h-full w-full object-cover object-[70%_center] animate-bx-drift"

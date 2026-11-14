@@ -56,14 +56,14 @@ export default function IntegrationMigrationPage() {
       {/* Discovery checklist */}
       <ImageText
         image="/images/compliance-review.jpg"
-        alt="Professional reviewing documents at a desk"
+        alt="Overhead view of printed market analytics with a magnifier, notebook and pencils"
         eyebrow="Before anything moves"
         heading="The discovery checklist."
         copy="Every migration starts with these questions. If you can answer most of them, you are further along than most. If you cannot, that is what discovery is for — we work through them with you."
         flip
         tone="white"
         imageWidth={1600}
-        imageHeight={1200}
+        imageHeight={1067}
       >
         <ul className="mt-8 divide-y divide-bx-teal-500/25 border-y border-bx-teal-500/25">
           {MIGRATION_DISCOVERY_CHECKLIST.map((item, i) => (
@@ -94,7 +94,7 @@ export default function IntegrationMigrationPage() {
       {/* Photo interlude — staging first, production last */}
       <PhotoBand
         image="/images/band-glass-tower.jpg"
-        alt="Curved glass skyscraper facade against a dusk sky"
+        alt="Two traders pointing at a tablet showing a chart on a desk"
         eyebrow="The migration path"
         heading={
           <>
@@ -106,8 +106,8 @@ export default function IntegrationMigrationPage() {
         }
         copy="Data is migrated into a staging environment first, so your team can inspect the result before it matters — and sign-off only happens when the numbers agree or the gap is explained."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1098}
+        imageWidth={1600}
+        imageHeight={1040}
       >
         <ButtonLink href="/book-demo">Book a Private Demo</ButtonLink>
       </PhotoBand>

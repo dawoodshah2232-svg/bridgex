@@ -29,11 +29,11 @@ export default function NotFound() {
       <section className="relative overflow-hidden bg-bx-navy-900 pb-16 pt-[72px] text-bx-white sm:pb-20">
         <HeroMedia
           image="/images/hero-skyline-sf.jpg"
-          alt="San Francisco financial district skyline at twilight across the bay"
+          alt="Multi-monitor trading desk showing candlestick and line charts"
           scrim="strong"
           bridgeLine
-          imageWidth={1600}
-          imageHeight={1067}
+          imageWidth={1920}
+          imageHeight={1281}
         />
         <Container className="relative pt-14 sm:pt-20">
           <p className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-bx-teal-400">

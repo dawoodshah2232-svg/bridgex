@@ -134,9 +134,9 @@ export default function PlatformOverview() {
         copy="BridgeX is not four products bolted together. It is one platform organised as four layers — experience, operations, integrations and intelligence — all standing on the same foundation, reading from the same records."
         image={{
           src: "/images/hero-skyline-nyc.jpg",
-          alt: "New York City skyline with One World Trade Center at dusk",
-          width: 1920,
-          height: 1080,
+          alt: "Multi-monitor trading desk with candlestick charts and a hand on the keyboard",
+          width: 1600,
+          height: 1067,
         }}
       />
 
@@ -229,7 +229,7 @@ export default function PlatformOverview() {
       {/* Photographic interlude — the city the business operates in */}
       <PhotoBand
         image="/images/band-bridge-london.jpg"
-        alt="London bridge and skyscrapers at twilight"
+        alt="Hand pointing at candlestick charts across dark trading monitors"
         eyebrow="How it connects"
         heading={
           <>
@@ -241,8 +241,8 @@ export default function PlatformOverview() {
         }
         copy="Every layer reads the same record — so the client room, the operations queue and the board pack never disagree."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={900}
       />
 
       {/* One journey across the layers */}
@@ -260,7 +260,7 @@ export default function PlatformOverview() {
       {/* The same record, at every step — image-led close to the journey */}
       <ImageText
         image="/images/team-discussion.jpg"
-        alt="Team in discussion around a table"
+        alt="Trader on the phone at a desk with two laptops showing charts"
         eyebrow="One record"
         heading={
           <>

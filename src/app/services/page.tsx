@@ -122,7 +122,7 @@ export default function ServicesPage() {
       {/* Photo interlude — the delivery team, in the room */}
       <PhotoBand
         image="/images/band-bridge-istanbul.jpg"
-        alt="Bosphorus Bridge glowing red above Istanbul at night"
+        alt="Dark trading monitors showing candlestick charts"
         eyebrow="Delivery, not just software"
         heading={
           <>
@@ -134,8 +134,8 @@ export default function ServicesPage() {
         }
         copy="From the first workshop to daily operations — implementation, migration, training and ongoing support, from one delivery team."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1067}
       >
         <ButtonLink href="/book-demo">Book a Private Demo</ButtonLink>
       </PhotoBand>
@@ -143,7 +143,7 @@ export default function ServicesPage() {
       {/* How engagements work */}
       <ImageText
         image="/images/team-collaboration.jpg"
-        alt="Colleagues reviewing documents together at a meeting table"
+        alt="Hand pointing at a printed bar chart and line graph on a wooden desk"
         eyebrow="How we work"
         heading={
           <>
@@ -155,8 +155,8 @@ export default function ServicesPage() {
         }
         copy="Every engagement follows the same discipline: agree the scope, build in a staging environment, validate against your real workflows, and only then go live. You always know what phase you are in and what comes next."
         tone="mint"
-        imageWidth={1600}
-        imageHeight={1067}
+        imageWidth={1500}
+        imageHeight={994}
         ctaLabel="See the full implementation method"
         ctaHref="/services/implementation"
       >

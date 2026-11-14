@@ -95,9 +95,9 @@ export default function PammCopyTradingPage() {
         icons={["chart", "gauge", "database", "eye", "checkCircle", "users"]}
         image={{
           src: "/images/pamm-benefits.jpg",
-          alt: "Financial advisor discussing plans with clients",
-          width: 1424,
-          height: 1068,
+          alt: "Overhead view of hands holding a phone with a trading app beside a laptop and printed charts",
+          width: 1600,
+          height: 1067,
         }}
         flip
       />
@@ -121,13 +121,13 @@ export default function PammCopyTradingPage() {
 
       <PhotoBand
         image="/images/band-skyline-hongkong.jpg"
-        alt="Hong Kong skyscrapers and skyline at twilight"
+        alt="Hand gesturing at a candlestick chart on a dark trading monitor"
         eyebrow="PAMM & Copy Trading"
         heading="Trust, built on arithmetic."
         copy="High-water-mark logic shown step by step, so a fee is a calculation — not a claim."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1440}
+        imageWidth={1600}
+        imageHeight={900}
       />
 
       <FaqSection faqs={s.faqs} tone="white" />

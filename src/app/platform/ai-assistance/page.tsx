@@ -99,9 +99,9 @@ export default function AiAssistancePage() {
         copy="BridgeX is designing AI assistance the way it designs everything else: with a human in the loop, evidence behind every suggestion, and permissions that hold. This page describes what that assistance is intended to do — not what it does today, because it is not operational yet."
         image={{
           src: "/images/abstract-glass-ceiling.jpg",
-          alt: "Skyscrapers seen through a glass ceiling",
-          width: 1600,
-          height: 900,
+          alt: "Hand pointing at a candlestick chart on a dark trading monitor",
+          width: 1920,
+          height: 1080,
         }}
       />
 
@@ -173,7 +173,7 @@ export default function AiAssistancePage() {
       {/* Photographic interlude — designed in the open */}
       <PhotoBand
         image="/images/abstract-mirrored-tower.jpg"
-        alt="Modern tower with a mirrored glass facade"
+        alt="Hand holding a phone with a rising chart in front of a laptop with trading screens and a coffee"
         eyebrow="Roadmap"
         heading={
           <>
@@ -185,8 +185,8 @@ export default function AiAssistancePage() {
         }
         copy="No AI agent is making decisions on BridgeX today. The work moves through design, sandbox evaluation and pilot — and each stage has to pass its own review before the next begins."
         height="sm"
-        imageWidth={1200}
-        imageHeight={1800}
+        imageWidth={1600}
+        imageHeight={2411}
       />
 
       {/* Governance principles — dark */}

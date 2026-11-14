@@ -105,7 +105,7 @@ export default function AnalyticsPage() {
       {/* Photographic interlude — the same truth, four jobs */}
       <PhotoBand
         image="/images/band-skyline-hongkong.jpg"
-        alt="Hong Kong skyscrapers and skyline at twilight"
+        alt="Hand gesturing at a candlestick chart on a dark trading monitor"
         eyebrow="Role-specific views"
         heading={
           <>
@@ -117,8 +117,8 @@ export default function AnalyticsPage() {
         }
         copy="Executives, finance, compliance and sales each get views built for their job — drawn from the same operational records, so the numbers agree everywhere."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1440}
+        imageWidth={1600}
+        imageHeight={900}
       />
 
       {/* Funnels — editorial + photo */}
@@ -167,8 +167,8 @@ export default function AnalyticsPage() {
               />
               <img
                 src={asset("/images/boardroom-executives.jpg")}
-                alt="Senior executives in discussion around a boardroom table"
-                width={1400}
+                alt="Trader at a laptop in a dark office with a wall of market data"
+                width={1920}
                 height={1280}
                 loading="lazy"
                 className="relative aspect-[3/2] w-full object-cover"

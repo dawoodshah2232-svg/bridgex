@@ -60,9 +60,9 @@ export default function ResourcesPage() {
         }
         copy="Editorial insight, practical guides, honest product updates and developer docs — written by the BridgeX team, free to read, and searchable below."
         image="/images/resources-library.jpg"
-        imageAlt="Rows of bookshelves filled with books in a bright library"
-        imageWidth={1600}
-        imageHeight={1066}
+        imageAlt="Close-up of a printed stock report with a candlestick chart"
+        imageWidth={1920}
+        imageHeight={1280}
       />
 
       <Section tone="white" ariaLabel="Search and filter resources">
@@ -128,7 +128,7 @@ export default function ResourcesPage() {
 
       <PhotoBand
         image="/images/band-bridge-istanbul.jpg"
-        alt="Bosphorus Bridge glowing red above Istanbul at night"
+        alt="Dark trading monitors showing candlestick charts"
         eyebrow="The library"
         heading={
           <>
@@ -140,8 +140,8 @@ export default function ResourcesPage() {
         }
         copy="The hub grows with every release — the next guide, the next essay, the next update lands here first."
         height="sm"
-        imageWidth={1920}
-        imageHeight={1280}
+        imageWidth={1600}
+        imageHeight={1067}
       >
         <ButtonLink href="/resources/blog">Read the latest insights</ButtonLink>
       </PhotoBand>
