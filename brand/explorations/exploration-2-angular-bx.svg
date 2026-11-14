@@ -2,10 +2,10 @@
   <title>Exploration 2 — Angular B/X bridge glyph (chosen direction)</title>
   <desc>An angular X built from two thick diagonal bars. The gold bar passes behind the maroon bar at the crossing (weave gap), suggesting two bridge spans joining. A horizontal gold deck line runs through the centre. The deck line was dropped in the final mark for crispness at 16px.</desc>
   <!-- Gold bar (behind): two segments with a weave gap at the crossing -->
-  <polygon points="35.2,7.2 40.8,12.8 30.3,23.3 24.7,17.7" fill="#C29A55"/>
-  <polygon points="17.7,24.7 23.3,30.3 12.8,40.8 7.2,35.2" fill="#C29A55"/>
+  <polygon points="35.2,7.2 40.8,12.8 30.3,23.3 24.7,17.7" fill="#14B8A6"/>
+  <polygon points="17.7,24.7 23.3,30.3 12.8,40.8 7.2,35.2" fill="#14B8A6"/>
   <!-- Maroon bar (over) -->
-  <polygon points="7.2,12.8 12.8,7.2 40.8,35.2 35.2,40.8" fill="#360F20"/>
+  <polygon points="7.2,12.8 12.8,7.2 40.8,35.2 35.2,40.8" fill="#0F172A"/>
   <!-- Horizontal deck line (exploration-only detail) -->
-  <rect x="4" y="22.6" width="40" height="2.8" rx="1.4" fill="#C29A55"/>
+  <rect x="4" y="22.6" width="40" height="2.8" rx="1.4" fill="#14B8A6"/>
 </svg>
