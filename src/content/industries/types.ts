@@ -40,6 +40,8 @@ export interface IndustryImage {
   alt: string;
   width: number;
   height: number;
+  /** Optional CSS object-position for the hero crop (e.g. "40% 50%"). */
+  objectPosition?: string;
 }
 
 /** One step in a flow diagram (hero diagrams, architecture flows). */

@@ -32,7 +32,7 @@ export const multiAssetBrokers: IndustryContent = {
   challengeImage: {
     src: "/images/boardroom-executives.jpg",
     alt: "Senior executives in discussion around a boardroom table",
-    width: 1920,
+    width: 1400,
     height: 1280,
   },
   bandImage: {

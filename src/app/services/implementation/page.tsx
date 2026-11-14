@@ -39,10 +39,10 @@ export default function ImplementationPage() {
           </>
         }
         copy="Implementation is a joint project with a named team on both sides, a written plan, and a gate at the end of every phase. You always know where things stand — and nothing goes live until your team has tested it."
-        image="/images/workshop-presentation.jpg"
+        image="/images/workshop-presentation-wide.jpg"
         imageAlt=""
         imageWidth={1600}
-        imageHeight={968}
+        imageHeight={450}
       >
         <div className="mt-8 flex flex-wrap gap-4">
           <ButtonLink href="#phases" size="lg">

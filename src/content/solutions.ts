@@ -117,7 +117,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "in one clear view.",
     heroIntro:
       "BridgeX Financial CRM keeps leads, contacts, accounts, conversations and cases in one place — so sales, support and compliance stop working from different versions of the truth.",
-    heroImage: { src: "/images/wealth-meeting.jpg", alt: "Advisor and client reviewing financial documents together", width: 1600, height: 1067, objectPosition: "50% 18%" },
+    heroImage: { src: "/images/solutions-crm-hero.jpg", alt: "Advisor and client in discussion at a meeting table with laptop and documents", width: 1600, height: 900, objectPosition: "50% 0%" },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Growth outruns the spreadsheet — then the spreadsheet fights back",
@@ -524,7 +524,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "grow with you.",
     heroIntro:
       "BridgeX IB & Incentive Management runs the whole partner lifecycle — registration, attribution, multi-tier rebates, a commission ledger and payouts — with a source-to-payout audit trail behind every figure.",
-    heroImage: { src: "/images/handshake-partners.jpg", alt: "Business partners shaking hands during a meeting", width: 1600, height: 1067 },
+    heroImage: { src: "/images/solutions-ib-hero.jpg", alt: "Business partners shaking hands after a meeting", width: 1600, height: 1068, objectPosition: "45% 0%" },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Partner growth stalls when the numbers are argued about",

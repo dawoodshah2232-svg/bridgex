@@ -18,8 +18,9 @@ export const assetFundManagers: IndustryContent = {
   image: {
     src: "/images/boardroom-executives.jpg",
     alt: "Senior executives in discussion around a boardroom table",
-    width: 1920,
+    width: 1400,
     height: 1280,
+    objectPosition: "40% 50%",
   },
   secondaryImage: {
     src: "/images/signing-contract.jpg",

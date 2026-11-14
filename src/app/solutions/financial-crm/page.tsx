@@ -87,8 +87,8 @@ export default function FinancialCrmPage() {
         image={{
           src: "/images/team-discussion.jpg",
           alt: "Team in discussion around a table",
-          width: 1400,
-          height: 933,
+          width: 1600,
+          height: 1067,
         }}
         flip
       />

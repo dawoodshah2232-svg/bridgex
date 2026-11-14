@@ -41,6 +41,7 @@ export default function IndustryHero({
         bridgeLine={content.heroBridgeLine ?? false}
         imageWidth={image.width}
         imageHeight={image.height}
+        objectPosition={image.objectPosition}
       />
       <Container className="relative pb-20 pt-[136px] sm:pt-[152px] lg:pb-28">
         <Breadcrumbs href={content.href} dark />

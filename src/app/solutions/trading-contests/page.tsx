@@ -52,8 +52,8 @@ export default function TradingContestsPage() {
         image={{
           src: "/images/solutions-contests-statuette.jpg",
           alt: "Gold award statuette with a star",
-          width: 1600,
-          height: 1200,
+          width: 2133,
+          height: 1600,
         }}
       />
 

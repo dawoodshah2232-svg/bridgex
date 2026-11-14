@@ -133,3 +133,21 @@
   by changing the global `py-24`; Tailwind v4 emits side utilities
   after `py-*` in the built CSS, so they win. Home hero scrim is
   65/45/25 + bottom 85% (computed: white H1 p5 12.5:1).
+- Systematic photo-crop sweep (14 Nov, after the final polish):
+  every people-photo usage on all 44 pages was PIL-simulated at
+  its display aspect ratio incl. the Ken Burns drift extreme
+  (re-derived window: x 5.2–97.8%, y 2.7–95.3% of the rest crop).
+  9 defects fixed: workshop wide variant (D1), IB hero swap to
+  `solutions-ib-hero.jpg` 8730173 @ 45%/0% (D2), CRM hero swap to
+  `solutions-crm-hero.jpg` 36766697 @ 50%/0% (D3 — `wealth-meeting`
+  is NO LONGER the CRM hero), `team-discussion` swap to 7644144
+  (D4), statuette full-figure edge-extended to 4:3 (D5),
+  `trader-workstation` swap to 5831260 centred (N1 — "50% 10%"
+  was tried and rejected, it cut the head at the bottom),
+  client-experience PageHero "50% 8%" (N2),
+  `boardroom-executives` pre-cropped x 0–1400 + asset-fund hero
+  "40% 50%" (N3 — a 1560 line was tried and rejected, it cut the
+  grey woman's face), `company-collaboration` swap to 4175026
+  (N6). `PageHero` and `IndustryHero` now accept an optional
+  `objectPosition` (via `HeroImage` / `IndustryImage`). Full
+  record in IMAGE-MANIFEST.md ("Systematic photo-crop sweep").

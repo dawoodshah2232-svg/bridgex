@@ -196,7 +196,15 @@ Dawood's verdict: too much text, no images, no relatable icons.
 - [x] Contests hero photo replaced 14 Nov (`solutions-contests-v2.jpg`,
   gold trophy on deep red); exchanges hero replaced the same day
   (`industries-exchanges-v2.jpg`, NYSE at night).
-- [ ] IB-incentives hero (`handshake-partners.jpg`, centred crop) cuts
-  the man's hair at the top edge — same defect class as the CRM hero
-  fixed in the final polish pass. Needs a re-crop decision (not in
-  that pass's scope).
+- [x] IB-incentives hero (`handshake-partners.jpg`, centred crop) cuts
+  the man's hair at the top edge — FIXED in the photo-crop sweep
+  (14 Nov): hero swapped to `solutions-ib-hero.jpg` (Pexels 8730173,
+  `objectPosition: "45% 0%"`); see IMAGE-MANIFEST.md sweep record.
+- [x] Systematic photo-crop sweep (14 Nov): all 44 pages audited at
+  display aspect ratio incl. Ken Burns drift; 9 defects fixed
+  (D1–D5 + N1–N3 + N6) — workshop wide variant, IB/CRM hero swaps,
+  team-discussion / trader-workstation / company-collaboration
+  swaps, boardroom 1400px pre-crop, statuette full-figure rework,
+  PageHero + IndustryHero `objectPosition` support. Verified:
+  tsc clean, build passes, 0 `opacity:0` in built HTML, live
+  curl-verified after deploy (see MEMORY.md).

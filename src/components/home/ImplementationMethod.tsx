@@ -111,10 +111,10 @@ export default function ImplementationMethod() {
       <Reveal delay={0.1} className="mt-12 lg:mt-16">
         <figure>
           <img
-            src={asset("/images/workshop-presentation.jpg")}
+            src={asset("/images/workshop-presentation-wide.jpg")}
             alt="Professionals attending a business seminar"
             width={1600}
-            height={968}
+            height={450}
             loading="lazy"
             className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
           />

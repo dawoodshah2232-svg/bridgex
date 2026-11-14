@@ -56,10 +56,10 @@ export default function GuidesPage() {
           </>
         }
         copy="Five guides on the work financial businesses actually do: launching, partnering, onboarding, getting paid and knowing what is going on. Read each one in full, right here."
-        image="/images/workshop-presentation.jpg"
+        image="/images/workshop-presentation-wide.jpg"
         imageAlt="Professionals attending a business seminar"
         imageWidth={1600}
-        imageHeight={968}
+        imageHeight={450}
       />
 
       <Section tone="ivory" ariaLabel="Guides">

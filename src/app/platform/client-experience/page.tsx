@@ -93,6 +93,7 @@ export default function ClientExperiencePage() {
           alt: "Team collaborating over a laptop in a bright office",
           width: 1600,
           height: 1068,
+          objectPosition: "50% 8%",
         }}
       />
 

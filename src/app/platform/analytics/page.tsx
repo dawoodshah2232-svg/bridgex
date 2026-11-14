@@ -168,7 +168,7 @@ export default function AnalyticsPage() {
               <img
                 src={asset("/images/boardroom-executives.jpg")}
                 alt="Senior executives in discussion around a boardroom table"
-                width={1920}
+                width={1400}
                 height={1280}
                 loading="lazy"
                 className="relative aspect-[3/2] w-full object-cover"

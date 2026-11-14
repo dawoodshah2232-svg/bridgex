@@ -22,6 +22,7 @@ export interface HeroImage {
   alt: string;
   width: number;
   height: number;
+  objectPosition?: string;
 }
 
 export default function PageHero({
@@ -62,6 +63,7 @@ export default function PageHero({
             bridgeLine
             imageWidth={image.width}
             imageHeight={image.height}
+            objectPosition={image.objectPosition}
           />
         )}
         <Container className="relative pb-16 pt-[72px] sm:pb-20 sm:pt-[72px] lg:pb-24">
