@@ -85,7 +85,9 @@ export default function IntegrationEcosystem() {
           {CATEGORIES.map((cat, i) => (
             <li key={cat.name} className="bg-bx-white">
               <Reveal delay={0.06 * i} className="h-full">
-                <div className="flex h-full flex-col p-7 sm:p-8">
+                {/* Hairline grid: tint, not lift — a translate would
+                    break the grid lines. */}
+                <div className="bx-card-tint group flex h-full flex-col p-7 sm:p-8">
                   {/* FeatureIcon centres its tile; self-start pulls it
                       left to match the card's left-aligned text. */}
                   <FeatureIcon icon={cat.icon} size="md" className="[&>*]:self-start" />
@@ -103,7 +105,7 @@ export default function IntegrationEcosystem() {
             <Reveal delay={0.3} className="h-full">
               <Link
                 href="/company/contact"
-                className="group flex h-full flex-col justify-between p-7 transition-colors duration-200 hover:bg-bx-navy-800 sm:p-8"
+                className="bx-card-tint-dark group flex h-full flex-col justify-between p-7 sm:p-8"
               >
                 <div>
                   <FeatureIcon icon="send" tone="dark" size="md" className="[&>*]:self-start" />

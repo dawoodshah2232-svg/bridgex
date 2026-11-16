@@ -127,7 +127,7 @@ export default function CaseStudiesPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {COVERAGE_AREAS.map((area, i) => (
             <Reveal key={area.title} delay={(i % 3) * 0.08} className="h-full">
-              <div className="flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
+              <div className="bx-card-hover group flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
                 <FeatureIcon icon={area.icon} size="md" />
                 <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                   {area.title}
@@ -151,7 +151,7 @@ export default function CaseStudiesPage() {
         <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PUBLISHING_STEPS.map((s, i) => (
             <Reveal key={s.step} delay={i * 0.08} className="h-full">
-              <li className="flex h-full flex-col border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
+              <li className="bx-card-hover-dark group flex h-full flex-col border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
                 <span className="font-sans text-5xl font-semibold italic text-bx-teal-400">
                   {s.step}
                 </span>
@@ -170,7 +170,8 @@ export default function CaseStudiesPage() {
       <Section tone="white" ariaLabel="Are you a BridgeX customer">
         {/* Abstract architecture imagery only — no client photos, no
             logos, nothing that implies client work exists yet. */}
-        <div className="grid items-stretch gap-10 overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl lg:grid-cols-[0.8fr_1.4fr_1fr] lg:gap-0">
+        <Reveal>
+        <div className="group grid items-stretch gap-10 overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl lg:grid-cols-[0.8fr_1.4fr_1fr] lg:gap-0">
           <div className="overflow-hidden">
             <img
               src={asset("/images/abstract-glass-lines.jpg")}
@@ -178,7 +179,7 @@ export default function CaseStudiesPage() {
               width={1400}
               height={2100}
               loading="lazy"
-              className="aspect-[16/10] h-full w-full object-cover lg:aspect-auto lg:min-h-[320px]"
+              className="bx-img-zoom aspect-[16/10] h-full w-full object-cover lg:aspect-auto lg:min-h-[320px]"
             />
           </div>
           <div className="p-8 sm:p-10 lg:py-12">
@@ -200,6 +201,7 @@ export default function CaseStudiesPage() {
             </ButtonLink>
           </div>
         </div>
+        </Reveal>
       </Section>
 
       <Section tone="mint" ariaLabel="Frequently asked questions">
@@ -209,9 +211,9 @@ export default function CaseStudiesPage() {
             heading="About case studies"
             align="center"
           />
-          <div className="mt-10">
+          <Reveal className="mt-10">
             <FaqAccordion items={CASE_STUDY_FAQS} />
-          </div>
+          </Reveal>
         </div>
       </Section>
 

@@ -11,6 +11,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "./Container";
 import { ButtonLink } from "./Button";
 import Magnetic from "./Magnetic";
+import Reveal from "./Reveal";
 
 function BridgeLine() {
   const reduceMotion = useReducedMotion();
@@ -90,23 +91,31 @@ export default function CtaBand({
 }) {
   return (
     <section className="relative overflow-hidden bg-bx-teal-500 text-bx-white">
+      {/* Slow-drifting light glow behind the heading — the band's one
+          ambient moment (transform-only, still under reduced motion). */}
+      <span
+        aria-hidden="true"
+        className="bx-glow bx-glow--light left-[12%] top-0 h-80 w-[76%]"
+      />
       <Container className="relative pb-16 pt-20 text-center sm:pt-24 lg:pt-28">
-        <h2 className="mx-auto max-w-3xl font-sans text-[38px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance sm:text-6xl">
-          {heading}
-        </h2>
-        <p className="mx-auto mt-5 max-w-[62ch] text-base leading-relaxed text-bx-white/90 sm:text-lg">
-          {copy}
-        </p>
-        <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Magnetic>
-            <ButtonLink href={primaryHref} variant="onTeal" size="lg">
-              {primaryLabel}
+        <Reveal>
+          <h2 className="mx-auto max-w-3xl font-sans text-[38px] font-extrabold leading-[1.05] tracking-[-0.02em] text-balance sm:text-6xl">
+            {heading}
+          </h2>
+          <p className="mx-auto mt-5 max-w-[62ch] text-base leading-relaxed text-bx-white/90 sm:text-lg">
+            {copy}
+          </p>
+          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Magnetic>
+              <ButtonLink href={primaryHref} variant="onTeal" size="lg">
+                {primaryLabel}
+              </ButtonLink>
+            </Magnetic>
+            <ButtonLink href={secondaryHref} variant="secondaryLight" size="lg">
+              {secondaryLabel}
             </ButtonLink>
-          </Magnetic>
-          <ButtonLink href={secondaryHref} variant="secondaryLight" size="lg">
-            {secondaryLabel}
-          </ButtonLink>
-        </div>
+          </div>
+        </Reveal>
       </Container>
       <div className="relative mx-auto max-w-[1280px] px-5 pb-10 sm:px-8 lg:px-10">
         <BridgeLine />

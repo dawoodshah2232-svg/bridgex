@@ -82,7 +82,7 @@ export default function GuidesPage() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {HOW_TO_USE.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
+              <div className="bx-card-hover group flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
                 <FeatureIcon icon={item.icon} size="md" />
                 <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                   {item.title}
@@ -115,9 +115,9 @@ export default function GuidesPage() {
             heading="About the guides"
             align="center"
           />
-          <div className="mt-10">
+          <Reveal className="mt-10">
             <FaqAccordion items={GUIDE_FAQS} />
-          </div>
+          </Reveal>
         </div>
       </Section>
 

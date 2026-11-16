@@ -74,7 +74,7 @@ export default function EventsPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {EVENT_TOPICS.map((topic, i) => (
             <Reveal key={topic.id} delay={(i % 2) * 0.08} className="h-full">
-              <article className="flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl">
+              <article className="bx-card-hover group flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl">
                 <div className="overflow-hidden">
                   <img
                     src={asset(topic.image)}
@@ -82,7 +82,7 @@ export default function EventsPage() {
                     width={1200}
                     height={675}
                     loading="lazy"
-                    className="aspect-[16/9] w-full object-cover"
+                    className="bx-img-zoom aspect-[16/9] w-full object-cover"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-7 sm:p-8">
@@ -135,7 +135,7 @@ export default function EventsPage() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {WHAT_TO_EXPECT.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
+              <div className="bx-card-hover group flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7 text-center">
                 <FeatureIcon icon={item.icon} size="md" />
                 <h3 className="mt-5 font-sans text-xl font-extrabold leading-snug text-bx-navy-900">
                   {item.title}
@@ -206,9 +206,9 @@ export default function EventsPage() {
             heading="About BridgeX events"
             align="center"
           />
-          <div className="mt-10">
+          <Reveal className="mt-10">
             <FaqAccordion items={EVENTS_FAQS} />
-          </div>
+          </Reveal>
         </div>
       </Section>
 

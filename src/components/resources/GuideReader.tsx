@@ -28,7 +28,7 @@ export default function GuideReader({ guides }: { guides: Guide[] }) {
         return (
           <article
             key={guide.slug}
-            className="overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl"
+            className="group overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl"
           >
             <div className="grid sm:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr]">
               <div className="relative overflow-hidden">
@@ -39,7 +39,7 @@ export default function GuideReader({ guides }: { guides: Guide[] }) {
                   height={800}
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : undefined}
-                  className="aspect-[16/10] h-full w-full object-cover sm:aspect-auto sm:min-h-[260px]"
+                  className="bx-img-zoom aspect-[16/10] h-full w-full object-cover sm:aspect-auto sm:min-h-[260px]"
                 />
               </div>
               <div className="p-6 sm:p-8 lg:p-10">

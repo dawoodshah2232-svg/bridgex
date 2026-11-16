@@ -37,10 +37,13 @@ export default function FeatureIcon({
   className?: string;
 }) {
   const { tile, icon: iconSize } = SIZES[size];
+  // group-hover: inside a hovered card the tile gently grows and its
+  // ring brightens — the card's hover life reaches its icon. Outside
+  // a group (standalone use) nothing changes.
   const tileCls =
     tone === "dark"
-      ? "border-bx-teal-400/50 bg-bx-navy-800/60 text-bx-teal-400"
-      : "border-bx-teal-500/60 bg-bx-mint-100/40 text-bx-teal-600";
+      ? "border-bx-teal-400/50 bg-bx-navy-800/60 text-bx-teal-400 group-hover:border-bx-teal-400 group-hover:bg-bx-navy-800"
+      : "border-bx-teal-500/60 bg-bx-mint-100/40 text-bx-teal-600 group-hover:border-bx-teal-500 group-hover:bg-bx-mint-100/70";
   const labelCls = tone === "dark" ? "text-bx-slate-300" : "text-bx-teal-700";
   // A component prop renders directly; a string name goes through <Icon>.
   const Glyph: IconComponent | null = typeof icon === "string" ? null : icon;
@@ -48,7 +51,7 @@ export default function FeatureIcon({
   return (
     <div className={`flex flex-col items-center text-center ${className}`}>
       <div
-        className={`flex items-center justify-center rounded-full border ${tile} ${tileCls}`}
+        className={`flex items-center justify-center rounded-full border transition-all duration-200 group-hover:scale-[1.06] ${tile} ${tileCls}`}
       >
         {Glyph ? (
           <Glyph size={iconSize} />

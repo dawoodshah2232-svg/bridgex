@@ -104,9 +104,9 @@ export default function ClientExperiencePage() {
           heading="One platform, three very different rooms."
           copy="A client, a partner and an advisor should never see the same screen — they need different things, and they are permitted different things. Select an audience to see what their room holds."
         />
-        <div className="mt-12">
+        <Reveal delay={0.1} className="mt-12">
           <AudienceTabs />
-        </div>
+        </Reveal>
       </Section>
 
       {/* Photographic interlude — the room reads as your business */}

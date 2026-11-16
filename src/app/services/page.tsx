@@ -62,7 +62,7 @@ export default function ServicesPage() {
             <Reveal key={service.title} delay={(i % 3) * 0.07}>
               <Link
                 href={service.href}
-                className="group flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7 transition-colors duration-200 hover:border-bx-teal-500/70 hover:bg-bx-mint-50"
+                className="bx-card-hover group flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7 hover:bg-bx-mint-50"
               >
                 <FeatureIcon icon={service.icon} size="sm" className="items-start" />
                 <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
@@ -98,7 +98,7 @@ export default function ServicesPage() {
 
           {/* The eighth tile: the conversation itself */}
           <Reveal delay={0.14}>
-            <div className="flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 text-bx-white">
+            <div className="bx-card-hover-dark group flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 text-bx-white">
               <TealRule />
               <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em]">
                 Not sure where to start?

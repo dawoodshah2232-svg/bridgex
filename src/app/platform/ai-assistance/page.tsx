@@ -148,7 +148,7 @@ export default function AiAssistancePage() {
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {AI_USES.map((use, i) => (
             <Reveal key={use.title} delay={(i % 2) * 0.08}>
-              <article className="flex h-full flex-col border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8">
+              <article className="bx-card-hover group flex h-full flex-col border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center gap-3">
                   <Icon name={use.icon} size={28} className="text-bx-teal-600" />
                   <h3 className="font-sans text-xl font-extrabold leading-tight text-bx-navy-900">
@@ -204,9 +204,10 @@ export default function AiAssistancePage() {
           }
           copy="These principles are set before the first line of assistance is built — because governance added after a capability ships is governance that gets negotiated away."
         />
-        <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2">
+        <Reveal delay={0.1} className="mt-12">
+          <div className="grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2">
           {PRINCIPLES.map((principle) => (
-            <div key={principle.title} className="bg-bx-navy-900 rounded-2xl p-6 sm:p-8">
+            <div key={principle.title} className="bx-card-tint-dark group bg-bx-navy-900 rounded-2xl p-6 sm:p-8">
               <Icon name={principle.icon} size={28} className="text-bx-teal-400" />
               <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-white">
                 {principle.title}
@@ -216,7 +217,8 @@ export default function AiAssistancePage() {
               </p>
             </div>
           ))}
-        </div>
+          </div>
+        </Reveal>
       </Section>
 
       {/* What it will never do + roadmap */}

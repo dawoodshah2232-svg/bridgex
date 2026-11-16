@@ -116,9 +116,9 @@ export default function BlogPage() {
             heading="About Insights"
             align="center"
           />
-          <div className="mt-10">
+          <Reveal className="mt-10">
             <FaqAccordion items={BLOG_FAQS} />
-          </div>
+          </Reveal>
         </div>
       </Section>
 

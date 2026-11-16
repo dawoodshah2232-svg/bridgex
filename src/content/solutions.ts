@@ -524,7 +524,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroAccent: "grow with you.",
     heroIntro:
       "BridgeX IB & Incentive Management runs the whole partner lifecycle — registration, attribution, multi-tier rebates, a commission ledger and payouts — with a source-to-payout audit trail behind every figure.",
-    heroImage: { src: "/images/solutions-ib-hero.jpg", alt: "Dark trading monitor showing a candlestick chart with trend lines", width: 1920, height: 1282, objectPosition: "45% 0%" },
+    heroImage: { src: "/images/solutions-ib-hero.jpg", alt: "Diagonal candlestick chart with volume bars on a dark trading screen", width: 1920, height: 1280, objectPosition: "50% 50%" },
     darkHero: true,
     problemLabel: "The problem",
     problemHeading: "Partner growth stalls when the numbers are argued about",

@@ -122,17 +122,19 @@ export function JourneySection({
       className="bg-bx-white pb-2 pt-16 sm:pt-20 lg:pt-24"
     >
       <Container>
-        <div className="mx-auto max-w-[1100px] border border-bx-teal-500/30 bg-bx-white rounded-2xl p-5 sm:p-8 lg:p-10">
-          <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
-            The journey
-          </p>
-          <h2 className="mt-3 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900 sm:text-2xl">
-            {diagram.title}
-          </h2>
-          <div className="mt-6">
-            <FlowDiagram steps={diagram.steps} />
+        <Reveal>
+          <div className="mx-auto max-w-[1100px] border border-bx-teal-500/30 bg-bx-white rounded-2xl p-5 sm:p-8 lg:p-10">
+            <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
+              The journey
+            </p>
+            <h2 className="mt-3 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900 sm:text-2xl">
+              {diagram.title}
+            </h2>
+            <div className="mt-6">
+              <FlowDiagram steps={diagram.steps} />
+            </div>
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
@@ -231,7 +233,7 @@ export function ChallengesSection({
             {data.items.map((item, i) => (
               <li
                 key={item.title}
-                className="border border-bx-teal-500/25 bg-bx-white rounded-2xl p-7 sm:p-8"
+                className="bx-card-hover group border border-bx-teal-500/25 bg-bx-white rounded-2xl p-7 sm:p-8"
               >
                 <Reveal delay={(i % 2) * 0.08}>
                   <TealRule />
@@ -298,7 +300,8 @@ export function ChallengesSection({
 
 function ModuleRows({ items }: { items: ModuleMapItem[] }) {
   return (
-    <ul className="mt-12 border-b border-bx-teal-500/25">
+    <Reveal delay={0.1} className="mt-12">
+      <ul className="border-b border-bx-teal-500/25">
       {items.map((item) => (
         <li key={item.href} className="border-t border-bx-teal-500/25">
           <Link
@@ -333,7 +336,8 @@ function ModuleRows({ items }: { items: ModuleMapItem[] }) {
           </Link>
         </li>
       ))}
-    </ul>
+      </ul>
+    </Reveal>
   );
 }
 
@@ -345,7 +349,7 @@ function ModuleCards({ items }: { items: ModuleMapItem[] }) {
           <Reveal delay={(i % 3) * 0.08} className="h-full">
             <Link
               href={item.href}
-              className="group flex h-full flex-col border border-bx-teal-500/25 bg-bx-white rounded-2xl p-7 transition-colors hover:border-bx-teal-500/60"
+              className="bx-card-hover group flex h-full flex-col border border-bx-teal-500/25 bg-bx-white rounded-2xl p-7"
             >
               <div className="flex justify-start">
                 <FeatureIcon icon={moduleIcon(item.href)} size="md" />
@@ -377,7 +381,7 @@ function ModuleCards({ items }: { items: ModuleMapItem[] }) {
 
 function ModuleTable({ items }: { items: ModuleMapItem[] }) {
   return (
-    <div className="mt-12">
+    <Reveal delay={0.1} className="mt-12">
       <div
         aria-hidden="true"
         className="hidden grid-cols-12 gap-6 border-b-2 border-bx-teal-500/40 pb-3 font-sans text-[12px] font-bold uppercase tracking-[0.18em] text-bx-teal-700 md:grid"
@@ -419,7 +423,7 @@ function ModuleTable({ items }: { items: ModuleMapItem[] }) {
           </li>
         ))}
       </ul>
-    </div>
+    </Reveal>
   );
 }
 
@@ -502,7 +506,7 @@ export function UseCasesSection({
             {data.items.map((item, i) => (
               <li
                 key={item.title}
-                className="border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-7"
+                className="bx-card-hover group border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6 sm:p-7"
               >
                 <Reveal delay={i * 0.06}>
                   <p
@@ -525,7 +529,9 @@ export function UseCasesSection({
       ) : (
         <ol className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 md:grid-cols-3">
           {data.items.map((item, i) => (
-            <li key={item.title} className="bg-bx-white p-7 sm:p-8">
+            <li key={item.title} className="bx-card-tint group bg-bx-white p-7 sm:p-8">
+              {/* Hairline grid: tint, not lift — a translate would
+                  break the grid lines. */}
               <Reveal delay={i * 0.08}>
                 <p
                   aria-hidden="true"
@@ -542,7 +548,11 @@ export function UseCasesSection({
           ))}
         </ol>
       )}
-      {illustrative && <IllustrativePanelView panel={illustrative} />}
+      {illustrative && (
+        <Reveal delay={0.1}>
+          <IllustrativePanelView panel={illustrative} />
+        </Reveal>
+      )}
     </Section>
   );
 }
@@ -561,10 +571,10 @@ function ArchitectureLayers({
       {layers.map((layer, i) => (
         <li
           key={layer.name}
-          className={`border p-6 sm:p-7 ${
+          className={`group border p-6 sm:p-7 ${
             dark
-              ? "border-bx-teal-500/30 bg-bx-navy-800/60"
-              : "border-bx-teal-500/25 bg-bx-white"
+              ? "bx-card-hover-dark border-bx-teal-500/30 bg-bx-navy-800/60"
+              : "bx-card-hover border-bx-teal-500/25 bg-bx-white"
           }`}
         >
           <Reveal delay={i * 0.06}>
@@ -690,7 +700,9 @@ export function ArchitectureSection({
           <FlowDiagram steps={data.steps} dark={dark} />
         </div>
       )}
-      <IntegrationNote note={data.integrationNote} dark={dark} />
+      <Reveal delay={0.1}>
+        <IntegrationNote note={data.integrationNote} dark={dark} />
+      </Reveal>
     </Section>
   );
 }
@@ -708,9 +720,9 @@ export function FaqSection({ faqs }: { faqs: FaqItem[] }) {
             copy="The questions decision-makers ask us first — about what BridgeX does, what it connects to, and what it deliberately does not claim."
           />
         </div>
-        <div className="lg:col-span-8">
+        <Reveal delay={0.1} className="lg:col-span-8">
           <FaqAccordion items={faqs} />
-        </div>
+        </Reveal>
       </div>
     </Section>
   );

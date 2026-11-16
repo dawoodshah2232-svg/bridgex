@@ -65,7 +65,7 @@ export default function CareersPage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {CAREERS_VALUES.map((value, i) => (
             <Reveal key={value.title} delay={(i % 2) * 0.07}>
-              <article className="flex h-full gap-5 border border-bx-navy-900/15 bg-bx-white p-7">
+              <article className="bx-card-hover group flex h-full gap-5 border border-bx-navy-900/15 bg-bx-white p-7">
                 <span className="shrink-0 text-bx-teal-600">
                   <Icon name={value.icon} size={30} />
                 </span>

@@ -18,6 +18,7 @@ import {
 } from "@/content/navigation";
 import Icon from "../icons";
 import Logo from "../Logo";
+import { menuIconForRoute } from "./menuIcons";
 
 export default function MobileNav({
   open,
@@ -133,6 +134,11 @@ export default function MobileNav({
                                 onClick={onClose}
                                 className="flex min-h-[44px] items-center gap-2 py-2 pl-1 font-sans text-[15px] font-bold text-bx-teal-700"
                               >
+                                <Icon
+                                  name={menuIconForRoute(group.overviewHref)}
+                                  size={18}
+                                  className="shrink-0"
+                                />
                                 {group.label} overview
                                 <Icon name="arrowRight" size={16} />
                               </Link>
@@ -147,6 +153,11 @@ export default function MobileNav({
                                   onClick={onClose}
                                   className="flex min-h-[44px] items-center gap-2 py-2 pl-1 text-[15px] text-bx-navy-900"
                                 >
+                                  <Icon
+                                    name={menuIconForRoute(route.href)}
+                                    size={18}
+                                    className="shrink-0 text-bx-teal-600"
+                                  />
                                   {route.label}
                                   {route.status === "roadmap" && (
                                     <span className="border border-bx-teal-600/60 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-bx-teal-700">

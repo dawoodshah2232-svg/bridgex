@@ -7,7 +7,10 @@
  * - onTeal: white pill with teal text, for use on the teal CTA band.
  *
  * All buttons are fully pill-shaped (rounded-full). Press feedback
- * (scale 0.97 on :active) per the Apple motion rules.
+ * (scale 0.97 on :active) per the Apple motion rules. The primary
+ * variant adds a shine sweep + teal glow pulse on hover
+ * (.bx-btn-shine / .bx-btn-glow in globals.css); the trailing arrow
+ * slides on hover (BASE carries `group` for that).
  * Never render a button without a real destination.
  */
 import Link from "next/link";
@@ -18,11 +21,11 @@ type Variant = "primary" | "secondary" | "secondaryLight" | "onTeal";
 type Size = "md" | "lg";
 
 const BASE =
-  "inline-flex items-center justify-center gap-2.5 rounded-full font-sans font-bold tracking-[0.01em] transition-all duration-200 active:scale-[0.97] select-none";
+  "group inline-flex items-center justify-center gap-2.5 rounded-full font-sans font-bold tracking-[0.01em] transition-all duration-200 active:scale-[0.97] select-none";
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg-bx-teal-500 text-bx-white shadow-[0_10px_24px_-10px_rgba(20,184,166,0.7)] hover:bg-bx-teal-600",
+    "bx-btn-shine bx-btn-glow bg-bx-teal-500 text-bx-white shadow-[0_10px_24px_-10px_rgba(20,184,166,0.7)] hover:bg-bx-teal-600",
   secondary:
     "border border-[#E2E8F0] bg-bx-white text-bx-navy-900 hover:border-bx-teal-500 hover:text-bx-teal-600",
   secondaryLight:

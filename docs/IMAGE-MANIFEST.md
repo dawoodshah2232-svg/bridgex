@@ -1,9 +1,9 @@
 # BridgeX Image Manifest
 
 **Location:** `public/images/` · **Reference in code:** via the `asset()` helper (basePath `/bridgex`), e.g. `asset('/images/hero-bridge.jpg')`.
-**Last updated:** 2026-11-14 (forex re-theme photo swap — 48 files replaced, 24 kept, 1 deleted; see the record below).
+**Last updated:** 2026-11-16 (hero rework pass — 2 hero swaps + site-wide hero treatment; see the record below).
 
-> ⚠️ **The 14 Nov forex re-theme superseded most of this file's photo tables.** Sections A–I and the Pexels sources table below describe the PRE-swap photos for the 48 swapped files — their dimensions, sizes, alt texts and Pexels IDs are stale for those files. The authoritative current record for the swapped files is the **Forex re-theme photo swap** section directly below. The KEEP files' entries in sections A–I are still current. The historical pass records (sweep, final crop round, PAMM follow-up) are kept as-is below; they describe defects in photos that no longer exist on disk for the swapped slots.
+> ⚠️ **The 14 Nov forex re-theme superseded most of this file's photo tables.** Sections A–I and the Pexels sources table below describe the PRE-swap photos for the 48 swapped files — their dimensions, sizes, alt texts and Pexels IDs are stale for those files. The authoritative current record for the swapped files is the **Forex re-theme photo swap** section directly below, as amended by the **Hero rework pass (16 Nov 2026)** section for `hero-bridge.jpg` and `solutions-ib-hero.jpg`. The KEEP files' entries in sections A–I are still current. The historical pass records (sweep, final crop round, PAMM follow-up) are kept as-is below; they describe defects in photos that no longer exist on disk for the swapped slots.
 
 ## Totals
 
@@ -66,7 +66,7 @@ Budgets: heroes/bands ≤ 600 KB, all other images ≤ 400 KB. Largest file is `
 | `compliance-review.jpg` | 7947663 | 1600×1067 | 236 KB | Overhead view of printed market analytics with a magnifier, notebook and pencils | No face. |
 | `handshake-deal.jpg` | 6801874 | 1600×1152 | 190 KB | Hand holding a phone with a trading chart in front of a laptop with market screens | No face. Near-identical to `solutions-payments.jpg` (same hand/phone/laptop, Shoot C, different pages). |
 | `handshake-partners.jpg` | 7947753 | 1600×1067 | 241 KB | Magnifier over a printed stacked area chart | No face. "Stacked Area Chart" + Group A–D labels are generic chart text. |
-| `hero-bridge.jpg` | 7567432 | 1920×1280 | 231 KB | Trader at a laptop in a dark office beneath a large market-data wall | **HOME HERO.** Head small and centred, whole in all sims incl. mobile centre slice. The market wall shows a Binance-style UI ("CAKE/USDT", "Buy CAKE", "Log In or Register Now") — NO legible Binance wordmark/logo. **Hero headline contrast must be re-verified against this photo** (the old 12.5:1/5.4:1 figures were computed against the bridge photo). `og-image.jpg` is a 1200×630 crop of this file. |
+| `hero-bridge.jpg` | 38412415 | 1920×1280 | 152 KB | Laptop with a candlestick chart in the foreground, blurred trading monitors with bokeh candles behind | **HOME HERO (rework, 16 Nov — was 7567432, trader + market-data wall; Dawood disliked it).** No face. Laptop screen showed a legible BINANCE wordmark + diamond (x 1220–1580, y 620–720) — removed with a heavy blur (radius 24, desat 0.08) + background-colour match + redrawn chart-grid lines, feathered paste; re-verified at 2× zoom, no letters survive. Left side is dark blurred bokeh — ideal for the left-aligned H1. White H1 contrast over the treated hero: 16.6:1 mean / 6.3:1 at the brightest H1-zone pixel (desktop), 18.4:1 / 9.4:1 (mobile), PIL-verified incl. drift end-state. `og-image.jpg` is a 1200×630 centred crop of this file (regenerated 16 Nov). |
 | `hero-bridge-night.jpg` | 5831268 | 1600×1068 | 112 KB | Close-up of a monitor showing a rising candlestick chart | No face. |
 | `hero-bridge-rotterdam.jpg` | 7691741 | 1920×1280 | 286 KB | Analyst pointing at a large wall screen showing a market chart | Head fully in frame at right; hero mobile slice shows the chart screen only (head fully outside — no cut head). Wall screen shows Binance UI in Russian (Cyrillic). **Parent fix:** a 13×9px yellow diamond at the screen's top-left (x 370–383, y 476–485, found by objective yellow-pixel scan) — blurred out; 0 bright-yellow pixels after. q82 (q88 re-save inflated the file to 341 KB). |
 | `hero-skyline-frankfurt.jpg` | 7567428 | 1920×1280 | 197 KB | Trader with crossed arms in front of a screen reading STOCK MARKET | Head whole. Hero band shows "MARKET" only ("STOCK" above the crop — acceptable, headline overlays it). |
@@ -84,8 +84,8 @@ Budgets: heroes/bands ≤ 600 KB, all other images ≤ 400 KB. Largest file is `
 | `skyline-dusk.jpg` | 186461 | 1920×1280 | 139 KB | Close-up of a tablet showing a green candlestick chart | No face. |
 | `skyline-sunset.jpg` | 7691746 | 1600×1067 | 158 KB | Trader on the phone at a desk with two laptops showing charts, seen from behind | Head fully in frame; head fully OUTSIDE the wide band/figure crops (torso/laptops only — no cut head). Readable pink "SELL" + green "HOLD" sticky notes exist in the source at y ~82–95% — OUTSIDE all display crops (bands + figure only). Same man/desk as the FORMER `team-discussion.jpg` (7691740, replaced 14 Nov). CtaBand usage is gone (re-theme removed the CtaBand photo layer — solid teal band now). |
 | `solutions-crm-handshake.jpg` | 7567431 | 1422×1067 | 166 KB | Bearded trader looking at a screen with market data behind him | Head fully in frame after LEFT-ANCHORED 4:3 pre-crop (1422×1067 — the uncropped head grazed the left edge). Same man as the home hero (Shoot D). |
-| `solutions-crm-hero.jpg` | 5831252 | 1920×1282 | 213 KB | Dark trading monitors showing candlestick charts with trend lines | No face. Faint large symbol letters (chart platform's instrument watermark, e.g. "D") + tiny hp bezel mark, illegible at display size (accepted). **KNOWN NIT: near-identical to `solutions-ib-hero.jpg`** (same monitor/screen, same chart, same prices 9848.0/9301.0/9136.0/9061.0/9058.0/8989.0/8422.0) — two consecutive Solutions pages show near-identical heroes. Accepted (different pages, dark + scrimmed). Hero uses `objectPosition: "50% 0%"`. |
-| `solutions-ib-hero.jpg` | 5831251 | 1920×1282 | 248 KB | Dark trading monitor showing a candlestick chart with trend lines | No face. Same faint symbol watermark as 5831252 (same shoot). See the CRM-hero nit above. Hero uses `objectPosition: "45% 0%"`. |
+| `solutions-crm-hero.jpg` | 5831252 | 1920×1282 | 213 KB | Dark trading monitors showing candlestick charts with trend lines | No face. Faint large symbol letters (chart platform's instrument watermark, e.g. "D") + tiny hp bezel mark, illegible at display size (accepted). **The 14 Nov KNOWN NIT (near-identical to the IB hero) is FIXED (16 Nov): the IB hero is now a different photo (38892298, diagonal chart) — see the rework section.** Hero uses `objectPosition: "50% 0%"`. |
+| `solutions-ib-hero.jpg` | 38892298 | 1920×1280 | 129 KB | Diagonal candlestick chart with volume bars on a dark trading screen | **IB HERO (rework, 16 Nov — was 5831251, near-identical to the CRM hero).** No face, no legible brand text (only generic data: dates, "Vol(USDC)", prices). Diagonal composition with an empty dark left side — the H1 zone. White H1 contrast over the treated hero: 18.5:1 mean / 11.6:1 at the brightest H1-zone pixel (desktop), 18.6:1 / 12.1:1 (mobile), PIL-verified incl. Ken Burns drift end-state. Hero uses `objectPosition: "50% 50%"`. |
 | `solutions-partners.jpg` | 5831356 | 1600×1068 | 126 KB | Trader studying a tablet with a concerned expression | RE-SWAPPED 14 Nov (post-re-theme browser check): the forex-swap pick (5831254) cut the second man's head at the RIGHT edge in the live 4:3 display — the plan's "both heads fully in frame after RIGHT-ANCHORED pre-crop" was wrong (the skull was already out of frame in the source). Replacement 5831356 (verified spare): single trader, head fully in frame at 4:3 (simmed, ~5% top margin); worried expression fits the IB Problem section. Same man as 5831338 (Shoot A) — different pages. |
 | `solutions-payments.jpg` | 6802042 | 1920×1213 | 203 KB | Hand holding a phone with a trading chart in front of a laptop with market screens | No face. Near-identical to `handshake-deal.jpg` (same hand/phone/laptop, Shoot C, different pages). |
 | `team-collaboration.jpg` | 590041 | 1500×994 | 290 KB | Hand pointing at a printed bar chart and line graph on a wooden desk | No face. Desktop band is mostly wood at left (plain but fine under scrim). Resized 1600×1060 → 1500×994 (q80) for the ≤300 KB budget. |
@@ -122,6 +122,20 @@ Budgets: heroes/bands ≤ 600 KB, all other images ≤ 400 KB. Largest file is `
 ### Sim lesson (carried forward)
 
 A seated person's head spans y ≈ 5–35% of a 3:2 frame while a 4:1 PhotoBand crop shows y ≈ 31–69% — chin/lower face lands inside the band and reads as a head cut at the top edge. Three first-choice band photos failed the sim on exactly this (5831253, 5831341, 5831346-as-band). Any future band candidate with a person must be simmed, not eyeballed. **And: visual fraction-readings of zoomed crops carry ±30px error — the first blur round missed 6 of 6 texts for exactly this reason. Locate screen text objectively (yellow-pixel scan for yellow marks; wide boxes with generous margins) and always re-verify after the fix.**
+
+## Hero rework pass (16 Nov 2026)
+
+**Order (Dawood, 16 Nov):** he disliked the two full-width homepage banner figures (removed — see below), the homepage hero photo, and all hero banners ("not look so good and even text is not so clean"). Rework: one consistent premium hero treatment in the shared components + two photo swaps.
+
+**Treatment (implemented in `src/components/ui/HeroMedia.tsx`, `src/components/company/InnerHero.tsx` dark variant, `src/components/home/Hero.tsx`):** photograph desaturated (`saturate-[0.8]`) + dimmed (`brightness-[0.92]`) so chromatic candle noise stops competing with the headline; flat navy tint; vertical navy gradient (strong: 60/25/80 top/mid/bottom); NEW left-weighted horizontal gradient (strong: 40/15/0 — the H1 sits left, the photograph stays open on the right); NEW subtle teal tint from the bottom-left (`from-bx-teal-700/15`); bottom fade unchanged on the homepage. Covers all 38 photographic heroes (7 solutions + 8 platform + 9 industries + 7 resources + home + search + 404 + 4 InnerHero dark pages). White H1 contrast over the two new heroes is ≥6:1 even at the brightest H1-zone pixel (PIL-verified, desktop + mobile, incl. drift end-state) — full figures in the swap table rows above.
+
+**Swaps (2, same filenames):**
+- `hero-bridge.jpg`: 7567432 → **38412415** (Rafael Minguet Delgado — laptop with candlestick chart, blurred bokeh monitors). BINANCE wordmark blurred out (see the row above). `og-image.jpg` regenerated as a 1200×630 centred crop of the new hero.
+- `solutions-ib-hero.jpg`: 5831251 → **38892298** (Rafael Minguet Delgado — diagonal candlestick chart close-up). Fixes the CRM/IB near-identical-heroes nit. Alt + dims + objectPosition updated in `src/content/solutions.ts`.
+
+**Homepage figures removed (same pass):** the whole `<figure>` blocks in `src/components/home/DemoPreview.tsx` (`trading-floor-desk.jpg`) and `src/components/home/ValueIntro.tsx` (`hero-bridge-night.jpg`) — both image files are used elsewhere, so the files stay. The two `PhotoBand` components in `src/app/page.tsx` were NOT flagged and were kept.
+
+**CDN lesson (16 Nov, new):** a batch of Pexels CDN downloads returned content crossed between IDs — the files read as 38412419 (monitor bank) and 38412420 (desk scene) were in fact windmills and a garden on re-download. `/tmp` is also wiped between turns. Rule: **re-download + visually re-inspect every candidate in the same session it ships; never trust a batch download from an earlier turn.** Both shipped files here were verified by fresh download + full-size read in this session. The 38412419/38412420 mix-up also means the Rafael neighbour-probe results from that batch are untrustworthy — do not cite them.
 
 ## 🔄 Replacements (page workers: switch references to these)
 
@@ -306,8 +320,8 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | `signing-agreement.jpg` | 7841502 | |
 | `signing-contract.jpg` | 8730374 | |
 | `solutions-contests-statuette.jpg` | 7005047 | Full figure, edge-extended to 4:3 (2133×1600, sweep, 14 Nov) |
-| `solutions-crm-hero.jpg` | 3855609 | Final crop round, 14 Nov (was 36766697 — foreground man's head cut at the right edge in the source) |
-| `solutions-ib-hero.jpg` | 8730173 | IB hero (sweep, 14 Nov) — previously rejected as a CRM hero (same shoot as the CRM problem image); repurposed here on a different page |
+| `solutions-crm-hero.jpg` | 5831252 | Forex re-theme, 14 Nov (was 3855609 in the final crop round) |
+| `solutions-ib-hero.jpg` | 38892298 | Hero rework, 16 Nov (was 5831251 in the forex re-theme — near-identical to the CRM hero; was 8730173 in the sweep) |
 | `solutions-contests-v2.jpg` | 6250957 | |
 | `solutions-crm-handshake.jpg` | 8730120 | |
 | `support-headset.jpg` | 7709235 | |
@@ -352,6 +366,16 @@ Note: the v2 exchanges hero still shows the NYSE name engraved on the building f
 | Pexels 6532362 as contests hero | Warm gold bowl, but the bowl's reflection is a prominent leopard print at hero scale; light-grey background |
 | Pexels 7005636 as contests problem image | The old award photo itself — source cuts the man's face at the mouth; same defect class as the photo being replaced |
 | Pexels 36512552 / 7005064 / 7005696 as contests hero | All portrait 2:3 — the same wide-hero geometry problem as the current v2 (only ~24% of height visible); no improvement |
+| Pexels 31738798 as home hero (rework, 16 Nov) | Pink/red neon gaming setup — wrong mood for a financial platform |
+| Pexels 6770610 as home hero (rework, 16 Nov) | Dark chart close-up, but legible German UI text ("Voreinstellungen", "3 Monate") — same defect class that got the exchanges hero replaced |
+| Pexels 38412413 as home hero (rework, 16 Nov) | Already `pamm-hero.jpg` — cannot reuse for the home hero; also has a legible "Binance" on the laptop screen at full-viewport size |
+| Pexels 6285077 / 7693745 / 6285130 as IB hero (rework, 16 Nov) | People-collaboration shots — all too bright (white screens/whiteboard fill the frame) for a dark hero; white headline would fight the background |
+| Pexels 5466280 as IB hero (rework, 16 Nov) | Portrait 1920×2880 — wrong geometry for a hero |
+| Pexels 5833758 as IB hero (rework, 16 Nov) | Man's head cut at the left edge in the source + bright office with white screens |
+| Pexels 26745679 as IB hero (rework, 16 Nov) | Too bright (white desk, bright ambient); phone shows a calculator app, not trading |
+| Pexels 38375328 as IB hero (rework, 16 Nov) | Same laptop + same Binance chart as the new home hero (38412415) — too samey across two heroes; also has a faint BINANCE watermark |
+| Pexels 16902140 as IB hero (rework, 16 Nov) | Legible Russian UI text ("Кредитная Карта", "10X плечо") — same foreign-language-UI defect class as 6770610 |
+| Pexels 38412419 / 38412420 (rework, 16 Nov) | NOT trading photos at all — 38412419 is Dutch windmills, 38412420 is a garden with a wooden swing (Rafael's non-trading work; neighbour IDs are not sequential per shoot). A crossed CDN batch first misread them as a monitor bank / desk scene — see the CDN lesson in the rework section. |
 | Pexels 3182784 as CRM problem image | Top-down table shot, no faces visible, people cropped at all edges |
 | Pexels 6285089 as CRM problem image | Faces fine, but the background screen shows colourful bars with readable "01–05" numerals (off-palette green/blue) |
 | Pexels 6918529 as CRM problem image | Left man is a headless torso — same defect class as the award photo |

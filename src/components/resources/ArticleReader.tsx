@@ -42,7 +42,7 @@ export default function ArticleReader({
         return (
           <article
             key={article.slug}
-            className="overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl"
+            className="group overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl"
           >
             <div
               className={
@@ -57,7 +57,7 @@ export default function ArticleReader({
                   height={935}
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : undefined}
-                  className={`h-full w-full object-cover ${featured ? "aspect-[16/10] lg:aspect-auto lg:min-h-[320px]" : "aspect-[16/10] sm:aspect-auto sm:min-h-[220px]"}`}
+                  className={`bx-img-zoom h-full w-full object-cover ${featured ? "aspect-[16/10] lg:aspect-auto lg:min-h-[320px]" : "aspect-[16/10] sm:aspect-auto sm:min-h-[220px]"}`}
                 />
               </div>
               <div className="flex flex-col p-6 sm:p-8">

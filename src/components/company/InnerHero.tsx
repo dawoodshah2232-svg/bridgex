@@ -21,7 +21,10 @@
  * under a HeroMedia-style scrim — flat navy tint plus a vertical
  * gradient, darkest at the bottom where the H1 sits. The photograph is
  * preloaded (fix, 14 Nov) so it is present on first paint, and the
- * scrim is light enough for it to show.
+ * scrim is light enough for it to show. Rework, 16 Nov: mirrors the
+ * HeroMedia "strong" treatment — desaturated + dimmed photograph,
+ * left-weighted horizontal gradient, subtle teal tint — so white
+ * headlines read cleanly over busy photos on all four dark heroes.
  */
 import type { ReactNode } from "react";
 import { asset } from "@/lib/paths";
@@ -66,10 +69,12 @@ export default function InnerHero({
               width={imageWidth ?? 1600}
               height={imageHeight ?? 900}
               fetchPriority="high"
-              className="bx-kenburns h-full w-full object-cover"
+              className="bx-kenburns h-full w-full object-cover saturate-[0.8] brightness-[0.92]"
             />
             <div className="absolute inset-0 bg-bx-navy-950/50" />
-            <div className="absolute inset-0 bg-gradient-to-b from-bx-navy-950/60 via-bx-navy-950/20 to-bx-navy-950/75" />
+            <div className="absolute inset-0 bg-gradient-to-b from-bx-navy-950/60 via-bx-navy-950/25 to-bx-navy-950/80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-bx-navy-950/40 via-bx-navy-950/15 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-bx-teal-700/15 via-transparent to-transparent" />
           </div>
         )}
         <Container className="relative pb-16 pt-[72px] sm:pb-20 sm:pt-[72px] lg:pb-24">

@@ -8,11 +8,9 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useRef, useState } from "react";
-import { asset } from "@/lib/paths";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import DemoLabel from "../ui/DemoLabel";
-import Reveal from "../ui/Reveal";
 import Icon from "../icons";
 
 type TabId = "operations" | "partners" | "journey";
@@ -299,22 +297,6 @@ export default function DemoPreview() {
         </div>
       </div>
 
-      <Reveal delay={0.1} className="mt-12 lg:mt-16">
-        <figure>
-          <img
-            src={asset("/images/trading-floor-desk.jpg")}
-            alt="Hands over a trading desk with laptops showing charts"
-            width={1920}
-            height={1280}
-            loading="lazy"
-            className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
-          />
-          <figcaption className="mt-3 text-sm text-bx-slate-500">
-            Operations, partners and the client journey — three views of the
-            same connected system, in the room where the work happens.
-          </figcaption>
-        </figure>
-      </Reveal>
     </Section>
   );
 }

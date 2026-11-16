@@ -95,9 +95,9 @@ export default function ArchitecturePage() {
           heading="Explore the architecture — layer by layer."
           copy="Select a layer to see what it holds, or a foundation capability to see what runs underneath everything. The diagram is the architecture: layers never talk to each other directly, and never keep private copies of data."
         />
-        <div className="mt-12">
+        <Reveal delay={0.1} className="mt-12">
           <ArchitectureExplorer />
-        </div>
+        </Reveal>
       </Section>
 
       {/* Why separation matters */}

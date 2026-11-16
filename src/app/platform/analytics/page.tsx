@@ -97,9 +97,9 @@ export default function AnalyticsPage() {
           heading="The same records, seen through four different jobs."
           copy="An executive, a finance lead, a compliance reviewer and a sales lead do not need the same dashboard — they need the same truth, arranged for their decisions. Select a role to see its view. Every figure is illustrative sample data."
         />
-        <div className="mt-12">
+        <Reveal delay={0.1} className="mt-12">
           <AnalyticsViews />
-        </div>
+        </Reveal>
       </Section>
 
       {/* Photographic interlude — the same truth, four jobs */}

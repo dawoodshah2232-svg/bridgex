@@ -75,7 +75,7 @@ function Tile({ cap }: { cap: Capability }) {
   return (
     <Link
       href={cap.href}
-      className="group relative flex h-full flex-col rounded-2xl border border-[#E5E7EB] bg-bx-white p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-20px_rgba(15,23,42,0.15)] sm:p-8"
+      className="bx-card-hover group relative flex h-full flex-col rounded-2xl border border-[#E5E7EB] bg-bx-white p-7 sm:p-8"
     >
       <span
         aria-hidden="true"
@@ -107,6 +107,7 @@ export default function CapabilityTiles() {
     <Section tone="mint" ariaLabel="Capabilities">
       <SectionIntro
         label="What BridgeX does"
+        glow
         heading={
           <>
             Seven capabilities.{" "}
@@ -130,7 +131,7 @@ export default function CapabilityTiles() {
         <Reveal className="h-full" delay={0.16}>
           <Link
             href="/platform"
-            className="group flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 text-bx-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-bx-navy-800 sm:p-8"
+            className="bx-card-hover-dark group flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 text-bx-white hover:bg-bx-navy-800 sm:p-8"
           >
             <span className="font-sans text-[28px] font-semibold leading-snug">
               See how they connect.

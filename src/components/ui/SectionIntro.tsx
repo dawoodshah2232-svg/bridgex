@@ -15,6 +15,7 @@ export default function SectionIntro({
   copy,
   dark = false,
   align = "left",
+  glow = false,
   className = "",
 }: {
   label: string;
@@ -22,11 +23,20 @@ export default function SectionIntro({
   copy?: string;
   dark?: boolean;
   align?: "left" | "center";
+  /** Soft drifting teal/cyan glow behind the heading — opt-in, for
+      key section headings only (one per screen at most). */
+  glow?: boolean;
   className?: string;
 }) {
   const alignCls = align === "center" ? "text-center mx-auto" : "text-left";
   return (
-    <Reveal className={`max-w-3xl ${alignCls} ${className}`}>
+    <Reveal className={`relative max-w-3xl ${alignCls} ${className}`}>
+      {glow && (
+        <span
+          aria-hidden="true"
+          className="bx-glow -left-16 -top-14 h-72 w-72"
+        />
+      )}
       <p
         className={`text-[13px] font-sans font-bold uppercase tracking-[0.22em] ${
           dark ? "text-bx-teal-400" : "text-bx-teal-700"

@@ -102,9 +102,9 @@ export default function FinancialOperationsPage() {
           heading="Five stages. One record, carried through all of them."
           copy="A client moves through the same record from first application to settled payout. Select a stage to see what happens there — and notice what never happens: re-keying, re-verifying, or starting over."
         />
-        <div className="mt-12">
+        <Reveal delay={0.1} className="mt-12">
           <OpsLifecycle />
-        </div>
+        </Reveal>
       </Section>
 
       {/* Wallets & payments */}

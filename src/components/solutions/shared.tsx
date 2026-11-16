@@ -182,8 +182,119 @@ export function ProblemSection({
 /* ------------------------------------------------------------------ */
 /* Capabilities — grouped feature breakdown (spec §7 inventory).       */
 /* Each group carries its icon in a teal-ring tile; the `icons` array  */
-/* maps by group index (IconName strings, resolved by <Icon>).         */
+/* maps by group index (IconName strings, resolved by <Icon>). Each    */
+/* ITEM heading carries a small relatable icon too, resolved by title  */
+/* through CAPABILITY_ITEM_ICONS below (unknown titles fall back to    */
+/* "checkCircle"). The map covers every capability item in             */
+/* src/content/solutions.ts — 80 titles across the 7 solution pages.   */
 /* ------------------------------------------------------------------ */
+
+/**
+ * Capability item title → icon. Keyed by the exact `title` string in
+ * src/content/solutions.ts `capabilityGroups` items (all 80 are unique,
+ * so the title is a safe key). Icons were picked from the item's copy,
+ * not just its title — e.g. "Deposits & withdrawals" is `exchanges`
+ * (two directions), "Four-eyes review" is `eye`, "Beneficial ownership"
+ * is `network` (mapping owners). Content files are never edited for
+ * icons; add a line here when a new capability item appears.
+ */
+const CAPABILITY_ITEM_ICONS: Record<string, IconName> = {
+  // Financial CRM — Leads & pipelines / Contact 360 / Control & insight
+  "Lead capture & pipelines": "funnel",
+  "Country & desk routing": "route",
+  "Duplicate management": "layers",
+  "Ownership & reassignment": "users",
+  "Individual & corporate entities": "users",
+  "Activities, notes & tasks": "calendar",
+  "Documents & account links": "document",
+  "Support cases": "headset",
+  "Custom fields & objects": "sliders",
+  "KYC & suitability flags": "shield",
+  "Role- & field-level access": "lock",
+  "Audit history & reporting": "audit",
+  // Payment orchestration — Routing / Resilience / Money flows & control
+  "Provider-agnostic routing": "route",
+  "Method categories": "wallet",
+  "Priority & weighted routing": "sliders",
+  Restrictions: "lock",
+  "Cascading retry": "refresh",
+  "Payment status trace": "eye",
+  "Gateway failover": "network",
+  "Idempotent processing": "checkCircle",
+  "Deposits & withdrawals": "exchanges",
+  "Three-way reconciliation": "audit",
+  "Exception queue": "alert",
+  "Reporting & exports": "report",
+  // PAMM & copy trading — Discovery & subscription / Fees & allocation /
+  // Execution & oversight
+  "Strategy discovery": "search",
+  "Investor subscriptions": "users",
+  "Performance dashboard": "chart",
+  "Copy-mode risk settings": "gauge",
+  "High-water-mark fees": "pamm",
+  "Performance & management fees": "wallet",
+  "Investor allocation": "assetFund",
+  "Unsubscribe & settlement": "checkCircle",
+  "Position synchronisation": "refresh",
+  "Rounding & drift monitoring": "eye",
+  "Netting vs hedging": "exchanges",
+  "Audit & transparency": "audit",
+  // IB incentives — Partner lifecycle / Programs & models /
+  // Ledger, payouts & visibility
+  "Registration, KYC & approval": "onboarding",
+  "Unique referral links": "link",
+  "Attribution rules": "route",
+  "Multi-tier hierarchies": "layers",
+  "Rebate programs": "wallet",
+  "CPA, volume & performance models": "chart",
+  "Campaign rules": "calendar",
+  "Commissions on open or close": "clock",
+  "Commission ledger": "document",
+  Clawbacks: "refresh",
+  "Payout requests & statements": "send",
+  "Partner dashboards & audit": "chart",
+  // TradeOps — Servers & scope / Changes / Control & evidence
+  "Server connections": "network",
+  "Accounts, groups & symbols": "filter",
+  "Funding requests": "wallet",
+  "Batch updates": "workflow",
+  "Leverage changes": "sliders",
+  "Swap, session & holiday schedules": "calendar",
+  "Validation & dry-run": "checkCircle",
+  "Four-eyes review": "eye",
+  "Rollback & audit logs": "refresh",
+  // Digital onboarding — Journeys / Verification / Completion
+  "Individual, corporate & professional": "users",
+  "Adaptive form steps": "workflow",
+  "Country & product rules": "globe",
+  "Document upload": "document",
+  "ID verification adapter": "onboarding",
+  "AML screening": "shield",
+  "Beneficial ownership": "network",
+  "Suitability assessment": "gauge",
+  "Email & phone verification": "mail",
+  "Approval queues & cases": "workflow",
+  "Account-creation handoff": "send",
+  // Trading contests — Setup & registration / Live competition /
+  // Fairness & payout
+  "Contest creation": "plus",
+  "Profit %, volume, streak & risk formats": "chart",
+  "Eligibility & registration": "checkCircle",
+  Countdown: "clock",
+  "Live ranking UI": "gauge",
+  Leaderboard: "contests",
+  "Branded microsites": "experience",
+  "Partner-linked campaigns": "link",
+  "Suspicious-activity flags": "alert",
+  "Fairness review": "eye",
+  "Prize tiers & approved payouts": "wallet",
+  Reporting: "report",
+};
+
+/** Resolve a capability item title to its icon; unknown titles get a check. */
+function capabilityItemIcon(title: string): IconName {
+  return CAPABILITY_ITEM_ICONS[title] ?? "checkCircle";
+}
 
 export function CapabilityGroups({
   label,
@@ -221,7 +332,12 @@ export function CapabilityGroups({
               <ul className="mt-6 space-y-5">
                 {group.items.map((item) => (
                   <li key={item.title}>
-                    <p className="font-sans text-[15px] font-bold text-bx-navy-900">
+                    <p className="flex items-center gap-2.5 font-sans text-[15px] font-bold text-bx-navy-900">
+                      <Icon
+                        name={capabilityItemIcon(item.title)}
+                        size={18}
+                        className="shrink-0 text-bx-teal-600"
+                      />
                       {item.title}
                     </p>
                     <p className="mt-1 text-sm leading-relaxed text-bx-slate-500">

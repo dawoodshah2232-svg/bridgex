@@ -16,6 +16,7 @@ import {
   type NavGroup,
 } from "@/content/navigation";
 import Icon from "../icons";
+import { menuIconForRoute } from "./menuIcons";
 
 export default function MegaMenu({
   group,
@@ -73,18 +74,25 @@ export default function MegaMenu({
                 key={route.href}
                 href={route.href}
                 onClick={onNavigate}
-                className="group rounded-sm px-3 py-3 transition-colors duration-150 hover:bg-bx-mint-50"
+                className="group flex items-start gap-2.5 rounded-sm px-3 py-3 transition-colors duration-150 hover:bg-bx-mint-50"
               >
-                <span className="flex items-center gap-2 font-sans text-[15px] font-bold text-bx-navy-900 group-hover:text-bx-teal-700">
-                  {route.label}
-                  {route.status === "roadmap" && (
-                    <span className="border border-bx-teal-600/60 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-bx-teal-700">
-                      In development
-                    </span>
-                  )}
-                </span>
-                <span className="mt-0.5 block text-sm leading-snug text-bx-slate-500">
-                  {route.description}
+                <Icon
+                  name={menuIconForRoute(route.href)}
+                  size={18}
+                  className="mt-0.5 shrink-0 text-bx-teal-600"
+                />
+                <span className="min-w-0">
+                  <span className="flex items-center gap-2 font-sans text-[15px] font-bold text-bx-navy-900 group-hover:text-bx-teal-700">
+                    {route.label}
+                    {route.status === "roadmap" && (
+                      <span className="border border-bx-teal-600/60 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-bx-teal-700">
+                        In development
+                      </span>
+                    )}
+                  </span>
+                  <span className="mt-0.5 block text-sm leading-snug text-bx-slate-500">
+                    {route.description}
+                  </span>
                 </span>
               </Link>
             ))}

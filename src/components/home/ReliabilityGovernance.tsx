@@ -70,7 +70,9 @@ export default function ReliabilityGovernance() {
       <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2 lg:mt-16">
         {PRINCIPLES.map((p, i) => (
           <Reveal key={p.title} delay={0.07 * i} className="h-full">
-            <div className="flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 sm:p-8">
+            {/* Hairline grid: tint, not lift — a translate would
+                break the grid lines. */}
+            <div className="bx-card-tint-dark group flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 sm:p-8">
               {/* Teal-ring tile (fix, 14 Nov): the bare 30px glyphs read
                   as small marks; the FeatureIcon tile gives each
                   principle a visible anchor. */}

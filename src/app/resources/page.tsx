@@ -87,7 +87,7 @@ export default function ResourcesPage() {
             <Reveal key={section.href} delay={(i % 3) * 0.08} className="h-full">
               <Link
                 href={section.href}
-                className="group flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl transition-colors duration-200 hover:border-bx-teal-500/70"
+                className="bx-card-hover group flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl"
               >
                 <div className="overflow-hidden">
                   <img
@@ -168,7 +168,7 @@ export default function ResourcesPage() {
             <Reveal key={article.slug} delay={i * 0.08} className="h-full">
               <Link
                 href="/resources/blog"
-                className="group flex h-full flex-col border border-bx-teal-500/30 bg-bx-white rounded-2xl transition-colors duration-200 hover:border-bx-teal-500/70"
+                className="bx-card-hover group flex h-full flex-col border border-bx-teal-500/30 bg-bx-white rounded-2xl"
               >
                 <div className="overflow-hidden">
                   <img
@@ -212,9 +212,9 @@ export default function ResourcesPage() {
             heading="About the Resource Hub"
             align="center"
           />
-          <div className="mt-10">
+          <Reveal className="mt-10">
             <FaqAccordion items={HUB_FAQS} />
-          </div>
+          </Reveal>
         </div>
       </Section>
 

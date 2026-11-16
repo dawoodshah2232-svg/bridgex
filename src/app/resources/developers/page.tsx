@@ -106,7 +106,7 @@ export default function DevelopersPage() {
         <ol className="mt-12 grid gap-5 md:grid-cols-3">
           {START_STEPS.map((s, i) => (
             <Reveal key={s.step} delay={i * 0.08} className="h-full">
-              <li className="flex h-full flex-col border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7">
+              <li className="bx-card-hover group flex h-full flex-col border border-bx-teal-500/30 bg-bx-white rounded-2xl p-7">
                 <span className="font-sans text-5xl font-semibold italic text-bx-teal-600">
                   {s.step}
                 </span>
@@ -432,9 +432,9 @@ export default function DevelopersPage() {
             heading="About the API"
             align="center"
           />
-          <div className="mt-10">
+          <Reveal className="mt-10">
             <FaqAccordion items={DEVELOPER_FAQS} />
-          </div>
+          </Reveal>
         </div>
       </Section>
 

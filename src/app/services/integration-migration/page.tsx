@@ -139,7 +139,7 @@ export default function IntegrationMigrationPage() {
             },
           ].map((card, i) => (
             <Reveal key={card.title} delay={i * 0.07}>
-              <article className="h-full border border-bx-navy-900/15 bg-bx-white p-7">
+              <article className="bx-card-hover group h-full border border-bx-navy-900/15 bg-bx-white p-7">
                 <FeatureIcon icon={card.icon} size="sm" className="items-start" />
                 <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                   {card.title}

@@ -157,7 +157,7 @@ export default function PlatformOverview() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PAINS.map((pain, i) => (
             <Reveal key={pain.title} delay={i * 0.08}>
-              <div className="h-full border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6">
+              <div className="bx-card-hover group h-full border border-bx-teal-500/25 bg-bx-white rounded-2xl p-6">
                 <span className="font-sans text-sm font-bold tracking-[0.18em] text-bx-teal-700">
                   0{i + 1}
                 </span>
@@ -178,9 +178,9 @@ export default function PlatformOverview() {
           heading="Four layers, each with its own job."
           copy="Select a layer to see what it does, what it holds, and where it leads. The layers are separated on purpose — so each can change without breaking the others — and connected through the foundation, so nothing is ever copied between them."
         />
-        <div className="mt-12">
+        <Reveal delay={0.1} className="mt-12">
           <LayerExplorer />
-        </div>
+        </Reveal>
       </Section>
 
       {/* Shared foundation — dark */}
@@ -198,9 +198,10 @@ export default function PlatformOverview() {
           }
           copy="Six capabilities run under everything in BridgeX. They are why a change made in one layer is visible to the others immediately — and why a permission set once applies everywhere."
         />
-        <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal delay={0.1} className="mt-12">
+          <div className="grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2 lg:grid-cols-3">
           {FOUNDATION_ITEMS.map((item) => (
-            <div key={item.title} className="bg-bx-navy-900 rounded-2xl p-6 sm:p-7">
+            <div key={item.title} className="bx-card-tint-dark group bg-bx-navy-900 rounded-2xl p-6 sm:p-7">
               <Icon name={item.icon} size={28} className="text-bx-teal-400" />
               <h3 className="mt-4 font-sans text-lg font-extrabold leading-tight text-bx-white">
                 {item.title}
@@ -210,7 +211,8 @@ export default function PlatformOverview() {
               </p>
             </div>
           ))}
-        </div>
+          </div>
+        </Reveal>
         <Reveal delay={0.1} className="mt-10">
           <Link
             href="/platform/architecture"
@@ -284,12 +286,12 @@ export default function PlatformOverview() {
           copy="Each solution is a capability that runs on the four layers — adopt one, or adopt several, and they share the same clients, the same permissions and the same audit trail."
         />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SOLUTIONS.map((solution) => (
-            <Link
-              key={solution.href}
-              href={solution.href}
-              className="group flex items-start gap-4 border border-bx-teal-500/25 bg-bx-white rounded-2xl p-5 transition-colors duration-200 hover:border-bx-teal-500/60 hover:bg-bx-mint-50"
-            >
+          {SOLUTIONS.map((solution, i) => (
+            <Reveal key={solution.href} delay={(i % 3) * 0.05} className="h-full">
+              <Link
+                href={solution.href}
+                className="bx-card-hover group flex h-full items-start gap-4 border border-bx-teal-500/25 bg-bx-white rounded-2xl p-5 hover:bg-bx-mint-50"
+              >
               <Icon name={solutionIcon(solution.slug)} size={28} className="mt-0.5 shrink-0 text-bx-teal-600" />
               <span>
                 <span className="flex items-center gap-2 font-sans text-base font-extrabold leading-tight text-bx-navy-900">
@@ -304,12 +306,14 @@ export default function PlatformOverview() {
                   {solution.text}
                 </span>
               </span>
-            </Link>
+              </Link>
+            </Reveal>
           ))}
-          <Link
-            href="/platform/no-code-studio"
-            className="group flex items-start gap-4 border border-bx-navy-900 bg-bx-navy-900 rounded-2xl p-5 transition-colors duration-200 hover:bg-bx-navy-800"
-          >
+          <Reveal delay={0.15} className="h-full">
+            <Link
+              href="/platform/no-code-studio"
+              className="bx-card-hover-dark group flex h-full items-start gap-4 border border-bx-navy-900 bg-bx-navy-900 rounded-2xl p-5 hover:bg-bx-navy-800"
+            >
             <Icon name="sliders" size={28} className="mt-0.5 shrink-0 text-bx-teal-400" />
             <span>
               <span className="flex items-center gap-2 font-sans text-base font-extrabold leading-tight text-bx-white">
@@ -324,8 +328,9 @@ export default function PlatformOverview() {
                 No-Code Studio — shape objects, forms, workflows and journeys
                 without code.
               </span>
-            </span>
-          </Link>
+              </span>
+            </Link>
+          </Reveal>
         </div>
         <p className="mt-8 text-sm text-bx-slate-500">
           Layer pages:{" "}

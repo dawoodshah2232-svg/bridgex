@@ -6,7 +6,6 @@
  * below — the city the business operates in.
  */
 import Link from "next/link";
-import { asset } from "@/lib/paths";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import Reveal from "../ui/Reveal";
@@ -101,22 +100,6 @@ export default function ValueIntro() {
         </div>
       </div>
 
-      <Reveal delay={0.1} className="mt-14 lg:mt-20">
-        <figure>
-          <img
-            src={asset("/images/hero-bridge-night.jpg")}
-            alt="Close-up of a monitor showing a rising candlestick chart"
-            width={1600}
-            height={1068}
-            loading="lazy"
-            className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[440px]"
-          />
-          <figcaption className="mt-3 text-sm text-bx-slate-500">
-            The markets never sleep in one timezone. Neither should your
-            operations.
-          </figcaption>
-        </figure>
-      </Reveal>
     </Section>
   );
 }

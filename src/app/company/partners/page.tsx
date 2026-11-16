@@ -58,7 +58,7 @@ export default function PartnersPage() {
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {PARTNER_MODELS.map((model, i) => (
             <Reveal key={model.title} delay={i * 0.07}>
-              <article className="flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7">
+              <article className="bx-card-hover group flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7">
                 <FeatureIcon icon={model.icon} size="sm" className="items-start" />
                 <h3 className="mt-5 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                   {model.title}

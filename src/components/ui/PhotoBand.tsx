@@ -60,7 +60,7 @@ export default function PhotoBand({
           width={imageWidth}
           height={imageHeight}
           loading="lazy"
-          className="h-full w-full object-cover"
+          className="bx-kenburns h-full w-full object-cover"
         />
         {/* Navy scrim: darker at the edges, readable white text.
             Light enough for the photograph to show (fix, 14 Nov) — the

@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import Icon, { type IconName } from "@/components/icons";
 import { asset } from "@/lib/paths";
+import Reveal from "@/components/ui/Reveal";
 import type { HubItem, ResourceCategory } from "@/content/resources";
 
 const CATEGORIES: ("All" | ResourceCategory)[] = [
@@ -132,12 +133,13 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
         </div>
       ) : (
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {results.map((item) => (
+          {results.map((item, i) => (
             <li key={item.id} className="h-full">
-              <Link
-                href={item.href}
-                className="group flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl transition-colors duration-200 hover:border-bx-teal-500/70 hover:bg-bx-mint-50/60"
-              >
+              <Reveal delay={(i % 3) * 0.05} className="h-full">
+                <Link
+                  href={item.href}
+                  className="bx-card-hover group flex h-full flex-col overflow-hidden border border-bx-teal-500/30 bg-bx-white rounded-2xl hover:bg-bx-mint-50/60"
+                >
                 <div className="overflow-hidden">
                   <img
                     src={asset(item.image)}
@@ -174,7 +176,8 @@ export default function HubExplorer({ items }: { items: HubItem[] }) {
                     />
                   </span>
                 </div>
-              </Link>
+                </Link>
+              </Reveal>
             </li>
           ))}
         </ul>

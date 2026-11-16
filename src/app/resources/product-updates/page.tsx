@@ -59,7 +59,7 @@ export default function ProductUpdatesPage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {UPDATE_STATUS_DEFINITIONS.map((def, i) => (
             <Reveal key={def.status} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-6 text-center">
+              <div className="bx-card-hover group flex h-full flex-col items-center border border-bx-teal-500/30 bg-bx-white rounded-2xl p-6 text-center">
                 <FeatureIcon icon={def.icon} size="md" />
                 <div className="mt-5">
                   <StatusBadge status={def.status} />
@@ -158,9 +158,9 @@ export default function ProductUpdatesPage() {
             heading="About product updates"
             align="center"
           />
-          <div className="mt-10">
+          <Reveal className="mt-10">
             <FaqAccordion items={UPDATES_FAQS} />
-          </div>
+          </Reveal>
         </div>
       </Section>
 

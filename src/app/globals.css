@@ -143,6 +143,148 @@ body {
   will-change: transform;
 }
 
+/* ============================================================
+   Visual effects — shared hover / glow utilities (Nov 2026).
+   Fewer, better: one lift, one tint, one zoom, one glow, one
+   shine — applied at card/button components, never per-page
+   one-offs. All hover states live under (hover: hover) so
+   touch devices never see a stuck hover; all motion is
+   transform/opacity only. The reduced-motion block below
+   neutralises the glow drift; hover transitions collapse to
+   instant via the global duration cap.
+   ============================================================ */
+
+/* Slow-drifting teal/cyan gradient glow, behind key headings and
+   CTAs. Soft by design — a corporate fintech site, not a toy.
+   Position with left/top only: the animation owns `transform`. */
+@keyframes bx-glow-drift {
+  from {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(6%, 5%, 0) scale(1.12);
+  }
+}
+.bx-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(
+    closest-side,
+    rgba(45, 212, 191, 0.28),
+    rgba(6, 182, 212, 0.14) 55%,
+    transparent 75%
+  );
+  filter: blur(28px);
+  animation: bx-glow-drift 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+/* White/cyan variant for the teal CTA band. */
+.bx-glow--light {
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 255, 255, 0.32),
+    rgba(94, 234, 212, 0.16) 55%,
+    transparent 75%
+  );
+}
+
+/* Card hover life — free-standing cards: lift 4px + soft shadow +
+   teal ring. Self-contained transition; replace any Tailwind
+   hover:-translate-y / hover:shadow utilities on the same card. */
+.bx-card-hover {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+/* Navy-surface variant (dark cards, dark section rows). */
+.bx-card-hover-dark {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+/* Hairline-grid cards (gap-px grids): no lift — a translate would
+   break the grid lines — just a tint + inset teal ring. */
+.bx-card-tint {
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.bx-card-tint-dark {
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+@media (hover: hover) {
+  .bx-card-hover:hover {
+    transform: translateY(-4px);
+    border-color: rgba(20, 184, 166, 0.6);
+    box-shadow:
+      0 0 0 1px rgba(20, 184, 166, 0.35),
+      0 20px 40px -20px rgba(15, 23, 42, 0.18);
+  }
+  .bx-card-hover-dark:hover {
+    transform: translateY(-4px);
+    border-color: rgba(45, 212, 191, 0.55);
+    box-shadow:
+      0 0 0 1px rgba(45, 212, 191, 0.35),
+      0 24px 48px -20px rgba(0, 0, 0, 0.55);
+  }
+  .bx-card-tint:hover {
+    background-color: var(--color-bx-mint-50);
+    box-shadow: inset 0 0 0 1px rgba(20, 184, 166, 0.35);
+  }
+  .bx-card-tint-dark:hover {
+    background-color: rgba(30, 41, 59, 0.6);
+    box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.4);
+  }
+}
+
+/* Image hover — gentle 1.03 zoom inside the card's overflow-hidden
+   wrapper. Put on the <img>; the card must carry `group`. */
+.bx-img-zoom {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .group:hover .bx-img-zoom {
+    transform: scale(1.03);
+  }
+}
+
+/* Primary-button shine sweep + teal glow pulse on hover.
+   Transform-only (::after translates across); press feedback
+   (scale 0.97) stays in Button.tsx. */
+.bx-btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.bx-btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 60%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .bx-btn-shine:hover::after {
+    transform: translateX(130%);
+  }
+  .bx-btn-glow:hover {
+    box-shadow: 0 14px 32px -10px rgba(20, 184, 166, 0.75);
+  }
+}
+
 /* Respect reduced motion globally; components honour it too. */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -150,6 +292,10 @@ body {
   }
   /* Ken Burns drift off entirely — the hero image sits still. */
   .bx-kenburns {
+    animation: none;
+  }
+  /* Gradient glow sits still too. */
+  .bx-glow {
     animation: none;
   }
   *,

@@ -1,9 +1,10 @@
 /**
  * H01 — Cinematic hero.
  *
- * Real photography (illuminated cable-stayed bridge at night), navy
- * vignette scrim for headline contrast, spec-required eyebrow, H1, support
- * copy, two CTAs, scroll cue, and an animated teal bridge-line motif.
+ * Real photography (dark trading desk: laptop with candlestick chart,
+ * blurred market-data monitors behind), navy vignette scrim for
+ * headline contrast, spec-required eyebrow, H1, support copy, two
+ * CTAs, scroll cue, and an animated teal bridge-line motif.
  * A compact operations preview (desktop only) shows the product in miniature
  * — clearly labelled as illustrative demo data.
  *
@@ -135,9 +136,16 @@ export default function Hero() {
           light enough for the trading photograph to show (fix, 14 Nov:
           the old 95/85/65 gradient left the left two-thirds almost
           black; final polish the same day: 80/60/35 → 65/45/25, bottom
-          gradient 100% → 85%). Re-verify headline contrast whenever
-          the hero photograph changes — the old 12.5:1 / 5.4:1 figures
-          were computed against the previous bridge photo. */}
+          gradient 100% → 85%). Rework, 16 Nov: the hero photograph is
+          now a dark laptop + blurred trading monitors (Pexels 38412415,
+          BINANCE wordmark blurred out) — desaturated + dimmed like the
+          inner heroes, with a subtle teal tint from the bottom-left.
+          White H1 contrast over the treated hero is 16.6:1 mean /
+          6.3:1 at the brightest pixel in the H1 zone (PIL-verified,
+          16 Nov, desktop + mobile, incl. Ken Burns drift end-state).
+          Re-verify headline contrast whenever the hero photograph
+          changes — the old 12.5:1 / 5.4:1 figures were computed
+          against the previous bridge photo. */}
       <div className="absolute inset-0" aria-hidden="true">
         {/* fetchPriority="high" makes React 19 emit a preload link for
             this image during SSR — no manual <link> needed. */}
@@ -148,10 +156,11 @@ export default function Hero() {
           height={1280}
           fetchPriority="high"
           style={{ animationPlayState: inView ? "running" : "paused" }}
-          className="h-full w-full object-cover object-[70%_center] animate-bx-drift"
+          className="h-full w-full object-cover object-[70%_center] saturate-[0.8] brightness-[0.92] animate-bx-drift"
         />
-        <div className="absolute inset-0 bg-bx-navy-950/10" />
+        <div className="absolute inset-0 bg-bx-navy-950/15" />
         <div className="absolute inset-0 bg-gradient-to-r from-bx-navy-950/65 via-bx-navy-950/45 to-bx-navy-950/25" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-bx-teal-700/15 via-transparent to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bx-navy-950/85 to-transparent" />
       </div>
 

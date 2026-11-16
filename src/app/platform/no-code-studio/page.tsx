@@ -97,9 +97,9 @@ export default function NoCodeStudioPage() {
         <div className="mt-6">
           <DemoLabel text="Simulated editing — demo preview" />
         </div>
-        <div className="mt-8">
+        <Reveal delay={0.1} className="mt-8">
           <StudioBuilderTabs />
-        </div>
+        </Reveal>
       </Section>
 
       {/* Why no-code matters here */}

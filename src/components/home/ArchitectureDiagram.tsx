@@ -61,6 +61,7 @@ export default function ArchitectureDiagram() {
         <div className="max-w-3xl">
           <SectionIntro
             dark
+            glow
             label="Platform architecture"
             heading={
               <>
@@ -102,7 +103,7 @@ export default function ArchitectureDiagram() {
             <Reveal delay={0.08 * i}>
               <Link
                 href={layer.href}
-                className="group flex gap-5 border border-bx-teal-500/25 bg-bx-navy-950/60 p-6 transition-colors duration-200 hover:border-bx-teal-500/70 hover:bg-bx-navy-800/80 sm:gap-7 sm:p-7"
+                className="bx-card-hover-dark group flex gap-5 border border-bx-teal-500/25 bg-bx-navy-950/60 p-6 hover:bg-bx-navy-800/80 sm:gap-7 sm:p-7"
               >
                 <span
                   aria-hidden="true"

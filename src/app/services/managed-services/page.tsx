@@ -59,7 +59,7 @@ export default function ManagedServicesPage() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {MANAGED_PILLARS.map((pillar, i) => (
             <Reveal key={pillar.title} delay={(i % 2) * 0.07}>
-              <article className="flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7 sm:p-8">
+              <article className="bx-card-hover group flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7 sm:p-8">
                 <div className="flex items-center gap-5">
                   <FeatureIcon icon={pillar.icon} size="sm" className="shrink-0" />
                   <h3 className="font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900 sm:text-2xl">
@@ -125,7 +125,7 @@ export default function ManagedServicesPage() {
             { step: "Close & learn", text: "Confirmed with you, then recorded so the next time is faster." },
           ].map((item, i) => (
             <Reveal key={item.step} delay={i * 0.07}>
-              <li className="h-full border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
+              <li className="bx-card-hover-dark group h-full border border-bx-teal-500/30 bg-bx-navy-800/60 p-6">
                 <span className="font-sans text-3xl font-semibold text-bx-teal-400">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -170,7 +170,7 @@ export default function ManagedServicesPage() {
           <div className="space-y-4">
             {MANAGED_REPORTING.map((report, i) => (
               <Reveal key={report.title} delay={i * 0.06}>
-                <article className="border border-bx-navy-900/15 bg-bx-white p-6 sm:p-7">
+                <article className="bx-card-hover group border border-bx-navy-900/15 bg-bx-white p-6 sm:p-7">
                   <h3 className="font-sans text-lg font-extrabold text-bx-navy-900">
                     {report.title}
                   </h3>

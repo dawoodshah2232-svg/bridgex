@@ -111,9 +111,9 @@ export default function IntegrationsPage() {
           heading="Five categories. One adapter model."
           copy="Select a category to see what its adapters handle and what a connection requires. We describe categories, not providers — because the honest unit of an integration is the contract it works to, not the logo on the slide."
         />
-        <div className="mt-12">
+        <Reveal delay={0.1} className="mt-12">
           <IntegrationExplorer />
-        </div>
+        </Reveal>
       </Section>
 
       {/* Adapter architecture — diagram in code */}

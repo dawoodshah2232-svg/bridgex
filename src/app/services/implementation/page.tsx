@@ -167,7 +167,7 @@ export default function ImplementationPage() {
               },
             ].map((item, i) => (
               <Reveal key={item.title} delay={(i % 2) * 0.07}>
-                <li className="h-full border border-bx-navy-900/15 bg-bx-white p-6">
+                <li className="bx-card-hover group h-full border border-bx-navy-900/15 bg-bx-white p-6">
                   <span className="text-bx-teal-600">
                     <Icon name={item.icon} size={28} />
                   </span>
