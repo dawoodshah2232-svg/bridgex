@@ -98,7 +98,7 @@ export default function PartnersPage() {
             </em>
           </>
         }
-        copy="A partnership starts with a conversation about what each side brings. If there is a fit, the terms are agreed per relationship and put in writing — no tier tables, no published commission rates, because the right terms depend on what each side brings."
+        copy="A partnership starts with a conversation about what each side brings. The published terms are on the table from the start — white-label partners earn 30% of every new client account activated, for the lifetime of the account — and the rest of the arrangement is agreed per relationship and put in writing."
         tone="white"
         imageWidth={1600}
         imageHeight={1068}
@@ -143,9 +143,10 @@ export default function PartnersPage() {
                 Partner application
               </h2>
               <p className="mt-2 font-body text-base leading-relaxed text-bx-slate-500">
-                We do not publish tier tables or commission rates — the right
-                terms depend on what each side brings, and we agree them
-                together.
+                The white-label partner term is published — 30% of every new
+                client account activated, for the lifetime of the account —
+                and the rest of the arrangement is agreed together, per
+                relationship, in writing.
               </p>
               <div className="mt-8">
                 <PartnerForm />
