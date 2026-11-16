@@ -3,7 +3,6 @@
  * Four principles in a grid, safe configuration as a full-width strip,
  * and an explicit honesty line (no certifications claimed).
  */
-import { asset } from "@/lib/paths";
 import { Section } from "../ui/Container";
 import SectionIntro from "../ui/SectionIntro";
 import Reveal from "../ui/Reveal";
@@ -49,23 +48,6 @@ export default function ReliabilityGovernance() {
         }
         copy="Financial infrastructure is judged by what it refuses to let go wrong. These principles shape every BridgeX workflow — they are design decisions, stated plainly."
       />
-
-      <Reveal delay={0.1} className="mt-12 lg:mt-16">
-        <figure>
-          <img
-            src={asset("/images/portrait-window.jpg")}
-            alt="Close-up of a monitor showing a candlestick chart with volume bars"
-            width={1600}
-            height={1068}
-            loading="lazy"
-            className="h-[240px] w-full object-cover sm:h-[300px] lg:h-[360px]"
-          />
-          <figcaption className="mt-3 text-sm text-bx-slate-300/70">
-            Trust is a daily practice: permissions, approvals and audit on
-            every workflow — not a policy document on a shelf.
-          </figcaption>
-        </figure>
-      </Reveal>
 
       <div className="mt-12 grid gap-px border border-bx-teal-500/25 bg-bx-teal-500/25 sm:grid-cols-2 lg:mt-16">
         {PRINCIPLES.map((p, i) => (

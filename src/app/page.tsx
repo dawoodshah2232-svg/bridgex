@@ -47,8 +47,8 @@ export default function Home() {
       <ReliabilityGovernance />
       <ImplementationMethod />
       <PhotoBand
-        image="/images/band-skyline-singapore.jpg"
-        alt="Clasped hands at a desk with a laptop showing trading charts and a calculator"
+        image="/images/band-bridge-london.jpg"
+        alt="Hand pointing at candlestick charts across dark trading monitors"
         eyebrow="Keep improving"
         heading={
           <>
@@ -61,7 +61,7 @@ export default function Home() {
         copy="Launch is not the end of the work. We review what the data says and tune the workflows — onboarding, routing, incentives — so the platform grows with the business."
         height="sm"
         imageWidth={1600}
-        imageHeight={1148}
+        imageHeight={900}
       />
       <Insights />
       <CtaBand />
