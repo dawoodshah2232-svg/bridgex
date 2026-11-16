@@ -7,7 +7,7 @@ export const multiAssetBrokers: IndustryContent = {
   icon: "brokers",
   metaTitle: "Multi-Asset Brokers",
   metaDescription:
-    "BridgeX for multi-asset brokers: trader lifecycle, MT4/MT5 operations, client area, partner commissions, deposits and risk — in one connected view.",
+    "BridgeX for multi-asset brokers: trader lifecycle, platform operations (MT4, MT5, DXTrade, Match Trader, TradeLocker, Vertex, cTrader), client area, partner commissions, deposits and risk — in one connected view.",
   eyebrow: "Industries · Multi-Asset Brokers",
   heroBefore: "Run the whole ",
   heroAccent: "trader lifecycle",
@@ -168,13 +168,13 @@ export const multiAssetBrokers: IndustryContent = {
       },
     ],
     integrationNote:
-      "Trading-platform connections are delivered as adapters scoped during implementation — MT4/MT5 operations are designed around authorised Manager API access and broker approval. Provider availability is confirmed per engagement; BridgeX does not claim a live connection that has not been tested.",
+      "Trading-platform connections are delivered as adapters scoped during implementation — platform operations (MT4, MT5, cTrader and Vertex manager access; DXTrade, Match Trader and TradeLocker connections) are designed around authorised Manager API access and broker approval. Provider availability is confirmed per engagement; BridgeX does not claim a live connection that has not been tested.",
   },
   faqs: [
     {
       question: "Does BridgeX replace our trading platform?",
       answer:
-        "No. BridgeX sits alongside your trading servers — MT4/MT5 or others — and connects onboarding, CRM, payments and partners around them. Trade execution stays on your platform; the operations around it run in BridgeX.",
+        "No. BridgeX sits alongside your trading servers — MT4, MT5, DXTrade, Match Trader, TradeLocker, Vertex or cTrader — and connects onboarding, CRM, payments and partners around them. Trade execution stays on your platform; the operations around it run in BridgeX.",
     },
     {
       question: "Can we keep our existing payment providers?",

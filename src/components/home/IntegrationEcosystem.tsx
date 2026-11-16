@@ -1,8 +1,11 @@
 /**
- * H08 — Integration ecosystem: category badges ONLY. No provider logos,
- * no provider names — BridgeX claims no integration until it is built,
- * tested and signed off. Five category cards in a hairline grid plus a
- * navy "Talk to an expert" card, then the honest note.
+ * H08 — Integration ecosystem: category cards plus the published
+ * trading-platform list. Trading platform names (MT4, MT5, DXTrade,
+ * Match Trader, TradeLocker, Vertex, cTrader) are published on
+ * bridgexapps.com (verified 16 Nov 2026) and may be named; every other
+ * provider stays unnamed until its adapter is built, tested and signed
+ * off. Five category cards in a hairline grid plus a navy "Talk to an
+ * expert" card, then the honest note.
  *
  * Card grid (fix, 14 Nov): the old five-row text list read as a
  * document — the categories now carry FeatureIcon tiles in a visual
@@ -20,7 +23,7 @@ const CATEGORIES: { name: string; icon: IconName; text: string }[] = [
   {
     name: "Trading platforms",
     icon: "brokers",
-    text: "Adapters for the trading platforms your clients use — accounts, groups, symbols and trade feeds, connected to the CRM instead of living beside it.",
+    text: "MT4, MT5, DXTrade, Match Trader, TradeLocker, Vertex and cTrader — accounts, groups, symbols and trade feeds, connected to the CRM instead of living beside it.",
   },
   {
     name: "Payment providers",
@@ -135,9 +138,11 @@ export default function IntegrationEcosystem() {
             <strong className="font-sans font-bold text-bx-teal-700">
               An honest note on integrations:{" "}
             </strong>
-            adapters are scoped per engagement. BridgeX claims no integration
-            with any named provider until it is built, tested and signed off
-            with that provider — and every integration page on this site says
+            the trading platforms above are the published connection list
+            (bridgexapps.com, November 2026). Every other adapter is scoped
+            per engagement: BridgeX claims no integration with any other
+            named provider until it is built, tested and signed off with
+            that provider — and every integration page on this site says
             exactly what is live, what is in sandbox, and what is planned.
           </p>
         </Reveal>

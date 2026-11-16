@@ -116,7 +116,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroHeadline: "Every client relationship,",
     heroAccent: "in one clear view.",
     heroIntro:
-      "BridgeX Financial CRM keeps leads, contacts, accounts, conversations and cases in one place — so sales, support and compliance stop working from different versions of the truth.",
+      "BridgeX Financial CRM keeps leads, contacts, accounts, conversations and cases in one place — so sales, support and compliance stop working from different versions of the truth. In the BridgeX suite, this is TradeX — the trading CRM.",
     heroImage: { src: "/images/solutions-crm-hero.jpg", alt: "Dark trading monitors showing candlestick charts with trend lines", width: 1920, height: 1282, objectPosition: "50% 0%" },
     darkHero: true,
     problemLabel: "The problem",
@@ -386,7 +386,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroHeadline: "Strategies investors can follow,",
     heroAccent: "with the maths visible.",
     heroIntro:
-      "BridgeX PAMM & Copy Trading connects strategy managers with investors — subscriptions, allocation, risk settings and fee logic in one place, with every figure traceable to its source.",
+      "BridgeX PAMM & Copy Trading connects strategy managers with investors — subscriptions, allocation, risk settings and fee logic in one place, with every figure traceable to its source. In the BridgeX suite, copy trading runs on the Copy Trading app, alongside PAMM and MAM.",
     heroImage: { src: "/images/pamm-hero.jpg", alt: "Trading monitors showing candlestick charts in a dark office", width: 1600, height: 1067, objectPosition: "50% 50%" },
     darkHero: true,
     notice:
@@ -651,13 +651,13 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     label: "TradeOps Control Center",
     icon: "tradeops",
     eyebrow: "Solutions · TradeOps Control Center",
-    metaTitle: "TradeOps Control Center — MT4/MT5 Operations",
+    metaTitle: "TradeOps Control Center — MT4, MT5, cTrader & Vertex Operations",
     metaDescription:
       "Trading-server operations with validation, dry-run, four-eyes approval and audit — batch updates, leverage, schedules and funding requests, done carefully.",
     heroHeadline: "Change the server,",
     heroAccent: "without crossing your fingers.",
     heroIntro:
-      "TradeOps Control Center is how operations teams run MT4/MT5 servers safely: batch changes validated and dry-run first, approved by a second pair of eyes, executed with progress tracking — and logged so every change can be explained.",
+      "TradeOps Control Center is how operations teams run MT4, MT5, cTrader and Vertex servers safely: batch changes validated and dry-run first, approved by a second pair of eyes, executed with progress tracking — and logged so every change can be explained.",
     heroImage: { src: "/images/trading-floor-desk.jpg", alt: "Hands over a trading desk with laptops showing charts", width: 1920, height: 1280 },
     darkHero: true,
     notice:
@@ -685,7 +685,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
         title: "Servers & scope",
         intro: "See what you are operating before you touch it.",
         items: [
-          { title: "Server connections", copy: "Connected MT4/MT5 servers with health, version and connection state in one view." },
+          { title: "Server connections", copy: "Connected MT4, MT5, cTrader and Vertex servers with health, version and connection state in one view." },
           { title: "Accounts, groups & symbols", copy: "Browse and select the exact scope of a change — accounts, groups or symbols." },
           { title: "Funding requests", copy: "Deposit and withdrawal requests against trading accounts, with approval routing." },
         ],
@@ -734,7 +734,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     useCasesHeading: "Where careful server work matters",
     useCasesCopy: "Any business running trading servers faces the same tension: change often, but never carelessly.",
     useCases: [
-      { title: "Multi-asset brokers", copy: "Daily leverage, group and symbol operations across MT4/MT5 servers, with approval and audit.", href: "/industries/multi-asset-brokers" },
+      { title: "Multi-asset brokers", copy: "Daily leverage, group and symbol operations across MT4, MT5, cTrader and Vertex servers, with approval and audit.", href: "/industries/multi-asset-brokers" },
       { title: "Prop trading firms", copy: "Challenge account setup, leverage tiers and schedule changes across large account populations.", href: "/industries/prop-firms" },
       { title: "Securities & derivatives", copy: "Institutional account operations with strict controls and a full change record.", href: "/industries/securities-derivatives" },
     ],
@@ -749,7 +749,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     integrationsHeading: "Connected, not isolated",
     integrationsCopy: "TradeOps sits between the operations team and the servers, with the CRM and finance flows on either side.",
     integrations: [
-      { title: "MT4/MT5 manager APIs", copy: "Server operations through authorised manager APIs, in controlled environments only." },
+      { title: "MT4, MT5, cTrader & Vertex manager APIs", copy: "Server operations through authorised manager APIs, in controlled environments only." },
       { title: "Financial CRM", copy: "Account changes reflected on the contact record, with the job behind them." },
       { title: "Payments", copy: "Funding requests route through the same approval and audit path as other money movement." },
       { title: "Notifications & reporting", copy: "Job completion, failures and schedule changes reported to the right desks." },
@@ -765,7 +765,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     faqs: [
       { question: "Does this website connect to a live trading server?", answer: "No. The marketing site has no trade-server access at all. TradeOps operations run only in authorised server environments, through manager APIs, under the role scoping and approval controls described here. The preview on this page is a simulation with illustrative data." },
       { question: "What can be rolled back?", answer: "Rollback depends on the platform and the change type: some changes, such as leverage or group settings, can be reversed by re-applying the previous values; others, such as executed funding movements, cannot be undone by the tool and need a separate correction process. The dry-run states what is reversible before execution." },
-      { question: "Which platforms are supported?", answer: "The design targets MT4/MT5 server operations through their manager APIs. The exact servers, versions and operations in scope are defined during implementation, against your authorised environments — we do not claim coverage we have not configured and tested." },
+      { question: "Which platforms are supported?", answer: "Manager operations cover MT4, MT5, cTrader and Vertex through their manager APIs; the wider suite also connects to DXTrade, Match Trader and TradeLocker. The exact servers, versions and operations in scope are defined during implementation, against your authorised environments — we do not claim coverage we have not configured and tested." },
       { question: "Who can approve a change?", answer: "Approvers are authorised roles, separate from the operator who drafted the change — maker-checker by design. Approval rights are scoped by server, group and change type, so an approver for leverage is not automatically an approver for funding." },
       { question: "What does the audit log contain?", answer: "For each job: the change definition and scope, validation and dry-run results, the drafter and the approver, execution progress with per-item outcomes, and any errors with their reconciliation. Logs are downloadable for internal review." },
     ],
@@ -924,7 +924,7 @@ export const SOLUTIONS: Record<string, SolutionContent> = {
     heroHeadline: "Competition that fills your funnel,",
     heroAccent: "and keeps it fair.",
     heroIntro:
-      "BridgeX Trading Contest Management runs the whole contest — creation, registration, live rankings, fairness review and prize payouts — so a campaign that excites traders does not become a dispute that embarrasses the brand.",
+      "BridgeX Trading Contest Management runs the whole contest — creation, registration, live rankings, fairness review and prize payouts — so a campaign that excites traders does not become a dispute that embarrasses the brand. In the BridgeX suite, this is LeagueX.",
     heroImage: { src: "/images/solutions-contests-v2.jpg", alt: "Hand holding a gold trophy against a deep red background", width: 1600, height: 2400, objectPosition: "50% 30%" },
     darkHero: true,
     problemLabel: "The problem",

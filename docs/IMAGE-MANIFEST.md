@@ -1,7 +1,7 @@
 # BridgeX Image Manifest
 
 **Location:** `public/images/` · **Reference in code:** via the `asset()` helper (basePath `/bridgex`), e.g. `asset('/images/hero-bridge.jpg')`.
-**Last updated:** 2026-11-16 (hero rework pass — 2 hero swaps + site-wide hero treatment; see the record below).
+**Last updated:** 2026-11-16 (white-label rework — 5 generated illustrations + 2 bridgexapps.com assets; see the record below).
 
 > ⚠️ **The 14 Nov forex re-theme superseded most of this file's photo tables.** Sections A–I and the Pexels sources table below describe the PRE-swap photos for the 48 swapped files — their dimensions, sizes, alt texts and Pexels IDs are stale for those files. The authoritative current record for the swapped files is the **Forex re-theme photo swap** section directly below, as amended by the **Hero rework pass (16 Nov 2026)** section for `hero-bridge.jpg` and `solutions-ib-hero.jpg`. The KEEP files' entries in sections A–I are still current. The historical pass records (sweep, final crop round, PAMM follow-up) are kept as-is below; they describe defects in photos that no longer exist on disk for the swapped slots.
 
@@ -24,8 +24,10 @@
 | File swaps in the forex re-theme (14 Nov) | — (48 files replaced in place, same filenames) | — |
 | Deleted in the forex re-theme (14 Nov) | −1 (`portrait-executive.jpg`, orphan, zero usages) | −0.17 MB |
 | **Total (verified on disk after the forex swap, 14 Nov)** | **72** | **14.4 MB** |
+| New in the white-label rework (16 Nov): 5 generated PNGs + 2 bridgexapps.com assets | +7 | +2.5 MB |
+| **Total (verified on disk after the white-label rework, 16 Nov)** | **79** | **16.5 MB** |
 
-> Note: the running total above (71) never reconciled with the on-disk audit (73 files before the swap — the "Correction" row's 69 was itself off by the 4 files added between passes). The verified on-disk count is the authority: **72 files, 14.4 MB** after the swap (48 new forex photos + 24 keeps).
+> Note: the running total above (71) never reconciled with the on-disk audit (73 files before the swap — the "Correction" row's 69 was itself off by the 4 files added between passes). The verified on-disk count is the authority: **72 files, 14.4 MB** after the swap (48 new forex photos + 24 keeps), **79 files, 16.5 MB** after the white-label rework.
 
 All 43 new photos are real photography from **Pexels** (Pexels licence — free to use, no attribution required, no watermark). No AI-generated images. No `cwebp` on the VM, so all files are optimized JPEGs from Pexels CDN params (`?auto=compress&cs=tinysrgb&w=…`); heroes/bands at 1920w, cards at 1200–1600w. Every file was verified with `file` + Pillow (real JPEG, correct dimensions) and **visually inspected** — see the rejected log at the bottom for what was caught and removed.
 
@@ -136,6 +138,24 @@ A seated person's head spans y ≈ 5–35% of a 3:2 frame while a 4:1 PhotoBand 
 **Homepage figures removed (same pass):** the whole `<figure>` blocks in `src/components/home/DemoPreview.tsx` (`trading-floor-desk.jpg`) and `src/components/home/ValueIntro.tsx` (`hero-bridge-night.jpg`) — both image files are used elsewhere, so the files stay. The two `PhotoBand` components in `src/app/page.tsx` were NOT flagged and were kept.
 
 **CDN lesson (16 Nov, new):** a batch of Pexels CDN downloads returned content crossed between IDs — the files read as 38412419 (monitor bank) and 38412420 (desk scene) were in fact windmills and a garden on re-download. `/tmp` is also wiped between turns. Rule: **re-download + visually re-inspect every candidate in the same session it ships; never trust a batch download from an earlier turn.** Both shipped files here were verified by fresh download + full-size read in this session. The 38412419/38412420 mix-up also means the Rafael neighbour-probe results from that batch are untrustworthy — do not cite them.
+
+## White-label rework — generated + bridgexapps.com images (16 Nov 2026)
+
+**Order (Dawood, 16 Nov):** the site is now the white-label offering behind bridgexapps.com; "if need use some images from that website or generate related images there as well" — generation explicitly authorised for this task. bridgexapps.com itself uses NO photographs (except tiny avatar headshots) — its visuals are illustrated product mock-ups and logos, so the new assets are illustrations, not photos. The real forex photography stays where it fits (heroes, bands) — no good photo was replaced by a generated image.
+
+**Every image below was opened and visually inspected at full size by the coordinator in this session** (the imagery worker's inspection plus the coordinator's own read). No generated image with garbled text, distorted UI or off-brand colours shipped.
+
+| File | Source | Size | Used on | Verdict |
+|---|---|---|---|---|
+| `generated/hero-suite-orb.png` (1920×1280, 872 KB) | Generated (media pipeline) — dark navy panel, glowing teal/cyan "BridgeX Suite" orb + 6 floating app cards (CRM, HR, Reports, Support, Projects, Finance) | `/platform` — framed figure in the four-layers section | PASS — all card labels spelled correctly, on-palette |
+| `generated/white-label-portal.png` (1920×1280, 517 KB) | Generated — the same client portal twice side by side (teal theme left, dark navy right), both branded "YourBrand" with a generic logo mark, Balance/Deposit cards + rising chart | `/solutions/white-label` — "What you get" ImageText (replaces `company-collaboration.jpg`) | PASS — no real company name; the two-theme comparison is the white-label story in one image |
+| `generated/dashboard-trading.png` (1920×1280, 456 KB) | Generated — XAUUSD candlestick panel (teal/red candles, rising trend line) + Balance / Equity side cards (labels only, no figures) | `/pricing` — framed figure under the Forex suite tiers | PASS — all text legible, on-palette; no figures shown, so nothing to misread |
+| `generated/dashboard-kyc.png` (1920×1280, 294 KB) | Generated — three white cards: teal shield-check "KYC / Verified", deposit card "Deposit / Balance", rising teal line chart | NOT WIRED — no clean slot on the Digital Onboarding page (its ImageText + PreviewShell + PhotoBand are complete); kept as an available asset | PASS — legible, on-palette; generous white margins top/bottom, so use `object-cover` or a framed figure if wired later |
+| `generated/dashboard-copytrading.png` (1920×1280, 448 KB) | Generated — copy-trading table, headers Master / Follower / Return; 4 rows (M1 12.4%, F1 6.8%, M2 18.2%, F2 3.2%) | NOT WIRED — **do not use without fixing**: the bar lengths do not match the return figures (F2's bar is the longest but shows 3.2%; M2's is shorter at 18.2%). The figures are illustrative demo numbers, not real performance. | REJECTED for page use (data-viz defect) — kept on disk, recorded here so nobody wires it in later |
+| `bridgexapps/marketplace-banner-1.webp` (1683×467, 23 KB) | bridgexapps.com, the company's own asset — source https://bridgexapps.com/site-images/marketplace-banner.webp (fetched 16 Nov). 3D storefront with purple-blue striped awning + 8 floating app-icon tiles, dotted orbit lines, white background, no text | `/pricing` — wide banner figure in the Build your package section (the app-store metaphor fits "pick the apps") | PASS — clean, text-free; pastel purple/blue/teal/orange is the company's own palette, not strictly the site's teal/navy — accepted as a bridgexapps.com asset |
+| `bridgexapps/favicon-48.png` (48×48, 2 KB) | bridgexapps.com — source https://bridgexapps.com/favicon.png. Dark navy rounded square with the white BridgeX "B" mark | NOT WIRED — logo-mark reference only, too small for page graphics | PASS |
+
+**Not retrieved (recorded so nobody re-tries blindly):** the hero "BridgeX Suite" orb on bridgexapps.com is CSS/SVG-in-JSX, not an image file — covered by generated `hero-suite-orb.png`. There is no second marketplace banner referenced anywhere on bridgexapps.com (the imagery worker fetched the homepage HTML + main JS bundle + all 9 lazy chunks). JS chunk names found on bridgexapps.com include RiskXApp (plus CopyXApp, TechXPortal, HostStore, AffiliatePortal) — noted for the coordinator; RiskX/FundX were NOT added to site copy (not in the verified brief facts).
 
 ## 🔄 Replacements (page workers: switch references to these)
 

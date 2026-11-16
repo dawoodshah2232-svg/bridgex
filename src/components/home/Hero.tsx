@@ -8,6 +8,11 @@
  * A compact operations preview (desktop only) shows the product in miniature
  * — clearly labelled as illustrative demo data.
  *
+ * White-label reframe (16 Nov 2026): the site now sells BridgeX as the
+ * white-label platform behind bridgexapps.com — the hero leads with
+ * "rebranded as yours" and names BridgeX Apps as the live flagship
+ * deployment ("The platform behind BridgeX Apps").
+ *
  * Entrance is transform-only (fix, 13 Nov): the headline is visible in the
  * server-rendered HTML at first paint and settles into place within ~0.5s
  * after hydration. Never hide hero text behind an opacity-0 initial state —
@@ -171,27 +176,27 @@ export default function Hero() {
             className="flex items-center gap-3 text-[13px] font-sans font-bold uppercase tracking-[0.28em] text-bx-teal-400"
           >
             <span aria-hidden="true" className="h-px w-10 bg-bx-teal-400" />
-            BridgeX&nbsp;|&nbsp;Capital Markets Technology
+            BridgeX&nbsp;|&nbsp;White-Label Brokerage Technology
           </motion.p>
 
           <motion.h1
             {...rise(0.05)}
             className="mt-6 font-sans text-[42px] font-extrabold leading-[1.04] tracking-[-0.02em] text-balance sm:text-6xl lg:text-[76px]"
           >
-            Connect{" "}
+            The brokerage platform,{" "}
             <em className="bg-gradient-to-r from-bx-teal-400 to-bx-cyan-500 bg-clip-text not-italic text-transparent">
-              every part
-            </em>{" "}
-            of your financial business.
+              rebranded as yours.
+            </em>
           </motion.h1>
 
           <motion.p
             {...rise(0.1)}
             className="mt-6 max-w-[62ch] text-lg leading-relaxed text-bx-slate-300/90 sm:text-xl"
           >
-            From onboarding and client relationships to trading operations,
-            payments and partner growth — BridgeX brings your workflows
-            together in one adaptable technology ecosystem.
+            Trading CRM, copy trading, marketing, HR, finance and
+            infrastructure in one integrated suite — under your brand, your
+            domain and your pricing. BridgeX is the white-label platform
+            behind BridgeX Apps. We stay invisible; you own the client.
           </motion.p>
 
           <motion.div
@@ -203,10 +208,27 @@ export default function Hero() {
                 Book a Private Demo
               </ButtonLink>
             </Magnetic>
-            <ButtonLink href="/platform" variant="secondaryLight" size="lg">
-              Explore Our Platform
+            <ButtonLink href="/solutions/white-label" variant="secondaryLight" size="lg">
+              Explore White-Label
             </ButtonLink>
           </motion.div>
+
+          <motion.p
+            {...rise(0.2)}
+            className="mt-7 text-[15px] leading-relaxed text-bx-slate-300/80"
+          >
+            The platform behind{" "}
+            <a
+              href="https://bridgexapps.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-bx-teal-400 underline decoration-bx-teal-400/50 underline-offset-2 transition-colors hover:text-bx-teal-300"
+            >
+              BridgeX Apps
+            </a>{" "}
+            — the all-in-one brokerage suite, live today. Powered by the
+            BridgeX Console engine.
+          </motion.p>
         </div>
 
         {/* Operations preview — desktop only, illustrative data */}

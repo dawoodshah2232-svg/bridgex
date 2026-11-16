@@ -19,6 +19,7 @@ import Reveal from "@/components/ui/Reveal";
 import DemoLabel from "@/components/ui/DemoLabel";
 import PhotoBand from "@/components/ui/PhotoBand";
 import CtaBand from "@/components/ui/CtaBand";
+import { ButtonLink } from "@/components/ui/Button";
 import Icon from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -122,11 +123,13 @@ export default function ClientExperiencePage() {
             </span>
           </>
         }
-        copy="Logo, colours, wording and domain are all configurable, and the journeys clients walk use your copy and your steps. BridgeX stays in the background."
+        copy="Logo, colours, wording and domain are all configurable, and the journeys clients walk use your copy and your steps. BridgeX stays in the background. Branded Client Portal $49/mo, Custom Branding $49/mo, Custom domain $9/mo — as published on bridgexapps.com."
         height="sm"
         imageWidth={1600}
         imageHeight={1067}
-      />
+      >
+        <ButtonLink href="/solutions/white-label">Explore White-Label</ButtonLink>
+      </PhotoBand>
 
       {/* Mobile-first — phone mock in code */}
       <Section tone="white" id="mobile" ariaLabel="Mobile-first layouts">

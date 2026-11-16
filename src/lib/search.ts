@@ -1,7 +1,7 @@
 /**
  * Client-side search index (spec §4/§12).
  *
- * The index is built from the route registry (all 44 routes: label +
+ * The index is built from the route registry (all 46 routes: label +
  * description + href + group) plus the seeded insights (title + excerpt)
  * and guides (title + summary). No server, no fetch — the whole index is
  * a few kilobytes of static data, filtered in memory as the user types.

@@ -66,8 +66,11 @@ export default function AboutPage() {
           </p>
           <TealLineDivider className="mx-auto mt-10 max-w-md" />
           <p className="mx-auto mt-8 max-w-[62ch] font-body text-base leading-relaxed text-bx-slate-300/85">
-            We measure that by whether your teams stop reconciling systems by
-            hand — not by how many features we can list.
+            We build the operating system for brokerages — to give every
+            brokerage, from a two-person startup to a global multi-entity
+            group, the same quality of technology that the biggest players
+            use. We measure that by whether your teams stop reconciling
+            systems by hand — not by how many features we can list.
           </p>
         </Reveal>
       </Section>

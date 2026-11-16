@@ -1,9 +1,11 @@
 /**
  * /platform/integrations — Integrations (spec §8).
- * Dark photographic hero, category explorer (provider CATEGORIES only —
- * no named providers, no logos, no unverified claims), adapter
- * architecture, event/webhook retry model, and an honest "what we do not
- * claim" panel.
+ * Dark photographic hero, category explorer (provider CATEGORIES, plus
+ * the published trading-platform list — MT4, MT5, DXTrade, Match
+ * Trader, TradeLocker, Vertex, cTrader, verified on bridgexapps.com
+ * 16 Nov 2026; no other named providers, no logos, no unverified
+ * claims), adapter architecture, event/webhook retry model, and an
+ * honest "what we do not claim" panel.
  *
  * DARK HERO — the coordinator adds "/platform/integrations" to
  * DARK_HERO_ROUTES.
@@ -109,10 +111,20 @@ export default function IntegrationsPage() {
         <SectionIntro
           label="Provider categories"
           heading="Five categories. One adapter model."
-          copy="Select a category to see what its adapters handle and what a connection requires. We describe categories, not providers — because the honest unit of an integration is the contract it works to, not the logo on the slide."
+          copy="Select a category to see what its adapters handle and what a connection requires. We describe categories, not provider logos — because the honest unit of an integration is the contract it works to, not the logo on the slide. The trading platforms themselves are published, and named below."
         />
         <Reveal delay={0.1} className="mt-12">
           <IntegrationExplorer />
+        </Reveal>
+        <Reveal delay={0.15} className="mt-8">
+          <p className="border border-bx-teal-600/50 bg-bx-white px-6 py-5 text-[15px] leading-relaxed text-bx-navy-900">
+            <strong className="font-sans font-bold text-bx-teal-700">
+              Trading platforms BridgeX connects to:{" "}
+            </strong>
+            MT4, MT5, DXTrade, Match Trader, TradeLocker, Vertex and cTrader
+            — as published on bridgexapps.com, November 2026. Other providers
+            are named only once their adapter is built, tested and signed off.
+          </p>
         </Reveal>
       </Section>
 

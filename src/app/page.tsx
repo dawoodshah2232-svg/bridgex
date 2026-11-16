@@ -25,16 +25,16 @@ export default function Home() {
       <PhotoBand
         image="/images/band-bridge-istanbul.jpg"
         alt="Dark trading monitors showing candlestick charts"
-        eyebrow="Why BridgeX"
+        eyebrow="White-label"
         heading={
           <>
-            Built for the business{" "}
+            Your brand. Your domain.{" "}
             <span className="font-sans font-semibold italic text-bx-teal-400">
-              behind the trading.
+              Your pricing.
             </span>
           </>
         }
-        copy="One platform for onboarding, operations, payments and growth — connected through one record, one ledger, one audit trail."
+        copy="BridgeX runs behind your brand — the same platform that powers BridgeX Apps. You own the client relationship; we provide the technology, infrastructure and support, invisibly."
         height="sm"
         imageWidth={1600}
         imageHeight={1067}

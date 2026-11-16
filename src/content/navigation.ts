@@ -5,14 +5,18 @@
  * Footer, Breadcrumbs, sitemap in Batch 4) MUST consume this file.
  * No hardcoded nav lists anywhere else.
  *
- * Route count: home (1) + Platform (8) + Solutions (7) + Industries (9)
- * + Services (4) + Resources (7) + Company (4) + book-demo (1) + legal (3)
- * = 44. Paths are basePath-free; Next.js <Link> adds the basePath.
+ * Route count: home (1) + Platform (8) + Solutions (8) + Industries (9)
+ * + Services (4) + Resources (7) + Company (4) + book-demo (1) + pricing
+ * (1) + legal (3) = 46. Paths are basePath-free; Next.js <Link> adds the
+ * basePath. (White-label rework, 16 Nov 2026: + /solutions/white-label
+ * and /pricing. Pricing sits in the "cta" group with book-demo — it is
+ * linked from the header, footer and CtaBand, not from a mega-menu.)
  *
  * Groups without an overview page (Solutions, Industries, Company) have
  * `overviewHref: null` — their mega-menu heading is plain text, never a
- * dead link. AI Assistance is flagged `status: "roadmap"` and is labelled
- * as in development wherever it appears (spec §8).
+ * dead link. (White-label rework, 16 Nov 2026: AI Assistance is no
+ * longer flagged "roadmap" — BriX AI is a live product on
+ * bridgexapps.com, priced from $49/month.)
  */
 
 export type NavGroupId =
@@ -60,7 +64,7 @@ export const NAV_GROUPS: NavGroup[] = [
     label: "Solutions",
     overviewHref: null,
     blurb:
-      "Seven capabilities that work alone or together, from CRM and onboarding to payments and partner growth.",
+      "Eight capabilities that work alone or together, from CRM and onboarding to payments, partner growth and white-label.",
     featuredHref: "/solutions/financial-crm",
   },
   {
@@ -123,6 +127,7 @@ export const DARK_HERO_ROUTES = new Set<string>([
   "/solutions/tradeops",
   "/solutions/digital-onboarding",
   "/solutions/trading-contests",
+  "/solutions/white-label",
   "/industries/multi-asset-brokers",
   "/industries/banks",
   "/industries/securities-derivatives",
@@ -201,9 +206,8 @@ export const ROUTES: NavRoute[] = [
   {
     href: "/platform/ai-assistance",
     label: "AI Assistance",
-    description: "Governed AI assistance — in development, human approval first.",
+    description: "BriX AI — governed assistance, human approval first.",
     group: "platform",
-    status: "roadmap",
   },
 
   // Solutions (7)
@@ -247,6 +251,12 @@ export const ROUTES: NavRoute[] = [
     href: "/solutions/trading-contests",
     label: "Trading Contest Management",
     description: "Contests, live rankings, fairness review and prizes.",
+    group: "solutions",
+  },
+  {
+    href: "/solutions/white-label",
+    label: "White-Label Solutions",
+    description: "The complete brokerage platform, rebranded as yours.",
     group: "solutions",
   },
 
@@ -407,6 +417,12 @@ export const ROUTES: NavRoute[] = [
     href: "/book-demo",
     label: "Book a Private Demo",
     description: "See BridgeX running on your own workflows.",
+    group: "cta",
+  },
+  {
+    href: "/pricing",
+    label: "Pricing",
+    description: "Simple, transparent pricing from $499/month.",
     group: "cta",
   },
 

@@ -65,17 +65,35 @@ export default function ValueIntro() {
               partners together. Add the capabilities you need today; connect
               more when you are ready — without rebuilding.
             </p>
-            <Link
-              href="/platform"
-              className="group mt-7 inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
-            >
-              Explore the platform
-              <Icon
-                name="arrowRight"
-                size={18}
-                className="transition-transform duration-200 group-hover:translate-x-1"
-              />
-            </Link>
+            <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-bx-navy-900">
+              And it arrives as yours. BridgeX runs white-label under your
+              brand, on your domain, at your pricing — the same platform that
+              powers BridgeX Apps, with our team invisible to your clients.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-x-7 gap-y-3">
+              <Link
+                href="/platform"
+                className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
+              >
+                Explore the platform
+                <Icon
+                  name="arrowRight"
+                  size={18}
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                />
+              </Link>
+              <Link
+                href="/solutions/white-label"
+                className="group inline-flex items-center gap-2 font-sans text-base font-bold text-bx-teal-700 hover:text-bx-navy-900"
+              >
+                Explore white-label
+                <Icon
+                  name="arrowRight"
+                  size={18}
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
           </Reveal>
         </div>
 

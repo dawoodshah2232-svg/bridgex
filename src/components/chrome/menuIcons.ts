@@ -49,6 +49,7 @@ export const MENU_ROUTE_ICONS: Record<string, IconName> = {
   "/company/careers": "users",
   // Persistent CTA
   "/book-demo": "play",
+  "/pricing": "wallet",
 };
 
 /**

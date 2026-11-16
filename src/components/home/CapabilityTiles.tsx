@@ -69,6 +69,13 @@ const CAPABILITIES: Capability[] = [
     benefit:
       "Run trading competitions with live rankings, fairness review and prize payouts your clients can trust.",
   },
+  {
+    href: "/solutions/white-label",
+    slug: "white-label",
+    title: "White-Label Solutions",
+    benefit:
+      "The complete brokerage platform, rebranded as yours — your brand, your domain, your pricing. We stay invisible.",
+  },
 ];
 
 function Tile({ cap }: { cap: Capability }) {
@@ -110,7 +117,7 @@ export default function CapabilityTiles() {
         glow
         heading={
           <>
-            Seven capabilities.{" "}
+            Eight capabilities.{" "}
             <span className="font-sans font-semibold italic text-bx-teal-700">
               One connected core.
             </span>
@@ -127,20 +134,25 @@ export default function CapabilityTiles() {
             <Tile cap={cap} />
           </Reveal>
         ))}
-        {/* Closing tile — the platform story */}
-        <Reveal className="h-full" delay={0.16}>
+        {/* Closing tile — the platform story. Full-width band at lg: with
+            eight capability tiles (first spans two) the grid is
+            2 + 7 + 3 = 12 cells, exactly four rows of three. At sm the
+            tile spans one cell (2 + 7 + 1 = 10, exactly five rows of two). */}
+        <Reveal className="h-full lg:col-span-3" delay={0.16}>
           <Link
             href="/platform"
-            className="bx-card-hover-dark group flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 text-bx-white hover:bg-bx-navy-800 sm:p-8"
+            className="bx-card-hover-dark group flex h-full flex-col bg-bx-navy-900 rounded-2xl p-7 text-bx-white hover:bg-bx-navy-800 sm:p-8 lg:flex-row lg:items-center lg:gap-10"
           >
-            <span className="font-sans text-[28px] font-semibold leading-snug">
-              See how they connect.
+            <span className="flex-1">
+              <span className="block font-sans text-[28px] font-semibold leading-snug">
+                See how they connect.
+              </span>
+              <span className="mt-2.5 block max-w-[62ch] text-[15px] leading-relaxed text-bx-slate-300/85">
+                Four layers, one shared foundation. The architecture that makes
+                eight capabilities behave as one system.
+              </span>
             </span>
-            <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-bx-slate-300/85">
-              Four layers, one shared foundation. The architecture that makes
-              seven capabilities behave as one system.
-            </p>
-            <span className="mt-6 inline-flex items-center gap-2 font-sans text-sm font-bold text-bx-teal-400 group-hover:text-bx-slate-300">
+            <span className="mt-6 inline-flex shrink-0 items-center gap-2 font-sans text-sm font-bold text-bx-teal-400 group-hover:text-bx-slate-300 lg:mt-0">
               Explore the platform
               <Icon
                 name="arrowRight"

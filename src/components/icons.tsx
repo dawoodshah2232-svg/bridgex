@@ -713,6 +713,8 @@ export const SOLUTION_ICONS: Record<string, IconName> = {
   tradeops: "tradeops",
   "digital-onboarding": "onboarding",
   "trading-contests": "contests",
+  // White-label: your brand on your own domain — the globe carries it.
+  "white-label": "globe",
 };
 
 /** Industry route slugs (src/content/industries/) → icon. */

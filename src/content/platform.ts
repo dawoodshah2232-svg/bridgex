@@ -480,7 +480,17 @@ export const PLATFORM_FAQS: FaqItem[] = [
   {
     question: "Is the AI assistance available today?",
     answer:
-      "No. Governed AI assistance is in development and is described on its own page as a roadmap capability. Nothing on the platform today is decided by an AI agent, and the design requires human approval for every assisted action.",
+      "BriX AI is the AI layer of the BridgeX suite, available on bridgexapps.com from $49 per month (Starter $49, Growth $99, Scale $199, Scale Plus $299). It is governed the same way everything in BridgeX is: human approval for assisted actions, evidence behind every suggestion, and permissions that hold. See the AI Assistance page and the Pricing page for details.",
+  },
+  {
+    question: "Can BridgeX run under our own brand?",
+    answer:
+      "Yes — that is the white-label offering. You get the complete brokerage platform rebranded as yours: your brand, your domain, your pricing, with the BridgeX team invisible to your clients. The same platform powers BridgeX Apps. See the White-Label Solutions page for the models and terms.",
+  },
+  {
+    question: "How is BridgeX priced?",
+    answer:
+      "Pricing is published on bridgexapps.com: the Forex suite runs from $499 per month (Starter) to $2,499 per month (Enterprise), with a 15% saving on annual billing; BriX AI runs from $49 to $299 per month; and individual apps can be added from $29 per month. There is a 14-day free trial, no setup fee, and you can cancel anytime. See the Pricing page for the full breakdown.",
   },
 ];
 

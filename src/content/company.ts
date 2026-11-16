@@ -502,20 +502,23 @@ export const ABOUT_PRINCIPLES: {
  * confirmed — the About page renders them with that marker. Do not fill
  * them with invented history, people, dates or addresses.
  */
+// Company details confirmed from bridgexapps.com, 16 Nov 2026.
+// Year founded and registration number are not published — they stay
+// "To be confirmed" rather than invented.
 export const EDITABLE_COMPANY_DETAILS: { label: string; value: string }[] = [
-  { label: "Legal entity name", value: "To be confirmed" },
-  { label: "Registered address", value: "To be confirmed" },
+  { label: "Legal entity name", value: "Bridging Forex Information Technology LLC" },
+  { label: "Registered address", value: "Office 2201, API Trio Tower, Al Barsha 1, Dubai, UAE" },
   { label: "Year founded", value: "To be confirmed" },
-  { label: "Headquarters", value: "To be confirmed" },
+  { label: "Headquarters", value: "Dubai, UAE" },
   { label: "Company registration number", value: "To be confirmed" },
-  { label: "Primary contact email", value: "To be confirmed" },
+  { label: "Primary contact email", value: "contact@bridgexapps.com" },
 ];
 
 export const ABOUT_FAQ: FaqItem[] = [
   {
     question: "What does BridgeX actually do?",
     answer:
-      "BridgeX builds connected technology for financial businesses: client onboarding, CRM, trading operations, payment orchestration and partner management in one adaptable platform — with the implementation and managed services to run it well.",
+      "BridgeX builds connected technology for financial businesses: client onboarding, CRM, trading operations, payment orchestration and partner management in one adaptable platform — available white-label under your brand, as the platform behind BridgeX Apps — with the implementation and managed services to run it well.",
   },
   {
     question: "Is BridgeX a broker or a regulated financial firm?",
@@ -525,7 +528,7 @@ export const ABOUT_FAQ: FaqItem[] = [
   {
     question: "Where is BridgeX based?",
     answer:
-      "Company details, including registered address and legal entity information, are being finalised and will be published here once confirmed. The About page marks those fields as editable placeholders until then.",
+      "BridgeX is built by Bridging Forex Information Technology LLC, based in Dubai, UAE — Office 2201, API Trio Tower, Al Barsha 1, Dubai. Office hours are Mon–Fri 9:00–18:00 GST and Sat 10:00–14:00; closed Sundays.",
   },
   {
     question: "Who is behind BridgeX?",
@@ -538,6 +541,7 @@ export const ABOUT_FAQ: FaqItem[] = [
 /* Partners                                                            */
 /* ------------------------------------------------------------------ */
 
+// Partner models as published on bridgexapps.com/partners, Nov 2026.
 export const PARTNER_MODELS: {
   title: string;
   description: string;
@@ -545,25 +549,36 @@ export const PARTNER_MODELS: {
   points: string[];
 }[] = [
   {
-    title: "Joint go-to-market",
+    title: "White-label reseller",
     description:
-      "For firms whose clients need brokerage operations technology — introduce BridgeX, and we work the opportunity together.",
-    icon: "ib",
-    points: ["Shared opportunity plans", "Joint demos and collateral", "Clear referral terms"],
+      "Sell BridgeX under your own brand, with your own pricing, on your own domain. We stay invisible.",
+    icon: "globe",
+    points: [
+      "Your brand, your domain, your pricing",
+      "30% of every new client account activated — for the lifetime of the account",
+      "Our team stays completely invisible to your clients",
+    ],
   },
   {
-    title: "Technology integrations",
+    title: "Technology partner",
     description:
-      "For providers of trading platforms, payments, KYC, market data or communications — build an adapter with us.",
+      "For providers of trading platforms, payments, KYC, market data or communications — build a native integration with us through open APIs.",
     icon: "ecosystem",
-    points: ["Adapter architecture guidance", "Sandbox and test access", "Joint release notes"],
+    points: ["Native integrations, open APIs", "Adapter architecture guidance", "Sandbox and test access"],
   },
   {
-    title: "Referral inquiries",
+    title: "Referral partner",
     description:
-      "For introducers and consultants who spot a fit — a straightforward referral route with honest terms.",
+      "For introducers and consultants who spot a fit — a straightforward referral route with commission for life.",
     icon: "users",
-    points: ["Simple referral process", "Attribution from first contact", "Terms agreed in writing"],
+    points: ["Commission for life", "Attribution from first contact", "Terms agreed in writing"],
+  },
+  {
+    title: "Implementation partner",
+    description:
+      "For firms that deliver turn-key setup, migration and training for brokerages adopting BridgeX.",
+    icon: "workflow",
+    points: ["Turn-key setup and migration", "Training for client teams", "Joint delivery with the BridgeX team"],
   },
 ];
 
@@ -571,12 +586,17 @@ export const PARTNERS_FAQ: FaqItem[] = [
   {
     question: "What kinds of partners are you looking for?",
     answer:
-      "Three kinds: firms that sell into financial businesses and want a technology partner; technology providers whose products connect to brokerage operations; and introducers who know a business that needs us. If you are unsure which you are, the application form has room to say so.",
+      "Four kinds: white-label resellers who sell BridgeX under their own brand; technology providers whose products connect to brokerage operations; referral partners who know a business that needs us; and implementation partners who deliver setup, migration and training. If you are unsure which you are, the application form has room to say so.",
   },
   {
     question: "Is there a partner programme with tiers or commissions?",
     answer:
-      "Partnership terms are agreed per relationship and put in writing. We do not publish tier tables or commission rates here, because the right terms depend on what each side brings.",
+      "White-label partners earn 30% of every new client account activated — for the lifetime of the account, as published on bridgexapps.com. Referral partners earn commission for life. Other terms are agreed per relationship and put in writing.",
+  },
+  {
+    question: "What does a white-label partner get?",
+    answer:
+      "The complete brokerage platform, rebranded as yours: your brand, your domain, your pricing — with the BridgeX team invisible to your clients. The White-Label Solutions page covers the model, the add-ons and the earning in detail.",
   },
   {
     question: "How do technology integrations work?",

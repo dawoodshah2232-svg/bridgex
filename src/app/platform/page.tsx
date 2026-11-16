@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FOUNDATION_ITEMS, PLATFORM_FAQS, PLATFORM_LAYERS } from "@/content/platform";
 import { faqJsonLd, jsonLdString } from "@/lib/seo";
+import { asset } from "@/lib/paths";
 import PageHero from "@/components/platform/PageHero";
 import LayerExplorer from "@/components/platform/LayerExplorer";
 import { FaqSection, WorkflowSteps } from "@/components/platform/Sections";
@@ -108,6 +109,12 @@ const SOLUTIONS: { href: string; slug: string; label: string; text: string }[] =
     label: "Trading Contest Management",
     text: "Contests, rankings and prizes.",
   },
+  {
+    href: "/solutions/white-label",
+    slug: "white-label",
+    label: "White-Label Solutions",
+    text: "Your brand, domain and pricing.",
+  },
 ];
 
 export default function PlatformOverview() {
@@ -131,7 +138,7 @@ export default function PlatformOverview() {
             </span>
           </>
         }
-        copy="BridgeX is not four products bolted together. It is one platform organised as four layers — experience, operations, integrations and intelligence — all standing on the same foundation, reading from the same records."
+        copy="BridgeX is not four products bolted together. It is one platform organised as four layers — experience, operations, integrations and intelligence — all standing on the same foundation, reading from the same records. And it arrives as yours: the same platform runs white-label behind your brand, as it does for BridgeX Apps."
         image={{
           src: "/images/hero-skyline-nyc.jpg",
           alt: "Multi-monitor trading desk with candlestick charts and a hand on the keyboard",
@@ -180,6 +187,22 @@ export default function PlatformOverview() {
         />
         <Reveal delay={0.1} className="mt-12">
           <LayerExplorer />
+        </Reveal>
+        <Reveal delay={0.1} className="mt-12">
+          <figure>
+            <img
+              src={asset("/images/generated/hero-suite-orb.png")}
+              alt="Illustrated BridgeX Suite: a glowing teal orb with floating CRM, HR, Support, Finance, Projects and Reports cards"
+              width={1920}
+              height={1280}
+              loading="lazy"
+              className="h-auto w-full border border-bx-navy-900/15"
+            />
+            <figcaption className="mt-3 text-sm text-bx-slate-500">
+              The BridgeX Suite — CRM, HR, Support, Finance, Projects and
+              Reports around one connected core. Illustrated product visual.
+            </figcaption>
+          </figure>
         </Reveal>
       </Section>
 
@@ -282,7 +305,7 @@ export default function PlatformOverview() {
       <Section tone="white" ariaLabel="Solutions built on the platform">
         <SectionIntro
           label="Built on the platform"
-          heading="Seven capabilities, one connected core."
+          heading="Eight capabilities, one connected core."
           copy="Each solution is a capability that runs on the four layers — adopt one, or adopt several, and they share the same clients, the same permissions and the same audit trail."
         />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -332,6 +355,22 @@ export default function PlatformOverview() {
             </Link>
           </Reveal>
         </div>
+        <Reveal delay={0.1} className="mt-10">
+          <p className="border border-bx-teal-600/50 bg-bx-white px-6 py-5 text-[15px] leading-relaxed text-bx-navy-900">
+            <strong className="font-sans font-bold text-bx-teal-700">
+              The apps in the suite:{" "}
+            </strong>
+            these capabilities ship as named apps — the trading CRMs TradeX,
+            PropX, BinaryX and LeagueX; LeadX and SalesX for marketing; BriX
+            AI; StreamX and the Trading Academy for education; plus finance,
+            HR, projects, support and reporting. Each app is available
+            standalone or as part of a suite plan —{" "}
+            <Link href="/pricing" className="font-bold text-bx-teal-700 hover:underline">
+              see pricing
+            </Link>
+            .
+          </p>
+        </Reveal>
         <p className="mt-8 text-sm text-bx-slate-500">
           Layer pages:{" "}
           {PLATFORM_LAYERS.map((layer, i) => (

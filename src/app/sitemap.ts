@@ -1,5 +1,5 @@
 /**
- * XML sitemap (spec §12) — all 44 registry routes, absolute URLs.
+ * XML sitemap (spec §12) — all 46 registry routes, absolute URLs.
  *
  * /search is deliberately excluded: it is a utility route, not content,
  * and it is not in the registry. Next.js generates sitemap.xml in `out/`

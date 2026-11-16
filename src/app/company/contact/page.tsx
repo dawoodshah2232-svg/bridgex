@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_CONTACT, SITE_SOCIAL_LINKS } from "@/content/site";
 import InnerHero from "@/components/company/InnerHero";
 import ContactForm from "@/components/forms/ContactForm";
 import { Container } from "@/components/ui/Container";
@@ -12,7 +13,7 @@ import Icon from "@/components/icons";
 export const metadata: Metadata = {
   title: "Contact — Talk to a Person",
   description:
-    "Talk to a person about your business. Send an enquiry through the contact form and the BridgeX team will respond — no phone queues, no chatbots.",
+    "Talk to a person about your business. Call or WhatsApp +971 58 543 1107, email sales@bridgexapps.com, or send an enquiry through the contact form — a member of the BridgeX team will respond.",
 };
 
 const NEXT_STEPS = [
@@ -44,7 +45,7 @@ export default function ContactPage() {
             </em>
           </>
         }
-        copy="No phone queues, no chatbot loops. Send a message and a member of the BridgeX team will read it and reply."
+        copy="Call, message or write — a member of the BridgeX team will read it and reply. Phone & WhatsApp +971 58 543 1107, Mon–Fri 9:00–18:00 GST."
         image="/images/lobby-office.jpg"
         imageAlt="Overhead desk with printed charts, a magnifier, cash and a calculator"
         imageWidth={1600}
@@ -105,12 +106,90 @@ export default function ContactPage() {
                   <h2 className="mt-4 font-sans text-xl font-extrabold tracking-[-0.01em] text-bx-navy-900">
                     Business details
                   </h2>
-                  <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-slate-500">
-                    Phone numbers and office addresses will be published here
-                    once they are confirmed. Until then, this form is the way
-                    to reach us — and the details on this page are editable
-                    placeholders, not yet settled fact.
-                  </p>
+                  <dl className="mt-4 space-y-4 font-body text-[15px] leading-relaxed text-bx-navy-900">
+                    <div>
+                      <dt className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-slate-500">
+                        Sales
+                      </dt>
+                      <dd>
+                        <a
+                          href={`mailto:${SITE_CONTACT.salesEmail}`}
+                          className="font-bold text-bx-teal-700 hover:underline"
+                        >
+                          {SITE_CONTACT.salesEmail}
+                        </a>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-slate-500">
+                        General enquiries
+                      </dt>
+                      <dd>
+                        <a
+                          href={`mailto:${SITE_CONTACT.email}`}
+                          className="font-bold text-bx-teal-700 hover:underline"
+                        >
+                          {SITE_CONTACT.email}
+                        </a>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-slate-500">
+                        Compliance
+                      </dt>
+                      <dd>
+                        <a
+                          href={`mailto:${SITE_CONTACT.complianceEmail}`}
+                          className="font-bold text-bx-teal-700 hover:underline"
+                        >
+                          {SITE_CONTACT.complianceEmail}
+                        </a>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-slate-500">
+                        {SITE_CONTACT.phoneNote}
+                      </dt>
+                      <dd>
+                        <a
+                          href={`tel:${(SITE_CONTACT.phone ?? "").replace(/[\s-]/g, "")}`}
+                          className="font-bold text-bx-teal-700 hover:underline"
+                        >
+                          {SITE_CONTACT.phone}
+                        </a>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-slate-500">
+                        Office
+                      </dt>
+                      <dd>{SITE_CONTACT.address}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-slate-500">
+                        Hours
+                      </dt>
+                      <dd>{SITE_CONTACT.hours}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-sans text-[12px] font-bold uppercase tracking-[0.16em] text-bx-slate-500">
+                        Follow us
+                      </dt>
+                      <dd className="flex flex-wrap gap-x-4 gap-y-1">
+                        {SITE_SOCIAL_LINKS.map((link) => (
+                          <a
+                            key={link.label}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-bold text-bx-teal-700 hover:underline"
+                          >
+                            {link.label}
+                          </a>
+                        ))}
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
               </Reveal>
 

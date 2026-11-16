@@ -1,8 +1,9 @@
 /**
  * Footer — full sitemap from the route registry, dynamic copyright year,
- * back-to-top, legal links. Social icons are deliberately omitted: no real
- * BridgeX social URLs exist yet (spec §4 — only show icons where real URLs
- * exist). Photography credit line is included (Pexels).
+ * contact details, social links, back-to-top, legal links. Contact and
+ * social details are the real BridgeX Apps details (verified on
+ * bridgexapps.com, 16 Nov 2026) from src/content/site.ts. Photography
+ * credit line is included (Pexels + BridgeX artwork).
  *
  * bridgexapps.com style: light mist background, four columns, a dark-navy
  * disclaimer box with an orange heading and darker inner cards, slim
@@ -10,6 +11,7 @@
  * advice — flag it for review alongside the legal pages.
  */
 import Link from "next/link";
+import { SITE_CONTACT, SITE_SOCIAL_LINKS } from "@/content/site";
 import {
   FOOTER_GROUPS,
   routesByGroup,
@@ -40,7 +42,9 @@ export default function Footer() {
             <p className="mt-3 max-w-[38ch] text-[15px] leading-relaxed text-bx-slate-500">
               Connected infrastructure for modern financial businesses —
               onboarding, client relationships, trading operations, payments
-              and partner growth in one adaptable ecosystem.
+              and partner growth in one adaptable ecosystem. Available
+              white-label under your brand — the platform behind BridgeX
+              Apps.
             </p>
             <Link
               href="/book-demo"
@@ -48,6 +52,42 @@ export default function Footer() {
             >
               Book a Private Demo
             </Link>
+            <address className="mt-8 space-y-2 text-[14px] not-italic leading-relaxed text-bx-slate-500">
+              <p>
+                <a
+                  href={`mailto:${SITE_CONTACT.salesEmail}`}
+                  className="font-bold text-bx-teal-700 hover:underline"
+                >
+                  {SITE_CONTACT.salesEmail}
+                </a>
+              </p>
+              <p>
+                <a
+                  href={`tel:${(SITE_CONTACT.phone ?? "").replace(/[\s-]/g, "")}`}
+                  className="font-bold text-bx-teal-700 hover:underline"
+                >
+                  {SITE_CONTACT.phone}
+                </a>{" "}
+                <span className="text-bx-slate-500/80">
+                  ({SITE_CONTACT.phoneNote})
+                </span>
+              </p>
+              <p>{SITE_CONTACT.address}</p>
+              <p>{SITE_CONTACT.hours}</p>
+              <p className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
+                {SITE_SOCIAL_LINKS.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-bx-teal-700 hover:underline"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </p>
+            </address>
           </div>
 
           {/* Sitemap columns */}
@@ -127,11 +167,18 @@ export default function Footer() {
               © {year} BridgeX. All rights reserved.
             </p>
             <p className="mt-1 text-[13px] text-bx-slate-500/80">
-              Photography on this site is licensed stock photography via
-              Pexels. Product previews show illustrative demo data.
+              Photography is licensed stock photography via Pexels;
+              illustrated product visuals are BridgeX artwork. Product
+              previews show illustrative demo data.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <Link
+              href="/pricing"
+              className="flex min-h-[44px] items-center text-sm font-bold text-bx-slate-500 transition-colors hover:text-bx-teal-600"
+            >
+              Pricing
+            </Link>
             <Link
               href="/search"
               className="flex min-h-[44px] items-center text-sm text-bx-slate-500 transition-colors hover:text-bx-teal-600"

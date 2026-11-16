@@ -13,9 +13,9 @@ import FeatureIcon from "@/components/ui/FeatureIcon";
 import Icon from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Partner With Us — Go-to-Market, Integrations & Referrals",
+  title: "Partner With Us — White-Label, Integrations & Referrals",
   description:
-    "Partner with BridgeX: joint go-to-market, technology integrations, and referrals. Terms agreed per relationship, in writing — apply through the partner form.",
+    "Partner with BridgeX: white-label resale (30% lifetime), technology integrations, referrals and implementation. Terms agreed per relationship, in writing — apply through the partner form.",
 };
 
 export default function PartnersPage() {
@@ -32,7 +32,7 @@ export default function PartnersPage() {
             </em>
           </>
         }
-        copy="BridgeX works best as part of an ecosystem — firms that sell into financial businesses, technology providers whose products connect to brokerage operations, and introducers who spot a fit. Partnership terms are agreed per relationship, in writing."
+        copy="BridgeX works best as part of an ecosystem — firms that sell BridgeX under their own brand, technology providers whose products connect to brokerage operations, introducers who spot a fit, and implementers who deliver the setup. Partnership terms are agreed per relationship, in writing."
         image="/images/handshake-partners.jpg"
         imageAlt="Magnifier over a printed stacked area chart"
         imageWidth={1600}
@@ -48,14 +48,14 @@ export default function PartnersPage() {
         </div>
       </InnerHero>
 
-      {/* Three models */}
+      {/* Four models */}
       <Section tone="white" ariaLabel="Ways to partner">
         <SectionIntro
-          label="Three ways in"
+          label="Four ways in"
           heading="How partnerships work."
           copy="Whichever route fits, the shape is the same: a real conversation first, terms agreed in writing, and attribution that starts from first contact."
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {PARTNER_MODELS.map((model, i) => (
             <Reveal key={model.title} delay={i * 0.07}>
               <article className="bx-card-hover group flex h-full flex-col border border-bx-navy-900/15 bg-bx-white p-7">

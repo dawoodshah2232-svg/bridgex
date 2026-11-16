@@ -79,8 +79,12 @@ export default function CtaBand({
   copy = "See how BridgeX connects onboarding, operations, payments and partner growth for a business like yours — in a private demo, on your own workflows.",
   primaryLabel = "Book a Private Demo",
   primaryHref = "/book-demo",
-  secondaryLabel = "Talk to an Expert",
-  secondaryHref = "/company/contact",
+  // Default secondary is pricing (white-label rework, 16 Nov 2026):
+  // pricing is published on bridgexapps.com, so every inner page links
+  // to it. Pages that pass their own secondary keep it (services pages
+  // still say "Talk to an Expert").
+  secondaryLabel = "See Pricing",
+  secondaryHref = "/pricing",
 }: {
   heading?: string;
   copy?: string;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_CONTACT } from "@/content/site";
 import { DEMO_FAQ } from "@/content/company";
 import { asset } from "@/lib/paths";
 import InnerHero from "@/components/company/InnerHero";
@@ -105,6 +106,21 @@ export default function BookDemoPage() {
                 <p className="mt-2 font-body text-[15px] leading-relaxed text-bx-slate-300/85">
                   Explore the platform and solutions first — or send a message
                   and ask a question. There is no obligation either way.
+                  Prefer to talk first? Call or WhatsApp{" "}
+                  <a
+                    href={`tel:${(SITE_CONTACT.phone ?? "").replace(/[\s-]/g, "")}`}
+                    className="font-bold text-bx-teal-400 hover:text-bx-slate-300"
+                  >
+                    {SITE_CONTACT.phone}
+                  </a>{" "}
+                  or email{" "}
+                  <a
+                    href={`mailto:${SITE_CONTACT.salesEmail}`}
+                    className="font-bold text-bx-teal-400 hover:text-bx-slate-300"
+                  >
+                    {SITE_CONTACT.salesEmail}
+                  </a>
+                  .
                 </p>
                 <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                   <Link

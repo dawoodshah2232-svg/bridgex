@@ -230,7 +230,7 @@ export default function DemoPreview() {
             </span>
           </>
         }
-        copy="Three views of the same connected system — operations, partners and the client journey. Sample data throughout; the real product shows your business, not ours."
+        copy="Three views of the same connected system — operations, partners and the client journey. Sample data throughout; the real product shows your business, under your brand — not ours."
       />
 
       <div className="mt-12 lg:mt-16">

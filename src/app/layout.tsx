@@ -14,20 +14,20 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "BridgeX — Connected Infrastructure for Modern Financial Businesses",
+    default: "BridgeX — White-Label Brokerage Technology",
     template: "%s — BridgeX",
   },
   description:
-    "BridgeX brings onboarding, client relationships, trading operations, payments and partner growth together in one adaptable technology ecosystem.",
+    "BridgeX is the white-label brokerage platform behind BridgeX Apps: trading CRM, copy trading, marketing, HR, finance and infrastructure in one suite — under your brand, your domain, your pricing.",
   icons: {
     icon: asset("/favicon.svg"),
   },
   openGraph: {
     type: "website",
     siteName: "BridgeX",
-    title: "BridgeX — Connected Infrastructure for Modern Financial Businesses",
+    title: "BridgeX — White-Label Brokerage Technology",
     description:
-      "From onboarding and client relationships to trading operations, payments and partner growth — one adaptable technology ecosystem.",
+      "The complete brokerage platform, rebranded as yours — under your brand, your domain, your pricing. The platform behind BridgeX Apps.",
     images: [
       {
         // Bare path on purpose: metadataBase already includes /bridgex,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "BridgeX — Connected Infrastructure for Modern Financial Businesses",
+        alt: "BridgeX — White-Label Brokerage Technology",
       },
     ],
   },

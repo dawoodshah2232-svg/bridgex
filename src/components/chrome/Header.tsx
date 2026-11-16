@@ -89,6 +89,7 @@ export default function Header() {
   };
 
   const demo = routeByHref("/book-demo");
+  const pricing = routeByHref("/pricing");
   const openGroupData = HEADER_GROUPS.find((g) => g.id === openGroup);
 
   return (
@@ -177,6 +178,20 @@ export default function Header() {
             >
               <SearchIcon size={22} />
             </Link>
+            {/* Pricing link — xl+ only: the header is already full at
+                1024–1280px, so it stays out of the lg layout. */}
+            {pricing && (
+              <Link
+                href={pricing.href}
+                className={`hidden min-h-[44px] items-center font-sans text-[15px] font-bold transition-colors duration-200 xl:inline-flex ${
+                  overDark
+                    ? "text-bx-white hover:text-bx-teal-400"
+                    : "text-bx-navy-900 hover:text-bx-teal-700"
+                }`}
+              >
+                {pricing.label}
+              </Link>
+            )}
             {demo && (
               <Link
                 href={demo.href}

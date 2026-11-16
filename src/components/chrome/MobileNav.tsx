@@ -4,7 +4,7 @@
  * - 44px minimum touch targets, accordions per group, closes on navigation.
  * - ESC closes; body scroll is locked while open; focus moves to the close
  *   button on open and back to the hamburger on close (handled by Header).
- * - All 44 routes reachable: 6 group accordions + book-demo CTA + legal.
+ * - All 46 routes reachable: 6 group accordions + book-demo CTA + pricing + legal.
  */
 "use client";
 
@@ -54,6 +54,7 @@ export default function MobileNav({
 
   const legal = routesByGroup("legal");
   const demo = routeByHref("/book-demo");
+  const pricing = routeByHref("/pricing");
 
   return (
     <AnimatePresence>
@@ -187,6 +188,15 @@ export default function MobileNav({
                 </Link>
               )}
               <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+                {pricing && (
+                  <Link
+                    href={pricing.href}
+                    onClick={onClose}
+                    className="flex min-h-[44px] items-center text-sm font-bold text-bx-slate-500 hover:text-bx-teal-700"
+                  >
+                    {pricing.label}
+                  </Link>
+                )}
                 {legal.map((route) => (
                   <Link
                     key={route.href}

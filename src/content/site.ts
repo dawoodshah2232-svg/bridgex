@@ -1,33 +1,47 @@
 /**
  * Site configuration — the single source for site identity, contact
- * placeholders, social links and legal-review flags (spec §10/§12).
+ * details, social links and legal-review flags (spec §10/§12).
  *
- * Contact details are explicitly "to be confirmed": nothing here invents
- * an email address, phone number or office address. When real details are
- * confirmed, fill SITE_CONTACT in and the contact page can read them.
- *
- * Social links are empty because no real BridgeX social URLs exist yet
- * (spec §4 — only show social icons where real URLs exist).
+ * Contact details are the REAL BridgeX Apps details, verified live on
+ * bridgexapps.com on 16 Nov 2026 (white-label rework): the site now
+ * serves bridgexapps.com as its white-label offering, so the published
+ * BridgeX Apps contact points are the site's contact points. Nothing
+ * here is invented — every value below was read from the live site.
  *
  * SITE_NAME / SITE_TAGLINE / SITE_URL are defined in src/lib/paths.ts and
  * re-exported here so content and components have one import to reach for.
  */
 export { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/paths";
 
-/** Contact details have not been confirmed yet — do not invent any. */
-export const CONTACT_STATUS = "to-be-confirmed" as const;
+/** Contact details confirmed from bridgexapps.com, 16 Nov 2026. */
+export const CONTACT_STATUS = "confirmed" as const;
 
 export interface SiteContact {
+  /** General enquiries. */
   email: string | null;
+  /** Sales enquiries. */
+  salesEmail: string | null;
+  /** Compliance enquiries. */
+  complianceEmail: string | null;
+  /** Phone & WhatsApp (see phoneNote). */
   phone: string | null;
+  phoneNote: string | null;
   address: string | null;
+  hours: string | null;
+  /** Telegram handle, without the @. */
+  telegram: string | null;
   status: typeof CONTACT_STATUS;
 }
 
 export const SITE_CONTACT: SiteContact = {
-  email: null,
-  phone: null,
-  address: null,
+  email: "contact@bridgexapps.com",
+  salesEmail: "sales@bridgexapps.com",
+  complianceEmail: "compliance@bridgexapps.com",
+  phone: "+971 58 543 1107",
+  phoneNote: "Phone & WhatsApp",
+  address: "Office 2201, API Trio Tower, Al Barsha 1, Dubai, UAE",
+  hours: "Mon–Fri 9:00–18:00 GST · Sat 10:00–14:00 · Sun closed",
+  telegram: "bridgingforex",
   status: CONTACT_STATUS,
 };
 
@@ -36,8 +50,12 @@ export interface SocialLink {
   href: string;
 }
 
-/** No BridgeX social profiles exist yet — this stays empty until they do. */
-export const SITE_SOCIAL_LINKS: SocialLink[] = [];
+/** Real BridgeX Apps social profiles (verified on bridgexapps.com). */
+export const SITE_SOCIAL_LINKS: SocialLink[] = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/bridgexapps" },
+  { label: "Facebook", href: "https://www.facebook.com/bridgexapps" },
+  { label: "Telegram", href: "https://t.me/bridgingforex" },
+];
 
 /**
  * Legal-review flags for the three policy pages. All three are drafts

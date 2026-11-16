@@ -1,16 +1,17 @@
 /**
- * /platform/ai-assistance — Governed AI Assistance, IN DEVELOPMENT.
+ * /platform/ai-assistance — BriX AI, governed AI assistance.
  *
- * Title is locked by spec §8: "Governed AI Assistance — In Development".
- * This page describes ILLUSTRATIVE uses only — onboarding summary,
- * document triage, exception triage, reconciliation support — with human
- * approval, evidence and role-limited context throughout. Nothing here
- * claims AI agents are operational; the "In development" label stays
- * visible in the hero and in the status panel. Route status in the
- * registry is "roadmap". Dark photographic hero — abstract glass
- * imagery only, never binary-digit clichés.
+ * White-label rework (16 Nov 2026): BriX AI is a LIVE product on
+ * bridgexapps.com (Starter $49/mo, Growth $99, Scale $199, Scale Plus
+ * $299 — verified 16 Nov 2026), so the old "In Development / roadmap"
+ * framing is gone. The four uses below stay ILLUSTRATIVE scenarios —
+ * onboarding summary, document triage, exception triage, reconciliation
+ * support — with human approval, evidence and role-limited context
+ * throughout. The governance principles and hard limits are unchanged:
+ * the assistant drafts and suggests; a person decides.
  *
- * DARK HERO — the coordinator adds "/platform/ai-assistance" to
+ * Dark photographic hero — abstract glass imagery only, never
+ * binary-digit clichés. DARK HERO — "/platform/ai-assistance" is in
  * DARK_HERO_ROUTES.
  */
 import type { Metadata } from "next";
@@ -27,9 +28,9 @@ import CtaBand from "@/components/ui/CtaBand";
 import Icon from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Governed AI Assistance — In Development",
+  title: "BriX AI — Governed AI Assistance",
   description:
-    "Governed AI assistance is in development at BridgeX: illustrative uses in onboarding summary, document triage, exception triage and reconciliation support — always with human approval, evidence and role-limited context.",
+    "BriX AI is the AI layer of the BridgeX suite, available on bridgexapps.com from $49/month: governed assistance in onboarding summary, document triage, exception triage and reconciliation support — always with human approval, evidence and role-limited context.",
 };
 
 const PRINCIPLES = [
@@ -64,27 +65,12 @@ const NEVER = [
   "Send a message to a client without review",
 ];
 
-const ROADMAP = [
-  {
-    stage: "Now",
-    title: "Design",
-    text: "Use cases, governance rules and evidence requirements are being defined — this page describes that design, not a shipped feature.",
-  },
-  {
-    stage: "Next",
-    title: "Sandbox evaluation",
-    text: "Assisted workflows are evaluated against test data in a non-production environment, measuring accuracy against human reviewers.",
-  },
-  {
-    stage: "Later",
-    title: "Pilot",
-    text: "A limited pilot with selected operations teams, where every suggestion is reviewed and every outcome is measured before anything widens.",
-  },
-  {
-    stage: "After that",
-    title: "General availability",
-    text: "Wider release only after the pilot passes its review — with documentation, training and the same governance rules, unchanged.",
-  },
+// BriX AI tiers as published on bridgexapps.com, November 2026.
+const TIERS = [
+  { name: "Starter", price: "$49", per: "per month" },
+  { name: "Growth", price: "$99", per: "per month" },
+  { name: "Scale", price: "$199", per: "per month" },
+  { name: "Scale Plus", price: "$299", per: "per month" },
 ];
 
 export default function AiAssistancePage() {
@@ -93,10 +79,10 @@ export default function AiAssistancePage() {
       <PageHero
         href="/platform/ai-assistance"
         dark
-        badge="In development — roadmap"
+        badge="BriX AI · Available on BridgeX Apps"
         eyebrow="Platform · Intelligence layer"
-        title="Governed AI Assistance — In Development"
-        copy="BridgeX is designing AI assistance the way it designs everything else: with a human in the loop, evidence behind every suggestion, and permissions that hold. This page describes what that assistance is intended to do — not what it does today, because it is not operational yet."
+        title="BriX AI — Governed AI Assistance"
+        copy="BriX AI is the AI layer of the BridgeX suite, available on bridgexapps.com from $49 per month. It is governed the way BridgeX governs everything else: with a human in the loop, evidence behind every suggestion, and permissions that hold."
         image={{
           src: "/images/abstract-glass-ceiling.jpg",
           alt: "Hand pointing at a candlestick chart on a dark trading monitor",
@@ -105,29 +91,36 @@ export default function AiAssistancePage() {
         }}
       />
 
-      {/* Status panel — honest, prominent */}
-      <Section tone="mint" ariaLabel="Current status">
+      {/* Availability panel — BriX AI is live on bridgexapps.com */}
+      <Section tone="mint" ariaLabel="Availability">
         <div className="grid gap-8 border border-bx-teal-500/40 bg-bx-white rounded-2xl p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-10">
           <div className="lg:col-span-5">
-            <DemoLabel text="Status: In development" />
+            <DemoLabel text="Available now on BridgeX Apps" />
             <h2 className="mt-5 font-sans text-2xl font-extrabold leading-tight tracking-[-0.01em] text-bx-navy-900 sm:text-3xl">
-              Not live. Not promised for a date. Designed in the open.
+              BriX AI, governed from the first suggestion.
             </h2>
           </div>
           <div className="lg:col-span-7">
             <p className="text-base leading-relaxed text-bx-slate-500">
-              Governed AI assistance is a roadmap capability. The uses on this
-              page are illustrative designs — scenarios showing how assistance
-              would work inside the platform&apos;s existing rules. No AI agent
-              is making decisions on BridgeX today, and no launch date is
-              published: the work moves through design, sandbox evaluation and
-              pilot, and each stage has to pass its own review before the next
-              begins.
+              BriX AI is the AI layer of the BridgeX suite, available on{" "}
+              <a
+                href="https://bridgexapps.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-bx-teal-700 hover:underline"
+              >
+                bridgexapps.com
+              </a>{" "}
+              from $49 per month. The four uses on this page are illustrative
+              scenarios showing how governed assistance works inside the
+              platform&apos;s existing rules — the assistant gathers and
+              drafts, a human checks and decides. The checkpoint is part of
+              the design, not an afterthought.
             </p>
             <p className="mt-4 text-base leading-relaxed text-bx-slate-500">
-              Product updates will describe progress as it happens — see{" "}
-              <Link href="/resources/product-updates" className="font-bold text-bx-teal-700 hover:underline">
-                Product Updates
+              See the tiers below, or the full breakdown on the{" "}
+              <Link href="/pricing" className="font-bold text-bx-teal-700 hover:underline">
+                Pricing page
               </Link>
               .
             </p>
@@ -170,20 +163,20 @@ export default function AiAssistancePage() {
         </div>
       </Section>
 
-      {/* Photographic interlude — designed in the open */}
+      {/* Photographic interlude — governed, by design */}
       <PhotoBand
         image="/images/abstract-mirrored-tower.jpg"
         alt="Hand holding a phone with a rising chart in front of a laptop with trading screens and a coffee"
-        eyebrow="Roadmap"
+        eyebrow="BriX AI"
         heading={
           <>
-            Designed{" "}
+            Governed,{" "}
             <span className="font-sans font-semibold italic text-bx-teal-400">
-              in the open.
+              by design.
             </span>
           </>
         }
-        copy="No AI agent is making decisions on BridgeX today. The work moves through design, sandbox evaluation and pilot — and each stage has to pass its own review before the next begins."
+        copy="BriX AI drafts, summarises and suggests — a person decides. Approvals for onboarding, payments and payouts always require a human with the right permission."
         height="sm"
         imageWidth={1600}
         imageHeight={2411}
@@ -241,56 +234,47 @@ export default function AiAssistancePage() {
           </div>
           <div className="lg:col-span-6">
             <p className="font-sans text-[13px] font-bold uppercase tracking-[0.22em] text-bx-teal-700">
-              The road to launch
+              BriX AI tiers
             </p>
             <h2 className="mt-4 font-sans text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-bx-navy-900 sm:text-4xl">
-              Stages, not dates.
+              Priced by tier, as published.
             </h2>
-            <ol className="mt-8 space-y-0">
-              {ROADMAP.map((stage, i) => (
-                <li key={stage.title} className="relative flex gap-5 pb-8 last:pb-0">
-                  {i < ROADMAP.length - 1 && (
-                    <span
-                      aria-hidden="true"
-                      className="absolute left-[7px] top-5 h-full w-px bg-bx-teal-500/50"
-                    />
-                  )}
-                  <span
-                    aria-hidden="true"
-                    className={`relative z-10 mt-1.5 h-3.5 w-3.5 shrink-0 rotate-45 border ${
-                      i === 0
-                        ? "border-bx-teal-600 bg-bx-teal-600"
-                        : "border-bx-teal-600 bg-bx-white"
-                    }`}
-                  />
-                  <div>
-                    <p className="font-sans text-[13px] font-bold uppercase tracking-[0.18em] text-bx-teal-700">
-                      {stage.stage}
-                    </p>
-                    <h3 className="mt-1 font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
-                      {stage.title}
-                    </h3>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-bx-slate-500">
-                      {stage.text}
-                    </p>
-                  </div>
+            <ul className="mt-8 divide-y divide-bx-teal-500/25 border-y border-bx-teal-500/25">
+              {TIERS.map((tier) => (
+                <li key={tier.name} className="flex items-baseline justify-between gap-4 py-4">
+                  <span className="font-sans text-lg font-extrabold leading-tight text-bx-navy-900">
+                    {tier.name}
+                  </span>
+                  <span className="font-sans text-lg font-bold text-bx-teal-700">
+                    {tier.price}
+                    <span className="ml-1 text-sm font-bold text-bx-slate-500">
+                      {tier.per}
+                    </span>
+                  </span>
                 </li>
               ))}
-            </ol>
+            </ul>
+            <p className="mt-4 text-[15px] leading-relaxed text-bx-slate-500">
+              Prices as published on bridgexapps.com, November 2026. See the{" "}
+              <Link href="/pricing" className="font-bold text-bx-teal-700 hover:underline">
+                Pricing page
+              </Link>{" "}
+              for the full breakdown alongside the Forex suite tiers.
+            </p>
           </div>
         </div>
       </Section>
 
       <FaqSection
         heading="AI assistance questions, answered plainly."
-        copy="Availability, human approval, data access, evidence — and when it will launch."
+        copy="Availability, human approval, data access, evidence — and pricing."
         items={AI_FAQS}
         tone="mint"
       />
 
       <CtaBand
-        heading="Talk to us about what assistance should do."
-        copy="If your team spends its days summarising applications, triaging documents or chasing reconciliation breaks, we would like to hear about it. The roadmap is shaped by the work it needs to help with — tell us yours."
+        heading="See BriX AI on your own workflows."
+        copy="Book a private demo and watch governed assistance work on onboarding summaries, document triage and reconciliation — with a human deciding at every checkpoint."
       />
     </>
   );

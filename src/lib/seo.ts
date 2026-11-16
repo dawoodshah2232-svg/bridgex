@@ -3,11 +3,12 @@
  *
  * Pure functions returning schema.org objects — render them with
  * `jsonLdString()` inside a <script type="application/ld+json"> tag.
- * Nothing here invents facts: the Organization schema carries only the
- * name, URL, logo and description that are real (no founding date,
- * address or social profiles — none are established).
+ * Nothing here invents facts: the Organization schema carries the
+ * contact details, address and social profiles published on
+ * bridgexapps.com (verified 16 Nov 2026). No founding date or
+ * registration number — neither is published.
  */
-import { SITE_URL } from "@/content/site";
+import { SITE_CONTACT, SITE_SOCIAL_LINKS, SITE_URL } from "@/content/site";
 import type { NavRoute } from "@/content/navigation";
 
 export interface FaqEntry {
@@ -32,7 +33,22 @@ export function organizationJsonLd(): Record<string, unknown> {
     url: `${SITE_URL}/`,
     logo: `${SITE_URL}/brand/bridgex-logo.svg`,
     description:
-      "BridgeX brings onboarding, client relationships, trading operations, payments and partner growth together in one adaptable technology ecosystem.",
+      "BridgeX is the white-label brokerage platform behind BridgeX Apps: trading CRM, copy trading, marketing, HR, finance and infrastructure in one suite — under your brand, your domain, your pricing.",
+    email: SITE_CONTACT.email,
+    telephone: SITE_CONTACT.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Office 2201, API Trio Tower, Al Barsha 1",
+      addressLocality: "Dubai",
+      addressCountry: "AE",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: SITE_CONTACT.salesEmail,
+      telephone: SITE_CONTACT.phone,
+    },
+    sameAs: SITE_SOCIAL_LINKS.map((link) => link.href),
   };
 }
 

@@ -286,7 +286,8 @@ export const ANALYTICS_VIEWS: AnalyticsView[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* AI assistance — roadmap, illustrative uses only                     */
+/* BriX AI — governed assistance (live on bridgexapps.com, Nov 2026);  */
+/* the four uses below stay illustrative scenarios.                    */
 /* ------------------------------------------------------------------ */
 
 export const AI_USES: AiUse[] = [
@@ -356,7 +357,7 @@ export const INTEGRATIONS_FAQS: FaqItem[] = [
   {
     question: "Which providers are integrated today?",
     answer:
-      "We do not publish a list of named providers, because an integration is only real once it has been configured and tested for a specific deployment. What we describe here are the provider categories the adapter architecture supports — trading platforms, payment providers, KYC and AML, communications and market data — and the process each connection goes through before it goes live.",
+      "For trading platforms, the published connection list is MT4, MT5, DXTrade, Match Trader, TradeLocker, Vertex and cTrader (bridgexapps.com, November 2026). Beyond that, an integration is only real once it has been configured and tested for a specific deployment, so other providers are named only once their adapter is built, tested and signed off. What we describe here are the provider categories the adapter architecture supports — trading platforms, payment providers, KYC and AML, communications and market data — and the process each connection goes through before it goes live.",
   },
   {
     question: "What happens when a provider's webhook fails?",
@@ -412,7 +413,7 @@ export const AI_FAQS: FaqItem[] = [
   {
     question: "Is AI assistance available on BridgeX today?",
     answer:
-      "No. Governed AI assistance is in development. The uses described on this page are illustrative designs for how it would work — with human approval, evidence and role-limited context — not features you can switch on today.",
+      "Yes — BriX AI is the AI layer of the BridgeX suite, available on bridgexapps.com from $49 per month (Starter $49, Growth $99, Scale $199, Scale Plus $299). It is governed the way everything in BridgeX is: human approval, evidence behind every suggestion, role-limited context. The four uses on this page are illustrative scenarios of how governed assistance works.",
   },
   {
     question: "Will AI ever approve a client or a payment on its own?",
@@ -420,18 +421,18 @@ export const AI_FAQS: FaqItem[] = [
       "No. That is a design rule, not a setting. AI assistance drafts, summarises and suggests; a person decides. Approvals for onboarding, payments and payouts always require a human with the right permission.",
   },
   {
-    question: "What data would the AI be able to see?",
+    question: "What data can the AI see?",
     answer:
       "Only the records the requesting user is already permitted to see. Role-limited context is part of the design: the assistant cannot reach across roles, tenants or permissions to gather information a user could not open themselves.",
   },
   {
-    question: "How would we know what the AI based a suggestion on?",
+    question: "How do we know what the AI based a suggestion on?",
     answer:
-      "Every suggestion is designed to carry its evidence — links to the documents, records or events it drew on — so a reviewer can check the sources instead of trusting a summary. A suggestion without traceable evidence is not a usable suggestion.",
+      "Every suggestion carries its evidence — links to the documents, records or events it drew on — so a reviewer can check the sources instead of trusting a summary. A suggestion without traceable evidence is not a usable suggestion.",
   },
   {
-    question: "When will AI assistance launch?",
+    question: "How is BriX AI priced?",
     answer:
-      "We are not publishing a launch date. The work moves through design, sandbox evaluation and pilot stages, and each stage has to pass its own review before the next begins. Product updates will describe progress as it happens.",
+      "BriX AI runs from $49 per month (Starter) to $299 per month (Scale Plus), with Growth at $99 and Scale at $199. See the Pricing page for the full breakdown alongside the Forex suite tiers.",
   },
 ];
